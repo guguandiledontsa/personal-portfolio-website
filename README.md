@@ -1,54 +1,113 @@
-<header>
+# 💼 My Personal Portfolio Website
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+Welcome to my personal portfolio project — a living space where I’m learning, building, and showcasing my web development journey.
 
-# GitHub Pages
+This project started as a way to deepen my understanding of front-end development and UI/UX design. I'm using the skills I have (HTML, CSS, jQuery, Handlebars) and expanding into modern JavaScript, best practices, and eventually JavaScript frameworks like React or Vue.
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
-
-</header>
-
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
-
-## Step 1: Enable GitHub Pages
-
-_Welcome to GitHub Pages and Jekyll :tada:!_
-
-The first step is to enable GitHub Pages on this [repository](https://docs.github.com/en/get-started/quickstart/github-glossary#repository). When you enable GitHub Pages on a repository, GitHub takes the content that's on the main branch and publishes a website based on its contents.
-
-### :keyboard: Activity: Enable GitHub Pages
-
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Under your repository name, click **Settings**.
-1. Click **Pages** in the **Code and automation** section.
-1. Ensure "Deploy from a branch" is selected from the **Source** drop-down menu, and then select `main` from the **Branch** drop-down menu.
-1. Click the **Save** button.
-1. Wait about _one minute_ then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-   > Turning on GitHub Pages creates a deployment of your repository. GitHub Actions may take up to a minute to respond while waiting for the deployment. Future steps will be about 20 seconds; this step is slower.
-   > **Note**: In the **Pages** of **Settings**, the **Visit site** button will appear at the top. Click the button to see your GitHub Pages site.
-
-<footer>
-
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+🌐 **Live site:** [https://yourusername.github.io/portfolio](https://yourusername.github.io/portfolio)
 
 ---
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+## 🧠 Why I’m Building This
 
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+- To apply and sharpen my front-end skills
+- To learn modern JavaScript and design systems
+- To have a professional online presence for recruiters and collaborators
+- To create a project I can proudly share on my [LinkedIn](https://linkedin.com/in/yourprofile)
 
-</footer>
+---
+
+## 🛠️ Tech Stack
+
+| Tech / Tool       | Status         |
+|-------------------|----------------|
+| HTML5             | ✅ Confident    |
+| CSS3              | ✅ Confident    |
+| jQuery            | ✅ Basic usage  |
+| Handlebars.js     | ✅ Used in small projects |
+| JavaScript (ES6+) | 🚧 Learning    |
+| Git & GitHub      | 🚧 Learning    |
+| Responsive Design | 🚧 Learning    |
+| GitHub Pages      | ✅ Deployed     |
+| JavaScript Framework (React/Vue) | 🔜 Planning to learn |
+
+---
+
+## 📁 Project Structure
+
+/portfolio
+├── index.html # Homepage
+├── about.html # About me & resume
+├── projects.html # Projects showcase
+├── contact.html # Contact links or form
+├── css/
+│ └── styles.css # Main styles
+├── js/
+│ └── main.js # Scripts and interactivity
+├── assets/
+│ └── images/ # Logos, screenshots, etc.
+├── README.md # This file
+
+yaml
+Copy
+Edit
+
+---
+
+## ✅ Learning Roadmap / To-Do List
+
+### 🔹 Essentials
+
+- [x] Set up project with HTML/CSS
+- [x] Create responsive layout
+- [x] Add navigation bar
+- [x] Deploy to GitHub Pages
+- [ ] Style site with consistent color palette + typography
+- [ ] Add `about.html` with bio and resume download
+- [ ] Add `projects.html` with project cards
+- [ ] Add simple contact form or links
+
+### 🔹 Intermediate Goals
+
+- [ ] Use JavaScript to load project data dynamically
+- [ ] Improve accessibility (alt tags, semantic HTML)
+- [ ] Add animations/transitions with CSS/JS
+- [ ] Create dark mode toggle
+- [ ] Refactor using Handlebars templates
+
+### 🔹 Advanced / Stretch Goals
+
+- [ ] Convert site to SPA with React or Vue
+- [ ] Add a blog section (Markdown or static site generator)
+- [ ] Add a contact form that works with Formspree or Netlify
+- [ ] Lighthouse accessibility + performance audit
+- [ ] Add analytics (Plausible, GoatCounter, etc.)
+
+---
+
+## 🚀 How to View / Deploy
+
+To deploy using GitHub Pages:
+
+1. Push this project to a GitHub repository
+2. Go to **Settings > Pages**
+3. Under **Source**, choose `main` branch and `/ (root)`
+4. Click **Save** and wait a few moments
+5. Visit your new live site using the URL provided by GitHub!
+
+> Example: `https://yourusername.github.io/portfolio`
+
+---
+
+## 👨‍💻 About Me
+
+I’m a front-end developer-in-training building this site as a learning playground and professional portfolio. I’m focused on improving my JavaScript skills, understanding UI/UX best practices, and becoming a well-rounded web developer.
+
+🔗 [GitHub](https://github.com/yourusername)  
+🔗 [LinkedIn](https://linkedin.com/in/yourprofile)
+
+---
+
+## 📝 License
+
+This project is open source under the [MIT License](LICENSE).
