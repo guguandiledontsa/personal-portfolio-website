@@ -1,2 +1,47 @@
-# portfolio-v2
-This repository is a personal learning project focused on building a portfolio using React, TypeScript, and modern frontend technologies. Development is iterative and intentionally paced to support long-term understanding and growth. Designed to be resumed at any point without pressure.
+# Gugu's Portfolio (v2)
+
+> A personal website project to learn and explore HTML, CSS, and modern frontend tools — one clear step at a time.
+
+## 📌 Purpose
+
+This project is my safe space to:
+
+- Learn React, TypeScript, and frontend development from the ground up
+- Practice writing clean, semantic HTML and CSS
+- Build something real, slowly but intentionally
+- Pause when needed and pick up where I left off — no shame, no rush
+
+## 📁 Status
+
+- 🏗️ Currently rebuilding from scratch  
+- ✅ Basic HTML/CSS setup complete  
+- 📅 Iterative issues created in GitHub to track milestones
+
+## 🛠️ Tools I'm Learning With
+
+- [x] HTML & Semantic HTML  
+- [x] CSS + custom utility classes  
+- [ ] Responsive design  
+- [ ] TypeScript  
+- [ ] React  
+- [ ] Vite  
+- [ ] Testing (TDD-style approach)
+
+## 🎯 Milestone Philosophy
+
+I’m using small GitHub issues as bite-sized checkpoints. Each one is:
+- Focused on a single concept
+- Written to be beginner-friendly
+- Designed so I can stop and start without losing track
+
+## 📬 Future Plans
+
+- Add a responsive layout
+- Style sections with utility-first patterns
+- Slowly introduce React + TS concepts
+- Explore component-based structure
+- Add contact form + deploy
+
+---
+
+> 💬 This project is not about perfection. It’s about progress, pace, and process.
