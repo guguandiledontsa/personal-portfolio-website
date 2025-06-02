@@ -164,9 +164,7 @@ body {
 */
 
 /* 👇 BEM NAMING CONVENTION (write CSS classes like real pros)
-.block__element--modifier {
-  /* read about BEM when you want to write scalable CSS */
-}
+.block__element--modifier { read about BEM when you want to write scalable CSS }
 */
 
 /* 👇 SASS / SCSS (a language that compiles into CSS — don’t rush)
