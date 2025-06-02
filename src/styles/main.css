@@ -1,4 +1,3 @@
-
 /* ========================================================
    📄 main.css - Gugu's learning + base style file
    Purpose: Helps you learn + start styling your portfolio
@@ -7,43 +6,36 @@
 /* -------------------------------------
    1. CSS RESET (Make all browsers behave)
 -------------------------------------- */
-/* This removes browser default styles that are messy */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* includes padding in width */
+  box-sizing: border-box;
 }
 
 /* -------------------------------------
    2. BASE TYPOGRAPHY
 -------------------------------------- */
-
-/* Controls global font + smooth scaling on mobile */
 html {
-  font-size: 16px; /* base size */
-  font-family: sans-serif; /* fallback, can change later */
-  line-height: 1.5; /* spacing between lines */
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 1.5;
 }
 
-/* Controls default look of body */
 body {
-  background-color: #f5f5f5; /* light grey background */
-  color: #222;               /* nearly black text */
+  background-color: #f5f5f5;
+  color: #222;
   padding: 2rem;
 }
 
 /* -------------------------------------
    3. LAYOUT HELPERS
 -------------------------------------- */
-
-/* Center content inside a container */
 .container {
   max-width: 800px;
-  margin: 0 auto; /* auto = center horizontally */
+  margin: 0 auto;
   padding: 1rem;
 }
 
-/* Space between sections */
 section {
   margin-bottom: 2rem;
 }
@@ -51,7 +43,6 @@ section {
 /* -------------------------------------
    4. TYPOGRAPHY STYLING
 -------------------------------------- */
-
 h1, h2, h3 {
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -64,7 +55,6 @@ p {
 /* -------------------------------------
    5. HEADER STYLES
 -------------------------------------- */
-
 header {
   background-color: #222;
   color: #fff;
@@ -74,9 +64,8 @@ header {
 }
 
 /* -------------------------------------
-   6. LINK STYLES (important later) 
+   6. LINK STYLES
 -------------------------------------- */
-
 a {
   color: blue;
   text-decoration: none;
@@ -87,9 +76,8 @@ a:hover {
 }
 
 /* -------------------------------------
-   7. BUTTON STYLES (you'll add buttons later)
+   7. BUTTON STYLES
 -------------------------------------- */
-
 button {
   padding: 0.5rem 1rem;
   border: none;
@@ -104,24 +92,87 @@ button:hover {
 }
 
 /* -------------------------------------
-   8. ADVANCED: UTILITY CLASSES (like Tailwind, but manual)
+   8. UTILITY CLASSES (Tailwind-style, manual)
 -------------------------------------- */
-
-/* You can create single-purpose helper classes */
-.text-center {
-  text-align: center;
-}
-
+.text-center { text-align: center; }
 .mt-1 { margin-top: 0.5rem; }
 .mt-2 { margin-top: 1rem; }
 .mt-4 { margin-top: 2rem; }
 
-/* These are great for quick spacing without writing full CSS again */
-
 /* -------------------------------------
-   9. FUTURE STUFF (don’t worry yet)
+   9. ADVANCED: COMMENTED FOR FUTURE YOU 🔒
 -------------------------------------- */
 
-/* Grids, media queries, animations, custom properties, etc. */
-/* We’ll learn those when we need them. Don’t rush. */
+/* 👇 RESPONSIVE DESIGN (start learning when you're comfy with layout basics)
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
 
+  .container {
+    max-width: 100%;
+  }
+}
+*/
+
+/* 👇 CSS VARIABLES (a.k.a custom properties — great for themes)
+:root {
+  --main-color: #4caf50;
+  --text-color: #222;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--main-color);
+}
+*/
+
+/* 👇 FLEXBOX (start using when you want to arrange elements side-by-side)
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+*/
+
+/* 👇 GRID LAYOUT (use for full-page layout systems — learn after flexbox)
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+*/
+
+/* 👇 ANIMATIONS (learn when you want to add polish)
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+*/
+
+/* 👇 DARK MODE (a more advanced real-world feature to learn later)
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #eee;
+  }
+}
+*/
+
+/* 👇 BEM NAMING CONVENTION (write CSS classes like real pros)
+.block__element--modifier {
+  /* read about BEM when you want to write scalable CSS */
+}
+*/
+
+/* 👇 SASS / SCSS (a language that compiles into CSS — don’t rush)
+$primary-color: #009688;
+
+body {
+  color: $primary-color;
+}
+*/
