@@ -1,57 +1,101 @@
 <!DOCTYPE html>
+<!-- 
+🧠 Declares this is an HTML5 document
+Required as first line in every HTML file
+-->
 <html lang="en">
+  <!-- 
+  lang="en" helps screen readers, search engines know the language
+  -->
+
   <head>
     <!-- ===============================
        💡 LEVEL 1: Must-Have Metadata
-  ================================ -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Gugu's portfolio site" />
-    <title>Gugu's Portfolio</title>
+    ================================ -->
 
-    <!-- Link to your CSS -->
+    <meta charset="UTF-8" />
+    <!-- Character encoding (UTF-8 = universal text support) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mobile-friendly layout (scales for small screens) -->
+
+    <meta name="description" content="Gugu's portfolio site" />
+    <!-- Helps with SEO: search engines show this text -->
+
+    <title>Gugu's Portfolio</title>
+    <!-- Tab title (appears in browser tab) -->
+
     <link rel="stylesheet" href="./styles/main.css" />
+    <!-- Connects to your CSS file -->
   </head>
 
   <body>
-    <!-- semantic: top banner -->
+    <!-- ===============================
+       🔷 SEMANTIC LAYOUT STRUCTURE
+    ================================ -->
+
     <header>
+      <!-- header = top section (can include nav later) -->
       <div class="container">
-        <!-- layout box (CSS target) -->
+        <!-- .container = layout helper from CSS (width + centering) -->
+
         <h1>Hi, I'm Gugu (Andile) Dontsa</h1>
-        <!-- only one <h1> per page -->
+        <!-- h1 = page’s main heading (only one per page) -->
+
         <p>Software Eng @WeThinkCode_</p>
+        <!-- paragraph for subtext -->
       </div>
     </header>
 
     <main class="container">
-      <!-- main = unique page content -->
+      <!-- 
+      main = primary content of the page (1 per page)
+      .container = center + pad the content
+      -->
 
-      <!-- section = grouped content (semantic) -->
+      <!-- SECTION: About Me -->
       <section id="about">
-        <!-- id = anchor/link target -->
+        <!-- 
+        section = groups related content (semantic)
+        id = used for links, styles, or JS
+        -->
+
         <div class="container">
           <h2>About Me</h2>
-          <!-- h2 = next level under h1 -->
+          <!-- h2 = next level under h1 (each section can start with h2) -->
+
           <p>Started with Scratch + LEGO Robotics...</p>
           <p>Focusing on ML, data pipelines, and community tech.</p>
         </div>
       </section>
 
+      <!-- SECTION: Projects -->
       <section id="projects">
         <h2>Projects</h2>
 
-        <!-- div = layout group (non-semantic) -->
+        <!-- 🔹 Project Card 1 -->
         <div class="project">
-          <!-- class = for styling or JS -->
+          <!-- 
+          div = generic layout box (not semantic)
+          .project = reusable card styles (from CSS)
+          -->
+
           <h3>📊 Data Pipeline Project</h3>
+          <!-- h3 = heading level inside the project card -->
+
           <p>Built with Python, Redpanda, YAML</p>
+
           <a href="https://github.com/guguandiledontsa" target="_blank">
-            <!-- a = link | target="_blank" = new tab -->
             GitHub Repo
           </a>
+          <!-- 
+          a = anchor tag (hyperlink)
+          href = where it links to
+          target="_blank" = opens in new tab
+          -->
         </div>
 
+        <!-- 🔹 Project Card 2 -->
         <div class="project">
           <h3>🌐 Portfolio Website</h3>
           <p>This site. HTML + CSS + JS</p>
@@ -59,10 +103,19 @@
       </section>
     </main>
 
+    <!-- ===============================
+       ⚫ FOOTER: Bottom Section
+    ================================ -->
     <footer class="text-center mt-4">
-      <!-- footer = page end -->
+      <!-- 
+      footer = end of page
+      .text-center, .mt-4 = classes (used in CSS to center + margin-top)
+      -->
       <p>© 2025 Gugu Andile Dontsa</p>
     </footer>
+  </body>
+</html>
+
 
     <!-- ===============================
        🔐 LEVEL 2: Semantic Structure
