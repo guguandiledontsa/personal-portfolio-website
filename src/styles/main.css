@@ -68,7 +68,7 @@ main {
 }
 
 main .container {
-  background-color: #fffde7;  /* slightly lighter */
+  background-color: #ffeca7;  /* slightly lighter */
   padding: 1rem;
 }
 
@@ -88,7 +88,7 @@ section {
 }
 
 #projects {
-  background-color: #ffd54f;
+  background-color: #ffe54f;
 }
 
 /* -------------------------------------
