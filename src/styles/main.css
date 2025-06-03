@@ -1,47 +1,108 @@
 /* ========================================================
-   📄 main.css - Gugu's learning + base style file
-   Purpose: Helps you learn + start styling your portfolio
+📄 main.css — Gugu's Dev Learning CSS
+Cheat Sheet + Layout + Real Project Starter
 ========================================================== */
 
 /* -------------------------------------
-   1. CSS RESET (Make all browsers behave)
+1. RESET: Make all elements behave
 -------------------------------------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;               /* removes default outside spacing */
+  padding: 0;              /* removes default inside spacing */
+  box-sizing: border-box; /* includes padding/border in width/height */
 }
 
 /* -------------------------------------
-   2. BASE TYPOGRAPHY
+2. GLOBAL BASE STYLES
 -------------------------------------- */
 html {
-  font-size: 16px;
+  font-size: 16px;     /* 1rem = 16px */
   font-family: sans-serif;
-  line-height: 1.5;
+  line-height: 1.5;    /* vertical spacing between lines */
 }
 
 body {
-  background-color: #f5f5f5;
-  color: #222;
-  padding: 2rem;
+  background-color: #f5f5f5;  /* page bg color */
+  color: #222;                /* default text color */
+  padding: 2rem;              /* space around body content */
 }
 
 /* -------------------------------------
-   3. LAYOUT HELPERS
+3. SELECTORS QUICK REF
 -------------------------------------- */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+/*
+ *        *         = all elements
+ *        a         = all links
+ *        p         = all paragraphs
+ *      .class      = class (can be reused)
+ *      #id         = unique element
+ *     div > p      = p inside div (direct child)
+ *   a:hover        = only on hover
+ */
+
+/* -------------------------------------
+4. HEADER GROUP — Top of Page Layout
+-------------------------------------- */
+header {
+  background-color: #222;  /* dark header */
+  color: white;
+  padding: 1rem;           /* inside space */
+  text-align: center;
+  border-radius: 8px;
+}
+
+header .container {
+  background-color: #333;  /* child of header */
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* -------------------------------------
+5. MAIN CONTENT AREA — Center Page Block
+-------------------------------------- */
+main {
+  background-color: #fff9c4;  /* soft yellow */
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+main .container {
+  background-color: #fffde7;  /* slightly lighter */
   padding: 1rem;
 }
 
+/* -------------------------------------
+6. SECTIONS — Blocks Inside Main
+-------------------------------------- */
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem;     /* space between sections */
+  padding: 1rem;           /* space inside section */
+  border-radius: 6px;
+  background-color: #ffecb3;
+}
+
+/* Special section themes */
+#about {
+  background-color: #ffe082;
+}
+
+#projects {
+  background-color: #ffd54f;
 }
 
 /* -------------------------------------
-   4. TYPOGRAPHY STYLING
+7. PROJECT CARDS — Items in #projects
+-------------------------------------- */
+.project {
+  background-color: #fff3e0;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #ffa726;
+}
+
+/* -------------------------------------
+8. TYPOGRAPHY — Headings & Text
 -------------------------------------- */
 h1, h2, h3 {
   font-weight: bold;
@@ -53,27 +114,57 @@ p {
 }
 
 /* -------------------------------------
-   5. HEADER STYLES
--------------------------------------- */
-header {
-  background-color: #222;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 8px;
-}
-
-/* -------------------------------------
-   6. LINK STYLES
+9. LINKS — Styling + Feedback
 -------------------------------------- */
 a {
-  color: blue;
+  color: #1e88e5;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline;  /* underline when hovering */
 }
+
+/* -------------------------------------
+10. BOX MODEL EXPLAINED
+-------------------------------------- */
+/*
+margin  = space outside the element
+padding = space inside the element
+border  = visible edge (optional)
+box-sizing: border-box = keeps sizing predictable
+
+Example:
+[margin]
+  [border]
+    [padding]
+      CONTENT
+*/
+
+/* -------------------------------------
+11. UNITS — Know Your Sizes
+-------------------------------------- */
+/*
+px   = fixed pixels
+rem  = relative to html font-size
+%    = percent of parent
+em   = relative to current element
+
+Tip: Use rem for consistent scaling
+*/
+
+/* -------------------------------------
+12. COMMON LAYOUT TRICKS
+-------------------------------------- */
+/*
+.centered-box {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;     ← centers the box horizontally
+  padding: 1rem;
+}
+*/
+
 
 /* -------------------------------------
    7. BUTTON STYLES

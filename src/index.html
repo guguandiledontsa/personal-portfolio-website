@@ -14,65 +14,53 @@
   </head>
 
   <body>
-    <!-- ==============================
-       🧱 LEVEL 1: Basic Page Structure
-  =============================== -->
+    <!-- semantic: top banner -->
     <header>
       <div class="container">
+        <!-- layout box (CSS target) -->
         <h1>Hi, I'm Gugu (Andile) Dontsa</h1>
-        <p>
-          Aspiring Data Scientist | Software Engineering Graduate @WeThinkCode_
-        </p>
+        <!-- only one <h1> per page -->
+        <p>Software Eng @WeThinkCode_</p>
       </div>
     </header>
 
     <main class="container">
-      <!-- About Me -->
+      <!-- main = unique page content -->
+
+      <!-- section = grouped content (semantic) -->
       <section id="about">
+        <!-- id = anchor/link target -->
         <div class="container">
           <h2>About Me</h2>
-          <p>
-            My journey in tech began with Scratch and LEGO Robotics at Siyafunda
-            and grew into full-stack development and data engineering at
-            WeThinkCode_. I'm now focusing on machine learning, Python data
-            pipelines, and community-based tech initiatives.
-          </p>
-          <p>
-            Outside of coding, I'm passionate about mentorship, public speaking,
-            and building inclusive spaces in tech.
-          </p>
-          <a href="Gugu_Dontsa_Resume.pdf" download>📄 Download My Résumé (Not up yet)</a>
+          <!-- h2 = next level under h1 -->
+          <p>Started with Scratch + LEGO Robotics...</p>
+          <p>Focusing on ML, data pipelines, and community tech.</p>
         </div>
       </section>
 
-      <!-- Projects -->
       <section id="projects">
         <h2>Projects</h2>
 
+        <!-- div = layout group (non-semantic) -->
         <div class="project">
-          <h3>📊 Data Pipeline Project (In Progress)</h3>
-          <p>
-            Building real-time data pipelines using Python, Redpanda, and YAML
-            for automation.
-          </p>
-          <a href="https://github.com/guguandiledontsa">GitHub Repo</a>
+          <!-- class = for styling or JS -->
+          <h3>📊 Data Pipeline Project</h3>
+          <p>Built with Python, Redpanda, YAML</p>
+          <a href="https://github.com/guguandiledontsa" target="_blank">
+            <!-- a = link | target="_blank" = new tab -->
+            GitHub Repo
+          </a>
         </div>
 
         <div class="project">
-          <h3>🌐 Personal Portfolio Website</h3>
-          <p>
-            This website you're viewing right now! Made with HTML, CSS, and
-            JavaScript to practice frontend skills and UI/UX.
-          </p>
-          <a
-            href="https://guguandiledontsa.github.io/personal-portfolio-website"
-            >Not a Live link yet. Not deployed </a>
+          <h3>🌐 Portfolio Website</h3>
+          <p>This site. HTML + CSS + JS</p>
         </div>
       </section>
-      
     </main>
-    
+
     <footer class="text-center mt-4">
+      <!-- footer = page end -->
       <p>© 2025 Gugu Andile Dontsa</p>
     </footer>
 
