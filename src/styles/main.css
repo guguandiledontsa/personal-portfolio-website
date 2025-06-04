@@ -27,18 +27,58 @@ body {
   padding: 2rem;              /* space around body content */
 }
 
-/* -------------------------------------
-3. SELECTORS QUICK REF
--------------------------------------- */
-/*
- *        *         = all elements
- *        a         = all links
- *        p         = all paragraphs
- *      .class      = class (can be reused)
- *      #id         = unique element
- *     div > p      = p inside div (direct child)
- *   a:hover        = only on hover
- */
+/* 
+------------------------------------------------------------------------------------------
+📘 CSS SELECTORS — SYNTAX | MEANING | CLARITY / BEHAVIOR | EXAMPLE
+-------------------------------------------------------------------------------------------
+
+========== UNIVERSAL, TYPE, CLASS, ID SELECTORS ========== 
+ * *                     | All elements                        | Global reset or targeting all    | * {...}
+ * a                     | All <a> elements                    | Inline by default                | a {...}
+ * p                     | All <p> elements                    | Block by default                 | p {...}
+ * .class                | Elements with this class            | Reusable & composable            | .card {...}
+ * #id                   | Unique element by ID                | One per page                     | #header {...}
+
+========== RELATIONSHIP SELECTORS (STRUCTURE / HIERARCHY) ==========
+ * div > p               | Direct child <p> of <div>           | 1 level deep only                | div > p {...}
+ * div p                 | Any <p> inside <div>                | Includes nested <p>s             | div p {...}
+ * h1 + p                | <p> immediately after <h1>          | Direct adjacent sibling          | h1 + p {...}
+ * h2 ~ p                | All <p>s after <h2> (same parent)   | Any following siblings           | h2 ~ p {...}
+ * main > section:last-child| Last <section> directly in <main>| Great for layout spacing         | main > section:last-child {...}
+
+========== ATTRIBUTE SELECTORS ==========
+ * [attr]               | Element with the attribute           | Any value                        | [disabled] {...}
+ * [attr="value"]       | Attribute matches exact value        | String-sensitive match           | [type="checkbox"] {...}
+ * [attr^="val"]        | Attribute starts with value          | Begins with 'val'                | [href^="https"] {...}
+ * [attr$=".pdf"]       | Attribute ends with value            | Useful for file types            | [href$=".pdf"] {...}
+ * [attr*="mid"]        | Attribute contains value             | Partial match                    | [class*="nav"] {...}
+
+========== FORM STATE SELECTORS ==========
+ * :checked             | Checked input (radio/checkbox)       | Paired with toggles/labels       | input:checked {...}
+ * :disabled            | Disabled element                     | Same as [disabled]               | button:disabled {...}
+ * :enabled             | Not disabled                         | Opposite of `:disabled`          | input:enabled {...}
+ * :required            | Field marked required                | Useful for validation states     | input:required {...}
+ * :optional            | Field with no `required` attr        | Often used for soft styling      | input:optional {...}
+ * :focus               | Element in focus                     | Used in accessibility UX         | input:focus {...}
+
+========== STRUCTURAL PSEUDO-CLASSES ==========
+ * :first-child         | First child of parent                | Must be very first, any tag      | p:first-child {...}
+ * :last-child          | Last child of parent                 | Any element                      | p:last-child {...}
+ * :nth-child(n)        | Nth child among **all** siblings     | Tag type ignored                 | li:nth-child(2) {...}
+ * :nth-of-type(n)      | Nth child of same tag                | Ignores mismatched tags          | li:nth-of-type(2) {...}
+ * :nth-child(odd)      | Odd-numbered siblings                | Starts at 1                      | tr:nth-child(odd) {...}
+ * :not(selector)       | Excludes matching elements           | Filters things out cleanly       | a:not(.external) {...}
+
+========== STATE & INTERACTION SELECTORS ==========
+ * a:hover              | Link in hover state                  | Needs mouse interaction          | a:hover {...}
+ * input:focus          | Input currently focused              | Keyboard/tab friendly            | input:focus {...}
+
+========== RESPONSIVE DESIGN ==========
+ * @media (max-width: 600px)| Viewport ≤ 600px                 | Mobile-first responsive design   | @media (max-width: 600px) {...}
+
+------------------------------------------------------------------------------------------
+*/
+                    
 
 /* -------------------------------------
 4. HEADER GROUP — Top of Page Layout
@@ -49,6 +89,7 @@ header {
   padding: 1rem;           /* inside space */
   text-align: center;
   border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 header .container {
@@ -98,7 +139,11 @@ section {
   background-color: #fff3e0;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border-left: 4px solid #ffa726;
+  /* border-left: 4px solid #ffa726; */
+}
+
+footer {
+  background-color:blanchedalmond;
 }
 
 /* -------------------------------------
@@ -124,6 +169,14 @@ a {
 a:hover {
   text-decoration: underline;  /* underline when hovering */
 }
+
+/* -------------------------------------
+   8. UTILITY CLASSES (Tailwind-style, manual)
+-------------------------------------- */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-4 { margin-top: 2rem; }
 
 /* -------------------------------------
 10. BOX MODEL EXPLAINED
@@ -169,6 +222,7 @@ Tip: Use rem for consistent scaling
 /* -------------------------------------
    7. BUTTON STYLES
 -------------------------------------- */
+/*
 button {
   padding: 0.5rem 1rem;
   border: none;
@@ -181,14 +235,7 @@ button {
 button:hover {
   background-color: #555;
 }
-
-/* -------------------------------------
-   8. UTILITY CLASSES (Tailwind-style, manual)
--------------------------------------- */
-.text-center { text-align: center; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-4 { margin-top: 2rem; }
+*/
 
 /* -------------------------------------
    9. ADVANCED: COMMENTED FOR FUTURE YOU 🔒
