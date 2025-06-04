@@ -1,318 +1,230 @@
-/* ========================================================
-📄 main.css — Gugu's Dev Learning CSS
-Cheat Sheet + Layout + Real Project Starter
-========================================================== */
-
 /* -------------------------------------
-1. RESET: Make all elements behave
+1. RESET — Base for consistent layout
 -------------------------------------- */
+/* * = universal selector (targets every element) */
 * {
-  margin: 0;               /* removes default outside spacing */
-  padding: 0;              /* removes default inside spacing */
-  box-sizing: border-box; /* includes padding/border in width/height */
+  margin: 0;                  /* Outer space (like spacing between boxes) */
+  padding: 0;                 /* Inner space (inside the element's box) */
+  box-sizing: border-box;    /* Includes padding + border in total size */
 }
 
+
 /* -------------------------------------
-2. GLOBAL BASE STYLES
+2. DESIGN TOKENS — Variables (for re-use)
+-------------------------------------- */
+/* :root = top-level scope; where we define CSS custom properties */
+:root {
+  --font-base: 'Segoe UI', sans-serif;   /* Base font family */
+  --font-size: 16px;                     /* Root font size: 1rem = 16px */
+  --line-height: 1.5;                    /* Line spacing (unitless is relative) */
+
+  /* 🎨 Color Palette */
+  --color-bg: #f5f5f5;
+  --color-text: #222;
+  --color-accent: #ffa726;
+
+  --color-header-bg: #222;
+  --color-header-inner: #333;
+
+  --color-main-bg: #fff9c4;
+  --color-main-alt: #ffeca7;
+
+  --color-section: #ffecb3;
+  --color-about: #ffe082;
+  --color-projects: #ffe54f;
+
+  --color-project-card: #fff3e0;
+  --color-footer: blanchedalmond;
+}
+
+
+/* -------------------------------------
+3. BASE STYLES
 -------------------------------------- */
 html {
-  font-size: 16px;     /* 1rem = 16px */
-  font-family: sans-serif;
-  line-height: 1.5;    /* vertical spacing between lines */
+  font-size: var(--font-size);            /* Allows rem units to scale */
+  font-family: var(--font-base);          /* Sets default font */
+  line-height: var(--line-height);        /* Improves readability */
 }
 
 body {
-  background-color: #f5f5f5;  /* page bg color */
-  color: #222;                /* default text color */
-  padding: 2rem;              /* space around body content */
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 2rem;                          /* Adds breathing room */
 }
 
-/* 
-------------------------------------------------------------------------------------------
-📘 CSS SELECTORS — SYNTAX | MEANING | CLARITY / BEHAVIOR | EXAMPLE
--------------------------------------------------------------------------------------------
-
-========== UNIVERSAL, TYPE, CLASS, ID SELECTORS ========== 
- * *                     | All elements                        | Global reset or targeting all    | * {...}
- * a                     | All <a> elements                    | Inline by default                | a {...}
- * p                     | All <p> elements                    | Block by default                 | p {...}
- * .class                | Elements with this class            | Reusable & composable            | .card {...}
- * #id                   | Unique element by ID                | One per page                     | #header {...}
-
-========== RELATIONSHIP SELECTORS (STRUCTURE / HIERARCHY) ==========
- * div > p               | Direct child <p> of <div>           | 1 level deep only                | div > p {...}
- * div p                 | Any <p> inside <div>                | Includes nested <p>s             | div p {...}
- * h1 + p                | <p> immediately after <h1>          | Direct adjacent sibling          | h1 + p {...}
- * h2 ~ p                | All <p>s after <h2> (same parent)   | Any following siblings           | h2 ~ p {...}
- * main > section:last-child| Last <section> directly in <main>| Great for layout spacing         | main > section:last-child {...}
-
-========== ATTRIBUTE SELECTORS ==========
- * [attr]               | Element with the attribute           | Any value                        | [disabled] {...}
- * [attr="value"]       | Attribute matches exact value        | String-sensitive match           | [type="checkbox"] {...}
- * [attr^="val"]        | Attribute starts with value          | Begins with 'val'                | [href^="https"] {...}
- * [attr$=".pdf"]       | Attribute ends with value            | Useful for file types            | [href$=".pdf"] {...}
- * [attr*="mid"]        | Attribute contains value             | Partial match                    | [class*="nav"] {...}
-
-========== FORM STATE SELECTORS ==========
- * :checked             | Checked input (radio/checkbox)       | Paired with toggles/labels       | input:checked {...}
- * :disabled            | Disabled element                     | Same as [disabled]               | button:disabled {...}
- * :enabled             | Not disabled                         | Opposite of `:disabled`          | input:enabled {...}
- * :required            | Field marked required                | Useful for validation states     | input:required {...}
- * :optional            | Field with no `required` attr        | Often used for soft styling      | input:optional {...}
- * :focus               | Element in focus                     | Used in accessibility UX         | input:focus {...}
-
-========== STRUCTURAL PSEUDO-CLASSES ==========
- * :first-child         | First child of parent                | Must be very first, any tag      | p:first-child {...}
- * :last-child          | Last child of parent                 | Any element                      | p:last-child {...}
- * :nth-child(n)        | Nth child among **all** siblings     | Tag type ignored                 | li:nth-child(2) {...}
- * :nth-of-type(n)      | Nth child of same tag                | Ignores mismatched tags          | li:nth-of-type(2) {...}
- * :nth-child(odd)      | Odd-numbered siblings                | Starts at 1                      | tr:nth-child(odd) {...}
- * :not(selector)       | Excludes matching elements           | Filters things out cleanly       | a:not(.external) {...}
-
-========== STATE & INTERACTION SELECTORS ==========
- * a:hover              | Link in hover state                  | Needs mouse interaction          | a:hover {...}
- * input:focus          | Input currently focused              | Keyboard/tab friendly            | input:focus {...}
-
-========== RESPONSIVE DESIGN ==========
- * @media (max-width: 600px)| Viewport ≤ 600px                 | Mobile-first responsive design   | @media (max-width: 600px) {...}
-
-------------------------------------------------------------------------------------------
-*/
-                    
 
 /* -------------------------------------
-4. HEADER GROUP — Top of Page Layout
+4. LAYOUT HELPERS
+-------------------------------------- */
+.container {
+  /* Use on wrapping divs to center and pad contents */
+  max-width: 960px;                       /* Restrict max width for readability */
+  margin: 0 auto;                         /* Center horizontally */
+  padding: 0 1rem;                        /* Horizontal padding only */
+}
+
+
+/* -------------------------------------
+5. HEADER
 -------------------------------------- */
 header {
-  background-color: #222;  /* dark header */
+  background-color: var(--color-header-bg);
   color: white;
-  padding: 1rem;           /* inside space */
+  padding: 1rem;
   text-align: center;
   border-radius: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;                    /* Space before next element */
 }
 
 header .container {
-  background-color: #333;  /* child of header */
+  background-color: var(--color-header-inner);
   padding: 1rem;
   border-radius: 4px;
 }
 
+
 /* -------------------------------------
-5. MAIN CONTENT AREA — Center Page Block
+6. MAIN AREA
 -------------------------------------- */
 main {
-  background-color: #fff9c4;  /* soft yellow */
-  padding: 1rem;
+  background-color: var(--color-main-bg);
+  padding: 2rem 1rem;                     /* Top-bottom 2rem, sides 1rem */
   border-radius: 8px;
-  max-width: 100%;
 }
 
 main .container {
-  background-color: #ffeca7;  /* slightly lighter */
+  background-color: var(--color-main-alt);
   padding: 1rem;
+  border-radius: 6px;
 }
+
 
 /* -------------------------------------
-6. SECTIONS — Blocks Inside Main
+7. SECTIONS
 -------------------------------------- */
 section {
-  margin-bottom: 2rem;     /* space between sections */
-  padding: 1rem;           /* space inside section */
+  background-color: var(--color-section);
+  margin-bottom: 2rem;                   /* Space between sections */
+  padding: 1rem;
   border-radius: 6px;
-  background-color: #ffecb3;
+  text-align: center;
 }
 
-/* Special section themes */
+/* Targets the last <section> directly inside <main> */
+main > section:last-child {
+  margin-bottom: 0;                      /* Removes extra space below last section */
+}
+
 #about {
-  background-color: #ffe082;
+  background-color: var(--color-about);  /* Section-specific override */
 }
 
 #projects {
-  background-color: #ffe54f;
+  background-color: var(--color-projects);
 }
 
+
 /* -------------------------------------
-7. PROJECT CARDS — Items in #projects
+8. PROJECT CARDS
 -------------------------------------- */
 .project {
-  background-color: #fff3e0;
+  background-color: var(--color-project-card);
   padding: 0.5rem;
   margin-bottom: 1rem;
-  /* border-left: 4px solid #ffa726; */
+  border-left: 4px solid var(--color-accent);  /* Accent visual bar */
+  border-radius: 4px;
 }
 
-/* -------------------------------------
-4. FOOTER CONTENT AREA — Bottom of Page Layout
--------------------------------------- */
 
+/* -------------------------------------
+9. FOOTER
+-------------------------------------- */
 footer {
-  background-color:blanchedalmond;
+  background-color: var(--color-footer);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 2rem;                       /* Space above footer */
 }
 
+
 /* -------------------------------------
-8. TYPOGRAPHY — Headings & Text
+10. TYPOGRAPHY
 -------------------------------------- */
+/* Grouped heading styles */
 h1, h2, h3 {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
+/* Paragraph block spacing */
 p {
   margin-bottom: 1rem;
 }
 
+
 /* -------------------------------------
-9. LINKS — Styling + Feedback
+11. LINKS
 -------------------------------------- */
 a {
   color: #1e88e5;
-  text-decoration: none;
+  text-decoration: none;                  /* Removes underline */
 }
 
-a:hover {
-  text-decoration: underline;  /* underline when hovering */
+a:hover {                                 /* Hover state = interaction feedback */
+  text-decoration: underline;
 }
+
 
 /* -------------------------------------
-   8. UTILITY CLASSES (Tailwind-style, manual)
+12. UTILITIES
 -------------------------------------- */
-.text-center { text-align: center; }
+.text-center { text-align: center; }      /* Quick utility to center text */
+
+/* Spacing helpers (common system) */
 .mt-1 { margin-top: 0.5rem; }
 .mt-2 { margin-top: 1rem; }
 .mt-4 { margin-top: 2rem; }
 
-/* -------------------------------------
-10. BOX MODEL EXPLAINED
--------------------------------------- */
-/*
-margin  = space outside the element
-padding = space inside the element
-border  = visible edge (optional)
-box-sizing: border-box = keeps sizing predictable
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 2rem; }
 
-Example:
-[margin]
-  [border]
-    [padding]
-      CONTENT
+
+/* -------------------------------------
+13. NOTES & MINI REFERENCES (inline-friendly)
+-------------------------------------- */
+
+/* 
+  Syntax: .class = selects elements with this class
+          #id    = selects a unique element with this ID
+          *      = selects ALL elements
+
+  Example: main > section:last-child
+    → Only applies styles to the last <section> directly inside <main>
 */
 
-/* -------------------------------------
-11. UNITS — Know Your Sizes
--------------------------------------- */
-/*
-px   = fixed pixels
-rem  = relative to html font-size
-%    = percent of parent
-em   = relative to current element
-
-Tip: Use rem for consistent scaling
+/* 
+  Tip: margin is OUTSIDE space, padding is INSIDE space
+  box-sizing: border-box → includes border & padding in set width/height
 */
 
-/* -------------------------------------
-12. COMMON LAYOUT TRICKS
--------------------------------------- */
 /*
-.centered-box {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;     ← centers the box horizontally
-  padding: 1rem;
-}
+  Units:
+    - px = fixed size
+    - rem = relative to html font size (good for scaling)
+    - % = relative to parent
+    - em = relative to element
+
+  Recommend: rem for fonts/layout, px for borders/shadows
 */
 
-
-/* -------------------------------------
-   7. BUTTON STYLES
--------------------------------------- */
 /*
-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #333;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
-}
-*/
-
-/* -------------------------------------
-   9. ADVANCED: COMMENTED FOR FUTURE YOU 🔒
--------------------------------------- */
-
-/* 👇 RESPONSIVE DESIGN (start learning when you're comfy with layout basics)
-@media (max-width: 600px) {
-  body {
+  Centering layout:
+  .centered-box {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 1rem;
   }
-
-  .container {
-    max-width: 100%;
-  }
-}
-*/
-
-/* 👇 CSS VARIABLES (a.k.a custom properties — great for themes)
-:root {
-  --main-color: #4caf50;
-  --text-color: #222;
-}
-
-body {
-  color: var(--text-color);
-  background-color: var(--main-color);
-}
-*/
-
-/* 👇 FLEXBOX (start using when you want to arrange elements side-by-side)
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-*/
-
-/* 👇 GRID LAYOUT (use for full-page layout systems — learn after flexbox)
-.grid-2-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-*/
-
-/* 👇 ANIMATIONS (learn when you want to add polish)
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
-}
-*/
-
-/* 👇 DARK MODE (a more advanced real-world feature to learn later)
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #eee;
-  }
-}
-*/
-
-/* 👇 BEM NAMING CONVENTION (write CSS classes like real pros)
-.block__element--modifier { read about BEM when you want to write scalable CSS }
-*/
-
-/* 👇 SASS / SCSS (a language that compiles into CSS — don’t rush)
-$primary-color: #009688;
-
-body {
-  color: $primary-color;
-}
 */
