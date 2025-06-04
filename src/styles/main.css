@@ -14,7 +14,7 @@
 -------------------------------------- */
 /* :root = top-level scope; where we define CSS custom properties */
 :root {
-  --font-base: 'Segoe UI', sans-serif;   /* Base font family */
+  --font-base: "Bangers", sans-serif;   /* Base font family */
   --font-size: 16px;                     /* Root font size: 1rem = 16px */
   --line-height: 1.5;                    /* Line spacing (unitless is relative) */
 
