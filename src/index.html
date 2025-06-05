@@ -13,13 +13,16 @@ lang="en" = Declares language of the page for screen readers and SEO
   <!-- ===============================
      💡 LEVEL 1: Must-Have Metadata
   ================================ -->
-
+  
   <meta charset="UTF-8" />
   <!-- 
   Character encoding (UTF-8 = universal text support for languages + symbols)
   Prevents display errors (like �) with special characters or emojis
   -->
-
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- 🆕 Fallback for older IE — mostly legacy now -->
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- 
   Mobile-friendly layout:
@@ -27,147 +30,138 @@ lang="en" = Declares language of the page for screen readers and SEO
     initial-scale=1.0 = default zoom level
   Required for responsive design on phones/tablets
   -->
-
+  
   <meta name="description" content="Gugu's portfolio site" />
   <!-- 
   Helps with SEO: shown in search engine results
   -->
-
+  
+  <meta name="robots" content="index, follow" />
+  <!-- 🆕 SEO hint for crawlers: allow indexing + link following -->
+  
   <title>Gugu's Portfolio</title>
   <!-- 
   Sets the browser tab title
   Only one <title> per page
   -->
-
+  
   <!-- ===============================
      🎨 External Fonts & Stylesheets
   ================================ -->
-
+  
   <!-- 
   <link> = Load external resources like fonts, CSS, favicons, etc.
   rel = relationship of the linked file to this page
   -->
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <!-- 
-  rel="preconnect" = Instructs browser to make an early connection to this domain
-  Improves load time by preparing DNS + SSL handshake early
-  Other rel values: 
-    - stylesheet (load CSS)
-    - icon (favicon)
-    - preload (preload asset like image or font)
-    - manifest (PWA settings)
-    - dns-prefetch (cheaper alternative to preconnect)
+  rel="preconnect" = Instructs browser to start DNS/SSL for faster connection
   -->
-
+  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- 
-  crossorigin = Needed if fetching resources across domains securely
+  crossorigin = Needed if fetching fonts/assets across domains securely
   -->
-
+  
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
   <!-- 
   Loads the Bangers font from Google Fonts
-  rel="stylesheet" = means we're importing CSS
+  rel="stylesheet" = CSS is being loaded
   -->
-
+  
   <link rel="stylesheet" href="./styles/main.css" />
   <!-- 
-  Link to your external stylesheet
-  ./ = relative path (in "styles" folder next to this HTML file)
+  Loads custom styles from local file
+  ./ = current folder (styles/main.css)
   -->
+  
+  <!-- 🆕 Optional PWA support -->
+  <!-- <link rel="manifest" href="/site.webmanifest" /> -->
 </head>
 
 <body>
-
+  
   <!-- ===============================
      🔷 SEMANTIC LAYOUT STRUCTURE
   ================================ -->
-
+  
   <header>
     <!-- 
-    <header> = Top section (often includes site title, nav)
-    Should be used once per page
+    <header> = Top-level info container (site identity, sometimes nav)
+    Only one per page
     -->
-
+    
     <div class="container">
       <!-- 
-      .container = CSS helper class to limit width + center content
-      Common in most layout systems (Bootstrap, custom CSS)
+      .container = layout helper for max-width + horizontal centering
+      Common convention in many CSS systems
       -->
-
+      
       <h1>Hi, I'm Gugu (Andile) Dontsa</h1>
       <!-- 
-      h1 = Main page heading (only one h1 per page for accessibility)
+      h1 = Main page heading (1 per page for accessibility/SEO)
       -->
-
+      
       <p>Software Eng @WeThinkCode_</p>
-      <!-- 
-      <p> = Paragraph text for sub-description
-      -->
+      <!-- Paragraph description -->
     </div>
   </header>
-
+  
   <main>
     <!-- 
-    <main> = Primary page content
-    One per page, improves semantics + screen reader structure
+    <main> = Primary content of the page
+    Should be unique per page (for structure + screen readers)
     -->
-
+    
     <div class="container">
-      <!-- 
-      .container = Same layout helper used earlier (reusable)
-      -->
-
+      <!-- Shared layout utility wrapper -->
+      
       <!-- SECTION: About Me -->
       <section id="about">
         <!-- 
-        <section> = Semantic grouping of related content
-        id="about" = Target for links, JS, or styling (#about)
+        <section> = groups related content
+        id="about" = allows linking with <a href="#about">
         -->
-
+        
         <div class="container">
           <h2>About Me</h2>
           <!-- 
-          h2 = Section heading (next level after h1)
-          Use consistent heading hierarchy (h2 > h3 > h4…)
+          h2 = Section heading (after h1)
+          Use heading hierarchy for accessibility (h2 > h3 > etc.)
           -->
-
+          
           <p>Started with Scratch + LEGO Robotics...</p>
           <p>Focusing on ML, data pipelines, and community tech.</p>
         </div>
       </section>
-
+      
       <!-- SECTION: Projects -->
       <section id="projects">
         <h2>Projects</h2>
-
+        
         <!-- 🔹 Project Card 1 -->
         <div class="project">
           <!-- 
-          <div> = Generic block container (no semantic meaning)
-          class="project" = Used for styling reusable card layout
+          .project = custom card-style layout
+          <div> = non-semantic container
           -->
-
+          
           <h3>📊 Data Pipeline Project</h3>
-          <!-- 
-          h3 = Heading within a section/card
-          Next level after h2
-          -->
-
+          <!-- h3 = heading inside section/card -->
+          
           <p>Built with Python, Redpanda, YAML</p>
-
+          
           <a href="https://github.com/guguandiledontsa" target="_blank" rel="noopener noreferrer">
             GitHub Repo
           </a>
           <!-- 
-          <a> = Anchor tag (hyperlink)
-          href = URL to link to
-          target="_blank" = open in new tab
-          rel="noopener noreferrer" = security best practice when opening in new tab
+          <a> = hyperlink
+          target="_blank" = opens in new tab
+          rel="noopener noreferrer" = prevents tab hijack & preserves performance
           -->
         </div>
-
+        
         <!-- 🔹 Project Card 2 -->
         <div class="project">
           <h3>🌐 Portfolio Website</h3>
@@ -176,45 +170,43 @@ lang="en" = Declares language of the page for screen readers and SEO
       </section>
     </div>
   </main>
-
+  
   <!-- ===============================
      ⚫ FOOTER: Bottom Section
   ================================ -->
   <footer class="text-center mt-4">
     <!-- 
-    <footer> = Page bottom section (can include copyright)
-    class="text-center mt-4" = CSS classes for center text + margin top
+    <footer> = end-of-page content (can include legal, nav, contacts)
+    Utility classes: text-center (centered text), mt-4 (margin top)
     -->
-
+    
     <p>© 2025 Gugu Andile Dontsa</p>
   </footer>
-
+  
   <!-- ===============================
-     🔐 Future: Semantic Tags & Extras
+     💡 EXPERIMENTAL / ADVANCED ZONE
   ================================ -->
-
-  <!-- Examples for later use / deeper learning -->
-
-  <!-- <article>
-    <h3>Blog Post Title</h3>
-    <p>Real articles should go here, wrapped in an <article> tag.</p>
-  </article>
-
-  <aside>
-    <h4>Side Notes</h4>
-    <p>Use <aside> for tips, sidebars, or related content.</p>
-  </aside>
-
-  <img src="gugu.jpg" alt="Portrait of Gugu smiling" width="200" />
-
-  <nav aria-label="Main navigation">
+  
+  <!-- You can gradually activate these features -->
+  
+  <!-- <nav aria-label="Main navigation">
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
     </ul>
-  </nav>
-
-  <form action="#" method="POST">
+  </nav> -->
+  
+  <!-- <article>
+    <h3>Blog Post Title</h3>
+    <p>Real blog content goes here. Should be standalone content.</p>
+  </article> -->
+  
+  <!-- <aside>
+    <h4>Tip</h4>
+    <p>Use <aside> for related content (e.g., tips, sidebars)</p>
+  </aside> -->
+  
+  <!-- <form action="#" method="POST">
     <label for="email">Email me:</label>
     <input type="email" id="email" name="email" required />
 
@@ -222,25 +214,21 @@ lang="en" = Declares language of the page for screen readers and SEO
     <textarea id="msg" name="msg" rows="4"></textarea>
 
     <button type="submit">Send</button>
-  </form>
-
-  <time datetime="2025-06-02">June 2, 2025</time>
-
-  <address>
+  </form> -->
+  
+  <!-- <time datetime="2025-06-02">June 2, 2025</time> -->
+  <!-- Represents machine-readable date (for blog posts, timelines, etc.) -->
+  
+  <!-- <address>
     Gugu Andile Dontsa<br>
     Cape Town, South Africa
-  </address>
-
-  <meta property="og:title" content="Gugu's Portfolio" />
-  <meta property="og:image" content="/preview.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <script>
+  </address> -->
+  
+  <!-- <script>
+    // Logs a greeting to the browser console
     console.log("Welcome to Gugu's Portfolio!");
-  </script>
-
-  <my-custom-button></my-custom-button>
-  -->
-
+  </script> -->
+  
 </body>
+
 </html>
