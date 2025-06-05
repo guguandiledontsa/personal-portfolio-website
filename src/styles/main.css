@@ -1,30 +1,16 @@
-/* -------------------------------------
-1. RESET — Base for consistent layout
--------------------------------------- */
-/* 
-  * = universal selector (targets every element)
-  Used to strip default browser styles — important for consistency
-*/
+/* Reset: Strip browser defaults for consistency */
 * {
-  margin: 0;                  /* Removes default outer spacing */
-  padding: 0;                 /* Removes default inner spacing */
-  box-sizing: border-box;    /* Includes padding + border inside set width/height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Includes padding + border in width/height */
 }
 
-
-/* -------------------------------------
-2. DESIGN TOKENS — Variables (for re-use)
--------------------------------------- */
-/* 
-  :root = CSS pseudo-class for the document’s top-level element 
-  Used to define global variables (custom properties)
-*/
+/* Global design tokens (custom properties) */
 :root {
-  --font-base: "Bangers", sans-serif;   /* Font stack: custom font + fallback */
-  --font-size: 16px;                    /* Sets base for rem units (1rem = 16px) */
-  --line-height: 1.5;                   /* Unitless = scales with font-size */
+  --font-base: "Bangers", sans-serif; /* Font stack: custom font + fallback */
+  --font-size: 16px; /* Sets base for rem units */
+  --line-height: 1.5; /* Unitless = scales with font-size */
 
-  /* 🎨 Semantic Color Palette — makes design scalable & maintainable */
   --color-bg: #f5f5f5;
   --color-text: #222;
   --color-accent: #ffa726;
@@ -43,103 +29,79 @@
   --color-footer: blanchedalmond;
 }
 
-
-/* -------------------------------------
-3. BASE STYLES
--------------------------------------- */
+/* Type selector (html): affects the whole page */
 html {
-  font-size: var(--font-size);          /* Enables scalable layout via rem units */
-  font-family: var(--font-base);        /* Applies global font family */
-  line-height: var(--line-height);      /* Vertical spacing between lines */
+  font-size: var(--font-size);
+  font-family: var(--font-base);
+  line-height: var(--line-height);
 }
 
+/* Type selector (body): applies to visible content */
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  padding: 2rem;                        /* rem = root-relative unit; good for responsive spacing */
+  padding: 2rem;
 }
 
-
-/* -------------------------------------
-4. LAYOUT HELPERS
--------------------------------------- */
+/* Class selector: .container (used for layout max-width and centering) */
 .container {
-  max-width: 960px;                     /* px = fixed unit; used to limit content width */
-  margin: 0 auto;                       /* 
-    margin shorthand: top-bottom = 0, left-right = auto 
-    This centers the block horizontally (classic centering trick)
-  */
-  padding: 0 1rem;                      /* Horizontal padding only (top-bottom = 0) */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-
-/* -------------------------------------
-5. HEADER
--------------------------------------- */
+/* header = type selector */
 header {
   background-color: var(--color-header-bg);
   color: white;
   padding: 1rem;
   text-align: center;
-  border-radius: 8px;                  /* Rounds the corners */
-  margin-bottom: 1rem;                 /* Adds space below the header */
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-/* 
-  Combinator: 'header .container' = 
-  Descendant selector (selects .container anywhere *inside* header)
-  Other combinators:
-    - A > B  = direct child
-    - A + B  = next sibling
-    - A ~ B  = any following sibling
-*/
+/* Descendant selector: .container inside header */
 header .container {
   background-color: var(--color-header-inner);
   padding: 1rem;
   border-radius: 4px;
 }
 
-/* -------------------------------------
-6. MAIN AREA
--------------------------------------- */
 main {
   background-color: var(--color-main-bg);
-  padding: 2rem 1rem;                   /* Shorthand: top-bottom = 2rem, sides = 1rem */
+  padding: 2rem 1rem;
   border-radius: 8px;
 }
 
-/* 
-  main .container → descendant selector (container nested inside main)
-*/
+/* Descendant selector: .container inside main */
 main .container {
   background-color: var(--color-main-alt);
   padding: 1rem;
   border-radius: 6px;
 }
 
-
-/* -------------------------------------
-7. SECTIONS
--------------------------------------- */
+/* section = type selector */
 section {
   background-color: var(--color-section);
-  margin-bottom: 2rem;                 /* Vertical space between stacked sections */
+  margin-bottom: 2rem;
   padding: 1rem;
   border-radius: 6px;
   text-align: center;
 }
 
 /* 
+  Child + pseudo-class selector:
   main > section:last-child 
-    - > = direct child only
-    - :last-child = pseudo-class for the final element among siblings
+  > = direct child
+  :last-child = the final section inside main
 */
 main > section:last-child {
-  margin-bottom: 0;                    /* Removes last bottom gap to avoid extra space */
+  margin-bottom: 0;
 }
 
 /* 
-  #id selector → uniquely targets one element per page
+  ID selector = targets a single unique element
+  #about = About section
 */
 #about {
   background-color: var(--color-about);
@@ -149,156 +111,96 @@ main > section:last-child {
   background-color: var(--color-projects);
 }
 
-
-/* -------------------------------------
-8. PROJECT CARDS
--------------------------------------- */
+/* Class selector: .project = reusable layout block */
 .project {
   background-color: var(--color-project-card);
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border-left: 4px solid var(--color-accent);  /* Adds vertical accent bar */
+  border-left: 4px solid var(--color-accent); /* Accent bar */
   border-radius: 4px;
 }
 
-
-/* -------------------------------------
-9. FOOTER
--------------------------------------- */
+/* footer = type selector */
 footer {
   background-color: var(--color-footer);
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
-  margin-top: 2rem;                    /* Adds space between content and footer */
+  margin-top: 2rem;
 }
 
-
-/* -------------------------------------
-10. TYPOGRAPHY
--------------------------------------- */
+/* Group selector: h1, h2, h3 = apply same style to all */
 h1, h2, h3 {
-  font-weight: bold;                  /* Increases emphasis */
-  margin-bottom: 0.5rem;              /* Adds vertical spacing after headings */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
+/* p = type selector (paragraphs) */
 p {
-  margin-bottom: 1rem;                /* Consistent spacing between paragraphs */
-}
-
-
-/* -------------------------------------
-11. LINKS
--------------------------------------- */
-a {
-  color: #1e88e5;
-  text-decoration: none;              /* Removes underline by default */
+  margin-bottom: 1rem;
 }
 
 /* 
-  :hover = pseudo-class triggered on mouse hover
+  a = type selector for links
+  a:hover = pseudo-class (hover state)
 */
+a {
+  color: #1e88e5;
+  text-decoration: none;
+}
+
 a:hover {
   text-decoration: underline;
 }
 
+/* Optional extras below — comment out until needed */
 
-/* -------------------------------------
-12. UTILITIES
--------------------------------------- */
-.text-center {
-  text-align: center;                 /* Quick alignment utility */
+/*
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
-
-/* 
-  Spacing Utilities — atomic margin helpers (scale: 0.5rem, 1rem, 2rem)
-*/
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-4 { margin-top: 2rem; }
-
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-4 { margin-bottom: 2rem; }
-
-/* -------------------------------------
-12. UTILITIES (continued)
--------------------------------------- */
-
-/* 
-  .mt-1 = "margin-top: 0.5rem"
-  Utility naming convention:
-    mt = margin-top
-    mb = margin-bottom
-    [number] = scale step (0.5rem, 1rem, etc.)
-  Useful for quick layout tweaks in HTML without new CSS classes
-*/
-
-.mt-1 { margin-top: 0.5rem; }  /* Small spacing above element */
-.mt-2 { margin-top: 1rem; }    /* Medium spacing above */
-.mt-4 { margin-top: 2rem; }    /* Large spacing above */
-
-.mb-1 { margin-bottom: 0.5rem; }  /* Small space below */
-.mb-2 { margin-bottom: 1rem; }    /* Medium */
-.mb-4 { margin-bottom: 2rem; }    /* Large */
-
-/* ✳️ Tip: You can expand this system:
-   - mx-* for horizontal margins (left + right)
-   - my-* for vertical margins (top + bottom)
-   - pt-*, pb-* for padding variants, etc.
 */
 
 /*
--------------------------------------
-13. EXTRAS / FUTURE-READY FEATURES
---------------------------------------
- Responsive image helpers (optional) 
-img {
-  max-width: 100%;       /* Prevents image overflow on small screens 
-  height: auto;          /* Maintains aspect ratio 
-  display: block;        /* Removes bottom whitespace (inline by default
-}
-
-/* Debug helper — outline all elements 
 .debug * {
-  outline: 1px dashed red;  /* Helps visualize layout boxes 
+  outline: 1px dashed red;
 }
+*/
 
-/* Centering trick for blocks 
+/*
 .centered-box {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
 }
+*/
 
--------------------------------------
-🧠 REFERENCE: CSS SELECTOR TYPES
--------------------------------------- 
 /*
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 4px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+*/
+
+/* 
+🧠 CSS SELECTORS — Explained where used above, but here's a cheat sheet:
 1. Type selector:         div, p, h1
 2. Class selector:        .class-name
 3. ID selector:           #unique-id
 4. Descendant selector:   A B   (B inside A, any depth)
 5. Child selector:        A > B (B is direct child of A)
-6. Adjacent sibling:      A + B (B comes immediately after A)
+6. Adjacent sibling:      A + B (B immediately after A)
 7. General sibling:       A ~ B (B follows A, not necessarily directly)
 8. Pseudo-classes:        a:hover, li:first-child, input:checked
 9. Pseudo-elements:       p::after, h1::before
 10. Attribute selector:   input[type="text"], [data-role="tab"]
-*/
-
-/* Bonus — Custom scrollbar (optional aesthetic)
-body::-webkit-scrollbar {
-  width: 8px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--color-accent);
-  border-radius: 4px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #ddd;
-}
 */
