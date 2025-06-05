@@ -248,23 +248,23 @@ a:hover {
    - pt-*, pb-* for padding variants, etc.
 */
 
-/* -------------------------------------
+/*
+-------------------------------------
 13. EXTRAS / FUTURE-READY FEATURES
--------------------------------------- */
-
-/* Responsive image helpers (optional) */
+--------------------------------------
+ Responsive image helpers (optional) 
 img {
-  max-width: 100%;       /* Prevents image overflow on small screens */
-  height: auto;          /* Maintains aspect ratio */
-  display: block;        /* Removes bottom whitespace (inline by default) */
+  max-width: 100%;       /* Prevents image overflow on small screens 
+  height: auto;          /* Maintains aspect ratio 
+  display: block;        /* Removes bottom whitespace (inline by default
 }
 
-/* Debug helper — outline all elements */
+/* Debug helper — outline all elements 
 .debug * {
-  outline: 1px dashed red;  /* Helps visualize layout boxes */
+  outline: 1px dashed red;  /* Helps visualize layout boxes 
 }
 
-/* Centering trick for blocks */
+/* Centering trick for blocks 
 .centered-box {
   max-width: 800px;
   margin: 0 auto;
@@ -272,9 +272,9 @@ img {
   text-align: center;
 }
 
-/* -------------------------------------
+-------------------------------------
 🧠 REFERENCE: CSS SELECTOR TYPES
--------------------------------------- */
+-------------------------------------- 
 /*
 1. Type selector:         div, p, h1
 2. Class selector:        .class-name
@@ -288,7 +288,7 @@ img {
 10. Attribute selector:   input[type="text"], [data-role="tab"]
 */
 
-/* Bonus — Custom scrollbar (optional aesthetic) */
+/* Bonus — Custom scrollbar (optional aesthetic)
 body::-webkit-scrollbar {
   width: 8px;
 }
@@ -301,3 +301,4 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background-color: #ddd;
 }
+*/
