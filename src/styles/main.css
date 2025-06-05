@@ -1,24 +1,30 @@
 /* -------------------------------------
 1. RESET — Base for consistent layout
 -------------------------------------- */
-/* * = universal selector (targets every element on the page) */
+/* 
+  * = universal selector (targets every element)
+  Used to strip default browser styles — important for consistency
+*/
 * {
-  margin: 0;                  /* Outer space: margin (removes default spacing from all elements) */
-  padding: 0;                 /* Inner space: padding (same as above, resets) */
-  box-sizing: border-box;    /* Includes padding & border in total element size (instead of overflowing) */
+  margin: 0;                  /* Removes default outer spacing */
+  padding: 0;                 /* Removes default inner spacing */
+  box-sizing: border-box;    /* Includes padding + border inside set width/height */
 }
 
 
 /* -------------------------------------
 2. DESIGN TOKENS — Variables (for re-use)
 -------------------------------------- */
-/* :root = top-level pseudo-class (global scope for variables, like CSS variables config) */
+/* 
+  :root = CSS pseudo-class for the document’s top-level element 
+  Used to define global variables (custom properties)
+*/
 :root {
-  --font-base: "Bangers", sans-serif;   /* Fallback font stack: use Bangers, or sans-serif if unavailable */
-  --font-size: 16px;                    /* 1rem = 16px (sets base scale for rem units) */
-  --line-height: 1.5;                   /* Unitless = relative to font size (recommended for consistency) */
+  --font-base: "Bangers", sans-serif;   /* Font stack: custom font + fallback */
+  --font-size: 16px;                    /* Sets base for rem units (1rem = 16px) */
+  --line-height: 1.5;                   /* Unitless = scales with font-size */
 
-  /* 🎨 Color Palette — semantic color names for easy reuse */
+  /* 🎨 Semantic Color Palette — makes design scalable & maintainable */
   --color-bg: #f5f5f5;
   --color-text: #222;
   --color-accent: #ffa726;
@@ -42,15 +48,15 @@
 3. BASE STYLES
 -------------------------------------- */
 html {
-  font-size: var(--font-size);            /* Makes rem units scale from this base */
-  font-family: var(--font-base);          /* Applies global font */
-  line-height: var(--line-height);        /* Controls vertical spacing between lines */
+  font-size: var(--font-size);          /* Enables scalable layout via rem units */
+  font-family: var(--font-base);        /* Applies global font family */
+  line-height: var(--line-height);      /* Vertical spacing between lines */
 }
 
 body {
-  background-color: var(--color-bg);      /* Uses design token */
+  background-color: var(--color-bg);
   color: var(--color-text);
-  padding: 2rem;                          /* rem = relative unit based on html font-size (good for responsiveness) */
+  padding: 2rem;                        /* rem = root-relative unit; good for responsive spacing */
 }
 
 
@@ -58,9 +64,12 @@ body {
 4. LAYOUT HELPERS
 -------------------------------------- */
 .container {
-  max-width: 960px;                       /* Sets max width (px = fixed unit, good for max constraints) */
-  margin: 0 auto;                         /* Horizontal centering: 0 top-bottom, auto left-right */
-  padding: 0 1rem;                        /* Shorthand: top-bottom = 0, left-right = 1rem */
+  max-width: 960px;                     /* px = fixed unit; used to limit content width */
+  margin: 0 auto;                       /* 
+    margin shorthand: top-bottom = 0, left-right = auto 
+    This centers the block horizontally (classic centering trick)
+  */
+  padding: 0 1rem;                      /* Horizontal padding only (top-bottom = 0) */
 }
 
 
@@ -70,30 +79,38 @@ body {
 header {
   background-color: var(--color-header-bg);
   color: white;
-  padding: 1rem;                          /* Applies spacing inside header box */
-  text-align: center;                    /* Centers text horizontally */
-  border-radius: 8px;                    /* Rounded corners (px = fixed) */
-  margin-bottom: 1rem;                   /* Adds space below element */
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;                  /* Rounds the corners */
+  margin-bottom: 1rem;                 /* Adds space below the header */
 }
 
-/* Nested class selector: header .container = any .container inside a header */
+/* 
+  Combinator: 'header .container' = 
+  Descendant selector (selects .container anywhere *inside* header)
+  Other combinators:
+    - A > B  = direct child
+    - A + B  = next sibling
+    - A ~ B  = any following sibling
+*/
 header .container {
   background-color: var(--color-header-inner);
   padding: 1rem;
   border-radius: 4px;
 }
 
-
 /* -------------------------------------
 6. MAIN AREA
 -------------------------------------- */
 main {
   background-color: var(--color-main-bg);
-  padding: 2rem 1rem;                     /* Top-bottom = 2rem, left-right = 1rem */
+  padding: 2rem 1rem;                   /* Shorthand: top-bottom = 2rem, sides = 1rem */
   border-radius: 8px;
 }
 
-/* Descendant selector: .container inside main */
+/* 
+  main .container → descendant selector (container nested inside main)
+*/
 main .container {
   background-color: var(--color-main-alt);
   padding: 1rem;
@@ -106,19 +123,24 @@ main .container {
 -------------------------------------- */
 section {
   background-color: var(--color-section);
-  margin-bottom: 2rem;                   /* Adds vertical spacing between stacked sections */
+  margin-bottom: 2rem;                 /* Vertical space between stacked sections */
   padding: 1rem;
   border-radius: 6px;
   text-align: center;
 }
 
-/* > = direct child selector (not nested deeper) */
-/* :last-child = pseudo-class (targets the last <section> inside <main>) */
+/* 
+  main > section:last-child 
+    - > = direct child only
+    - :last-child = pseudo-class for the final element among siblings
+*/
 main > section:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0;                    /* Removes last bottom gap to avoid extra space */
 }
 
-/* #id selector = uniquely targets element with id="about" */
+/* 
+  #id selector → uniquely targets one element per page
+*/
 #about {
   background-color: var(--color-about);
 }
@@ -131,12 +153,11 @@ main > section:last-child {
 /* -------------------------------------
 8. PROJECT CARDS
 -------------------------------------- */
-/* .project = class selector (can be reused) */
 .project {
   background-color: var(--color-project-card);
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border-left: 4px solid var(--color-accent);  /* Visual accent bar on the left side */
+  border-left: 4px solid var(--color-accent);  /* Adds vertical accent bar */
   border-radius: 4px;
 }
 
@@ -149,7 +170,7 @@ footer {
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
-  margin-top: 2rem;                       /* Adds space before the footer */
+  margin-top: 2rem;                    /* Adds space between content and footer */
 }
 
 
@@ -157,12 +178,12 @@ footer {
 10. TYPOGRAPHY
 -------------------------------------- */
 h1, h2, h3 {
-  font-weight: bold;                      /* Bolder font */
-  margin-bottom: 0.5rem;                  /* Spacing after headings */
+  font-weight: bold;                  /* Increases emphasis */
+  margin-bottom: 0.5rem;              /* Adds vertical spacing after headings */
 }
 
 p {
-  margin-bottom: 1rem;                    /* Paragraph spacing (visual rhythm) */
+  margin-bottom: 1rem;                /* Consistent spacing between paragraphs */
 }
 
 
@@ -171,10 +192,13 @@ p {
 -------------------------------------- */
 a {
   color: #1e88e5;
-  text-decoration: none;                  /* Removes default underline */
+  text-decoration: none;              /* Removes underline by default */
 }
 
-a:hover {                                 /* :hover = state selector (on interaction) */
+/* 
+  :hover = pseudo-class triggered on mouse hover
+*/
+a:hover {
   text-decoration: underline;
 }
 
@@ -182,10 +206,14 @@ a:hover {                                 /* :hover = state selector (on interac
 /* -------------------------------------
 12. UTILITIES
 -------------------------------------- */
-.text-center { text-align: center; }      /* Utility class: quick reuse */
+.text-center {
+  text-align: center;                 /* Quick alignment utility */
+}
 
-/* Margin spacing helpers (e.g., utility spacing system) */
-.mt-1 { margin-top: 0.5rem; }             /* mt = margin-top */
+/* 
+  Spacing Utilities — atomic margin helpers (scale: 0.5rem, 1rem, 2rem)
+*/
+.mt-1 { margin-top: 0.5rem; }
 .mt-2 { margin-top: 1rem; }
 .mt-4 { margin-top: 2rem; }
 
