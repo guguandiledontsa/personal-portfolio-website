@@ -1,233 +1,133 @@
 <!DOCTYPE html>
 <!-- 
-🧠 Declares this is an HTML5 document
-Must be the first line in every HTML file
+  Declares this is an HTML5 document
+  Must be the first line in every HTML file
 -->
-
 <html lang="en">
 <!-- 
-lang="en" = Declares language of the page for screen readers and SEO
+  lang="en" = Declares the language of the page for screen readers and SEO
 -->
 
 <head>
-  <!-- ===============================
-     💡 LEVEL 1: Must-Have Metadata
-  ================================ -->
-  
   <meta charset="UTF-8" />
   <!-- 
-  Character encoding (UTF-8 = universal text support for languages + symbols)
-  Prevents display errors (like �) with special characters or emojis
+    Character encoding (UTF-8 = universal text support for languages + symbols)
+    Prevents display errors (like �) with special characters or emojis
   -->
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- 🆕 Fallback for older IE — mostly legacy now -->
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- 
-  Mobile-friendly layout:
+    Mobile-friendly layout:
     width=device-width = use device's full screen width
     initial-scale=1.0 = default zoom level
-  Required for responsive design on phones/tablets
+    Required for responsive design on phones/tablets
   -->
   
   <meta name="description" content="Gugu's portfolio site" />
   <!-- 
-  Helps with SEO: shown in search engine results
+    Helps with SEO: appears in search engine previews
   -->
-  
-  <meta name="robots" content="index, follow" />
-  <!-- 🆕 SEO hint for crawlers: allow indexing + link following -->
   
   <title>Gugu's Portfolio</title>
   <!-- 
-  Sets the browser tab title
-  Only one <title> per page
+    Sets the browser tab title
   -->
   
-  <!-- ===============================
-     🎨 External Fonts & Stylesheets
-  ================================ -->
-  
-  <!-- 
-  <link> = Load external resources like fonts, CSS, favicons, etc.
-  rel = relationship of the linked file to this page
-  -->
-  
+  <!-- Load Fonts and Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <!-- 
-  rel="preconnect" = Instructs browser to start DNS/SSL for faster connection
+    rel="preconnect" = Browser starts DNS + SSL for this domain early (faster loading)
   -->
   
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- 
-  crossorigin = Needed if fetching fonts/assets across domains securely
+    crossorigin = Needed if fetching fonts/assets across domains securely
   -->
   
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
   <!-- 
-  Loads the Bangers font from Google Fonts
-  rel="stylesheet" = CSS is being loaded
+    Loads the Bangers font from Google Fonts
   -->
   
   <link rel="stylesheet" href="./styles/main.css" />
   <!-- 
-  Loads custom styles from local file
-  ./ = current folder (styles/main.css)
+    Loads custom CSS styles from a local file
+    ./ = current folder (relative path)
   -->
-  
-  <!-- 🆕 Optional PWA support -->
-  <!-- <link rel="manifest" href="/site.webmanifest" /> -->
 </head>
 
 <body>
   
-  <!-- ===============================
-     🔷 SEMANTIC LAYOUT STRUCTURE
-  ================================ -->
-  
   <header>
     <!-- 
-    <header> = Top-level info container (site identity, sometimes nav)
-    Only one per page
+      <header> = Top-of-page content (branding, identity, navigation)
+      Only one <header> per page
     -->
-    
     <div class="container">
       <!-- 
-      .container = layout helper for max-width + horizontal centering
-      Common convention in many CSS systems
+        .container = layout utility class for max-width and horizontal centering
       -->
-      
       <h1>Hi, I'm Gugu (Andile) Dontsa</h1>
-      <!-- 
-      h1 = Main page heading (1 per page for accessibility/SEO)
-      -->
-      
       <p>Software Eng @WeThinkCode_</p>
-      <!-- Paragraph description -->
     </div>
   </header>
   
   <main>
     <!-- 
-    <main> = Primary content of the page
-    Should be unique per page (for structure + screen readers)
+      <main> = Primary page content (1 per page)
+      Helps screen readers and browsers understand page structure
     -->
-    
     <div class="container">
-      <!-- Shared layout utility wrapper -->
       
-      <!-- SECTION: About Me -->
       <section id="about">
         <!-- 
-        <section> = groups related content
-        id="about" = allows linking with <a href="#about">
+          <section> = Groups related content (like About Me)
+          id="about" allows link anchors like <a href="#about">
         -->
-        
         <div class="container">
           <h2>About Me</h2>
-          <!-- 
-          h2 = Section heading (after h1)
-          Use heading hierarchy for accessibility (h2 > h3 > etc.)
-          -->
-          
           <p>Started with Scratch + LEGO Robotics...</p>
           <p>Focusing on ML, data pipelines, and community tech.</p>
         </div>
       </section>
       
-      <!-- SECTION: Projects -->
       <section id="projects">
+        <!-- 
+          This section contains project showcases
+        -->
         <h2>Projects</h2>
         
-        <!-- 🔹 Project Card 1 -->
         <div class="project">
           <!-- 
-          .project = custom card-style layout
-          <div> = non-semantic container
+            .project = Reusable card-style layout for showcasing work
           -->
-          
           <h3>📊 Data Pipeline Project</h3>
-          <!-- h3 = heading inside section/card -->
-          
           <p>Built with Python, Redpanda, YAML</p>
-          
           <a href="https://github.com/guguandiledontsa" target="_blank" rel="noopener noreferrer">
             GitHub Repo
           </a>
           <!-- 
-          <a> = hyperlink
-          target="_blank" = opens in new tab
-          rel="noopener noreferrer" = prevents tab hijack & preserves performance
+            target="_blank" = Opens link in new tab
+            rel="noopener noreferrer" = Improves security and performance when opening new tabs
           -->
         </div>
         
-        <!-- 🔹 Project Card 2 -->
         <div class="project">
           <h3>🌐 Portfolio Website</h3>
           <p>This site. HTML + CSS + JS</p>
         </div>
       </section>
+      
     </div>
   </main>
   
-  <!-- ===============================
-     ⚫ FOOTER: Bottom Section
-  ================================ -->
   <footer class="text-center mt-4">
     <!-- 
-    <footer> = end-of-page content (can include legal, nav, contacts)
-    Utility classes: text-center (centered text), mt-4 (margin top)
+      <footer> = End-of-page content (legal, contact info, copyright)
+      Only one <footer> per page
     -->
-    
     <p>© 2025 Gugu Andile Dontsa</p>
   </footer>
-  
-  <!-- ===============================
-     💡 EXPERIMENTAL / ADVANCED ZONE
-  ================================ -->
-  
-  <!-- You can gradually activate these features -->
-  
-  <!-- <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-    </ul>
-  </nav> -->
-  
-  <!-- <article>
-    <h3>Blog Post Title</h3>
-    <p>Real blog content goes here. Should be standalone content.</p>
-  </article> -->
-  
-  <!-- <aside>
-    <h4>Tip</h4>
-    <p>Use <aside> for related content (e.g., tips, sidebars)</p>
-  </aside> -->
-  
-  <!-- <form action="#" method="POST">
-    <label for="email">Email me:</label>
-    <input type="email" id="email" name="email" required />
-
-    <label for="msg">Message:</label>
-    <textarea id="msg" name="msg" rows="4"></textarea>
-
-    <button type="submit">Send</button>
-  </form> -->
-  
-  <!-- <time datetime="2025-06-02">June 2, 2025</time> -->
-  <!-- Represents machine-readable date (for blog posts, timelines, etc.) -->
-  
-  <!-- <address>
-    Gugu Andile Dontsa<br>
-    Cape Town, South Africa
-  </address> -->
-  
-  <!-- <script>
-    // Logs a greeting to the browser console
-    console.log("Welcome to Gugu's Portfolio!");
-  </script> -->
   
 </body>
 
