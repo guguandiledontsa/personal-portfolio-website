@@ -23,12 +23,12 @@
     Required for responsive design on phones/tablets
   -->
   
-  <meta name="description" content="Gugu's portfolio site" />
+  <meta name="description" content="Portfolio website" />
   <!-- 
     Helps with SEO: appears in search engine previews
   -->
   
-  <title>Gugu's Portfolio</title>
+  <title>My Portfolio</title>
   <!-- 
     Sets the browser tab title
   -->
@@ -58,75 +58,93 @@
 
 <body>
   
-  <header>
+  <!-- BLOCK: header -->
+  <header class="header">
     <!-- 
       <header> = Top-of-page content (branding, identity, navigation)
       Only one <header> per page
     -->
-    <div class="container">
+    <div class="header__container layout__container">
       <!-- 
-        .container = layout utility class for max-width and horizontal centering
+        .header__container = Wrapper inside header for structured layout
+        .layout__container = Utility class for layout alignment
       -->
-      <h1>Hi, I'm Gugu (Andile) Dontsa</h1>
-      <p>Software Eng @WeThinkCode_</p>
+      <h1 class="header__title">My Portfolio</h1>
+      <!-- 
+        .header__title = Title inside the header block
+      -->
+      <p>portfolio bio</p>
     </div>
   </header>
   
-  <main>
+  <!-- BLOCK: main -->
+  <main class="main">
     <!-- 
       <main> = Primary page content (1 per page)
       Helps screen readers and browsers understand page structure
     -->
-    <div class="container">
+    <div class="main__container layout__container">
+      <!-- 
+        .main__container = Wrapper for main content using BEM and layout utility
+      -->
       
-      <section id="about">
+      <!-- BLOCK: section with MODIFIER: section--about -->
+      <section class="section section--about">
         <!-- 
-          <section> = Groups related content (like About Me)
-          id="about" allows link anchors like <a href="#about">
+          .section = Generic content block
+          .section--about = Modifier to style 'About Me' section specifically
         -->
-        <div class="container">
-          <h2>About Me</h2>
-          <p>Started with Scratch + LEGO Robotics...</p>
-          <p>Focusing on ML, data pipelines, and community tech.</p>
-        </div>
+        <h2 class="section__title">About Me</h2>
+        <!--
+        <section> = Groups related content (like About Me)
+        id="about" allows link anchors like <a href="#about">
+        .section__title = Consistent styling for all section titles
+        -->
+        <p>about me text goes somewhere here</p>
       </section>
       
-      <section id="projects">
+      <!-- BLOCK: section with MODIFIER: section--projects -->
+      <section class="section section--projects">
         <!-- 
-          This section contains project showcases
+          .section--projects = Modifier to style project section uniquely
         -->
-        <h2>Projects</h2>
+        <h2 class="section__title">Projects</h2>
         
-        <div class="project">
+        <!-- BLOCK: project-card -->
+        <div class="project-card">
           <!-- 
-            .project = Reusable card-style layout for showcasing work
+            .project-card = Card layout to feature a project
           -->
-          <h3>📊 Data Pipeline Project</h3>
-          <p>Built with Python, Redpanda, YAML</p>
-          <a href="https://github.com/guguandiledontsa" target="_blank" rel="noopener noreferrer">
-            GitHub Repo
-          </a>
+          <h3 class="project-card__title">Project One</h3>
           <!-- 
-            target="_blank" = Opens link in new tab
-            rel="noopener noreferrer" = Improves security and performance when opening new tabs
+            .project-card__title = Title of the project card
+          -->
+          <p class="project-card__description">An example project description .</p>
+          <!-- 
+            .project-card__description = Project details/summary
+          -->
+          <button class="button button--primary">View Project</button>
+          <!-- 
+            .button = Reusable button block
+            .button--primary = Modifier for primary styling
           -->
         </div>
         
-        <div class="project">
-          <h3>🌐 Portfolio Website</h3>
-          <p>This site. HTML + CSS + JS</p>
-        </div>
       </section>
       
     </div>
   </main>
   
-  <footer class="text-center mt-4">
+  <!-- BLOCK: footer -->
+  <footer class="footer">
     <!-- 
       <footer> = End-of-page content (legal, contact info, copyright)
       Only one <footer> per page
     -->
-    <p>© 2025 Gugu Andile Dontsa</p>
+    <p class="footer__text">© 2025 Your Name</p>
+    <!-- 
+      .footer__text = Text inside the footer block
+    -->
   </footer>
   
 </body>
