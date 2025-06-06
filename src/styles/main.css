@@ -183,7 +183,6 @@ a:hover {
 
 /*
 img {
-  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -196,35 +195,16 @@ img {
 */
 
 /*
-.centered-box {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
-}
-*/
-
-/*
 body::-webkit-scrollbar {
-  width: 8px;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: var(--color-accent);
-  border-radius: 4px;
 }
 body::-webkit-scrollbar-track {
-  background-color: #ddd;
-}
 */
 
 /* 
 🧠 CSS SELECTORS — cheat sheet (referenced inline above)
 ---------------------------------------------------------
-1. Type selector:         div, p, h1
-2. Class selector:        .class-name
-3. ID selector:           #unique-id
-4. Descendant selector:   A B   (B inside A, any depth)
-5. Child selector:        A > B (B is direct child of A)
 6. Adjacent sibling:      A + B (B immediately after A)
 7. General sibling:       A ~ B (B follows A, not necessarily directly)
 8. Pseudo-classes:        a:hover, li:first-child, input:checked
