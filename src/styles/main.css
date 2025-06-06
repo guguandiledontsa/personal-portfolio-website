@@ -1,65 +1,71 @@
-/* Reset: Strip browser defaults for consistency */
+/* ========== CSS RESET ========== */
+/* Applies to all elements. Resets spacing and box sizing for consistency */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Includes padding + border in width/height */
+  box-sizing: border-box; /* Includes padding and border in width/height */
 }
 
-/* 
-  :root = pseudo-class for the document’s top-level element 
-  Used to define global variables (aka custom properties)
+/* ========== ROOT VARIABLES ========== */
+/*
+  CSS custom properties (aka variables) are defined using:
+    --name: value;
+  Use them with var(--name)
+  They're great for consistent themes: fonts, colors, spacing, etc.
 */
 :root {
-  /* Font stack: custom font + fallback */
   --font-base: "Bangers", sans-serif;
+  --font-size: 16px;      /* Base size for rem units */
+  --line-height: 1.5;     /* Unitless = scales with font size */
 
-  --font-size: 16px;    /* Sets base for rem units (1rem = 16px) */
-  --line-height: 1.5;   /* Unitless = scales with font-size */
-
-  /* Semantic color system for easier reuse */
+  /* Theme colors */
   --color-bg: #f5f5f5;
   --color-text: #222;
   --color-accent: #ffa726;
-
   --color-header-bg: #222;
   --color-header-inner: #333;
-
   --color-main-bg: #fff9c4;
   --color-main-alt: #ffeca7;
-
   --color-section: #ffecb3;
   --color-about: #ffe082;
   --color-projects: #ffe54f;
-
   --color-project-card: #fff3e0;
   --color-footer: blanchedalmond;
 }
 
-/* Type selector: html (affects the root document element) */
+/* ========== BASE STYLES ========== */
+/*
+  Type selectors (like html, body) apply to those exact elements.
+  Set overall font, spacing, and layout behavior.
+*/
 html {
-  font-size: var(--font-size);
-  font-family: var(--font-base);
-  line-height: var(--line-height); /* Unitless = scales with font-size */
+  font-size: var(--font-size);         /* 1rem = 16px */
+  font-family: var(--font-base);       /* Use custom or fallback font */
+  line-height: var(--line-height);     /* Line height = 1.5x font size */
 }
 
-/* Type selector: body */
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  padding: 2rem;
+  padding: 2rem;                        /* Adds space around page content */
 }
 
-/* 
-  Class selector: .container
-  Used to center and constrain layout width
+/* ========== LAYOUT ========== */
+/*
+  .container = class selector (matches class="container")
+  Often used to center content and limit its width
 */
 .container {
-  max-width: 960px;          /* px = fixed unit; used to limit content width */
-  margin: 0 auto;            /* margin shorthand: top-bottom = 0, left-right = auto */
+  max-width: 960px;
+  margin: 0 auto;                      /* Auto left/right = horizontal center */
   padding: 0 1rem;
 }
 
-/* Type selector: header */
+/* ========== HEADER ========== */
+/*
+  <header> = type selector (matches <header> tag)
+  header .container = descendant selector (matches .container inside header)
+*/
 header {
   background-color: var(--color-header-bg);
   color: white;
@@ -69,20 +75,13 @@ header {
   margin-bottom: 1rem;
 }
 
-/* 
-  Combinator: 'header .container' = 
-  Descendant selector (selects .container anywhere *inside* header)
-  Other combinators:
-    - A > B  = direct child
-    - A + B  = next sibling
-    - A ~ B  = any following sibling
-*/
 header .container {
   background-color: var(--color-header-inner);
   padding: 1rem;
   border-radius: 4px;
 }
 
+/* ========== MAIN CONTENT AREA ========== */
 main {
   background-color: var(--color-main-bg);
   padding: 2rem 1rem;
@@ -95,6 +94,11 @@ main .container {
   border-radius: 6px;
 }
 
+/* ========== SECTION STYLES ========== */
+/*
+  section = type selector for <section> tags
+  Used for general layout blocks like About, Projects, etc.
+*/
 section {
   background-color: var(--color-section);
   margin-bottom: 2rem;
@@ -103,18 +107,19 @@ section {
   text-align: center;
 }
 
-/* 
-  main > section:last-child 
-    - > = child combinator (only immediate child)
-    - :last-child = pseudo-class for the final sibling
+/*
+  main > section:last-child
+    > = child combinator (selects only direct children)
+    :last-child = pseudo-class (selects last child of parent)
 */
 main > section:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Removes bottom margin from the last section */
 }
 
-/* 
-  #about = ID selector
-  IDs should only be used once per page
+/* ========== SPECIFIC SECTIONS BY ID ========== */
+/*
+  #id = ID selector (matches element with that id)
+  Use only once per page
 */
 #about {
   background-color: var(--color-about);
@@ -124,15 +129,19 @@ main > section:last-child {
   background-color: var(--color-projects);
 }
 
-/* Class selector: .project */
+/* ========== PROJECT CARDS ========== */
+/*
+  .project = reusable card-style layout block
+*/
 .project {
   background-color: var(--color-project-card);
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border-left: 4px solid var(--color-accent); /* Decorative accent line */
+  border-left: 4px solid var(--color-accent); /* Visual accent line */
   border-radius: 4px;
 }
 
+/* ========== FOOTER ========== */
 footer {
   background-color: var(--color-footer);
   padding: 1rem;
@@ -141,20 +150,24 @@ footer {
   margin-top: 2rem;
 }
 
-/* Group selector: applies to all heading levels */
+/* ========== TEXT STYLES ========== */
+/*
+  Group selector: targets h1, h2, h3
+  font-weight: controls thickness (normal, bold, or numbers 100–900)
+*/
 h1, h2, h3 {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-/* Paragraph spacing */
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Adds vertical rhythm between paragraphs */
 }
 
-/* 
-  a = type selector (anchor tag)
-  a:hover = pseudo-class triggered on mouse hover
+/* ========== LINKS ========== */
+/*
+  a = anchor (link) tag
+  a:hover = pseudo-class (applies only on mouse hover)
 */
 a {
   color: #1e88e5;
@@ -164,6 +177,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 
 /* Optional extras — can uncomment if needed later */
 
