@@ -1,24 +1,16 @@
 /* ========== CSS RESET ========== */
-/* Applies to all elements. Resets spacing and box sizing for consistency */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Includes padding and border in width/height */
+  box-sizing: border-box;
 }
 
 /* ========== ROOT VARIABLES ========== */
-/*
-  CSS custom properties (aka variables) are defined using:
-    --name: value;
-  Use them with var(--name)
-  They're great for consistent themes: fonts, colors, spacing, etc.
-*/
 :root {
   --font-base: "Bangers", sans-serif;
-  --font-size: 16px;      /* Base size for rem units */
-  --line-height: 1.5;     /* Unitless = scales with font size */
+  --font-size: 16px;
+  --line-height: 1.5;
 
-  /* Theme colors */
   --color-bg: #f5f5f5;
   --color-text: #222;
   --color-accent: #ffa726;
@@ -31,96 +23,79 @@
   --color-projects: #ffe54f;
   --color-project-card: #fff3e0;
   --color-footer: blanchedalmond;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
 }
 
 /* ========== BASE STYLES ========== */
-/*
-  Type selectors (like html, body) apply to those exact elements.
-  Set overall font, spacing, and layout behavior.
-*/
 html {
-  font-size: var(--font-size);         /* 1rem = 16px */
-  font-family: var(--font-base);       /* Use custom or fallback font */
-  line-height: var(--line-height);     /* Line height = 1.5x font size */
+  font-size: var(--font-size);
+  font-family: var(--font-base);
+  line-height: var(--line-height);
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  padding: 2rem;                        /* Adds space around page content */
+  padding: 2rem;
 }
 
 /* ========== LAYOUT ========== */
-/*
-  .container = class selector (matches class="container")
-  Often used to center content and limit its width
-*/
-.container {
+.layout__container {
   max-width: 960px;
-  margin: 0 auto;                      /* Auto left/right = horizontal center */
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
 /* ========== HEADER ========== */
-/*
-  <header> = type selector (matches <header> tag)
-  header .container = descendant selector (matches .container inside header)
-*/
-header {
+.header {
   background-color: var(--color-header-bg);
   color: white;
   padding: 1rem;
   text-align: center;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   margin-bottom: 1rem;
 }
 
-header .container {
+.header__container {
   background-color: var(--color-header-inner);
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.header__title {
+  font-size: 2rem;
+}
+
+.header__subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
 }
 
 /* ========== MAIN CONTENT AREA ========== */
-main {
+.main {
   background-color: var(--color-main-bg);
   padding: 2rem 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
 }
 
-main .container {
+.main__container {
   background-color: var(--color-main-alt);
   padding: 1rem;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
-/* ========== SECTION STYLES ========== */
-/*
-  section = type selector for <section> tags
-  Used for general layout blocks like About, Projects, etc.
-*/
-section {
+/* ========== SECTIONS ========== */
+.section {
   background-color: var(--color-section);
   margin-bottom: 2rem;
   padding: 1rem;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   text-align: center;
 }
 
-/*
-  main > section:last-child
-    > = child combinator (selects only direct children)
-    :last-child = pseudo-class (selects last child of parent)
-*/
-main > section:last-child {
-  margin-bottom: 0; /* Removes bottom margin from the last section */
-}
-
-/* ========== SPECIFIC SECTIONS BY ID ========== */
-/*
-  #id = ID selector (matches element with that id)
-  Use only once per page
-*/
 #about {
   background-color: var(--color-about);
 }
@@ -129,46 +104,81 @@ main > section:last-child {
   background-color: var(--color-projects);
 }
 
-/* ========== PROJECT CARDS ========== */
-/*
-  .project = reusable card-style layout block
-*/
-.project {
-  background-color: var(--color-project-card);
-  padding: 0.5rem;
+.section__title {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  border-left: 4px solid var(--color-accent); /* Visual accent line */
-  border-radius: 4px;
+}
+
+.section__text {
+  font-size: 1rem;
+}
+
+/* ========== PROJECT CARD ========== */
+.project-card {
+  background-color: var(--color-project-card);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 6px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+.project-card__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card__description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ========== BUTTON ========== */
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button--primary {
+  background-color: var(--color-accent);
+  color: #000;
+}
+
+.button--primary:hover {
+  background-color: #ff9800;
 }
 
 /* ========== FOOTER ========== */
-footer {
+.footer {
   background-color: var(--color-footer);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   text-align: center;
   margin-top: 2rem;
 }
 
-/* ========== TEXT STYLES ========== */
-/*
-  Group selector: targets h1, h2, h3
-  font-weight: controls thickness (normal, bold, or numbers 100–900)
-*/
+.footer__text {
+  font-size: 0.875rem;
+}
+
+/* ========== TEXT ELEMENTS ========== */
 h1, h2, h3 {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 p {
-  margin-bottom: 1rem; /* Adds vertical rhythm between paragraphs */
+  margin-bottom: 1rem;
 }
 
 /* ========== LINKS ========== */
-/*
-  a = anchor (link) tag
-  a:hover = pseudo-class (applies only on mouse hover)
-*/
 a {
   color: #1e88e5;
   text-decoration: none;
@@ -177,37 +187,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-
-/* Optional extras — can uncomment if needed later */
-
-/*
-img {
-  height: auto;
-  display: block;
-}
-*/
-
-/*
-.debug * {
-  outline: 1px dashed red;
-}
-*/
-
-/*
-body::-webkit-scrollbar {
-}
-body::-webkit-scrollbar-thumb {
-}
-body::-webkit-scrollbar-track {
-*/
-
-/* 
-🧠 CSS SELECTORS — cheat sheet (referenced inline above)
----------------------------------------------------------
-6. Adjacent sibling:      A + B (B immediately after A)
-7. General sibling:       A ~ B (B follows A, not necessarily directly)
-8. Pseudo-classes:        a:hover, li:first-child, input:checked
-9. Pseudo-elements:       p::after, h1::before
-10. Attribute selector:   input[type="text"], [data-role="tab"]
-*/
