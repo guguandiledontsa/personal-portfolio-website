@@ -1,4 +1,5 @@
 /* ========== CSS RESET ========== */
+/* Applies to all elements. Resets spacing and box sizing for consistency */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,12 @@
 }
 
 /* ========== ROOT VARIABLES ========== */
+/*
+  CSS custom properties (aka variables) are defined using:
+    --name: value;
+  Use them with var(--name)
+  They're great for consistent themes: fonts, colors, spacing, etc.
+*/
 :root {
   --font-base: "Bangers", sans-serif;
   --font-size: 16px;
@@ -30,12 +37,15 @@
 }
 
 /* ========== BASE STYLES ========== */
+/*
+  Type selectors (like html, body) apply to those exact elements.
+  Set overall font, spacing, and layout behavior.
+*/
 html {
   font-size: var(--font-size);
   font-family: var(--font-base);
   line-height: var(--line-height);
 }
-
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -43,6 +53,10 @@ body {
 }
 
 /* ========== LAYOUT ========== */
+/*
+  .container = class selector (matches class="container")
+  Often used to center content and limit its width
+*/
 .layout__container {
   max-width: 960px;
   margin: 0 auto;
@@ -50,6 +64,10 @@ body {
 }
 
 /* ========== HEADER ========== */
+/*
+  <header> = type selector (matches <header> tag)
+  header .container = descendant selector (matches .container inside header)
+*/
 .header {
   background-color: var(--color-header-bg);
   color: white;
@@ -58,29 +76,30 @@ body {
   border-radius: var(--radius-lg);
   margin-bottom: 1rem;
 }
-
 .header__container {
   background-color: var(--color-header-inner);
   padding: 1rem;
   border-radius: var(--radius-sm);
 }
-
 .header__title {
   font-size: 2rem;
 }
-
 .header__subtitle {
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
 
 /* ========== MAIN CONTENT AREA ========== */
+/*
+  main > section:last-child
+    > = child combinator (selects only direct children)
+    :last-child = pseudo-class (selects last child of parent)
+*/
 .main {
   background-color: var(--color-main-bg);
   padding: 2rem 1rem;
   border-radius: var(--radius-lg);
 }
-
 .main__container {
   background-color: var(--color-main-alt);
   padding: 1rem;
@@ -88,6 +107,10 @@ body {
 }
 
 /* ========== SECTIONS ========== */
+/*
+  section = type selector for <section> tags
+  Used for general layout blocks like About, Projects, etc.
+*/
 .section {
   background-color: var(--color-section);
   margin-bottom: 2rem;
@@ -96,10 +119,13 @@ body {
   text-align: center;
 }
 
+/*
+  #id = ID selector (matches element with that id)
+  Use only once per page
+*/
 #about {
   background-color: var(--color-about);
 }
-
 #projects {
   background-color: var(--color-projects);
 }
@@ -108,7 +134,6 @@ body {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .section__text {
   font-size: 1rem;
 }
@@ -122,12 +147,10 @@ body {
   border-radius: var(--radius-sm);
   text-align: left;
 }
-
 .project-card__title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
-
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -145,12 +168,10 @@ body {
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-
 .button--primary {
   background-color: var(--color-accent);
   color: #000;
 }
-
 .button--primary:hover {
   background-color: #ff9800;
 }
@@ -163,27 +184,32 @@ body {
   text-align: center;
   margin-top: 2rem;
 }
-
 .footer__text {
   font-size: 0.875rem;
 }
 
 /* ========== TEXT ELEMENTS ========== */
+/*
+  Group selector: targets h1, h2, h3
+  font-weight: controls thickness (normal, bold, or numbers 100–900)
+*/
 h1, h2, h3 {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
-
 p {
   margin-bottom: 1rem;
 }
 
 /* ========== LINKS ========== */
+/*
+  a = anchor (link) tag
+  a:hover = pseudo-class (applies only on mouse hover)
+*/
 a {
   color: #1e88e5;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
