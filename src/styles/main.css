@@ -123,12 +123,6 @@ body {
   #id = ID selector (matches element with that id)
   Use only once per page
 */
-#about {
-  background-color: var(--color-about);
-}
-#projects {
-  background-color: var(--color-projects);
-}
 
 .section__title {
   font-size: 1.5rem;
