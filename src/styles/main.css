@@ -16,19 +16,25 @@
 :root {
   --font-base: "Bangers", sans-serif;
   --font-size: 16px;
+  /* Base size for rem units */
   --line-height: 1.5;
+  /* Unitless = scales with font size */
 
+  /* Theme colors */
   --color-bg: #f5f5f5;
   --color-text: #222;
   --color-accent: #ffa726;
   --color-header-bg: #222;
   --color-header-inner: #333;
+  --color-header-text: white;
   --color-main-bg: #fff9c4;
   --color-main-alt: #ffeca7;
   --color-section: #ffecb3;
   --color-about: #ffe082;
   --color-projects: #ffe54f;
   --color-project-card: #fff3e0;
+  --color-button-text: black;
+  --color-button-bg: orange;
   --color-footer: blanchedalmond;
 
   --radius-sm: 4px;
@@ -43,9 +49,13 @@
 */
 html {
   font-size: var(--font-size);
+  /* 1rem = 16px */
   font-family: var(--font-base);
+  /* Use custom or fallback font */
   line-height: var(--line-height);
+  /* Line height = 1.5x font size */
 }
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -60,6 +70,7 @@ body {
 .layout__container {
   max-width: 960px;
   margin: 0 auto;
+  /* Auto left/right = horizontal center */
   padding: 0 1rem;
 }
 
@@ -70,20 +81,23 @@ body {
 */
 .header {
   background-color: var(--color-header-bg);
-  color: white;
+  color: var(--color-header-text);
   padding: 1rem;
   text-align: center;
   border-radius: var(--radius-lg);
   margin-bottom: 1rem;
 }
+
 .header__container {
   background-color: var(--color-header-inner);
   padding: 1rem;
   border-radius: var(--radius-sm);
 }
+
 .header__title {
   font-size: 2rem;
 }
+
 .header__subtitle {
   font-size: 1.2rem;
   margin-top: 0.5rem;
@@ -100,6 +114,7 @@ body {
   padding: 2rem 1rem;
   border-radius: var(--radius-lg);
 }
+
 .main__container {
   background-color: var(--color-main-alt);
   padding: 1rem;
@@ -119,15 +134,11 @@ body {
   text-align: center;
 }
 
-/*
-  #id = ID selector (matches element with that id)
-  Use only once per page
-*/
-
 .section__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .section__text {
   font-size: 1rem;
 }
@@ -141,10 +152,12 @@ body {
   border-radius: var(--radius-sm);
   text-align: left;
 }
+
 .project-card__title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
+
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -153,21 +166,29 @@ body {
 /* ========== BUTTON ========== */
 .button {
   display: inline-block;
+  /*???whats inline-block?how is it*/
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-family: inherit;
+  /*???*/
   border: none;
+  /*??? what does none mean*/
   border-radius: var(--radius-sm);
+  /*???how does setting a radius do actually*/
   cursor: pointer;
+  /*???what are other pointer types what does the option do*/
   text-decoration: none;
   transition: background-color 0.3s ease;
+  /*???*/
 }
+
 .button--primary {
   background-color: var(--color-accent);
-  color: #000;
+  color: var(--color-button-text);
 }
+
 .button--primary:hover {
-  background-color: #ff9800;
+  background-color: var(--color-button-bg);
 }
 
 /* ========== FOOTER ========== */
@@ -178,6 +199,7 @@ body {
   text-align: center;
   margin-top: 2rem;
 }
+
 .footer__text {
   font-size: 0.875rem;
 }
@@ -187,10 +209,13 @@ body {
   Group selector: targets h1, h2, h3
   font-weight: controls thickness (normal, bold, or numbers 100–900)
 */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+
 p {
   margin-bottom: 1rem;
 }
@@ -204,6 +229,40 @@ a {
   color: #1e88e5;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
+  /*what are other decorations???*/
 }
+
+/* ==========    ========== */
+/*
+img {
+  height: auto;
+  display: block;
+}
+*/
+
+/*
+.debug * {
+  outline: 1px dashed red;
+}
+*/
+
+/*
+body::-webkit-scrollbar {
+}
+body::-webkit-scrollbar-thumb {
+}
+body::-webkit-scrollbar-track {
+*/
+
+/* 
+🧠 CSS SELECTORS — cheat sheet (referenced inline above)
+---------------------------------------------------------
+6. Adjacent sibling:      A + B (B immediately after A)
+7. General sibling:       A ~ B (B follows A, not necessarily directly)
+8. Pseudo-classes:        a:hover, li:first-child, input:checked
+9. Pseudo-elements:       p::after, h1::before
+10. Attribute selector:   input[type="text"], [data-role="tab"]
+*/
