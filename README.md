@@ -14,7 +14,7 @@ This project is my safe space to:
 ## 📁 Status
 
 - 🏗️ Landing page coming along nicely  
-- ✅ Basic HTML/CSS/JS setup complete - Currently writting css code using the BEM naming convention 
+- ✅ Basic HTML/CSS/JS setup complete - Currently writting CSS code using the BEM naming convention 
 - 📅 Iterative issues created in GitHub to track milestones
 
 ## 🛠️ Tools I'm Learning With
