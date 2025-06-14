@@ -13,8 +13,8 @@ This project is my safe space to:
 
 ## 📁 Status
 
-- 🏗️ Currently rebuilding from scratch  
-- ✅ Basic HTML/CSS setup complete  
+- 🏗️ Landing page coming along nicely  
+- ✅ Basic HTML/CSS/JS setup complete - Currently writting css code using the BEM naming convention 
 - 📅 Iterative issues created in GitHub to track milestones
 
 ## 🛠️ Tools I'm Learning With
