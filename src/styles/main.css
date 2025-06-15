@@ -1,5 +1,5 @@
 /* ========== CSS RESET ========== */
-/* Applies to all elements. Resets spacing and box sizing for consistency */
+/* Applies to all elements.*/
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +59,12 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  padding: 2rem;
+  padding: 1rem;
+}
+/* ==========*/
+body.dark {      /*now is this syntax diff from "block .class"*/
+  background-color: #222;
+  color: white;
 }
 
 /* ========== LAYOUT ========== */
@@ -85,7 +90,7 @@ body {
   padding: 1rem;
   text-align: center;
   border-radius: var(--radius-lg);
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .header__container {
@@ -144,23 +149,36 @@ body {
 }
 
 /* ========== PROJECT CARD ========== */
+/*?landed on max the card min the elements init.
+ px but px are the first to break the site on narrow displays. how to make width reletive to parent
+ button also changes card appreance so should it be in here? or would that be too specific*/
 .project-card {
   background-color: var(--color-project-card);
   padding: 1rem;
-  margin-bottom: 1.5rem;
+  margin: 1rem;
   border-left: 6px solid var(--color-accent);
   border-radius: var(--radius-sm);
   text-align: left;
+
+  /* display: inline-block;          very own code: made the cards respond to width if can fit both in a line then do else vetical /*side effect: the card are not the same size, card width depends on card description*/
+  /* min-width: 220px;            /*has no effect when display inline*/
+  display: inline-block;
+  max-width: 400px;
 }
 
 .project-card__title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+
+  min-width: 230px;
 }
 
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
+  /* width: 300px;         width is has no effect when display is content on descr */
+
+  min-width: 230px;
 }
 
 /* ========== BUTTON ========== */
@@ -178,7 +196,7 @@ body {
   cursor: pointer;
   /*???what are other pointer types what does the option do*/
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s step-end;
   /*???*/
 }
 
@@ -189,6 +207,11 @@ body {
 
 .button--primary:hover {
   background-color: var(--color-button-bg);
+  border: 6px solid var(--color-accent);
+}
+
+.button::after { /*after does nothing*/
+  background-color: rgb(155, 109, 48);
 }
 
 /* ========== FOOTER ========== */
@@ -197,7 +220,7 @@ body {
   padding: 1rem;
   border-radius: var(--radius-lg);
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 0.6rem;
 }
 
 .footer__text {
@@ -213,7 +236,6 @@ h1,
 h2,
 h3 {
   font-weight: bold;
-  margin-bottom: 0.5rem;
 }
 
 p {
@@ -235,6 +257,10 @@ a:hover {
   /*what are other decorations???*/
 }
 
+/* ========== NEXT ========== */
+/* insteraction without js/ts*/
+/* add a nav*/
+
 /* ==========    ========== */
 /*
 img {
@@ -242,13 +268,11 @@ img {
   display: block;
 }
 */
-
 /*
 .debug * {
   outline: 1px dashed red;
 }
 */
-
 /*
 body::-webkit-scrollbar {
 }
@@ -256,7 +280,6 @@ body::-webkit-scrollbar-thumb {
 }
 body::-webkit-scrollbar-track {
 */
-
 /* 
 🧠 CSS SELECTORS — cheat sheet (referenced inline above)
 ---------------------------------------------------------
