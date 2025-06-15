@@ -17,19 +17,21 @@ body {
 
   background-image: linear-gradient(var(--bg-violet), var(--bg-blue));            /*gradient apparently*/
   min-height: 100vh;      /*the unit is percent but not percent?  solves the repeat issue now bg is gradient also solves blank screen*/
+
+  padding: 10vh 3.8vh 5vh 3.8vh;     /*top right bottom left- clockwise*/
 }
 
 .main {
-  /* padding-top:5vh;
-  padding-left: 5vh;
-  padding-right: 5vh; */
-  padding: 5vh 5vh 0vh 5vh;     /*top right bottom left- clockwise*/
+  background-color: white;
+  height: 80vh;               /*trying to choose between height n min-height*/
 
-  background-color: var(--bg-blue-transparent);
+  border-radius: 2.5vh;
+  padding: 0.6vh;
 }
 
 /*section*/
 .card {
-  background-color: white;
-  min-height: 70vh;
-}
+  min-height: 30vh;         /*what does this even mean? whats the anchor px are pixels on a screen what is vh? in px i know min will be x px on screen but what of hv because it acts like percentage? even when the screen is 30 px large there still is 30 percent of that 30px so? que?*/
+  background-color: aqua;     /*if something nested in another is larger than its container they will overlap not expand the container*/
+  
+} 
