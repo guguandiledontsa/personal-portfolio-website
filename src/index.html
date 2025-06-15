@@ -55,7 +55,6 @@
   -->
 </head>
 <body>
-  <!-- BLOCK: header -->
   <header class="header">
     <!-- 
       <header> = Top-of-page content (branding, identity, navigation)
@@ -74,7 +73,6 @@
     </div>
   </header>
   
-  <!-- BLOCK: main -->
   <main class="main">
     <!-- 
       <main> = Primary page content (1 per page)
@@ -105,7 +103,8 @@
         <!-- 
           .section--projects = Modifier to style project section uniquely
         -->
-        <h2 class="section__title">Projects</h2>
+        <h2 class="section__title" data-fake=true>Projects</h2>
+        <p class="section_description">brief description of section</p>
         
         <!-- BLOCK: project-card -->
         <div class="project-card">
@@ -116,11 +115,11 @@
           <!-- 
             .project-card__title = Title of the project card
           -->
-          <p class="project-card__description">An example project description .</p>
+          <p class="project-card__description">An example project description . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id suscipit eius nemo ex temporibus earum nam eligendi esse, vel obcaecati optio quia voluptatem, repudiandae corporis nostrum et ab veritatis perferendis!</p>
           <!-- 
             .project-card__description = Project details/summary
           -->
-          <button class="button button--primary">View Project</button>
+          <button class="button button--primary">yah</button>
           <!-- 
             .button = Reusable button block
             .button--primary = Modifier for primary styling
@@ -129,15 +128,26 @@
         
         <article class="project-card" aria-labelledby="project-one-title">
           <h3 id="project-one-title" class="project-card__title">Project two</h3>
-          <p class="project-card__description">
-            <!-- TODO: Replace with actual project description -->
-            This is a demo project built
-          </p>
-          <a href="project2.html" class="button button--primary" aria-label="View details about Project One">View Project</a>
+          <p class="project-card__description"><!-- TODO: Replace with actual project description -->Demo project</p>
+          <a href="project2.html" class="button button--primary" aria-label="View details about Project One">View Project lsfjellfleflfelflflf</a>
         </article>
+
+        <div class="project-card">
+          <h3 class="project-card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+          <p class="project-card__description">Description.</p>
+          <button class="button button--primary" aria-label="View details about Project">Button text</button>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-card__title">.</h3>
+          <p class="project-card__description">Description.</p>
+          <button href="#top" class="button button--primary">Button text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda natus praesentium cupiditate ab a deleniti quasi magnam accusantium? Eos dignissimos quisquam adipisci voluptates laudantium itaque, error ea obcaecati! Similique, aliquid.</button>
+        </div>
+
       </section>
-      
+
     </div>
+
   </main>
   
   <!-- BLOCK: footer -->
@@ -153,4 +163,5 @@
   </footer>
 </body>
 
+<script src="./scripts/main.js"></script>
 </html>
