@@ -21,21 +21,29 @@
   /* Unitless = scales with font size */
 
   /* Theme colors */
-  --color-bg: #f5f5f5;
+  --color-bg: #fff;
+  
+  --color-header-bg: #737496;
+  --color-header-inner: #B3B5EA;
+  
+  --color-main-bg: #D6F0F6;
+  --color-main-alt: #C0EFFB;
+  --color-section: #8CC5D3;
+  --color-about: #5CA0B0;
+  --color-projects: #7CB6C4;
+  --color-project-card: #69B5D0;
+
+  --color-button-bg: #ACA0ED;
+  --color-button-primary:#9282F7;
+  --color-hover:#1F18BA;
+  
+  --color-footer: #82F7CE;
+  
+  --color-accent: #E96CE0;
+  
   --color-text: #222;
-  --color-accent: #ffa726;
-  --color-header-bg: #222;
-  --color-header-inner: #333;
   --color-header-text: white;
-  --color-main-bg: #fff9c4;
-  --color-main-alt: #ffeca7;
-  --color-section: #ffecb3;
-  --color-about: #ffe082;
-  --color-projects: #ffe54f;
-  --color-project-card: #fff3e0;
   --color-button-text: black;
-  --color-button-bg: orange;
-  --color-footer: blanchedalmond;
 
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -59,12 +67,6 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  padding: 1rem;
-}
-/* ==========*/
-body.dark {      /*now is this syntax diff from "block .class"*/
-  background-color: #222;
-  color: white;
 }
 
 /* ========== LAYOUT ========== */
@@ -90,19 +92,19 @@ body.dark {      /*now is this syntax diff from "block .class"*/
   padding: 1rem;
   text-align: center;
   border-radius: var(--radius-lg);
-  margin-bottom: 0rem;
+  margin-bottom: 4rem;
 }
-
+/*div of header*/
 .header__container {
   background-color: var(--color-header-inner);
   padding: 1rem;
   border-radius: var(--radius-sm);
 }
-
+/*h in header*/
 .header__title {
   font-size: 2rem;
 }
-
+/*p in header*/
 .header__subtitle {
   font-size: 1.2rem;
   margin-top: 0.5rem;
@@ -119,7 +121,7 @@ body.dark {      /*now is this syntax diff from "block .class"*/
   padding: 2rem 1rem;
   border-radius: var(--radius-lg);
 }
-
+/*div of main*/
 .main__container {
   background-color: var(--color-main-alt);
   padding: 1rem;
@@ -138,12 +140,12 @@ body.dark {      /*now is this syntax diff from "block .class"*/
   border-radius: var(--radius-md);
   text-align: center;
 }
-
+/*h of section*/
 .section__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
+/*p of section*/
 .section__text {
   font-size: 1rem;
 }
@@ -152,11 +154,14 @@ body.dark {      /*now is this syntax diff from "block .class"*/
 /*?landed on max the card min the elements init.
  px but px are the first to break the site on narrow displays. how to make width reletive to parent
  button also changes card appreance so should it be in here? or would that be too specific*/
+ /*div / article*/
 .project-card {
   background-color: var(--color-project-card);
   padding: 1rem;
   margin: 1rem;
-  border-left: 6px solid var(--color-accent);
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
   border-radius: var(--radius-sm);
   text-align: left;
 
@@ -165,19 +170,17 @@ body.dark {      /*now is this syntax diff from "block .class"*/
   display: inline-block;
   max-width: 400px;
 }
-
+/*h in card*/
 .project-card__title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-
   min-width: 230px;
 }
-
+/*p in card*/
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
   /* width: 300px;         width is has no effect when display is content on descr */
-
   min-width: 230px;
 }
 
@@ -199,17 +202,14 @@ body.dark {      /*now is this syntax diff from "block .class"*/
   transition: background-color 0.2s step-end;
   /*???*/
 }
-
 .button--primary {
-  background-color: var(--color-accent);
+  background-color: var(--color-button-primary);
   color: var(--color-button-text);
 }
-
 .button--primary:hover {
-  background-color: var(--color-button-bg);
-  border: 6px solid var(--color-accent);
+  background-color: var(--color-hover);
+  border: 6px solid var(--color-button-bg);
 }
-
 .button::after { /*after does nothing*/
   background-color: rgb(155, 109, 48);
 }
@@ -220,7 +220,10 @@ body.dark {      /*now is this syntax diff from "block .class"*/
   padding: 1rem;
   border-radius: var(--radius-lg);
   text-align: center;
-  margin-top: 0.6rem;
+  
+  bottom: 0;
+  position: fixed;                /* footer is always fied to the bottom of the screen even as you scroll rn is just centent size  wanna make it full bottom width*/
+  min-width: 100vw;                   /*fine now the body padding pushes it bet*/
 }
 
 .footer__text {
@@ -262,6 +265,13 @@ a:hover {
 /* add a nav*/
 
 /* ==========    ========== */
+/* ==========
+body.dark {      /*now is this syntax diff from "block .class"
+  background-color: #222;
+  color: white;
+}
+*/
+
 /*
 img {
   height: auto;
@@ -288,4 +298,4 @@ body::-webkit-scrollbar-track {
 8. Pseudo-classes:        a:hover, li:first-child, input:checked
 9. Pseudo-elements:       p::after, h1::before
 10. Attribute selector:   input[type="text"], [data-role="tab"]
-*/
+*/  
