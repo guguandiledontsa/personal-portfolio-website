@@ -253,12 +253,14 @@ body {
 
 /*
 use BEM Convension 
-form {}
-label,
-input {
+*/
+.form {
+  
+}
+.label,
+.input {
   margin-bottom: 1em;
 }
-*/
 
 /* ========== FOOTER ========== */
 .footer {
