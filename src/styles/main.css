@@ -67,7 +67,7 @@ html {
 body {
   background-image: linear-gradient(var(--bg-violet), var(--bg-blue));
   color: var(--color-text);
-  
+  min-height: 100vh;
   padding: 1vh 1vh 0vh 1vh;
 }
 
@@ -81,6 +81,7 @@ body {
   margin: 0 auto;
   /* Auto left/right = horizontal center */
   padding: 0 1rem;
+  /* min-height: 80vh; */
 }
 
 /* ========== HEADER ========== */
@@ -107,10 +108,7 @@ body {
   font-size: 2rem;
 }
 /*p in header*/
-.header__subtitle {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
+.header__subtitle 
 
 /* ========== MAIN CONTENT AREA ========== */
 /*
@@ -122,12 +120,15 @@ body {
   background-color: var(--color-main-bg);
   padding: 2rem 1rem;
   border-radius: var(--radius-lg);
+  
+  min-height:80vh ;
 }
 /*div of main*/
 .main__container {
   background-color: var(--color-main-alt);
   padding: 1rem;
   border-radius: var(--radius-md);
+  min-height: 80vh;
 }
 
 /* ========== SECTIONS ========== */
@@ -148,6 +149,20 @@ body {
   margin-bottom: 1rem;
 }
 /*p of section*/
+
+/* ========== About me - SECTION ========== */
+.section--about {
+  background-color: white;
+  min-height: 15vh;
+  
+}
+
+/* ========== projects - SECTION ========== */
+.section--projects {
+  background-color: #ffe;
+  min-height: 60vh;
+  
+}
 
 /* ========== PROJECT CARD ========== */
 /*?landed on max the card min the elements init.
@@ -171,6 +186,9 @@ body {
   i wanna try n stop the elements/blocks in other blocks from over flowing beyond the size of its parent block
   */
 }
+.card-cover{
+  /*added a 'cover' something i can change to make a cool effect when the project catd is havered on maybe */
+}
 /*h in card*/
 .project-card__title {
   font-size: 1.25rem;
@@ -187,6 +205,11 @@ body {
   width: 300px;         width is has no effect when display is content on descr
   */
 }
+
+.project-card:hover {
+  
+}
+
 
 /* ========== BUTTON ========== */
 .button {
@@ -206,6 +229,7 @@ body {
   /*transition: background-color 0.2s step-end;*/
   transition: transform 0.2s;
   /*???*/
+
 }
 .button--primary {
   background-color: var(--color-button-primary);
@@ -236,7 +260,8 @@ body {
   font-size: 0.875rem;
 }
 
-/* ========== TEXT ELEMENTS ========== */
+/* ========== TEXT ELEMENTS ==========
+why do we have a text section when we already have title/description */
 /*
   Group selector: targets h1, h2, h3
   font-weight: controls thickness (normal, bold, or numbers 100–900)
