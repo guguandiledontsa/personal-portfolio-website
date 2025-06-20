@@ -207,7 +207,8 @@ body {
 }
 
 .project-card:hover {
-  
+  background-color: #69B5B0;            /*for me to do this i had to hard code the initial color value then edit it wanna know if is there a way i could have : old +- delta_amount*/
+  /* background-color: calc( var(--color-project-card) + #ffffff); something maybe like this*/
 }
 
 
