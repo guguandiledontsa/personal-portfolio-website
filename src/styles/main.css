@@ -161,7 +161,7 @@ body {
 
 /* ========== projects - SECTION ========== */
 .section--projects {
-  background-color: #ffe;
+  background-color: #eafffe;
   min-height: 50vh;
 }
 
@@ -189,8 +189,7 @@ body {
   
   transition: background-color 0.5s ease-in-out;
 }
-.card-cover
-  /*added a 'cover' something i can change to make a cool effect when the project catd is havered on maybe */
+.card-cover /*added a 'cover' something i can change to make a cool effect when the project catd is havered on maybe */
 
 /*h in card*/
 .project-card__title {
@@ -245,6 +244,21 @@ body {
 .button:after { /*after does nothing*/
   background-color: rgb(155, 109, 48);
 }
+
+/* ========== Contact - SECTION ========== */
+.section--contact {
+  background-color: #edffef;
+  min-height: 10vh;
+}
+
+/*
+use BEM Convension 
+form {}
+label,
+input {
+  margin-bottom: 1em;
+}
+*/
 
 /* ========== FOOTER ========== */
 .footer {
