@@ -22,6 +22,8 @@
 
   /* Theme colors */
   --color-bg: #fff;
+  --bg-violet: hsl(273, 75%, 66%);
+  --bg-blue: hsl(240, 73%, 65%);
   
   --color-header-bg: #737496;
   --color-header-inner: #B3B5EA;
@@ -35,11 +37,9 @@
 
   --color-button-bg: #ACA0ED;
   --color-button-primary:#9282F7;
-  --color-hover:#1F18BA;
+  --color-hover:#513CAE;
   
   --color-footer: #82F7CE;
-  
-  --color-accent: #E96CE0;
   
   --color-text: #222;
   --color-header-text: white;
@@ -65,8 +65,10 @@ html {
 }
 
 body {
-  background-color: var(--color-bg);
+  background-image: linear-gradient(var(--bg-violet), var(--bg-blue));
   color: var(--color-text);
+  
+  padding: 3vh 1.6vh 2.5vh 1.6vh;
 }
 
 /* ========== LAYOUT ========== */
@@ -146,8 +148,10 @@ body {
   margin-bottom: 1rem;
 }
 /*p of section*/
-.section__text {
-  font-size: 1rem;
+.section__text 
+
+.section .project-card {
+  display: flex;
 }
 
 /* ========== PROJECT CARD ========== */
@@ -159,16 +163,17 @@ body {
   background-color: var(--color-project-card);
   padding: 1rem;
   margin: 1rem;
-  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
   border-radius: var(--radius-sm);
   text-align: left;
-
-  /* display: inline-block;          very own code: made the cards respond to width if can fit both in a line then do else vetical /*side effect: the card are not the same size, card width depends on card description*/
-  /* min-width: 220px;            /*has no effect when display inline*/
-  display: inline-block;
   max-width: 400px;
+
+  /*
+  display: inline-block;          very own code: made the cards respond to width if can fit both in a line then do else vetical /*side effect: the card are not the same size, card width depends on card description
+   min-width: 220px;            has no effect when display inline
+  position: relative;
+  i wanna try n stop the elements/blocks in other blocks from over flowing beyond the size of its parent block
+  */
 }
 /*h in card*/
 .project-card__title {
@@ -180,8 +185,11 @@ body {
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
-  /* width: 300px;         width is has no effect when display is content on descr */
   min-width: 230px;
+  
+  /*
+  width: 300px;         width is has no effect when display is content on descr
+  */
 }
 
 /* ========== BUTTON ========== */
@@ -199,7 +207,8 @@ body {
   cursor: pointer;
   /*???what are other pointer types what does the option do*/
   text-decoration: none;
-  transition: background-color 0.2s step-end;
+  /*transition: background-color 0.2s step-end;*/
+  transition: transform 0.2s;
   /*???*/
 }
 .button--primary {
@@ -208,9 +217,9 @@ body {
 }
 .button--primary:hover {
   background-color: var(--color-hover);
-  border: 6px solid var(--color-button-bg);
+  transform: scale(1.1);
 }
-.button::after { /*after does nothing*/
+.button:after { /*after does nothing*/
   background-color: rgb(155, 109, 48);
 }
 
@@ -222,8 +231,8 @@ body {
   text-align: center;
   
   bottom: 0;
-  position: fixed;                /* footer is always fied to the bottom of the screen even as you scroll rn is just centent size  wanna make it full bottom width*/
-  min-width: 100vw;                   /*fine now the body padding pushes it bet*/
+  position: fixed;                /* footer is always fixed to the bottom of the screen even as you scroll rn is just centent size  wanna make it full bottom width*/
+  min-width: 100vw;                   /*w minwidth 100vw todo bien now the problema is i bet is the body padding pushes it*/
 }
 
 .footer__text {
