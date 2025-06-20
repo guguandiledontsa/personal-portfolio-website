@@ -156,15 +156,13 @@ body {
 /* ========== About me - SECTION ========== */
 .section--about {
   background-color: white;
-  min-height: 15vh;
-  
+  min-height: 10vh;
 }
 
 /* ========== projects - SECTION ========== */
 .section--projects {
   background-color: #ffe;
-  min-height: 60vh;
-  
+  min-height: 50vh;
 }
 
 /* ========== PROJECT CARD ========== */
