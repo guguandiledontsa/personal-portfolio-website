@@ -68,7 +68,7 @@ body {
   background-image: linear-gradient(var(--bg-violet), var(--bg-blue));
   color: var(--color-text);
   
-  padding: 1vh 1.6vh 0vh 1vh;
+  padding: 1vh 1vh 0vh 1vh;
 }
 
 /* ========== LAYOUT ========== */
