@@ -68,7 +68,7 @@ body {
   background-image: linear-gradient(var(--bg-violet), var(--bg-blue));
   color: var(--color-text);
   
-  padding: 3vh 1.6vh 2.5vh 1.6vh;
+  padding: 1vh 1.6vh 0vh 1vh;
 }
 
 /* ========== LAYOUT ========== */
@@ -148,11 +148,6 @@ body {
   margin-bottom: 1rem;
 }
 /*p of section*/
-.section__text 
-
-.section .project-card {
-  display: flex;
-}
 
 /* ========== PROJECT CARD ========== */
 /*?landed on max the card min the elements init.
@@ -167,6 +162,7 @@ body {
   border-radius: var(--radius-sm);
   text-align: left;
   max-width: 400px;
+  display: inline-block;
 
   /*
   display: inline-block;          very own code: made the cards respond to width if can fit both in a line then do else vetical /*side effect: the card are not the same size, card width depends on card description
@@ -231,6 +227,7 @@ body {
   text-align: center;
   
   bottom: 0;
+  left: 0;
   position: fixed;                /* footer is always fixed to the bottom of the screen even as you scroll rn is just centent size  wanna make it full bottom width*/
   min-width: 100vw;                   /*w minwidth 100vw todo bien now the problema is i bet is the body padding pushes it*/
 }
