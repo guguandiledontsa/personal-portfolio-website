@@ -30,14 +30,17 @@
   
   --color-main-bg: #D6F0F6;
   --color-main-alt: #C0EFFB;
+  
   --color-section: #8CC5D3;
+  
   --color-about: #5CA0B0;
   --color-projects: #7CB6C4;
+  
   --color-project-card: #69B5D0;
 
   --color-button-bg: #ACA0ED;
   --color-button-primary:#9282F7;
-  --color-hover:#513CAE;
+  --color-button-hover:#513CAE;
   
   --color-footer: #82F7CE;
   
@@ -188,9 +191,9 @@ body {
   
   transition: background-color 0.5s ease-in-out;
 }
-.card-cover{
+.card-cover
   /*added a 'cover' something i can change to make a cool effect when the project catd is havered on maybe */
-}
+
 /*h in card*/
 .project-card__title {
   font-size: 1.25rem;
@@ -212,7 +215,6 @@ body {
   background-color: #69B5B0;            /*for me to do this i had to hard code the initial color value then edit it wanna know if is there a way i could have : old +- delta_amount*/
   /* background-color: calc( var(--color-project-card) + #ffffff); something maybe like this*/
 }
-
 
 /* ========== BUTTON ========== */
 .button {
@@ -239,7 +241,7 @@ body {
   color: var(--color-button-text);
 }
 .button--primary:hover {
-  background-color: var(--color-hover);
+  background-color: var(--color-button-hover);
   transform: scale(1.1);
 }
 .button:after { /*after does nothing*/
