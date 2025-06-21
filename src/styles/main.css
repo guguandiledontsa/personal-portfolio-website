@@ -18,11 +18,18 @@
   /* Base size for rem units */
   --line-height: 1.5;
   /* Unitless = scales with font size */
+  
+  --hue-violet: 273;
+  --hue-blue: 240;
+  
+  --color-body-top: hsl(var(--hue-violet),75%, 66%);
+  --color-body-bottom: hsl(var(--hue-blue), 73%, 65%);
+  
+  --color-main-top: hsl(calc(var(--hue-violet) - 1),80%, 70%);
+  --color-main-bottom: hsl(var(--hue-blue),80%,70%);
 
   /* Theme colors */
   --color-bg: #fff;
-  --bg-violet: hsl(273, 75%, 66%);
-  --bg-blue: hsl(240, 73%, 65%);
   
   --color-header-bg: #737496;
   --color-header-inner: #B3B5EA;
@@ -65,7 +72,7 @@ html {
   /* Line height = 1.5x font size */
 }
 body {
-  background-image: linear-gradient(var(--bg-violet), var(--bg-blue));
+  background-image: linear-gradient(var(--color-body-top), var(--color-body-bottom));
   color: var(--color-text);
   min-height: 100vh;
   padding: 1vh 1vh 0vh 1vh;
@@ -88,7 +95,7 @@ body {
   header .container = descendant selector (matches .container inside header)
 */
 .header {
-  background-color: var(--color-header-bg);
+  background-color: hsl(var(--hue-violet), 73%, 70%);
   color: var(--color-header-text);
   padding: 1rem;
   text-align: center;
@@ -97,7 +104,7 @@ body {
 }
 /*div of header*/
 .header__container {
-  background-color: var(--color-header-inner);
+  background-color: hsl(var(--hue-violet), 80%, 70%);         /* wanna add box shaddow see if it'll look nice  */
   padding: 1rem;
   border-radius: var(--radius-sm);
 }
@@ -114,20 +121,23 @@ body {
     :last-child = pseudo-class (selects last child of parent)
 */
 .main {
-  background-color: var(--color-main-bg);
+  /*
+  why do these have no effect
+  background-color: hsl(var(--hue-violet), 73%, 70%);
   padding: 2rem 1rem;
   border-radius: var(--radius-lg);
   
   min-height:80vh ;
+  */
 }
 /*div of main*/
 .main__container {
-  background-color: var(--color-main-alt);
+  background-image: linear-gradient(var(--color-main-top), var(--color-main-bottom));
   padding: 1rem;
   border-radius: var(--radius-md);
   min-height: 80vh;
 }
-/* ========== SECTIONS ========== */
+/* ========== SECTIONS ========== *
 /*
   section = type selector for <section> tags
   Used for general layout blocks like About, Projects, etc.
