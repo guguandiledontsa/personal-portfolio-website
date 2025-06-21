@@ -69,11 +69,15 @@
         .header__container = Wrapper inside header for structured layout
         .layout__container = Utility class for layout alignment
       -->
-      <h1 class="header__title">My Portfolio</h1>
+      <h1 class="header__title">
+        My Portfolio
+      </h1>
       <!-- 
         .header__title = Title inside the header block
       -->
-      <p>portfolio bio</p>
+      <p>
+        portfolio bio
+      </p>
     </div>
   </header>
   
@@ -93,13 +97,17 @@
           .section = Generic content block
           .section--about = Modifier to style 'About Me' section specifically
         -->
-        <h2 class="section__title">About Me</h2>
+        <h2 class="section__title">
+          About Me
+        </h2>
         <!--
         <section> = Groups related content (like About Me)
         id="about" allows link anchors like <a href="#about">
         .section__title = Consistent styling for all section titles
         -->
-        <p>about me text goes somewhere here</p>
+        <p>
+          about me text goes somewhere here
+        </p>
       </section>
       
       <!-- BLOCK: section with MODIFIER: section--projects -->
@@ -107,8 +115,12 @@
         <!-- 
           .section--projects = Modifier to style project section uniquely
         -->
-        <h2 class="section__title" data-fake=true>Projects</h2>
-        <p class="section_description">brief description of section</p>
+        <h2 class="section__title" data-fake=true>
+          Projects
+          </h2>
+        <p class="section_description">
+          brief description of section
+        </p>
         
         <!-- BLOCK: project-card -->
         <div class="project-card">
@@ -120,7 +132,9 @@
             <!-- 
               .project-card__title = Title of the project card
             -->
-            <p class="project-card__description">An example project description . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id suscipit eius nemo ex temporibus earum nam eligendi esse, vel obcaecati optio quia voluptatem, repudiandae corporis nostrum et ab veritatis perferendis!</p>
+            <p class="project-card__description">
+              An example project description . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id suscipit eius nemo ex temporibus earum nam eligendi esse, vel obcaecati optio quia voluptatem, repudiandae corporis nostrum et ab veritatis perferendis!
+            </p>
             <!-- 
               .project-card__description = Project details/summary
             -->
@@ -131,45 +145,48 @@
             -->
           </div>
         </div>
-        
         <article class="project-card" aria-labelledby="project-one-title">
           <h3 id="project-one-title" class="project-card__title">Project two</h3>
-          <p class="project-card__description"><!-- TODO: Replace with actual project description -->Demo project</p>
+          <p class="project-card__description">Demo project</p>
           <a href="project2.html" class="button button--primary" aria-label="View details about Project One">View Project lsfjellfleflfelflflf</a>
         </article>
-
         <div class="project-card">
           <h3 class="project-card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
           <p class="project-card__description">Description.</p>
           <button class="button button--primary" aria-label="View details about Project">Button text</button>
         </div>
-
         <div class="project-card">
           <h3 class="project-card__title">.</h3>
           <p class="project-card__description">Description.</p>
-          <button href="#top" class="button button--primary">Button text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda natus praesentium cupiditate ab a deleniti quasi magnam accusantium? Eos dignissimos quisquam adipisci voluptates laudantium itaque, error ea obcaecati! Similique, aliquid.</button>
+          <button href="#top" class="button button--primary">
+            Button text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda natus praesentium cupiditate ab a deleniti quasi magnam accusantium? Eos dignissimos quisquam adipisci voluptates laudantium itaque, error ea obcaecati! Similique, aliquid.
+            </button>
         </div>
-
       </section>
       
       <!-- BLOCK: section with MODIFIER: section--projects -->
       <section class="section section--contact">
-        <h2 class="section__title">Contact Me</h2>
+        <h2 class="section__title">
+          Contact Me
+        </h2>
         <form class="form section__form">
-          <!-- wanna wrap the parts in blocks -->
           <label for="name" class="label form__field-label">Name:</label>
           <input type="text" class="input input__name" name="name" required />
+          <!--
+          wanna wrap the parts in blocks for alignment
+          -->
           
           <label for="email" class="label form__field-label">Email:</label>
           <input type="email" class="input input__email" name="email" required />
-          <!-- i like the validations type email makes wonder if i could add to them n to otger fields -->
+          <!--
+          i like the validations type email makes wonder if i could add to them n to otger fields
+          -->
           
           <button type="submit" href="#top" class="button button--primary">Submit</button>
         </form>
       </section>
 
     </div>
-
   </main>
   
   <!-- BLOCK: footer -->
@@ -178,7 +195,9 @@
       <footer> = End-of-page content (legal, contact info, copyright)
       Only one <footer> per page
     -->
-    <p class="footer__text">© 2025 Your Name</p>
+    <p class="footer__text">
+      © 2025 Your Name
+      </p>
     <!-- 
       .footer__text = Text inside the footer block
     -->
