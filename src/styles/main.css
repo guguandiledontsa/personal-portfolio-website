@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 /* ========== ROOT VARIABLES ========== */
 /*
   CSS custom properties (aka variables) are defined using:
@@ -52,7 +51,6 @@
   --radius-md: 6px;
   --radius-lg: 8px;
 }
-
 /* ========== BASE STYLES ========== */
 /*
   Type selectors (like html, body) apply to those exact elements.
@@ -66,14 +64,12 @@ html {
   line-height: var(--line-height);
   /* Line height = 1.5x font size */
 }
-
 body {
   background-image: linear-gradient(var(--bg-violet), var(--bg-blue));
   color: var(--color-text);
   min-height: 100vh;
   padding: 1vh 1vh 0vh 1vh;
 }
-
 /* ========== LAYOUT ========== */
 /*
   .container = class selector (matches class="container")
@@ -86,7 +82,6 @@ body {
   padding: 0 1rem;
   /* min-height: 80vh; */
 }
-
 /* ========== HEADER ========== */
 /*
   <header> = type selector (matches <header> tag)
@@ -112,7 +107,6 @@ body {
 }
 /*p in header*/
 .header__subtitle 
-
 /* ========== MAIN CONTENT AREA ========== */
 /*
   main > section:last-child
@@ -133,7 +127,6 @@ body {
   border-radius: var(--radius-md);
   min-height: 80vh;
 }
-
 /* ========== SECTIONS ========== */
 /*
   section = type selector for <section> tags
@@ -152,19 +145,16 @@ body {
   margin-bottom: 1rem;
 }
 /*p of section*/
-
 /* ========== About me - SECTION ========== */
 .section--about {
   background-color: white;
   min-height: 10vh;
 }
-
 /* ========== projects - SECTION ========== */
 .section--projects {
   background-color: #eafffe;
   min-height: 50vh;
 }
-
 /* ========== PROJECT CARD ========== */
 /*?landed on max the card min the elements init.
  px but px are the first to break the site on narrow displays. how to make width reletive to parent
@@ -190,7 +180,6 @@ body {
   transition: background-color 0.5s ease-in-out;
 }
 .card-cover /*added a 'cover' something i can change to make a cool effect when the project catd is havered on maybe */
-
 /*h in card*/
 .project-card__title {
   font-size: 1.25rem;
@@ -207,12 +196,10 @@ body {
   width: 300px;         width is has no effect when display is content on descr
   */
 }
-
 .project-card:hover {
   background-color: #69B5B0;            /*for me to do this i had to hard code the initial color value then edit it wanna know if is there a way i could have : old +- delta_amount*/
   /* background-color: calc( var(--color-project-card) + #ffffff); something maybe like this*/
 }
-
 /* ========== BUTTON ========== */
 .button {
   display: inline-block;
@@ -244,24 +231,19 @@ body {
 .button:after { /*after does nothing*/
   background-color: rgb(155, 109, 48);
 }
-
 /* ========== Contact - SECTION ========== */
 .section--contact {
   background-color: #edffef;
   min-height: 10vh;
 }
-
 /*
 use BEM Convension 
 */
-.form {
-  
-}
+/* .form {} */
 .label,
 .input {
   margin-bottom: 1em;
 }
-
 /* ========== FOOTER ========== */
 .footer {
   background-color: var(--color-footer);
@@ -274,11 +256,9 @@ use BEM Convension
   position: fixed;                /* footer is always fixed to the bottom of the screen even as you scroll rn is just centent size  wanna make it full bottom width*/
   min-width: 100vw;                   /*w minwidth 100vw todo bien now the problema is i bet is the body padding pushes it*/
 }
-
 .footer__text {
   font-size: 0.875rem;
 }
-
 /* ========== TEXT ELEMENTS ==========
 why do we have a text section when we already have title/description */
 /*
@@ -290,11 +270,9 @@ h2,
 h3 {
   font-weight: bold;
 }
-
 p {
   margin-bottom: 1rem;
 }
-
 /* ========== LINKS ========== */
 /*
   a = anchor (link) tag
@@ -304,45 +282,34 @@ a {
   color: #1e88e5;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
   /*what are other decorations???*/
 }
-
-/* ========== NEXT ========== */
-/* insteraction without js/ts*/
+/* ========== TODO NEXT ========== */
+/* add interaction without js/ts*/
 /* add a nav*/
-
-/* ==========    ========== */
-/* ==========
+/* ==========  NOTES & FUTURE  ==========*/
+/*
 body.dark {      /*now is this syntax diff from "block .class"
   background-color: #222;
   color: white;
 }
-*/
-
-/*
 img {
   height: auto;
   display: block;
 }
-*/
-/*
 .debug * {
   outline: 1px dashed red;
 }
-*/
-/*
 body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-thumb {
 }
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {}
 */
-/* 
-🧠 CSS SELECTORS — cheat sheet (referenced inline above)
----------------------------------------------------------
+/* ==========  CSS SELECTORS  ==========*/
+/*--------------------------------------------------------
 6. Adjacent sibling:      A + B (B immediately after A)
 7. General sibling:       A ~ B (B follows A, not necessarily directly)
 8. Pseudo-classes:        a:hover, li:first-child, input:checked
