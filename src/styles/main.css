@@ -12,42 +12,37 @@
   --font-size: 1rem;
   --line-height: 1.5;
 
-  /* ---------- Colors ---------- */
-  /* Primary brand colors */
-  --color-primary: hsla(273, 75%, 66%, 1);
-  --color-primary-light: hsla(273, 80%, 75%, 1);
-  --color-primary-dark: hsla(273, 70%, 50%, 1);
+  /* ---------- Base Brand Colors ---------- */
+  --color-primary: hsla(273, 75%, 60%, 1); /* Base purple */
+  --color-secondary: hsla(240, 73%, 60%, 1); /* Base blue */
 
-  /* Secondary complementary color */
-  --color-secondary: hsla(240, 73%, 65%, 1);
-  --color-secondary-light: hsla(240, 80%, 75%, 1);
+  /* ---------- Derived Brand Colors (using color-mix) ---------- */
+  --color-primary-light: color-mix(in srgb, var(--color-primary), white 25%);
+  --color-primary-dark: color-mix(in srgb, var(--color-primary), black 25%);
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 25%);
 
-  /* Text colors */
+  /* ---------- Text Colors ---------- */
   --color-text-primary: hsla(0, 0%, 13%, 1); /* #222 */
   --color-text-inverse: hsla(0, 0%, 100%, 1); /* white */
 
-  /* Background gradients */
-  --color-background-top: var(--color-primary);
-  --color-background-bottom: var(--color-secondary);
-
-  /* Section backgrounds */
+  /* ---------- Section Backgrounds ---------- */
   --color-section-default: var(--color-primary-light);
-  --color-section-about: hsla(273, 90%, 75%, 1);
-  --color-section-projects: hsla(273, 85%, 70%, 1);
-  --color-section-projects-card: hsla(273, 90%, 80%, 1);
-  --color-section-projects-card-hover: hsla(0, 0%, 100%, 0.5); /* semi-transparent white */
-  --color-section-contact: hsla(273, 80%, 75%, 1);
+  --color-section-about: color-mix(in srgb, var(--color-primary), white 35%);
+  --color-section-projects: color-mix(in srgb, var(--color-primary), white 20%);
+  --color-section-projects-card: color-mix(in srgb, var(--color-primary), white 30%);
+  --color-section-projects-card-hover: color-mix(in srgb, white, transparent 50%);
+  --color-section-contact: var(--color-section-about);
 
-  /* Button */
+  /* ---------- Buttons ---------- */
   --color-button-bg: var(--color-primary);
   --color-button-text: hsla(0, 0%, 0%, 1); /* black */
 
-  /* Footer */
-  --color-footer-bg: hsla(159, 88%, 74%, 1);
+  /* ---------- Footer ---------- */
+  --color-footer-bg: hsla(159, 88%, 74%, 1); /* stays as-is (custom greenish) */
 
-  /* Links */
+  /* ---------- Links ---------- */
   --color-link: hsla(210, 75%, 53%, 1); /* #1e88e5 */
-  --color-link-hover: hsla(210, 90%, 60%, 1);
+  --color-link-hover: color-mix(in srgb, var(--color-link), white 20%);
 
   /* ---------- Border Radius ---------- */
   --radius-sm: 0.25rem;
@@ -63,7 +58,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(var(--color-background-top), var(--color-background-bottom));
+  background-image: linear-gradient(var(--color-primary), var(--color-secondary));
   color: var(--color-text-primary);
   min-height: 100vh;
   padding: 1rem;
@@ -153,7 +148,7 @@ body {
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
-  min-width: 14.375rem; /* 230px converted to rem */
+  min-width: 14.375rem;
 }
 
 /* ========== BUTTONS ========== */
@@ -177,7 +172,7 @@ body {
 .button--primary:hover,
 .button--primary:focus {
   transform: scale(1.1);
-  outline: 0.1875rem solid hsla(273, 80%, 70%, 0.7);
+  outline: 0.1875rem solid color-mix(in srgb, var(--color-primary), white 20%);
   outline-offset: 0.0625rem;
 }
 
