@@ -35,11 +35,11 @@
   --color-section-about: hsl(calc(var(--hue-violet) - 3), 90%, 75%);
   --color-section-projects: hsl(calc(var(--hue-violet) - 15), 90%, 75%);
   --color-section-projects-card: hsl(calc(var(--hue-violet) - 20), 90%, 80%);
-  --color-section-projects-card-hover: hsla(0, 0%, 100%, 50%);
+  --color-section-projects-card-hover: hsla(0, 100%, 100%, 50%);
   --color-section-contact: hsl(calc(var(--hue-violet) - 35), 90%, 75%);
   
-  --color-button-primary: hsl(calc(var(--hue-violet) - 20), 90%, 75%);
-  --color-button-hover: hsla(calc(var(--hue-violet) - 20), 90%, 75%, 50%);
+  --color-button-primary: hsla(258, 88%, 74%, 1);
+  /* --color-button-hover: hsla(calc(var(--hue-violet) - 23), 100%, 50%); */
   
   --color-footer: hsla(159, 88%, 74%, 1);
   
@@ -193,8 +193,7 @@ main > section:last-child
   */
 }
 .project-card:hover {
-  background-color: var(--color-bg);            /*for me to do this i had to hard code the initial color value then edit it wanna know if is there a way i could have : old +- delta_amount*/
-  /* background-color: calc( var(--color-project-card) + #ffffff); something maybe like this*/
+  background-color: var(--color-section-projects-card-hover);
 }
 /* ========== BUTTON ========== */
 .button {
@@ -221,7 +220,7 @@ main > section:last-child
   color: var(--color-button-text);
 }
 .button--primary:hover {
-  background-color: var(--color-button-hover);
+  /* background-color: var(--color-button-hover); */
   transform: scale(1.1);
 }
 /* .button:after { after does nothing
