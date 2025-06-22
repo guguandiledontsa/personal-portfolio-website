@@ -25,17 +25,17 @@
   --color-body-top: hsl(var(--hue-violet),75%, 66%);
   --color-body-bottom: hsl(var(--hue-blue), 73%, 65%);
   
-  --color-main-top: hsl(calc(var(--hue-violet) - 1),80%, 70%);
-  --color-main-bottom: hsl(var(--hue-blue),80%,70%);
+  --color-main-top: hsl(calc(var(--hue-violet) - 1), 80%, 70%);
+  --color-main-bottom: hsl(calc(var(--hue-blue) - 1), 80%, 70%);
+  
+  --color-section-about: hsl(calc(var(--hue-violet) - 3), 90%, 75%);
+  --color-section-projects: hsl(calc(var(--hue-violet) - 15), 90%, 75%);
+  --color-section-projects-card: hsl(calc(var(--hue-violet) - 20), 90%, 80%);
+  --color-section-contact: hsl(calc(var(--hue-violet) - 35), 90%, 75%);
+
 
   /* Theme colors */
   --color-bg: #fff;
-  
-  --color-header-bg: #737496;
-  --color-header-inner: #B3B5EA;
-  
-  --color-main-bg: #D6F0F6;
-  --color-main-alt: #C0EFFB;
   
   --color-section: #8CC5D3;
   
@@ -157,12 +157,12 @@ body {
 /*p of section*/
 /* ========== About me - SECTION ========== */
 .section--about {
-  background-color: white;
+  background-color: var(--color-section-about);
   min-height: 10vh;
 }
 /* ========== projects - SECTION ========== */
 .section--projects {
-  background-color: #eafffe;
+  background-color: var(--color-section-projects);
   min-height: 50vh;
 }
 /* ========== PROJECT CARD ========== */
@@ -171,7 +171,7 @@ body {
  button also changes card appreance so should it be in here? or would that be too specific*/
  /*div / article*/
 .project-card {
-  background-color: var(--color-project-card);
+  background-color: var(--color-section-projects-card);
   padding: 1rem;
   margin: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -243,7 +243,7 @@ body {
 }
 /* ========== Contact - SECTION ========== */
 .section--contact {
-  background-color: #edffef;
+  background-color: var(--color-section-contact);
   min-height: 10vh;
 }
 /*
