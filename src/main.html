@@ -146,7 +146,7 @@
         class="header__title" = specific styling for the title in the header.
       -->
 
-      <p>portfolio bio</p>
+      <p class="header__subtitle">portfolio bio</p>
       <!-- A short bio or intro text under the header -->
     </div>
   </header>
@@ -169,27 +169,27 @@
       -->
 
       <!-- 🔸 ABOUT SECTION -->
-      <section id="about" class="section section--about" aria-labelledby="about-heading">
+      <section class="section section--about" aria-labelledby="about-heading">
         <!-- 
           <section> is used to group related content, like About Me, Contact, etc.
           id="about" lets you link to this section with <a href="#about">
           aria-labelledby connects this section to the heading for screen readers.
         -->
 
-        <h2 id="about-heading" class="section__title">About Me</h2>
+        <h2 class="section__title">About Me</h2>
         <!-- 
           <h2> is a sub-heading of the page (after <h1>).
           Each section usually has its own <h2>.
           id links it to the aria-labelledby above.
         -->
 
-        <p>about me text goes somewhere here</p>
+        <p class="section_description">about me text goes somewhere here</p>
         <!-- Your personal introduction or biography -->
       </section>
 
       <!-- 🔸 PROJECTS SECTION -->
-      <section id="projects" class="section section--projects" aria-labelledby="projects-heading">
-        <h2 id="projects-heading" class="section__title" data-fake="true">Projects</h2>
+      <section class="section section--projects" aria-labelledby="projects-heading">
+        <h2 class="section__title" data-fake="true">Projects</h2>
         <!-- 
           data-fake="true" is a custom attribute (called a data-* attribute).
           You can use it in JavaScript to store extra info.
@@ -211,7 +211,7 @@
             aria-labelledby points to the heading of this card (for accessibility).
           -->
 
-          <h3 id="project-one-title" class="project-card__title">Project One</h3>
+          <h3 class="project-card__title">Project One</h3>
           <p class="project-card__description">An example project description.</p>
           <button class="button button--primary">yah</button>
           <!-- 
@@ -226,7 +226,7 @@
 
         <!-- ▶ PROJECT 2 -->
         <article class="project-card" aria-labelledby="project-two-title">
-          <h3 id="project-two-title" class="project-card__title">Project Two</h3>
+          <h3 class="project-card__title">Project Two</h3>
           <p class="project-card__description">Demo project</p>
           <a 
             href="project2.html" 
@@ -262,14 +262,14 @@
           <h3 class="project-card__title">.</h3>
           <p class="project-card__description">Description.</p>
           <button class="button button--primary">
-            Button text Lorem ipsumudhjdjdjdjjdjdjjdjdjdjdjdjjdjdnjdjmdkddn jd n.djd nsn nan s nw sns snd dnnd enejbe ene end 
+            Button text Lorem ipsumudhjdjdjdjjdjdjjdjdjdjdjdjjdjdnjdjmdkddn jd n.djd nsnan s nw sns snd dnnd enejbe ene end 
           </button>
         </article>
       </section>
 
       <!-- 🔸 CONTACT SECTION -->
-      <section id="contact" class="section section--contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading" class="section__title">Contact Me</h2>
+      <section class="section section--contact" aria-labelledby="contact-heading">
+        <h2 class="section__title">Contact Me</h2>
 
         <form 
           class="form section__form" 
@@ -307,7 +307,6 @@
           <label for="email" class="label form__field-label">Email:</label>
           <input 
             type="email" 
-            id="email" 
             name="email" 
             class="input input__email" 
             required 

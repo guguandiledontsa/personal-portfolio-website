@@ -102,6 +102,10 @@ body {
   font-size: 2rem;
 }
 
+.header__subtitle {
+  margin-top: 0;
+}
+
 /* ========== MAIN CONTENT AREA ========== */
 .main__container {
   background-image: var(--gradient-main-border);
@@ -155,6 +159,10 @@ body {
 
 .project-card:hover {
   background-color: var(--color-section-projects-card-hover);
+}
+
+.project-card__title {
+  font-weight: bold;
 }
 
 .project-card__description {
@@ -216,11 +224,11 @@ body {
 }
 
 /* ========== TEXT ELEMENTS ========== */
-h1,
+/* h1,
 h2,
 h3 {
   font-weight: bold;
-}
+} */
 
 p {
   margin-bottom: 1rem;
