@@ -1,16 +1,3 @@
-:root {
-  --bg-violet: hsl(273, 75%, 66%);
-  --bg-blue: hsl(240, 73%, 65%);
-  --bg-blue-transparent: hsla(240, 73%, 65%, 0.24);
-}
-
-/* remove margins and apply box sizing */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 body {
   /* background-image: linear-gradient(var(--bg-violet), var(--bg-blue));       why img why use a func why does nothing not even the color show up on screen when there're no elements in body even when using bg-color why does the img repeat it self and is about the height of the element*/
   /* background-color: var(--bg-blue);      1 solid bg color*/
@@ -19,19 +6,8 @@ body {
   min-height: 100vh;      /*the unit is percent but not percent?  solves the repeat issue now bg is gradient also solves blank screen*/
 
   padding: 10vh 3.8vh 5vh 3.8vh;     /*top right bottom left- clockwise*/
-}
 
-.main {
-  background-color: white;
-  height: 80vh;               /*trying to choose between height n min-height*/
-
-  border-radius: 2.5vh;
-  padding: 0.6vh;
-}
-
-/*section*/
-.card {
-  min-height: 30vh;         /*what does this even mean? whats the anchor px are pixels on a screen what is vh? in px i know min will be x px on screen but what of hv because it acts like percentage? even when the screen is 30 px large there still is 30 percent of that 30px so? que?*/
-  background-color: aqua;     /*if something nested in another is larger than its container they will overlap not expand the container*/
+  min-height: 30vh;         /*what does this even mean? whats the anchor px are pixels on a screen what is vh? in px i know min will be x px on screen but what of hv because it acts like percentage? even when the screen is 30 px large there still is 30 percent of that 30px so? que?/*if something nested in another is larger than its container they will overlap not expand the container*/
   
-} 
+  height: 80vh;               /*trying to choose between height n min-height*/
+}
