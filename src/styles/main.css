@@ -14,17 +14,17 @@
 
   /* ---------- Colors ---------- */
   /* Primary brand colors */
-  --color-primary: hsl(273, 75%, 66%);
-  --color-primary-light: hsl(273, 80%, 75%);
-  --color-primary-dark: hsl(273, 70%, 50%);
+  --color-primary: hsla(273, 75%, 66%, 1);
+  --color-primary-light: hsla(273, 80%, 75%, 1);
+  --color-primary-dark: hsla(273, 70%, 50%, 1);
 
   /* Secondary complementary color */
-  --color-secondary: hsl(240, 73%, 65%);
-  --color-secondary-light: hsl(240, 80%, 75%);
+  --color-secondary: hsla(240, 73%, 65%, 1);
+  --color-secondary-light: hsla(240, 80%, 75%, 1);
 
   /* Text colors */
-  --color-text-primary: #222;
-  --color-text-inverse: white;
+  --color-text-primary: hsla(0, 0%, 13%, 1); /* #222 */
+  --color-text-inverse: hsla(0, 0%, 100%, 1); /* white */
 
   /* Background gradients */
   --color-background-top: var(--color-primary);
@@ -32,22 +32,22 @@
 
   /* Section backgrounds */
   --color-section-default: var(--color-primary-light);
-  --color-section-about: hsl(273, 90%, 75%);
-  --color-section-projects: hsl(273, 85%, 70%);
-  --color-section-projects-card: hsl(273, 90%, 80%);
-  --color-section-projects-card-hover: hsla(0, 0%, 100%, 0.5);
-  --color-section-contact: hsl(273, 80%, 75%);
+  --color-section-about: hsla(273, 90%, 75%, 1);
+  --color-section-projects: hsla(273, 85%, 70%, 1);
+  --color-section-projects-card: hsla(273, 90%, 80%, 1);
+  --color-section-projects-card-hover: hsla(0, 0%, 100%, 0.5); /* semi-transparent white */
+  --color-section-contact: hsla(273, 80%, 75%, 1);
 
   /* Button */
   --color-button-bg: var(--color-primary);
-  --color-button-text: black;
+  --color-button-text: hsla(0, 0%, 0%, 1); /* black */
 
   /* Footer */
   --color-footer-bg: hsla(159, 88%, 74%, 1);
 
   /* Links */
-  --color-link: #1e88e5;
-  --color-link-hover: hsl(210, 90%, 60%);
+  --color-link: hsla(210, 75%, 53%, 1); /* #1e88e5 */
+  --color-link-hover: hsla(210, 90%, 60%, 1);
 
   /* ---------- Border Radius ---------- */
   --radius-sm: 0.25rem;
@@ -124,7 +124,7 @@ body {
   min-height: 10vh;
   border-width: 0.25rem;
   border-style: solid;
-  border-image: linear-gradient(white, black) 1;
+  border-image: linear-gradient(hsla(0, 0%, 100%, 1), hsla(0, 0%, 0%, 1)) 1;
 }
 
 /* Projects Section */
@@ -138,7 +138,7 @@ body {
   background-color: var(--color-section-projects-card);
   padding: 1rem;
   margin: 1rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.5rem hsla(0, 0%, 0%, 0.1);
   border-radius: var(--radius-sm);
   text-align: left;
   max-width: 25rem;
@@ -153,7 +153,7 @@ body {
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
-  min-width: 14.375rem; /* Converted from 230px */
+  min-width: 14.375rem; /* 230px converted to rem */
 }
 
 /* ========== BUTTONS ========== */
@@ -177,8 +177,8 @@ body {
 .button--primary:hover,
 .button--primary:focus {
   transform: scale(1.1);
-  outline: 0.1875rem solid hsla(273, 80%, 70%, 0.7); /* 3px -> 0.1875rem */
-  outline-offset: 0.0625rem; /* 1px -> 0.0625rem */
+  outline: 0.1875rem solid hsla(273, 80%, 70%, 0.7);
+  outline-offset: 0.0625rem;
 }
 
 /* ========== CONTACT SECTION ========== */
