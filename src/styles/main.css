@@ -36,13 +36,6 @@
 
   /* Theme colors */
   --color-bg: #fff;
-  
-  --color-section: #8CC5D3;
-  
-  --color-about: #5CA0B0;
-  --color-projects: #7CB6C4;
-  
-  --color-project-card: #69B5D0;
 
   --color-button-bg: #ACA0ED;
   --color-button-primary:#9282F7;
@@ -187,7 +180,7 @@ body {
   i wanna try n stop the elements/blocks in other blocks from over flowing beyond the size of its parent block
   */
   
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out 0.2s;
 }
 .card-cover /*added a 'cover' something i can change to make a cool effect when the project catd is havered on maybe */
 /*h in card*/
