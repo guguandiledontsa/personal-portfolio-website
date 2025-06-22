@@ -36,6 +36,7 @@
   /* ---------- Buttons ---------- */
   --color-button-bg: var(--color-primary);
   --color-button-text: hsla(0, 0%, 0%, 1); /* black */
+  --color-button-outline: color-mix(in srgb, var(--color-primary), white 20%);
 
   /* ---------- Footer ---------- */
   --color-footer-bg: hsla(159, 88%, 74%, 1); /* stays as-is (custom greenish) */
@@ -43,6 +44,16 @@
   /* ---------- Links ---------- */
   --color-link: hsla(210, 75%, 53%, 1); /* #1e88e5 */
   --color-link-hover: color-mix(in srgb, var(--color-link), white 20%);
+  
+  --color-shadow: hsla(0, 0%, 0%, 0.1);
+  
+  --gradient-body: linear-gradient(var(--color-primary), var(--color-secondary));
+  --gradient-main-border: linear-gradient(to bottom,
+                            var(--color-primary-light),
+                            var(--color-secondary-light));
+  --gradient-section-border: linear-gradient(to bottom,
+                              var(--color-primary-light),
+                              var(--color-section-projects)) 1;
 
   /* ---------- Border Radius ---------- */
   --radius-sm: 0.25rem;
@@ -58,7 +69,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(var(--color-primary), var(--color-secondary));
+  background-image: var(--gradient-body);
   color: var(--color-text-primary);
   min-height: 100vh;
   padding: 1rem;
@@ -68,7 +79,7 @@ body {
 .layout__container {
   max-width: 60rem;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1remi
 }
 
 /* ========== HEADER ========== */
@@ -93,7 +104,7 @@ body {
 
 /* ========== MAIN CONTENT AREA ========== */
 .main__container {
-  background-image: linear-gradient(to bottom, var(--color-primary-light), var(--color-secondary-light));
+  background-image: var(--gradient-main-border);
   padding: 1rem;
   border-radius: var(--radius-md);
   min-height: 80vh;
@@ -104,8 +115,12 @@ body {
   background-color: var(--color-section-default);
   margin-bottom: 2rem;
   padding: 1rem;
-  border-radius: var(--radius-md);
   text-align: center;
+  
+  border-radius: var(--radius-md);
+  border-width: 0.25rem;
+  border-style: solid;
+  border-image: var(--gradient-section-border)
 }
 
 .section__title {
@@ -117,9 +132,6 @@ body {
 .section--about {
   background-color: var(--color-section-about);
   min-height: 10vh;
-  border-width: 0.25rem;
-  border-style: solid;
-  border-image: linear-gradient(hsla(0, 0%, 100%, 1), hsla(0, 0%, 0%, 1)) 1;
 }
 
 /* Projects Section */
@@ -133,7 +145,7 @@ body {
   background-color: var(--color-section-projects-card);
   padding: 1rem;
   margin: 1rem;
-  box-shadow: 0 0 0.5rem hsla(0, 0%, 0%, 0.1);
+  box-shadow: 0 0 0.5rem var(--color-shadow);
   border-radius: var(--radius-sm);
   text-align: left;
   max-width: 25rem;
@@ -172,7 +184,7 @@ body {
 .button--primary:hover,
 .button--primary:focus {
   transform: scale(1.1);
-  outline: 0.1875rem solid color-mix(in srgb, var(--color-primary), white 20%);
+  outline: 0.1875rem solid var(--color-button-outline);
   outline-offset: 0.0625rem;
 }
 
@@ -190,7 +202,7 @@ body {
 /* ========== FOOTER ========== */
 .footer {
   background-color: var(--color-footer-bg);
-  padding: 1rem;
+  padding: 0.4rem;
   border-radius: var(--radius-lg);
   text-align: center;
   bottom: 0;
