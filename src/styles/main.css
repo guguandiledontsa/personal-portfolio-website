@@ -1,89 +1,197 @@
 /* ========== CSS RESET ========== */
-/* Applies to all elements.*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* ========== ROOT VARIABLES ========== */
+
 /*
-  CSS custom properties (aka variables) are defined using:
-    --name: value;
-  Use them with var(--name)
-  They're great for consistent themes: fonts, colors, spacing, etc.
+  The universal selector (*) matches *every* element on the page.
+  This is often used to normalize styles across browsers.
+  Browsers apply default margins/padding which differ, so this reset makes everything consistent.
+  
+  box-sizing: border-box;
+  --------------------------------
+  This changes how the browser calculates an element's total width and height.
+  
+  Default (content-box):
+    width and height include *only* the content area.
+    Padding and borders are added outside, increasing total size.
+
+  border-box:
+    width and height include padding and border.
+    This makes layout easier and avoids unexpected overflow.
+
+  Example:
+    With box-sizing: border-box,
+    setting width: 300px and padding: 20px results in a 300px-wide box total.
+    Without it, the box becomes 300 + 20*2 = 340px wide.
 */
+
+* {
+  margin: 0;           /* Remove default margin */
+  padding: 0;          /* Remove default padding */
+  box-sizing: border-box;  /* Use border-box sizing for all elements */
+}
+
+/* ========== ROOT VARIABLES ========== */
+
+/*
+  CSS Custom Properties (aka CSS variables)
+  ----------------------------
+  Declared using --variable-name: value inside a selector (commonly :root for global scope).
+
+  Accessed using var(--variable-name).
+
+  Benefits:
+    - Centralized control over design tokens (colors, fonts, spacing).
+    - Easier theming and maintenance.
+    - Can use inside calc(), gradients, and other CSS functions.
+
+  Note:
+    Variables are *live* — if you change their value dynamically (JS or media queries),
+    all references update automatically.
+*/
+
 :root {
+  /* ---------- Typography ---------- */
   --font-base: "Bangers", sans-serif;
-  --font-size: 16px;/* Base size for rem units */
-  --line-height: 1.5;      /* Unitless = scales with font size */
+  /* Use a custom font 'Bangers', fallback to any sans-serif */
   
-    /*  text color */
-  --color-text: #222;
-  --color-header-text: white;
-  --color-button-text: black;
+  --font-size: 16px;
+  /* Base font size. Using rem units elsewhere will be relative to this */
   
-  /* Backgrounds */
+  --line-height: 1.5;
+  /* Unitless value scales naturally with font size */
+
+  /* ---------- Colors ---------- */
+  /* 
+    Using HSL (Hue, Saturation, Lightness) is powerful:
+    - Hue (0-360): color type (0 = red, 120 = green, 240 = blue)
+    - Saturation (%): intensity of color
+    - Lightness (%): brightness level
+
+    This allows for easy manipulation using calc() for harmonious color schemes.
+  */
+
   --hue-violet: 273;
   --hue-blue: 240;
-  
-  --color-body-top: hsl(var(--hue-violet),75%, 66%);
+
+  /* Gradient stops for body background */
+  --color-body-top: hsl(var(--hue-violet), 75%, 66%);
   --color-body-bottom: hsl(var(--hue-blue), 73%, 65%);
-  
+
+  /* Slightly lighter shades for main content background */
   --color-main-top: hsl(calc(var(--hue-violet) - 1), 80%, 70%);
   --color-main-bottom: hsl(calc(var(--hue-blue) - 1), 80%, 70%);
-  
+
+  /* Sections have their own distinct but related colors */
   --color-section-about: hsl(calc(var(--hue-violet) - 3), 90%, 75%);
   --color-section-projects: hsl(calc(var(--hue-violet) - 15), 90%, 75%);
   --color-section-projects-card: hsl(calc(var(--hue-violet) - 20), 90%, 80%);
-  --color-section-projects-card-hover: hsla(0, 100%, 100%, 50%);
+
+  /* HSLA: HSL + Alpha (opacity)
+     Used here for a translucent hover effect */
+  --color-section-projects-card-hover: hsla(0, 100%, 100%, 0.5);
+
   --color-section-contact: hsl(calc(var(--hue-violet) - 35), 90%, 75%);
-  
+
+  /* Button colors */
   --color-button-primary: hsla(258, 88%, 74%, 1);
-  /* --color-button-hover: hsla(calc(var(--hue-violet) - 23), 100%, 50%); */
-  
+  --color-button-text: black;
+
+  /* Footer */
   --color-footer: hsla(159, 88%, 74%, 1);
-  
-  /* ---- */
+
+  /* ---------- Border Radius ---------- */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
 }
+
 /* ========== BASE STYLES ========== */
+
 /*
-  Type selectors (like html, body) apply to those exact elements.
-  Set overall font, spacing, and layout behavior.
+  Type selectors (e.g. html, body) apply styles to those elements globally.
+  Setting these gives the baseline font, spacing, and colors.
 */
+
 html {
   font-size: var(--font-size);
-  /* 1rem = 16px */
+  /* 1rem = 16px base for scalable units */
+
   font-family: var(--font-base);
-  /* Use custom or fallback font */
+  /* Use the base font variable for consistent typography */
+
   line-height: var(--line-height);
-  /* Line height = 1.5x font size */
+  /* Controls vertical spacing between lines */
+
+  /* Note:
+    Unitless line-height is preferred because it scales with font size.
+    If you use a px or %, it can cause inconsistent spacing on font size changes.
+  */
 }
+
 body {
+  /* Background is a linear gradient from top to bottom using the two color variables */
   background-image: linear-gradient(var(--color-body-top), var(--color-body-bottom));
+  /*
+    linear-gradient syntax:
+      linear-gradient(direction, color-stop1, color-stop2, ...)
+      Default direction is top-to-bottom (180deg).
+
+    Here, var() injects custom properties inside the function.
+  */
+
   color: var(--color-text);
+  /* Sets default text color */
+
   min-height: 100vh;
-  padding: 1vh 1vh 0vh 1vh;
+  /* Ensure body fills full viewport height */
+
+  padding: 1vh 1vh 0 1vh;
+  /*
+    Padding uses viewport height units (vh) for responsive spacing.
+    The bottom padding is zero to avoid unnecessary space at the bottom.
+  */
 }
 /* ========== LAYOUT ========== */
+
 /*
-  .container = class selector (matches class="container")
-  Often used to center content and limit its width
+  .layout__container is a class selector targeting elements with class="layout__container".
+
+  Purpose:
+    - Limit max width to keep content readable on wide screens.
+    - Center content horizontally using margin auto.
+    - Add padding inside container.
+
+  Syntax notes:
+    - max-width: prevents content from growing too wide on large screens.
+    - margin: 0 auto; sets vertical margin 0, horizontal margin auto to center.
+    - padding: 0 1rem; adds horizontal padding for breathing space.
 */
+
 .layout__container {
   max-width: 960px;
-  margin: 0 auto;
-  /* Auto left/right = horizontal center */
-  padding: 0 1rem;
-  /* min-height: 80vh; */
+  margin: 0 auto;       /* horizontally center the container */
+  padding: 0 1rem;      /* horizontal padding for spacing */
+  /* min-height: 80vh; */ /* commented out, but would set minimum height */
 }
+
 /* ========== HEADER ========== */
+
 /*
-  <header> = type selector (matches <header> tag)
-  header .container = descendant selector (matches .container inside header)
+  .header targets elements with class="header".
+
+  Background-color uses HSL with the hue-violet variable:
+  hsl(var(--hue-violet), 73%, 70%)
+
+  Text color uses the custom property --color-header-text (white).
+
+  padding: 1rem applies space inside the header.
+
+  text-align: center centers all text horizontally.
+
+  border-radius: applies rounded corners with the large radius variable.
+
+  margin-bottom: 4rem adds vertical spacing below header.
 */
+
 .header {
   background-color: hsl(var(--hue-violet), 73%, 70%);
   color: var(--color-header-text);
@@ -92,42 +200,63 @@ body {
   border-radius: var(--radius-lg);
   margin-bottom: 4rem;
 }
-/*div of header*/
+
+/* Header's inner container */
+
 .header__container {
-  background-color: hsl(var(--hue-violet), 80%, 70%);         /* wanna add box shaddow see if it'll look nice  */
+  background-color: hsl(var(--hue-violet), 80%, 70%);
   padding: 1rem;
   border-radius: var(--radius-sm);
+  /*
+    Box shadow is commented as an idea to add later:
+    box-shadow adds a shadow around the element for depth.
+  */
 }
-/*h in header*/
+
+/* Header title styling */
+
 .header__title {
   font-size: 2rem;
+  /* 2rem equals 2 x base font size (16px), so 32px */
 }
-/*p in header*/
-/* .header__subtitle 
-========== MAIN CONTENT AREA ==========
-main > section:last-child
-    > = child combinator (selects only direct children)
-    :last-child = pseudo-class (selects last child of parent)
-.main {
-  why do these have no effect
-  background-color: hsl(var(--hue-violet), 73%, 70%);
-  padding: 2rem 1rem;
-  border-radius: var(--radius-lg);
-  
-  min-height:80vh ;
-} */
-/*div of main*/
+
+/* ========== MAIN CONTENT AREA ========== */
+
+/*
+  .main__container is the wrapper for main content.
+
+  Background uses linear-gradient with main-top and main-bottom colors.
+
+  Padding inside container gives content breathing room.
+
+  Border-radius smooths corners.
+
+  min-height sets minimum visible height, useful for layout consistency.
+*/
+
 .main__container {
   background-image: linear-gradient(var(--color-main-top), var(--color-main-bottom));
   padding: 1rem;
   border-radius: var(--radius-md);
   min-height: 80vh;
 }
-/* ========== SECTIONS ========== *
+
+/* ========== SECTIONS ========== */
+
 /*
-  section = type selector for <section> tags
-  Used for general layout blocks like About, Projects, etc.
+  The generic .section class targets all <section> elements.
+
+  It uses background-color from a variable (likely overridden by section-specific classes).
+
+  Margin-bottom creates space between sections.
+
+  Padding for content spacing inside the section.
+
+  Border-radius for rounded corners.
+
+  text-align: center centers text content.
 */
+
 .section {
   background-color: var(--color-section);
   margin-bottom: 2rem;
@@ -135,27 +264,67 @@ main > section:last-child
   border-radius: var(--radius-md);
   text-align: center;
 }
-/*h of section*/
+
+/* Section titles */
+
 .section__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-/*p of section*/
-/* ========== About me - SECTION ========== */
+
+/* ========== About Me Section ========== */
+
+/*
+  .section--about is a BEM-modifier class on .section.
+  It overrides the background-color to a violet shade.
+  min-height ensures the section has enough vertical space.
+*/
+
 .section--about {
   background-color: var(--color-section-about);
   min-height: 10vh;
 }
-/* ========== projects - SECTION ========== */
+
+/* ========== Projects Section ========== */
+
+/*
+  Similar to .section--about, sets background color and minimum height for projects section.
+*/
+
 .section--projects {
   background-color: var(--color-section-projects);
   min-height: 50vh;
 }
+
 /* ========== PROJECT CARD ========== */
-/*?landed on max the card min the elements init.
- px but px are the first to break the site on narrow displays. how to make width reletive to parent
- button also changes card appreance so should it be in here? or would that be too specific*/
- /*div / article*/
+
+/*
+  .project-card styles individual project cards.
+
+  background-color sets card base color from a light violet variable.
+
+  padding and margin space out content inside and around cards.
+
+  box-shadow adds subtle shadow for a floating effect:
+    box-shadow: x-offset y-offset blur-radius color
+
+  border-radius rounds the corners.
+
+  text-align: left aligns text inside the card.
+
+  max-width limits the card width to 400px.
+
+  display: inline-block lets cards flow inline but keep block characteristics:
+    - allows multiple cards per line if space allows.
+    - unlike block, inline-block respects width and height.
+
+  transition applies smooth animation on background-color change.
+
+  Comments:
+    - min-width and position: relative commented out, might be for responsive tweaks.
+    - inline-block means min-width doesn't behave like in block context.
+*/
+
 .project-card {
   background-color: var(--color-section-projects-card);
   padding: 1rem;
@@ -166,151 +335,235 @@ main > section:last-child
   max-width: 400px;
   display: inline-block;
 
-  /*
-  display: inline-block;          very own code: made the cards respond to width if can fit both in a line then do else vetical /*side effect: the card are not the same size, card width depends on card description
-   min-width: 220px;            has no effect when display inline
-  position: relative;
-  i wanna try n stop the elements/blocks in other blocks from over flowing beyond the size of its parent block
-  */
-  
   transition: background-color 0.5s ease-in-out 0.2s;
 }
-/* .card-cover 
-added a 'cover' something i can change to make a cool effect when the project card is havered on maybe
-h in card
-.project-card__title {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  min-width: 230px;
-} */
-/*p in card*/
-.project-card__description {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  min-width: 230px;
-  
-  /*
-  width: 300px;         width is has no effect when display is content on descr
-  */
-}
+
+/* Hover effect on project cards */
+
 .project-card:hover {
   background-color: var(--color-section-projects-card-hover);
 }
+
+/* Project card description */
+
+.project-card__description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  min-width: 230px; /* Attempts to keep description width consistent */
+}
 /* ========== BUTTON ========== */
+
+/*
+  .button is a reusable class for styling buttons and links visually as buttons.
+
+  display: inline-block;
+    - Allows setting width/height and padding, unlike inline.
+    - Unlike block, doesn’t force a line break.
+    - Lets multiple buttons sit side by side if space permits.
+
+  padding: 0.5rem 1rem;
+    - Vertical and horizontal padding.
+    - rem units scale relative to root font size, good for accessibility.
+
+  font-size: 1rem;
+    - Sets font size equal to base font size.
+
+  font-family: inherit;
+    - Uses the font of the parent element to keep visual consistency.
+
+  border: none;
+    - Removes default border, making button visually cleaner.
+
+  border-radius: var(--radius-sm);
+    - Adds subtle rounded corners for a softer look.
+
+  cursor: pointer;
+    - Changes cursor to a hand icon on hover to indicate clickability.
+    - Other cursor values: default (arrow), wait, crosshair, text (I-beam), move, etc.
+
+  text-decoration: none;
+    - Removes underlines from links styled as buttons.
+
+  transition: transform 0.2s;
+    - Animates transform changes (like scale) smoothly over 0.2 seconds.
+*/
+
 .button {
   display: inline-block;
-  /*???whats inline-block?how is it*/
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-family: inherit;
-  /*???*/
   border: none;
-  /*??? what does none mean*/
   border-radius: var(--radius-sm);
-  /*???how does setting a radius do actually*/
   cursor: pointer;
-  /*???what are other pointer types what does the option do*/
   text-decoration: none;
-  /*transition: background-color 0.2s step-end;*/
   transition: transform 0.2s;
-  /*???*/
-
 }
+
+/* Primary button modifier */
+
+/*
+  .button--primary applies specific colors to the button:
+    background-color: a violet shade
+    color: black text for contrast
+*/
+
 .button--primary {
   background-color: var(--color-button-primary);
   color: var(--color-button-text);
 }
+
+/* Hover effect on primary button */
+
+/*
+  When hovering:
+    - The button scales up by 10% (transform: scale(1.1))
+    - This creates a subtle zoom-in effect.
+*/
+
 .button--primary:hover {
-  /* background-color: var(--color-button-hover); */
   transform: scale(1.1);
 }
-/* .button:after { after does nothing
-  background-color: rgb(155, 109, 48);
-} */
+
 /* ========== Contact - SECTION ========== */
+
+/*
+  .section--contact styles the contact section:
+
+  Background color is set to a different violet shade.
+
+  min-height ensures enough vertical space.
+*/
+
 .section--contact {
   background-color: var(--color-section-contact);
   min-height: 10vh;
 }
+
+/* Form label and input spacing */
+
 /*
-use BEM Convension 
+  Both labels and inputs share bottom margin of 1em
+  to keep vertical spacing consistent.
 */
-/* 
-.form {}
-*/
+
 .label,
 .input {
   margin-bottom: 1em;
 }
+
 /* ========== FOOTER ========== */
+
+/*
+  .footer styles the page footer:
+
+  background-color: a teal-ish shade for contrast.
+
+  padding: 1rem adds space inside footer.
+
+  border-radius rounds the footer’s corners.
+
+  text-align centers the content.
+
+  position: fixed keeps footer always visible at bottom of viewport.
+
+  bottom: 0 and left: 0 pin footer to bottom-left.
+
+  min-width: 100vw forces footer width to fill entire viewport width.
+
+  Note on 100vw: sometimes causes horizontal scroll due to vertical scrollbar width.
+  body padding may also push content and cause layout issues here.
+*/
+
 .footer {
   background-color: var(--color-footer);
   padding: 1rem;
   border-radius: var(--radius-lg);
   text-align: center;
-  
+
   bottom: 0;
   left: 0;
-  position: fixed;                /* footer is always fixed to the bottom of the screen even as you scroll rn is just centent size  wanna make it full bottom width*/
-  min-width: 100vw;                   /*w minwidth 100vw todo bien now the problema is i bet is the body padding pushes it*/
+  position: fixed;
+  min-width: 100vw;
 }
+
+/* Footer text smaller */
+
 .footer__text {
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px approx */
 }
-/* ========== TEXT ELEMENTS ==========
-why do we have a text section when we already have title/description */
+
+/* ========== TEXT ELEMENTS ========== */
+
 /*
-  Group selector: targets h1, h2, h3
-  font-weight: controls thickness (normal, bold, or numbers 100–900)
+  Group selector (h1, h2, h3) targets all these headings.
+
+  font-weight: bold applies a thicker font weight.
+
+  p (paragraph) gets bottom margin for spacing between paragraphs.
 */
+
 h1,
 h2,
 h3 {
   font-weight: bold;
 }
+
 p {
   margin-bottom: 1rem;
 }
+
 /* ========== LINKS ========== */
+
 /*
-  a = anchor (link) tag
-  a:hover = pseudo-class (applies only on mouse hover)
+  a styles anchor (link) tags:
+
+  color sets link color.
+
+  text-decoration: none removes underlines.
+
+  a:hover applies underline on hover for feedback.
+
+  Other text-decoration options:
+    - overline (line above)
+    - line-through (strike-through)
+    - underline dotted / dashed (styling underline)
 */
+
 a {
   color: #1e88e5;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
-  /*what are other decorations???*/
 }
-/* ========== TODO NEXT ========== */
-/* add interaction without js/ts*/
-/* add a nav*/
-/* ==========  NOTES & FUTURE  ==========*/
+
+/* ========== NOTES & FUTURE ========== */
+
 /*
-body.dark {      /*now is this syntax diff from "block .class"
-  background-color: #222;
-  color: white;
-}
-img {
-  height: auto;
-  display: block;
-}
-.debug * {
-  outline: 1px dashed red;
-}
-body::-webkit-scrollbar {
-}
-body::-webkit-scrollbar-thumb {
-}
-body::-webkit-scrollbar-track {}
+  body.dark { ... }
+    - Example of a dark mode toggle using a class on body.
+    - Changing background and text colors for dark theme.
+
+  img styles:
+    - height: auto maintains aspect ratio when width changes.
+    - display: block removes inline spacing issues.
+
+  .debug * { outline: 1px dashed red; }
+    - Debug helper to outline every element’s box for layout inspection.
+
+  Scrollbar styling:
+    - body::-webkit-scrollbar
+    - body::-webkit-scrollbar-thumb
+    - body::-webkit-scrollbar-track
+    - These are pseudo-elements specific to WebKit browsers to customize scrollbars.
+
+  CSS Selectors summary:
+    - Adjacent sibling: A + B targets B immediately after A.
+    - General sibling: A ~ B targets all siblings B after A.
+    - Pseudo-classes: :hover, :first-child, :checked for state-based styling.
+    - Pseudo-elements: ::before, ::after for inserting content/styles before or after elements.
+    - Attribute selectors: input[type="text"] targets inputs with type text.
 */
-/* ==========  CSS SELECTORS  ==========*/
-/*--------------------------------------------------------
-6. Adjacent sibling:      A + B (B immediately after A)
-7. General sibling:       A ~ B (B follows A, not necessarily directly)
-8. Pseudo-classes:        a:hover, li:first-child, input:checked
-9. Pseudo-elements:       p::after, h1::before
-10. Attribute selector:   input[type="text"], [data-role="tab"]
-*/
+
