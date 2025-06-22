@@ -1,197 +1,104 @@
 /* ========== CSS RESET ========== */
 
-/*
-  The universal selector (*) matches *every* element on the page.
-  This is often used to normalize styles across browsers.
-  Browsers apply default margins/padding which differ, so this reset makes everything consistent.
-  
-  box-sizing: border-box;
-  --------------------------------
-  This changes how the browser calculates an element's total width and height.
-  
-  Default (content-box):
-    width and height include *only* the content area.
-    Padding and borders are added outside, increasing total size.
-
-  border-box:
-    width and height include padding and border.
-    This makes layout easier and avoids unexpected overflow.
-
-  Example:
-    With box-sizing: border-box,
-    setting width: 300px and padding: 20px results in a 300px-wide box total.
-    Without it, the box becomes 300 + 20*2 = 340px wide.
+/* 
+  The universal selector (*) targets all elements.
+  Reset margin and padding to 0 for consistency across browsers.
+  Apply box-sizing: border-box globally to include padding and borders in element's total width/height,
+  simplifying layout calculations and avoiding overflow issues.
 */
-
 * {
-  margin: 0;           /* Remove default margin */
-  padding: 0;          /* Remove default padding */
-  box-sizing: border-box;  /* Use border-box sizing for all elements */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* ========== ROOT VARIABLES ========== */
 
-/*
-  CSS Custom Properties (aka CSS variables)
-  ----------------------------
-  Declared using --variable-name: value inside a selector (commonly :root for global scope).
-
-  Accessed using var(--variable-name).
+/* 
+  CSS Custom Properties declared in :root for global scope.
+  Syntax: --variable-name: value;
+  Access with var(--variable-name).
 
   Benefits:
     - Centralized control over design tokens (colors, fonts, spacing).
-    - Easier theming and maintenance.
-    - Can use inside calc(), gradients, and other CSS functions.
-
-  Note:
-    Variables are *live* — if you change their value dynamically (JS or media queries),
-    all references update automatically.
+    - Enables theming and dynamic updates.
+    - Variables are live and cascade naturally.
 */
-
 :root {
-  /* ---------- Typography ---------- */
+  /* Typography */
   --font-base: "Bangers", sans-serif;
-  /* Use a custom font 'Bangers', fallback to any sans-serif */
-  
-  --font-size: 16px;
-  /* Base font size. Using rem units elsewhere will be relative to this */
-  
-  --line-height: 1.5;
-  /* Unitless value scales naturally with font size */
+  --font-size: 16px;        /* Base font size for rem units */
+  --line-height: 1.5;       /* Unitless for scalable vertical rhythm */
 
-  /* ---------- Colors ---------- */
-  /* 
-    Using HSL (Hue, Saturation, Lightness) is powerful:
-    - Hue (0-360): color type (0 = red, 120 = green, 240 = blue)
-    - Saturation (%): intensity of color
-    - Lightness (%): brightness level
-
-    This allows for easy manipulation using calc() for harmonious color schemes.
-  */
+  /* Colors (using HSL for flexible hue/saturation/lightness adjustments) */
+  --color-text: #222;
+  --color-header-text: white;
 
   --hue-violet: 273;
   --hue-blue: 240;
 
-  /* Gradient stops for body background */
+  /* Gradients & shades based on hues */
   --color-body-top: hsl(var(--hue-violet), 75%, 66%);
   --color-body-bottom: hsl(var(--hue-blue), 73%, 65%);
-
-  /* Slightly lighter shades for main content background */
   --color-main-top: hsl(calc(var(--hue-violet) - 1), 80%, 70%);
   --color-main-bottom: hsl(calc(var(--hue-blue) - 1), 80%, 70%);
 
-  /* Sections have their own distinct but related colors */
+  /* Section colors using modifiers to create related shades */
+  --color-section: hsl(var(--hue-violet), 90%, 75%);
   --color-section-about: hsl(calc(var(--hue-violet) - 3), 90%, 75%);
   --color-section-projects: hsl(calc(var(--hue-violet) - 15), 90%, 75%);
   --color-section-projects-card: hsl(calc(var(--hue-violet) - 20), 90%, 80%);
-
-  /* HSLA: HSL + Alpha (opacity)
-     Used here for a translucent hover effect */
   --color-section-projects-card-hover: hsla(0, 100%, 100%, 0.5);
-
   --color-section-contact: hsl(calc(var(--hue-violet) - 35), 90%, 75%);
 
-  /* Button colors */
+  /* Button & footer colors */
   --color-button-primary: hsla(258, 88%, 74%, 1);
   --color-button-text: black;
-
-  /* Footer */
   --color-footer: hsla(159, 88%, 74%, 1);
 
-  /* ---------- Border Radius ---------- */
+  /* Border radius scale */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
+
+  /* Links */
+  --color-link: #1e88e5;
+  --color-link-hover: hsl(210, 90%, 60%);
 }
 
 /* ========== BASE STYLES ========== */
 
-/*
-  Type selectors (e.g. html, body) apply styles to those elements globally.
-  Setting these gives the baseline font, spacing, and colors.
-*/
-
 html {
-  font-size: var(--font-size);
-  /* 1rem = 16px base for scalable units */
-
+  font-size: var(--font-size);  /* Root font size for rem calculations */
   font-family: var(--font-base);
-  /* Use the base font variable for consistent typography */
-
-  line-height: var(--line-height);
-  /* Controls vertical spacing between lines */
-
-  /* Note:
-    Unitless line-height is preferred because it scales with font size.
-    If you use a px or %, it can cause inconsistent spacing on font size changes.
-  */
+  line-height: var(--line-height); /* Unitless for scalable spacing */
 }
 
 body {
-  /* Background is a linear gradient from top to bottom using the two color variables */
   background-image: linear-gradient(var(--color-body-top), var(--color-body-bottom));
-  /*
-    linear-gradient syntax:
-      linear-gradient(direction, color-stop1, color-stop2, ...)
-      Default direction is top-to-bottom (180deg).
-
-    Here, var() injects custom properties inside the function.
-  */
-
   color: var(--color-text);
-  /* Sets default text color */
-
   min-height: 100vh;
-  /* Ensure body fills full viewport height */
-
-  padding: 1vh 1vh 0 1vh;
-  /*
-    Padding uses viewport height units (vh) for responsive spacing.
-    The bottom padding is zero to avoid unnecessary space at the bottom.
-  */
+  padding: 1vh 1vh 0 1vh; /* Responsive vertical padding */
 }
+
 /* ========== LAYOUT ========== */
 
-/*
-  .layout__container is a class selector targeting elements with class="layout__container".
-
-  Purpose:
-    - Limit max width to keep content readable on wide screens.
-    - Center content horizontally using margin auto.
-    - Add padding inside container.
-
-  Syntax notes:
-    - max-width: prevents content from growing too wide on large screens.
-    - margin: 0 auto; sets vertical margin 0, horizontal margin auto to center.
-    - padding: 0 1rem; adds horizontal padding for breathing space.
+/* 
+  Container centers content and limits max width for readability.
+  Padding adds horizontal breathing space.
 */
-
 .layout__container {
   max-width: 960px;
-  margin: 0 auto;       /* horizontally center the container */
-  padding: 0 1rem;      /* horizontal padding for spacing */
-  /* min-height: 80vh; */ /* commented out, but would set minimum height */
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* ========== HEADER ========== */
 
-/*
-  .header targets elements with class="header".
-
-  Background-color uses HSL with the hue-violet variable:
-  hsl(var(--hue-violet), 73%, 70%)
-
-  Text color uses the custom property --color-header-text (white).
-
-  padding: 1rem applies space inside the header.
-
-  text-align: center centers all text horizontally.
-
-  border-radius: applies rounded corners with the large radius variable.
-
-  margin-bottom: 4rem adds vertical spacing below header.
+/* 
+  BEM: Block = header
+  Styles background, text color, spacing, and rounded corners.
 */
-
 .header {
   background-color: hsl(var(--hue-violet), 73%, 70%);
   color: var(--color-header-text);
@@ -201,41 +108,32 @@ body {
   margin-bottom: 4rem;
 }
 
-/* Header's inner container */
-
+/* 
+  Element: header__container
+  Nested container inside header with distinct background and padding.
+*/
 .header__container {
   background-color: hsl(var(--hue-violet), 80%, 70%);
   padding: 1rem;
   border-radius: var(--radius-sm);
-  /*
-    Box shadow is commented as an idea to add later:
-    box-shadow adds a shadow around the element for depth.
-  */
 }
 
-/* Header title styling */
-
+/* 
+  Element: header__title
+  Larger font size for the header title.
+*/
 .header__title {
   font-size: 2rem;
-  /* 2rem equals 2 x base font size (16px), so 32px */
 }
 
-/* ========== MAIN CONTENT AREA ========== */
+/* ========== MAIN CONTENT ========== */
 
-/*
-  .main__container is the wrapper for main content.
-
-  Background uses linear-gradient with main-top and main-bottom colors.
-
-  Padding inside container gives content breathing room.
-
-  Border-radius smooths corners.
-
-  min-height sets minimum visible height, useful for layout consistency.
+/* 
+  Main container with gradient background, padding, and rounded corners.
+  min-height ensures consistent vertical size.
 */
-
 .main__container {
-  background-image: linear-gradient(var(--color-main-top), var(--color-main-bottom));
+  background-image: linear-gradient(to bottom, var(--color-main-top), var(--color-main-bottom));
   padding: 1rem;
   border-radius: var(--radius-md);
   min-height: 80vh;
@@ -243,20 +141,9 @@ body {
 
 /* ========== SECTIONS ========== */
 
-/*
-  The generic .section class targets all <section> elements.
-
-  It uses background-color from a variable (likely overridden by section-specific classes).
-
-  Margin-bottom creates space between sections.
-
-  Padding for content spacing inside the section.
-
-  Border-radius for rounded corners.
-
-  text-align: center centers text content.
+/* 
+  Base section styling: background, spacing, rounded corners, centered text.
 */
-
 .section {
   background-color: var(--color-section);
   margin-bottom: 2rem;
@@ -265,129 +152,81 @@ body {
   text-align: center;
 }
 
-/* Section titles */
-
+/* 
+  Section title element
+*/
 .section__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-/* ========== About Me Section ========== */
-
-/*
-  .section--about is a BEM-modifier class on .section.
-  It overrides the background-color to a violet shade.
-  min-height ensures the section has enough vertical space.
+/* 
+  Modifier classes (BEM) override base .section styles for specific sections.
 */
 
+/* About Section */
 .section--about {
   background-color: var(--color-section-about);
   min-height: 10vh;
+  border: 4px solid;
+  border-image: linear-gradient(white, black) 1;
 }
 
-/* ========== Projects Section ========== */
-
-/*
-  Similar to .section--about, sets background color and minimum height for projects section.
-*/
-
+/* Projects Section */
 .section--projects {
   background-color: var(--color-section-projects);
   min-height: 50vh;
 }
 
+/* Contact Section */
+.section--contact {
+  background-color: var(--color-section-contact);
+  min-height: 10vh;
+}
+
 /* ========== PROJECT CARD ========== */
 
-/*
-  .project-card styles individual project cards.
-
-  background-color sets card base color from a light violet variable.
-
-  padding and margin space out content inside and around cards.
-
-  box-shadow adds subtle shadow for a floating effect:
-    box-shadow: x-offset y-offset blur-radius color
-
-  border-radius rounds the corners.
-
-  text-align: left aligns text inside the card.
-
-  max-width limits the card width to 400px.
-
-  display: inline-block lets cards flow inline but keep block characteristics:
-    - allows multiple cards per line if space allows.
-    - unlike block, inline-block respects width and height.
-
-  transition applies smooth animation on background-color change.
-
-  Comments:
-    - min-width and position: relative commented out, might be for responsive tweaks.
-    - inline-block means min-width doesn't behave like in block context.
+/* 
+  Card block with background, padding, margin, shadow, border radius, and width constraints.
+  Inline-block allows cards to flow inline but keep block features.
+  Transition enables smooth background color change on hover.
 */
-
 .project-card {
   background-color: var(--color-section-projects-card);
   padding: 1rem;
   margin: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-sm);
   text-align: left;
-  max-width: 400px;
+  max-width: 25rem;
   display: inline-block;
-
   transition: background-color 0.5s ease-in-out 0.2s;
 }
-
-/* Hover effect on project cards */
 
 .project-card:hover {
   background-color: var(--color-section-projects-card-hover);
 }
 
-/* Project card description */
-
+/* 
+  Element: project-card__description
+  Controls font size and spacing inside project cards.
+*/
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
-  min-width: 230px; /* Attempts to keep description width consistent */
+  min-width: 230px;
 }
-/* ========== BUTTON ========== */
 
-/*
-  .button is a reusable class for styling buttons and links visually as buttons.
+/* ========== BUTTONS ========== */
 
-  display: inline-block;
-    - Allows setting width/height and padding, unlike inline.
-    - Unlike block, doesn’t force a line break.
-    - Lets multiple buttons sit side by side if space permits.
-
-  padding: 0.5rem 1rem;
-    - Vertical and horizontal padding.
-    - rem units scale relative to root font size, good for accessibility.
-
-  font-size: 1rem;
-    - Sets font size equal to base font size.
-
-  font-family: inherit;
-    - Uses the font of the parent element to keep visual consistency.
-
-  border: none;
-    - Removes default border, making button visually cleaner.
-
-  border-radius: var(--radius-sm);
-    - Adds subtle rounded corners for a softer look.
-
-  cursor: pointer;
-    - Changes cursor to a hand icon on hover to indicate clickability.
-    - Other cursor values: default (arrow), wait, crosshair, text (I-beam), move, etc.
-
-  text-decoration: none;
-    - Removes underlines from links styled as buttons.
-
-  transition: transform 0.2s;
-    - Animates transform changes (like scale) smoothly over 0.2 seconds.
+/* 
+  Base button styles:
+  - inline-block enables padding and width control without forcing line breaks.
+  - rem units scale with root font size for accessibility.
+  - border-radius softens corners.
+  - cursor pointer indicates interactivity.
+  - smooth transform transitions for hover effects.
 */
-
 .button {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -401,52 +240,24 @@ body {
 }
 
 /* Primary button modifier */
-
-/*
-  .button--primary applies specific colors to the button:
-    background-color: a violet shade
-    color: black text for contrast
-*/
-
 .button--primary {
   background-color: var(--color-button-primary);
   color: var(--color-button-text);
 }
 
-/* Hover effect on primary button */
-
-/*
-  When hovering:
-    - The button scales up by 10% (transform: scale(1.1))
-    - This creates a subtle zoom-in effect.
-*/
-
-.button--primary:hover {
+/* Hover & focus states scale button for feedback, with an outline for accessibility */
+.button--primary:hover,
+.button--primary:focus {
   transform: scale(1.1);
+  outline: 3px solid hsla(var(--hue-violet), 80%, 70%, 0.7);
+  outline-offset: 1px;
 }
 
-/* ========== Contact - SECTION ========== */
+/* ========== FORM ELEMENTS ========== */
 
-/*
-  .section--contact styles the contact section:
-
-  Background color is set to a different violet shade.
-
-  min-height ensures enough vertical space.
+/* 
+  Shared margin for form labels and inputs to keep vertical spacing consistent.
 */
-
-.section--contact {
-  background-color: var(--color-section-contact);
-  min-height: 10vh;
-}
-
-/* Form label and input spacing */
-
-/*
-  Both labels and inputs share bottom margin of 1em
-  to keep vertical spacing consistent.
-*/
-
 .label,
 .input {
   margin-bottom: 1em;
@@ -454,55 +265,33 @@ body {
 
 /* ========== FOOTER ========== */
 
-/*
-  .footer styles the page footer:
-
-  background-color: a teal-ish shade for contrast.
-
-  padding: 1rem adds space inside footer.
-
-  border-radius rounds the footer’s corners.
-
-  text-align centers the content.
-
-  position: fixed keeps footer always visible at bottom of viewport.
-
-  bottom: 0 and left: 0 pin footer to bottom-left.
-
-  min-width: 100vw forces footer width to fill entire viewport width.
-
-  Note on 100vw: sometimes causes horizontal scroll due to vertical scrollbar width.
-  body padding may also push content and cause layout issues here.
+/* 
+  Footer fixed at viewport bottom with full width.
+  Rounded corners, padding, centered text.
 */
-
 .footer {
   background-color: var(--color-footer);
   padding: 1rem;
   border-radius: var(--radius-lg);
   text-align: center;
 
+  position: fixed;
   bottom: 0;
   left: 0;
-  position: fixed;
-  min-width: 100vw;
+  min-width: 100vw; /* Full viewport width */
 }
 
-/* Footer text smaller */
-
+/* Smaller text in footer */
 .footer__text {
-  font-size: 0.875rem; /* 14px approx */
+  font-size: 0.875rem;
 }
 
 /* ========== TEXT ELEMENTS ========== */
 
-/*
-  Group selector (h1, h2, h3) targets all these headings.
-
-  font-weight: bold applies a thicker font weight.
-
-  p (paragraph) gets bottom margin for spacing between paragraphs.
+/* 
+  Heading tags grouped for bold font-weight.
+  Paragraphs spaced with margin-bottom.
 */
-
 h1,
 h2,
 h3 {
@@ -515,55 +304,27 @@ p {
 
 /* ========== LINKS ========== */
 
-/*
-  a styles anchor (link) tags:
-
-  color sets link color.
-
-  text-decoration: none removes underlines.
-
-  a:hover applies underline on hover for feedback.
-
-  Other text-decoration options:
-    - overline (line above)
-    - line-through (strike-through)
-    - underline dotted / dashed (styling underline)
+/* 
+  Links styled with color and no underline by default.
+  Underline appears on hover for clarity.
 */
-
 a {
-  color: #1e88e5;
+  color: var(--color-link);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--color-link-hover);
   text-decoration: underline;
 }
 
-/* ========== NOTES & FUTURE ========== */
+/* ========== NOTES ON BEM METHODOLOGY ========== */
 
-/*
-  body.dark { ... }
-    - Example of a dark mode toggle using a class on body.
-    - Changing background and text colors for dark theme.
+/* 
+  BEM (Block Element Modifier) conventions used for class naming:
+    - Block: standalone component (e.g., .header, .button, .section)
+    - Element: parts of a block separated by double underscores (e.g., .header__title, .project-card__description)
+    - Modifier: variations or states separated by double hyphens (e.g., .section--about, .button--primary)
 
-  img styles:
-    - height: auto maintains aspect ratio when width changes.
-    - display: block removes inline spacing issues.
-
-  .debug * { outline: 1px dashed red; }
-    - Debug helper to outline every element’s box for layout inspection.
-
-  Scrollbar styling:
-    - body::-webkit-scrollbar
-    - body::-webkit-scrollbar-thumb
-    - body::-webkit-scrollbar-track
-    - These are pseudo-elements specific to WebKit browsers to customize scrollbars.
-
-  CSS Selectors summary:
-    - Adjacent sibling: A + B targets B immediately after A.
-    - General sibling: A ~ B targets all siblings B after A.
-    - Pseudo-classes: :hover, :first-child, :checked for state-based styling.
-    - Pseudo-elements: ::before, ::after for inserting content/styles before or after elements.
-    - Attribute selectors: input[type="text"] targets inputs with type text.
+  This keeps CSS modular, scalable, and easier to maintain.
 */
-
