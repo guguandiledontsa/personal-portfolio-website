@@ -104,11 +104,6 @@
 </head>
 
 <body>
-  <!-- 
-    The <body> element contains everything visible on the webpage:
-    headers, text, images, forms, buttons, etc.
-  -->
-  
   <header class="header" role="banner">
     <!-- 
       <header> defines the top section of your webpage.
@@ -141,8 +136,6 @@
   
   <main class="main" role="main">
     <!-- 
-      <main> contains the main content of your webpage.
-      Only one <main> per page. Used by screen readers and search engines.
       role="main" helps assistive tech recognize this is the main part of the page.
     -->
     
@@ -180,13 +173,8 @@
             - data-id, data-role, data-status, etc.
             - Access them in JS: element.dataset.fake
         -->
-        
         <p class="section_description">brief description of section</p>
-        <!-- A short summary of this project section -->
         
-        <!-- 💡 Each individual project is wrapped in a card using <article> -->
-        
-        <!-- ▶ PROJECT 1 -->
         <article class="project-card" aria-labelledby="project-one-title">
           <!-- 
             <article> is used for independent pieces of content that can stand alone.
@@ -205,8 +193,6 @@
               - aria-label → gives screen readers extra context
           -->
         </article>
-        
-        <!-- ▶ PROJECT 2 -->
         <article class="project-card" aria-labelledby="project-two-title">
           <h3 class="project-card__title">Project Two</h3>
           <p class="project-card__description">Demo project</p>
@@ -222,8 +208,6 @@
               - aria-label → description for screen readers
           -->
         </article>
-        
-        <!-- ▶ PROJECT 3 -->
         <article class="project-card">
           <h3 class="project-card__title">Lorem ipsum...</h3>
           <p class="project-card__description">Description.</p>
@@ -231,8 +215,6 @@
             Button text
           </button>
         </article>
-        
-        <!-- ▶ PROJECT 4 -->
         <article class="project-card">
           <h3 class="project-card__title">.</h3>
           <p class="project-card__description">Description.</p>

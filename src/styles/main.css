@@ -47,6 +47,8 @@
   
   --color-shadow: hsla(0, 0%, 0%, 0.1);
   
+  --color-ceret: var(--color-section-contact);
+  
   --gradient-body: linear-gradient(var(--color-primary), var(--color-secondary));
   --gradient-main-border: linear-gradient(to bottom,
                             var(--color-primary-light),
@@ -201,10 +203,15 @@ body {
   background-color: var(--color-section-contact);
   min-height: 10vh;
 }
+/* ----- form ----- */
+.label {
+  margin-bottom: 1rem;
+}
 
-.label,
 .input {
   margin-bottom: 1rem;
+  caret-color: var(--color-ceret);
+  /* accent-color: hsla(100, 50%, 70%, 1);         not working needs fix */
 }
 
 /* ========== FOOTER ========== */
@@ -221,17 +228,6 @@ body {
 
 .footer__text {
   font-size: 0.875rem;
-}
-
-/* ========== TEXT ELEMENTS ========== */
-/* h1,
-h2,
-h3 {
-  font-weight: bold;
-} */
-
-p {
-  margin-bottom: 1rem;
 }
 
 /* ========== LINKS ========== */
