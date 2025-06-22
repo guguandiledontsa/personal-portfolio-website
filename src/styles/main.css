@@ -14,11 +14,15 @@
 */
 :root {
   --font-base: "Bangers", sans-serif;
-  --font-size: 16px;
-  /* Base size for rem units */
-  --line-height: 1.5;
-  /* Unitless = scales with font size */
+  --font-size: 16px;/* Base size for rem units */
+  --line-height: 1.5;      /* Unitless = scales with font size */
   
+    /*  text color */
+  --color-text: #222;
+  --color-header-text: white;
+  --color-button-text: black;
+  
+  /* Backgrounds */
   --hue-violet: 273;
   --hue-blue: 240;
   
@@ -31,22 +35,15 @@
   --color-section-about: hsl(calc(var(--hue-violet) - 3), 90%, 75%);
   --color-section-projects: hsl(calc(var(--hue-violet) - 15), 90%, 75%);
   --color-section-projects-card: hsl(calc(var(--hue-violet) - 20), 90%, 80%);
+  --color-section-projects-card-hover: hsla(0, 0%, 100%, 50%);
   --color-section-contact: hsl(calc(var(--hue-violet) - 35), 90%, 75%);
-
-
-  /* Theme colors */
-  --color-bg: #fff;
-
-  --color-button-bg: #ACA0ED;
-  --color-button-primary:#9282F7;
-  --color-button-hover:#513CAE;
   
-  --color-footer: #82F7CE;
+  --color-button-primary: hsl(calc(var(--hue-violet) - 20), 90%, 75%);
+  --color-button-hover: hsla(calc(var(--hue-violet) - 20), 90%, 75%, 50%);
   
-  --color-text: #222;
-  --color-header-text: white;
-  --color-button-text: black;
-
+  --color-footer: hsla(159, 88%, 74%, 1);
+  
+  /* ---- */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
@@ -106,23 +103,19 @@ body {
   font-size: 2rem;
 }
 /*p in header*/
-.header__subtitle 
-/* ========== MAIN CONTENT AREA ========== */
-/*
-  main > section:last-child
+/* .header__subtitle 
+========== MAIN CONTENT AREA ==========
+main > section:last-child
     > = child combinator (selects only direct children)
     :last-child = pseudo-class (selects last child of parent)
-*/
 .main {
-  /*
   why do these have no effect
   background-color: hsl(var(--hue-violet), 73%, 70%);
   padding: 2rem 1rem;
   border-radius: var(--radius-lg);
   
   min-height:80vh ;
-  */
-}
+} */
 /*div of main*/
 .main__container {
   background-image: linear-gradient(var(--color-main-top), var(--color-main-bottom));
@@ -200,7 +193,7 @@ body {
   */
 }
 .project-card:hover {
-  background-color: #69B5B0;            /*for me to do this i had to hard code the initial color value then edit it wanna know if is there a way i could have : old +- delta_amount*/
+  background-color: var(--color-bg);            /*for me to do this i had to hard code the initial color value then edit it wanna know if is there a way i could have : old +- delta_amount*/
   /* background-color: calc( var(--color-project-card) + #ffffff); something maybe like this*/
 }
 /* ========== BUTTON ========== */
@@ -231,9 +224,9 @@ body {
   background-color: var(--color-button-hover);
   transform: scale(1.1);
 }
-.button:after { /*after does nothing*/
+/* .button:after { after does nothing
   background-color: rgb(155, 109, 48);
-}
+} */
 /* ========== Contact - SECTION ========== */
 .section--contact {
   background-color: var(--color-section-contact);
@@ -318,4 +311,4 @@ body::-webkit-scrollbar-track {}
 8. Pseudo-classes:        a:hover, li:first-child, input:checked
 9. Pseudo-elements:       p::after, h1::before
 10. Attribute selector:   input[type="text"], [data-role="tab"]
-*/  
+*/
