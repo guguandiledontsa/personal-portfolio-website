@@ -89,14 +89,14 @@ body {
 .layout__container {
   max-width: 60rem;
   margin: 0 auto;
-  padding: 0 1remi
+  padding: 0 1remi;
 }
 
 /* ========== HEADER ========== */
 .header {
   background-color: var(--color-primary);
   margin-bottom: 4rem;
-  padding: 1rem;margin-bottom: 4rem;
+  padding: 1rem;
 
   border-radius: var(--radius-lg);
   
@@ -114,7 +114,6 @@ body {
 .header__title {
   font-size: 2rem;
 }
-
 .header__subtitle {
   margin-top: 0;
 }
@@ -145,6 +144,9 @@ body {
 .section__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+.section__description {
+  margin: 0;
 }
 
 /* About Me Section */
@@ -182,7 +184,6 @@ body {
 .project-card__title {
   font-weight: bold;
 }
-
 .project-card__description {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -206,7 +207,7 @@ body {
   cursor: pointer;
 }
 
-.button__card {
+.project-card__button {
   margin: 0.5rem;
 }
 
@@ -254,14 +255,17 @@ body {
 
 /* ========== FOOTER ========== */
 .footer {
+  position: fixed;
+  
   background-color: var(--color-footer-bg);
   padding: 0.4rem;
-  border-radius: var(--radius-lg);
-  text-align: center;
   bottom: 0;
   left: 0;
-  position: fixed;
   width: 100%;
+  
+  border-radius: var(--radius-lg);
+  
+  text-align: center;
 }
 
 .footer__text {
