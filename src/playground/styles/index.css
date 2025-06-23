@@ -1,13 +1,67 @@
-body {
-  /* background-image: linear-gradient(var(--bg-violet), var(--bg-blue));       why img why use a func why does nothing not even the color show up on screen when there're no elements in body even when using bg-color why does the img repeat it self and is about the height of the element*/
-  /* background-color: var(--bg-blue);      1 solid bg color*/
-
-  background-image: linear-gradient(var(--bg-violet), var(--bg-blue));            /*gradient apparently*/
-  min-height: 100vh;      /*the unit is percent but not percent?  solves the repeat issue now bg is gradient also solves blank screen*/
-
-  padding: 10vh 3.8vh 5vh 3.8vh;     /*top right bottom left- clockwise*/
-
-  min-height: 30vh;         /*what does this even mean? whats the anchor px are pixels on a screen what is vh? in px i know min will be x px on screen but what of hv because it acts like percentage? even when the screen is 30 px large there still is 30 percent of that 30px so? que?/*if something nested in another is larger than its container they will overlap not expand the container*/
-  
-  height: 80vh;               /*trying to choose between height n min-height*/
+/* ========== CSS RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+:root {
+  --color-bg-body: hsla(0, 0%, 100%, 1);
+  --color-bg-main: color-mix(in srgb, var(--color-bg-body), black 25%);
+  /* is there smthg like a python lambda func in css sm like [ lambda x: x + 5] ; u cn store this in a var n call it with your value like defining a costum func or reduce the arguments required some how */
+  
+  --width-card: 400px;
+  --height-card: auto;        /* when height auto the content in block stays in block doesnt overflow   */
+  /*
+  whole = x
+  part of whole = x - part_length
+  */
+}
+
+body {
+  background-color: var(--color-bg-body);
+}
+
+.card {
+  background-color: var(--color-bg-main);
+  padding: 3rem;
+  border-radius: 0.6rem;
+  
+  height: var(--height-card);
+  width: var(--width-card);
+  
+  margin: 10px;
+}
+
+.card--primary {
+  width: calc( var(--width-card) + 100px);
+  overflow: scroll;
+
+}
+
+.card--secondary {
+  height: calc( var(--height-card) + 100px);
+  overflow: hIdden;
+}
+
+.card__title {
+  margin: 0;
+}
+
+.card__description {
+  font-weight: bold;
+}
+
+
+/* 
+background-image: linear-gradient(var(--bg-violet), var(--bg-blue));       why img why use a func why does nothing not even the color show up on screen when there're no elements in body even when using bg-color why does the img repeat it self and is about the height of the element
+  background-color: var(--bg-blue);      1 solid bg color
+  min-height: 100vh;      the unit is percent but not percent?  solves the repeat issue now bg is gradient also solves blank screen
+
+  padding: 10vh 3.8vh 5vh 3.8vh;     top right bottom left- clockwise
+
+  min-height: 30vh;         what does this even mean? whats the anchor px are pixels on a screen what is vh? in px i know min will be x px on screen but what of hv because it acts like percentage? even when the screen is 30 px large there still is 30 percent of that 30px so? que?if something nested in another is larger than its container they will overlap not expand the container
+  
+  height: 80vh;               trying to choose between height n min-height
+ */
+ 
