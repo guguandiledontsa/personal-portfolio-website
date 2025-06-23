@@ -186,6 +186,13 @@ body {
   transition: transform 0.2s;
 }
 
+.button__card {
+  margin: 0.5rem;
+}
+.button__contact {
+  margin: 0.5rem;
+}
+
 .button--primary {
   background-color: var(--color-button-bg);
   color: var(--color-button-text);
@@ -196,6 +203,15 @@ body {
   transform: scale(1.1);
   outline: 0.1875rem solid var(--color-button-outline);
   outline-offset: 0.0625rem;
+}
+
+.button--secondary {
+  color: var(--color-button-text);
+}
+
+.button--secondary:hover,
+.button--secondary:focus {
+  transform: scale(-1.1);
 }
 
 /* ========== CONTACT SECTION ========== */
