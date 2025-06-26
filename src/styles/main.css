@@ -38,25 +38,28 @@
   /* Colors */
   --color-text-primary: hsla(0, 0%, 13%, 1);
   --color-text-inverse: hsla(0, 0%, 100%, 1);
-  --color-button-text: hsla(0, 0%, 0%, 1);
+  --color-text-button: hsla(0, 0%, 0%, 1);
+  --color-link: hsla(210, 75%, 53%, 1);
+  --color-link-hover: color-mix(in srgb, var(--color-link), white 20%);
+  
   --color-primary: hsla(273, 75%, 60%, 1);
-  --color-secondary: hsla(240, 73%, 60%, 1);
   --color-primary-light: color-mix(in srgb, var(--color-primary), white 25%);
   --color-primary-dark: color-mix(in srgb, var(--color-primary), black 25%);
+  
+  --color-secondary: hsla(240, 73%, 60%, 1);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 25%);
-  --color-section-default: var(--color-primary-light);
+  --color-section: var(--color-primary-light);
   --color-section-about: color-mix(in srgb, var(--color-primary), white 35%);
   --color-section-projects: color-mix(in srgb, var(--color-primary), white 20%);
   --color-section-projects-card: color-mix(in srgb, var(--color-primary), white 30%);
   --color-section-projects-card-hover: color-mix(in srgb, white, transparent 50%);
   --color-section-contact: var(--color-section-about);
-  --color-button-bg: var(--color-primary);
+  --color-button: color-mix(in srgb, var(--color-section), black 5%);
   --color-button-outline: color-mix(in srgb, var(--color-primary), white 20%);
-  --color-link: hsla(210, 75%, 53%, 1);
-  --color-link-hover: color-mix(in srgb, var(--color-link), white 20%);
-  --color-shadow: hsla(0, 0%, 0%, 0.15);
-  --color-ceret: var(--color-section-contact);
-  --color-footer-bg: hsla(159, 88%, 74%, 1);
+  
+  --color-shadow: color-mix(in srgb, black, transparent 80%);
+  --color-ceret: var(--color-section);
+  --color-footer: hsla(159, 88%, 74%, 1);
 
   /* Gradients */
   --gradient-body: linear-gradient(var(--color-primary), var(--color-secondary));
@@ -112,7 +115,7 @@ body {
 
 /* ========== SECTION BLOCK ========== */
 .section {
-  background-color: var(--color-section-default);
+  background-color: var(--color-section);
   margin-bottom: var(--space-lg);
   padding: var(--space-md);
   border-radius: var(--radius-md);
@@ -123,17 +126,17 @@ body {
 }
 
 .section--about {
-  background-color: var(--color-section-about);
+  --color-section: var(--color-section-about);
   min-height: 10vh;
 }
 
 .section--projects {
-  background-color: var(--color-section-projects);
+  --color-section: var(--color-section-projects);
   min-height: 50vh;
 }
 
 .section--contact {
-  background-color: var(--color-section-contact);
+  --color-section: var(--color-section-contact);
   min-height: 10vh;
 }
 
@@ -167,11 +170,16 @@ body {
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: var(--transition-hover-scale);
+  color: var(--color-text-button);
+  background-color: var(--color-button);
 }
 
 .button--primary {
-  background-color: var(--color-button-bg);
-  color: var(--color-button-text);
+  border: var(--border-width-sm);
+}
+
+.button--secondary {
+  --color-button: white;
 }
 
 .button--primary:hover,
@@ -179,10 +187,6 @@ body {
   transform: scale(1.1);
   outline: 0.1875rem solid var(--color-button-outline);
   outline-offset: 0.0625rem;
-}
-
-.button--secondary {
-  color: var(--color-button-text);
 }
 
 .button--secondary:hover,
@@ -208,7 +212,7 @@ body {
 /* ========== FOOTER BLOCK ========== */
 .footer {
   position: fixed;
-  background-color: var(--color-footer-bg);
+  background-color: var(--color-footer);
   padding: 0.4rem;
   bottom: 0;
   left: 0;
