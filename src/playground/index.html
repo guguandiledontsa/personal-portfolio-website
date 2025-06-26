@@ -1,102 +1,182 @@
-<!doctype html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="./styles/index.css" media="screen" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Recursive 4+ Children Layered Divs</title>
+<style>
+  :root {
+    --color-background-normal: #ffffff;
+    --color-background-hover: #ededed;
+    --color-background-selected: #d0d0d0;
+    --color-background-disabled: #f0f0f0;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+  }
+
+  .box {
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    padding: 12px;
+    margin: 6px;
+    color: #222;
+    font-size: 14px;
+    padding-left: 16px; /* indent nesting */
+  }
+
+  /* Cycle backgrounds every 4 children */
+  .box > .box:nth-child(4n + 1) {
+    background-color: var(--color-background-normal);
+    border-color: grey;
+  }
+  .box > .box:nth-child(4n + 2) {
+    background-color: var(--color-background-hover);
+    border-color: green;
+  }
+  .box > .box:nth-child(4n + 3) {
+    background-color: var(--color-background-selected);
+    border-color: greenyellow;
+  }
+  .box > .box:nth-child(4n + 4) {
+    background-color: var(--color-background-disabled);
+    border-color: yellow;
+  }
+
+  /* Space between nested boxes */
+  .box > .box {
+    margin-top: 8px;
+  }
+</style>
 </head>
-
 <body>
-  <main>
-    <div class="card">
-      <h1 class="card__title">title</h1>
-      <p class="card__description">
-        paragraph lorem ipsum hgfdt fdhjuf fdxxn xzbb xfgxcv ddyfd fdsv fsxfparagraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbddhbdhdbdjsjbdb dhd dhparagraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbddhbdhdbdjsjbdb dhd dh
-        paragraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbdd
-        zjsjjsjdjndndjdbdd
-        djdd
-        
-        djdd
-        djdjddjdjjdidididieuehdueheuheb dhdbdbdhd dhd dhdbdhhddh 
-        dhdjdjdjhdusbdbdhhddj i ii j iicjbdudhdhu uuhhuy yhuhh yhh
-        uiidududh uuduhdhdu hudud+bdh uhdhhxhh hchsjhevjd uejjejdbuee ehrhdb
-        sjjdhdidjdbdh djdbdhhdhd djdbdhbd dhdjdhdbdhdjd jdjdjdhdb
-        djhdhdu dhdhdjdhdvdhdhdhd dhdjdhbdbeje ndjdjsbsjsbsbss
-        sjsjshdjdbdjsvdhd
-        susjddhudhdjdudbdj dhebdhd dhdhe ehddvhshsbs dhdhebehdd shsbshshs
-        
-      </p>
-    </div>
-    <div class="card card--primary">
-      <h1 class="card__title">card 2</h1>
-      <p class="card__description">
-        paragraph lorem ipsum hddyfd fdsv fsxf
-        paragraph lorem ipsum hgfdt fdhjuf fdxxn xzbb xfgxcv ddyfd fdsv fsxfparagraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbddhbdhdbdjsjbdb dhd dhparagraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbddhbdhdbdjsjbdb dhd dh
-        paragraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbdd
-        zjsjjsjdjndndjdbdd
-        djdd
-        
-        djddjdbdjdjdhbs hs shshs sjshshshs shshsjshs shsjsjsjs djdjjds sjsbsjsbdvhdhdhhd/d hdhdhhdbdjdbdddjdjdjbdb dhdbdbdhdhdisbs hdidhdbsjd?shebe djdbd djdvd hbsbsb>sjsjdhdjhdbdjdhdbksbd hdbdnsijdudbd bdjnbdd djdbdbd {d djdjddhdhdhvdhd dkdbdhdh d dhd bdhdvd djdbdbjd
-        djdjddjdjjdidididieuehdueheuheb dhdbdbdhd dhd dhdbdhhddh 
-        dhdjdjdjhdusbdbdhhddj i ii j iicjbdudhdhu uuhhuy yhuhh yhh
-        uiidududh uuduhdhdu hudud+bdh uhdhhxhh hchsjhevjd uejjejdbuee ehrhdb
-        sjjdhdidjdbdh djdbdhhdhd djdbdhbd dhdjdhdbdhdjd jdjdjdhdb
-        djhdhdu dhdhdjdhdvdhdhdhd dhdjdhbdbeje ndjdjsbsjsbsbss
-        sjsjshdjdbdjsvdhd
-        susjddhudhdjdudbdj dhebdhd dhdhe ehddvhshsbs dhdhebehdd shsbshshs
-      </p>
-    </div>
-    <div class="card card--secondary">
-      <h1 class="card__title">third card</h1>
-      <p class="card__description">
-        paragraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbddhbdhdbdjsjbdb dhd dhparagraph lorem ipsum hddyfd f dsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbddhbdhdbdjsjbdb dhd dh
-        d hdhdhhdbdjdbddhbdhdbdjsjbdb dhd 
-        paragraph lorem ipsum hgfdt fdhjuf fdxxn xzbb xfgxcv ddyfd fdsv fsxfparagraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbddhbdhdbdjsjbdb dhd dhparagraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbddhbdhdbdjsjbdb dhd dh
-        paragraph lorem ipsum hddyfd fdsv fsx
-        hdjshdhsibd j bjx dhfd dh dbbd dbbd
-        jsbhdbdh dhdhd dhd hhd dhd duhdhdhd
-        jjehdje jdhdjjdhd jdhdjdjhd jdudud hdhdhhdbdjdbdd
-        zjsjjsjdjndndjdbdd
-        djdd
-        
-        djdd
-        djdjddjdjjdidididieuehdueheuheb dhdbdbdhd dhd dhdbdhhddh 
-        dhdjdjdjhdusbdbdhhddj i ii j iicjbdudhdhu uuhhuy yhuhh yhh
-        uiidududh uuduhdhdu hudud+bdh uhdhhxhh hchsjhevjd uejjejdbuee ehrhdb
-        sjjdhdidjdbdh djdbdhhdhd djdbdhbd dhdjdhdbdhdjd jdjdjdhdb
-        djhdhdu dhdhdjdhdvdhdhdhd dhdjdhbdbeje ndjdjsbsjsbsbss
-        sjsjshdjdbdjsvdhd
-        susjddhudhdjdudbdj dhebdhd dhdhe ehddvhshsbs dhdhebehdd shsbshshs
-      </p>
-    </div>
-  </main>
-</body>
 
+<div class="box">
+  Layer 1
+  <div class="box">
+    Layer 2 - Child 1
+    <div class="box">
+      Layer 3 - Child 1
+      <div class="box">
+        Layer 4 - Child 1
+        <div class="box">
+          Layer 5 - Child 1
+          <div class="box">
+            Layer 6 - Child 1
+            <div class="box">
+              Layer 7 - Child 1
+              <div class="box">
+                Layer 8 - Child 1
+                <div class="box">
+                  Layer 9 - Child 1
+                  <div class="box">
+                    Layer 10 - Child 1
+                    <div class="box">
+                      Layer 11 - Child 1
+                    </div>
+                    <div class="box">
+                      Layer 11 - Child 2
+                    </div>
+                    <div class="box">
+                      Layer 11 - Child 3
+                    </div>
+                    <div class="box">
+                      Layer 11 - Child 4
+                    </div>
+                  </div>
+                  <div class="box">
+                    Layer 10 - Child 2
+                  </div>
+                  <div class="box">
+                    Layer 10 - Child 3
+                  </div>
+                  <div class="box">
+                    Layer 10 - Child 4
+                  </div>
+                </div>
+                <div class="box">
+                  Layer 9 - Child 2
+                </div>
+                <div class="box">
+                  Layer 9 - Child 3
+                </div>
+                <div class="box">
+                  Layer 9 - Child 4
+                </div>
+              </div>
+              <div class="box">
+                Layer 8 - Child 2
+              </div>
+              <div class="box">
+                Layer 8 - Child 3
+              </div>
+              <div class="box">
+                Layer 8 - Child 4
+              </div>
+            </div>
+            <div class="box">
+              Layer 7 - Child 2
+            </div>
+            <div class="box">
+              Layer 7 - Child 3
+            </div>
+            <div class="box">
+              Layer 7 - Child 4
+            </div>
+          </div>
+          <div class="box">
+            Layer 6 - Child 2
+          </div>
+          <div class="box">
+            Layer 6 - Child 3
+          </div>
+          <div class="box">
+            Layer 6 - Child 4
+          </div>
+        </div>
+        <div class="box">
+          Layer 5 - Child 2
+        </div>
+        <div class="box">
+          Layer 5 - Child 3
+        </div>
+        <div class="box">
+          Layer 5 - Child 4
+        </div>
+      </div>
+      <div class="box">
+        Layer 4 - Child 2
+      </div>
+      <div class="box">
+        Layer 4 - Child 3
+      </div>
+      <div class="box">
+        Layer 4 - Child 4
+      </div>
+    </div>
+    <div class="box">
+      Layer 3 - Child 2
+    </div>
+    <div class="box">
+      Layer 3 - Child 3
+    </div>
+    <div class="box">
+      Layer 3 - Child 4
+    </div>
+  </div>
+  <div class="box">
+    Layer 2 - Child 2
+  </div>
+  <div class="box">
+    Layer 2 - Child 3
+  </div>
+  <div class="box">
+    Layer 2 - Child 4
+  </div>
+</div>
+
+</body>
 </html>
