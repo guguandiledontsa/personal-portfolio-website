@@ -9,46 +9,46 @@
   --font-size-sm: 0.875rem;
   --font-size-md: 1.5rem;
   --font-size-lg: 2rem;
-  
+
   /* Spacing */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 2rem;
   --space-xl: 4rem;
-  
+
   /* Borders & Radius */
   --border-width-sm: 1px;
   --border-width-md: 0.25rem;
   --radius-sm: 0.25rem;
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
-  
+
   /* Widths */
   --width-container: 60rem;
   --width-project-card: 25rem;
   --width-form-input: 100%;
   --width-project-desc-min: 14.375rem;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-default: 0.3s ease;
   --transition-hover-scale: transform 0.2s ease, background-color 0.3s ease, outline 0.2s ease;
-  
+
   /* Colors */
   --color-text-primary: hsla(0, 0%, 13%, 1);
   --color-text-inverse: hsla(0, 0%, 100%, 1);
   --color-text-button: hsla(0, 0%, 0%, 1);
   --color-link: hsla(210, 75%, 53%, 1);
   --color-link-hover: color-mix(in srgb, var(--color-link), white 20%);
-  
+
   --color-primary: hsla(273, 75%, 60%, 1);
   --color-primary-light: color-mix(in srgb, var(--color-primary), white 25%);
   --color-primary-dark: color-mix(in srgb, var(--color-primary), black 25%);
-  
+
   --color-secondary: hsla(240, 73%, 60%, 1);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), white 25%);
-  
+
   --color-section: var(--color-primary-light);
   --color-section-about: color-mix(in srgb, var(--color-primary), white 35%);
   --color-section-projects: color-mix(in srgb, var(--color-primary), white 20%);
@@ -57,15 +57,19 @@
   --color-section-contact: var(--color-section-about);
   --color-button: color-mix(in srgb, var(--color-section), black 5%);
   --color-button-outline: color-mix(in srgb, var(--color-primary), white 20%);
-  
+
   --color-shadow: color-mix(in srgb, black, transparent 80%);
   --color-ceret: var(--color-section);
   --color-footer: hsla(159, 88%, 74%, 1);
-  
+
   /* Gradients */
   --gradient-body: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
   --gradient-main-border: linear-gradient(to bottom, var(--color-primary-light), var(--color-secondary-light));
   --gradient-section-border: linear-gradient(to bottom, var(--color-primary-light), var(--color-section-projects));
+
+  /* Toggles */
+  --toggle-dark: initial;
+  --toggle-card-glow: initial;
 }
 
 /* ========== BASE STYLES ========== */
@@ -79,40 +83,40 @@ html {
 
 body {
   --height-body: 100vh;
-  min-height: var(--heigth-body);
+  min-height: var(--height-body);
   background-image: var(--gradient-body);
   padding: var(--space-md);
   color: var(--color-text-primary);
+  background-color: white;
 }
 
 /* ========== CONTAINERS & LAYOUT ========== */
 .layout__container {
   max-width: var(--width-container);
-  margin: 0 auto;
-  padding: 0 var(--space-md);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
 }
 
 .header__container {
   background-color: var(--color-primary-light);
   padding: var(--space-md);
   border-radius: var(--radius-sm);
-  --height-header: calc((var(--height-body)/100) * 25);
+  --height-header: calc((var(--height-body) / 100) * 25);
   min-height: var(--height-header);
 }
 
 .main__container {
   background-image: var(--gradient-main-border);
   padding: var(--space-md);
+  --height-main: calc((var(--height-body) / 100) * 75);
   min-height: var(--height-main);
   border-radius: var(--radius-md);
-  --height-main: calc((var(--height-body)/100) * 75);
-  
 }
 
 /* ========== HEADER BLOCK ========== */
 .header {
   background-color: var(--color-primary);
-  margin-bottom: var(--space-xl);
+  margin-block-end: var(--space-xl);
   padding: var(--space-md);
   border-radius: var(--radius-lg);
   color: var(--color-text-inverse);
@@ -122,15 +126,15 @@ body {
 /* ========== SECTION BLOCK ========== */
 .section {
   background-color: var(--color-section);
-  margin-bottom: var(--space-lg);
+  margin-block-end: var(--space-lg);
   padding: var(--space-md);
   border-radius: var(--radius-md);
   border-width: var(--border-width-md);
   border-style: solid;
   border-image: var(--gradient-section-border) 1;
   text-align: center;
-  --percentage: ;
-  min-height: calc(var(--height-main)/100 * var(--percentage));
+  --percentage: 0;
+  min-height: calc(var(--height-main) / 100 * var(--percentage));
 }
 
 .section--about {
@@ -148,16 +152,19 @@ body {
   --percentage: 20;
 }
 
-/* ========== CARD BLOCK (PROJECT CARD) ========== */
+/* ========== CARD BLOCK ========== */
 .card {
   display: inline-block;
   background-color: var(--color-section-projects-card);
   padding: var(--space-md);
-  margin: var(--space-md);
+  margin-inline: var(--space-md);
+  margin-block: var(--space-md);
   max-width: var(--width-project-card);
-  box-shadow: 0 0 var(--space-sm) var(--color-shadow);
+  box-shadow:
+    0 0 var(--space-sm) var(--color-shadow),
+    var(--toggle-card-glow);
   border-radius: var(--radius-sm);
-  text-align: left;
+  text-align: start;
   overflow-wrap: break-word;
   transition: background-color var(--transition-default), box-shadow var(--transition-default);
 }
@@ -173,7 +180,8 @@ body {
 /* ========== BUTTON BLOCK ========== */
 .button {
   display: inline-block;
-  padding: var(--space-sm) var(--space-md);
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-md);
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -204,11 +212,11 @@ body {
 
 /* ========== FORM BLOCK ========== */
 .form__label {
-  margin-bottom: var(--space-lg);
+  margin-block-end: var(--space-lg);
 }
 
 .form__input {
-  margin-bottom: var(--space-md);
+  margin-block-end: var(--space-md);
   padding: var(--space-sm);
   border-radius: var(--radius-sm);
   border: var(--border-width-sm) solid var(--color-shadow);
@@ -223,7 +231,7 @@ body {
   background-color: var(--color-footer);
   padding: 0.4rem;
   bottom: 0;
-  left: 0;
+  inset-inline-start: 0;
   width: 100%;
   border-radius: var(--radius-lg);
   text-align: center;
@@ -232,7 +240,7 @@ body {
 /* ========== TYPOGRAPHY ========== */
 .section__subtitle,
 .header__subtitle {
-  margin-top: 0;
+  margin-block-start: 0;
 }
 
 .footer__subtitle {
@@ -246,7 +254,7 @@ body {
 
 .section__title {
   font-size: var(--font-size-md);
-  margin-bottom: var(--space-md);
+  margin-block-end: var(--space-md);
 }
 
 .card__title {
@@ -254,8 +262,8 @@ body {
 }
 
 .card__subtitle {
-  margin-bottom: var(--space-md);
-  min-width: var(--width-project-desc-min);
+  margin-block-end: var(--space-md);
+  min-inline-size: var(--width-project-desc-min);
 }
 
 /* ========== LINKS (UTILITY STYLE) ========== */
