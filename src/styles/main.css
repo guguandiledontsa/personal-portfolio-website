@@ -66,8 +66,10 @@
   
   .footer {
     position: fixed;
-    bottom: 0;
-    inset-inline-start: 0;
+    /* bottom: 0; */
+    /* inset-inline-start: 0; */
+    
+    inset: initial initial 0 0;
     width: 100%;
     padding: 0.4rem;
     background: var(--color-footer);
@@ -88,12 +90,10 @@
     border-radius: var(--radius-lg);
     text-align: center;
   }
-  
   .header__title {
     font-size: var(--font-size-lg);
     color: green;
   }
-  
   .header__subtitle {
     margin-block-start: 0;
   }
@@ -108,23 +108,18 @@
     border-image: var(--gradient-section-border) 1;
     text-align: center;
   }
-  
   .section--about {
     --section-color: var(--color-section-about);
   }
-  
   .section--projects {
     --section-color: var(--color-section-projects);
   }
-  
   .section--contact {
     --section-color: var(--color-section-contact);
   }
-  
   .section__title {
     font-size: var(--font-size-lg);
   }
-  
   .section__subtitle {
     margin-block-start: 0;
   }
@@ -146,7 +141,6 @@
       transform: scale(1.05);
     }
   }
-  
   .card__subtitle {
     margin-block-end: var(--space-md);
     min-inline-size: var(--width-project-desc-min);
@@ -166,7 +160,6 @@
     user-select: none;
     transition: var(--transition-hover-scale);
   }
-  
   .card__button {
     margin: var(--space-xs);
   }
@@ -181,7 +174,6 @@
       outline-offset: 0.0625rem;
     }
   }
-  
   .button--secondary {
     --color-button: white;
     
@@ -197,7 +189,6 @@
     font-weight: 600;
     color: var(--color-text-primary);
   }
-  
   .form__input {
     width: var(--width-form-input);
     padding: var(--space-sm);
