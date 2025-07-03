@@ -1,0 +1,39 @@
+@import "./_reset.css";
+@import "./_variables.css";
+
+
+/* Base layer: Reset + Variables + Root Styles */
+@layer base {
+  
+  html {
+    font-size: var(--font-size);
+    font-family: var(--font-base);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    color-scheme: light dark;
+  }
+  
+  body {
+    min-height: 100vh;
+    padding: var(--space-md);
+    background: var(--gradient-body, white);
+    color: var(--color-text-primary);
+  }
+  
+  :focus-visible {
+    outline: 2px dashed var(--color-focus, #005fcc);
+    outline-offset: 4px;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
