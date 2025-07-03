@@ -1,133 +1,154 @@
+.header {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: var(--space-md);
+  margin-block-end: var(--space-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
 
-  .header {
-    background: var(--color-primary);
-    color: var(--color-text-inverse);
-    padding: var(--space-md);
-    margin-block-end: var(--space-xl);
-    border-radius: var(--radius-lg);
-    text-align: center;
-  }
-  .header__title {
-    font-size: var(--font-size-lg);
-    color: green;
-  }
-  .header__subtitle {
-    margin-block-start: 0;
-  }
+.section {
+  --section-color: var(--color-section);
+  background: var(--section-color);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-block-end: var(--space-lg);
+  border: var(--border-width-md) solid;
+  border-image: var(--gradient-section-border) 1;
+  text-align: center;
+}
+
+.section--about {
+  --section-color: var(--color-section-about);
+}
+
+.section--projects {
+  --section-color: var(--color-section-projects);
+}
+
+.section--contact {
+  --section-color: var(--color-section-contact);
+}
+
+.card {
+  display: inline-block;
+  padding: var(--space-md);
+  margin: var(--space-md);
+  max-width: var(--width-project-card);
+  background: var(--color-section-projects-card);
+  border-radius: var(--radius-sm);
+  text-align: start;
+  overflow-wrap: break-word;
+  transition: background-color var(--transition-default), transform var(--transition-default);
   
-  .section {
-    --section-color: var(--color-section);
-    background: var(--section-color);
-    padding: var(--space-md);
-    border-radius: var(--radius-md);
-    margin-block-end: var(--space-lg);
-    border: var(--border-width-md) solid;
-    border-image: var(--gradient-section-border) 1;
-    text-align: center;
+  &:hover,
+  &:focus-within {
+    background: var(--color-section-projects-card-hover);
+    transform: scale(1.05);
   }
-  .section--about {
-    --section-color: var(--color-section-about);
-  }
-  .section--projects {
-    --section-color: var(--color-section-projects);
-  }
-  .section--contact {
-    --section-color: var(--color-section-contact);
-  }
-  .section__title {
-    font-size: var(--font-size-lg);
-  }
-  .section__subtitle {
-    margin-block-start: 0;
-  }
+}
+
+.button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-text-button);
+  background: var(--color-button);
+  text-align: center;
+  user-select: none;
+  transition: var(--transition-hover-scale);
+}
+
+.card__button {
+  margin: var(--space-xs);
+}
+
+.button--primary {
+  border: var(--border-width-sm);
   
-  .card {
-    display: inline-block;
-    padding: var(--space-md);
-    margin: var(--space-md);
-    max-width: var(--width-project-card);
-    background: var(--color-section-projects-card);
-    border-radius: var(--radius-sm);
-    text-align: start;
-    overflow-wrap: break-word;
-    transition: background-color var(--transition-default), transform var(--transition-default);
-    
-    &:hover,
-    &:focus-within {
-      background: var(--color-section-projects-card-hover);
-      transform: scale(1.05);
-    }
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.1);
+    outline: 0.1875rem solid var(--color-button-outline);
+    outline-offset: 0.0625rem;
   }
-  .card__subtitle {
-    margin-block-end: var(--space-md);
-    min-inline-size: var(--width-project-desc-min);
-  }
+}
+
+.button--secondary {
+  --color-button: white;
   
-  .button {
-    display: inline-block;
-    padding: var(--space-sm) var(--space-md);
-    border: none;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    font-weight: 600;
-    font-family: inherit;
-    color: var(--color-text-button);
-    background: var(--color-button);
-    text-align: center;
-    user-select: none;
-    transition: var(--transition-hover-scale);
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.05);
   }
-  .card__button {
-    margin: var(--space-xs);
-  }
+}
+
+.form {
+  font-weight: 600;
+}
+
+.form__group {
+  margin-block-end: var(--space-sm);
+  padding-block: var(--space-sm);
+  border-block: 1px solid blue;
+  width: 50%;
+}
+
+.form__label {
+  color: var(--color-text-primary);
+}
+
+.form__input {
+  border-radius: var(--radius-sm);
+  border: var(--border-width-sm) solid var(--color-shadow);
+  caret-color: var(--color-caret);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-text-primary);
+}
+
+.link {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
   
-  .button--primary {
-    border: var(--border-width-sm);
-    
-    &:hover,
-    &:focus-visible {
-      transform: scale(1.1);
-      outline: 0.1875rem solid var(--color-button-outline);
-      outline-offset: 0.0625rem;
-    }
+  &:hover,
+  &:focus-visible {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    outline: none;
+    outline-offset: 2px;
   }
-  .button--secondary {
-    --color-button: white;
-    
-    &:hover,
-    &:focus-visible {
-      transform: scale(1.05);
-    }
-  }
-  
-  .form__label {
-    display: block;
-    margin-block-end: var(--space-lg);
-    font-weight: 600;
-    color: var(--color-text-primary);
-  }
-  .form__input {
-    width: var(--width-form-input);
-    padding: var(--space-sm);
-    margin-block-end: var(--space-md);
-    border-radius: var(--radius-sm);
-    border: var(--border-width-sm) solid var(--color-shadow);
-    caret-color: var(--color-caret);
-    font-size: 1rem;
-    font-family: inherit;
-    color: var(--color-text-primary);
-  }
-  
-  .link {
-    color: var(--color-link);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    
-    &:hover,
-    &:focus-visible {
-      color: var(--color-link-hover);
-      text-decoration: underline;
-      outline: none;
-      outline-offset: 2px;
-    }
-  }
+}
+
+.header__title {
+  font-size: var(--font-size-lg);
+  color: green;
+}
+
+.header__subtitle {
+  margin-block-start: 0;
+}
+
+.section__title {
+  font-size: var(--font-size-lg);
+}
+
+.section__subtitle {
+  margin-block-start: 0;
+}
+
+.card__subtitle {
+  margin-block-end: var(--space-md);
+  min-inline-size: var(--width-project-desc-min);
+}
+
+.footer__subtitle {
+  user-select: none;
+  font-size: var(--font-size-sm);
+  text-align: center;
+}

@@ -256,34 +256,38 @@
             - method: GET (append to URL) or POST (send in body)
             - novalidate: disables browser's built-in validation
           -->
-          
-          <!-- 🌟 NAME FIELD -->
-          <label for="name" class="label form__field-label">Name:</label>
-          <input type="text" id="name" name="name" class="input input__name" required placeholder="Your Name" />
-          <!-- 
-            <input> for plain text.
-            Common types: text, email, number, password, date, checkbox, radio
-            - required → can't be empty
-            - placeholder → hint text
-            - name → key name for form submission
-            - id → must match <label for="">
-          -->
-          
-          <!-- 🌟 EMAIL FIELD -->
-          <label for="email" class="form__label">Email:</label>
-          <input type="email" name="email" class="form__input input__email" required placeholder="you@example.com" />
-          <!-- 
+          <div class="form__group">
+            <!-- 🌟 NAME FIELD -->
+            <label for="name" class="label form__label">Name:</label>
+            <input type="text" id="name" name="name" class="input input__name" required placeholder="Your Name" />
+            <!-- 
+              <input> for plain text.
+              Common types: text, email, number, password, date, checkbox, radio
+              - required → can't be empty
+              - placeholder → hint text
+              - name → key name for form submission
+              - id → must match <label for="">
+            -->
+          </div>
+          <div class="form__group">
+            <!-- 🌟 EMAIL FIELD -->
+            <label for="email" class="form__label">Email:</label>
+            <input type="email" name="email" class="form__input input__email" required placeholder="you@example.com" />
+            <!-- 
             type="email" will make the browser check for a valid email format.
             Use this to help prevent mistakes.
-          -->
+            -->
+          </div>
           
-          <!-- SUBMIT BUTTON -->
-          <button type="submit" class="button button__contact button--primary">Submit</button>
-          <!-- 
-            type="submit" sends the form when clicked.
-            button--primary = styled version of the button
-          -->
-        </form>
+          <div class="form__group">
+            <!-- SUBMIT BUTTON -->
+            <button type="submit" class="button button__contact button--primary">Submit</button>
+            <!-- 
+              type="submit" sends the form when clicked.
+              button--primary = styled version of the button
+            -->
+          </form>
+        </div>
       </section>
     </div>
   </main>
