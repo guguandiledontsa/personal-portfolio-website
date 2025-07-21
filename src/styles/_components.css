@@ -23,9 +23,11 @@
 .section--about {
   --section-color: var(--color-section-about);
 }
+
 .section--projects {
   --section-color: var(--color-section-projects);
 }
+
 .section--contact {
   --section-color: var(--color-section-contact);
 }
@@ -38,22 +40,25 @@
   max-width: var(--width-project-card);
   background: var(--color-section-projects-card);
   border-radius: var(--radius-sm);
-  text-align: start;
-  overflow-wrap: break-word;
   transition: background-color var(--transition-default), transform var(--transition-default);
-
-  --transform-scale: ;     /* space toggle: no transform by default */
-  --focus-outline: ;       /* optional: for keyboard nav */
+  
+  --transform-scale: ;
+  /* space toggle: no transform by default */
+  --focus-outline: ;
+  /* optional: for keyboard nav */
   transform: var(--transform-scale);
   outline: var(--focus-outline);
   outline-offset: 0.125rem;
-}
-
-.card:hover,
-.card:focus-within {
-  background: var(--color-section-projects-card-hover);
-  --transform-scale: scale(1.05);
-  --focus-outline: 2px dashed var(--color-accent);
+  
+  text-align: start;
+  overflow-wrap: break-word;
+  
+  &:hover,
+  &:focus-within {
+    background: var(--color-section-projects-card-hover);
+    --transform-scale: scale(1.05);
+    --focus-outline: 2px dashed var(--color-accent);
+  }
 }
 
 /* ───────── Button ───────── */
@@ -70,7 +75,7 @@
   user-select: none;
   cursor: pointer;
   transition: var(--transition-hover-scale);
-
+  
   --transform-scale: ;
   --focus-outline: ;
   transform: var(--transform-scale);
@@ -84,7 +89,7 @@
 
 .button--primary {
   border: var(--border-width-sm);
-
+  
   &:hover,
   &:focus-visible {
     --transform-scale: scale(1.1);
@@ -94,7 +99,7 @@
 
 .button--secondary {
   --color-button: white;
-
+  
   &:hover,
   &:focus-visible {
     --transform-scale: scale(1.05);
@@ -112,10 +117,6 @@
   padding-block: var(--space-sm);
   border-block: 1px solid blue;
   width: 50%;
-}
-
-.form__label {
-  color: var(--color-text-primary);
 }
 
 /*
@@ -140,17 +141,17 @@ input:user-invalid {
   color: var(--color-link);
   text-decoration: none;
   transition: color 0.3s ease;
-
+  
   --focus-outline: ;
   outline: var(--focus-outline);
   outline-offset: 2px;
-}
-
-.link:hover,
-.link:focus-visible {
-  color: var(--color-link-hover);
-  text-decoration: underline;
-  --focus-outline: 2px solid var(--color-link-hover);
+  
+  &:hover,
+  &:focus-visible {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    --focus-outline: 2px solid var(--color-link-hover);
+  }
 }
 
 /* ───────── Titles / Subtitles ───────── */
@@ -158,6 +159,7 @@ input:user-invalid {
   font-size: var(--font-size-lg);
   color: green;
 }
+
 .header__subtitle {
   margin-block-start: 0;
 }
@@ -165,6 +167,7 @@ input:user-invalid {
 .section__title {
   font-size: var(--font-size-lg);
 }
+
 .section__subtitle {
   margin-block-start: 0;
 }
@@ -172,6 +175,10 @@ input:user-invalid {
 .card__subtitle {
   margin-block-end: var(--space-md);
   min-inline-size: var(--width-project-desc-min);
+}
+
+.form__label {
+  color: var(--color-text-primary);
 }
 
 .footer__subtitle {
