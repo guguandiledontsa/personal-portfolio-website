@@ -117,6 +117,7 @@
   padding-block: var(--space-sm);
   border-block: 1px solid blue;
   width: 50%;
+  /* justify-self: center; */
 }
 
 /*
