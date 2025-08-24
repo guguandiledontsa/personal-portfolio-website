@@ -1,97 +1,105 @@
 /*
  * The Developer's Compass Portfolio CSS
- * This stylesheet uses a minimalist BEM approach and CSS Custom Properties
- * with HSL, color-mix(), and advanced styling for a vibrant, magazine-inspired feel.
+ * Final Version: A fully integrated, editorial-grade design system.
 */
 
 /* ───────── 1. Global Variables & Utilities ───────── */
 :root {
   /*
-   * Base Font Size & Spacing
-   * Using REM for consistency and scaling with the root font size.
+   * 🎨 Single-Source Color Palette
+   * Change this one HSL value to re-theme the entire site.
   */
-  font-size: 16px;
-  --font-size-sm: 0.875rem;
-  --font-size-md: 1.5rem;
-  --font-size-lg: 2rem;
+  --base-hue: 273;
 
-  --space-unit: 1rem;
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
-  --space-xl: 4rem;
+  /* Primary Palette derived from the base hue */
+  --color-primary: hsl(var(--base-hue), 75%, 60%);
+  --color-primary-light: hsl(var(--base-hue), 90%, 85%);
+  --color-primary-dark: hsl(var(--base-hue), 80%, 30%);
 
-  /* Borders & Radii */
-  --border-width-sm: 0.0625rem;
-  --border-width-md: 0.25rem;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-circle: 50%;
+  /* Accent Colors (for contrast and tension) */
+  --color-accent-vivid: hsl(48, 100%, 50%); /* Bright yellow */
+  --color-accent-danger: hsl(0, 80%, 55%); /* Red */
+  --color-accent-subtle: hsl(0, 0%, 50%); /* Muted gray */
 
-  /* Transitions & Shadows */
-  --transition-default: 0.3s ease-in-out;
-  --transition-hover-scale: transform 0.2s ease, background-color 0.3s ease, outline 0.2s ease;
-  --color-shadow: hsla(0, 0%, 0%, 0.2);
+  /* Grayscale & Text */
+  --color-text: hsl(0, 0%, 15%);
+  --color-text-inverse: hsl(0, 0%, 98%);
+  --color-text-subtle: hsl(0, 0%, 40%);
 
-  /*
-   * HSL Color Palette with Dynamic Derivations
-   * The HSL values are unpacked using var() and functions for easier theming.
+  /* Section Backgrounds derived from primary */
+  --color-bg-light: hsl(var(--base-hue), 20%, 95%);
+  --color-bg-dark: hsl(var(--base-hue), 15%, 12%);
+
+  /* Gradients */
+  --gradient-main: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  --gradient-layered: linear-gradient(to top, hsla(0, 0%, 0%, 0.1), transparent);
+
+  /* * 🖋️ Typography & Spacing
+   * Defined with semantic purpose and scaling.
   */
-  --color-primary: hsl(273, 75%, 60%);
-  --color-secondary: hsla(240, 73%, 60%, 1);
-  --color-accent: hsl(from var(--color-primary) h calc(s - 20%) l);
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-quote: 'Courier New', monospace;
 
-  /* Text & Grayscale */
-  --color-text: hsla(0, 0%, 13%, 1);
-  --color-text-inverse: hsla(0, 0%, 100%, 1);
-  --color-text-button: hsla(0, 0%, 0%, 1);
-  --color-link: hsla(210, 75%, 53%, 1);
-  --color-link-hover: color-mix(in srgb, var(--color-link), white 20%);
-  
-  /* 🚩 Fix for Issue #2: Defining the missing background color variable */
-  --color-background: hsl(0, 0%, 98%);
+  --font-size-hero: clamp(3.5rem, 10vw, 8rem);
+  --font-size-h1: clamp(2.5rem, 7vw, 5rem);
+  --font-size-h2: clamp(1.75rem, 5vw, 3.5rem);
+  --font-size-body: 1.125rem;
 
-  /* Derived Section Colors for Theming */
-  --color-section: hsl(from var(--color-primary) h s calc(l + 25%));
-  --color-section-projects: hsl(from var(--color-primary) h s calc(l + 20%));
-  --color-section-projects-card: hsl(from var(--color-primary) h s calc(l + 5%));
-  --color-section-projects-card-hover: color-mix(in srgb, white, transparent 50%);
-  --color-section-contact: hsl(from var(--color-primary) h l calc(s + 5%));
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-xxl: 8rem;
 
-  /* Component Colors */
-  --color-button: hsl(from var(--color-section) h s calc(l - 10%));
-  --color-button-outline: hsl(from var(--color-primary) h s calc(l - 2%));
-
-  /* Gradients & Backgrounds */
-  --gradient-section-border: linear-gradient(to bottom, var(--color-primary), var(--color-section-projects));
-  --gradient-hero: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  /* Borders & Shadows */
+  --border-sm: 0.125rem solid;
+  --border-md: 0.25rem solid;
+  --shadow-subtle: 0 0.25rem 1rem hsla(0, 0%, 0%, 0.15);
+  --shadow-bold: 0 1rem 2rem hsla(0, 0%, 0%, 0.3);
+  --radius-sm: 0.5rem;
+  --radius-lg: 1rem;
 }
 
 /* ───────── 2. Base Styles & Typography ───────── */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
   color: var(--color-text);
-  background-color: var(--color-background);
+  background-color: var(--color-bg-light);
   line-height: 1.6;
   margin: 0;
   scroll-behavior: smooth;
 }
 
 h1, h2, h3 {
-  font-family: 'Times New Roman', Times, serif;
-  line-height: 1.1;
+  font-family: var(--font-heading);
+  line-height: 1; /* Tighter for dramatic headings */
   margin: 0;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: var(--color-primary-dark);
 }
 
-/* Responsive typography using clamp() for scaling with viewport width */
-h1 { font-size: clamp(2rem, 5vw, 4rem); }
-h2 { font-size: clamp(1.5rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.25rem, 3vw, 2.5rem); }
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-body); }
+
+p {
+  font-size: var(--font-size-body);
+  margin-bottom: var(--space-md);
+}
+
+.text--hero {
+  font-size: var(--font-size-hero);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+.text--subtle {
+  font-family: var(--font-quote);
+  color: var(--color-text-subtle);
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
 
 /* ───────── 3. Header & Navigation ───────── */
 .site-header {
@@ -102,16 +110,17 @@ h3 { font-size: clamp(1.25rem, 3vw, 2.5rem); }
   justify-content: space-between;
   align-items: center;
   padding: var(--space-md) var(--space-lg);
-  background-color: var(--color-background);
-  box-shadow: 0 0.125rem 0.5rem var(--color-shadow);
-  backdrop-filter: blur(0.25rem);
+  background-color: hsla(var(--base-hue), 20%, 95%, 0.8);
+  backdrop-filter: blur(0.5rem);
+  box-shadow: var(--shadow-subtle);
 }
 
 .site-header__branding a {
-  font-weight: bold;
-  text-decoration: none;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .main-nav__list {
@@ -126,15 +135,14 @@ h3 { font-size: clamp(1.25rem, 3vw, 2.5rem); }
   text-decoration: none;
   color: var(--color-text);
   font-weight: 500;
-  transition: color var(--transition-default);
+  transition: color 0.3s ease;
 }
 
-.main-nav__item a:hover,
-.main-nav__item a:focus-visible {
-  color: var(--color-link-hover);
+.main-nav__item a:hover {
+  color: var(--color-primary-dark);
 }
 
-/* ───────── 4. Block Sections & Theming ───────── */
+/* ───────── 4. Layout & Block Sections ───────── */
 .block {
   min-height: 100vh;
   padding: var(--space-xl) var(--space-lg);
@@ -143,151 +151,118 @@ h3 { font-size: clamp(1.25rem, 3vw, 2.5rem); }
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: background-color var(--transition-default);
+  background-color: var(--color-bg-light);
+  transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* 🚩 Fix for Issue #4: Defining the missing .theme--vibrant class */
-.theme--vibrant {
-  background: var(--gradient-hero);
-  color: var(--color-text-inverse);
-  --color-text: var(--color-text-inverse);
-  --color-primary: var(--color-text-inverse);
+/* 🖼️ Bleed-style backgrounds with pseudo-elements */
+.block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 100%;
+  background: var(--gradient-layered);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
-/* Thematic Modifiers with more dynamic backgrounds */
-.theme--complementary {
-  background: var(--gradient-hero);
+/* * 🖼️ A-Symmetrical & Dynamic Layouts 
+*/
+.block--hero {
+  text-align: left;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: var(--space-xl) var(--space-lg);
+  padding-bottom: var(--space-xxl);
+  background: var(--gradient-main);
   color: var(--color-text-inverse);
-  --color-text: var(--color-text-inverse);
-  --color-primary: var(--color-text-inverse);
 }
-.theme--analogous {
-  background: hsl(from var(--color-primary) h calc(s + 5%) l);
+.block--hero .text--hero {
+  text-shadow: var(--shadow-subtle);
+}
+.block--layout-asym {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+  text-align: left;
+}
+.block--bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: var(--space-xl);
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-bold);
+  z-index: 10;
+}
+
+/* * 🎨 Thematic Modifiers
+*/
+.theme--light {
   color: var(--color-text);
 }
 .theme--dark {
-  background: hsl(0, 0%, 10%);
-  --color-text: var(--color-text-inverse);
-  --color-primary: hsl(0, 0%, 80%);
-}
-.theme--monochromatic {
-  background-color: hsl(0, 0%, 90%);
-}
-.theme--triadic {
-  background: var(--color-accent);
+  background-color: var(--color-bg-dark);
   color: var(--color-text-inverse);
 }
-.theme--subtle-shift {
-  background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
-  color: var(--color-text-inverse);
+.theme--accent {
+  background-color: var(--color-accent-vivid);
+  color: var(--color-text);
 }
 
-/* ───────── 5. Layout Modifiers ───────── */
-.block--hero {
-  justify-content: center;
-  text-align: center;
-}
-.block--layout-two-col {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-  gap: var(--space-lg);
-}
-.block--layout-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-  gap: var(--space-md);
-}
-.block__content {
-  max-width: 50rem;
-  width: 100%;
-}
-.block__text--large {
-  font-size: 1.25rem;
-}
-
-/* ───────── 6. Components ───────── */
+/* ───────── 5. Components ───────── */
 .btn {
-  --btn-transform: initial;
-  --btn-shadow: initial;
-
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
   text-decoration: none;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
+  font-weight: bold;
+  border-radius: var(--radius-lg);
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
-  border: var(--border-width-sm) solid var(--color-primary);
-  transform: var(--btn-transform);
-  box-shadow: var(--btn-shadow);
-  transition: all var(--transition-default);
+  border: var(--border-sm) solid currentcolor;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.3s ease;
 }
-.btn--cta {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  padding: var(--space-md) var(--space-lg);
-  border-radius: 50px;
-}
-.btn:hover,
-.btn:focus-visible {
-  --btn-transform: translateY(-0.1875rem);
-  --btn-shadow: 0 0.3125rem 0.9375rem var(--color-shadow);
-  outline: 0.125rem solid currentcolor;
-  outline-offset: 0.125rem;
+
+.btn:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: var(--shadow-bold);
+  background-color: var(--color-primary-dark);
 }
 
 .card {
-  --card-transform: initial;
-  --card-shadow: 0 0.125rem 0.5rem var(--color-shadow);
-
-  background-color: var(--color-section-projects-card);
+  background-color: var(--color-bg-light);
   padding: var(--space-md);
-  border-radius: var(--radius-md);
-  box-shadow: var(--card-shadow);
-  transform: var(--card-transform);
-  transition: transform var(--transition-default), box-shadow var(--transition-default);
+  border-radius: var(--radius-sm);
+  border: var(--border-sm) solid var(--color-text-subtle);
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.3s ease;
+  transform: scale(1);
 }
 
-/* 🚩 Fix for Issue #1: Styling the missing card modifiers */
-.card--primary {
-  background-color: var(--color-section-projects-card);
-}
-.card--secondary {
-  background-color: color-mix(in srgb, var(--color-section), white 30%);
-}
-.card--accent {
-  background-color: var(--color-accent);
-  color: var(--color-text-inverse);
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-bold);
+  border-color: var(--color-primary-dark);
 }
 
-.card:hover,
-.card:focus-within {
-  --card-transform: scale(1.03);
-  --card-shadow: 0 0.3125rem 1.25rem var(--color-shadow);
-}
-.card:focus-visible {
-  outline: 0.125rem solid currentcolor;
-  outline-offset: 0.25rem;
-}
-
-/* ───────── 7. Mini-Games (Placeholders for their specific styling) ───────── */
-.mini-game {
-  background-color: var(--color-section);
-  padding: var(--space-lg);
-  border: var(--border-width-md) dashed currentcolor;
-}
-
-/* ───────── 8. Links (Added for a consistent style) ───────── */
+/* ───────── 6. Links and Other Utilities ───────── */
 a {
-  color: var(--color-link);
+  color: var(--color-primary);
   text-decoration: none;
-  transition: color var(--transition-default);
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-a:hover,
-a:focus-visible {
-  color: var(--color-link-hover);
-  border-bottom: var(--border-width-sm) solid currentcolor;
+a:hover {
+  color: var(--color-primary-dark);
+  border-bottom: 0.125rem solid currentcolor;
 }
