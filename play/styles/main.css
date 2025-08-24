@@ -1,5 +1,212 @@
-@layer base, layout, components;
+/*
+ * The Developer's Compass Portfolio CSS
+ * This stylesheet uses a minimalist BEM approach with CSS Custom Properties
+ * to create a scalable and maintainable design system.
+*/
 
-@import "./_base.css" layer(base);
-@import "./_layout.css" layer(layout);
-@import "./_components.css" layer(components);
+/* ───────── Global Variables & Utilities ───────── */
+:root {
+  /* Spacing System */
+  --space-unit: 1rem;
+  --space-xs: calc(var(--space-unit) * 0.25);
+  --space-sm: calc(var(--space-unit) * 0.5);
+  --space-md: var(--space-unit);
+  --space-lg: calc(var(--space-unit) * 2);
+  --space-xl: calc(var(--space-unit) * 4);
+
+  /* Global Color Palette (These are the base colors that can be overridden) */
+  --color-primary: #33FF57; /* Vibrant Green */
+  --color-secondary: #FF5733; /* Vibrant Orange */
+  --color-accent: #5733FF; /* Vibrant Purple */
+
+  /* Text & Background */
+  --color-text: #2c2c2c;
+  --color-text-inverse: #ffffff;
+  --color-background: #fafafa;
+  
+  /* Borders & Radii */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Transitions */
+  --transition-default: 0.3s ease-in-out;
+}
+
+/* ───────── Base Styles ───────── */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* Main content container for padding and layout */
+.main-content {
+  padding-block: var(--space-xl);
+}
+
+/* ───────── Headers & Navigation ───────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-background);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.site-header__branding a {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.main-nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-md);
+}
+
+.main-nav__item a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color var(--transition-default);
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ───────── Block Sections ───────── */
+.block {
+  padding: var(--space-xl) var(--space-lg);
+  min-height: 100vh; /* Ensures sections take up at least one viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-color var(--transition-default);
+}
+
+/* Thematic Modifiers */
+.block--hero {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+.block--hero .block__heading {
+  color: var(--color-text-inverse);
+}
+.theme--complementary {
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverse);
+}
+.theme--analogous {
+  background-color: #33FFD4; /* A specific analogous hue */
+  color: var(--color-text);
+}
+.theme--dark {
+  background-color: #1a1a1a;
+  color: var(--color-text-inverse);
+}
+
+/* ───────── Layout Modifiers ───────── */
+.block--layout-two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.block--layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+/* ───────── Components ───────── */
+.block__heading {
+  font-size: clamp(2rem, 5vw, 4rem); /* Responsive typography */
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+}
+
+.block__content {
+  max-width: 800px;
+  width: 100%;
+}
+
+.btn {
+  /* Using variables for dynamic states */
+  --btn-bg: var(--color-primary);
+  --btn-color: var(--color-text-inverse);
+  --btn-border: var(--border-width-sm) solid var(--btn-bg);
+  --btn-transform: initial;
+  --btn-shadow: initial;
+
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: var(--btn-border);
+  transform: var(--btn-transform);
+  box-shadow: var(--btn-shadow);
+  transition: all var(--transition-default);
+}
+
+/* Button Modifiers */
+.btn--cta {
+  --btn-bg: var(--color-accent);
+  --btn-border: var(--border-width-sm) solid var(--btn-bg);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.btn--cta:hover,
+.btn--cta:focus-visible {
+  --btn-transform: translateY(-3px);
+  --btn-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  /* Card variables for dynamic states */
+  --card-transform: initial;
+  --card-outline: none;
+
+  background-color: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: var(--card-transform);
+  outline: var(--card-outline);
+  outline-offset: 4px;
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+}
+
+.card:hover,
+.card:focus-within {
+  --card-transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Pure CSS Games (Placeholders for their specific styling) */
+.mini-game {
+  background-color: var(--color-background);
+  padding: var(--space-lg);
+  border: 1px dashed var(--color-accent);
+}
