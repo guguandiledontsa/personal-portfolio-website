@@ -1,0 +1,54 @@
+/* ───────── Typography ───────── */
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1); }
+h2 { 
+  font-size: var(--font-size-h2); }
+h3 { 
+  font-size: var(--font-size-body); }
+
+p {
+  font-size: var(--font-size-body);
+  margin-bottom: var(--space-md);
+}
+
+.text--hero {
+  font-size: var(--font-size-hero);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+.text--subtle {
+  font-family: var(--font-quote);
+  color: var(--color-text-subtle);
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* ───────── Links ───────── */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  
+  &:hover {
+    color: var(--color-primary-dark);
+    border-bottom: 0.125rem solid currentcolor;
+  }
+}
+
+.site-header__branding a {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}

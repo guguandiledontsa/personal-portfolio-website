@@ -1,9 +1,11 @@
-@import "./_reset.css";
-@import "./_variables.css";
-
-
-/* Base layer: Reset + Variables + Root Styles */
+/* ========== CSS RESETs ========== */
 @layer base {
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   
   html {
     font-size: var(--font-size);
@@ -15,10 +17,12 @@
   }
   
   body {
-    min-height: 100vh;
-    padding: var(--space-md);
-    background: var(--gradient-body, white);
-    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-primary-lighter-s-less);
+    line-height: 1.6;
+    margin: 0;
+    scroll-behavior: smooth;
   }
   
   :focus-visible {
@@ -27,7 +31,6 @@
   }
   
   @media (prefers-reduced-motion: reduce) {
-    
     *,
     *::before,
     *::after {

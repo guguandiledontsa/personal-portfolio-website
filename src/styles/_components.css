@@ -1,185 +1,48 @@
-/* ───────── Header ───────── */
-.header {
-  margin-block-end: var(--space-xl);
-  padding: var(--space-md);
-  background: var(--color-primary);
-  border-radius: var(--radius-lg);
-  color: var(--color-text-inverse);
-  text-align: center;
-}
+/* ───────── Component styles───────── */
 
-/* ───────── Sections ───────── */
-.section {
-  --section-color: var(--color-section);
-  
-  margin-block-end: var(--space-lg);
-  padding: var(--space-md);
-  background: var(--section-color);
-  border: var(--border-width-md) solid;
-  border-radius: var(--radius-md);
-  border-image: var(--gradient-section-border) 1;
-  text-align: center;
-}
-.section--about {
-  --section-color: var(--color-section-about);
-}
-.section--projects {
-  --section-color: var(--color-section-projects);
-}
-.section--contact {
-  --section-color: var(--color-section-contact);
-}
-
-/* ───────── Card ───────── */
-.card {
-  --focus-outline: ;/* space toggle: no transform by default *//* optional: for keyboard nav */
-  --transform-scale: ;
-
-  transition: background-color var(--transition-default), transform var(--transition-default);
-  padding: var(--space-md);
-  margin: var(--space-md);
-  max-width: var(--width-project-card);
-  background: var(--color-section-projects-card);
-  border-radius: var(--radius-sm);
-  transform: var(--transform-scale);
-  outline: var(--focus-outline);
-  outline-offset: 0.125rem;
-  text-align: start;
-  overflow-wrap: break-word;
-  display: inline-block;
-  
-  &:hover,
-  &:focus-within {
-    --transform-scale: scale(1.05);
-    --focus-outline: 2px dashed var(--color-accent);
-
-    background: var(--color-section-projects-card-hover);
-  }
-}
-
-.card__button {
-  margin: var(--space-xs);
-}
-
-/* ───────── Button ───────── */
-.button {
-  --focus-outline: ;
-  --transform-scale: ;
-  
-  padding: var(--space-sm) var(--space-md);
-  transition: var(--transition-hover-scale);
-  transform: var(--transform-scale);
-  outline: var(--focus-outline);
-  background: var(--color-button);
-  border-radius: var(--radius-sm);
-  color: var(--color-text-button);
-  outline-offset: 0.0625rem;
-  font-weight: 600;
-  border: none;
-  display: inline-block;
-  font-family: inherit;
-  text-align: center;
-  user-select: none;
-  cursor: pointer;
-}
-.button--primary {
-  border: var(--border-width-sm);
-  
-  &:hover,
-  &:focus-visible {
-    --focus-outline: 0.1875rem solid var(--color-button-outline);
-    --transform-scale: scale(1.1);
-  }
-}
-.button--secondary {
-  --color-button: white;
-  
-  &:hover,
-  &:focus-visible {
-    --focus-outline: 0.1875rem solid var(--color-button-outline);
-    --transform-scale: scale(1.05);
-  }
-}
-
-/* ───────── Form ───────── */
-.form {
-  font-weight: 600;
-}
-
-.form__group {
-  margin-block-end: var(--space-sm);
-  padding-block: var(--space-sm);
-  border-block: 1px solid blue;
-  width: 50%;
-  /* justify-self: center; */
-}
-
-/*
-.form__input {
-  border-radius: var(--radius-sm);
-  border: var(--border-width-sm) solid var(--color-shadow);
-  caret-color: var(--color-caret);
-  font-size: 1rem;
-  font-family: inherit;
-  color: var(--color-text-primary);
-}
-*/
-
-input:user-invalid {
-  --focus-outline: 1px solid red;
-  
-  outline: var(--focus-outline);
-  outline-offset: 0.5px;
-}
-
-/* ───────── Link ───────── */
-.link {
-  --focus-outline: ;
-  
-  color: var(--color-link);
-  outline: var(--focus-outline);
-  transition: color 0.3s ease;
-  outline-offset: 2px;
-  text-decoration: none;
-  
-  &:hover,
-  &:focus-visible {
-    --focus-outline: 2px solid var(--color-link-hover);
+@layer components {
+  .card {
+    background-color: var(--color-primary-lighter-s-less);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    border: var(--border-sm) solid var(--color-text-subtle);
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.3s ease;
+    transform: scale(1);
     
-    color: var(--color-link-hover);
-    text-decoration: underline;
+    &:hover {
+      box-shadow: var(--shadow-bold);
+      border-color: var(--color-primary-dark);
+      transform: scale(1.02);
+    }
   }
-}
-
-/* ───────── Titles / Subtitles ───────── */
-.header__title {
-  font-size: var(--font-size-lg);
-  color: green;
-}
-
-.header__subtitle {
-  margin-block-start: 0;
-}
-
-.section__title {
-  font-size: var(--font-size-lg);
-}
-
-.section__subtitle {
-  margin-block-start: 0;
-}
-
-.card__subtitle {
-  margin-block-end: var(--space-md);
-  min-inline-size: var(--width-project-desc-min);
-}
-
-.form__label {
-  color: var(--color-text-primary);
-}
-
-.footer__subtitle {
-  font-size: var(--font-size-sm);
-  user-select: none;
-  text-align: center;
+  
+  .btn {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: var(--border-sm) solid currentcolor;
+    box-shadow: var(--shadow-subtle);
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      box-shadow: var(--shadow-bold);
+      background-color: var(--color-primary-dark);
+      transform: translateY(-0.25rem);
+    }
+  }
+  
+  .main-nav__item a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: var(--color-primary-dark);
+    }
+  }
 }
