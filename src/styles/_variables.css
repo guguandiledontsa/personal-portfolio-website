@@ -21,7 +21,7 @@
     
     /* Grayscale & Text */
     --color-text: hsl(0, 0%, 15%);
-    --color-text-inverse: hsl(0, 0%, 98%);
+    --color-text-inverse: hsl(from var(--color-text) h calc(100 - s) calc(100 - l));
     --color-text-subtle: hsl(0, 0%, 40%);
     
     /* 🖋️ Typography & Spacin */
