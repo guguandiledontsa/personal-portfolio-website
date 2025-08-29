@@ -64,4 +64,34 @@
       --bg-color: mediumvioletred;
     }
   }
+  
+  /* ─────────  ───────── */
+
+  .subblock {
+    background-color: var(--bg-color);
+    
+    &:hover {
+      --bg-color: blue;
+    }
+  }
+  .subblock--nav1 {
+    &:hover {
+      --bg-color: lightslategray;
+    }
+  }
+  .subblock--intro1 {
+    &:hover {
+      --bg-color: lime;
+    }
+  }
+  .subblock--body1 {
+    &:hover {
+      --bg-color: lavender;
+    }
+  }
+  .subblock--end1 {
+    &:hover {
+      --bg-color: darkslategrey;
+    }
+  }
 }
