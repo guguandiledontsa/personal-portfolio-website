@@ -3,7 +3,7 @@
   
   @property --base-hue {
     syntax: '<number>';
-    initial-value:  150;
+    initial-value:  10;
     inherits: true;
   }
   

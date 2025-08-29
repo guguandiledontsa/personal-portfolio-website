@@ -1,70 +1,67 @@
-/* ───────── 3. Header & Navigation ───────── */
+/* ───────── 4. Layout & Block Sections ───────── */
 @layer layout {
-  
-  .site-header {
-    padding: var(--space-md) var(--space-md);
-    background-color: hsla(var(--base-hue), 20%, 95%, 0.5);
-    box-shadow: var(--shadow-subtle);
-    backdrop-filter: blur(0.3rem);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  :root {
+    --bg-color: ;
+    --min-h: ;
+    --alignment: ;
+    --txt-color: ;
   }
   
-  .main-nav__list {
-    gap: var(--space-md);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-  }
+  /* ─────────  ───────── */
   
-  /* ───────── 4. Layout & Block Sections ───────── */
-  .block {
-    padding: var(--space-xl) var(--space-lg);
-    background-color: var(--color-bg-light);
-    transition: background-color 0.3s ease;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+  
+  .supblock {
+    min-height: var(--min-h);
+    background-color: var(--bg-color);
+    text-align: var(--alignment);
     
-    &::before {
-      background: var(--gradient-layered);
-      content: '';
-      top: 0;
-      left: -5%;
-      width: 110%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.5;
-      position: absolute;
-      pointer-events: none;
+    &:hover {
+      --bg-color: red;
     }
   }
-  /*  --compact, layout-grid layout-col-2 mini-game */
-  
-  .block--hero {
-    padding: var(--space-xl) var(--space-lg);
-    padding-bottom: var(--space-xxl);
-    background: var(--gradient-main);
-    color: var(--color-text-inverse);
-    text-align: left;
-    justify-content: flex-end;
-    align-items: flex-start;
+  .supblock--header {
+    &:hover {
+      --min-h: 50vh;
+      --bg-color: yellow;
+    }
+  }
+  .supblock--main {
+    &:hover {
+      --min-h: 100vh;
+    }
+  }
+  .supblock--footer {
+    &:hover {
+      --min-h: 25vh;
+    }
   }
   
-  .block--hero .text--hero {
-    text-shadow: var(--shadow-subtle);
-  }
+  /* ─────────  ───────── */
   
-  /* * 🎨 Thematic Modifiers*/
+  .block {
+    background-color: var(--bg-color);
+    text-align: var(--alignment);
+    color: var(--txt-color);
 
+    &:hover {
+      --bg-color: deeppink;
+      --txt-color: white;
+      --alignment: center;
+    }
+  }
+  .block--intro1 {
+    &:hover {
+      --bg-color: pink;
+    }
+  }
+  .block--body1 {
+    &:hover {
+      --bg-color: palevioletred;
+    }
+  }
+  .block--end1 {
+    &:hover {
+      --bg-color: mediumvioletred;
+    }
+  }
 }

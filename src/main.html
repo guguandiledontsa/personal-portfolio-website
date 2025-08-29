@@ -4,16 +4,16 @@
 
 <body>
     
-    <header>
+    <header class="supblock supblock--header">
         <p>Header</p>
-        <nav>
+        <nav class="block block--nav1">
             <p>Header > Nav</p>
             <ul>
                 <li><a href="#">Header > Nav > ul > li > a</a></li>
             </ul>
         </nav>
         <br />
-        <section>
+        <section class="block block--intro1">
             <p>Header > Section</p>
             <article>
                 <p>Header > Section > Article</p>
@@ -23,7 +23,7 @@
             </div>
         </section>
         <br />
-        <article>
+        <article class="block block--intro2">
             <p>Header > Article</p>
             <section>
                 <p>Header > Article > Section</p>
@@ -33,7 +33,7 @@
             </div>
         </article>
         <br />
-        <div>
+        <div class="block block--intro3">
             <p>Header > Div</p>
             <section>
                 <p>Header > Div > Section</p>
@@ -44,161 +44,127 @@
         </div>
     </header>
     
-    <br />
-    <br />
-    <br />
-    
-    <main>
+    <main class="supblock supblock--main">
         <p>Main</p>
-        <section class="block block--intro">
+        <section class="block block--body1">
             <p>Main > Section</p>
-            <article class="subblock subblock--intro subblock--intro--(finer-modifier)">
+            <article class="subblock subblock--body1 subblock--body1--(finer-modifier)">
                 <p>Main > Section > Article</p>
-                <div class="subsubblock subsubblock--intro subsubblock--intro--(finer-moder)">
+                <div class="subsubblock subsubblock--body1 subsubblock--body1--(finer-moder)">
                     <p>Main > Section > Article > Div</p>
                 </div>
             </article>
             <div class="subblock header-subblock header-subblock--(modifier)">
                 <p>Main > Section > Div</p>
-                <form class="subsubblock subsubblock--intro subsubblock--intro--(other-finer-moder)">
+                <form class="subsubblock subsubblock--body1 subsubblock--body1--(other-finer-moder)">
                     <p>Main > Section > Div > Form</p>
                 </form>
             </div>
             <form class="subblock header-subblock header-subblock--(modifier)">
                 <p>Main > Section > Form</p>
-                <article class="subsubblock subsubblock--intro subsubblock--intro--(another-finer-moder)">
+                <article class="subsubblock subsubblock--body1 subsubblock--body1--(another-finer-moder)">
                     <p>Main > Section > Form > Article</p>
                 </article>
-                <div class="subsubblock subsubblock--intro subsubblock--intro--(someother-finer-moder)">
+                <div class="subsubblock subsubblock--body1 subsubblock--body1--(someother-finer-moder)">
                     <p>Main > Section > Article > Div</p>
                 </div>
             </form>
         </section>
-        
         <br />
-        <main>
-            <p>Main</p>
-            <section class="block block--body1">
-                <p>Main > Section</p>
-                <article class="subblock subblock--body1 subblock--body1--(finer-modifier)">
-                    <p>Main > Section > Article</p>
-                    <div class="subsubblock subsubblock--body1 subsubblock--body1--(finer-moder)">
-                        <p>Main > Section > Article > Div</p>
-                    </div>
-                </article>
-                <div class="subblock header-subblock header-subblock--(modifier)">
-                    <p>Main > Section > Div</p>
-                    <form class="subsubblock subsubblock--body1 subsubblock--body1--(other-finer-moder)">
-                        <p>Main > Section > Div > Form</p>
-                    </form>
-                </div>
-                <form class="subblock header-subblock header-subblock--(modifier)">
-                    <p>Main > Section > Form</p>
-                    <article class="subsubblock subsubblock--body1 subsubblock--body1--(another-finer-moder)">
-                        <p>Main > Section > Form > Article</p>
-                    </article>
-                    <div class="subsubblock subsubblock--body1 subsubblock--body1--(someother-finer-moder)">
-                        <p>Main > Section > Article > Div</p>
-                    </div>
+        
+        <article class="block block--body2">
+            <p>Main > Article</p>
+            <section class="subblock subblock--body2">
+                <p>Main > Article > Section</p>
+                <form class="subsubblock subsubblock--body2 subsubblock--body2--(finer-moder)">
+                    <p>Main > Article > Section > Form</p>
                 </form>
             </section>
-            <br />
-            
-            <article class="block block--body2">
-                <p>Main > Article</p>
-                <section class="subblock subblock--body2">
-                    <p>Main > Article > Section</p>
-                    <form class="subsubblock subsubblock--body2 subsubblock--body2--(finer-moder)">
-                        <p>Main > Article > Section > Form</p>
-                    </form>
+            <div class="subblock subblock--body2">
+                <p>Main > Article > Div</p>
+                <section class="subsubblock subsubblock--body2">
+                    <p>Main > Article > Div > Section</p>
                 </section>
-                <div class="subblock subblock--body2">
-                    <p>Main > Article > Div</p>
-                    <section class="subsubblock subsubblock--body2">
-                        <p>Main > Article > Div > Section</p>
-                    </section>
-                </div>
-                <form class="subblock subblock--body2">
-                    <p>Main > Article > Form</p>
-                    <div class="subsubblock subsubblock--body2">
-                        <p>Main > Article > Form > Div</p>
-                    </div>
-                </form>
-            </article>
-            
-            <br />
-            
-            <div class="block block--body3">
-                <p>Main > Div</p>
-                <section class="subblock subblock--body3">
-                    <p>Main > Div > Section</p>
-                    <article class="subsubblock subsubblock--body3">
-                        <p>Main > Div > Section > Article</p>
-                    </article>
-                </section>
-                <article class="subblock subblock--body3">
-                    <p>Main > Div > Article</p>
-                    <form class="subsubblock subsubblock--body3">
-                        <p>Main > Div > Article > Form</p>
-                    </form>
-                </article>
-                <form class="subblock subblock--body3">
-                    <p>Main > Div > Form</p>
-                    <section class="subsubblock subsubblock--body3">
-                        <p>Main > Div > Form > Section</p>
-                    </section>
-                </form>
             </div>
-            
-            <br />
-            
-            <form class="block block--body4">
-                <p>Main > Form</p>
-                <section class="subblock subblock--body4">
-                    <p>Main > Form > Section</p>
-                    <div class="subsubblock subsubblock--body4">
-                        <p>Main > Form > Section > Div</p>
-                    </div>
-                </section>
-                <article class="subblock subblock--body4">
-                    <p>Main > Form > Article</p>
-                    <section class="subsubblock subsubblock--body4">
-                        <p>Main > Form > Article > Section</p>
-                    </section>
-                </article>
-                <div class="subblock subblock--body4">
-                    <p>Main > Form > Div</p>
-                    <article class="subsubblock subsubblock--body4">
-                        <p>Main > Form > Div > Article</p>
-                    </article>
+            <form class="subblock subblock--body2">
+                <p>Main > Article > Form</p>
+                <div class="subsubblock subsubblock--body2">
+                    <p>Main > Article > Form > Div</p>
                 </div>
             </form>
-        </main>
+        </article>
         
         <br />
-        <br />
+        
+        <div class="block block--body3">
+            <p>Main > Div</p>
+            <section class="subblock subblock--body3">
+                <p>Main > Div > Section</p>
+                <article class="subsubblock subsubblock--body3">
+                    <p>Main > Div > Section > Article</p>
+                </article>
+            </section>
+            <article class="subblock subblock--body3">
+                <p>Main > Div > Article</p>
+                <form class="subsubblock subsubblock--body3">
+                    <p>Main > Div > Article > Form</p>
+                </form>
+            </article>
+            <form class="subblock subblock--body3">
+                <p>Main > Div > Form</p>
+                <section class="subsubblock subsubblock--body3">
+                    <p>Main > Div > Form > Section</p>
+                </section>
+            </form>
+        </div>
+        
         <br />
         
-        <footer>
-            <p>Footer</p>
-            <section>
-                <p>Footer > Section</p>
-                <div>
-                    <p>Footer > Section > Div</p>
+        <form class="block block--body4">
+            <p>Main > Form</p>
+            <section class="subblock subblock--body4">
+                <p>Main > Form > Section</p>
+                <div class="subsubblock subsubblock--body4">
+                    <p>Main > Form > Section > Div</p>
                 </div>
             </section>
-            <article>
-                <p>Footer > Article</p>
-                <section>
-                    <p>Footer > Article > Section</p>
+            <article class="subblock subblock--body4">
+                <p>Main > Form > Article</p>
+                <section class="subsubblock subsubblock--body4">
+                    <p>Main > Form > Article > Section</p>
                 </section>
             </article>
-            <nav>
-                <p>Footer > Nav</p>
-                <ul>
-                    <li><a href="#">Footer > Nav > ul > li > a</a></li>
-                </ul>
-            </nav>
-        </footer>
-        
+            <div class="subblock subblock--body4">
+                <p>Main > Form > Div</p>
+                <article class="subsubblock subsubblock--body4">
+                    <p>Main > Form > Div > Article</p>
+                </article>
+            </div>
+        </form>
+    </main>
+    
+    <footer class="supblock supblock--footer">
+        <p>Footer</p>
+        <section class="block block--end1">
+            <p>Footer > Section</p>
+            <div>
+                <p>Footer > Section > Div</p>
+            </div>
+        </section>
+        <br />
+        <article class="block block--end2">
+            <p>Footer > Article</p>
+            <section>
+                <p>Footer > Article > Section</p>
+            </section>
+        </article>
+        <br />
+        <nav class="block block--nav2">
+            <p>Footer > Nav</p>
+            <ul>
+                <li><a href="#">Footer > Nav > ul > li > a</a></li>
+            </ul>
+        </nav>
+    </footer>
+    
 </body>

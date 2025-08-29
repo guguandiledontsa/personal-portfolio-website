@@ -18,8 +18,6 @@
   
   body {
     font-family: var(--font-body);
-    color: var(--color-text);
-    background-color: var(--color-primary-lighter-s-less);
     line-height: 1.6;
     margin: 0;
     scroll-behavior: smooth;
