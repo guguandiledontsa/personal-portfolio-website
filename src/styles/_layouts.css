@@ -19,17 +19,20 @@
       --bg-color: red;
     }
   }
+  
   .supblock--header {
     &:hover {
       --min-h: 50vh;
       --bg-color: yellow;
     }
   }
+  
   .supblock--main {
     &:hover {
       --min-h: 100vh;
     }
   }
+  
   .supblock--footer {
     &:hover {
       --min-h: 25vh;
@@ -42,23 +45,26 @@
     background-color: var(--bg-color);
     text-align: var(--alignment);
     color: var(--txt-color);
-
+    
     &:hover {
       --bg-color: deeppink;
       --txt-color: white;
       --alignment: center;
     }
   }
+  
   .block--intro1 {
     &:hover {
       --bg-color: pink;
     }
   }
+  
   .block--body1 {
     &:hover {
       --bg-color: palevioletred;
     }
   }
+  
   .block--end1 {
     &:hover {
       --bg-color: mediumvioletred;
@@ -66,7 +72,7 @@
   }
   
   /* ─────────  ───────── */
-
+  
   .subblock {
     background-color: var(--bg-color);
     
@@ -74,24 +80,38 @@
       --bg-color: blue;
     }
   }
+  
   .subblock--nav1 {
     &:hover {
       --bg-color: lightslategray;
     }
   }
+  
   .subblock--intro1 {
     &:hover {
       --bg-color: lime;
     }
   }
+  
   .subblock--body1 {
     &:hover {
       --bg-color: lavender;
     }
   }
+  
   .subblock--end1 {
     &:hover {
       --bg-color: darkslategrey;
+    }
+  }
+  
+  /* ─────────  ───────── */
+  
+  .subsubblock {
+    color: var(--txt-color);
+    
+    &:hover{
+      color: magenta;
     }
   }
 }
