@@ -1,6 +1,7 @@
 /* ───────── Component styles───────── */
 
 @layer components {
+  /* 
   .card {
     background-color: var(--color-primary-lighter-s-less);
     padding: var(--space-md);
@@ -45,4 +46,11 @@
       color: var(--color-primary-dark);
     }
   }
+   */
+   
+   .block {
+     &:hover {
+       border: 0.125rem solid currentcolor;
+     }
+   }
 }
