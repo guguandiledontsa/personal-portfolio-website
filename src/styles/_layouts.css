@@ -1,11 +1,6 @@
 /* ───────── 4. Layout & Block Sections ───────── */
 @layer layout {
-  :root {
-    --bg-color: ;
-    --min-h: ;
-    --alignment: ;
-    --txt-color: ;
-  }
+  :root 
   
   /* ─────────  ───────── */
   
@@ -26,13 +21,11 @@
       --bg-color: yellow;
     }
   }
-  
   .supblock--main {
     &:hover {
       --min-h: 100vh;
     }
   }
-  
   .supblock--footer {
     &:hover {
       --min-h: 25vh;
@@ -58,13 +51,11 @@
       --bg-color: pink;
     }
   }
-  
   .block--body1 {
     &:hover {
       --bg-color: palevioletred;
     }
   }
-  
   .block--end1 {
     &:hover {
       --bg-color: mediumvioletred;
@@ -86,19 +77,16 @@
       --bg-color: lightslategray;
     }
   }
-  
   .subblock--intro1 {
     &:hover {
       --bg-color: lime;
     }
   }
-  
   .subblock--body1 {
     &:hover {
       --bg-color: lavender;
     }
   }
-  
   .subblock--end1 {
     &:hover {
       --bg-color: darkslategrey;
