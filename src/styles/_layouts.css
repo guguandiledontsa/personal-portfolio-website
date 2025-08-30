@@ -12,6 +12,7 @@
     
     &:hover {
       --bg-color: red;
+      --alignment: center;
     }
   }
   
@@ -28,7 +29,7 @@
   }
   .supblock--footer {
     &:hover {
-      --min-h: 25vh;
+      --min-h: 50vh;
     }
   }
   

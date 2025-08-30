@@ -50,7 +50,13 @@
    
    .block {
      &:hover {
+       border-radius: var(--radius-lg);
        border: 0.125rem solid currentcolor;
+     }
+   }
+   .subblock {
+     &:hover {
+       border-radius: inherit;
      }
    }
 }
