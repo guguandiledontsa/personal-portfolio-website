@@ -267,19 +267,20 @@
 /* ---------------------------------------------------------------------- */
 .container-sizing {
   /*
-   * Purpose: Defines how width and height are calculated.
+   * Purpose: Determines how an element's total width and height are calculated.
    * Syntax: box-sizing: <value>;
    * Key Values & Usage:
-   * - `content-box` (default): Width/height apply to content only. Padding and border are added to the final size.
-   * - `border-box`: Width/height include padding and border. This is generally preferred as it's more intuitive.
+   * - `content-box` (default): The specified width and height apply only to the content area. Padding and borders are added on top of this, making the element's final size larger.
+   * - `border-box`: The specified width and height include the content, padding, and border. This is the more intuitive and preferred model for modern web development, as it makes managing sizes much easier.
    */
   box-sizing: content-box;
 
   /*
-   * Purpose: Sets the dimensions.
+   * Purpose: Sets an element's dimensions.
    * Syntax: width: <value>; min-width: <value>; etc.
-   * When to Use: `width` for a fixed size, `min/max-width` for responsive boundaries.
-   * Use relative units (`%`, `vw`) for fluid designs.
+   * When to Use: Use static units (`px`, `rem`) for fixed-size elements. Use relative units (`%`, `vw`, `vh`) for fluid, responsive designs.
+   * - `min/max-width` and `min/max-height`: Define boundaries to prevent an element from becoming too small or too large, which is crucial for responsiveness.
+   * - `aspect-ratio`: A modern property that maintains a specific width-to-height ratio, regardless of the element's size.
    */
   width: auto;
   height: auto;
@@ -287,28 +288,39 @@
   max-width: none;
   min-height: auto;
   max-height: none;
-
+  aspect-ratio: auto; /* Example: aspect-ratio: 16 / 9; */
+}
+.container-spacing {
   /*
-   * Purpose: Sets the space outside the border.
+   * Purpose: Sets the space *outside* the border.
    * Syntax: margin: <value>;
    * Alternatives: Use `margin-top/right/bottom/left` for specific sides.
+   * When to Use: To create space between elements.
+   *
+   * Concept: Margin Collapsing
+   * Vertical margins of two adjacent elements can "collapse," meaning the space between them is determined by the larger of the two margins, not their sum. This only happens with vertical margins, not horizontal ones.
    */
   margin: 0;
-  /* Purpose: Provides a logical way to set margins and padding based on writing mode.
-   * Alternatives: top/right/bottom/left properties.
-   * When to Use: For multilingual or global websites where text direction may change (e.g., from LTR to RTL). */
-  margin-block-start: 0; /* Top margin in LTR, left margin in RTL. */
+
+  /*
+   * Purpose: Provides a logical way to set margins and padding based on writing mode (e.g., left-to-right vs. right-to-left).
+   * Alternatives: Using directional properties like `margin-top` can be less flexible for multilingual sites.
+   * When to Use: For global websites where text direction can change, these properties ensure spacing remains correct without having to rewrite the CSS.
+   */
+  margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
 
   /*
-   * Purpose: Sets the space inside the border.
+   * Purpose: Sets the space *inside* the border, between the border and the content.
    * Syntax: padding: <value>;
    * Alternatives: Use `padding-top/right/bottom/left` for specific sides.
+   * When to Use: To create internal spacing and prevent content from touching the edges.
    */
   padding: 0;
-  
+
+  /* Logical padding properties */
   padding-block-start: 0;
   padding-block-end: 0;
   padding-inline-start: 0;
