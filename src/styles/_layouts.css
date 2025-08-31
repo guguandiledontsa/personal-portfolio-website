@@ -91,49 +91,72 @@
 /* 2. Flexbox (Applied to Container) */
 /* ---------------------------------------------------------------------- */
 .container-flex {
+  /*
+   * Purpose: Establishes a flex formatting context for its children, making them flex items.
+   * Syntax: display: flex | inline-flex;
+   * When to Use: The foundation of any flex-based layout. Use `flex` for a block-level container and `inline-flex` for a container that behaves like a word within a line of text.
+   */
   display: flex;
 
   /*
-   * Purpose: Sets the direction of the main axis.
+   * Purpose: Sets the direction of the main axis along which flex items are laid out.
    * Syntax: flex-direction: <value>;
    * Key Values & Usage:
-   * - `row` (default): Items are arranged horizontally.
-   * - `column`: Items are arranged vertically.
+   * - `row` (default): Items are arranged horizontally from left to right.
+   * - `row-reverse`: Items are arranged horizontally from right to left.
+   * - `column`: Items are arranged vertically from top to bottom.
+   * - `column-reverse`: Items are arranged vertically from bottom to top.
    */
   flex-direction: row;
 
   /*
-   * Purpose: Controls whether items wrap onto new lines.
+   * Purpose: Controls whether items wrap onto new lines when they don't fit in the container.
    * Syntax: flex-wrap: <value>;
    * Key Values & Usage:
-   * - `nowrap` (default): All items are on one line.
-   * - `wrap`: Items will wrap to the next line if they can't fit.
+   * - `nowrap` (default): All items stay on a single line, even if they overflow.
+   * - `wrap`: Items will wrap to the next line if the container is too small.
+   * - `wrap-reverse`: Items wrap to the next line in the opposite direction.
    */
   flex-wrap: nowrap;
 
   /*
-   * Purpose: Aligns items along the main axis.
+   * Purpose: A shorthand for setting both `flex-direction` and `flex-wrap`.
+   * Syntax: flex-flow: <flex-direction> <flex-wrap>;
+   * When to Use: For a concise and efficient way to define the main axis and wrapping behavior.
+   * Example: flex-flow: column wrap;
+   */
+  flex-flow: row nowrap;
+
+  /*
+   * Purpose: Aligns items along the main axis of the container.
    * Syntax: justify-content: <value>;
    * Key Values & Usage:
-   * - `flex-start`: Items are aligned at the start of the axis.
-   * - `center`: Items are centered.
-   * - `space-between`: Items are evenly distributed with space between them.
+   * - `flex-start` (default): Items are aligned at the start of the main axis.
+   * - `flex-end`: Items are aligned at the end of the main axis.
+   * - `center`: Items are centered along the main axis.
+   * - `space-between`: Items are evenly distributed with the first item at the start and the last at the end.
+   * - `space-around`: Items are evenly distributed with equal space around them.
+   * - `space-evenly`: Items are evenly distributed with equal space between them and the container's edges.
    */
   justify-content: flex-start;
 
   /*
-   * Purpose: Aligns items along the cross axis.
+   * Purpose: Aligns items along the cross axis (perpendicular to the main axis).
    * Syntax: align-items: <value>;
    * Key Values & Usage:
    * - `stretch` (default): Items stretch to fill the container on the cross axis.
-   * - `center`: Items are centered.
+   * - `flex-start`: Items are aligned at the start of the cross axis.
+   * - `flex-end`: Items are aligned at the end of the cross axis.
+   * - `center`: Items are centered along the cross axis.
+   * - `baseline`: Items are aligned according to their baselines.
    */
   align-items: stretch;
 
   /*
-   * Purpose: Aligns wrapped lines along the cross axis.
+   * Purpose: Aligns wrapped lines of flex items along the cross axis.
    * Syntax: align-content: <value>;
-   * When to Use: Only when `flex-wrap` is `wrap` and there is extra space on the cross axis.
+   * When to Use: Only when `flex-wrap` is set to `wrap` and there is extra space on the cross axis. It controls the spacing between lines, not the items themselves.
+   * Key Values & Usage: `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `stretch`.
    */
   align-content: stretch;
 }
