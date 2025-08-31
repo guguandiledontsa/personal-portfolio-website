@@ -165,33 +165,101 @@
 /* 3. CSS Grid (Applied to Container) */
 /* ---------------------------------------------------------------------- */
 .container-grid {
+  /*
+   * Purpose: Establishes a grid formatting context for its children, making them grid items.
+   * Syntax: display: grid | inline-grid;
+   * When to Use: The foundation of any grid-based layout. Use `grid` for a block-level container and `inline-grid` for a container that behaves like an inline element.
+   */
   display: grid;
 
   /*
-   * Purpose: Defines the grid's columns and rows.
+   * Purpose: Defines the grid's columns and rows. This is a core property for establishing the grid's structure.
    * Syntax: grid-template-columns: <sizes>; grid-template-rows: <sizes>;
    * Key Values & Usage:
-   * - `1fr`: A fractional unit that takes up one part of the available space. Excellent for responsive layouts.
-   * - `100px`: A fixed size.
-   * - `repeat(3, 1fr)`: A shorthand to create three equal-sized columns or rows.
+   * - `fr` (fractional unit): Distributes available space proportionally. `grid-template-columns: 1fr 2fr;` creates two columns, with the second being twice as wide as the first.
+   * - `px, em, rem`: Fixed-size units.
+   * - `%`: A percentage of the container's width or height.
+   * - `auto`: Automatically sized to fit content.
+   * - `minmax(min, max)`: Sets a minimum and maximum size range. Example: `minmax(100px, 1fr)` ensures a column is at least 100px wide but can grow.
+   * - `repeat(count, size)`: A powerful shorthand to create multiple identical tracks.
    */
   grid-template-columns: none;
   grid-template-rows: none;
 
   /*
    * Purpose: Defines named grid areas for simple item placement.
-   * Syntax: grid-template-areas: "<name1> <name2>";
-   * When to Use: When you want to visually lay out your grid in a clear, readable way.
+   * Syntax: grid-template-areas: "<name1> <name2>" "<name3> <name4>";
+   * When to Use: For creating complex but readable layouts where you want to visually represent the structure of the page. Grid items can then be placed using the `grid-area` property.
    */
   grid-template-areas: none;
+
+  /*
+   * Purpose: A shorthand for setting `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` at once.
+   * Syntax: grid-template: <grid-template-rows> / <grid-template-columns>;
+   * When to Use: For a concise way to define the grid's layout.
+   * Example: `grid-template: "a b" 1fr "c d" 1fr / 1fr 1fr;`
+   */
+  grid-template: none;
+
+  /*
+   * Purpose: Controls how auto-placed grid items are inserted into the grid.
+   * Syntax: grid-auto-flow: <value>;
+   * Key Values & Usage:
+   * - `row` (default): Places items into empty cells row by row.
+   * - `column`: Places items into empty cells column by column.
+   * - `dense`: Tries to fill empty spaces in the grid by rearranging smaller items, which can reduce white space.
+   */
+  grid-auto-flow: row;
+
+  /*
+   * Purpose: Specifies the size of implicitly created grid tracks (rows/columns that aren't explicitly defined by `grid-template-rows/columns`).
+   * Syntax: grid-auto-columns: <size>; grid-auto-rows: <size>;
+   * When to Use: When you have an unknown number of items and want to ensure a consistent size for all of them.
+   */
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+
+  /*
+   * Purpose: A shorthand for `grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`.
+   * Syntax: grid-auto: <grid-auto-flow> <grid-auto-rows> / <grid-auto-columns>;
+   * Example: `grid-auto: row dense 100px;`
+   */
+  grid-auto: auto;
 
   /*
    * Purpose: Controls the space between grid items.
    * Syntax: gap: <value>;
    * Alternatives: `row-gap` and `column-gap` for individual control.
-   * When to Use: A modern, cleaner alternative to using margins on grid items.
+   * When to Use: A modern, cleaner alternative to using margins on grid items. It creates space between items without affecting the outer edges of the grid.
    */
   gap: 0;
+  row-gap: 0;
+  column-gap: 0;
+
+  /*
+   * Purpose: Aligns the grid items inside the grid container along the block (column) axis.
+   * Syntax: align-items: <value>;
+   * When to Use: To align all grid items within their respective cells.
+   * Key Values & Usage: `start`, `end`, `center`, `stretch`.
+   */
+  align-items: stretch;
+
+  /*
+   * Purpose: Aligns the grid items inside the grid container along the inline (row) axis.
+   * Syntax: justify-items: <value>;
+   * When to Use: To align all grid items within their respective cells.
+   * Key Values & Usage: `start`, `end`, `center`, `stretch`.
+   */
+  justify-items: stretch;
+
+  /*
+   * Purpose: Aligns the grid itself within the grid container.
+   * Syntax: align-content: <value>; justify-content: <value>;
+   * When to Use: Only when the grid's total size is smaller than the grid container's size.
+   * Key Values & Usage: `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`.
+   */
+  align-content: start;
+  justify-content: start;
 }
 
 /* ---------------------------------------------------------------------- */
