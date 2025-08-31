@@ -90,6 +90,20 @@
     contain: none;
     /* Possible values: none, strict, content, size, layout, style, paint. */
   }
+  .container-contain {
+    /*
+   * Purpose: Specifies that an element and its contents are independent from the rest of the document's layout, style, and painting.
+   * Syntax: contain: <value>;
+   * When to use: As a performance optimization on independent widgets or components to prevent their changes from triggering a re-render of the entire page.
+   * Key values:
+   * - `layout`: The element's internal layout changes don't affect the parent's layout.
+   * - `paint`: The element's content won't be painted until it's ready, preventing the browser from wasting resources.
+   * - `size`: The element's size can be determined without inspecting its contents.
+   * - `strict`: A shorthand for `layout`, `paint`, and `size`.
+   */
+    contain: none;
+  }
+  
   
   /* ---------------------------------------------------------------------- */
   /* 2. Flexbox (Applied to Container) */
@@ -295,7 +309,6 @@
     aspect-ratio: auto;
     /* Example: aspect-ratio: 16 / 9; */
   }
-  
   .container-spacing {
     /*
    * Purpose: Sets the space *outside* the border.
@@ -565,7 +578,6 @@
     text-decoration-color: initial;
     text-decoration-thickness: auto;
   }
-  
   .container-typography-font {
     /*
    * Purpose: A shorthand for setting all font properties in a single declaration.
@@ -622,6 +634,47 @@
    */
     font-stretch: normal;
   }
+  .container-columns {
+    /*
+   * Purpose: Sets the number of columns an element's content should be divided into.
+   * Syntax: column-count: <integer>;
+   * When to use: To quickly create a layout with a fixed number of columns without using more complex layout methods.
+   * Example: column-count: 3;
+   */
+    column-count: auto;
+    
+    /*
+   * Purpose: Specifies the width of the columns.
+   * Syntax: column-width: <length>;
+   * When to use: To create columns that automatically fit as many as possible into the available space, each with a minimum width.
+   * Example: column-width: 15em;
+   */
+    column-width: auto;
+    
+    /*
+   * Purpose: A shorthand for setting both `column-width` and `column-count`.
+   * Syntax: columns: <column-width> <column-count>;
+   * When to use: For a concise way to define your column layout.
+   * Example: columns: 200px 3;
+   */
+    columns: auto;
+    
+    /*
+   * Purpose: Sets the gap between the columns.
+   * Syntax: column-gap: <length>;
+   * When to use: To add space between columns for better readability.
+   * Example: column-gap: 2rem;
+   */
+    column-gap: normal;
+    
+    /*
+   * Purpose: Specifies a style for the rule (a line) drawn between columns.
+   * Syntax: column-rule: <width> <style> <color>;
+   * When to use: To visually separate content in adjacent columns.
+   * Example: column-rule: 1px solid #ccc;
+   */
+    column-rule: none;
+  }
   
   /* ---------------------------------------------------------------------- */
   /* 7. Transitions & Transforms */
@@ -667,7 +720,6 @@
    */
     transition-delay: 0s;
   }
-  
   .container-transforms {
     /*
    * Purpose: Applies a 2D or 3D transform.
@@ -721,7 +773,6 @@
     backface-visibility: visible;
     /* Possible values: visible, hidden. */
   }
-  
   .container-animations {
     /*
    * Purpose: A shorthand for all animation properties.
@@ -886,7 +937,7 @@
   }
   
   .supblock--header {
-
+    
     /* i wanna style the header with grid
     * use it to place its subs in irregular places */
     &:hover {
