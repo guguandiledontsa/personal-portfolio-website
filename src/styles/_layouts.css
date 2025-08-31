@@ -330,7 +330,6 @@
 /* ---------------------------------------------------------------------- */
 /* 5. Appearance & Styling */
 /* ---------------------------------------------------------------------- */
-
 .container-style {
   /*
    * Purpose: A shorthand for all background-related properties.
@@ -491,29 +490,127 @@
    */
   object-position: 50% 50%;
 }
+
 /* ---------------------------------------------------------------------- */
 /* 6. Typography (if text is inside) */
 /* ---------------------------------------------------------------------- */
 .container-typography {
   /*
-   * Purpose: Sets the font family, size, weight, and other properties.
-   * Syntax: font: <value>;
-   * Alternatives: Use longhand properties like `font-size`, `font-family`, etc.
+   * Purpose: Sets the color of the text.
+   * Syntax: color: <color>;
+   * Key Values & Usage: `currentColor`, color names, hex codes, `rgb()`, `rgba()`, `hsl()`, `hsla()`.
    */
-  font-size: medium; /* Sets the size of the text.
-  Possible values: numeric values, percentages, keywords. */
-  font-family: sans-serif;
-  font-weight: normal; /* Sets the boldness of the text.
-  Possible values: normal, bold, bolder, lighter, numeric values (100-900). */
+  color: initial;
 
   /*
-   * Purpose: Aligns text horizontally.
+   * Purpose: Aligns text horizontally within the container.
    * Syntax: text-align: <value>;
    * Key Values & Usage:
    * - `left`, `right`, `center`: Common alignment options.
    * - `justify`: Stretches lines of text so each has equal width.
+   * - `start`, `end`: Logical properties that align text based on writing direction. `start` is `left` in LTR and `right` in RTL.
    */
   text-align: left;
+
+  /*
+   * Purpose: Specifies the height of a line of text.
+   * Syntax: line-height: <value>;
+   * When to Use: A unitless value (e.g., `1.5`) is recommended as it's a multiplier of the font size, making it scale proportionally.
+   */
+  line-height: normal;
+
+  /*
+   * Purpose: Controls the spacing between words.
+   * Syntax: word-spacing: <value>;
+   * Key Values & Usage: `normal`, `length` (`px`, `em`, `rem`).
+   */
+  word-spacing: normal;
+
+  /*
+   * Purpose: Controls the spacing between characters.
+   * Syntax: letter-spacing: <value>;
+   * Key Values & Usage: `normal`, `length` (`px`, `em`, `rem`).
+   */
+  letter-spacing: normal;
+  
+  /*
+   * Purpose: Specifies how white space is handled within an element.
+   * Syntax: white-space: <value>;
+   * Key Values & Usage:
+   * - `normal`: Collapses multiple spaces into a single space.
+   * - `nowrap`: Prevents text from wrapping, causing it to overflow.
+   * - `pre`: Preserves all white space exactly as written in the source code.
+   * - `pre-wrap`: Preserves white space but allows lines to wrap.
+   */
+  white-space: normal;
+
+  /*
+   * Purpose: Sets the text decoration.
+   * Syntax: text-decoration: <line> <style> <color> <thickness>;
+   * When to Use: To add, remove, or customize underlines, overlines, and strikethroughs.
+   * Alternatives: Use longhand properties for individual control.
+   */
+  text-decoration: none;
+  text-decoration-line: none; /* Possible values: `none`, `underline`, `overline`, `line-through`. */
+  text-decoration-style: solid; /* Possible values: `solid`, `double`, `dotted`, `dashed`, `wavy`. */
+  text-decoration-color: initial;
+  text-decoration-thickness: auto;
+}
+.container-typography-font{
+  /*
+   * Purpose: A shorthand for setting all font properties in a single declaration.
+   * Syntax: font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size] / [line-height] [font-family];
+   * When to Use: For a concise way to set all core font properties at once.
+   * Example: font: italic small-caps 700 1.2em/1.5 "Georgia", serif;
+   */
+  font: normal;
+  
+  /*
+   * Purpose: Sets the font size.
+   * Syntax: font-size: <value>;
+   * Key Values & Usage:
+   * - `px`, `em`, `rem`: Fixed and relative units. Use `rem` for better accessibility as it scales with the user's browser font size setting.
+   * - `vh`, `vw`: Viewport-relative units, great for fluid typography.
+   * - `xx-small`, `x-small`, `small`, `medium`, etc.: Absolute keywords.
+   * - `%`: A percentage of the parent element's font size.
+   */
+  font-size: medium;
+  
+  /*
+   * Purpose: Specifies the font family for text.
+   * Syntax: font-family: <font-name-1>, <font-name-2>, ... | <generic-family>;
+   * Key Values & Usage: Provide a list of fonts as fallbacks, ending with a generic family to ensure the browser has a style to fall back on.
+   * Example: font-family: "Helvetica Neue", Arial, sans-serif;
+   */
+  font-family: sans-serif;
+  
+  /*
+   * Purpose: Sets the boldness or lightness of the font.
+   * Syntax: font-weight: <value>;
+   * Key Values & Usage: `normal`, `bold`, `lighter`, `bolder`, or numeric values from `100` (thinnest) to `900` (thickest).
+   */
+  font-weight: normal;
+  
+  /*
+   * Purpose: Sets the font style, such as italic.
+   * Syntax: font-style: <value>;
+   * Key Values & Usage: `normal`, `italic`, `oblique`.
+   */
+  font-style: normal;
+  
+  /*
+   * Purpose: Displays a small-caps font.
+   * Syntax: font-variant: <value>;
+   * Key Values & Usage: `normal`, `small-caps`.
+   */
+  font-variant: normal;
+  
+  /*
+   * Purpose: Adjusts the font face's normal aspect ratio.
+   * Syntax: font-stretch: <value>;
+   * When to Use: To stretch or condense a font. This is not widely supported by all fonts.
+   */
+  font-stretch: normal;
 }
 
 /* ---------------------------------------------------------------------- */
