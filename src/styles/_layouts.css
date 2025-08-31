@@ -1,109 +1,367 @@
 /* ───────── 4. Layout & Block Sections ───────── */
 @layer layout {
-.container-starter {
-    /* -------------------- 1. Core Layout & Positioning -------------------- */
-    display: block; /* Specifies the rendering box of an element.
-                       Possible values: block, inline, inline-block, flex, grid, inline-flex, inline-grid, none. */
-    
-    position: static; /* Specifies the positioning method.
-                         Possible values: static, relative, absolute, fixed, sticky. */
-    top: auto; /* Positions an element relative to its container.
-                  Possible values: numeric values (px, em, %), auto. */
-    right: auto; /* Positions an element. Possible values: numeric values, auto. */
-    bottom: auto; /* Positions an element. Possible values: numeric values, auto. */
-    left: auto; /* Positions an element. Possible values: numeric values, auto. */
-    z-index: auto; /* Specifies the stack order. Possible values: auto, integer. */
-    overflow: visible; /* Defines how to handle content too large for the container.
-                           Possible values: visible, hidden, scroll, auto. */
 
-    /* -------------------- 2. Flexbox (Applied to Container) -------------------- */
-    flex-direction: row; /* [display: flex] Sets the direction of the main axis.
-                             Possible values: row, row-reverse, column, column-reverse. */
-    flex-wrap: nowrap; /* [display: flex] Controls wrapping of items.
-                           Possible values: nowrap, wrap, wrap-reverse. */
-    flex-flow: row nowrap; /* [display: flex] Shorthand for flex-direction and flex-wrap.
-                               Possible values: combination of flex-direction and flex-wrap values. */
-    justify-content: flex-start; /* [display: flex] Aligns items along the main axis.
-                                     Possible values: flex-start, flex-end, center, space-between, space-around, space-evenly. */
-    align-items: stretch; /* [display: flex] Aligns items along the cross axis.
-                              Possible values: flex-start, flex-end, center, baseline, stretch. */
-    align-content: stretch; /* [display: flex] Aligns wrapped lines along the cross axis.
-                                Possible values: flex-start, flex-end, center, space-between, space-around, stretch. */
-    gap: 0; /* [display: flex | grid] Sets the space between items.
-                Possible values: numeric values (px, em, %), calc(). */
+/* ---------------------------------------------------------------------- */
+/* 1. Core Layout & Positioning */
+/* ---------------------------------------------------------------------- */
+.container-layout {
+  /*
+   * Purpose: Controls how the element's box is rendered.
+   * Syntax: display: <value>;
+   * Key Values & Usage:
+   * - `block`: Takes up the full width, forcing a new line. Best for main sections.
+   * - `inline-block`: Stays in line with text but respects width and height. Good for buttons or icons.
+   * - `flex`: Enables Flexbox layout for one-dimensional alignment. Ideal for navigation bars.
+   * - `grid`: Enables CSS Grid for two-dimensional layouts. Great for complex page structures.
+   */
+  display: block;
 
-    /* -------------------- 3. CSS Grid (Applied to Container) -------------------- */
-    grid-template-columns: none; /* [display: grid] Defines the columns.
-                                     Possible values: a list of sizes (e.g., 1fr 1fr), auto, minmax(), repeat(), none. */
-    grid-template-rows: none; /* [display: grid] Defines the rows.
-                                  Possible values: a list of sizes, auto, minmax(), repeat(), none. */
-    grid-template-areas: none; /* [display: grid] Defines named areas.
-                                   Possible values: string containing named areas (e.g., "header header" "main nav"), none. */
-    grid-auto-flow: row; /* [display: grid] Controls how auto-placed items are inserted.
-                             Possible values: row, column, dense. */
-    grid-auto-columns: auto; /* [display: grid] Specifies the size of auto-generated columns.
-                                 Possible values: auto, numeric values, minmax(), etc. */
-    grid-auto-rows: auto; /* [display: grid] Specifies the size of auto-generated rows.
-                              Possible values: auto, numeric values, minmax(), etc. */
+  /*
+   * Purpose: Specifies the positioning method.
+   * Syntax: position: <value>;
+   * Key Values & Usage:
+   * - `static` (default): Follows the normal document flow. `top/left/etc.` have no effect.
+   * - `relative`: Positioned relative to its normal position. Use to offset an element without affecting others.
+   * - `absolute`: Positioned relative to its closest positioned ancestor. Use to overlay elements.
+   * - `fixed`: Positioned relative to the viewport. Use for sticky headers or floating buttons.
+   */
+  position: static;
 
-    /* -------------------- 4. Sizing & Spacing -------------------- */
-    box-sizing: content-box; /* Determines how width and height are calculated.
-                                 Possible values: content-box, border-box. */
-    width: auto; /* Sets the element's width.
-                     Possible values: auto, numeric values, percentages (%), viewport units (vw, vh), calc(). */
-    height: auto; /* Sets the element's height.
-                      Possible values: auto, numeric values, percentages, viewport units. */
-    min-width: auto; /* Sets the minimum width. Possible values: auto, numeric values, percentage. */
-    max-width: none; /* Sets the maximum width. Possible values: none, numeric values, percentage. */
-    
-    /* Logical properties for spacing */
-    margin-block: 0; /* [logical property] Sets the top and bottom margins.
-                         Possible values: numeric values, auto. */
-    margin-inline: 0; /* [logical property] Sets the left and right margins.
-                          Possible values: numeric values, auto. */
-    padding-block: 0; /* [logical property] Sets the top and bottom padding.
-                          Possible values: numeric values. */
-    padding-inline: 0; /* [logical property] Sets the left and right padding.
-                           Possible values: numeric values. */
+  /*
+   * Purpose: Sets an element's position relative to its containing block.
+   * Syntax: top: <value>; left: <value>; etc.
+   * Alternatives: `inset: <value>;` is a shorthand for all four sides.
+   * When to Use: Used with `position` values other than `static`.
+   */
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  inset: auto; /* Example: inset: 0; for full-container coverage. */
 
-    /* Traditional spacing properties */
-    margin: 0; /* Sets the space outside the border. Possible values: numeric values, auto, shorthand. */
-    padding: 0; /* Sets the space inside the border. Possible values: numeric values, shorthand. */
+  /*
+   * Purpose: Defines the vertical stacking order.
+   * Syntax: z-index: <integer>;
+   * When to Use: Use with positioned elements to control which one appears on top. Higher values are on top.
+   */
+  z-index: auto;
 
-    /* -------------------- 5. Appearance & Styling -------------------- */
-    background-color: transparent; /* Sets the background color. Possible values: color names, hex, rgb, hsl. */
-    background-image: none; /* Sets a background image. Possible values: url(), linear-gradient(), none. */
-    background-size: auto; /* Sets the size of the background image. Possible values: auto, cover, contain, numeric values. */
-    background-repeat: repeat; /* Sets how a background image is repeated. Possible values: repeat, no-repeat, space, round. */
-    background-position: 0% 0%; /* Sets the starting position. Possible values: keywords, percentages, numeric values. */
-    background-attachment: scroll; /* Sets whether the background scrolls or is fixed.
-                                       Possible values: scroll, fixed, local. */
-    
-    /* Logical border properties */
-    border-block-start: none; /* [logical property] Sets the top border. */
-    border-block-end: none; /* [logical property] Sets the bottom border. */
-    border-inline-start: none; /* [logical property] Sets the left border. */
-    border-inline-end: none; /* [logical property] Sets the right border. */
+  /*
+   * Purpose: Manages content that overflows the container.
+   * Syntax: overflow: <value>;
+   * Key Values & Usage:
+   * - `visible`: Content is not clipped and may extend beyond the container.
+   * - `hidden`: Content is clipped and the overflow is not visible.
+   * - `scroll`: Always adds scrollbars.
+   * - `auto`: Adds scrollbars only when needed.
+   */
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+}
 
-    /* Traditional border properties */
-    border: none; /* Sets the border. Possible values: border-width, border-style, border-color. */
-    border-radius: 0; /* Rounds the corners. Possible values: numeric values, %. */
-    outline: none; /* Draws an outline outside the element's border.
-                       Possible values: outline-width, outline-style, outline-color, none. */
-    box-shadow: none; /* Adds a shadow. Possible values: offsets, blur, spread, and color. */
-    
-    opacity: 1; /* Sets the transparency level. Possible values: a number from 0.0 to 1.0. */
-    cursor: auto; /* Defines the cursor to be displayed. Possible values: auto, default, pointer, text. */
-    
-    /* -------------------- 6. Typography (If text is inside the container) -------------------- */
-    font-size: medium; /* Sets the size of the text. Possible values: numeric values, percentages, keywords. */
-    font-family: sans-serif; /* Sets the font family. Possible values: a list of font names. */
-    font-weight: normal; /* Sets the boldness of the text.
-                             Possible values: normal, bold, bolder, lighter, numeric values (100-900). */
-    line-height: normal; /* Sets the height of a line of text.
-                             Possible values: normal, numeric values, percentages. */
-    text-align: left; /* Aligns text horizontally. Possible values: left, right, center, justify. */
-    color: initial; /* Sets the text color. Possible values: color names, hex, rgb, etc. */
+/* ---------------------------------------------------------------------- */
+/* 2. Flexbox (Applied to Container) */
+/* ---------------------------------------------------------------------- */
+.container-flex {
+  display: flex;
+
+  /*
+   * Purpose: Sets the direction of the main axis.
+   * Syntax: flex-direction: <value>;
+   * Key Values & Usage:
+   * - `row` (default): Items are arranged horizontally.
+   * - `column`: Items are arranged vertically.
+   */
+  flex-direction: row;
+
+  /*
+   * Purpose: Controls whether items wrap onto new lines.
+   * Syntax: flex-wrap: <value>;
+   * Key Values & Usage:
+   * - `nowrap` (default): All items are on one line.
+   * - `wrap`: Items will wrap to the next line if they can't fit.
+   */
+  flex-wrap: nowrap;
+
+  /*
+   * Purpose: Aligns items along the main axis.
+   * Syntax: justify-content: <value>;
+   * Key Values & Usage:
+   * - `flex-start`: Items are aligned at the start of the axis.
+   * - `center`: Items are centered.
+   * - `space-between`: Items are evenly distributed with space between them.
+   */
+  justify-content: flex-start;
+
+  /*
+   * Purpose: Aligns items along the cross axis.
+   * Syntax: align-items: <value>;
+   * Key Values & Usage:
+   * - `stretch` (default): Items stretch to fill the container on the cross axis.
+   * - `center`: Items are centered.
+   */
+  align-items: stretch;
+
+  /*
+   * Purpose: Aligns wrapped lines along the cross axis.
+   * Syntax: align-content: <value>;
+   * When to Use: Only when `flex-wrap` is `wrap` and there is extra space on the cross axis.
+   */
+  align-content: stretch;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 3. CSS Grid (Applied to Container) */
+/* ---------------------------------------------------------------------- */
+.container-grid {
+  display: grid;
+
+  /*
+   * Purpose: Defines the grid's columns and rows.
+   * Syntax: grid-template-columns: <sizes>; grid-template-rows: <sizes>;
+   * Key Values & Usage:
+   * - `1fr`: A fractional unit that takes up one part of the available space. Excellent for responsive layouts.
+   * - `100px`: A fixed size.
+   * - `repeat(3, 1fr)`: A shorthand to create three equal-sized columns or rows.
+   */
+  grid-template-columns: none;
+  grid-template-rows: none;
+
+  /*
+   * Purpose: Defines named grid areas for simple item placement.
+   * Syntax: grid-template-areas: "<name1> <name2>";
+   * When to Use: When you want to visually lay out your grid in a clear, readable way.
+   */
+  grid-template-areas: none;
+
+  /*
+   * Purpose: Controls the space between grid items.
+   * Syntax: gap: <value>;
+   * Alternatives: `row-gap` and `column-gap` for individual control.
+   * When to Use: A modern, cleaner alternative to using margins on grid items.
+   */
+  gap: 0;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 4. Sizing & Spacing */
+/* ---------------------------------------------------------------------- */
+.container-sizing {
+  /*
+   * Purpose: Defines how width and height are calculated.
+   * Syntax: box-sizing: <value>;
+   * Key Values & Usage:
+   * - `content-box` (default): Width/height apply to content only. Padding and border are added to the final size.
+   * - `border-box`: Width/height include padding and border. This is generally preferred as it's more intuitive.
+   */
+  box-sizing: content-box;
+
+  /*
+   * Purpose: Sets the dimensions.
+   * Syntax: width: <value>; min-width: <value>; etc.
+   * When to Use: `width` for a fixed size, `min/max-width` for responsive boundaries.
+   * Use relative units (`%`, `vw`) for fluid designs.
+   */
+  width: auto;
+  height: auto;
+  min-width: auto;
+  max-width: none;
+  min-height: auto;
+  max-height: none;
+
+  /*
+   * Purpose: Sets the space outside the border.
+   * Syntax: margin: <value>;
+   * Alternatives: Use `margin-top/right/bottom/left` for specific sides.
+   */
+  margin: 0;
+  /* Purpose: Provides a logical way to set margins and padding based on writing mode.
+   * Alternatives: top/right/bottom/left properties.
+   * When to Use: For multilingual or global websites where text direction may change (e.g., from LTR to RTL). */
+  margin-block-start: 0; /* Top margin in LTR, left margin in RTL. */
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+
+  /*
+   * Purpose: Sets the space inside the border.
+   * Syntax: padding: <value>;
+   * Alternatives: Use `padding-top/right/bottom/left` for specific sides.
+   */
+  padding: 0;
+  
+  padding-block-start: 0;
+  padding-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 5. Appearance & Styling */
+/* ---------------------------------------------------------------------- */
+.container-style {
+  /*
+   * Purpose: Sets the background.
+   * Syntax: background: <value>;
+   * Alternatives: Use longhand properties like `background-color`, `background-image`, `background-position`, etc.
+   */
+  background: none;
+
+  /*
+   * Purpose: Draws a border.
+   * Syntax: border: <value>;
+   * Alternatives: Use longhand properties like `border-width`, `border-style`, `border-color`.
+   */
+  border: none;
+
+  /*
+   * Purpose: Rounds the corners.
+   * Syntax: border-radius: <value>;
+   * Alternatives: Use longhand for each corner (`border-top-left-radius`, etc.).
+   */
+  border-radius: 0;
+
+  /*
+   * Purpose: Adds a shadow to the element's box.
+   * Syntax: box-shadow: <h-offset> <v-offset> <blur> <spread> <color>;
+   * When to Use: To add visual depth. The first two values are the horizontal and vertical offsets.
+   */
+  box-shadow: none;
+
+  /*
+   * Purpose: Sets the transparency.
+   * Syntax: opacity: <number>;
+   * When to Use: Fades the entire element, including its content.
+   */
+  opacity: 1;
+}
+
+.container-visual-effects {
+  /* Purpose: Adds a background image or color that's fixed relative to the viewport.
+   * When to Use: For a parallax effect. */
+  background-attachment: scroll; /* Possible values: scroll, fixed, local. */
+
+  /* Purpose: Specifies a blend mode for an element's content.
+   * When to Use: For creative visual effects where you want colors to interact with the background. */
+  mix-blend-mode: normal; /* Possible values: multiply, screen, overlay, darken, lighten, etc. */
+
+  /* Purpose: Clips an element to a specified shape.
+   * When to Use: To create non-rectangular layouts without using complex background images. */
+  clip-path: none; /* Possible values: inset(), circle(), polygon(), url(). */
+
+  /* Purpose: Creates a filter effect (like Photoshop) on the element.
+   * When to Use: For quick image adjustments or hover effects. */
+  filter: none; /* Possible values: blur(), brightness(), contrast(), grayscale(), hue-rotate(), etc. */
+
+  /* Purpose: Specifies how the element's content should fit into its container.
+   * When to Use: To prevent images or videos from being distorted when resized. */
+  object-fit: fill; /* Possible values: fill, contain, cover, scale-down. */
+}
+
+/* ---------------------------------------------------------------------- */
+/* 6. Typography (if text is inside) */
+/* ---------------------------------------------------------------------- */
+.container-typography {
+  /*
+   * Purpose: Sets the font family, size, weight, and other properties.
+   * Syntax: font: <value>;
+   * Alternatives: Use longhand properties like `font-size`, `font-family`, etc.
+   */
+  font-size: medium; /* Sets the size of the text.
+  Possible values: numeric values, percentages, keywords. */
+  font-family: sans-serif;
+  font-weight: normal; /* Sets the boldness of the text.
+  Possible values: normal, bold, bolder, lighter, numeric values (100-900). */
+
+  /*
+   * Purpose: Aligns text horizontally.
+   * Syntax: text-align: <value>;
+   * Key Values & Usage:
+   * - `left`, `right`, `center`: Common alignment options.
+   * - `justify`: Stretches lines of text so each has equal width.
+   */
+  text-align: left;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 7. Transitions & Transforms */
+/* ---------------------------------------------------------------------- */
+.container-transitions {
+  /*
+   * Purpose: Applies 2D or 3D transformations.
+   * Syntax: transform: <function>;
+   * Key Functions & Usage:
+   * - `translate(x, y)`: Moves the element.
+   * - `rotate(deg)`: Rotates the element.
+   * - `scale(x, y)`: Resizes the element.
+   */
+  transform: none;
+
+  /*
+   * Purpose: Animates CSS properties over time.
+   * Syntax: transition: <property> <duration> <timing-function> <delay>;
+   * When to Use: For creating smooth, subtle changes on hover or focus.
+   */
+  transition: all 0s ease 0s;
+  
+  
+  /* Purpose: A shorthand for transition properties.
+   * When to Use: To create a smooth animation when a CSS property changes.
+   * Example: transition: background-color 0.3s ease-in-out; */
+  transition-property: all;
+  transition-duration: 0s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+
+  /* Purpose: A shorthand for animation properties.
+   * When to Use: To create a loopable, time-based animation using @keyframes. */
+  animation-name: none;
+  animation-duration: 0s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1; /* `infinite` to loop forever. */
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 8. User Interaction & Accessibility */
+/* ---------------------------------------------------------------------- */
+.container-interaction {
+  /*
+   * Purpose: Controls how the cursor appears over the element.
+   * Syntax: cursor: <value>;
+   * When to Use: Use `pointer` for clickable elements like links or buttons.
+   */
+  cursor: auto;
+
+  /*
+   * Purpose: Prevents the user from selecting text.
+   * Syntax: user-select: <value>;
+   * When to Use: On non-textual elements like buttons or images.
+   */
+  user-select: auto;
+
+  /*
+   * Purpose: Controls how an element responds to mouse/touch events.
+   * Syntax: pointer-events: <value>;
+   * When to Use: Set to `none` to make an element "unclickable."
+   */
+  pointer-events: auto;
+  
+  
+  /* Purpose: Provides a hint to the browser on how to break content across pages.
+   * When to Use: For print stylesheets to prevent elements from splitting awkwardly across pages. */
+  break-before: auto; /* Possible values: auto, always, avoid, page, column, etc. */
+  break-after: auto;
+  break-inside: auto;
+
+/* Purpose: Controls whether an element can be resized by the user.
+   * When to Use: On textarea or other elements where user resizing is desired. */
+  resize: none; /* Possible values: none, both, horizontal, vertical. */
+
 }
   
   /* ─────────  ───────── */
