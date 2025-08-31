@@ -1,6 +1,6 @@
 /* ───────── 4. Layout & Block Sections ───────── */
 @layer layout {
-  :root 
+
   
   /* ─────────  ───────── */
   
@@ -9,6 +9,7 @@
     min-height: var(--min-h);
     background-color: var(--bg-color);
     text-align: var(--alignment);
+
     
     &:hover {
       --bg-color: red;
@@ -17,9 +18,11 @@
   }
   
   .supblock--header {
+    /* i wanna style the header with grid
+    * use it to place its subs in irregular places */ 
     &:hover {
-      --min-h: 50vh;
-      --bg-color: yellow;
+      --min-h: 100vh;
+      --bg-color: orange;
     }
   }
   .supblock--main {
@@ -29,7 +32,7 @@
   }
   .supblock--footer {
     &:hover {
-      --min-h: 50vh;
+      --min-h: 100vh;
     }
   }
   
@@ -100,7 +103,7 @@
     color: var(--txt-color);
     
     &:hover{
-      color: magenta;
+      color: dimgrey;
     }
   }
 }
