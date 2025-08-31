@@ -330,62 +330,148 @@
 /* ---------------------------------------------------------------------- */
 /* 5. Appearance & Styling */
 /* ---------------------------------------------------------------------- */
-.container-style {
+.container-style-background{
   /*
-   * Purpose: Sets the background.
-   * Syntax: background: <value>;
-   * Alternatives: Use longhand properties like `background-color`, `background-image`, `background-position`, etc.
+   * Purpose: A shorthand for all background-related properties.
+   * Syntax: background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [background-size];
+   * When to Use: For a concise way to set multiple background properties.
+   * Example: background: #000 url("image.jpg") no-repeat center/cover;
    */
   background: none;
-
+  
   /*
-   * Purpose: Draws a border.
-   * Syntax: border: <value>;
-   * Alternatives: Use longhand properties like `border-width`, `border-style`, `border-color`.
+   * Purpose: Sets the background color.
+   * Syntax: background-color: <color>;
+   * Key Values & Usage: `transparent`, color names, hex codes (`#rrggbb`), `rgb()`, `rgba()`, `hsl()`, `hsla()`.
+   */
+  background-color: transparent;
+  
+  /*
+   * Purpose: Sets a background image.
+   * Syntax: background-image: <image>;
+   * Key Values & Usage: `url()`, `linear-gradient()`, `radial-gradient()`, `none`.
+   */
+  background-image: none;
+  
+  /*
+   * Purpose: Controls how a background image repeats.
+   * Syntax: background-repeat: <value>;
+   * Key Values & Usage: `repeat` (repeats horizontally and vertically), `repeat-x`, `repeat-y`, `no-repeat`.
+   */
+  background-repeat: repeat;
+  
+  /*
+   * Purpose: Specifies whether the background image is fixed or scrolls with the page.
+   * Syntax: background-attachment: <value>;
+   * Key Values & Usage: `scroll`, `fixed`, `local`. Use `fixed` for a parallax scrolling effect.
+   */
+  background-attachment: scroll;
+  
+  /*
+   * Purpose: Sets the initial position of a background image.
+   * Syntax: background-position: <x-value> <y-value>;
+   * Key Values & Usage: `center`, `top`, `bottom`, `left`, `right`, percentages, or lengths (`px`, `em`).
+   */
+  background-position: 0% 0%;
+  
+  /*
+   * Purpose: Sets the size of the background image.
+   * Syntax: background-size: <value>;
+   * Key Values & Usage:
+   * - `auto`: The browser determines the size.
+   * - `contain`: Scales the image to be as large as possible without cropping or stretching.
+   * - `cover`: Scales the image to cover the entire container, potentially cropping parts of it.
+   */
+  background-size: auto;
+}
+.container-style-border {
+  /*
+   * Purpose: A shorthand for setting all border properties.
+   * Syntax: border: [border-width] [border-style] [border-color];
+   * Example: border: 2px solid #ccc;
    */
   border: none;
 
   /*
-   * Purpose: Rounds the corners.
+   * Purpose: Sets the border on a specific side.
+   * Syntax: border-[side]: <value>;
+   * Example: border-top: 1px dashed black;
+   */
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+
+  /*
+   * Purpose: Rounds the corners of the element.
    * Syntax: border-radius: <value>;
-   * Alternatives: Use longhand for each corner (`border-top-left-radius`, etc.).
+   * Alternatives: Use longhand for each corner (`border-top-left-radius`, etc.) for more control.
+   * When to Use: For a uniform roundness, use one value. For unique shapes, use multiple values or longhand properties.
+   * Example: border-radius: 10px 20px;
    */
   border-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
+.container-visual-effects {
   /*
    * Purpose: Adds a shadow to the element's box.
-   * Syntax: box-shadow: <h-offset> <v-offset> <blur> <spread> <color>;
-   * When to Use: To add visual depth. The first two values are the horizontal and vertical offsets.
+   * Syntax: box-shadow: <h-offset> <v-offset> <blur> <spread> <color> [inset];
+   * When to Use: To add visual depth and create a sense of elevation.
+   * Example: box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
    */
   box-shadow: none;
-
+  
   /*
-   * Purpose: Sets the transparency.
+   * Purpose: Sets the transparency level of an element.
    * Syntax: opacity: <number>;
-   * When to Use: Fades the entire element, including its content.
+   * When to Use: Fades the entire element, including its content. The value ranges from 0.0 (fully transparent) to 1.0 (fully opaque).
    */
   opacity: 1;
-}
-.container-visual-effects {
-  /* Purpose: Adds a background image or color that's fixed relative to the viewport.
-   * When to Use: For a parallax effect. */
-  background-attachment: scroll; /* Possible values: scroll, fixed, local. */
-
-  /* Purpose: Specifies a blend mode for an element's content.
-   * When to Use: For creative visual effects where you want colors to interact with the background. */
-  mix-blend-mode: normal; /* Possible values: multiply, screen, overlay, darken, lighten, etc. */
-
-  /* Purpose: Clips an element to a specified shape.
-   * When to Use: To create non-rectangular layouts without using complex background images. */
-  clip-path: none; /* Possible values: inset(), circle(), polygon(), url(). */
-
-  /* Purpose: Creates a filter effect (like Photoshop) on the element.
-   * When to Use: For quick image adjustments or hover effects. */
-  filter: none; /* Possible values: blur(), brightness(), contrast(), grayscale(), hue-rotate(), etc. */
-
-  /* Purpose: Specifies how the element's content should fit into its container.
-   * When to Use: To prevent images or videos from being distorted when resized. */
-  object-fit: fill; /* Possible values: fill, contain, cover, scale-down. */
+  
+  /*
+   * Purpose: Specifies a blend mode for an element's content, affecting how its colors interact with the background.
+   * Syntax: mix-blend-mode: <value>;
+   * When to Use: For creative effects where you want layers to interact, such as a transparent overlay changing its color based on the background image.
+   */
+  mix-blend-mode: normal;
+  
+  /*
+   * Purpose: Applies a graphical filter effect to the element.
+   * Syntax: filter: <function>;
+   * When to Use: For quick image adjustments (e.g., converting to grayscale) or hover effects.
+   * Example: filter: grayscale(100%) blur(2px);
+   */
+  filter: none;
+  
+  /*
+   * Purpose: Clips an element to a specified shape.
+   * Syntax: clip-path: <value>;
+   * When to Use: To create unique, non-rectangular layouts.
+   * Example: clip-path: circle(50% at 50% 50%); to make the element a circle.
+   */
+  clip-path: none;
+  
+  /*
+   * Purpose: Specifies how the content of a replaced element (like `<img>` or `<video>`) should fit its container.
+   * Syntax: object-fit: <value>;
+   * When to Use: To prevent images or videos from being distorted when resized.
+   * Key Values & Usage:
+   * - `fill`: Stretches the image to fill the container (may distort).
+   * - `contain`: Resizes the image to fit the container without distortion, leaving empty space.
+   * - `cover`: Resizes the image to fill the container, maintaining aspect ratio but potentially cropping.
+   */
+  object-fit: fill;
+  
+  /*
+   * Purpose: Defines how an element's content is sized and positioned within its content box when `object-fit` is not `fill`.
+   * Syntax: object-position: <x> <y>;
+   * When to Use: To control which part of the image is visible when `object-fit` is `contain` or `cover`.
+   */
+  object-position: 50% 50%;
 }
 
 /* ---------------------------------------------------------------------- */
