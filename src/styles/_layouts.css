@@ -1,6 +1,110 @@
 /* ───────── 4. Layout & Block Sections ───────── */
 @layer layout {
+.container-starter {
+    /* -------------------- 1. Core Layout & Positioning -------------------- */
+    display: block; /* Specifies the rendering box of an element.
+                       Possible values: block, inline, inline-block, flex, grid, inline-flex, inline-grid, none. */
+    
+    position: static; /* Specifies the positioning method.
+                         Possible values: static, relative, absolute, fixed, sticky. */
+    top: auto; /* Positions an element relative to its container.
+                  Possible values: numeric values (px, em, %), auto. */
+    right: auto; /* Positions an element. Possible values: numeric values, auto. */
+    bottom: auto; /* Positions an element. Possible values: numeric values, auto. */
+    left: auto; /* Positions an element. Possible values: numeric values, auto. */
+    z-index: auto; /* Specifies the stack order. Possible values: auto, integer. */
+    overflow: visible; /* Defines how to handle content too large for the container.
+                           Possible values: visible, hidden, scroll, auto. */
 
+    /* -------------------- 2. Flexbox (Applied to Container) -------------------- */
+    flex-direction: row; /* [display: flex] Sets the direction of the main axis.
+                             Possible values: row, row-reverse, column, column-reverse. */
+    flex-wrap: nowrap; /* [display: flex] Controls wrapping of items.
+                           Possible values: nowrap, wrap, wrap-reverse. */
+    flex-flow: row nowrap; /* [display: flex] Shorthand for flex-direction and flex-wrap.
+                               Possible values: combination of flex-direction and flex-wrap values. */
+    justify-content: flex-start; /* [display: flex] Aligns items along the main axis.
+                                     Possible values: flex-start, flex-end, center, space-between, space-around, space-evenly. */
+    align-items: stretch; /* [display: flex] Aligns items along the cross axis.
+                              Possible values: flex-start, flex-end, center, baseline, stretch. */
+    align-content: stretch; /* [display: flex] Aligns wrapped lines along the cross axis.
+                                Possible values: flex-start, flex-end, center, space-between, space-around, stretch. */
+    gap: 0; /* [display: flex | grid] Sets the space between items.
+                Possible values: numeric values (px, em, %), calc(). */
+
+    /* -------------------- 3. CSS Grid (Applied to Container) -------------------- */
+    grid-template-columns: none; /* [display: grid] Defines the columns.
+                                     Possible values: a list of sizes (e.g., 1fr 1fr), auto, minmax(), repeat(), none. */
+    grid-template-rows: none; /* [display: grid] Defines the rows.
+                                  Possible values: a list of sizes, auto, minmax(), repeat(), none. */
+    grid-template-areas: none; /* [display: grid] Defines named areas.
+                                   Possible values: string containing named areas (e.g., "header header" "main nav"), none. */
+    grid-auto-flow: row; /* [display: grid] Controls how auto-placed items are inserted.
+                             Possible values: row, column, dense. */
+    grid-auto-columns: auto; /* [display: grid] Specifies the size of auto-generated columns.
+                                 Possible values: auto, numeric values, minmax(), etc. */
+    grid-auto-rows: auto; /* [display: grid] Specifies the size of auto-generated rows.
+                              Possible values: auto, numeric values, minmax(), etc. */
+
+    /* -------------------- 4. Sizing & Spacing -------------------- */
+    box-sizing: content-box; /* Determines how width and height are calculated.
+                                 Possible values: content-box, border-box. */
+    width: auto; /* Sets the element's width.
+                     Possible values: auto, numeric values, percentages (%), viewport units (vw, vh), calc(). */
+    height: auto; /* Sets the element's height.
+                      Possible values: auto, numeric values, percentages, viewport units. */
+    min-width: auto; /* Sets the minimum width. Possible values: auto, numeric values, percentage. */
+    max-width: none; /* Sets the maximum width. Possible values: none, numeric values, percentage. */
+    
+    /* Logical properties for spacing */
+    margin-block: 0; /* [logical property] Sets the top and bottom margins.
+                         Possible values: numeric values, auto. */
+    margin-inline: 0; /* [logical property] Sets the left and right margins.
+                          Possible values: numeric values, auto. */
+    padding-block: 0; /* [logical property] Sets the top and bottom padding.
+                          Possible values: numeric values. */
+    padding-inline: 0; /* [logical property] Sets the left and right padding.
+                           Possible values: numeric values. */
+
+    /* Traditional spacing properties */
+    margin: 0; /* Sets the space outside the border. Possible values: numeric values, auto, shorthand. */
+    padding: 0; /* Sets the space inside the border. Possible values: numeric values, shorthand. */
+
+    /* -------------------- 5. Appearance & Styling -------------------- */
+    background-color: transparent; /* Sets the background color. Possible values: color names, hex, rgb, hsl. */
+    background-image: none; /* Sets a background image. Possible values: url(), linear-gradient(), none. */
+    background-size: auto; /* Sets the size of the background image. Possible values: auto, cover, contain, numeric values. */
+    background-repeat: repeat; /* Sets how a background image is repeated. Possible values: repeat, no-repeat, space, round. */
+    background-position: 0% 0%; /* Sets the starting position. Possible values: keywords, percentages, numeric values. */
+    background-attachment: scroll; /* Sets whether the background scrolls or is fixed.
+                                       Possible values: scroll, fixed, local. */
+    
+    /* Logical border properties */
+    border-block-start: none; /* [logical property] Sets the top border. */
+    border-block-end: none; /* [logical property] Sets the bottom border. */
+    border-inline-start: none; /* [logical property] Sets the left border. */
+    border-inline-end: none; /* [logical property] Sets the right border. */
+
+    /* Traditional border properties */
+    border: none; /* Sets the border. Possible values: border-width, border-style, border-color. */
+    border-radius: 0; /* Rounds the corners. Possible values: numeric values, %. */
+    outline: none; /* Draws an outline outside the element's border.
+                       Possible values: outline-width, outline-style, outline-color, none. */
+    box-shadow: none; /* Adds a shadow. Possible values: offsets, blur, spread, and color. */
+    
+    opacity: 1; /* Sets the transparency level. Possible values: a number from 0.0 to 1.0. */
+    cursor: auto; /* Defines the cursor to be displayed. Possible values: auto, default, pointer, text. */
+    
+    /* -------------------- 6. Typography (If text is inside the container) -------------------- */
+    font-size: medium; /* Sets the size of the text. Possible values: numeric values, percentages, keywords. */
+    font-family: sans-serif; /* Sets the font family. Possible values: a list of font names. */
+    font-weight: normal; /* Sets the boldness of the text.
+                             Possible values: normal, bold, bolder, lighter, numeric values (100-900). */
+    line-height: normal; /* Sets the height of a line of text.
+                             Possible values: normal, numeric values, percentages. */
+    text-align: left; /* Aligns text horizontally. Possible values: left, right, center, justify. */
+    color: initial; /* Sets the text color. Possible values: color names, hex, rgb, etc. */
+}
   
   /* ─────────  ───────── */
   
