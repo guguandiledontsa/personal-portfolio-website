@@ -90,6 +90,7 @@
     contain: none;
     /* Possible values: none, strict, content, size, layout, style, paint. */
   }
+  
   .container-contain {
     /*
    * Purpose: Specifies that an element and its contents are independent from the rest of the document's layout, style, and painting.
@@ -103,7 +104,6 @@
    */
     contain: none;
   }
-  
   
   /* ---------------------------------------------------------------------- */
   /* 2. Flexbox (Applied to Container) */
@@ -309,6 +309,7 @@
     aspect-ratio: auto;
     /* Example: aspect-ratio: 16 / 9; */
   }
+  
   .container-spacing {
     /*
    * Purpose: Sets the space *outside* the border.
@@ -578,6 +579,7 @@
     text-decoration-color: initial;
     text-decoration-thickness: auto;
   }
+  
   .container-typography-font {
     /*
    * Purpose: A shorthand for setting all font properties in a single declaration.
@@ -634,6 +636,7 @@
    */
     font-stretch: normal;
   }
+  
   .container-columns {
     /*
    * Purpose: Sets the number of columns an element's content should be divided into.
@@ -720,6 +723,7 @@
    */
     transition-delay: 0s;
   }
+  
   .container-transforms {
     /*
    * Purpose: Applies a 2D or 3D transform.
@@ -773,6 +777,7 @@
     backface-visibility: visible;
     /* Possible values: visible, hidden. */
   }
+  
   .container-animations {
     /*
    * Purpose: A shorthand for all animation properties.
@@ -924,113 +929,45 @@
   /* ─────────  ───────── */
   
   
-  .supblock {
-    min-height: var(--min-h);
-    background-color: var(--bg-color);
-    text-align: var(--alignment);
-    
-    
-    &:hover {
-      --bg-color: red;
-      --alignment: center;
-    }
-  }
-  
-  .supblock--header {
-    
-    /* i wanna style the header with grid
-    * use it to place its subs in irregular places */
-    &:hover {
-      --min-h: 100vh;
-      --bg-color: orange;
-    }
-  }
-  
-  .supblock--main {
-    &:hover {
-      --min-h: 100vh;
-    }
-  }
-  
-  .supblock--footer {
-    &:hover {
-      --min-h: 100vh;
-    }
-  }
-  
-  /* ─────────  ───────── */
-  
-  .block {
-    background-color: var(--bg-color);
-    text-align: var(--alignment);
-    color: var(--txt-color);
-    
-    &:hover {
-      --bg-color: deeppink;
-      --txt-color: white;
-      --alignment: center;
-    }
-  }
-  
-  .block--intro1 {
-    &:hover {
-      --bg-color: pink;
-    }
-  }
-  
-  .block--body1 {
-    &:hover {
-      --bg-color: palevioletred;
-    }
-  }
-  
-  .block--end1 {
-    &:hover {
-      --bg-color: mediumvioletred;
-    }
-  }
-  
-  /* ─────────  ───────── */
-  
-  .subblock {
-    background-color: var(--bg-color);
-    
-    &:hover {
-      --bg-color: blue;
-    }
-  }
-  
-  .subblock--nav1 {
-    &:hover {
-      --bg-color: lightslategray;
-    }
-  }
-  
-  .subblock--intro1 {
-    &:hover {
-      --bg-color: lime;
-    }
-  }
-  
-  .subblock--body1 {
-    &:hover {
-      --bg-color: lavender;
-    }
-  }
-  
-  .subblock--end1 {
-    &:hover {
-      --bg-color: darkslategrey;
-    }
-  }
-  
-  /* ─────────  ───────── */
-  
-  .subsubblock {
-    color: var(--txt-color);
-    
-    &:hover {
-      color: dimgrey;
-    }
-  }
+.supblock,
+.block,
+.subblock,
+.subsubblock {
+ min-height: var(--min-h);
+ background-color: var(--bg-color);
+ color: var(--txt-color, var(--color-text));
+ text-align: var(--alignment);
+ padding: 1rem;
+ transition: all 0.3s ease;
+}
+
+
+.supblock:hover {
+  --alignment: center;
+  /* --txt-color: var(--color-text-inverse); */
+  box-shadow: inset 0 0 10px hsla(var(--base-hue), 100%, 100%, 0.5);
+}
+
+.block:hover {
+  --bg-color: var(--color-primary-dark);
+  /* --txt-color: var(--color-text-inverse); ensure contrast on darker bg */
+}
+
+.subblock:hover {
+  --bg-color: var(--color-primary-lighter);
+/*   --txt-color: var(--color-text); ensure contrast */
+}
+
+.subsubblock:hover {
+  /* --txt-color: var(--color-accent); */
+}
+
+
+
+
+
+
+
+
+
 }

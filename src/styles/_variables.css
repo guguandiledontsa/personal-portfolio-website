@@ -2,27 +2,55 @@
 @layer variables {
   
   @property --base-hue {
-    syntax: '<number>';
-    initial-value:  10;
+    syntax: "<number>";
+    initial-value: 20;
     inherits: true;
   }
   
+  @keyframes cycle-hue {
+    0% {
+      --base-hue: 0;
+    }
+    
+    100% {
+      --base-hue: 360;
+    }
+  }
+  
   :root {
-    /* Primary Palette derived from the base hue */
+    /* --base-hue: 20; */
+    animation: cycle-hue 20s infinite linear;
+    
+    /* Primary colors */
     --color-primary: hsl(var(--base-hue), 75%, 60%);
-    --color-primary-light: hsl(from var(--color-primary) h calc(s + 15) calc(l + 25));
-    --color-primary-lighter-s-less: hsl(from var(--color-primary) h calc(s - 55) calc(l + 10));
-    --color-primary-dark: hsl(from var(--color-primary) h calc(s + 5) calc(l - 30));
-    --color-primary-darker-s-less: hsl(from var(--color-primary) h calc(s - 60) calc(l - 48));
+    --color-primary-light: hsl(from var(--color-primary) h calc(s + 15) calc(l + 20));
+    --color-primary-lighter: hsl(from var(--color-primary) h calc(s - 25) calc(l + 25));
+    --color-primary-dark: hsl(from var(--color-primary) h calc(s - 5) calc(l - 20));
+    --color-primary-darker: hsl(from var(--color-primary) h calc(s - 15) calc(l - 35));
+    
+    /* Accent */
+    --color-accent: hsl(calc(var(--base-hue) + 180), 70%, 55%);
+    --color-accent-light: hsl(calc(var(--base-hue) + 180), 70%, 70%);
+    
+    /* Neutrals */
+    --color-neutral: hsl(var(--base-hue), 10%, 90%);
+    --color-neutral-dark: hsl(var(--base-hue), 10%, 20%);
+    
+    /* TEXT — now calculated from each background palette color */
+    --color-text-on-primary: hsl(from var(--color-primary) h clamp(5%, calc(s - 40%), 40%) clamp(5%, calc(l - 60%), 30%));
+    --color-text-on-primary-dark: hsl(from var(--color-primary-dark) h clamp(10%, calc(s - 30%), 40%) clamp(60%, calc(l + 60%), 95%));
+    --color-text-on-neutral: hsl(from var(--color-neutral) h clamp(5%, calc(s - 40%), 30%) clamp(5%, calc(l - 60%), 25%));
+    --color-text-on-accent: hsl(from var(--color-accent) h clamp(5%, calc(s - 40%), 40%) clamp(5%, calc(l - 60%), 30%));
     
     /* Gradients */
     --gradient-main: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     --gradient-layered: linear-gradient(to top, hsla(0, 0%, 0%, 0.1), transparent);
     
-    /* Grayscale & Text */
-    --color-text: hsl(0, 0%, 15%);
-    --color-text-inverse: hsl(from var(--color-text) h calc(100 - s) calc(100 - l));
-    --color-text-subtle: hsl(0, 0%, 40%);
+    /* Logic properties */
+    --min-h: auto;
+    --bg-color: var(--color-primary-light);
+    --alignment: left;
+    --txt-color: var(--color-primary-darker);
     
     /* 🖋️ Typography & Spacin */
     --font-size-hero: clamp(3.5rem, 10vw, 8rem);
@@ -45,7 +73,9 @@
     --radius-lg: 1rem;
     
     --font-heading: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
     --font-quote: 'Courier New', monospace;
+    
+    
   }
 }
