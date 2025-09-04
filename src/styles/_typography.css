@@ -1,9 +1,7 @@
-/* ───────── Typography ───────── */
-
- /* ---------------------------------------------------------------------- */
- /* 6. Typography (if text is inside) */
- /* ---------------------------------------------------------------------- */
- .container-typography {
+/* ---------------------------------------------------------------------- */
+/* Typography */
+/* ---------------------------------------------------------------------- */
+.container-typography {
   /*
    * Purpose: Sets the color of the text.
    * Syntax: color: <color>;
@@ -66,9 +64,9 @@
   /* Possible values: `solid`, `double`, `dotted`, `dashed`, `wavy`. */
   text-decoration-color: initial;
   text-decoration-thickness: auto;
- }
- 
- .container-typography-font {
+}
+
+.container-typography-font {
   /*
    * Purpose: A shorthand for setting all font properties in a single declaration.
    * Syntax: font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size] / [line-height] [font-family];
@@ -123,9 +121,9 @@
    * When to Use: To stretch or condense a font. This is not widely supported by all fonts.
    */
   font-stretch: normal;
- }
- 
- .container-columns {
+}
+
+.container-columns {
   /*
    * Purpose: Sets the number of columns an element's content should be divided into.
    * Syntax: column-count: <integer>;
@@ -165,13 +163,10 @@
    * Example: column-rule: 1px solid #ccc;
    */
   column-rule: none;
- }
- 
-  /* ---------------------------------------------------------------------- */
+}
 
-@layer typography {
-  
-  
+/* ---------------------------------------------------------------------- */
+/* 
   h1,
   h2,
   h3 {
@@ -213,7 +208,6 @@
     letter-spacing: 0.05em;
   }
   
-  /* ───────── Links ───────── */
   a {
     color: var(--color-primary);
     text-decoration: none;
@@ -231,6 +225,7 @@
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: bold;
-  }
-  
-}
+  } */
+/* ---------------------------------------------------------------------- */
+
+@layer typography {}
