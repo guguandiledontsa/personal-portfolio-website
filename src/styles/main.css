@@ -4,9 +4,9 @@
 @import url("./_variables.css") layer(variables);
 @import url("./_base.css") layer(base);
 @import url("./_layouts.css") layer(layout);
-@import url("./_components.css") layer(components);
 
 
 /* 
 @import url("./_typography.css") layer(typography);
+@import url("./_components.css") layer(components);
 */
