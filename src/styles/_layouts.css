@@ -1,9 +1,4 @@
-/* ───────── 4. Layout & Block Sections ───────── */
-@layer layout {
- 
- /* ---------------------------------------------------------------------- */
  /* 1. Core Layout & Positioning */
- /* ---------------------------------------------------------------------- */
  .container-layout {
   /*
    * Purpose: Controls how the element's box is rendered.
@@ -90,7 +85,6 @@
   contain: none;
   /* Possible values: none, strict, content, size, layout, style, paint. */
  }
- 
  .container-contain {
   /*
    * Purpose: Specifies that an element and its contents are independent from the rest of the document's layout, style, and painting.
@@ -105,9 +99,7 @@
   contain: none;
  }
  
- /* ---------------------------------------------------------------------- */
  /* 2. Flexbox (Applied to Container) */
- /* ---------------------------------------------------------------------- */
  .container-flex {
   /*
    * Purpose: Establishes a flex formatting context for its children, making them flex items.
@@ -179,9 +171,7 @@
   align-content: stretch;
  }
  
- /* ---------------------------------------------------------------------- */
  /* 3. CSS Grid (Applied to Container) */
- /* ---------------------------------------------------------------------- */
  .container-grid {
   /*
    * Purpose: Establishes a grid formatting context for its children, making them grid items.
@@ -280,9 +270,7 @@
   justify-content: start;
  }
  
-  /* ---------------------------------------------------------------------- */
  /* 4. Sizing & Spacing */
- /* ---------------------------------------------------------------------- */
  .container-sizing {
   /*
    * Purpose: Determines how an element's total width and height are calculated.
@@ -309,7 +297,6 @@
   aspect-ratio: auto;
   /* Example: aspect-ratio: 16 / 9; */
  }
- 
  .container-spacing {
   /*
    * Purpose: Sets the space *outside* the border.
@@ -346,8 +333,6 @@
   padding-inline-start: 0;
   padding-inline-end: 0;
  }
+ /* ---------------------------------------------------------------------- */
  
- 
- /* ─────────────────────────────────────────── */
- 
-}
+@layer layout {}

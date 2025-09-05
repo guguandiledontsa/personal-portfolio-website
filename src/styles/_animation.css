@@ -1,6 +1,4 @@
- /* ---------------------------------------------------------------------- */
  /* 7. Transitions & Transforms */
- /* ---------------------------------------------------------------------- */
  .container-transitions {
    /*
    * Purpose: A shorthand to set all transition properties.
@@ -42,7 +40,6 @@
    */
    transition-delay: 0s;
  }
- 
  .container-transforms {
    /*
    * Purpose: Applies a 2D or 3D transform.
@@ -96,7 +93,6 @@
    backface-visibility: visible;
    /* Possible values: visible, hidden. */
  }
- 
  .container-animations {
    /*
    * Purpose: A shorthand for all animation properties.
@@ -151,8 +147,6 @@
    */
    animation-play-state: running;
  }
-
  /* ---------------------------------------------------------------------- */
-
 
 @layer animations {}

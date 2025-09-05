@@ -1,6 +1,4 @@
-/* ---------------------------------------------------------------------- */
 /* Typography */
-/* ---------------------------------------------------------------------- */
 .container-typography {
   /*
    * Purpose: Sets the color of the text.
@@ -65,7 +63,6 @@
   text-decoration-color: initial;
   text-decoration-thickness: auto;
 }
-
 .container-typography-font {
   /*
    * Purpose: A shorthand for setting all font properties in a single declaration.
@@ -122,7 +119,6 @@
    */
   font-stretch: normal;
 }
-
 .container-columns {
   /*
    * Purpose: Sets the number of columns an element's content should be divided into.
@@ -165,7 +161,6 @@
   column-rule: none;
 }
 
-/* ---------------------------------------------------------------------- */
 /* 
   h1,
   h2,
