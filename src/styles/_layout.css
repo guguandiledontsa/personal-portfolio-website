@@ -85,6 +85,7 @@
   contain: none;
   /* Possible values: none, strict, content, size, layout, style, paint. */
  }
+ 
  .container-contain {
   /*
    * Purpose: Specifies that an element and its contents are independent from the rest of the document's layout, style, and painting.
@@ -98,6 +99,7 @@
    */
   contain: none;
  }
+ 
  .container-flex {
   /*
    * Purpose: Establishes a flex formatting context for its children, making them flex items.
@@ -168,6 +170,7 @@
    */
   align-content: stretch;
  }
+ 
  .container-grid {
   /*
    * Purpose: Establishes a grid formatting context for its children, making them grid items.
@@ -265,6 +268,7 @@
   align-content: start;
   justify-content: start;
  }
+ 
  .container-sizing {
   /*
    * Purpose: Determines how an element's total width and height are calculated.
@@ -291,6 +295,7 @@
   aspect-ratio: auto;
   /* Example: aspect-ratio: 16 / 9; */
  }
+ 
  .container-spacing {
   /*
    * Purpose: Sets the space *outside* the border.
@@ -327,6 +332,28 @@
   padding-inline-start: 0;
   padding-inline-end: 0;
  }
+ 
  /* ---------------------------------------------------------------------- */
  
-@layer layouts {}
+ @layer layouts {
+  
+  /* .container-sizing */
+  .supblock,
+  .block,
+  .subblock,
+  .subsubblock {
+   min-height: var(--min-h);
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  /* .container-spacing */
+  .supblock,
+  .block,
+  .subblock,
+  .subsubblock {
+   padding: 1rem;
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  
+ }

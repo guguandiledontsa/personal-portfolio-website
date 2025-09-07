@@ -159,6 +159,18 @@
    */
   object-position: 50% 50%;
  }
+ 
  /* ---------------------------------------------------------------------- */
+ 
+ @layer appearances {
 
-@layer appearances {}
+  /* .container-style */
+  .supblock,
+  .block,
+  .subblock,
+  .subsubblock {
+   background-color: var(--bg-color);
+  }
+  /* ---------------------------------------------------------------------- */
+  
+ }

@@ -149,4 +149,14 @@
  }
  /* ---------------------------------------------------------------------- */
 
-@layer animations {}
+@layer animations {
+  /* .container-transitions */
+ .supblock,
+ .block,
+ .subblock,
+ .subsubblock {
+  transition: all 0.3s ease;
+ }
+ /* ---------------------------------------------------------------------- */
+
+}
