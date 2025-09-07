@@ -1,5 +1,5 @@
 /*  main.css */
-@layer variables, base, typography, layout;
+@layer variables, base, typography, layout, appearences, animations, interactions;
 
 /* ───────────────────────────────────────────── */
 
