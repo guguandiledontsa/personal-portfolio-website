@@ -163,7 +163,7 @@
  /* ---------------------------------------------------------------------- */
  
  @layer appearances {
-
+  
   /* .container-style */
   .supblock,
   .block,
@@ -171,6 +171,30 @@
   .subsubblock {
    background-color: var(--bg-color);
   }
+  
+  /* ----------------------- */
+  
+  .supblock {
+   &:hover {
+    box-shadow: inset 0 0 10px hsla(var(--base-hue), 100%, 100%, 0.5);
+   }
+  }
+  
+  .block {
+   &:hover {
+    --bg-color: var(--color-primary-dark);
+    border: 0.125rem solid currentcolor;
+    border-radius: var(--radius-lg);
+   }
+  }
+  
+  .subblock {
+   &:hover {
+    --bg-color: var(--color-primary-lighter);
+    border-radius: inherit;
+   }
+  }
+  
   /* ---------------------------------------------------------------------- */
   
  }

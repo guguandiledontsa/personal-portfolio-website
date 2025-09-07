@@ -235,6 +235,34 @@
         color: var(--txt-color, var(--color-text));
         text-align: var(--alignment);
     }
-    /* ---------------------------------------------------------------------- */
+    
+    /* ----------------------- */
+    
+    
+    .supblock {
+        &:hover {
+            --alignment: center;
+            /* --txt-color: var(--color-text-inverse); */
+        }
+    }
+    
+    .block {
+        &:hover {
+            /* --txt-color: var(--color-text-inverse); ensure contrast on darker bg */
+        }
+    }
+    
+    .subblock {
+        &:hover {
+            /* --txt-color: var(--color-text); makes a wierd glitchy rendering effect */
+        }
+    }
+    
+    .subsubblock {
+        &:hover {
+            /* --txt-color: var(--color-accent); */
+        }
+    }
+/* ---------------------------------------------------------------------- */
     
 }
