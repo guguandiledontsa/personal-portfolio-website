@@ -1,4 +1,4 @@
- /* _layout.css */
+ /* layout.css */
  .container-layout {
   /*
    * Purpose: Controls how the element's box is rendered.
@@ -98,8 +98,6 @@
    */
   contain: none;
  }
- 
- /* 2. Flexbox (Applied to Container) */
  .container-flex {
   /*
    * Purpose: Establishes a flex formatting context for its children, making them flex items.
@@ -170,8 +168,6 @@
    */
   align-content: stretch;
  }
- 
- /* 3. CSS Grid (Applied to Container) */
  .container-grid {
   /*
    * Purpose: Establishes a grid formatting context for its children, making them grid items.
@@ -269,8 +265,6 @@
   align-content: start;
   justify-content: start;
  }
- 
- /* 4. Sizing & Spacing */
  .container-sizing {
   /*
    * Purpose: Determines how an element's total width and height are calculated.

@@ -1,41 +1,977 @@
 /* _base.css */
+
+/* layout.css */
+.container-layout {
+  /*
+   * Purpose: Controls how the element's box is rendered.
+   * Syntax: display: <value>;
+   * Key Values & Usage:
+   * - `block`: Takes up the full width, forcing a new line. Best for main sections.
+   * - `inline-block`: Stays in line with text but respects width and height. Good for buttons or icons.
+   * - `flex`: Enables Flexbox layout for one-dimensional alignment. Ideal for navigation bars.
+   * - `grid`: Enables CSS Grid for two-dimensional layouts. Great for complex page structures.
+   * - `contents`: Makes the container itself invisible, but its children become direct children of its parent. Useful for semantic HTML that needs to be part of a flex or grid layout without being a flex/grid item itself.
+   * - `none`: The element is completely removed from the document, and does not take up any space.
+   */
+  display: block;
+  
+  /*
+   * Purpose: Specifies the positioning method.
+   * Syntax: position: <value>;
+   * Key Values & Usage:
+   * - `static` (default): Follows the normal document flow. `top/left/etc.` have no effect.
+   * - `relative`: Positioned relative to its normal position. Use to offset an element without affecting others.
+   * - `absolute`: Positioned relative to its closest positioned ancestor. Use to overlay elements.
+   * - `fixed`: Positioned relative to the viewport. Use for sticky headers or floating buttons.
+   * - `sticky`: A hybrid of `relative` and `fixed`. The element behaves as `relative` until a certain scroll position is met, after which it becomes `fixed`.
+   */
+  position: static;
+  
+  /*
+   * Purpose: Sets an element's position relative to its containing block.
+   * Syntax: top: <value>; left: <value>; etc.
+   * Alternatives: `inset: <value>;` is a shorthand for all four sides.
+   * When to Use: Used with `position` values other than `static`.
+   */
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  inset: auto;
+  /* Example: inset: 0; for full-container coverage. */
+  
+  /*
+   * Purpose: Defines the vertical stacking order.
+   * Syntax: z-index: <integer>;
+   * When to Use: Use with positioned elements to control which one appears on top. Higher values are on top.
+   */
+  z-index: auto;
+  
+  /*
+   * Purpose: Manages content that overflows the container.
+   * Syntax: overflow: <value>;
+   * Key Values & Usage:
+   * - `visible`: Content is not clipped and may extend beyond the container.
+   * - `hidden`: Content is clipped and the overflow is not visible.
+   * - `scroll`: Always adds scrollbars.
+   * - `auto`: Adds scrollbars only when needed.
+   */
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+  
+  /*
+   * Purpose: Aligns an element to the left or right, allowing other content to wrap around it.
+   * Syntax: float: <value>;
+   * When to Use: Primarily used for wrapping text around images. Before Flexbox and Grid, it was also used for multi-column layouts.
+   */
+  float: none;
+  /* Possible values: none, left, right. */
+  
+  /*
+   * Purpose: Specifies on which sides an element won't have floating elements next to it.
+   * Syntax: clear: <value>;
+   * When to Use: Use this to stop a container from wrapping around a floated element, forcing it to start on a new line below the float.
+   */
+  clear: none;
+  /* Possible values: none, left, right, both. */
+  
+  /*
+   * Purpose: A performance optimization that allows the browser to render an element in isolation from the rest of the page.
+   * Syntax: contain: <value>;
+   * Key Values & Usage:
+   * - `layout`: A change to an element's size or position won't affect the layout of its parent or siblings.
+   * - `paint`: A change to an element's content won't trigger a full page re-paint.
+   * - `content`: A shorthand for both `layout` and `paint`.
+   */
+  contain: none;
+  /* Possible values: none, strict, content, size, layout, style, paint. */
+}
+
+.container-contain {
+  /*
+   * Purpose: Specifies that an element and its contents are independent from the rest of the document's layout, style, and painting.
+   * Syntax: contain: <value>;
+   * When to use: As a performance optimization on independent widgets or components to prevent their changes from triggering a re-render of the entire page.
+   * Key values:
+   * - `layout`: The element's internal layout changes don't affect the parent's layout.
+   * - `paint`: The element's content won't be painted until it's ready, preventing the browser from wasting resources.
+   * - `size`: The element's size can be determined without inspecting its contents.
+   * - `strict`: A shorthand for `layout`, `paint`, and `size`.
+   */
+  contain: none;
+}
+
+.container-flex {
+  /*
+   * Purpose: Establishes a flex formatting context for its children, making them flex items.
+   * Syntax: display: flex | inline-flex;
+   * When to Use: The foundation of any flex-based layout. Use `flex` for a block-level container and `inline-flex` for a container that behaves like a word within a line of text.
+   */
+  display: flex;
+  
+  /*
+   * Purpose: Sets the direction of the main axis along which flex items are laid out.
+   * Syntax: flex-direction: <value>;
+   * Key Values & Usage:
+   * - `row` (default): Items are arranged horizontally from left to right.
+   * - `row-reverse`: Items are arranged horizontally from right to left.
+   * - `column`: Items are arranged vertically from top to bottom.
+   * - `column-reverse`: Items are arranged vertically from bottom to top.
+   */
+  flex-direction: row;
+  
+  /*
+   * Purpose: Controls whether items wrap onto new lines when they don't fit in the container.
+   * Syntax: flex-wrap: <value>;
+   * Key Values & Usage:
+   * - `nowrap` (default): All items stay on a single line, even if they overflow.
+   * - `wrap`: Items will wrap to the next line if the container is too small.
+   * - `wrap-reverse`: Items wrap to the next line in the opposite direction.
+   */
+  flex-wrap: nowrap;
+  
+  /*
+   * Purpose: A shorthand for setting both `flex-direction` and `flex-wrap`.
+   * Syntax: flex-flow: <flex-direction> <flex-wrap>;
+   * When to Use: For a concise and efficient way to define the main axis and wrapping behavior.
+   * Example: flex-flow: column wrap;
+   */
+  flex-flow: row nowrap;
+  
+  /*
+   * Purpose: Aligns items along the main axis of the container.
+   * Syntax: justify-content: <value>;
+   * Key Values & Usage:
+   * - `flex-start` (default): Items are aligned at the start of the main axis.
+   * - `flex-end`: Items are aligned at the end of the main axis.
+   * - `center`: Items are centered along the main axis.
+   * - `space-between`: Items are evenly distributed with the first item at the start and the last at the end.
+   * - `space-around`: Items are evenly distributed with equal space around them.
+   * - `space-evenly`: Items are evenly distributed with equal space between them and the container's edges.
+   */
+  justify-content: flex-start;
+  
+  /*
+   * Purpose: Aligns items along the cross axis (perpendicular to the main axis).
+   * Syntax: align-items: <value>;
+   * Key Values & Usage:
+   * - `stretch` (default): Items stretch to fill the container on the cross axis.
+   * - `flex-start`: Items are aligned at the start of the cross axis.
+   * - `flex-end`: Items are aligned at the end of the cross axis.
+   * - `center`: Items are centered along the cross axis.
+   * - `baseline`: Items are aligned according to their baselines.
+   */
+  align-items: stretch;
+  
+  /*
+   * Purpose: Aligns wrapped lines of flex items along the cross axis.
+   * Syntax: align-content: <value>;
+   * When to Use: Only when `flex-wrap` is set to `wrap` and there is extra space on the cross axis. It controls the spacing between lines, not the items themselves.
+   * Key Values & Usage: `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `stretch`.
+   */
+  align-content: stretch;
+}
+
+.container-grid {
+  /*
+   * Purpose: Establishes a grid formatting context for its children, making them grid items.
+   * Syntax: display: grid | inline-grid;
+   * When to Use: The foundation of any grid-based layout. Use `grid` for a block-level container and `inline-grid` for a container that behaves like an inline element.
+   */
+  display: grid;
+  
+  /*
+   * Purpose: Defines the grid's columns and rows. This is a core property for establishing the grid's structure.
+   * Syntax: grid-template-columns: <sizes>; grid-template-rows: <sizes>;
+   * Key Values & Usage:
+   * - `fr` (fractional unit): Distributes available space proportionally. `grid-template-columns: 1fr 2fr;` creates two columns, with the second being twice as wide as the first.
+   * - `px, em, rem`: Fixed-size units.
+   * - `%`: A percentage of the container's width or height.
+   * - `auto`: Automatically sized to fit content.
+   * - `minmax(min, max)`: Sets a minimum and maximum size range. Example: `minmax(100px, 1fr)` ensures a column is at least 100px wide but can grow.
+   * - `repeat(count, size)`: A powerful shorthand to create multiple identical tracks.
+   */
+  grid-template-columns: none;
+  grid-template-rows: none;
+  
+  /*
+   * Purpose: Defines named grid areas for simple item placement.
+   * Syntax: grid-template-areas: "<name1> <name2>" "<name3> <name4>";
+   * When to Use: For creating complex but readable layouts where you want to visually represent the structure of the page. Grid items can then be placed using the `grid-area` property.
+   */
+  grid-template-areas: none;
+  
+  /*
+   * Purpose: A shorthand for setting `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` at once.
+   * Syntax: grid-template: <grid-template-rows> / <grid-template-columns>;
+   * When to Use: For a concise way to define the grid's layout.
+   * Example: `grid-template: "a b" 1fr "c d" 1fr / 1fr 1fr;`
+   */
+  grid-template: none;
+  
+  /*
+   * Purpose: Controls how auto-placed grid items are inserted into the grid.
+   * Syntax: grid-auto-flow: <value>;
+   * Key Values & Usage:
+   * - `row` (default): Places items into empty cells row by row.
+   * - `column`: Places items into empty cells column by column.
+   * - `dense`: Tries to fill empty spaces in the grid by rearranging smaller items, which can reduce white space.
+   */
+  grid-auto-flow: row;
+  
+  /*
+   * Purpose: Specifies the size of implicitly created grid tracks (rows/columns that aren't explicitly defined by `grid-template-rows/columns`).
+   * Syntax: grid-auto-columns: <size>; grid-auto-rows: <size>;
+   * When to Use: When you have an unknown number of items and want to ensure a consistent size for all of them.
+   */
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  
+  /*
+   * Purpose: A shorthand for `grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`.
+   * Syntax: grid-auto: <grid-auto-flow> <grid-auto-rows> / <grid-auto-columns>;
+   * Example: `grid-auto: row dense 100px;`
+   */
+  grid-auto: auto;
+  
+  /*
+   * Purpose: Controls the space between grid items.
+   * Syntax: gap: <value>;
+   * Alternatives: `row-gap` and `column-gap` for individual control.
+   * When to Use: A modern, cleaner alternative to using margins on grid items. It creates space between items without affecting the outer edges of the grid.
+   */
+  gap: 0;
+  row-gap: 0;
+  column-gap: 0;
+  
+  /*
+   * Purpose: Aligns the grid items inside the grid container along the block (column) axis.
+   * Syntax: align-items: <value>;
+   * When to Use: To align all grid items within their respective cells.
+   * Key Values & Usage: `start`, `end`, `center`, `stretch`.
+   */
+  align-items: stretch;
+  
+  /*
+   * Purpose: Aligns the grid items inside the grid container along the inline (row) axis.
+   * Syntax: justify-items: <value>;
+   * When to Use: To align all grid items within their respective cells.
+   * Key Values & Usage: `start`, `end`, `center`, `stretch`.
+   */
+  justify-items: stretch;
+  
+  /*
+   * Purpose: Aligns the grid itself within the grid container.
+   * Syntax: align-content: <value>; justify-content: <value>;
+   * When to Use: Only when the grid's total size is smaller than the grid container's size.
+   * Key Values & Usage: `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`.
+   */
+  align-content: start;
+  justify-content: start;
+}
+
+.container-sizing {
+  /*
+   * Purpose: Determines how an element's total width and height are calculated.
+   * Syntax: box-sizing: <value>;
+   * Key Values & Usage:
+   * - `content-box` (default): The specified width and height apply only to the content area. Padding and borders are added on top of this, making the element's final size larger.
+   * - `border-box`: The specified width and height include the content, padding, and border. This is the more intuitive and preferred model for modern web development, as it makes managing sizes much easier.
+   */
+  box-sizing: content-box;
+  
+  /*
+   * Purpose: Sets an element's dimensions.
+   * Syntax: width: <value>; min-width: <value>; etc.
+   * When to Use: Use static units (`px`, `rem`) for fixed-size elements. Use relative units (`%`, `vw`, `vh`) for fluid, responsive designs.
+   * - `min/max-width` and `min/max-height`: Define boundaries to prevent an element from becoming too small or too large, which is crucial for responsiveness.
+   * - `aspect-ratio`: A modern property that maintains a specific width-to-height ratio, regardless of the element's size.
+   */
+  width: auto;
+  height: auto;
+  min-width: auto;
+  max-width: none;
+  min-height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  /* Example: aspect-ratio: 16 / 9; */
+}
+
+.container-spacing {
+  /*
+   * Purpose: Sets the space *outside* the border.
+   * Syntax: margin: <value>;
+   * Alternatives: Use `margin-top/right/bottom/left` for specific sides.
+   * When to Use: To create space between elements.
+   *
+   * Concept: Margin Collapsing
+   * Vertical margins of two adjacent elements can "collapse," meaning the space between them is determined by the larger of the two margins, not their sum. This only happens with vertical margins, not horizontal ones.
+   */
+  margin: 0;
+  
+  /*
+   * Purpose: Provides a logical way to set margins and padding based on writing mode (e.g., left-to-right vs. right-to-left).
+   * Alternatives: Using directional properties like `margin-top` can be less flexible for multilingual sites.
+   * When to Use: For global websites where text direction can change, these properties ensure spacing remains correct without having to rewrite the CSS.
+   */
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  
+  /*
+   * Purpose: Sets the space *inside* the border, between the border and the content.
+   * Syntax: padding: <value>;
+   * Alternatives: Use `padding-top/right/bottom/left` for specific sides.
+   * When to Use: To create internal spacing and prevent content from touching the edges.
+   */
+  padding: 0;
+  
+  /* Logical padding properties */
+  padding-block-start: 0;
+  padding-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+/* _typography.css */
+.container-typography {
+  /*
+   * Purpose: Sets the color of the text.
+   * Syntax: color: <color>;
+   * Key Values & Usage: `currentColor`, color names, hex codes, `rgb()`, `rgba()`, `hsl()`, `hsla()`.
+   */
+  color: initial;
+  
+  /*
+   * Purpose: Aligns text horizontally within the container.
+   * Syntax: text-align: <value>;
+   * Key Values & Usage:
+   * - `left`, `right`, `center`: Common alignment options.
+   * - `justify`: Stretches lines of text so each has equal width.
+   * - `start`, `end`: Logical properties that align text based on writing direction. `start` is `left` in LTR and `right` in RTL.
+   */
+  text-align: left;
+  
+  /*
+   * Purpose: Specifies the height of a line of text.
+   * Syntax: line-height: <value>;
+   * When to Use: A unitless value (e.g., `1.5`) is recommended as it's a multiplier of the font size, making it scale proportionally.
+   */
+  line-height: normal;
+  
+  /*
+   * Purpose: Controls the spacing between words.
+   * Syntax: word-spacing: <value>;
+   * Key Values & Usage: `normal`, `length` (`px`, `em`, `rem`).
+   */
+  word-spacing: normal;
+  
+  /*
+   * Purpose: Controls the spacing between characters.
+   * Syntax: letter-spacing: <value>;
+   * Key Values & Usage: `normal`, `length` (`px`, `em`, `rem`).
+   */
+  letter-spacing: normal;
+  
+  /*
+   * Purpose: Specifies how white space is handled within an element.
+   * Syntax: white-space: <value>;
+   * Key Values & Usage:
+   * - `normal`: Collapses multiple spaces into a single space.
+   * - `nowrap`: Prevents text from wrapping, causing it to overflow.
+   * - `pre`: Preserves all white space exactly as written in the source code.
+   * - `pre-wrap`: Preserves white space but allows lines to wrap.
+   */
+  white-space: normal;
+  
+  /*
+   * Purpose: Sets the text decoration.
+   * Syntax: text-decoration: <line> <style> <color> <thickness>;
+   * When to Use: To add, remove, or customize underlines, overlines, and strikethroughs.
+   * Alternatives: Use longhand properties for individual control.
+   */
+  text-decoration: none;
+  text-decoration-line: none;
+  /* Possible values: `none`, `underline`, `overline`, `line-through`. */
+  text-decoration-style: solid;
+  /* Possible values: `solid`, `double`, `dotted`, `dashed`, `wavy`. */
+  text-decoration-color: initial;
+  text-decoration-thickness: auto;
+}
+
+.container-typography-font {
+  /*
+   * Purpose: A shorthand for setting all font properties in a single declaration.
+   * Syntax: font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size] / [line-height] [font-family];
+   * When to Use: For a concise way to set all core font properties at once.
+   * Example: font: italic small-caps 700 1.2em/1.5 "Georgia", serif;
+   */
+  font: normal;
+  
+  /*
+   * Purpose: Sets the font size.
+   * Syntax: font-size: <value>;
+   * Key Values & Usage:
+   * - `px`, `em`, `rem`: Fixed and relative units. Use `rem` for better accessibility as it scales with the user's browser font size setting.
+   * - `vh`, `vw`: Viewport-relative units, great for fluid typography.
+   * - `xx-small`, `x-small`, `small`, `medium`, etc.: Absolute keywords.
+   * - `%`: A percentage of the parent element's font size.
+   */
+  font-size: medium;
+  
+  /*
+   * Purpose: Specifies the font family for text.
+   * Syntax: font-family: <font-name-1>, <font-name-2>, ... | <generic-family>;
+   * Key Values & Usage: Provide a list of fonts as fallbacks, ending with a generic family to ensure the browser has a style to fall back on.
+   * Example: font-family: "Helvetica Neue", Arial, sans-serif;
+   */
+  font-family: sans-serif;
+  
+  /*
+   * Purpose: Sets the boldness or lightness of the font.
+   * Syntax: font-weight: <value>;
+   * Key Values & Usage: `normal`, `bold`, `lighter`, `bolder`, or numeric values from `100` (thinnest) to `900` (thickest).
+   */
+  font-weight: normal;
+  
+  /*
+   * Purpose: Sets the font style, such as italic.
+   * Syntax: font-style: <value>;
+   * Key Values & Usage: `normal`, `italic`, `oblique`.
+   */
+  font-style: normal;
+  
+  /*
+   * Purpose: Displays a small-caps font.
+   * Syntax: font-variant: <value>;
+   * Key Values & Usage: `normal`, `small-caps`.
+   */
+  font-variant: normal;
+  
+  /*
+   * Purpose: Adjusts the font face's normal aspect ratio.
+   * Syntax: font-stretch: <value>;
+   * When to Use: To stretch or condense a font. This is not widely supported by all fonts.
+   */
+  font-stretch: normal;
+}
+
+.container-columns {
+  /*
+   * Purpose: Sets the number of columns an element's content should be divided into.
+   * Syntax: column-count: <integer>;
+   * When to use: To quickly create a layout with a fixed number of columns without using more complex layout methods.
+   * Example: column-count: 3;
+   */
+  column-count: auto;
+  
+  /*
+   * Purpose: Specifies the width of the columns.
+   * Syntax: column-width: <length>;
+   * When to use: To create columns that automatically fit as many as possible into the available space, each with a minimum width.
+   * Example: column-width: 15em;
+   */
+  column-width: auto;
+  
+  /*
+   * Purpose: A shorthand for setting both `column-width` and `column-count`.
+   * Syntax: columns: <column-width> <column-count>;
+   * When to use: For a concise way to define your column layout.
+   * Example: columns: 200px 3;
+   */
+  columns: auto;
+  
+  /*
+   * Purpose: Sets the gap between the columns.
+   * Syntax: column-gap: <length>;
+   * When to use: To add space between columns for better readability.
+   * Example: column-gap: 2rem;
+   */
+  column-gap: normal;
+  
+  /*
+   * Purpose: Specifies a style for the rule (a line) drawn between columns.
+   * Syntax: column-rule: <width> <style> <color>;
+   * When to use: To visually separate content in adjacent columns.
+   * Example: column-rule: 1px solid #ccc;
+   */
+  column-rule: none;
+}
+
+/* _appearance.css */
+.container-style {
+  /*
+   * Purpose: A shorthand for all background-related properties.
+   * Syntax: background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [background-size] [background-origin] [background-clip];
+   * Example: background: #000 url("image.jpg") no-repeat center/cover;
+   */
+  background: none;
+  
+  /*
+   * Purpose: Sets the background color.
+   * Syntax: background-color: <color>;
+   * Key Values & Usage: `transparent`, color names, hex codes (`#rrggbb`), `rgb()`, `rgba()`, `hsl()`, `hsla()`.
+   */
+  background-color: transparent;
+  
+  /*
+   * Purpose: Sets a background image. You can specify multiple images, creating layers.
+   * Syntax: background-image: <image-1> | <image-2> | ... ;
+   * Key Values & Usage: `url()`, `linear-gradient()`, `radial-gradient()`, `none`.
+   */
+  background-image: none;
+  
+  /*
+   * Purpose: Controls how a background image repeats.
+   * Syntax: background-repeat: <x-value> <y-value>;
+   * Key Values & Usage: `repeat` (repeats horizontally and vertically), `repeat-x`, `repeat-y`, `no-repeat`, `space`, `round`.
+   */
+  background-repeat: repeat;
+  
+  /*
+   * Purpose: Specifies whether the background image is fixed or scrolls with the page.
+   * Syntax: background-attachment: <value>;
+   * Key Values & Usage: `scroll`, `fixed`, `local`. Use `fixed` for a classic parallax scrolling effect.
+   */
+  background-attachment: scroll;
+  
+  /*
+   * Purpose: Sets the initial position of a background image. You can set a different position for each layer of a multi-background element.
+   * Syntax: background-position: <x-value> <y-value>;
+   * Key Values & Usage: `center`, `top`, `bottom`, `left`, `right`, percentages, or lengths (`px`, `em`).
+   */
+  background-position: 0% 0%;
+  
+  /*
+   * Purpose: Sets the size of the background image. Can be used for a single or a layered background.
+   * Syntax: background-size: <value>;
+   * Key Values & Usage: `auto`, `contain`, `cover`, or length values.
+   */
+  background-size: auto;
+  
+  /*
+   * Purpose: Specifies the positioning area for background images.
+   * Syntax: background-origin: <value>;
+   * Key Values & Usage: `padding-box` (default), `border-box`, `content-box`.
+   */
+  background-origin: padding-box;
+  
+  /*
+   * Purpose: Specifies the painting area for the background.
+   * Syntax: background-clip: <value>;
+   * Key Values & Usage: `border-box` (default), `padding-box`, `content-box`, `text`.
+   */
+  background-clip: border-box;
+  
+  /*
+   * Purpose: A shorthand for setting all border properties.
+   * Syntax: border: [border-width] [border-style] [border-color];
+   * Example: border: 2px solid #ccc;
+   */
+  border: none;
+  
+  /*
+   * Purpose: Sets the border properties based on the logical flow of text, useful for internationalization.
+   * Syntax: border-block-start: <value>; border-inline-start: <value>; etc.
+   * Example: border-block-start: 1px solid black; (This is the top border in LTR and the right border in RTL.)
+   /*
+    * Purpose: Sets the border on a specific side.
+    * Syntax: border-[side]: <value>;
+    * Example: border-top: 1px dashed black;
+  */
+  
+  border-block-start: none;
+  /* border-top: none  formerly*/
+  border-block-end: none;
+  /* border-right: none */
+  border-inline-start: none;
+  /* border-bottom: none */
+  border-inline-end: none;
+  /* border-left: none  */
+  
+  /*
+   * Purpose: Rounds the corners of the element.
+   * Syntax: border-radius: <value>;
+   * Alternatives: Use longhand for each corner.
+   * Example: border-radius: 10px 20px 30px 40px; (top-left, top-right, bottom-right, bottom-left)
+   */
+  border-radius: 0;
+  
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  
+  /*
+   * Purpose: Adds a shadow to the element's box. You can stack multiple shadows by separating them with a comma.
+   * Syntax: box-shadow: <h-offset> <v-offset> <blur> <spread> <color> [inset];
+   * Example: box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.5);
+   */
+  box-shadow: none;
+  
+  /*
+   * Purpose: Sets the transparency level of an element.
+   * Syntax: opacity: <number>;
+   * When to Use: Fades the entire element, including its content.
+   */
+  opacity: 1;
+  
+  /*
+   * Purpose: Draws an outline around an element, outside the border. It doesn't affect layout.
+   * Syntax: outline: <width> <style> <color>;
+   * When to Use: Primarily for accessibility, as outlines help users identify the currently focused element.
+   */
+  outline: none;
+  outline-width: medium;
+  outline-style: none;
+  /* Possible values: none, solid, dotted, dashed, groove, ridge, inset, outset. */
+  outline-color: initial;
+  
+  /*
+   * Purpose: Specifies a blend mode for an element's content.
+   * Syntax: mix-blend-mode: <value>;
+   */
+  mix-blend-mode: normal;
+  
+  /*
+   * Purpose: Applies a graphical filter effect to the element.
+   * Syntax: filter: <function>;
+   * Example: filter: grayscale(100%) blur(2px);
+   */
+  filter: none;
+  
+  /*
+   * Purpose: Clips an element to a specified shape.
+   * Syntax: clip-path: <value>;
+   * When to Use: To create unique, non-rectangular layouts.
+   */
+  clip-path: none;
+  
+  /*
+   * Purpose: Specifies how the content of a replaced element (like `<img>` or `<video>`) should fit its container.
+   * Syntax: object-fit: <value>;
+   */
+  object-fit: fill;
+  
+  /*
+   * Purpose: Defines how an element's content is sized and positioned within its content box when `object-fit` is not `fill`.
+   * Syntax: object-position: <x> <y>;
+   */
+  object-position: 50% 50%;
+}
+
+/* _animation.css */
+.container-transitions {
+  /*
+   * Purpose: A shorthand to set all transition properties.
+   * Syntax: transition: <property> <duration> <timing-function> <delay>;
+   * When to Use: For a single, concise declaration.
+   * Example: `transition: background-color 0.3s ease-in-out;`
+   */
+  transition: none;
+  
+  /*
+   * Purpose: Specifies the CSS property to be animated.
+   * Syntax: transition-property: <property-name> | all | none;
+   * When to Use: To control which properties will be animated on state change. Using `all` can be less performant.
+   */
+  transition-property: all;
+  
+  /*
+   * Purpose: Sets the duration of the transition.
+   * Syntax: transition-duration: <time>;
+   * When to Use: To control how long the animation takes.
+   */
+  transition-duration: 0s;
+  
+  /*
+   * Purpose: Defines the acceleration curve of the transition.
+   * Syntax: transition-timing-function: <value>;
+   * Key Values & Usage:
+   * - `ease`: A slow start, then fast, then slow end.
+   * - `linear`: The same speed from start to end.
+   * - `ease-in`: A slow start.
+   * - `ease-out`: A slow end.
+   * - `cubic-bezier()`: A custom curve for fine-grained control.
+   */
+  transition-timing-function: ease;
+  
+  /*
+   * Purpose: Sets a delay before the transition begins.
+   * Syntax: transition-delay: <time>;
+   */
+  transition-delay: 0s;
+}
+
+.container-transforms {
+  /*
+   * Purpose: Applies a 2D or 3D transform.
+   * Syntax: transform: <function> | <function-2> ...;
+   * When to Use: For visual effects on hover, on a button click, or as part of an animation.
+   * Key Functions & Usage:
+   * - `translate(x, y)`: Moves the element from its current position.
+   * - `rotate(deg)`: Rotates the element around its center.
+   * - `scale(x, y)`: Resizes the element.
+   * - `skew(deg)`: Skews the element along the x and y axes.
+   * - `perspective(px)`: Gives a 3D-transformed element a sense of depth.
+   */
+  transform: none;
+  
+  /*
+   * Purpose: Sets the point around which a transform is applied.
+   * Syntax: transform-origin: <x-value> <y-value>;
+   * When to Use: When you want an element to rotate or scale from a point other than its default center.
+   * Example: A spinning compass needle would have `transform-origin: center;`.
+   */
+  transform-origin: 50% 50%;
+  /* Possible values: top, left, right, bottom, percentages, px, etc. */
+  
+  /*
+   * Purpose: Specifies whether children of a 3D-transformed element are rendered in 3D space or flattened.
+   * Syntax: transform-style: <value>;
+   * When to Use: On the parent container to create a 3D scene.
+   */
+  transform-style: flat;
+  /* Possible values: flat, preserve-3d. */
+  
+  /*
+   * Purpose: Defines a perspective for 3D-transformed child elements.
+   * Syntax: perspective: <value>;
+   * When to Use: On the parent container to give child elements a 3D effect. The `px` value determines the depth of the scene.
+   */
+  perspective: none;
+  
+  /*
+   * Purpose: Specifies the vanishing point for 3D-transformed elements.
+   * Syntax: perspective-origin: <x-value> <y-value>;
+   * When to Use: To change the viewer's point of view in a 3D scene.
+   */
+  perspective-origin: 50% 50%;
+  
+  /*
+   * Purpose: Determines whether the back face of a 3D-transformed element is visible.
+   * Syntax: backface-visibility: <value>;
+   * When to Use: When creating a 3D card flip effect to hide the back of the card before it's flipped.
+   */
+  backface-visibility: visible;
+  /* Possible values: visible, hidden. */
+}
+
+.container-animations {
+  /*
+   * Purpose: A shorthand for all animation properties.
+   * Syntax: animation: <name> <duration> <timing-function> <delay> <iteration-count> <direction> <fill-mode> <play-state>;
+   * When to Use: For creating complex, repeatable, or triggered animations using `@keyframes`.
+   */
+  animation: none;
+  
+  /*
+   * Purpose: Specifies the `@keyframes` rule to be used.
+   * Syntax: animation-name: <name>;
+   */
+  animation-name: none;
+  
+  /*
+   * Purpose: Sets the duration of one animation cycle.
+   */
+  animation-duration: 0s;
+  
+  /*
+   * Purpose: Sets the timing function for the animation.
+   * Key Values & Usage: Same as `transition-timing-function`.
+   */
+  animation-timing-function: ease;
+  
+  /*
+   * Purpose: Sets a delay before the animation starts.
+   */
+  animation-delay: 0s;
+  
+  /*
+   * Purpose: Specifies how many times the animation should run.
+   * Key Values & Usage: A number, or `infinite` to loop forever.
+   */
+  animation-iteration-count: 1;
+  
+  /*
+   * Purpose: Determines whether the animation should alternate directions.
+   * Key Values & Usage: `normal`, `reverse`, `alternate`, `alternate-reverse`.
+   */
+  animation-direction: normal;
+  
+  /*
+   * Purpose: Specifies how the element should be styled before and after the animation runs.
+   * Key Values & Usage: `none`, `forwards` (retains the final state), `backwards` (applies the starting state), `both`.
+   */
+  animation-fill-mode: none;
+  
+  /*
+   * Purpose: Specifies whether the animation is running or paused.
+   * Key Values & Usage: `running`, `paused`.
+   */
+  animation-play-state: running;
+}
+
+/* _interaction.css */
+.container-interaction {
+  /*
+ * Purpose: Controls how the cursor appears over the element.
+ * Syntax: cursor: <value>;
+ * When to use: To provide clear visual feedback. For example, use `pointer` for clickable elements, `wait` for loading states, or `grab` for draggable items.
+ */
+  cursor: auto;
+  
+  /*
+ * Purpose: Prevents the user from selecting text or other content within an element.
+ * Syntax: user-select: <value>;
+ * When to use: On non-textual or interactive elements like buttons and images to prevent accidental text selection.
+ * Key values: `auto`, `none`, `text`, `all`.
+ */
+  user-select: auto;
+  
+  /*
+ * Purpose: Controls whether an element responds to mouse and touch events.
+ * Syntax: pointer-events: <value>;
+ * When to use: To make an element "unclickable" and allow events to pass through to elements behind it.
+ * Key values: `auto`, `none`.
+ */
+  pointer-events: auto;
+  
+  /*
+ * Purpose: Controls whether an element can be resized by the user.
+ * Syntax: resize: <value>;
+ * When to use: On elements like textareas where user resizing is desired.
+ * Key values: `none`, `both`, `horizontal`, `vertical`.
+ */
+  resize: none;
+  
+  /*
+ * Purpose: Specifies whether an element is rendered. Unlike `display: none`, a hidden element still occupies space.
+ * Syntax: visibility: <value>;
+ * When to use: To hide an element while maintaining its layout space.
+ * Key values: `visible`, `hidden`, `collapse`.
+ */
+  visibility: visible;
+  
+  
+  /*
+ * Purpose: Specifies the color of the text input cursor (caret).
+ * Syntax: caret-color: <color>;
+ * When to use: To customize the caret color to match your website's color scheme.
+ */
+  caret-color: auto;
+  
+  /*
+ * Purpose: Determines whether an element can be focused by a user via keyboard navigation.
+ * Syntax: tabindex: <value>;
+ * When to use: To make non-form elements focusable, or to control the focus order. A value of `0` makes it focusable, and `-1` removes it from the natural focus order.
+ */
+  tabindex: -1;
+  
+  /*
+ * Purpose: Provides a hint to the browser on whether to enable spellchecking for an element's content.
+ * Syntax: spellcheck: <value>;
+ * When to use: On editable content (e.g., `<textarea>`) to explicitly enable or disable the browser's spellchecker.
+ * Key values: `true`, `false`.
+ */
+  spellcheck: false;
+  
+  /*
+ * Purpose: Controls the appearance of form controls, such as buttons and checkboxes.
+ * Syntax: appearance: <value>;
+ * When to use: To remove the default platform-specific styling of form elements, allowing for custom styling.
+ * Key values: `none`, `auto`.
+ */
+  appearance: none;
+  
+  
+  /*
+ * Purpose: Specifies how the content breaks before and after a box.
+ * Syntax: break-before: <value>; break-after: <value>;
+ * When to use: In print stylesheets, to prevent an important section (like a heading) from being at the end of a page with its content on the next one.
+ * Key values: `auto`, `always`, `avoid`, `page`, `column`, `region`.
+ */
+  break-before: auto;
+  break-after: auto;
+  
+  /*
+ * Purpose: Specifies how content breaks inside an element.
+ * Syntax: break-inside: <value>;
+ * When to use: To keep a block of content (like a figure or code block) together on one page or in one column.
+ * Key values: `auto`, `avoid`, `avoid-page`, `avoid-column`.
+ */
+  break-inside: auto;
+}
+
+/* ---------------------------------------------------------------------- */
+
 @layer bases {
   
-  * {
+  /* LAYOUT & SIZING */
+  html {
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  /* SPACING & RESETS */
+  body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
   
-  html {
-    font-size: var(--font-size);
-    font-family: var(--font-base);
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    color-scheme: light dark;
-  }
-  
+  /* TYPOGRAPHY */
   body {
-    font-family: var(--font-body);
-    line-height: 1.6;
-    margin: 0;
-    scroll-behavior: smooth;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      'Open Sans',
+      'Helvetica Neue',
+      sans-serif;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  
+  /* STYLE & ACCESSIBILITY */
   
   :focus-visible {
-    outline: 2px dashed var(--color-focus, #005fcc);
+    outline: 2px dashed #005fcc;
     outline-offset: 4px;
   }
   
+  html {
+    color-scheme: light dark;
+  }
+  
+  /* INTERACTION */
+  html {
+    scroll-behavior: smooth;
+  }
+  
   @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    * {
       animation-duration: 0.001ms !important;
       transition-duration: 0.001ms !important;
       scroll-behavior: auto !important;
     }
   }
-
+  
+  /* container-transitions */
+  /* .container-transforms */
+  /* .container-animations */
 }

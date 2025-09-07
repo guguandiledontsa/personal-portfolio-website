@@ -3,7 +3,7 @@
   
   @property --base-hue {
     syntax: "<number>";
-    initial-value: 20;
+    initial-value: 0;
     inherits: true;
   }
   
@@ -18,7 +18,7 @@
   }
   
   :root {
-    /* --base-hue: 20; */
+    /* --base-hue: 0; */
     animation: cycle-hue 20s infinite linear;
     
     /* Primary colors */
@@ -46,12 +46,6 @@
     --gradient-main: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     --gradient-layered: linear-gradient(to top, hsla(0, 0%, 0%, 0.1), transparent);
     
-    /* Logic properties */
-    --min-h: auto;
-    --bg-color: var(--color-primary-light);
-    --alignment: left;
-    --txt-color: var(--color-primary-darker);
-    
     /* 🖋️ Typography & Spacin */
     --font-size-hero: clamp(3.5rem, 10vw, 8rem);
     --font-size-h1: clamp(2.5rem, 7vw, 5rem);
@@ -77,5 +71,10 @@
     --font-quote: 'Courier New', monospace;
     
     
+    /* Logic properties */
+    --min-h: auto;
+    --bg-color: var(--color-primary-light);
+    --alignment: left;
+    --txt-color: var(--color-primary-darker);
   }
 }
