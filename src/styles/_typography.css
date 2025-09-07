@@ -233,7 +233,7 @@
     .subblock,
     .subsubblock {
         color: var(--txt-color, var(--color-text));
-        text-align: var(--alignment);
+        text-align: var(--alignment, left);    
     }
     
     /* ----------------------- */
