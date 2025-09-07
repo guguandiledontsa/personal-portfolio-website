@@ -342,7 +342,7 @@
   .block,
   .subblock,
   .subsubblock {
-   min-height: var(--min-h);
+   min-height: var(--min-h, auto);
   }
   
   /* ---------------------------------------------------------------------- */

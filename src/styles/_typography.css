@@ -232,7 +232,7 @@
     .block,
     .subblock,
     .subsubblock {
-        color: var(--txt-color, var(--color-text));
+        color: var(--color-primary-darker, var(--color-text, black));
         text-align: var(--alignment, left);    
     }
     

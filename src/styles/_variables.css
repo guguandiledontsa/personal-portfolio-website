@@ -69,10 +69,5 @@
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Space Grotesk', sans-serif;
     --font-quote: 'Courier New', monospace;
-    
-    
-    /* Logic properties */
-    --min-h: auto;
-    --txt-color: var(--color-primary-darker);
   }
 }
