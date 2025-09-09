@@ -950,12 +950,13 @@
   /* STYLE & ACCESSIBILITY */
   
   :focus-visible {
-    outline: 2px dashed #005fcc;
+    outline: 2px dashed #ddf;
     outline-offset: 4px;
   }
   
   html {
     color-scheme: light dark;
+    background-color: whitesmoke;
   }
   
   /* INTERACTION */

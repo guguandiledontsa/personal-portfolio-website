@@ -44,4 +44,9 @@ I’m using small GitHub issues as bite-sized checkpoints. Each one is:
 
 ---
 
+### icons pack
+
+<a target="_blank" href="https://icons8.com/icon/84884/instagram">Instagram</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/84888/linkedin">LinkedIn</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/38158/gmail-logo">Gmail Logo</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 > 💬 This project is not about perfection. It’s about progress, pace, and process.

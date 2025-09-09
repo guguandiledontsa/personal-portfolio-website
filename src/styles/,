@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tag Showcase</title>
+</head>
+<body>
+
+    <header>
+        <h1>HTML Tag Showcase</h1>
+        <h2>A Single, Non-Repetitive Demonstration</h2>
+    </header>
+
+    <main>
+        <section>
+            <nav>
+                <a href="#demo">Jump to Demo</a>
+            </nav>
+            <hr>
+
+            <article id="demo">
+                <h3>Structural and Semantic Tags</h3>
+                <blockquote>
+                    This article is a showcase of common HTML elements.
+                    <cite>— <abbr title="HyperText Markup Language">HTML</abbr> Documentation</cite>
+                </blockquote>
+                <p>
+                    <small>The content below is for demonstration purposes only.</small>
+                </p>
+
+                <h4>Lists</h4>
+                <ol>
+                    <li>Ordered list item.</li>
+                </ol>
+                <ul>
+                    <li>Unordered list item.</li>
+                </ul>
+                <dl>
+                    <dt>Term</dt>
+                    <dd>Description of the term.</dd>
+                </dl>
+                
+                <h5>Tables</h5>
+                <table>
+                    <caption>Example Data</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Header</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" rowspan="2">Data Cell</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <hr>
+
+            <article>
+                <h3>Text-Level Formatting</h3>
+                <p>
+                    This is a <ins>new</ins> paragraph with <del>old</del> information. We can make text <b>bold</b> and <i>italicized</i> for emphasis, or even a different kind of <strong>strong</strong> importance, and <em>italics</em>. We can also <mark>highlight</mark> important terms and <br>underline words.
+                </p>
+                <p>
+                    We can write code like <code>int x = 10;</code> or show a command you press with your keyboard like <kbd>Ctrl</kbd> + <kbd>S</kbd>. A sample program output would look like this: <samp>Success: Process completed.</samp> We can also show a short quote like <q>A journey of a thousand miles begins with a single step.</q>
+                </p>
+                <p>
+                    For scientific notation, we use C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> and 2<sup>10</sup>.
+                </p>
+            </article>
+
+            <hr>
+
+            <article>
+                <h3>Form Elements</h3>
+                <form>
+                    <fieldset>
+                        <legend>User Information</legend>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email">
+                        <br>
+                        <label for="pass">Password:</label>
+                        <input type="password" id="pass">
+                        <br>
+                        <label for="tel">Phone:</label>
+                        <input type="tel" id="tel" readonly value="555-123-4567">
+                        <br>
+                        <label for="url">Website:</label>
+                        <input type="url" id="url">
+                        <br>
+                        <label for="date">Date:</label>
+                        <input type="date" id="date">
+                        <br>
+                        <label for="time">Time:</label>
+                        <input type="time" id="time">
+                        <br>
+                        <label for="color">Color:</label>
+                        <input type="color" id="color">
+                        <br>
+                        <label for="range">Range:</label>
+                        <input type="range" id="range" min="0" max="100">
+                        <br>
+                        <label for="radio-choice">Radio:</label>
+                        <input type="radio" id="radio-choice" name="choice" value="option1">
+                        <br>
+                        <label for="checkbox-choice">Checkbox:</label>
+                        <input type="checkbox" id="checkbox-choice">
+                        <br>
+                        <label for="file">File:</label>
+                        <input type="file" id="file">
+                        <br>
+                        <label for="message">Message:</label>
+                        <textarea id="message" rows="4" cols="50"></textarea>
+                        <br>
+                        <label for="dropdown">Dropdown:</label>
+                        <select id="dropdown">
+                            <optgroup label="Group 1">
+                                <option value="a">Option A</option>
+                            </optgroup>
+                        </select>
+                        <br>
+                        <label for="data-list">Data List:</label>
+                        <input list="options-list" id="data-list">
+                        <datalist id="options-list">
+                            <option value="Suggestion"></option>
+                        </datalist>
+                        <br>
+                        <label for="progress-meter">Progress:</label>
+                        <progress id="progress-meter" value="70" max="100"></progress>
+                        <br>
+                        <label for="output">Calculation Output:</label>
+                        <output id="output" name="result"></output>
+                        <br>
+                        <label for="meter-value">Meter:</label>
+                        <meter id="meter-value" value="0.7"></meter>
+                    </fieldset>
+                    <br>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                    <button type="button" disabled>Disabled Button</button>
+                </form>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>Multimedia & Interactive Tags</h3>
+                <p>
+                    <figure>
+                        <figcaption>A single image tag.</figcaption>
+                        <img src="https://placehold.co/300" alt="A placeholder image.">
+                    </figure>
+                </p>
+                
+                <p>
+                    <video controls width="320">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+
+                <p>
+                    <audio controls>
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+
+                <p>
+                    <figure>
+                        <figcaption>Image map example.</figcaption>
+                        <img src="https://placehold.co/300x200" alt="Image with clickable areas." usemap="#imagemap">
+                        <map name="imagemap">
+                            <area shape="rect" coords="0,0,100,100" href="#">
+                        </map>
+                    </figure>
+                </p>
+
+                <p>
+                    <figure>
+                        <figcaption>Responsive image with `picture` and one `source` tag.</figcaption>
+                        <picture>
+                            <source media="(min-width: 600px)" srcset="https://placehold.co/600x400">
+                            <img src="https://placehold.co/400x300" alt="A responsive image.">
+                        </picture>
+                    </figure>
+                </p>
+
+                <br>
+                <details>
+                    <summary>Click to view details</summary>
+                    <p>This is a hidden content block.</p>
+                </details>
+
+                <dialog open>This is an open dialog box.</dialog>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            Contact: <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+    </footer>
+
+</body>
+</html>

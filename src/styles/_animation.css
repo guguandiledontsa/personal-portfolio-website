@@ -1,5 +1,5 @@
  /* _animation.css */
- .container-transitions {
+.container-transitions {
    /*
    * Purpose: A shorthand to set all transition properties.
    * Syntax: transition: <property> <duration> <timing-function> <delay>;
@@ -40,7 +40,8 @@
    */
    transition-delay: 0s;
  }
- .container-transforms {
+ 
+.container-transforms {
    /*
    * Purpose: Applies a 2D or 3D transform.
    * Syntax: transform: <function> | <function-2> ...;
@@ -93,7 +94,8 @@
    backface-visibility: visible;
    /* Possible values: visible, hidden. */
  }
- .container-animations {
+ 
+.container-animations {
    /*
    * Purpose: A shorthand for all animation properties.
    * Syntax: animation: <name> <duration> <timing-function> <delay> <iteration-count> <direction> <fill-mode> <play-state>;
@@ -147,16 +149,17 @@
    */
    animation-play-state: running;
  }
- /* ---------------------------------------------------------------------- */
-
+ 
+/* ---------------------------------------------------------------------- */
+ 
 @layer animations {
-  /* .container-transitions */
- .supblock,
- .block,
- .subblock,
- .subsubblock {
-  transition: all 0.3s ease;
- }
- /* ---------------------------------------------------------------------- */
 
-}
+   /* .container-transitions */
+   .supblock,
+   .block,
+   .subblock,
+   .subsubblock {}
+   
+   /* ---------------------------------------------------------------------- */
+   
+ }

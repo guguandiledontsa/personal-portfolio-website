@@ -176,34 +176,55 @@
   /* ----------------------- */
   
   .supblock {
-   &:hover {
-    --bg-color: var(--color-primary-light);
-    
-    box-shadow: inset 0 0 10px hsla(var(--base-hue), 100%, 100%, 0.5);
-   }
+   background-color: #ffffff;
+   border: 2px solid #1a237e;
+   border-radius: 12px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .block {
-   &:hover {
-    --bg-color: var(--color-primary-dark);
-    --radius: var(--radius-lg);
-    
-    border: 0.125rem solid currentcolor;
-   }
+   &:hover {}
   }
   
   .subblock {
-   &:hover {
-    --bg-color: var(--color-primary-light);
-    }
+   &:hover {}
   }
   
   .subsubblock {
-   &:hover {
-    --bg-color: var(--color-primary-lighter);
-   }
+   &:hover {}
   }
   
   /* ---------------------------------------------------------------------- */
   
+  .supblock__card {
+   background-color: #bbdefb;
+   border-radius: 6px;
+   
+   &:hover {
+    border-inline: 4px solid #1e88e5;
+   }
+  }
+  
+  .supblock__block-container {
+   background-color: #e3f2fd;
+   border-block: 4px solid #42a5f5;
+   border-radius: 8px;
+  }
+  
+  .supblock__inline-text {
+   border: 1px dashed #e53935;
+   border-radius: 4px;
+   background-color: #ffebee;
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  body {
+   background-color: #f0f2f5;
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  /* Styling for list containers to remove default list styles */
+  .supblock__card.supblock__list-card {
+   list-style-type: none;
+  }
  }

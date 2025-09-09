@@ -1,6 +1,6 @@
- /* layout.css */
- .container-layout {
-  /*
+/* layout.css */
+.container-layout {
+    /*
    * Purpose: Controls how the element's box is rendered.
    * Syntax: display: <value>;
    * Key Values & Usage:
@@ -11,9 +11,9 @@
    * - `contents`: Makes the container itself invisible, but its children become direct children of its parent. Useful for semantic HTML that needs to be part of a flex or grid layout without being a flex/grid item itself.
    * - `none`: The element is completely removed from the document, and does not take up any space.
    */
-  display: block;
-  
-  /*
+    display: block;
+    
+    /*
    * Purpose: Specifies the positioning method.
    * Syntax: position: <value>;
    * Key Values & Usage:
@@ -23,29 +23,29 @@
    * - `fixed`: Positioned relative to the viewport. Use for sticky headers or floating buttons.
    * - `sticky`: A hybrid of `relative` and `fixed`. The element behaves as `relative` until a certain scroll position is met, after which it becomes `fixed`.
    */
-  position: static;
-  
-  /*
+    position: static;
+    
+    /*
    * Purpose: Sets an element's position relative to its containing block.
    * Syntax: top: <value>; left: <value>; etc.
    * Alternatives: `inset: <value>;` is a shorthand for all four sides.
    * When to Use: Used with `position` values other than `static`.
    */
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  inset: auto;
-  /* Example: inset: 0; for full-container coverage. */
-  
-  /*
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    inset: auto;
+    /* Example: inset: 0; for full-container coverage. */
+    
+    /*
    * Purpose: Defines the vertical stacking order.
    * Syntax: z-index: <integer>;
    * When to Use: Use with positioned elements to control which one appears on top. Higher values are on top.
    */
-  z-index: auto;
-  
-  /*
+    z-index: auto;
+    
+    /*
    * Purpose: Manages content that overflows the container.
    * Syntax: overflow: <value>;
    * Key Values & Usage:
@@ -54,27 +54,27 @@
    * - `scroll`: Always adds scrollbars.
    * - `auto`: Adds scrollbars only when needed.
    */
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  
-  /*
+    overflow: visible;
+    overflow-x: visible;
+    overflow-y: visible;
+    
+    /*
    * Purpose: Aligns an element to the left or right, allowing other content to wrap around it.
    * Syntax: float: <value>;
    * When to Use: Primarily used for wrapping text around images. Before Flexbox and Grid, it was also used for multi-column layouts.
    */
-  float: none;
-  /* Possible values: none, left, right. */
-  
-  /*
+    float: none;
+    /* Possible values: none, left, right. */
+    
+    /*
    * Purpose: Specifies on which sides an element won't have floating elements next to it.
    * Syntax: clear: <value>;
    * When to Use: Use this to stop a container from wrapping around a floated element, forcing it to start on a new line below the float.
    */
-  clear: none;
-  /* Possible values: none, left, right, both. */
-  
-  /*
+    clear: none;
+    /* Possible values: none, left, right, both. */
+    
+    /*
    * Purpose: A performance optimization that allows the browser to render an element in isolation from the rest of the page.
    * Syntax: contain: <value>;
    * Key Values & Usage:
@@ -82,12 +82,12 @@
    * - `paint`: A change to an element's content won't trigger a full page re-paint.
    * - `content`: A shorthand for both `layout` and `paint`.
    */
-  contain: none;
-  /* Possible values: none, strict, content, size, layout, style, paint. */
- }
- 
- .container-contain {
-  /*
+    contain: none;
+    /* Possible values: none, strict, content, size, layout, style, paint. */
+}
+
+.container-contain {
+    /*
    * Purpose: Specifies that an element and its contents are independent from the rest of the document's layout, style, and painting.
    * Syntax: contain: <value>;
    * When to use: As a performance optimization on independent widgets or components to prevent their changes from triggering a re-render of the entire page.
@@ -97,18 +97,18 @@
    * - `size`: The element's size can be determined without inspecting its contents.
    * - `strict`: A shorthand for `layout`, `paint`, and `size`.
    */
-  contain: none;
- }
- 
- .container-flex {
-  /*
+    contain: none;
+}
+
+.container-flex {
+    /*
    * Purpose: Establishes a flex formatting context for its children, making them flex items.
    * Syntax: display: flex | inline-flex;
    * When to Use: The foundation of any flex-based layout. Use `flex` for a block-level container and `inline-flex` for a container that behaves like a word within a line of text.
    */
-  display: flex;
-  
-  /*
+    display: flex;
+    
+    /*
    * Purpose: Sets the direction of the main axis along which flex items are laid out.
    * Syntax: flex-direction: <value>;
    * Key Values & Usage:
@@ -117,9 +117,9 @@
    * - `column`: Items are arranged vertically from top to bottom.
    * - `column-reverse`: Items are arranged vertically from bottom to top.
    */
-  flex-direction: row;
-  
-  /*
+    flex-direction: row;
+    
+    /*
    * Purpose: Controls whether items wrap onto new lines when they don't fit in the container.
    * Syntax: flex-wrap: <value>;
    * Key Values & Usage:
@@ -127,17 +127,17 @@
    * - `wrap`: Items will wrap to the next line if the container is too small.
    * - `wrap-reverse`: Items wrap to the next line in the opposite direction.
    */
-  flex-wrap: nowrap;
-  
-  /*
+    flex-wrap: nowrap;
+    
+    /*
    * Purpose: A shorthand for setting both `flex-direction` and `flex-wrap`.
    * Syntax: flex-flow: <flex-direction> <flex-wrap>;
    * When to Use: For a concise and efficient way to define the main axis and wrapping behavior.
    * Example: flex-flow: column wrap;
    */
-  flex-flow: row nowrap;
-  
-  /*
+    flex-flow: row nowrap;
+    
+    /*
    * Purpose: Aligns items along the main axis of the container.
    * Syntax: justify-content: <value>;
    * Key Values & Usage:
@@ -148,9 +148,9 @@
    * - `space-around`: Items are evenly distributed with equal space around them.
    * - `space-evenly`: Items are evenly distributed with equal space between them and the container's edges.
    */
-  justify-content: flex-start;
-  
-  /*
+    justify-content: flex-start;
+    
+    /*
    * Purpose: Aligns items along the cross axis (perpendicular to the main axis).
    * Syntax: align-items: <value>;
    * Key Values & Usage:
@@ -160,26 +160,26 @@
    * - `center`: Items are centered along the cross axis.
    * - `baseline`: Items are aligned according to their baselines.
    */
-  align-items: stretch;
-  
-  /*
+    align-items: stretch;
+    
+    /*
    * Purpose: Aligns wrapped lines of flex items along the cross axis.
    * Syntax: align-content: <value>;
    * When to Use: Only when `flex-wrap` is set to `wrap` and there is extra space on the cross axis. It controls the spacing between lines, not the items themselves.
    * Key Values & Usage: `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `stretch`.
    */
-  align-content: stretch;
- }
- 
- .container-grid {
-  /*
+    align-content: stretch;
+}
+
+.container-grid {
+    /*
    * Purpose: Establishes a grid formatting context for its children, making them grid items.
    * Syntax: display: grid | inline-grid;
    * When to Use: The foundation of any grid-based layout. Use `grid` for a block-level container and `inline-grid` for a container that behaves like an inline element.
    */
-  display: grid;
-  
-  /*
+    display: grid;
+    
+    /*
    * Purpose: Defines the grid's columns and rows. This is a core property for establishing the grid's structure.
    * Syntax: grid-template-columns: <sizes>; grid-template-rows: <sizes>;
    * Key Values & Usage:
@@ -190,25 +190,25 @@
    * - `minmax(min, max)`: Sets a minimum and maximum size range. Example: `minmax(100px, 1fr)` ensures a column is at least 100px wide but can grow.
    * - `repeat(count, size)`: A powerful shorthand to create multiple identical tracks.
    */
-  grid-template-columns: none;
-  grid-template-rows: none;
-  
-  /*
+    grid-template-columns: none;
+    grid-template-rows: none;
+    
+    /*
    * Purpose: Defines named grid areas for simple item placement.
    * Syntax: grid-template-areas: "<name1> <name2>" "<name3> <name4>";
    * When to Use: For creating complex but readable layouts where you want to visually represent the structure of the page. Grid items can then be placed using the `grid-area` property.
    */
-  grid-template-areas: none;
-  
-  /*
+    grid-template-areas: none;
+    
+    /*
    * Purpose: A shorthand for setting `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` at once.
    * Syntax: grid-template: <grid-template-rows> / <grid-template-columns>;
    * When to Use: For a concise way to define the grid's layout.
    * Example: `grid-template: "a b" 1fr "c d" 1fr / 1fr 1fr;`
    */
-  grid-template: none;
-  
-  /*
+    grid-template: none;
+    
+    /*
    * Purpose: Controls how auto-placed grid items are inserted into the grid.
    * Syntax: grid-auto-flow: <value>;
    * Key Values & Usage:
@@ -216,88 +216,88 @@
    * - `column`: Places items into empty cells column by column.
    * - `dense`: Tries to fill empty spaces in the grid by rearranging smaller items, which can reduce white space.
    */
-  grid-auto-flow: row;
-  
-  /*
+    grid-auto-flow: row;
+    
+    /*
    * Purpose: Specifies the size of implicitly created grid tracks (rows/columns that aren't explicitly defined by `grid-template-rows/columns`).
    * Syntax: grid-auto-columns: <size>; grid-auto-rows: <size>;
    * When to Use: When you have an unknown number of items and want to ensure a consistent size for all of them.
    */
-  grid-auto-columns: auto;
-  grid-auto-rows: auto;
-  
-  /*
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    
+    /*
    * Purpose: A shorthand for `grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`.
    * Syntax: grid-auto: <grid-auto-flow> <grid-auto-rows> / <grid-auto-columns>;
    * Example: `grid-auto: row dense 100px;`
    */
-  grid-auto: auto;
-  
-  /*
+    grid-auto: auto;
+    
+    /*
    * Purpose: Controls the space between grid items.
    * Syntax: gap: <value>;
    * Alternatives: `row-gap` and `column-gap` for individual control.
    * When to Use: A modern, cleaner alternative to using margins on grid items. It creates space between items without affecting the outer edges of the grid.
    */
-  gap: 0;
-  row-gap: 0;
-  column-gap: 0;
-  
-  /*
+    gap: 0;
+    row-gap: 0;
+    column-gap: 0;
+    
+    /*
    * Purpose: Aligns the grid items inside the grid container along the block (column) axis.
    * Syntax: align-items: <value>;
    * When to Use: To align all grid items within their respective cells.
    * Key Values & Usage: `start`, `end`, `center`, `stretch`.
    */
-  align-items: stretch;
-  
-  /*
+    align-items: stretch;
+    
+    /*
    * Purpose: Aligns the grid items inside the grid container along the inline (row) axis.
    * Syntax: justify-items: <value>;
    * When to Use: To align all grid items within their respective cells.
    * Key Values & Usage: `start`, `end`, `center`, `stretch`.
    */
-  justify-items: stretch;
-  
-  /*
+    justify-items: stretch;
+    
+    /*
    * Purpose: Aligns the grid itself within the grid container.
    * Syntax: align-content: <value>; justify-content: <value>;
    * When to Use: Only when the grid's total size is smaller than the grid container's size.
    * Key Values & Usage: `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`.
    */
-  align-content: start;
-  justify-content: start;
- }
- 
- .container-sizing {
-  /*
+    align-content: start;
+    justify-content: start;
+}
+
+.container-sizing {
+    /*
    * Purpose: Determines how an element's total width and height are calculated.
    * Syntax: box-sizing: <value>;
    * Key Values & Usage:
    * - `content-box` (default): The specified width and height apply only to the content area. Padding and borders are added on top of this, making the element's final size larger.
    * - `border-box`: The specified width and height include the content, padding, and border. This is the more intuitive and preferred model for modern web development, as it makes managing sizes much easier.
    */
-  box-sizing: content-box;
-  
-  /*
+    box-sizing: content-box;
+    
+    /*
    * Purpose: Sets an element's dimensions.
    * Syntax: width: <value>; min-width: <value>; etc.
    * When to Use: Use static units (`px`, `rem`) for fixed-size elements. Use relative units (`%`, `vw`, `vh`) for fluid, responsive designs.
    * - `min/max-width` and `min/max-height`: Define boundaries to prevent an element from becoming too small or too large, which is crucial for responsiveness.
    * - `aspect-ratio`: A modern property that maintains a specific width-to-height ratio, regardless of the element's size.
    */
-  width: auto;
-  height: auto;
-  min-width: auto;
-  max-width: none;
-  min-height: auto;
-  max-height: none;
-  aspect-ratio: auto;
-  /* Example: aspect-ratio: 16 / 9; */
- }
- 
- .container-spacing {
-  /*
+    width: auto;
+    height: auto;
+    min-width: auto;
+    max-width: none;
+    min-height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    /* Example: aspect-ratio: 16 / 9; */
+}
+
+.container-spacing {
+    /*
    * Purpose: Sets the space *outside* the border.
    * Syntax: margin: <value>;
    * Alternatives: Use `margin-top/right/bottom/left` for specific sides.
@@ -306,54 +306,82 @@
    * Concept: Margin Collapsing
    * Vertical margins of two adjacent elements can "collapse," meaning the space between them is determined by the larger of the two margins, not their sum. This only happens with vertical margins, not horizontal ones.
    */
-  margin: 0;
-  
-  /*
+    margin: 0;
+    
+    /*
    * Purpose: Provides a logical way to set margins and padding based on writing mode (e.g., left-to-right vs. right-to-left).
    * Alternatives: Using directional properties like `margin-top` can be less flexible for multilingual sites.
    * When to Use: For global websites where text direction can change, these properties ensure spacing remains correct without having to rewrite the CSS.
    */
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  
-  /*
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    
+    /*
    * Purpose: Sets the space *inside* the border, between the border and the content.
    * Syntax: padding: <value>;
    * Alternatives: Use `padding-top/right/bottom/left` for specific sides.
    * When to Use: To create internal spacing and prevent content from touching the edges.
    */
-  padding: 0;
-  
-  /* Logical padding properties */
-  padding-block-start: 0;
-  padding-block-end: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
- }
- 
- /* ---------------------------------------------------------------------- */
- 
- @layer layouts {
-  
-  /* .container-sizing */
-  .supblock,
-  .block,
-  .subblock,
-  .subsubblock {
-   min-height: var(--min-h, auto);
-  }
-  
-  /* ---------------------------------------------------------------------- */
-  /* .container-spacing */
-  .supblock,
-  .block,
-  .subblock,
-  .subsubblock {
-   padding: 1rem;
-  }
-  
-  /* ---------------------------------------------------------------------- */
-  
- }
+    padding: 0;
+    
+    /* Logical padding properties */
+    padding-block-start: 0;
+    padding-block-end: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
+
+/* ---------------------------------------------------------------------- */
+
+@layer layouts {
+    /* .container-sizing */
+    .supblock,
+    .block,
+    .subblock,
+    .subsubblock {}
+    
+    .supblock {
+        margin-bottom: 32px;
+    }
+    
+    .supblock__card {
+        margin: 12px 0;
+    }
+    
+    .supblock__inline-text {}
+    
+    .supblock__block-container {
+        margin: 16px 10px;
+    }
+    
+    /* ------------------------------------------------------------ */
+    /* .container-spacing */
+    .supblock,
+    .block,
+    .subblock,
+    .subsubblock {}
+    
+    body {
+        padding: 24px;
+    }
+    
+    .supblock {
+        margin-bottom: 32px;
+    }
+    
+    .supblock__block-container {
+        padding: 16px;
+    }
+    
+    .supblock__card {
+        padding: 12px;
+    }
+    
+    .supblock__inline-text {
+        padding: 2px 4px;
+    }
+    
+    /* ---------------------------------------------------------------------- */
+}
