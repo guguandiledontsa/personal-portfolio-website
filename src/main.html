@@ -9,9 +9,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+        
         body {
             font-family: 'Inter', sans-serif;
         }
+        
         .supblock h2,
         .supblock h3 {
             font-family: 'Playfair Display', serif;
@@ -20,24 +22,24 @@
 </head>
 
 <body class="bg-slate-100 text-slate-800 p-4 md:p-8">
-
+    
     <header class="supblock container mx-auto mb-8 p-4 md:p-8 bg-white shadow-xl rounded-xl">
         <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Header Supblock: All the Fixin's</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+            
             <!-- Parent: Div -->
             <div class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-2xl font-bold mb-4">Parent: Div</h3>
-
+                
                 <!-- Div > Div Card: Typography -->
                 <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Div > Div Card: Typography</p>
                     <p class="mt-2 text-sm text-slate-600">This card shows off different text tags.</p>
-                    <p>This is a <cite>cite tag</cite>. The <q>q tag</q> is for inline quotes.</p>
+                    <p><cite>This is a <<em>cite</em>> tag.</cite> The <q><<em>q</em>> tag is for inline quotes.</q></p>
                     <p>You can use <strong>strong</strong> or <em>em</em> for emphasis. An abbreviation is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
                     <p>Here's a sub-scripted number: $H_2O$ and a super-scripted one: $2^3$.</p>
                 </div>
-
+                
                 <!-- Div > Section Card: Code Blocks -->
                 <section class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Div > Section Card: Code</p>
@@ -48,12 +50,12 @@
   ...
 &lt;/html&gt;</code></pre>
                 </section>
-
+                
                 <!-- Div > Article Card: Figure & Picture -->
                 <article class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Div > Article Card: Figure & Picture</p>
                     <figure class="mt-2">
-                        <figcaption class="text-sm text-slate-500 italic mb-2">A `<picture>` element for responsive images.</figcaption>
+                        <figcaption class="text-sm text-slate-500 italic mb-2">A `<<em>picture</em>>` element for responsive images.</figcaption>
                         <picture>
                             <source media="(max-width: 768px)" srcset="https://placehold.co/300x200/475569/94A3B8?text=Mobile">
                             <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Desktop" alt="A responsive placeholder image." class="w-full rounded-md">
@@ -65,7 +67,7 @@
             <!-- Parent: Section -->
             <section class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-2xl font-bold mb-4">Parent: Section</h3>
-
+                
                 <!-- Section > Div Card: Video & Audio -->
                 <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Section > Div Card: Video & Audio</p>
@@ -81,7 +83,7 @@
                         Your browser does not support the audio element.
                     </audio>
                 </div>
-
+                
                 <!-- Section > Section Card: Forms & Inputs -->
                 <section class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Section > Section Card: Forms</p>
@@ -112,83 +114,76 @@
                         <summary class="font-medium cursor-pointer">Click to reveal details</summary>
                         <p class="text-sm text-slate-600 mt-2">Here is a paragraph of detailed information that was hidden by default.</p>
                     </details>
-                    <div class="mt-4">
-                        <label for="progress_bar" class="block text-sm font-medium">Progress:</label>
-                        <progress id="progress_bar" class="w-full mt-1" value="70" max="100"></progress>
-                    </div>
                 </article>
+            </section>
+        </div>
+        
+        <!-- Parent: Article -->
+        <article class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
+            <h3 class="text-2xl font-bold mb-4">Parent: Article</h3>
+            
+            <!-- Article > Div Card: Blockquotes and Citations -->
+            <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                <p class="font-semibold text-lg">Article > Div Card: Blockquotes</p>
+                <blockquote class="italic text-slate-600 mt-2 border-l-4 border-slate-400 pl-4">
+                    "The best time to plant a tree was 20 years ago. The second best time is now."
+                </blockquote>
+                <cite class="block text-right text-sm text-slate-500 mt-1">— Chinese Proverb</cite>
             </div>
             
-            <!-- Parent: Article -->
-            <article class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
-                <h3 class="text-2xl font-bold mb-4">Parent: Article</h3>
-                
-                <!-- Article > Div Card: Blockquotes and Citations -->
-                <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
-                    <p class="font-semibold text-lg">Article > Div Card: Blockquotes</p>
-                    <blockquote class="italic text-slate-600 mt-2 border-l-4 border-slate-400 pl-4">
-                        "The best time to plant a tree was 20 years ago. The second best time is now."
-                    </blockquote>
-                    <cite class="block text-right text-sm text-slate-500 mt-1">— Chinese Proverb</cite>
-                </div>
-
-                <!-- Article > Section Card: Tables -->
-                <section class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
-                    <p class="font-semibold text-lg">Article > Section Card: Tables</p>
-                    <table class="w-full mt-2 border-collapse">
-                        <thead>
-                            <tr class="bg-slate-200">
-                                <th class="p-2 border border-slate-300 text-left">Item</th>
-                                <th class="p-2 border border-slate-300 text-left">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-white">
-                                <td class="p-2 border border-slate-300">Apple</td>
-                                <td class="p-2 border border-slate-300">$1.00</td>
-                            </tr>
-                            <tr class="bg-slate-50">
-                                <td class="p-2 border border-slate-300">Orange</td>
-                                <td class="p-2 border border-slate-300">$1.50</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                
-                <!-- Article > Article Card: Various Lists -->
-                <article class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
-                    <p class="font-semibold text-lg">Article > Article Card: Lists</p>
-                    <h4 class="text-base font-semibold mt-2">Ordered List:</h4>
-                    <ol class="list-decimal ml-6 text-sm text-slate-600">
-                        <li>Step One</li>
-                        <li>Step Two</li>
-                        <li>Step Three</li>
-                    </ol>
-                    <h4 class="text-base font-semibold mt-2">Unordered List:</h4>
-                    <ul class="list-disc ml-6 text-sm text-slate-600">
-                        <li>Item A</li>
-                        <li>Item B</li>
-                        <li>Item C</li>
-                    </ul>
-                    <h4 class="text-base font-semibold mt-2">Description List:</h4>
-                    <dl class="text-sm text-slate-600">
-                        <dt class="font-medium">Coffee</dt>
-                        <dd class="ml-4 italic">A dark, bitter beverage.</dd>
-                        <dt class="font-medium mt-2">Milk</dt>
-                        <dd class="ml-4 italic">A white liquid.</dd>
-                    </dl>
-                </article>
-            </div>
-
-        </div>
+            <!-- Article > Section Card: Tables -->
+            <section class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                <p class="font-semibold text-lg">Article > Section Card: Tables</p>
+                <table class="w-full mt-2 border-collapse">
+                    <thead>
+                        <tr class="bg-slate-200">
+                            <th class="p-2 border border-slate-300 text-left">Item</th>
+                            <th class="p-2 border border-slate-300 text-left">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="p-2 border border-slate-300">Apple</td>
+                            <td class="p-2 border border-slate-300">$1.00</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                            <td class="p-2 border border-slate-300">Orange</td>
+                            <td class="p-2 border border-slate-300">$1.50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Article > Article Card: Various Lists -->
+            <article class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                <p class="font-semibold text-lg">Article > Article Card: Lists</p>
+                <h4 class="text-base font-semibold mt-2">Ordered List:</h4>
+                <ol class="list-decimal ml-6 text-sm text-slate-600">
+                    <li>Step One</li>
+                    <li>Step Two</li>
+                    <li>Step Three</li>
+                </ol>
+                <h4 class="text-base font-semibold mt-2">Unordered List:</h4>
+                <ul class="list-disc ml-6 text-sm text-slate-600">
+                    <li>Item A</li>
+                    <li>Item B</li>
+                    <li>Item C</li>
+                </ul>
+                <h4 class="text-base font-semibold mt-2">Description List:</h4>
+                <dl class="text-sm text-slate-600">
+                    <dt class="font-medium">Coffee</dt>
+                    <dd class="ml-4 italic">A dark, bitter beverage.</dd>
+                    <dt class="font-medium mt-2">Milk</dt>
+                    <dd class="ml-4 italic">A white liquid.</dd>
+                </dl>
+            </article>
+        </article>
     </header>
-
-    <!-- Main and Footer sections can be filled similarly, but I will provide a few more examples for Main to keep the file from becoming too long, while still proving the concept. -->
-
+    
     <main class="supblock container mx-auto mb-8 p-4 md:p-8 bg-white shadow-xl rounded-xl">
         <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Main Supblock: More Savory Dishes</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+            
             <!-- Parent: Div -->
             <div class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-2xl font-bold mb-4">Parent: Div</h3>
@@ -228,13 +223,9 @@
                 <h3 class="text-2xl font-bold mb-4">Parent: Section</h3>
                 <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Section > Div Card: Progress and Meter</p>
-                    <p class="text-sm text-slate-600 mt-2">
-                        This shows a `<progress>` element.
-                    </p>
+                    <p class="text-sm text-slate-600 mt-2">This shows a `<<em>progress</em>>` element.</p>
                     <progress class="w-full mt-1" value="80" max="100"></progress>
-                    <p class="text-sm text-slate-600 mt-4">
-                        This shows a `<meter>` element.
-                    </p>
+                    <p class="text-sm text-slate-600 mt-4">This shows a `<<em>meter</em>>` element.</p>
                     <meter class="w-full" value="0.75" min="0" max="1"></meter>
                 </div>
             </section>
@@ -252,22 +243,21 @@
                     </div>
                 </div>
             </article>
-
+            
         </div>
     </main>
-
+    
     <footer class="supblock container mx-auto p-4 md:p-8 bg-white shadow-xl rounded-xl">
         <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Footer Supblock: Sweet Desserts</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+            
             <!-- A final article showcasing a few more tags for a complete look -->
             <article class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200 col-span-full">
                 <h3 class="text-2xl font-bold mb-4">Parent: Article</h3>
                 <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Article > Div Card: Small Print & Contact</p>
                     <p class="text-sm text-slate-600 mt-2">
-                        This footer content includes a `<nav>` element with a list of links and some `small` text for copyright information.
-                    </p>
+                        This footer content includes a `<<em>nav</em>>` element with a list of links and some `small` text for copyright information.</p>
                     <nav class="mt-4">
                         <ul class="flex justify-center space-x-4">
                             <li><a href="#" class="text-blue-500 hover:underline">Privacy Policy</a></li>
@@ -280,10 +270,10 @@
                     </small>
                 </div>
             </article>
-
+            
         </div>
     </footer>
-
+    
 </body>
 
 </html>
