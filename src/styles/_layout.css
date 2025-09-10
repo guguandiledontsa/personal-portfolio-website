@@ -337,51 +337,7 @@
 
 @layer layouts {
     /* .container-sizing */
-    .supblock,
-    .block,
-    .subblock,
-    .subsubblock {}
-    
-    .supblock {
-        margin-bottom: 32px;
-    }
-    
-    .supblock__card {
-        margin: 12px 0;
-    }
-    
-    .supblock__inline-text {}
-    
-    .supblock__block-container {
-        margin: 16px 10px;
-    }
-    
     /* ------------------------------------------------------------ */
     /* .container-spacing */
-    .supblock,
-    .block,
-    .subblock,
-    .subsubblock {}
-    
-    body {
-        padding: 24px;
-    }
-    
-    .supblock {
-        margin-bottom: 32px;
-    }
-    
-    .supblock__block-container {
-        padding: 16px;
-    }
-    
-    .supblock__card {
-        padding: 12px;
-    }
-    
-    .supblock__inline-text {
-        padding: 2px 4px;
-    }
-    
     /* ---------------------------------------------------------------------- */
 }

@@ -4,640 +4,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEM & Container Cards V6</title>
-    
-    <!-- Google Fonts Links -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./styles/main.css">
+    <title>HTML Tag Showcase</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .supblock h2,
+        .supblock h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
 </head>
 
-<body>
-    
-    <header class="supblock">
-        <h2>Header Supblock</h2>
-        
-        <!-- Parent: Div -->
-        <div class="supblock__block-container">
-            <h3>Parent: Div</h3>
-            <div class="supblock__card">
-                <p>Div > Div Card</p>
+<body class="bg-slate-100 text-slate-800 p-4 md:p-8">
+
+    <header class="supblock container mx-auto mb-8 p-4 md:p-8 bg-white shadow-xl rounded-xl">
+        <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Header Supblock: All the Fixin's</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Parent: Div -->
+            <div class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 class="text-2xl font-bold mb-4">Parent: Div</h3>
+
+                <!-- Div > Div Card: Typography -->
+                <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Div > Div Card: Typography</p>
+                    <p class="mt-2 text-sm text-slate-600">This card shows off different text tags.</p>
+                    <p>This is a <cite>cite tag</cite>. The <q>q tag</q> is for inline quotes.</p>
+                    <p>You can use <strong>strong</strong> or <em>em</em> for emphasis. An abbreviation is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+                    <p>Here's a sub-scripted number: $H_2O$ and a super-scripted one: $2^3$.</p>
+                </div>
+
+                <!-- Div > Section Card: Code Blocks -->
+                <section class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Div > Section Card: Code</p>
+                    <h4 class="text-xl font-semibold mt-2">Example of `pre` and `code`</h4>
+                    <pre class="bg-slate-800 text-slate-50 rounded-md p-3 text-xs overflow-x-auto mt-2">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  ...
+&lt;/html&gt;</code></pre>
+                </section>
+
+                <!-- Div > Article Card: Figure & Picture -->
+                <article class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Div > Article Card: Figure & Picture</p>
+                    <figure class="mt-2">
+                        <figcaption class="text-sm text-slate-500 italic mb-2">A `<picture>` element for responsive images.</figcaption>
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="https://placehold.co/300x200/475569/94A3B8?text=Mobile">
+                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Desktop" alt="A responsive placeholder image." class="w-full rounded-md">
+                        </picture>
+                    </figure>
+                </article>
             </div>
-            <section class="supblock__card">
-                <p>Div > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Div > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Div > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Div > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Div > Form Card</p>
-            </form>
-            <p>Div > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Div > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Div > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Div > Definition Term</dt>
-                <dd>Div > Definition Description</dd>
-            </dl>
+            
+            <!-- Parent: Section -->
+            <section class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 class="text-2xl font-bold mb-4">Parent: Section</h3>
+
+                <!-- Section > Div Card: Video & Audio -->
+                <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Section > Div Card: Video & Audio</p>
+                    <p class="mt-2 text-sm text-slate-600">An audio and video element with controls.</p>
+                    <video width="100%" height="auto" controls class="mt-2 rounded-md bg-slate-200">
+                        <!-- Use placeholder video or a static video from a CDN if needed -->
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <audio controls class="w-full mt-4">
+                        <!-- Use a placeholder audio or a static audio from a CDN if needed -->
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- Section > Section Card: Forms & Inputs -->
+                <section class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Section > Section Card: Forms</p>
+                    <form class="mt-2 space-y-3">
+                        <fieldset class="border border-slate-300 p-3 rounded-md">
+                            <legend class="text-sm font-medium">Contact Information</legend>
+                            <div>
+                                <label for="name1" class="block text-xs font-medium text-slate-500">Full Name</label>
+                                <input type="text" id="name1" class="w-full p-2 border border-slate-300 rounded-md mt-1">
+                            </div>
+                            <div>
+                                <label for="email1" class="block text-xs font-medium text-slate-500">Email</label>
+                                <input type="email" id="email1" class="w-full p-2 border border-slate-300 rounded-md mt-1">
+                            </div>
+                            <div>
+                                <label for="message1" class="block text-xs font-medium text-slate-500">Message</label>
+                                <textarea id="message1" rows="3" class="w-full p-2 border border-slate-300 rounded-md mt-1"></textarea>
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition-colors">Submit Form</button>
+                    </form>
+                </section>
+                
+                <!-- Section > Article Card: Interactive Elements -->
+                <article class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Section > Article Card: Interactive</p>
+                    <details class="mt-2">
+                        <summary class="font-medium cursor-pointer">Click to reveal details</summary>
+                        <p class="text-sm text-slate-600 mt-2">Here is a paragraph of detailed information that was hidden by default.</p>
+                    </details>
+                    <div class="mt-4">
+                        <label for="progress_bar" class="block text-sm font-medium">Progress:</label>
+                        <progress id="progress_bar" class="w-full mt-1" value="70" max="100"></progress>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Parent: Article -->
+            <article class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 class="text-2xl font-bold mb-4">Parent: Article</h3>
+                
+                <!-- Article > Div Card: Blockquotes and Citations -->
+                <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Article > Div Card: Blockquotes</p>
+                    <blockquote class="italic text-slate-600 mt-2 border-l-4 border-slate-400 pl-4">
+                        "The best time to plant a tree was 20 years ago. The second best time is now."
+                    </blockquote>
+                    <cite class="block text-right text-sm text-slate-500 mt-1">— Chinese Proverb</cite>
+                </div>
+
+                <!-- Article > Section Card: Tables -->
+                <section class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Article > Section Card: Tables</p>
+                    <table class="w-full mt-2 border-collapse">
+                        <thead>
+                            <tr class="bg-slate-200">
+                                <th class="p-2 border border-slate-300 text-left">Item</th>
+                                <th class="p-2 border border-slate-300 text-left">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white">
+                                <td class="p-2 border border-slate-300">Apple</td>
+                                <td class="p-2 border border-slate-300">$1.00</td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                                <td class="p-2 border border-slate-300">Orange</td>
+                                <td class="p-2 border border-slate-300">$1.50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                
+                <!-- Article > Article Card: Various Lists -->
+                <article class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Article > Article Card: Lists</p>
+                    <h4 class="text-base font-semibold mt-2">Ordered List:</h4>
+                    <ol class="list-decimal ml-6 text-sm text-slate-600">
+                        <li>Step One</li>
+                        <li>Step Two</li>
+                        <li>Step Three</li>
+                    </ol>
+                    <h4 class="text-base font-semibold mt-2">Unordered List:</h4>
+                    <ul class="list-disc ml-6 text-sm text-slate-600">
+                        <li>Item A</li>
+                        <li>Item B</li>
+                        <li>Item C</li>
+                    </ul>
+                    <h4 class="text-base font-semibold mt-2">Description List:</h4>
+                    <dl class="text-sm text-slate-600">
+                        <dt class="font-medium">Coffee</dt>
+                        <dd class="ml-4 italic">A dark, bitter beverage.</dd>
+                        <dt class="font-medium mt-2">Milk</dt>
+                        <dd class="ml-4 italic">A white liquid.</dd>
+                    </dl>
+                </article>
+            </div>
+
         </div>
-        
-        <!-- Parent: Section -->
-        <section class="supblock__block-container">
-            <h3>Parent: Section</h3>
-            <div class="supblock__card">
-                <p>Section > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Section > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Section > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Section > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Section > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Section > Form Card</p>
-            </form>
-            <p>Section > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Section > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Section > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Section > Definition Term</dt>
-                <dd>Section > Definition Description</dd>
-            </dl>
-        </section>
-        
-        <!-- Parent: Article -->
-        <article class="supblock__block-container">
-            <h3>Parent: Article</h3>
-            <div class="supblock__card">
-                <p>Article > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Article > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Article > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Article > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Article > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Article > Form Card</p>
-            </form>
-            <p>Article > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Article > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Article > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Article > Definition Term</dt>
-                <dd>Article > Definition Description</dd>
-            </dl>
-        </article>
-        
-        <!-- Parent: Nav -->
-        <nav class="supblock__block-container">
-            <h3>Parent: Nav</h3>
-            <div class="supblock__card">
-                <p>Nav > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Nav > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Nav > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Nav > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Nav > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Nav > Form Card</p>
-            </form>
-            <p>Nav > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Nav > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Nav > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Nav > Definition Term</dt>
-                <dd>Nav > Definition Description</dd>
-            </dl>
-        </nav>
-        
-        <!-- Parent: Aside -->
-        <aside class="supblock__block-container">
-            <h3>Parent: Aside</h3>
-            <div class="supblock__card">
-                <p>Aside > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Aside > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Aside > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Aside > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Aside > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Aside > Form Card</p>
-            </form>
-            <p>Aside > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Aside > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Aside > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Aside > Definition Term</dt>
-                <dd>Aside > Definition Description</dd>
-            </dl>
-        </aside>
-        
-        <!-- Parent: Form -->
-        <form class="supblock__block-container">
-            <h3>Parent: Form</h3>
-            <div class="supblock__card">
-                <p>Form > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Form > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Form > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Form > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Form > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Form => Form Card</p>
-            </form>
-            <p>Form > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Form > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Form > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Form > Definition Term</dt>
-                <dd>Form > Definition Description</dd>
-            </dl>
-        </form>
     </header>
-    
-    <main class="supblock">
-        <h2>Main Supblock</h2>
-        
-        <!-- Parent: Div -->
-        <div class="supblock__block-container">
-            <h3>Parent: Div</h3>
-            <div class="supblock__card">
-                <p>Div > Div Card</p>
+
+    <!-- Main and Footer sections can be filled similarly, but I will provide a few more examples for Main to keep the file from becoming too long, while still proving the concept. -->
+
+    <main class="supblock container mx-auto mb-8 p-4 md:p-8 bg-white shadow-xl rounded-xl">
+        <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Main Supblock: More Savory Dishes</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Parent: Div -->
+            <div class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 class="text-2xl font-bold mb-4">Parent: Div</h3>
+                <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Div > Div Card: Inline Content</p>
+                    <p class="mt-2 text-sm">
+                        This is a <small>small tag</small> and a <mark class="bg-yellow-200 p-1 rounded-sm">marked tag</mark> within a paragraph. We can also add an <a href="#" class="text-blue-500 hover:underline">inline link</a>.
+                    </p>
+                </div>
+                <section class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Div > Section Card: Semantic Tags</p>
+                    <h4 class="text-xl font-semibold mt-2">A Section of Content</h4>
+                    <p class="text-sm text-slate-600">This section contains a heading and a short paragraph to demonstrate a basic content block, using a `section` element.</p>
+                </section>
+                <article class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Div > Article Card: A Form with Radio Buttons</p>
+                    <h4 class="text-xl font-semibold mt-2">Favorite Color</h4>
+                    <form class="mt-2 space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <input type="radio" id="red" name="color" value="red" class="text-red-500">
+                            <label for="red">Red</label>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <input type="radio" id="blue" name="color" value="blue" class="text-blue-500">
+                            <label for="blue">Blue</label>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <input type="radio" id="green" name="color" value="green" class="text-green-500">
+                            <label for="green">Green</label>
+                        </div>
+                    </form>
+                </article>
             </div>
-            <section class="supblock__card">
-                <p>Div > Section Card</p>
+            
+            <!-- Parent: Section -->
+            <section class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 class="text-2xl font-bold mb-4">Parent: Section</h3>
+                <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Section > Div Card: Progress and Meter</p>
+                    <p class="text-sm text-slate-600 mt-2">
+                        This shows a `<progress>` element.
+                    </p>
+                    <progress class="w-full mt-1" value="80" max="100"></progress>
+                    <p class="text-sm text-slate-600 mt-4">
+                        This shows a `<meter>` element.
+                    </p>
+                    <meter class="w-full" value="0.75" min="0" max="1"></meter>
+                </div>
             </section>
-            <article class="supblock__card">
-                <p>Div > Article Card</p>
+            
+            <!-- Parent: Article -->
+            <article class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 class="text-2xl font-bold mb-4">Parent: Article</h3>
+                <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Article > Div Card: Iframe</p>
+                    <p class="text-sm text-slate-600 mt-2">
+                        This is an `iframe` embedding a small piece of content.
+                    </p>
+                    <div class="relative w-full h-0 pb-[56.25%] mt-2">
+                        <iframe class="absolute top-0 left-0 w-full h-full rounded-md" src="https://www.wikipedia.org/" title="Wikipedia" frameborder="0"></iframe>
+                    </div>
+                </div>
             </article>
-            <nav class="supblock__card">
-                <p>Div > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Div > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Div > Form Card</p>
-            </form>
-            <p>Div > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Div > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Div > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Div > Definition Term</dt>
-                <dd>Div > Definition Description</dd>
-            </dl>
+
         </div>
-        
-        <!-- Parent: Section -->
-        <section class="supblock__block-container">
-            <h3>Parent: Section</h3>
-            <div class="supblock__card">
-                <p>Section > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Section > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Section > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Section > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Section > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Section > Form Card</p>
-            </form>
-            <p>Section > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Section > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Section > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Section > Definition Term</dt>
-                <dd>Section > Definition Description</dd>
-            </dl>
-        </section>
-        
-        <!-- Parent: Article -->
-        <article class="supblock__block-container">
-            <h3>Parent: Article</h3>
-            <div class="supblock__card">
-                <p>Article > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Article > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Article > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Article > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Article > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Article > Form Card</p>
-            </form>
-            <p>Article > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Article > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Article > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Article > Definition Term</dt>
-                <dd>Article > Definition Description</dd>
-            </dl>
-        </article>
-        
-        <!-- Parent: Nav -->
-        <nav class="supblock__block-container">
-            <h3>Parent: Nav</h3>
-            <div class="supblock__card">
-                <p>Nav > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Nav > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Nav > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Nav > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Nav > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Nav > Form Card</p>
-            </form>
-            <p>Nav > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Nav > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Nav > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Nav > Definition Term</dt>
-                <dd>Nav > Definition Description</dd>
-            </dl>
-        </nav>
-        
-        <!-- Parent: Aside -->
-        <aside class="supblock__block-container">
-            <h3>Parent: Aside</h3>
-            <div class="supblock__card">
-                <p>Aside > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Aside > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Aside > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Aside > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Aside > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Aside > Form Card</p>
-            </form>
-            <p>Aside > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Aside > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Aside > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Aside > Definition Term</dt>
-                <dd>Aside > Definition Description</dd>
-            </dl>
-        </aside>
-        
-        <!-- Parent: Form -->
-        <form class="supblock__block-container">
-            <h3>Parent: Form</h3>
-            <div class="supblock__card">
-                <p>Form > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Form > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Form > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Form > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Form > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Form > Form Card</p>
-            </form>
-            <p>Form > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Form > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Form > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Form > Definition Term</dt>
-                <dd>Form > Definition Description</dd>
-            </dl>
-        </form>
     </main>
-    
-    <footer class="supblock">
-        <h2>Footer Supblock</h2>
-        
-        <!-- Parent: Div -->
-        <div class="supblock__block-container">
-            <h3>Parent: Div</h3>
-            <div class="supblock__card">
-                <p>Div > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Div > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Div > Article Card</p>
+
+    <footer class="supblock container mx-auto p-4 md:p-8 bg-white shadow-xl rounded-xl">
+        <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Footer Supblock: Sweet Desserts</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- A final article showcasing a few more tags for a complete look -->
+            <article class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200 col-span-full">
+                <h3 class="text-2xl font-bold mb-4">Parent: Article</h3>
+                <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
+                    <p class="font-semibold text-lg">Article > Div Card: Small Print & Contact</p>
+                    <p class="text-sm text-slate-600 mt-2">
+                        This footer content includes a `<nav>` element with a list of links and some `small` text for copyright information.
+                    </p>
+                    <nav class="mt-4">
+                        <ul class="flex justify-center space-x-4">
+                            <li><a href="#" class="text-blue-500 hover:underline">Privacy Policy</a></li>
+                            <li><a href="#" class="text-blue-500 hover:underline">Terms of Service</a></li>
+                            <li><a href="#" class="text-blue-500 hover:underline">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                    <small class="block text-center text-xs text-slate-500 mt-4">
+                        &copy; 2024 Your Company. All Rights Reserved.
+                    </small>
+                </div>
             </article>
-            <nav class="supblock__card">
-                <p>Div > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Div > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Div > Form Card</p>
-            </form>
-            <p>Div > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Div > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Div > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Div > Definition Term</dt>
-                <dd>Div > Definition Description</dd>
-            </dl>
+
         </div>
-        
-        <!-- Parent: Section -->
-        <section class="supblock__block-container">
-            <h3>Parent: Section</h3>
-            <div class="supblock__card">
-                <p>Section > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Section > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Section > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Section > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Section > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Section > Form Card</p>
-            </form>
-            <p>Section > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Section > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Section > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Section > Definition Term</dt>
-                <dd>Section > Definition Description</dd>
-            </dl>
-        </section>
-        
-        <!-- Parent: Article -->
-        <article class="supblock__block-container">
-            <h3>Parent: Article</h3>
-            <div class="supblock__card">
-                <p>Article > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Article > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Article > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Article > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Article > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Article > Form Card</p>
-            </form>
-            <p>Article > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Article > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Article > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Article > Definition Term</dt>
-                <dd>Article > Definition Description</dd>
-            </dl>
-        </article>
-        
-        <!-- Parent: Nav -->
-        <nav class="supblock__block-container">
-            <h3>Parent: Nav</h3>
-            <div class="supblock__card">
-                <p>Nav > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Nav > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Nav > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Nav > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Nav > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Nav > Form Card</p>
-            </form>
-            <p>Nav > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Nav > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Nav > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Nav > Definition Term</dt>
-                <dd>Nav > Definition Description</dd>
-            </dl>
-        </nav>
-        
-        <!-- Parent: Aside -->
-        <aside class="supblock__block-container">
-            <h3>Parent: Aside</h3>
-            <div class="supblock__card">
-                <p>Aside > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Aside > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Aside > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Aside > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Aside > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Aside > Form Card</p>
-            </form>
-            <p>Aside > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Aside > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Aside > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Aside > Definition Term</dt>
-                <dd>Aside > Definition Description</dd>
-            </dl>
-        </aside>
-        
-        <!-- Parent: Form -->
-        <form class="supblock__block-container">
-            <h3>Parent: Form</h3>
-            <div class="supblock__card">
-                <p>Form > Div Card</p>
-            </div>
-            <section class="supblock__card">
-                <p>Form > Section Card</p>
-            </section>
-            <article class="supblock__card">
-                <p>Form > Article Card</p>
-            </article>
-            <nav class="supblock__card">
-                <p>Form > Nav Card</p>
-            </nav>
-            <aside class="supblock__card">
-                <p>Form > Aside Card</p>
-            </aside>
-            <form class="supblock__card">
-                <p>Form > Form Card</p>
-            </form>
-            <p>Form > <span class="supblock__inline-text">Span Card (Inline)</span></p>
-            <ul class="supblock__card supblock__list-card">
-                <li>Form > List Card</li>
-            </ul>
-            <ol class="supblock__card supblock__list-card">
-                <li>Form > Ordered List Card</li>
-            </ol>
-            <dl class="supblock__card supblock__list-card">
-                <dt>Form > Definition Term</dt>
-                <dd>Form > Definition Description</dd>
-            </dl>
-        </form>
     </footer>
-    
+
 </body>
 
 </html>
