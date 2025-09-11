@@ -35,7 +35,9 @@
                 <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Div > Div Card: Typography</p>
                     <p class="mt-2 text-sm text-slate-600">This card shows off different text tags.</p>
-                    <p><cite>This is a <<em>cite</em>> tag.</cite> The <q><<em>q</em>> tag is for inline quotes.</q></p>
+                    <p><cite>This is a <<em>cite</em>> tag.</cite> The <q>
+                            <<em>q</em>> tag is for inline quotes.
+                        </q></p>
                     <p>You can use <strong>strong</strong> or <em>em</em> for emphasis. An abbreviation is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
                     <p>Here's a sub-scripted number: $H_2O$ and a super-scripted one: $2^3$.</p>
                 </div>
@@ -200,8 +202,8 @@
                 </section>
                 <article class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
                     <p class="font-semibold text-lg">Div > Article Card: A Form with Radio Buttons</p>
-                    <h4 class="text-xl font-semibold mt-2">Favorite Color</h4>
                     <form class="mt-2 space-y-2">
+                        <h4 class="text-xl font-semibold mt-2">Favorite Color</h4>
                         <div class="flex items-center space-x-2">
                             <input type="radio" id="red" name="color" value="red" class="text-red-500">
                             <label for="red">Red</label>
@@ -215,6 +217,21 @@
                             <label for="green">Green</label>
                         </div>
                     </form>
+                    <form class="mt-2 space-y-2">
+                        <h4 class="text-xl font-semibold mt-2">Second Favorites</h4>
+                        <div class="flex items-center space-x-2">
+                            <input type="checkbox" id="red" name="color" value="red" class="text-red-500">
+                            <label for="red">Red</label>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <input type="checkbox" id="blue" name="color" value="blue" class="text-blue-500">
+                            <label for="blue">Blue</label>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <input type="checkbox" id="green" name="color" value="green" class="text-green-500">
+                            <label for="green">Green</label>
+                        </div>
+                    </form>
                 </article>
             </div>
             
@@ -222,11 +239,17 @@
             <section class="supblock__block-container p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <h3 class="text-2xl font-bold mb-4">Parent: Section</h3>
                 <div class="supblock__card p-4 bg-white rounded-lg shadow-sm mb-4">
-                    <p class="font-semibold text-lg">Section > Div Card: Progress and Meter</p>
+                    <p class="font-semibold text-lg">Section > Div Card: Progress, Meter and Inputs</p>
                     <p class="text-sm text-slate-600 mt-2">This shows a `<<em>progress</em>>` element.</p>
                     <progress class="w-full mt-1" value="80" max="100"></progress>
                     <p class="text-sm text-slate-600 mt-4">This shows a `<<em>meter</em>>` element.</p>
                     <meter class="w-full" value="0.75" min="0" max="1"></meter>
+                    <p class="text-sm text-slate-600 mt-4">Below is an `<<em>input</em>>` tag of `<code>type='time'</code>`.</p>
+                    <input type="time" id="time">
+                    <p class="text-sm text-slate-600 mt-4">Below is an `<<em>input</em>>` tag of `<code>type='color'</code>`.</p>
+                    <input type="color" id="color">
+                    <p class="text-sm text-slate-600 mt-4">Below is an `<<em>input</em>>` tag of `<code>type='range'</code>`.</p>
+                    <input type="range" id="range" min="0" max="100">
                 </div>
             </section>
             
