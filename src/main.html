@@ -104,6 +104,10 @@
                                 <label for="message1" class="block text-xs font-medium text-slate-500">Message</label>
                                 <textarea id="message1" rows="3" class="w-full p-2 border border-slate-300 rounded-md mt-1"></textarea>
                             </div>
+                            <div>
+                                <label for="file" class="block text-xs font-medium text-slate-500">File</label>
+                                <input type="file" id="file">
+                            </div>
                         </fieldset>
                         <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition-colors">Submit Form</button>
                     </form>
@@ -178,6 +182,19 @@
                     <dt class="font-medium mt-2">Milk</dt>
                     <dd class="ml-4 italic">A white liquid.</dd>
                 </dl>
+                
+                <label for="dropdown" class="text-base font-semibold mt-2">Dropdown:</label>
+                <select id="dropdown">
+                    <optgroup label="Group 1">
+                        <option value="a">Option A</option>
+                    </optgroup>
+                </select>
+                <br>
+                <label for="data-list" class="text-base font-semibold mt-2">Data List:</label>
+                <input list="options-list" id="data-list">
+                <datalist id="options-list">
+                    <option value="Suggestion"></option>
+                </datalist>
             </article>
         </article>
     </header>
