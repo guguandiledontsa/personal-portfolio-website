@@ -1,3 +1,5 @@
+// test-styles.js
+
 import { $style, testBlock } from './utils.js';
 
 function runStyleChecks() {
@@ -16,24 +18,25 @@ function runStyleChecks() {
     ['clear', 'none'],
     ['contain', 'none'],
     ['backgroundColor', 'rgb(255, 255, 255)'],
-    ['marginLeft', 'auto'],
-    ['marginRight', 'auto'],
-    ['marginBottom', '32px'], // mb-8
-    ['paddingTop', '16px'],
-    ['paddingRight', '16px'],
-    ['paddingBottom', '16px'],
-    ['paddingLeft', '16px'],
-    ['borderRadius', '12px'],
-    ['boxShadow', 'rgb(0, 0, 0) 0px 20px 25px -5px, rgb(0, 0, 0) 0px 10px 10px -5px']
+    
+    ['marginLeft', '0px'],  // WSmall, WMedium
+    ['marginRight', '0px'],
+    ['marginBottom', '32px', '32px'], // mb-8
+    ['paddingTop', '16px', '32px'],
+    ['paddingRight', '16px', '32px'],
+    ['paddingBottom', '16px', '32px'],
+    ['paddingLeft', '16px', '32px'],
+    ['borderRadius', '12px', '12px'],
+    ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px']
   ]);
 
   testBlock('body', [
     ['backgroundColor', 'rgb(241, 245, 249)'],
     ['color', 'rgb(30, 41, 59)'],
-    ['paddingTop', '16px'],
-    ['paddingRight', '16px'],
-    ['paddingBottom', '16px'],
-    ['paddingLeft', '16px']
+    ['paddingTop', '16px', '32px'],
+    ['paddingRight', '16px', '32px'],
+    ['paddingBottom', '16px', '32px'],
+    ['paddingLeft', '16px', '32px']
   ]);
 }
 
