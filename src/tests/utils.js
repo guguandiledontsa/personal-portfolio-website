@@ -1,15 +1,17 @@
-// Get the computed style of a specific property
+// utils.js
+
 export function $style(selector, prop) {
   const el = document.querySelector(selector);
   return el ? getComputedStyle(el)[prop] : null;
 }
 
-// Run tests on a selector's style properties
 export function testBlock(selector, tests) {
   let passed = 0;
   const total = tests.length;
+  const screenW = window.innerWidth;
 
-  for (const [prop, expected] of tests) {
+  for (const [prop, WSmall, WMedium] of tests) {
+    const expected = screenW >= 768 ?  WMedium ?? WSmall : WSmall;
     const actual = $style(selector, prop);
     if (actual === expected) {
       passed++;
