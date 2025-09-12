@@ -21,11 +21,11 @@ This project is my safe space to:
 
 - [x] HTML & Semantic HTML  
 - [x] CSS + custom utility classes  
-- [ ] Responsive design  
+- [x] Responsive design  
 - [ ] TypeScript  
 - [ ] React  
 - [ ] Vite  
-- [ ] Testing (TDD-style approach)
+- [x] Testing (TDD-style approach)
 
 ## 🎯 Milestone Philosophy
 
