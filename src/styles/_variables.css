@@ -17,6 +17,8 @@
     }
   }
   
+/* ───────────────────────────────────────────── */
+  
   :root {
     /* --base-hue: 0; */
     animation: cycle-hue 20s infinite linear;
