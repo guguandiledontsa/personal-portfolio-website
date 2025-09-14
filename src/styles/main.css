@@ -1,13 +1,13 @@
 /*  main.css */
-@layer variables, base, typography, layout, appearences, animations, interactions;
+@layer variables, base, topographies, layout, appearances, animations, interactions;
 
 /* ───────────────────────────────────────────── */
 
 @import url("./_variables.css") layer(variables);
 @import url("./_base.css") layer(bases);
-@import url("./_typography.css") layer(typographies);
+@import url("./_typography.css") layer(topographies);
 @import url("./_layout.css") layer(layouts);
-@import url("./_appearence.css") layer(appearences);
+@import url("./_appearance.css") layer(appearances);
 @import url("./_animation.css") layer(animations);
 @import url("./_interaction.css") layer(interactions);
 
