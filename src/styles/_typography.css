@@ -175,6 +175,7 @@
  /* .container-typography-font */
  body {
   font-family: 'Inter', sans-serif;
+  color: rgb(30, 41, 59);
  }
  
  .supblock h1,
@@ -182,7 +183,6 @@
  .supblock h3,
  .supblock h4{
   font-family: 'Playfair Display', serif;
-  color: blue;
  }
  
  /* ───────────────────────────────────────────── */
