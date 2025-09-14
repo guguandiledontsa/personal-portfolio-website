@@ -2,7 +2,8 @@
 
 @layer bases {
   
-  /* LAYOUT & SIZING */
+  /*
+  /* LAYOUT & SIZING
   html {
     box-sizing: border-box;
     font-size: 16px;
@@ -15,13 +16,13 @@
     box-sizing: inherit;
   }
   
-  /* SPACING & RESETS */
+  /* SPACING & RESETS
   body {
     margin: 0;
     padding: 0;
   }
   
-  /* TYPOGRAPHY */
+  /* TYPOGRAPHY
   body {
     font-family:
       system-ui,
@@ -40,7 +41,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* STYLE & ACCESSIBILITY */
+  /* STYLE & ACCESSIBILITY
   
   :focus-visible {
     outline: 2px dashed #ddf;
@@ -52,7 +53,7 @@
     background-color: whitesmoke;
   }
   
-  /* INTERACTION */
+  INTERACTION
   html {
     scroll-behavior: smooth;
   }
@@ -64,6 +65,8 @@
       scroll-behavior: auto !important;
     }
   }
+  
+  */
   
   /* container-transitions */
   /* .container-transforms */
