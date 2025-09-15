@@ -53,8 +53,11 @@ describe('<body> style tests', () => {
 // Common styles organized by layer
 // ─────────────────────────────────────────────
 const commonLayoutStyles = [
+  ['maxWidth', '1280px'],
+
   ['marginLeft', '0px'], //tailwind class: mx-auto had no effect bc the element had no defined with or max-width 
   ['marginRight', '0px'],
+  
   ['paddingTop', '16px', '32px'],
   ['paddingRight', '16px', '32px'],
   ['paddingBottom', '16px', '32px'],
