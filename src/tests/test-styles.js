@@ -67,9 +67,6 @@ const commonAppearanceStyles = [
   ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px'],   // not testinv as not fully understood
 ];
 
-// ─────────────────────────────────────────────
-// Supblock Modifier Tests
-// ─────────────────────────────────────────────
 describe('.supblock--header tests', () => {
   const sel = '.supblock--header';
   testStyles(sel, '@layer layout (common)', commonLayoutStyles);
