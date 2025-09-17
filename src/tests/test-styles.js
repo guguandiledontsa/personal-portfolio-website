@@ -29,7 +29,6 @@ function testStyles(selector, label, styles) {
 // ─────────────────────────────────────────────
 describe('<body> style tests', () => {
   const sel = 'body';
-  // Use a special testStyles call for the body tag to show existence and styles
   testStyles(sel, '@layer typography', [
     ['color', 'rgb(30, 41, 59)'],
     ['fontFamily', 'Inter, sans-serif'],
@@ -50,29 +49,33 @@ describe('<body> style tests', () => {
 });
 
 // ─────────────────────────────────────────────
-// Common styles organized by layer
+// Supblock Modifier Tests
 // ─────────────────────────────────────────────
+const commonTypographyStyles = [
+  ['color', 'rgb(30, 41, 59)'],
+  ['fontFamily', 'Inter, sans-serif'],
+  ['fontSize', '13.6px'],
+  ['lineHeight', '20.4px']
+]; 
+
 const commonLayoutStyles = [
   ['maxWidth', '1280px'],
-  ['marginLeft', '0px'],    //tailwind class: mx-auto had no effect bc the element had no defined with or max-width 
+  ['marginLeft', '0px'], //tailwind class: mx-auto had no effect bc the element had no defined with or max-width 
   ['marginRight', '0px'],
   ['paddingTop', '16px', '32px'],
   ['paddingRight', '16px', '32px'],
   ['paddingBottom', '16px', '32px'],
   ['paddingLeft', '16px', '32px'],
 ];
-
 const commonAppearanceStyles = [
   ['backgroundColor', 'rgb(255, 255, 255)'],
   ['borderRadius', '12px'],
-  ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px'],   //not testinv as not fully understood
+  ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px'], //not testinv as not fully understood
 ];
 
-// ─────────────────────────────────────────────
-// Supblock Modifier Tests
-// ─────────────────────────────────────────────
 describe('.supblock--header tests', () => {
   const sel = '.supblock--header';
+  testStyles(sel, '@layer topographies (common)', commonTypographyStyles);
   testStyles(sel, '@layer layout (common)', commonLayoutStyles);
   testStyles(sel, '@layer appearance (common)', commonAppearanceStyles);
   testStyles(sel, '@layer layout (unique)', [['marginBottom', '32px']]);
@@ -80,6 +83,7 @@ describe('.supblock--header tests', () => {
 
 describe('.supblock--main tests', () => {
   const sel = '.supblock--main';
+  testStyles(sel, '@layer topographies (common)', commonTypographyStyles);
   testStyles(sel, '@layer layout (common)', commonLayoutStyles);
   testStyles(sel, '@layer appearance (common)', commonAppearanceStyles);
   testStyles(sel, '@layer layout (unique)', [['marginBottom', '32px']]);
@@ -87,6 +91,7 @@ describe('.supblock--main tests', () => {
 
 describe('.supblock--footer tests', () => {
   const sel = '.supblock--footer';
+  testStyles(sel, '@layer topographies (common)', commonTypographyStyles);
   testStyles(sel, '@layer layout (common)', commonLayoutStyles);
   testStyles(sel, '@layer appearance (common)', commonAppearanceStyles);
   testStyles(sel, '@layer layout (unique)', [['marginBottom', '0px']]);
