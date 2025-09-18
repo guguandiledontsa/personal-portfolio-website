@@ -3,21 +3,28 @@ import { $style } from './utils.js';
 
 mocha.setup({ ui: 'bdd', reporter: 'spec' });
 
-const screenW = window.innerWidth;
-const isWMedium = screenW >= 768;
+const isWMedium = window.innerWidth >= 768;
 
+// ───────────────────────────────────────────────────────────
+// Utility: Test styles for a given selector
+// ───────────────────────────────────────────────────────────
 function testStyles(selector, label, styles) {
-  describe(label, () => {
-    // Add a check to ensure the element exists before running style tests
+  describe(`${selector} → ${label}`, () => {
+    let el;
+
+    before(() => {
+      el = document.querySelector(selector);
+    });
+
     it('should exist on the page', () => {
-      const el = document.querySelector(selector);
       expect(el).to.exist;
     });
 
     styles.forEach(([prop, smallVal, mediumVal]) => {
       const expected = isWMedium && mediumVal !== undefined ? mediumVal : smallVal;
-      it(`should have ${prop} = ${expected}`, () => {
-        const actual = $style(selector, prop);
+
+      it(`should have "${prop}" = "${expected}"`, () => {
+        const actual = el ? $style(selector, prop) : null;
         expect(actual).to.equal(expected);
       });
     });
@@ -25,76 +32,112 @@ function testStyles(selector, label, styles) {
 }
 
 // ─────────────────────────────────────────────
-// <body> tests
-// ─────────────────────────────────────────────
-describe('<body> style tests', () => {
-  const sel = 'body';
-  testStyles(sel, '@layer typography', [
-    ['color', 'rgb(30, 41, 59)'],
-    ['fontFamily', 'Inter, sans-serif'],
-    ['fontSize', '13.6px'],
-    ['lineHeight', '20.4px']
-  ]);
-
-  testStyles(sel, '@layer layout', [
-    ['paddingTop', '16px', '32px'],
-    ['paddingRight', '16px', '32px'],
-    ['paddingBottom', '16px', '32px'],
-    ['paddingLeft', '16px', '32px']
-  ]);
-
-  testStyles(sel, '@layer appearance', [
-    ['backgroundColor', 'rgb(241, 245, 249)']
-  ]);
-});
-
-// ─────────────────────────────────────────────
-// Supblock Modifier Tests
+// Shared styles
 // ─────────────────────────────────────────────
 const commonTypographyStyles = [
   ['color', 'rgb(30, 41, 59)'],
   ['fontFamily', 'Inter, sans-serif'],
   ['fontSize', '13.6px'],
   ['lineHeight', '20.4px']
-]; 
+];
 
 const commonLayoutStyles = [
   ['maxWidth', '1280px'],
-  ['marginLeft', '0px'], //tailwind class: mx-auto had no effect bc the element had no defined with or max-width 
+  ['marginLeft', '0px'],
   ['marginRight', '0px'],
   ['paddingTop', '16px', '32px'],
   ['paddingRight', '16px', '32px'],
   ['paddingBottom', '16px', '32px'],
-  ['paddingLeft', '16px', '32px'],
+  ['paddingLeft', '16px', '32px']
 ];
+
 const commonAppearanceStyles = [
   ['backgroundColor', 'rgb(255, 255, 255)'],
   ['borderRadius', '12px'],
-  ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px'], //not testinv as not fully understood
+  ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px']
 ];
 
-describe('.supblock--header tests', () => {
-  const sel = '.supblock--header';
-  testStyles(sel, '@layer topographies (common)', commonTypographyStyles);
-  testStyles(sel, '@layer layout (common)', commonLayoutStyles);
-  testStyles(sel, '@layer appearance (common)', commonAppearanceStyles);
-  testStyles(sel, '@layer layout (unique)', [['marginBottom', '32px']]);
+// ─────────────────────────────────────────────
+// <body> tests
+// ─────────────────────────────────────────────
+testStyles('body', 'Typography', commonTypographyStyles);
+testStyles('body', 'Layout', [
+  ['paddingTop', '16px', '32px'],
+  ['paddingRight', '16px', '32px'],
+  ['paddingBottom', '16px', '32px'],
+  ['paddingLeft', '16px', '32px']
+]);
+testStyles('body', 'Appearance', [
+  ['backgroundColor', 'rgb(241, 245, 249)']
+]);
+
+// ─────────────────────────────────────────────
+// Supblock Modifier Tests
+// ─────────────────────────────────────────────
+['header', 'main', 'footer'].forEach(section => {
+  const sel = `.supblock--${section}`;
+  testStyles(sel, 'Typography (common)', commonTypographyStyles);
+  testStyles(sel, 'Layout (common)', commonLayoutStyles);
+  testStyles(sel, 'Appearance (common)', commonAppearanceStyles);
+
+  const marginBottom = section === 'footer' ? '0px' : '32px';
+  testStyles(sel, 'Layout (unique)', [['marginBottom', marginBottom]]);
 });
 
-describe('.supblock--main tests', () => {
-  const sel = '.supblock--main';
-  testStyles(sel, '@layer topographies (common)', commonTypographyStyles);
-  testStyles(sel, '@layer layout (common)', commonLayoutStyles);
-  testStyles(sel, '@layer appearance (common)', commonAppearanceStyles);
-  testStyles(sel, '@layer layout (unique)', [['marginBottom', '32px']]);
+// ─────────────────────────────────────────────
+// Supblock Structure Layout Tests
+// ─────────────────────────────────────────────
+describe('Supblock Layout Structure', () => {
+  const $ = selector => document.querySelector(selector);
+
+  it('Header, main, and footer should exist', () => {
+    ['header', 'main', 'footer'].forEach(tag => {
+      expect($(`.${`supblock--${tag}`}`)).to.exist;
+    });
+  });
+
+  it('Header, main, and footer should have matching width', () => {
+    const widths = ['header', 'main', 'footer'].map(tag =>
+      $(`.${`supblock--${tag}`}`)?.getBoundingClientRect().width
+    );
+
+    expect(new Set(widths).size).to.equal(1); // all widths equal
+  });
+
+  it('Cards should have inner padding > 10px', () => {
+    const sample = document.querySelector('.supblock__card');
+    const pad = parseFloat(getComputedStyle(sample).padding);
+    expect(pad).to.be.greaterThan(10);
+  });
+
+  it('Cards should have either border or shadow', () => {
+    const style = getComputedStyle(document.querySelector('.supblock__card'));
+    const hasBorder = style.borderWidth !== '0px';
+    const hasShadow = style.boxShadow !== 'none';
+    expect(hasBorder || hasShadow).to.be.true;
+  });
 });
 
-describe('.supblock--footer tests', () => {
-  const sel = '.supblock--footer';
-  testStyles(sel, '@layer topographies (common)', commonTypographyStyles);
-  testStyles(sel, '@layer layout (common)', commonLayoutStyles);
-  testStyles(sel, '@layer appearance (common)', commonAppearanceStyles);
-  testStyles(sel, '@layer layout (unique)', [['marginBottom', '0px']]);
+// ─────────────────────────────────────────────
+// Visual Regression: Overlap Check
+// ─────────────────────────────────────────────
+describe('Card Overlap Test', () => {
+  it('Cards should not visually overlap', () => {
+    const blocks = [...document.querySelectorAll('.supblock')];
+
+    const isOverlapping = (a, b) => {
+      const rA = a.getBoundingClientRect();
+      const rB = b.getBoundingClientRect();
+      return !(rA.bottom <= rB.top || rA.top >= rB.bottom);
+    };
+
+    const anyOverlap = blocks.some((elA, i) =>
+      blocks.slice(i + 1).some(elB => isOverlapping(elA, elB))
+    );
+
+    expect(anyOverlap).to.be.false;
+  });
 });
 
+// ─────────────────────────────────────────────
 mocha.run();
