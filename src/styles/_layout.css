@@ -343,6 +343,11 @@
    --mb: 2rem;
    
    margin-block-end: var(--mb);
+   margin-inline: 0;
+   
+   @media (max-width: 768px) {
+    margin-inline: auto;
+   }
   }
   .supblock--footer {
    --mb: ;

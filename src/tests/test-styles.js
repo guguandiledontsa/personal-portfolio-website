@@ -105,13 +105,13 @@ describe('Supblock Layout Structure', () => {
   });
 
   it('Cards should have inner padding > 10px', () => {
-    const sample = document.querySelector('.supblock__card');
+    const sample = document.querySelector('.supblock');
     const pad = parseFloat(getComputedStyle(sample).padding);
     expect(pad).to.be.greaterThan(10);
   });
 
   it('Cards should have either border or shadow', () => {
-    const style = getComputedStyle(document.querySelector('.supblock__card'));
+    const style = getComputedStyle(document.querySelector('.supblock'));
     const hasBorder = style.borderWidth !== '0px';
     const hasShadow = style.boxShadow !== 'none';
     expect(hasBorder || hasShadow).to.be.true;
