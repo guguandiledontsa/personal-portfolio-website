@@ -337,6 +337,9 @@
 
 @layer layouts {
   /* .container-layout */
+  .supblock {
+   max-width: 1280px;
+  }
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   .supblock {
