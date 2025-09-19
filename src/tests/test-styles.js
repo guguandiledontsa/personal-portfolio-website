@@ -1,3 +1,4 @@
+
 import { expect } from 'https://cdn.jsdelivr.net/npm/chai@5.1.1/chai.js';
 import { $style } from './utils.js';
 
@@ -34,14 +35,14 @@ function testStyles(selector, label, styles) {
 // ─────────────────────────────────────────────
 // Shared styles
 // ─────────────────────────────────────────────
-const commonTypographyStyles = [
+const bodyTypographyStyles = [
   ['color', 'rgb(30, 41, 59)'],
   ['fontFamily', 'Inter, sans-serif'],
   ['fontSize', '13.6px'],
   ['lineHeight', '20.4px']
 ];
 
-const commonLayoutStyles = [
+const supblockLayoutStyles = [
   ['maxWidth', '1280px'],
   ['marginLeft', '0px'],
   ['marginRight', '0px'],
@@ -51,7 +52,7 @@ const commonLayoutStyles = [
   ['paddingLeft', '16px', '32px']
 ];
 
-const commonAppearanceStyles = [
+const supblockAppearanceStyles = [
   ['backgroundColor', 'rgb(255, 255, 255)'],
   ['borderRadius', '12px'],
   ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px']
@@ -60,7 +61,7 @@ const commonAppearanceStyles = [
 // ─────────────────────────────────────────────
 // <body> tests
 // ─────────────────────────────────────────────
-testStyles('body', 'Typography', commonTypographyStyles);
+testStyles('body', 'Typography', bodyTypographyStyles);
 testStyles('body', 'Layout', [
   ['paddingTop', '16px', '32px'],
   ['paddingRight', '16px', '32px'],
@@ -76,9 +77,9 @@ testStyles('body', 'Appearance', [
 // ─────────────────────────────────────────────
 ['header', 'main', 'footer'].forEach(section => {
   const sel = `.supblock--${section}`;
-  testStyles(sel, 'Typography (common)', commonTypographyStyles);
-  testStyles(sel, 'Layout (common)', commonLayoutStyles);
-  testStyles(sel, 'Appearance (common)', commonAppearanceStyles);
+  testStyles(sel, 'Typography', bodyTypographyStyles);
+  testStyles(sel, 'Layout', supblockLayoutStyles);
+  testStyles(sel, 'Appearance', supblockAppearanceStyles);
 
   const marginBottom = section === 'footer' ? '0px' : '32px';
   testStyles(sel, 'Layout (unique)', [['marginBottom', marginBottom]]);
@@ -139,5 +140,6 @@ describe('Card Overlap Test', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────────────────────────
+
 mocha.run();
