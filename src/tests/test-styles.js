@@ -100,17 +100,15 @@ const supblockAppearanceStyles = [
 // ─────────────────────────────────────────────
 // Supblock Structure Layout Tests
 describe('Supblock Layout Structure', () => {
-  it('Header, main, and footer should have matching width', () => {
-    const $ = selector => document.querySelector(selector);
+  const blocks = [...document.querySelectorAll('.supblock')];
 
-    const widths = ['header', 'main', 'footer'].map(tag =>
-      $(`.${`supblock--${tag}`}`)?.getBoundingClientRect().width
-    );
+  it('Header, main, and footer should have matching width', () => {
+    const widths = blocks.map(block => block.getBoundingClientRect().width);
     
     expect(new Set(widths).size).to.equal(1); // all widths equal
   });
+  
   it('Cards should not visually overlap', () => {
-    const blocks = [...document.querySelectorAll('.supblock')];
 
     const isOverlapping = (a, b) => {
       const rA = a.getBoundingClientRect();
