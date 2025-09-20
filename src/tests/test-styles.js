@@ -53,63 +53,62 @@ testStyles('body', 'Appearance', [
 
 // ─────────────────────────────────────────────
 // Supblock Modifier Tests with Shared styles
-const supblockLayoutStyles = [
-  ['maxWidth', '1280px'],
-  ['marginLeft', '0px'],
-  ['marginRight', '0px'],
-  ['paddingTop', '16px', '32px'],
-  ['paddingRight', '16px', '32px'],
-  ['paddingBottom', '16px', '32px'],
-  ['paddingLeft', '16px', '32px']
-];
-const supblockAppearanceStyles = [
-  ['backgroundColor', 'rgb(255, 255, 255)'],
-  ['borderRadius', '12px'],
-  ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px']
-];
-['header', 'main', 'footer'].forEach(section => {
-  const sel = `.supblock--${section}`;
-  const el = document.querySelector(sel);
-  
-  it('Header, main, and footer should exist', () => {
-    ['header', 'main', 'footer'].forEach(tag => {
-      expect(el).to.exist;
+const blocks = []
+describe('Supblock Modifier Tests', () => {
+  const supblockLayoutStyles = [
+    ['maxWidth', '1280px'],
+    ['marginLeft', '0px'],
+    ['marginRight', '0px'],
+    ['paddingTop', '16px', '32px'],
+    ['paddingRight', '16px', '32px'],
+    ['paddingBottom', '16px', '32px'],
+    ['paddingLeft', '16px', '32px']
+  ];
+  const supblockAppearanceStyles = [
+    ['backgroundColor', 'rgb(255, 255, 255)'],
+    ['borderRadius', '12px'],
+    ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px']
+  ];
+  ['header', 'main', 'footer'].forEach(section => {
+    const sel = `.supblock--${section}`;
+    const el = document.querySelector(sel);
+    
+    it('Header, main, and footer should exist', () => {
+      ['header', 'main', 'footer'].forEach(tag => {
+        expect(el).to.exist;
+      });
     });
+    
+    testStyles(sel, 'Typography', bodyTypographyStyles);
+    testStyles(sel, 'Layout', supblockLayoutStyles);
+    testStyles(sel, 'Appearance', supblockAppearanceStyles);
+    testStyles(sel, 'Layout (unique)', [
+      ['marginBottom', section === 'footer' ? '0px' : '32px']
+    ]);
+    
+    it('Should have either border or shadow', () => {
+      const style = getComputedStyle(el);
+      const hasBorder = style.borderWidth !== '0px';
+      const hasShadow = style.boxShadow !== 'none';
+      expect(hasBorder || hasShadow).to.be.true;
+    });
+    
+    it('Should have inner padding > 10px', () => {
+      const pad = parseFloat(getComputedStyle(el).padding);
+      expect(pad).to.be.greaterThan(10);
+    });
+    
+    blocks.push(el)
   });
   
-  testStyles(sel, 'Typography', bodyTypographyStyles);
-  testStyles(sel, 'Layout', supblockLayoutStyles);
-  testStyles(sel, 'Appearance', supblockAppearanceStyles);
-  testStyles(sel, 'Layout (unique)', [
-    ['marginBottom', section === 'footer' ? '0px' : '32px']
-  ]);
-  
-  it('Should have either border or shadow', () => {
-    const style = getComputedStyle(el);
-    const hasBorder = style.borderWidth !== '0px';
-    const hasShadow = style.boxShadow !== 'none';
-    expect(hasBorder || hasShadow).to.be.true;
-  });
-  
-  it('Should have inner padding > 10px', () => {
-    const pad = parseFloat(getComputedStyle(el).padding);
-    expect(pad).to.be.greaterThan(10);
-  });
-});
-
-// ─────────────────────────────────────────────
-// Supblock Structure Layout Tests
-describe('Supblock Layout Structure', () => {
-  const blocks = [...document.querySelectorAll('.supblock')];
-
-  it('Header, main, and footer should have matching width', () => {
+  it('Should have matching width', () => {
     const widths = blocks.map(block => block.getBoundingClientRect().width);
     
     expect(new Set(widths).size).to.equal(1); // all widths equal
   });
   
   it('Cards should not visually overlap', () => {
-
+    
     const isOverlapping = (a, b) => {
       const rA = a.getBoundingClientRect();
       const rB = b.getBoundingClientRect();
