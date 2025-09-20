@@ -126,7 +126,7 @@ describe('Supblock Modifier Tests', () => {
 // ──────────────────────────────────────────────────────────────────────────────────────────
 // Supblock Block Container Tests
 describe('Supblock Block Container Tests', () => {
-  const containers = Array.from(document.querySelectorAll('.supblock__block-container'));
+  const containers = Array.from(document.querySelectorAll('.supblock__container'));
   
   // Tailwind-computed values for original utility classes:
   const tailwindExpectedStyles = [
@@ -153,13 +153,13 @@ describe('Supblock Block Container Tests', () => {
     }
   }
   
-  it('Should find at least one .supblock__block-container', () => {
+  it('Should find at least one .supblock__container', () => {
     expect(containers.length).to.be.greaterThan(0);
   });
   
   containers.forEach((el, i) => {
     const modifier = [...el.classList]
-      .find(c => c.startsWith('supblock__block-container--'))
+      .find(c => c.startsWith('supblock__container--'))
       ?.split('--')[1] || 'default';
     
     const label = `Block Container (${modifier})`;
