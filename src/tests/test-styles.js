@@ -28,7 +28,17 @@ function testStyles(selector, label, styles) {
     });
   });
 }
-
+function expectStyle(el, prop, expected) {
+  const computed = getComputedStyle(el)[prop];
+  
+  if (expected.endsWith('px')) {
+    const expectedPx = parseFloat(expected);
+    const actualPx = parseFloat(computed);
+    expect(actualPx).to.be.closeTo(expectedPx, 0.6, `${prop} ≠ ${expected}`);
+  } else {
+    expect(computed).to.equal(expected);
+  }
+}
 // ─────────────────────────────────────────────
 // Shared styles
 const bodyTypographyStyles = [
@@ -53,6 +63,18 @@ testStyles('body', 'Appearance', [
 
 // ─────────────────────────────────────────────
 // Supblock Modifier Tests with Shared styles
+const tailwindExpectedStyles = [
+  // p-6
+  ['paddingTop', '24px'],
+  ['paddingRight', '24px'],
+  ['paddingBottom', '24px'],
+  ['paddingLeft', '24px'],
+  ['backgroundColor', 'rgb(248, 250, 252)'], // bg-slate-50
+  // border-slate-200
+  ['borderColor', 'rgb(226, 232, 240)'],
+  ['borderStyle', 'solid'],
+  ['borderRadius', '8px'] // rounded-lg
+];
 describe('Supblock Modifier', () => {
   const blocks = []
   const supblockLayoutStyles = [
@@ -98,6 +120,42 @@ describe('Supblock Modifier', () => {
       expect(pad).to.be.greaterThan(10);
     });
     
+    const containers = el.querySelectorAll('.supblock__container')
+    
+    it('supblock should have atleast 1 containers', () => {
+      expect(containers.length).to.be.greaterThan(0);
+    })
+
+    containers.forEach((el, i) => {
+      const modifier = [...el.classList][1]?.split('--')[1] || 'default';
+      
+      describe(`supblock container (${modifier})`, () => {
+        tailwindExpectedStyles.forEach(([prop, expected]) => {
+          it(`should have "${prop}" = "${expected}"`, () => {
+            expectStyle(el, prop, expected);
+          });
+        });
+        
+        it('should have padding ≥ 24px on all sides', () => {
+          const style = getComputedStyle(el);
+          ['Top', 'Right', 'Bottom', 'Left'].forEach(side => {
+            const pad = parseFloat(style[`padding${side}`]);
+            expect(pad).to.be.at.least(24);
+          });
+        });
+        
+        if (modifier === 'footer') {
+          it('should span full width (if using grid)', () => {
+            const parent = el.parentElement;
+            const elWidth = el.getBoundingClientRect().width;
+            const parentWidth = parent.getBoundingClientRect().width;
+            
+            expect(Math.abs(elWidth - parentWidth)).to.be.lessThan(2);
+          });
+        }
+      });
+    });
+    
     blocks.push(el)
   });
   
@@ -124,71 +182,5 @@ describe('Supblock Modifier', () => {
 });
 
 // ──────────────────────────────────────────────────────────────────────────────────────────
-// Supblock Block Container Tests
-describe('Supblock Container', () => {
-  const containers = Array.from(document.querySelectorAll('.supblock__container'));
-  
-  // Tailwind-computed values for original utility classes:
-  const tailwindExpectedStyles = [
-    // p-6
-    ['paddingTop', '24px'],
-    ['paddingRight', '24px'],
-    ['paddingBottom', '24px'],
-    ['paddingLeft', '24px'],
-    ['backgroundColor', 'rgb(248, 250, 252)'], // bg-slate-50
-    // border-slate-200
-    ['borderColor', 'rgb(226, 232, 240)'],
-    ['borderStyle', 'solid'],
-    ['borderRadius', '8px'] // rounded-lg
-  ];
-  
-  function expectStyle(el, prop, expected) {
-    const computed = getComputedStyle(el)[prop];
-    
-    if (expected.endsWith('px')) {
-      const expectedPx = parseFloat(expected);
-      const actualPx = parseFloat(computed);
-      expect(actualPx).to.be.closeTo(expectedPx, 0.6, `${prop} ≠ ${expected}`);
-    } else {
-      expect(computed).to.equal(expected);
-    }
-  }
-  
-  it('Should find at least one .supblock__container', () => {
-    expect(containers.length).to.be.greaterThan(0);
-  });
-  
-  containers.forEach((el, i) => {
-    const modifier = [...el.classList][1]?.split('--')[1] || 'default';
-    
-    describe(`supblock container (${modifier})`, () => {
-      tailwindExpectedStyles.forEach(([prop, expected]) => {
-        it(`should have "${prop}" = "${expected}"`, () => {
-          expectStyle(el, prop, expected);
-        });
-      });
-      
-      it('should have padding ≥ 24px on all sides', () => {
-        const style = getComputedStyle(el);
-        ['Top', 'Right', 'Bottom', 'Left'].forEach(side => {
-          const pad = parseFloat(style[`padding${side}`]);
-          expect(pad).to.be.at.least(24);
-        });
-      });
-      
-      if (modifier === 'footer') {
-        it('should span full width (if using grid)', () => {
-          const parent = el.parentElement;
-          const elWidth = el.getBoundingClientRect().width;
-          const parentWidth = parent.getBoundingClientRect().width;
-          
-          // Allow 1px rounding difference
-          expect(Math.abs(elWidth - parentWidth)).to.be.lessThan(2);
-        });
-      }
-    });
-  });
-    
-});
 
 mocha.run();
