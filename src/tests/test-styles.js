@@ -28,6 +28,7 @@ function testStyles(selector, label, styles) {
     });
   });
 }
+
 function expectStyle(el, prop, expected) {
   const computed = getComputedStyle(el)[prop];
   
@@ -120,16 +121,16 @@ describe('Supblock Modifier', () => {
       expect(pad).to.be.greaterThan(10);
     });
     
-    const containers = el.querySelectorAll('.supblock__container')
-    
-    it('supblock should have atleast 1 containers', () => {
-      expect(containers.length).to.be.greaterThan(0);
-    })
-
-    containers.forEach((el, i) => {
-      const modifier = [...el.classList][1]?.split('--')[1] || 'default';
+    describe('supblock__container tests', () => {
+      const containers = el.querySelectorAll('.supblock__container')
       
-      describe(`supblock container (${modifier})`, () => {
+      it('supblock should have atleast 1 containers', () => {
+        expect(containers.length).to.be.greaterThan(0);
+      })
+      
+      containers.forEach((el, i) => {
+        const modifier = [...el.classList][1]?.split('--')[1] || 'default';
+
         tailwindExpectedStyles.forEach(([prop, expected]) => {
           it(`should have "${prop}" = "${expected}"`, () => {
             expectStyle(el, prop, expected);
