@@ -71,9 +71,8 @@ const tailwindExpectedStyles = [
   ['paddingBottom', '24px'],
   ['paddingLeft', '24px'],
   ['backgroundColor', 'rgb(248, 250, 252)'], // bg-slate-50
-  // border-slate-200
-  ['borderColor', 'rgb(226, 232, 240)'],
-  ['borderStyle', 'solid'],
+  ['borderColor', 'rgb(226, 232, 240)'], // border-slate-200
+  ['borderStyle', 'solid'], // border
   ['borderRadius', '8px'] // rounded-lg
 ];
 describe('Supblock Modifier', () => {
