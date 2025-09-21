@@ -173,4 +173,7 @@
    background-color: rgb(255, 255, 255);
    border-radius: 12px;
   }
+  .supblock__container {
+   background-color: rgb(248, 250, 252); /* bg-slate-50 */
+  }
  }
