@@ -1,76 +1,75 @@
- /* _appearance.css */
- .container-style {
-  /*
+.container-style {
+ /*
    * Purpose: A shorthand for all background-related properties.
    * Syntax: background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [background-size] [background-origin] [background-clip];
    * Example: background: #000 url("image.jpg") no-repeat center/cover;
    */
-  background: none;
-  
-  /*
+ background: none;
+ 
+ /*
    * Purpose: Sets the background color.
    * Syntax: background-color: <color>;
    * Key Values & Usage: `transparent`, color names, hex codes (`#rrggbb`), `rgb()`, `rgba()`, `hsl()`, `hsla()`.
    */
-  background-color: transparent;
-  
-  /*
+ background-color: transparent;
+ 
+ /*
    * Purpose: Sets a background image. You can specify multiple images, creating layers.
    * Syntax: background-image: <image-1> | <image-2> | ... ;
    * Key Values & Usage: `url()`, `linear-gradient()`, `radial-gradient()`, `none`.
    */
-  background-image: none;
-  
-  /*
+ background-image: none;
+ 
+ /*
    * Purpose: Controls how a background image repeats.
    * Syntax: background-repeat: <x-value> <y-value>;
    * Key Values & Usage: `repeat` (repeats horizontally and vertically), `repeat-x`, `repeat-y`, `no-repeat`, `space`, `round`.
    */
-  background-repeat: repeat;
-  
-  /*
+ background-repeat: repeat;
+ 
+ /*
    * Purpose: Specifies whether the background image is fixed or scrolls with the page.
    * Syntax: background-attachment: <value>;
    * Key Values & Usage: `scroll`, `fixed`, `local`. Use `fixed` for a classic parallax scrolling effect.
    */
-  background-attachment: scroll;
-  
-  /*
+ background-attachment: scroll;
+ 
+ /*
    * Purpose: Sets the initial position of a background image. You can set a different position for each layer of a multi-background element.
    * Syntax: background-position: <x-value> <y-value>;
    * Key Values & Usage: `center`, `top`, `bottom`, `left`, `right`, percentages, or lengths (`px`, `em`).
    */
-  background-position: 0% 0%;
-  
-  /*
+ background-position: 0% 0%;
+ 
+ /*
    * Purpose: Sets the size of the background image. Can be used for a single or a layered background.
    * Syntax: background-size: <value>;
    * Key Values & Usage: `auto`, `contain`, `cover`, or length values.
    */
-  background-size: auto;
-  
-  /*
+ background-size: auto;
+ 
+ /*
    * Purpose: Specifies the positioning area for background images.
    * Syntax: background-origin: <value>;
    * Key Values & Usage: `padding-box` (default), `border-box`, `content-box`.
    */
-  background-origin: padding-box;
-  
-  /*
+ background-origin: padding-box;
+ 
+ /*
    * Purpose: Specifies the painting area for the background.
    * Syntax: background-clip: <value>;
    * Key Values & Usage: `border-box` (default), `padding-box`, `content-box`, `text`.
    */
-  background-clip: border-box;
-  
-  /*
+ background-clip: border-box;
+ 
+ /*
    * Purpose: A shorthand for setting all border properties.
    * Syntax: border: [border-width] [border-style] [border-color];
    * Example: border: 2px solid #ccc;
    */
-  border: none;
-  
-  /*
+ border: none;
+ 
+ /*
    * Purpose: Sets the border properties based on the logical flow of text, useful for internationalization.
    * Syntax: border-block-start: <value>; border-inline-start: <value>; etc.
    * Example: border-block-start: 1px solid black; (This is the top border in LTR and the right border in RTL.)
@@ -79,104 +78,102 @@
     * Syntax: border-[side]: <value>;
     * Example: border-top: 1px dashed black;
   */
-  
-  border-block-start: none;
-  /* border-top: none  formerly*/
-  border-block-end: none;
-  /* border-right: none */
-  border-inline-start: none;
-  /* border-bottom: none */
-  border-inline-end: none;
-  /* border-left: none  */
-  
-  /*
+ 
+ border-block-start: none;
+ /* border-top: none  formerly*/
+ border-block-end: none;
+ /* border-right: none */
+ border-inline-start: none;
+ /* border-bottom: none */
+ border-inline-end: none;
+ /* border-left: none  */
+ 
+ /*
    * Purpose: Rounds the corners of the element.
    * Syntax: border-radius: <value>;
    * Alternatives: Use longhand for each corner.
    * Example: border-radius: 10px 20px 30px 40px; (top-left, top-right, bottom-right, bottom-left)
    */
-  border-radius: 0;
-  
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  
-  /*
+ border-radius: 0;
+ 
+ border-top-left-radius: 0;
+ border-top-right-radius: 0;
+ border-bottom-right-radius: 0;
+ border-bottom-left-radius: 0;
+ 
+ /*
    * Purpose: Adds a shadow to the element's box. You can stack multiple shadows by separating them with a comma.
    * Syntax: box-shadow: <h-offset> <v-offset> <blur> <spread> <color> [inset];
    * Example: box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.5);
    */
-  box-shadow: none;
-  
-  /*
+ box-shadow: none;
+ 
+ /*
    * Purpose: Sets the transparency level of an element.
    * Syntax: opacity: <number>;
    * When to Use: Fades the entire element, including its content.
    */
-  opacity: 1;
-  
-  /*
+ opacity: 1;
+ 
+ /*
    * Purpose: Draws an outline around an element, outside the border. It doesn't affect layout.
    * Syntax: outline: <width> <style> <color>;
    * When to Use: Primarily for accessibility, as outlines help users identify the currently focused element.
    */
-  outline: none;
-  outline-width: medium;
-  outline-style: none;
-  /* Possible values: none, solid, dotted, dashed, groove, ridge, inset, outset. */
-  outline-color: initial;
-  
-  /*
+ outline: none;
+ outline-width: medium;
+ outline-style: none;
+ /* Possible values: none, solid, dotted, dashed, groove, ridge, inset, outset. */
+ outline-color: initial;
+ 
+ /*
    * Purpose: Specifies a blend mode for an element's content.
    * Syntax: mix-blend-mode: <value>;
    */
-  mix-blend-mode: normal;
-  
-  /*
+ mix-blend-mode: normal;
+ 
+ /*
    * Purpose: Applies a graphical filter effect to the element.
    * Syntax: filter: <function>;
    * Example: filter: grayscale(100%) blur(2px);
    */
-  filter: none;
-  
-  /*
+ filter: none;
+ 
+ /*
    * Purpose: Clips an element to a specified shape.
    * Syntax: clip-path: <value>;
    * When to Use: To create unique, non-rectangular layouts.
    */
-  clip-path: none;
-  
-  /*
+ clip-path: none;
+ 
+ /*
    * Purpose: Specifies how the content of a replaced element (like `<img>` or `<video>`) should fit its container.
    * Syntax: object-fit: <value>;
    */
-  object-fit: fill;
-  
-  /*
+ object-fit: fill;
+ 
+ /*
    * Purpose: Defines how an element's content is sized and positioned within its content box when `object-fit` is not `fill`.
    * Syntax: object-position: <x> <y>;
    */
-  object-position: 50% 50%;
+ object-position: 50% 50%;
+}
+
+/* ---------------------------------------------------------------------- */
+/* _appearances.css */
+@layer appearances {
+ 
+ /* .container-style */
+ body {
+  background-color: rgb(241, 245, 249);
  }
  
- /* ---------------------------------------------------------------------- */
- 
- @layer appearances {
-  
-  /* .container-style */
-  body {
-   background-color: rgb(241, 245, 249);
-  }
-  
-  .supblock {
-   background-color: rgb(255, 255, 255);
-   border-radius: 12px;
-  }
-  .supblock__container {
-   background-color: rgb(248, 250, 252); /* bg-slate-50 */
-   border-radius: 8px;  
-   
-   /* border: 1px solid rgb(226, 232, 240); */
-  }
+ .supblock {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
  }
+ 
+ .supblock__container {
+  background-color: rgb(248, 250, 252);/* bg-slate-50 */
+ }
+}

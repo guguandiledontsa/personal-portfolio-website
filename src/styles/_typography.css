@@ -1,4 +1,3 @@
-/* _typography.css */
 .container-typography {
  /*
    * Purpose: Sets the color of the text.
@@ -164,9 +163,9 @@
 }
 
 /* ───────────────────────────────────────────── */
+/* _typography.css */
 
-
-@layer typographies {
+@layer topographies {
  
  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
  

@@ -1,5 +1,5 @@
 /*  main.css */
-@layer variables, base, topographies, layouts, appearances, animations, interactions;
+@layer variables, bases, topographies, layouts, appearances, animations, interactions;
 
 /* ───────────────────────────────────────────── */
 
@@ -12,3 +12,9 @@
 @import url("./_interaction.css") layer(interactions);
 
 /* ───────────────────────────────────────────── */
+.supblock__container {
+    border-width: 1px;
+    border-color: rgb(226, 232, 240);
+    border-style: solid;
+    border-radius: 8px;
+}

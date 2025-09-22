@@ -1,4 +1,3 @@
- /* _animation.css */
 .container-transitions {
    /*
    * Purpose: A shorthand to set all transition properties.
@@ -151,7 +150,8 @@
  }
  
 /* ---------------------------------------------------------------------- */
- 
+ /* _animation.css */
+
 @layer animations {
 
    /* .container-transitions */

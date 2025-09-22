@@ -1,4 +1,3 @@
-/* _variables.css */
 @layer variables {
   
   @property --base-hue {
@@ -18,7 +17,8 @@
   }
   
 /* ───────────────────────────────────────────── */
-  
+/* _variables.css */
+
   :root {
     /* --base-hue: 0; */
     animation: cycle-hue 20s infinite linear;
