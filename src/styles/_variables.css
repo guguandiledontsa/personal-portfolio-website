@@ -1,5 +1,7 @@
+/* ───────────────────────────────────────────── */
+/* _variables.css */
+
 @layer variables {
-  
   @property --base-hue {
     syntax: "<number>";
     initial-value: 0;
@@ -16,9 +18,6 @@
     }
   }
   
-/* ───────────────────────────────────────────── */
-/* _variables.css */
-
   :root {
     /* --base-hue: 0; */
     animation: cycle-hue 20s infinite linear;

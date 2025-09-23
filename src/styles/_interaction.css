@@ -1,5 +1,4 @@
- /* _interaction.css */
- .container-interaction {
+.container-interaction {
    /*
  * Purpose: Controls how the cursor appears over the element.
  * Syntax: cursor: <value>;
@@ -89,6 +88,7 @@
    break-inside: auto;
  }
  
- /* ---------------------------------------------------------------------- */
- 
- @layer interactions {}
+/* ---------------------------------------------------------------------- */
+/* _interaction.css */
+
+@layer interactions {}
