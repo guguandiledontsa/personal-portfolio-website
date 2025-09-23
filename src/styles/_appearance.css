@@ -177,5 +177,6 @@
  }
  .supblock__card {
    background-color: rgb(255, 255, 255); /* bg-white */
+   border-radius: 8px; /* rounded-lg */
  }
 }
