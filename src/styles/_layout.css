@@ -352,6 +352,9 @@
     margin-inline: auto;
    }
   }
+  .supblock__card {
+   margin-block-end: 16px; /* mb-4 */
+  }
   .supblock--footer {
    --mb: ;
   }
