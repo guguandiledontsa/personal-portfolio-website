@@ -139,6 +139,13 @@ const styleData = {
       ['lineHeight', '28px'] // default line-height for text-lg
     ]
   },
+  '.card__subtitle': {
+    'Typography': [
+      ['font-size', '14px'] // text-sm
+      ['color:', 'rgb(71, 85, 105)'] // text-slate-600 
+
+    ]
+  },
   'h2': {
     'Typography': [
       ['fontSize', '36px'], // text-4xl
