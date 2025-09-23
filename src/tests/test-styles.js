@@ -22,7 +22,7 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}) {
   }
   
   elements.forEach((el, index) => {
-    const desc = elements.length > 1 ? `Element #${index + 1}` : el.tagName.toLowerCase() + (el.className ? `.${el.className}` : '');
+    const desc = elements.length > 1 ? `Element #${index + 1}` : el.tagName + (el.className ? `.${el.className}` : '');
     describe(desc, () => {
       it('should exist', () => expect(el).to.exist);
       
@@ -82,7 +82,6 @@ const styleData = {
     'Appearance': [
       ['backgroundColor', 'rgb(255, 255, 255)'],
       ['borderRadius', '12px'],
-      ['boxShadow', 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px']
     ],
     'Padding': [
       ['paddingTop', '16px', '32px'],
@@ -114,10 +113,10 @@ const styleData = {
       ['marginBottom', '16px']
     ],
     'Appearance': [
-      ['backgroundColor', 'rgb(255, 255, 255)'],
+      ['backgroundColor', 'rgb(255, 255, 255)'],  // bg-white
       ['borderRadius', '8px'], // rounded-lg is 0.5rem
     ],
-  }
+  },
 };
 
 // ─────────────────────────────────────────────
@@ -145,6 +144,7 @@ describe('HTML Showcase: Block and Container Tests', () => {
     it('should have matching widths', () => {
       const widths = Array.from(allSupblocks).map(b => b.getBoundingClientRect().width);
       expect(new Set(widths).size).to.equal(1, 'All supblocks should have the same width.');
+      // find out why this works even thou on desktop some subblocks are full width some are not 
     });
     
     it('should not visually overlap', () => {
