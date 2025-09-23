@@ -11,35 +11,53 @@ const isWMedium = window.innerWidth >= 768;
  * @param {string|HTMLElement|NodeList} selectorOrElement - CSS selector, single element, or a NodeList.
  * @param {object} styles - An object where keys are style labels and values are arrays of [prop, smallVal, mediumVal] or [prop, expectedVal].
  * @param {object} [uniqueAssertions={}] - An object of custom test assertions.
+ * @param {string} [context=''] - Optional context string (e.g., a parent selector) to add to descriptions.
  */
-function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}) {
-  const elements = selectorOrElement instanceof NodeList ?
-    Array.from(selectorOrElement) : [document.querySelector(selectorOrElement)];
+function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, context = '') { // CHANGED: Added context parameter
+  // CHANGED: Simplified element selection
+  const elements = typeof selectorOrElement === 'string' ?
+    Array.from(document.querySelectorAll(selectorOrElement)) :
+    (selectorOrElement instanceof NodeList ? Array.from(selectorOrElement) : [selectorOrElement]);
   
   if (elements.length === 0 || elements[0] === null) {
-    it(`should exist`, () => expect(elements[0]).to.exist);
+    describe(context || selectorOrElement, () => {
+      it('should exist on the page', () => {
+        // CHANGED: More helpful failure message if element is not found
+        expect(elements[0], `Element with selector "${selectorOrElement}" was not found`).to.exist;
+      });
+    });
     return;
   }
   
   elements.forEach((el, index) => {
-    const desc = elements.length > 1 ? `Element #${index + 1}` : el.tagName + (el.className ? `.${el.className}` : '');
+    // CHANGED: Create a more descriptive title using the first BEM class and context.
+    const mainClass = el.className ? '.' + el.className.split(' ')[0] : el.tagName.toLowerCase();
+    const count = elements.length > 1 ? ` (${index + 1} of ${elements.length})` : '';
+    const contextString = context ? ` within ${context}` : '';
+    const desc = `${mainClass}${count}${contextString}`;
+    
     describe(desc, () => {
       it('should exist', () => expect(el).to.exist);
       
       for (const [label, props] of Object.entries(styles)) {
-        describe(label, () => {
+        describe(`Category: ${label}`, () => { // CHANGED: Added "Category:" for clarity
           props.forEach(([prop, smallVal, mediumVal]) => {
-            const expected = mediumVal !== undefined && isWMedium ? mediumVal : smallVal;
-            it(`should have "${prop}" = "${expected}"`, () => {
+            const isResponsiveTest = mediumVal !== undefined && isWMedium;
+            const expected = isResponsiveTest ? mediumVal : smallVal;
+            const viewportContext = isResponsiveTest ? ' (on medium screen)' : '';
+            
+            // CHANGED: More descriptive `it` block message
+            it(`should have ${prop}: "${expected}"${viewportContext}`, () => {
               const computed = getComputedStyle(el)[prop];
               
-              // Corrected logic: Handle boxShadow as a string
               if (prop === 'boxShadow' || !expected.endsWith('px')) {
                 expect(computed).to.equal(expected);
               } else {
                 const actual = parseFloat(computed);
                 const expectedPx = parseFloat(expected);
-                expect(actual).to.be.closeTo(expectedPx, 0.6, `${prop} ≠ ${expected}`);
+                // CHANGED: A much more helpful failure message
+                expect(actual).to.be.closeTo(expectedPx, 0.6,
+                  `Expected ${prop} to be ~${expected}, but got ${computed}`);
               }
             });
           });
@@ -54,7 +72,7 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}) {
 }
 
 // ─────────────────────────────────────────────
-// Shared styles & data objects
+// Shared styles & data objects (NO CHANGES NEEDED)
 const styleData = {
   'body': {
     'Typography': [
@@ -113,17 +131,43 @@ const styleData = {
       ['marginBottom', '16px']
     ],
     'Appearance': [
-      ['backgroundColor', 'rgb(255, 255, 255)'],  // bg-white
+      ['backgroundColor', 'rgb(255, 255, 255)'], // bg-white
       ['borderRadius', '8px'], // rounded-lg is 0.5rem
     ],
   },
+  '.card__title': {
+    'Typography': [
+      ['fontWeight', '600'], // font-semibold
+      ['fontSize', '18px'], // text-lg
+      ['lineHeight', '28px'] // default line-height for text-lg
+    ]
+  },
+  'h2': {
+    'Typography': [
+      ['fontSize', '36px'], // text-4xl
+      ['fontWeight', '700'], // font-bold
+      ['lineHeight', '40px'] // default line-height
+    ],
+    'Layout': [
+      ['marginBottom', '24px'] // mb-6
+    ]
+  },
+  'h3': {
+    'Typography': [
+      ['fontSize', '24px'], // text-2xl
+      ['fontWeight', '700'], // font-bold
+      ['lineHeight', '32px'] // default line-height
+    ],
+    'Layout': [
+      ['marginBottom', '16px'] // mb-4
+    ]
+  }
 };
 
 // ─────────────────────────────────────────────
-// Test Suite: Body & Supblocks
+// Test Suite: How to use the improved function
 describe('HTML Showcase: Block and Container Tests', () => {
-  
-  // Global body and layout checks
+  // ... (no changes to body or Global Supblock Assertions)
   describe('body Element', () => {
     testElementStyles('body', styleData['body']);
   });
@@ -144,7 +188,6 @@ describe('HTML Showcase: Block and Container Tests', () => {
     it('should have matching widths', () => {
       const widths = Array.from(allSupblocks).map(b => b.getBoundingClientRect().width);
       expect(new Set(widths).size).to.equal(1, 'All supblocks should have the same width.');
-      // find out why this works even thou on desktop some subblocks are full width some are not 
     });
     
     it('should not visually overlap', () => {
@@ -169,8 +212,9 @@ describe('HTML Showcase: Block and Container Tests', () => {
         ['marginBottom', '32px']
       ]
     });
-    testElementStyles(document.querySelectorAll(`${selector} .supblock__container`), styleData['.supblock__container']);
-    testElementStyles(document.querySelectorAll(`${selector} .supblock__card`), styleData['.supblock__card']);
+    // *** USAGE EXAMPLE: Pass the parent selector as context ***
+    testElementStyles(`${selector} .supblock__container`, styleData['.supblock__container'], {}, selector);
+    testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
   });
   
   // --- Main Supblock Tests ---
@@ -182,8 +226,8 @@ describe('HTML Showcase: Block and Container Tests', () => {
         ['marginBottom', '32px']
       ]
     });
-    testElementStyles(document.querySelectorAll(`${selector} .supblock__container`), styleData['.supblock__container']);
-    testElementStyles(document.querySelectorAll(`${selector} .supblock__card`), styleData['.supblock__card']);
+    testElementStyles(`${selector} .supblock__container`, styleData['.supblock__container'], {}, selector);
+    testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
   });
   
   // --- Footer Supblock Tests ---
@@ -195,15 +239,14 @@ describe('HTML Showcase: Block and Container Tests', () => {
         ['marginBottom', '0px']
       ]
     });
-    testElementStyles(document.querySelectorAll(`${selector} .supblock__container`), styleData['.supblock__container'], {
+    testElementStyles(`${selector} .supblock__container`, styleData['.supblock__container'], {
       'should span full width': (el) => {
-        const parent = el.parentElement;
-        const w1 = el.getBoundingClientRect().width;
-        const w2 = parent.getBoundingClientRect().width;
-        expect(Math.abs(w1 - w2)).to.be.lessThan(2);
+        const parentWidth = el.parentElement.getBoundingClientRect().width;
+        const elWidth = el.getBoundingClientRect().width;
+        expect(Math.abs(elWidth - parentWidth)).to.be.lessThan(2);
       }
-    });
-    testElementStyles(document.querySelectorAll(`${selector} .supblock__card`), styleData['.supblock__card']);
+    }, selector);
+    testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
   });
 });
 
