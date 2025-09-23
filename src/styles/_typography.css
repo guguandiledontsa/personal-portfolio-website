@@ -170,6 +170,9 @@
  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
  
  /* .container-typography */
+ .card__title {
+   line-height: 28px; /* default for text-lg */
+ }
  /* ───────────────────────────────────────────── */
  /* .container-typography-font */
  body {
@@ -182,6 +185,11 @@
  .supblock h3,
  .supblock h4{
   font-family: 'Playfair Display', serif;
+ }
+ 
+ .card__title {
+   font-weight: 600; /* font-semibold */
+   font-size: 18px; /* text-lg */
  }
  
  /* ───────────────────────────────────────────── */

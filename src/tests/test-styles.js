@@ -22,7 +22,6 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
   if (elements.length === 0 || elements[0] === null) {
     describe(context || selectorOrElement, () => {
       it('should exist on the page', () => {
-        // CHANGED: More helpful failure message if element is not found
         expect(elements[0], `Element with selector "${selectorOrElement}" was not found`).to.exist;
       });
     });
@@ -30,7 +29,6 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
   }
   
   elements.forEach((el, index) => {
-    // CHANGED: Create a more descriptive title using the first BEM class and context.
     const mainClass = el.className ? '.' + el.className.split(' ')[0] : el.tagName.toLowerCase();
     const count = elements.length > 1 ? ` (${index + 1} of ${elements.length})` : '';
     const contextString = context ? ` within ${context}` : '';
@@ -40,13 +38,12 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
       it('should exist', () => expect(el).to.exist);
       
       for (const [label, props] of Object.entries(styles)) {
-        describe(`Category: ${label}`, () => { // CHANGED: Added "Category:" for clarity
+        describe(`Category: ${label}`, () => {
           props.forEach(([prop, smallVal, mediumVal]) => {
             const isResponsiveTest = mediumVal !== undefined && isWMedium;
             const expected = isResponsiveTest ? mediumVal : smallVal;
             const viewportContext = isResponsiveTest ? ' (on medium screen)' : '';
             
-            // CHANGED: More descriptive `it` block message
             it(`should have ${prop}: "${expected}"${viewportContext}`, () => {
               const computed = getComputedStyle(el)[prop];
               
@@ -55,7 +52,7 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
               } else {
                 const actual = parseFloat(computed);
                 const expectedPx = parseFloat(expected);
-                // CHANGED: A much more helpful failure message
+                
                 expect(actual).to.be.closeTo(expectedPx, 0.6,
                   `Expected ${prop} to be ~${expected}, but got ${computed}`);
               }
@@ -72,7 +69,7 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
 }
 
 // ─────────────────────────────────────────────
-// Shared styles & data objects (NO CHANGES NEEDED)
+
 const styleData = {
   'body': {
     'Typography': [
@@ -165,7 +162,6 @@ const styleData = {
 };
 
 // ─────────────────────────────────────────────
-// Test Suite: How to use the improved function
 describe('HTML Showcase: Block and Container Tests', () => {
   // ... (no changes to body or Global Supblock Assertions)
   describe('body Element', () => {
@@ -250,5 +246,4 @@ describe('HTML Showcase: Block and Container Tests', () => {
   });
 });
 
-// Run the tests
 mocha.run();
