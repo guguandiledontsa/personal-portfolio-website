@@ -13,27 +13,26 @@ const isWMedium = window.innerWidth >= 768;
  * @param {object} [uniqueAssertions={}] - An object of custom test assertions.
  */
 function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}) {
-  const elements = selectorOrElement instanceof NodeList
-    ? Array.from(selectorOrElement)
-    : [document.querySelector(selectorOrElement)];
-
+  const elements = selectorOrElement instanceof NodeList ?
+    Array.from(selectorOrElement) : [document.querySelector(selectorOrElement)];
+  
   if (elements.length === 0 || elements[0] === null) {
     it(`should exist`, () => expect(elements[0]).to.exist);
     return;
   }
-
+  
   elements.forEach((el, index) => {
     const desc = elements.length > 1 ? `Element #${index + 1}` : el.tagName.toLowerCase() + (el.className ? `.${el.className}` : '');
     describe(desc, () => {
       it('should exist', () => expect(el).to.exist);
-
+      
       for (const [label, props] of Object.entries(styles)) {
         describe(label, () => {
           props.forEach(([prop, smallVal, mediumVal]) => {
             const expected = mediumVal !== undefined && isWMedium ? mediumVal : smallVal;
             it(`should have "${prop}" = "${expected}"`, () => {
               const computed = getComputedStyle(el)[prop];
-
+              
               // Corrected logic: Handle boxShadow as a string
               if (prop === 'boxShadow' || !expected.endsWith('px')) {
                 expect(computed).to.equal(expected);
@@ -46,7 +45,7 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}) {
           });
         });
       }
-
+      
       for (const [assertLabel, assertFunc] of Object.entries(uniqueAssertions)) {
         it(assertLabel, () => assertFunc(el));
       }
@@ -93,46 +92,61 @@ const styleData = {
     ]
   },
   '.supblock__container': {
-    'Layout & Appearance': [
+    'Layout': [
       ['paddingTop', '24px'],
       ['paddingRight', '24px'],
       ['paddingBottom', '24px'],
       ['paddingLeft', '24px'],
+    ],
+    'Appearance': [
       ['backgroundColor', 'rgb(248, 250, 252)'],
       ['borderColor', 'rgb(226, 232, 240)'],
       ['borderStyle', 'solid'],
       ['borderRadius', '8px']
     ]
+  },
+  '.supblock__card': {
+    'Layout': [
+      ['paddingTop', '16px'],
+      ['paddingRight', '16px'],
+      ['paddingBottom', '16px'],
+      ['paddingLeft', '16px'],
+      ['marginBottom', '16px']
+    ],
+    'Appearance': [
+      ['backgroundColor', 'rgb(255, 255, 255)'],
+      ['borderRadius', '8px'], // rounded-lg is 0.5rem
+    ],
   }
 };
 
 // ─────────────────────────────────────────────
 // Test Suite: Body & Supblocks
 describe('HTML Showcase: Block and Container Tests', () => {
-
+  
   // Global body and layout checks
   describe('body Element', () => {
     testElementStyles('body', styleData['body']);
   });
-
+  
   let allSupblocks = [];
   before(() => {
     allSupblocks = document.querySelectorAll('.supblock');
     expect(allSupblocks.length).to.be.at.least(3, 'At least 3 supblock elements must exist.');
   });
-
+  
   describe('Global Supblock Assertions', () => {
     it('should have consistent horizontal padding', () => {
       const pL = $style('.supblock', 'padding-left');
       const pR = $style('.supblock', 'padding-right');
       expect(pL).to.equal(pR);
     });
-
+    
     it('should have matching widths', () => {
       const widths = Array.from(allSupblocks).map(b => b.getBoundingClientRect().width);
       expect(new Set(widths).size).to.equal(1, 'All supblocks should have the same width.');
     });
-
+    
     it('should not visually overlap', () => {
       const isOverlapping = (a, b) => {
         const rA = a.getBoundingClientRect();
@@ -145,33 +159,41 @@ describe('HTML Showcase: Block and Container Tests', () => {
       expect(anyOverlap).to.be.false;
     });
   });
-
+  
   // --- Header Supblock Tests ---
   describe('Header Supblock (.supblock--header)', () => {
     const selector = '.supblock--header';
     testElementStyles(selector, {
       ...styleData['.supblock'],
-      'Unique Properties': [['marginBottom', '32px']]
+      'Unique Properties': [
+        ['marginBottom', '32px']
+      ]
     });
     testElementStyles(document.querySelectorAll(`${selector} .supblock__container`), styleData['.supblock__container']);
+    testElementStyles(document.querySelectorAll(`${selector} .supblock__card`), styleData['.supblock__card']);
   });
-
+  
   // --- Main Supblock Tests ---
   describe('Main Supblock (.supblock--main)', () => {
     const selector = '.supblock--main';
     testElementStyles(selector, {
       ...styleData['.supblock'],
-      'Unique Properties': [['marginBottom', '32px']]
+      'Unique Properties': [
+        ['marginBottom', '32px']
+      ]
     });
     testElementStyles(document.querySelectorAll(`${selector} .supblock__container`), styleData['.supblock__container']);
+    testElementStyles(document.querySelectorAll(`${selector} .supblock__card`), styleData['.supblock__card']);
   });
-
+  
   // --- Footer Supblock Tests ---
   describe('Footer Supblock (.supblock--footer)', () => {
     const selector = '.supblock--footer';
     testElementStyles(selector, {
       ...styleData['.supblock'],
-      'Unique Properties': [['marginBottom', '0px']]
+      'Unique Properties': [
+        ['marginBottom', '0px']
+      ]
     });
     testElementStyles(document.querySelectorAll(`${selector} .supblock__container`), styleData['.supblock__container'], {
       'should span full width': (el) => {
@@ -181,6 +203,7 @@ describe('HTML Showcase: Block and Container Tests', () => {
         expect(Math.abs(w1 - w2)).to.be.lessThan(2);
       }
     });
+    testElementStyles(document.querySelectorAll(`${selector} .supblock__card`), styleData['.supblock__card']);
   });
 });
 
