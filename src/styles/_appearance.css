@@ -169,11 +169,13 @@
  }
  
  .supblock {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255); /* bg-white */
   border-radius: 12px;
  }
- 
  .supblock__container {
   background-color: rgb(248, 250, 252);/* bg-slate-50 */
+ }
+ .supblock__card {
+   background-color: rgb(255, 255, 255); /* bg-white */
  }
 }
