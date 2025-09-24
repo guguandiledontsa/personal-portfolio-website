@@ -47,6 +47,8 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
             it(`should have ${prop}: "${expected}"${viewportContext}`, () => {
               const computed = getComputedStyle(el)[prop];
               
+              expect(computed, `The property "${prop}" did not return a value.`).to.not.be.empty;
+              
               if (prop === 'boxShadow' || !expected.endsWith('px')) {
                 expect(computed).to.equal(expected);
               } else {
@@ -141,9 +143,8 @@ const styleData = {
   },
   '.card__subtitle': {
     'Typography': [
-      ['font-size', '14px'] // text-sm
-      ['color:', 'rgb(71, 85, 105)'] // text-slate-600 
-
+      ['fontSize', '14px'], // text-sm
+      ['color', 'rgb(71, 85, 105)'], // text-slate-600
     ]
   },
   'h2': {
@@ -170,7 +171,6 @@ const styleData = {
 
 // ─────────────────────────────────────────────
 describe('HTML Showcase: Block and Container Tests', () => {
-  // ... (no changes to body or Global Supblock Assertions)
   describe('body Element', () => {
     testElementStyles('body', styleData['body']);
   });
@@ -215,9 +215,10 @@ describe('HTML Showcase: Block and Container Tests', () => {
         ['marginBottom', '32px']
       ]
     });
-    // *** USAGE EXAMPLE: Pass the parent selector as context ***
     testElementStyles(`${selector} .supblock__container`, styleData['.supblock__container'], {}, selector);
     testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
+    testElementStyles(`${selector} .card__title`, styleData['.card__title'], {}, selector);
+    testElementStyles(`${selector} .card__subtitle`, styleData['.card__subtitle'], {}, selector);
   });
   
   // --- Main Supblock Tests ---
@@ -231,6 +232,8 @@ describe('HTML Showcase: Block and Container Tests', () => {
     });
     testElementStyles(`${selector} .supblock__container`, styleData['.supblock__container'], {}, selector);
     testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
+    testElementStyles(`${selector} .card__title`, styleData['.card__title'], {}, selector);
+    testElementStyles(`${selector} .card__subtitle`, styleData['.card__subtitle'], {}, selector);
   });
   
   // --- Footer Supblock Tests ---
@@ -250,6 +253,8 @@ describe('HTML Showcase: Block and Container Tests', () => {
       }
     }, selector);
     testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
+    testElementStyles(`${selector} .card__title`, styleData['.card__title'], {}, selector);
+    testElementStyles(`${selector} .card__subtitle`, styleData['.card__subtitle'], {}, selector);
   });
 });
 
