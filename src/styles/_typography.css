@@ -178,6 +178,11 @@
         line-height: 40px;
         /* default line-height */
     }
+    h4 {
+        /* text-xl font-semibold mt-2 */
+        font-size: 20px; /* 1.25rem */
+        line-height: 28px; /* 1.75rem */
+    }
     
     .card__title {
         line-height: 28px;
@@ -187,8 +192,16 @@
     .card__subtitle {
         color: rgb(71, 85, 105);
         /* text-slate-600 */
+        margin-block-start: var(--mt);
     }
     
+    .card__subtitle--mt2 {
+        --mt: 8px;
+    } 
+    
+    .card__subtitle--mt4 {
+        --mt: 16px;
+    }
     /* ───────────────────────────────────────────── */
     /* .container-typography-font */
     body {
@@ -200,6 +213,13 @@
         /* text-4xl */
         font-weight: 700;
         /* font-bold */
+    }
+    h4 {
+        --mt: 8px;
+        
+        font-size: 20px; /* 1.25rem /* text-xl*/
+        font-weight: 600; /* font-semibold */
+        margin-block-start: var(--mt);
     }
     
     .supblock h1,
