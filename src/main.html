@@ -16,7 +16,7 @@
     
     <header class="supblock supblock--header shadow-xl">
         <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Header Supblock: All the Fixin's</h2>
-        <div class="grid-container grid-container--header grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid-container grid-container--header ">
             <!-- Parent: Div -->
             <div class="supblock__container supblock__container--header">
                 <h3 class="text-2xl font-bold mb-4">Parent: Div</h3>
@@ -24,7 +24,7 @@
                 <!-- Div > Div Card: Typography -->
                 <div class="supblock__card supblock__card--header shadow-sm">
                     <p class="card__title">Div > Div Card: Typography</p>
-                    <p class="card__subtitle mt-2">This card shows off different text tags.</p>
+                    <p class="card__subtitle card__subtitle--mt2">This card shows off different text tags.</p>
                     <p><cite>This is a <<em>cite</em>> tag.</cite> The <q>
                             <<em>q</em>> tag is for inline quotes.
                         </q></p>
@@ -64,7 +64,7 @@
                 <!-- Section > Div Card: Video & Audio -->
                 <div class="supblock__card supblock__card--header shadow-sm">
                     <p class="card__title">Section > Div Card: Video & Audio</p>
-                    <p class="card__subtitle mt-2">An audio and video element with controls.</p>
+                    <p class="card__subtitle card__subtitle--mt2">An audio and video element with controls.</p>
                     <!-- potentially a 2d element -->
                     <video width="100%" height="auto" controls class="mt-2 rounded-md bg-slate-200">
                         <!-- Use placeholder video or a static video from a CDN if needed -->
@@ -113,7 +113,7 @@
                     <!-- potentially a 2d element -->
                     <details class="mt-2">
                         <summary class="font-medium cursor-pointer">Click to reveal details</summary>
-                        <p class="card__subtitle mt-2">Here is a paragraph of detailed information that was hidden by default.</p>
+                        <p class="card__subtitle card__subtitle--mt2">Here is a paragraph of detailed information that was hidden by default.</p>
                     </details>
                 </article>
             </section>
@@ -197,7 +197,7 @@
     
     <main class="supblock supblock--main shadow-xl">
         <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Main Supblock: More Savory Dishes</h2>
-        <div class="grid-container grid-container--main grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid-container grid-container--main ">
             <!-- Parent: Div -->
             <div class="supblock__container supblock__container--main">
                 <h3 class="text-2xl font-bold mb-4">Parent: Div</h3>
@@ -253,15 +253,15 @@
                 <h3 class="text-2xl font-bold mb-4">Parent: Section</h3>
                 <div class="supblock__card supblock__card--main shadow-sm">
                     <p class="card__title">Section > Div Card: Progress, Meter and Inputs</p>
-                    <p class="card__subtitle mt-2">This shows a `<<em>progress</em>>` element.</p>
+                    <p class="card__subtitle card__subtitle--mt2">This shows a `<<em>progress</em>>` element.</p>
                     <progress class="w-full mt-1" value="80" max="100"></progress>
-                    <p class="card__subtitle mt-4">This shows a `<<em>meter</em>>` element.</p>
+                    <p class="card__subtitle card__subtitle--mt4">This shows a `<<em>meter</em>>` element.</p>
                     <meter class="w-full" value="0.75" min="0" max="1"></meter>
-                    <p class="card__subtitle mt-4">Below is an `<<em>input</em>>` tag of `<code>type='time'</code>`.</p>
+                    <p class="card__subtitle card__subtitle--mt4">Below is an `<<em>input</em>>` tag of `<code>type='time'</code>`.</p>
                     <input type="time" id="time">
-                    <p class="card__subtitle mt-4">Below is an `<<em>input</em>>` tag of `<code>type='color'</code>`.</p>
+                    <p class="card__subtitle card__subtitle--mt4">Below is an `<<em>input</em>>` tag of `<code>type='color'</code>`.</p>
                     <input type="color" id="color">
-                    <p class="card__subtitle mt-4">Below is an `<<em>input</em>>` tag of `<code>type='range'</code>`.</p>
+                    <p class="card__subtitle card__subtitle--mt4">Below is an `<<em>input</em>>` tag of `<code>type='range'</code>`.</p>
                     <input type="range" id="range" min="0" max="100">
                 </div>
             </section>
@@ -270,7 +270,7 @@
                 <h3 class="text-2xl font-bold mb-4">Parent: Article</h3>
                 <div class="supblock__card supblock__card--main shadow-sm">
                     <p class="card__title">Article > Div Card: Iframe</p>
-                    <p class="card__subtitle mt-2">
+                    <p class="card__subtitle card__subtitle--mt2">
                         This is an `iframe` embedding a small piece of content.
                     </p>
                     <!-- potentially a 2d element -->
@@ -284,12 +284,12 @@
     
     <footer class="supblock supblock--footer shadow-xl">
         <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Footer Supblock: Sweet Desserts</h2>
-        <div class="grid-container grid-container--footer grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article class="supblock__container supblock__container--footer col-span-full">
+        <div class="grid-container grid-container--footer ">
+            <article class="supblock__container supblock__container--footer">
                 <h3 class="text-2xl font-bold mb-4">Parent: Article</h3>
                 <div class="supblock__card supblock__card--footer shadow-sm">
                     <p class="card__title">Article > Div Card:  Print & Contact</p>
-                    <p class="card__subtitle mt-2">This footer content includes a `<<em>nav</em>>` element with a list of links and some `small` text for copyright information.</p>
+                    <p class="card__subtitle card__subtitle--mt2">This footer content includes a `<<em>nav</em>>` element with a list of links and some `small` text for copyright information.</p>
                     <!-- potentially a 2d element -->
                     <nav class="mt-4">
                         <ul class="flex justify-center space-x-4">
@@ -308,3 +308,4 @@
 </body>
 
 </html>
+<!-- grid md:grid-cols-2 lg:grid-cols-3 gap-6 on grid-container    ,col-span-full on supblock__container--footer -->
