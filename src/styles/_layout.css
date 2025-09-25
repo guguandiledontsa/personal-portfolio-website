@@ -340,6 +340,9 @@
   .supblock {
    max-width: 1280px;
   }
+  .supblock__container {
+   margin: 5px;
+  }
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   .supblock {
