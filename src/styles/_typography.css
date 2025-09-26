@@ -175,22 +175,25 @@
     }
     
     h2 {
-        line-height: 40px;
-        /* default line-height */
+        /* text-4xl font-bold mb-6 text-center md:text-left */
+        line-height: 40px; /*2.5rem /* text-4xl*/
+        margin-block-end: 24px; /*1.5rem /* mb-6 */
+        text-align: center; /* text-center */
+        
+        @media (min-width: 786px) {
+            & {
+                text-align: left; /* md:text-left */
+            }
+        }
     }
     h3 {
-        --mb: 16px; /* mb-4 */
-        
-        margin-block-end: var(--mb);
+        margin-block-end: 16px; /* mb-4 */
         line-height: 32px; /* 2rem */
     }
     h4 {
-        --mt: 8px;
-
         /* text-xl font-semibold mt-2 */
         line-height: 28px; /* 1.75rem */
-        margin-block-start: var(--mt);
-
+        margin-block-start: 8px; /* mt-2 */
     }
     
     .card__title {
@@ -214,9 +217,7 @@
     
     .card__body-text {
         /* text-base font-semibold mt-2 */
-        --mt: 8px; /* mt-2*/
-        
-        margin-block-start: var(--mt);
+        margin-block-start: 8px; /* mt-2*/
         line-height: 24px;  /* 1.5rem /* text-base */
     }
     /* ───────────────────────────────────────────── */
@@ -226,10 +227,8 @@
     }
     
     h2 {
-        font-size: 36px;
-        /* text-4xl */
-        font-weight: 700;
-        /* font-bold */
+        font-weight: 700; /* font-bold */
+        font-size: 36px; /* 2.25rem /* text-4xl*/
     }
     h3 {
         font-weight: 700; /* font-bold  */
