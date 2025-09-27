@@ -14,7 +14,6 @@ const isWMedium = window.innerWidth >= 768;
  * @param {string} [context=''] - Optional context string (e.g., a parent selector) to add to descriptions.
  */
 function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, context = '') {
-  // Simplified element selection
   const elements = typeof selectorOrElement === 'string' ?
     Array.from(document.querySelectorAll(selectorOrElement)) :
     (selectorOrElement instanceof NodeList ? Array.from(selectorOrElement) : [selectorOrElement]);
@@ -79,7 +78,6 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
 }
 
 // ─────────────────────────────────────────────
-// The rest of the code is the same as the refactored version
 
 const styleData = {
   'body': {
@@ -102,8 +100,8 @@ const styleData = {
   '.supblock': {
     'Layout': [
       ['maxWidth', '1280px'],
-      ['marginLeft', '0px'],
-      ['marginRight', '0px']
+      ['marginLeft', '0px'], // should be auto on desktop
+      ['marginRight', '0px'], // ..., auto
     ],
     'Appearance': [
       ['backgroundColor', 'rgb(255, 255, 255)'],
@@ -258,19 +256,16 @@ const styleData = {
 // Configuration for the Supblock loop
 const supblockConfigs = [
 {
-  name: 'Header Supblock',
   modifier: 'header',
   marginBottom: '32px',
   assertions: {}
 },
 {
-  name: 'Main Supblock',
   modifier: 'main',
   marginBottom: '32px',
   assertions: {}
 },
 {
-  name: 'Footer Supblock',
   modifier: 'footer',
   marginBottom: '0px',
   assertions: {
@@ -324,12 +319,8 @@ describe('HTML Showcase: Block and Container Tests (Refactored)', () => {
   // --- Dynamic Supblock Tests using a Loop (The Cleaned-Up Part) ---
   supblockConfigs.forEach(config => {
     const selector = `.supblock--${config.modifier}`;
-    const containerSelector = `${selector} .supblock__container`;
-    const cardSelector = `${selector} .supblock__card`;
-    const titleSelector = `${selector} .card__title`;
-    const subtitleSelector = `${selector} .card__subtitle`;
-    
-    describe(`${config.name} (${selector})`, () => {
+
+    describe(`(${selector})`, () => {
       // Test the main supblock
       testElementStyles(selector, {
         ...styleData['.supblock'],
@@ -339,11 +330,11 @@ describe('HTML Showcase: Block and Container Tests (Refactored)', () => {
       });
       
       // Test container, card, title, and subtitle
-      // The unique assertion for 'footer' is applied to the container
-      testElementStyles(containerSelector, styleData['.supblock__container'], config.assertions, selector);
-      testElementStyles(cardSelector, styleData['.supblock__card'], {}, selector);
-      testElementStyles(titleSelector, styleData['.card__title'], {}, selector);
-      testElementStyles(subtitleSelector, styleData['.card__subtitle'], {}, selector);
+      testElementStyles(`${selector} .supblock__container`, styleData['.supblock__container'], config.assertions, selector);
+      testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
+      testElementStyles(`${selector} .card__title`, styleData['.card__title'], {}, selector);
+      testElementStyles(`${selector} .card__subtitle`, styleData['.card__subtitle'], {}, selector);
+      testElementStyles(`${selector} .card__label`, styleData['.card__label'], {}, selector);
     });
   });
   

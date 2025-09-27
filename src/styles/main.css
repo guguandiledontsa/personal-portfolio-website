@@ -104,16 +104,6 @@
     /* give it some space to cut the border */
 }
 
-.card__label {
-    /* Replaces: text-xs font-medium text-slate-500 */
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #64748b;
-    /* slate-500 */
-    display: block;
-    /* make it a block element for better spacing */
-}
-
 .card__input {
     /* Replaces: w-full p-2 border border-slate-300 rounded-md mt-1 */
     width: 100%;

@@ -176,24 +176,34 @@
     
     h2 {
         /* text-4xl font-bold mb-6 text-center md:text-left */
-        line-height: 40px; /*2.5rem /* text-4xl*/
-        margin-block-end: 24px; /*1.5rem /* mb-6 */
-        text-align: center; /* text-center */
+        line-height: 40px;
+        /*2.5rem /* text-4xl*/
+        margin-block-end: 24px;
+        /*1.5rem /* mb-6 */
+        text-align: center;
+        /* text-center */
         
         @media (min-width: 786px) {
             & {
-                text-align: left; /* md:text-left */
+                text-align: left;
+                /* md:text-left */
             }
         }
     }
+    
     h3 {
-        margin-block-end: 16px; /* mb-4 */
-        line-height: 32px; /* 2rem */
+        margin-block-end: 16px;
+        /* mb-4 */
+        line-height: 32px;
+        /* 2rem */
     }
+    
     h4 {
         /* text-xl font-semibold mt-2 */
-        line-height: 28px; /* 1.75rem */
-        margin-block-start: 8px; /* mt-2 */
+        line-height: 28px;
+        /* 1.75rem */
+        margin-block-start: 8px;
+        /* mt-2 */
     }
     
     .card__title {
@@ -209,7 +219,7 @@
     
     .card__subtitle--mt2 {
         --mt: 8px;
-    } 
+    }
     
     .card__subtitle--mt4 {
         --mt: 16px;
@@ -217,9 +227,21 @@
     
     .card__body-text {
         /* text-base font-semibold mt-2 */
-        margin-block-start: 8px; /* mt-2*/
-        line-height: 24px;  /* 1.5rem /* text-base */
+        margin-block-start: 8px;
+        /* mt-2*/
+        line-height: 24px;
+        /* 1.5rem /* text-base */
     }
+    
+    .card__label {
+        /* Replaces: text-xs font-medium text-slate-500 */
+        line-height: 20px;
+        /* text-sm */
+        color: rgb(100, 116, 139);
+        /* text-slate-500 */
+        display: block;
+    }
+    
     /* ───────────────────────────────────────────── */
     /* .container-typography-font */
     body {
@@ -227,16 +249,24 @@
     }
     
     h2 {
-        font-weight: 700; /* font-bold */
-        font-size: 36px; /* 2.25rem /* text-4xl*/
+        font-weight: 700;
+        /* font-bold */
+        font-size: 36px;
+        /* 2.25rem /* text-4xl*/
     }
+    
     h3 {
-        font-weight: 700; /* font-bold  */
-        font-size: 24px; /* 1.5rem */
+        font-weight: 700;
+        /* font-bold  */
+        font-size: 24px;
+        /* 1.5rem */
     }
+    
     h4 {
-        font-size: 20px; /* 1.25rem /* text-xl*/
-        font-weight: 600; /* font-semibold */
+        font-size: 20px;
+        /* 1.25rem /* text-xl*/
+        font-weight: 600;
+        /* font-semibold */
     }
     
     .supblock h1,
@@ -259,8 +289,17 @@
     }
     
     .card__body-text {
-        font-size: 16px;  /* 1rem /* text-base */
-        font-weight: 600; /* font-semibold*/
+        font-size: 16px;
+        /* 1rem /* text-base */
+        font-weight: 600;
+        /* font-semibold*/
+    }
+    .card__label {
+        /* Replaces: text-xs font-medium text-slate-500 */
+        font-size: 14px;
+        /* 0.875rem /* text-sm */
+        font-weight: 500;
+        /* font-medium */
     }
     /* ───────────────────────────────────────────── */
     /* .container-columns */
