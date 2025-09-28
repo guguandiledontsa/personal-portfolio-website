@@ -238,17 +238,6 @@
 }
 
 /* === Other Inline/Misc Content (Main Supblock) === */
-.card__inline-link {
-    /* Replaces: text-blue-500 hover:underline */
-    color: #3b82f6;
-    /* blue-500 */
-    text-decoration: none;
-    
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
 .card__mark {
     /* Replaces: bg-yellow-200 p-1 rounded-sm */
     background-color: #fde68a;

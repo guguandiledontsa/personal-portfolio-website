@@ -242,6 +242,19 @@
         display: block;
     }
     
+    .card__inline-link {
+        /* Replaces: text-blue-500 hover:underline */
+        /*color: #3b82f6;
+        /* blue-500 */
+        /*text-decoration-line: none;
+        text-decoration-color: initial;
+        
+        &:hover {
+            text-decoration: underline solid;
+        }
+        */
+    }
+    
     /* ───────────────────────────────────────────── */
     /* .container-typography-font */
     body {
@@ -294,6 +307,7 @@
         font-weight: 600;
         /* font-semibold*/
     }
+    
     .card__label {
         /* Replaces: text-xs font-medium text-slate-500 */
         font-size: 14px;
@@ -301,6 +315,7 @@
         font-weight: 500;
         /* font-medium */
     }
+    
     /* ───────────────────────────────────────────── */
     /* .container-columns */
     /* ───────────────────────────────────────────── */

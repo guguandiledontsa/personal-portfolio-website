@@ -175,17 +175,12 @@ const styleData = {
     ]
   },
   // new elements ↓
-  '.card__label': {
+  '.card__inline-link': {
     'Typography': [
-      ['fontSize', '12px'], // text-xs
-      ['fontWeight', '500'], // font-medium
-      ['color', 'rgb(100, 116, 139)'], // text-slate-500
+      ['color', 'rgb(0, 255, 0)'], // text-blue-500
+      ['textDecoration', 'none'], // underline on hover
     ],
-    'Layout': [
-      ['display', 'block'],
-    ]
   },
-  
   '.card__code-block': {
     'Appearance': [
       ['backgroundColor', 'rgb(30, 41, 59)'], // slate-800
@@ -319,7 +314,21 @@ describe('HTML Showcase: Block and Container Tests (Refactored)', () => {
   // --- Dynamic Supblock Tests using a Loop (The Cleaned-Up Part) ---
   supblockConfigs.forEach(config => {
     const selector = `.supblock--${config.modifier}`;
-
+    
+    if (config.modifier === 'header') {
+            testElementStyles(`${selector} .card__label`, {
+        ...styleData['.card__label'],
+        'Typography': [
+          ['fontSize', '12px'], // text-xs
+          ['fontWeight', '500'], // font-medium
+          ['color', 'rgb(100, 116, 139)'], // text-slate-500
+        ],
+        'Layout': [
+          ['display', 'block'],
+        ]
+      });
+    }
+    
     describe(`(${selector})`, () => {
       // Test the main supblock
       testElementStyles(selector, {
@@ -334,7 +343,6 @@ describe('HTML Showcase: Block and Container Tests (Refactored)', () => {
       testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
       testElementStyles(`${selector} .card__title`, styleData['.card__title'], {}, selector);
       testElementStyles(`${selector} .card__subtitle`, styleData['.card__subtitle'], {}, selector);
-      testElementStyles(`${selector} .card__label`, styleData['.card__label'], {}, selector);
     });
   });
   
