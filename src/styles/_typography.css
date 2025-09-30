@@ -244,15 +244,15 @@
     
     .card__inline-link {
         /* Replaces: text-blue-500 hover:underline */
-        /*color: #3b82f6;
+        color: rgb(59, 130, 246);
         /* blue-500 */
-        /*text-decoration-line: none;
+        text-decoration-line: none;
         text-decoration-color: initial;
         
         &:hover {
+            color: rgb(59, 130, 255);
             text-decoration: underline solid;
         }
-        */
     }
     
     /* ───────────────────────────────────────────── */

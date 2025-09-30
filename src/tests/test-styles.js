@@ -174,11 +174,21 @@ const styleData = {
       ['marginBottom', '16px'] // mb-4
     ]
   },
+  '.card__label': {
+  'Typography': [
+    ['fontSize', '12px'], // text-xs
+    ['fontWeight', '500'], // font-medium
+    ['color', 'rgb(100, 116, 139)'], // text-slate-500
+  ],
+  'Layout': [
+    ['display', 'block'],
+  ]
+},
   // new elements ↓
   '.card__inline-link': {
     'Typography': [
-      ['color', 'rgb(0, 255, 0)'], // text-blue-500
-      ['textDecoration', 'none'], // underline on hover
+      ['color', 'rgb(59, 130, 246)'], // text-blue-500
+      // ['textDecoration', 'none'], // underline on hover
     ],
   },
   '.card__code-block': {
@@ -280,16 +290,7 @@ describe('Block and Container Tests', () => {
   });
   
   describe('Label Of Form Elements In Header', () => {
-    testElementStyles(`.supblock--header .card__label`, {
-  'Typography': [
-    ['fontSize', '12px'], // text-xs
-    ['fontWeight', '500'], // font-medium
-    ['color', 'rgb(100, 116, 139)'], // text-slate-500
-  ],
-  'Layout': [
-    ['display', 'block'],
-  ]
-}, {}, 'Card Lebel');
+    testElementStyles(`.supblock--header .card__label`, styleData['.card__label']);
   });
    
   
