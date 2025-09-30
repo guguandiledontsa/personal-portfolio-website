@@ -274,10 +274,24 @@ const supblockConfigs = [
   }
 }];
 
-describe('HTML Showcase: Block and Container Tests (Refactored)', () => {
+describe('Block and Container Tests', () => {
   describe('body Element', () => {
     testElementStyles('body', styleData['body']);
   });
+  
+  describe('Label Of Form Elements In Header', () => {
+    testElementStyles(`.supblock--header .card__label`, {
+  'Typography': [
+    ['fontSize', '12px'], // text-xs
+    ['fontWeight', '500'], // font-medium
+    ['color', 'rgb(100, 116, 139)'], // text-slate-500
+  ],
+  'Layout': [
+    ['display', 'block'],
+  ]
+}, {}, 'Card Lebel');
+  });
+   
   
   // --- Global Supblock Assertions Setup ---
   let allSupblocks = [];
@@ -314,20 +328,6 @@ describe('HTML Showcase: Block and Container Tests (Refactored)', () => {
   // --- Dynamic Supblock Tests using a Loop (The Cleaned-Up Part) ---
   supblockConfigs.forEach(config => {
     const selector = `.supblock--${config.modifier}`;
-    
-    if (config.modifier === 'header') {
-            testElementStyles(`${selector} .card__label`, {
-        ...styleData['.card__label'],
-        'Typography': [
-          ['fontSize', '12px'], // text-xs
-          ['fontWeight', '500'], // font-medium
-          ['color', 'rgb(100, 116, 139)'], // text-slate-500
-        ],
-        'Layout': [
-          ['display', 'block'],
-        ]
-      });
-    }
     
     describe(`(${selector})`, () => {
       // Test the main supblock
