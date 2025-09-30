@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { expect } from 'https://cdn.jsdelivr.net/npm/chai@5.1.1/chai.js';
-import { $style } from './utils.js';
+import { $style, $filteredStyles } from './utils.js';
 
 mocha.setup({ ui: 'bdd', reporter: 'spec' });
 
@@ -52,18 +52,21 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
             const viewportContext = isResponsiveTest ? ' (on medium screen)' : '';
             
             it(`should have ${prop}: "${expected}"${viewportContext}`, () => {
+              
+              const verboseMessage = `\n${JSON.stringify($filteredStyles(el), null, 2)}\n`;
+              
               const computed = getComputedStyle(el)[prop];
               
-              expect(computed, `The property "${prop}" did not return a value.`).to.not.be.empty;
+              expect(computed, `The property "${prop}" did not return a value. ${verboseMessage}`).to.not.be.empty;
               
               if (prop === 'boxShadow' || !expected.endsWith('px')) {
-                expect(computed).to.equal(expected);
+                expect(computed, `Expected ${prop} to be "${expected}", but got "${computed}". ${verboseMessage}`).to.equal(expected);
               } else {
                 const actual = parseFloat(computed);
                 const expectedPx = parseFloat(expected);
                 
                 expect(actual).to.be.closeTo(expectedPx, 0.6,
-                  `Expected ${prop} to be ~${expected}, but got ${computed}`);
+                  `Expected ${prop} to be ~${expected}, but got ${computed}. ${verboseMessage}`);
               }
             });
           });
@@ -175,20 +178,20 @@ const styleData = {
     ]
   },
   '.card__label': {
-  'Typography': [
-    ['fontSize', '12px'], // text-xs
-    ['fontWeight', '500'], // font-medium
-    ['color', 'rgb(100, 116, 139)'], // text-slate-500
-  ],
-  'Layout': [
-    ['display', 'block'],
-  ]
-},
-  // new elements ↓
+    'Typography': [
+      ['fontSize', '12px'], // text-xs
+      ['fontWeight', '500'], // font-medium
+      ['color', 'rgb(100, 116, 139)'], // text-slate-500
+    ],
+    'Layout': [
+      ['display', 'block'],
+    ]
+  },
+  // new elements ↓ working on adding to html n propor tests  
   '.card__inline-link': {
     'Typography': [
       ['color', 'rgb(59, 130, 246)'], // text-blue-500
-      // ['textDecoration', 'none'], // underline on hover
+      ['textDecoration', 'none'], // underline on hover
     ],
   },
   '.card__code-block': {
@@ -292,7 +295,7 @@ describe('Block and Container Tests', () => {
   describe('Label Of Form Elements In Header', () => {
     testElementStyles(`.supblock--header .card__label`, styleData['.card__label']);
   });
-   
+  
   
   // --- Global Supblock Assertions Setup ---
   let allSupblocks = [];
@@ -344,6 +347,9 @@ describe('Block and Container Tests', () => {
       testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
       testElementStyles(`${selector} .card__title`, styleData['.card__title'], {}, selector);
       testElementStyles(`${selector} .card__subtitle`, styleData['.card__subtitle'], {}, selector);
+      if (config.modifier !== 'header') {
+        testElementStyles(`${selector} .card__inline-link`, styleData['.card__inline-link'], {}, selector);
+      }
     });
   });
   

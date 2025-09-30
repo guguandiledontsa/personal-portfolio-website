@@ -97,6 +97,27 @@
    * - `strict`: A shorthand for `layout`, `paint`, and `size`.
    */
     contain: none;
+    
+    /*
+     * Purpose: Provides a fallback size when using `contain` with `content-visibility`.
+     * Syntax: content-visibility: auto | visible | hidden;
+     * When to Use: Optimizes performance by skipping rendering of off-screen content.
+     */
+    content-visibility: visible;
+    
+    /*
+     * Purpose: Defines how the element handles scroll anchoring.
+     * Syntax: overflow-anchor: auto | none;
+     * When to Use: Prevent scroll position "jumping" when content loads above.
+     */
+    overflow-anchor: auto;
+    
+    /*
+     * Purpose: Specifies if/how the browser should optimize element rendering.
+     * Syntax: will-change: <property>;
+     * When to Use: Hint to browser about upcoming changes for performance (e.g., `transform`, `opacity`).
+     */
+    will-change: auto;
 }
 
 .container-flex {
@@ -168,6 +189,14 @@
    * Key Values & Usage: `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `stretch`.
    */
     align-content: stretch;
+    
+    /*
+     * Purpose: Controls how a flex container handles extra space along the cross axis.
+     * Syntax: align-self: <value>; (usually used on children, but container can set default)
+     * Key Values: `auto`, `stretch`, `center`, `flex-start`, `flex-end`, `baseline`
+     * Note: Mostly applies to flex items — useful to define as fallback or override.
+     */
+    align-self: auto;
 }
 
 .container-grid {
@@ -266,6 +295,27 @@
    */
     align-content: start;
     justify-content: start;
+    
+    /*
+     * Purpose: Defines the total number of grid lines (rows/columns) available.
+     * Syntax: grid: <template>; (shorthand)
+     * Note: Already defined in more granular parts, but useful for shorthand flexibility.
+     */
+    grid: none;
+    
+    /*
+     * Purpose: Controls placement of an individual grid item.
+     * Syntax: place-items: <align-items> <justify-items>;
+     * When to Use: A shorthand to align items both vertically and horizontally.
+     */
+    place-items: stretch;
+    
+    /*
+     * Purpose: Controls alignment of content inside the grid container.
+     * Syntax: place-content: <align-content> <justify-content>;
+     * When to Use: A shorthand to align rows/columns inside the container.
+     */
+    place-content: start;
 }
 
 .container-sizing {
@@ -293,6 +343,20 @@
     max-height: none;
     aspect-ratio: auto;
     /* Example: aspect-ratio: 16 / 9; */
+    
+    /*
+     * Purpose: Allows for defining a max ratio between width and height.
+     * Syntax: min-aspect-ratio, max-aspect-ratio: <ratio>;
+     * Status: Not widely supported; prefer `aspect-ratio` for cross-browser use.
+     */
+    /* No action: aspect-ratio already covered. */
+    
+    /*
+     * Purpose: Prevents element from shrinking/growing when set to intrinsic sizing.
+     * Syntax: contain-intrinsic-size: <length>;
+     * When to Use: Provides a fallback size to avoid layout shifts before content is known.
+     */
+    contain-intrinsic-size: auto;
 }
 
 .container-spacing {
@@ -409,7 +473,7 @@
     body {
         padding: 16px;
         
-        @media (min-width: 786px) {
+        @media (min-width: 768px) {
             & {
                 padding: 32px;
             }
@@ -419,7 +483,7 @@
     .supblock {
         padding: 16px;
         
-        @media (min-width: 786px) {
+        @media (min-width: 768px) {
             & {
                 padding: 32px;
             }

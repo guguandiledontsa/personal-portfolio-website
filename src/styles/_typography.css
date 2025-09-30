@@ -61,6 +61,98 @@
     /* Possible values: `solid`, `double`, `dotted`, `dashed`, `wavy`. */
     text-decoration-color: initial;
     text-decoration-thickness: auto;
+    
+    /*
+     * Purpose: Applies a transformation to the text.
+     * Syntax: text-transform: <value>;
+     * Key Values & Usage:
+     * - `none`: No transformation.
+     * - `capitalize`: Capitalizes the first letter of each word.
+     * - `uppercase`: Transforms all letters to uppercase.
+     * - `lowercase`: Transforms all letters to lowercase.
+     */
+    text-transform: none;
+    
+    /*
+     * Purpose: Controls how hyphenation is applied to text.
+     * Syntax: hyphens: <value>;
+     * Key Values & Usage:
+     * - `none`: No hyphenation.
+     * - `manual`: Hyphenation is only applied where there are soft hyphens (`&shy;`).
+     * - `auto`: The browser automatically hyphenates text based on the language.
+     */
+    hyphens: manual;
+    
+    /*
+     * Purpose: Specifies indentation of the first line of text in a block.
+     * Syntax: text-indent: <length>;
+     * When to Use: Often used for paragraph indentation in traditional typography.
+     */
+    text-indent: 0;
+    
+    /*
+     * Purpose: Controls the vertical alignment of inline or inline-block elements.
+     * Syntax: vertical-align: <value>;
+     * Key Values & Usage:
+     * - `baseline`, `top`, `middle`, `bottom`, `text-top`, `text-bottom`.
+     * - `length` or `%`: Relative to the line height.
+     */
+    vertical-align: baseline;
+    
+    /*
+     * Purpose: Specifies the direction in which text is written.
+     * Syntax: direction: <value>;
+     * Key Values & Usage:
+     * - `ltr`: Left to right (default).
+     * - `rtl`: Right to left.
+     * When to Use: Required for supporting right-to-left languages like Arabic or Hebrew.
+     */
+    direction: ltr;
+    
+    /*
+     * Purpose: Specifies whether the Unicode bidirectional algorithm is overridden.
+     * Syntax: unicode-bidi: <value>;
+     * Key Values & Usage:
+     * - `normal`, `embed`, `bidi-override`.
+     * When to Use: Works with `direction` to handle complex bidirectional text scenarios.
+     */
+    unicode-bidi: normal;
+    
+    /*
+     * Purpose: Applies emphasis marks to the text (primarily for East Asian typography).
+     * Syntax: text-emphasis: <style> <symbol> <color>;
+     * Key Values & Usage: `none`, or combinations like `dot filled red`.
+     */
+    text-emphasis: none;
+    
+    /*
+     * Purpose: Controls the alignment of the last line of a block or a line right before a forced line break.
+     * Syntax: text-align-last: <value>;
+     * Key Values & Usage: `auto`, `left`, `right`, `center`, `justify`, `start`, `end`.
+     */
+    text-align-last: auto;
+    
+    /*
+     * Purpose: Defines how underlines and other text decorations are positioned relative to the text.
+     * Syntax: text-underline-position: <value>;
+     * Key Values & Usage: `auto`, `under`, `left`, `right`.
+     * When to Use: Helpful in languages or fonts where default underline overlaps glyphs.
+     */
+    text-underline-position: auto;
+    
+    /*
+     * Purpose: Allows multiple lines of text to truncate with an ellipsis when overflowing.
+     * Syntax: -webkit-line-clamp: <number>;
+     * When to Use: Combine with `display: -webkit-box` and `-webkit-box-orient: vertical` to enable line clamping in WebKit-based browsers.
+     */
+    -webkit-line-clamp: none;
+    
+    /*
+     * Purpose: Specifies the number of lines to which a block of text is limited.
+     * Syntax: line-clamp: <number>;
+     * When to Use: Newer standard (better than `-webkit-line-clamp`) for limiting visible lines of text.
+     */
+    line-clamp: none;
 }
 
 .container-typography-font {
@@ -165,8 +257,9 @@
 /* ───────────────────────────────────────────── */
 /* _typography.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
 @layer topographies {
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
     
     /* ───────────────────────────────────────────── */
     /* .container-typography */
@@ -183,7 +276,7 @@
         text-align: center;
         /* text-center */
         
-        @media (min-width: 786px) {
+        @media (min-width: 768px) {
             & {
                 text-align: left;
                 /* md:text-left */
@@ -244,14 +337,14 @@
     
     .card__inline-link {
         /* Replaces: text-blue-500 hover:underline */
-        color: rgb(59, 130, 246);
-        /* blue-500 */
-        text-decoration-line: none;
-        text-decoration-color: initial;
+        color: rgb(59, 130, 246) !important; /* FIX!!  body.color is inheret€d to here  */
+        /* Same as Tailwind's text-blue-500 */
+        text-decoration: none;
         
         &:hover {
-            color: rgb(59, 130, 255);
-            text-decoration: underline solid;
+            & {
+                text-decoration: underline solid blue !important /* FIX!!*/;
+            }
         }
     }
     
