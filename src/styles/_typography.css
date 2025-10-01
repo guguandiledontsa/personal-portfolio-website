@@ -357,6 +357,14 @@
         /* slate-50 */
     }
     
+    .card__figcaption {
+        /* Replaces: text-sm text-slate-500 italic mb-2 */
+        color: rgb(100, 116, 139);
+        /* text-slate-500 */
+        margin-bottom: 8px;
+        /* 0.5rem /* mb-2 */
+    }
+    
     /* ───────────────────────────────────────────── */
     /* .container-typography-font */
     body {
@@ -418,11 +426,18 @@
         /* font-medium */
     }
     
-    
     .card__code-block {
         /* Replaces: bg-slate-800 text-slate-50 rounded-md p-3 text-xs overflow-x-auto mt-2 */
         font-size: 12px;
         /* 0.75rem /* text-xs */
+    }
+    
+    .card__figcaption {
+        /* Replaces: text-sm text-slate-500 italic mb-2 */
+        font-size: 20px;
+        /* text-sm /* 0.875rem */
+        font-style: italic;
+        /* italic */
     }
     
     /* ───────────────────────────────────────────── */

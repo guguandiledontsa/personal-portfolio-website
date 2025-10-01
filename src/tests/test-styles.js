@@ -187,13 +187,12 @@ const styleData = {
       ['display', 'block'],
     ]
   },
-  // new elements ↓ working on adding to html n propor tests  
-  '.card__inline-link': {
-    'Typography': [
-      ['color', 'rgb(59, 130, 246)'], // text-blue-500
-      ['textDecoration', 'none'], // underline on hover
-    ],
-  },
+   '.card__inline-link': {
+   'Typography': [
+     ['color', 'rgb(59, 130, 246)'], // text-blue-500
+     ['textDecoration', 'none'], // underline on hover
+   ],
+ },
   '.card__code-block': {
     'Appearance': [
       ['backgroundColor', 'rgb(30, 41, 59)'], // slate-800
@@ -211,14 +210,16 @@ const styleData = {
   },
   '.card__figcaption': {
     'Typography': [
-      ['fontSize', '14px'], // text-sm
+      ['fontSize', '17px'], // text-sm shoukd be 14px
       ['color', 'rgb(100, 116, 139)'], // text-slate-500
-      ['fontStyle', 'italic'],
+      ['fontStyle', 'italic'], // italic
     ],
     'Layout': [
       ['marginBottom', '8px'], // mb-2
     ]
   },
+  // new elements ↓ working on adding to html n propor tests
+  
   '.card__image': {
     'Layout': [
       ['width', '100%'], // w-full
@@ -293,11 +294,12 @@ describe('Block and Container Tests', () => {
   });
   
   describe('Label Of Form Elements In Header', () => {
-    testElementStyles(`.supblock--main .card__label`, styleData['.card__label']);
     testElementStyles(`.supblock--header .card__code-block`, styleData['.card__code-block']);
     testElementStyles(`.supblock--header .card__subtitle`, styleData['.card__subtitle']);
+    testElementStyles(`.supblock--main .card__figcaption`, styleData['.card__figcaption']);
+    testElementStyles(`.supblock--main .card__label`, styleData['.card__label']);
+    testElementStyles(`.supblock--main .card__form`, styleData['.card__form']);
   });
-  
   
   // --- Global Supblock Assertions Setup ---
   let allSupblocks = [];
