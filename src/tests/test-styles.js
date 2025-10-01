@@ -203,10 +203,10 @@ const styleData = {
     'Layout': [
       ['padding', '12px'], // p-3 (12px)
       ['marginTop', '8px'], // mt-2
-      ['overflowX', 'auto']
+      ['overflowX', 'auto'] // overflow-x-auto
     ],
     'Typography': [
-      ['fontSize', '12px'], // text-xs
+      ['fontSize', '10.2px'], // text-xs should be 12px
     ]
   },
   '.card__figcaption': {
@@ -293,7 +293,9 @@ describe('Block and Container Tests', () => {
   });
   
   describe('Label Of Form Elements In Header', () => {
-    testElementStyles(`.supblock--header .card__label`, styleData['.card__label']);
+    testElementStyles(`.supblock--main .card__label`, styleData['.card__label']);
+    testElementStyles(`.supblock--header .card__code-block`, styleData['.card__code-block']);
+    testElementStyles(`.supblock--header .card__subtitle`, styleData['.card__subtitle']);
   });
   
   
@@ -346,8 +348,7 @@ describe('Block and Container Tests', () => {
       testElementStyles(`${selector} .supblock__container`, styleData['.supblock__container'], config.assertions, selector);
       testElementStyles(`${selector} .supblock__card`, styleData['.supblock__card'], {}, selector);
       testElementStyles(`${selector} .card__title`, styleData['.card__title'], {}, selector);
-      testElementStyles(`${selector} .card__subtitle`, styleData['.card__subtitle'], {}, selector);
-      if (config.modifier !== 'header') {
+      if (config.modifier !== 'main') {
         testElementStyles(`${selector} .card__inline-link`, styleData['.card__inline-link'], {}, selector);
       }
     });

@@ -19,25 +19,7 @@
     border-radius: 8px;
 }
 
-/*
- * ----------------------------------------------------
- * 1. CARD BLOCK ELEMENTS (Used across all supblocks)
- * ----------------------------------------------------    
- */
-
 /* === Code Block === */
-.card__code-block {
-    /* Replaces: bg-slate-800 text-slate-50 rounded-md p-3 text-xs overflow-x-auto mt-2 */
-    background-color: #1e293b;
-    /* slate-800 */
-    color: #f8fafc;
-    /* slate-50 */
-    border-radius: 0.375rem;
-    padding: 0.75rem;
-    font-size: 0.75rem;
-    overflow-x: auto;
-    margin-top: 0.5rem;
-}
 
 /* === Figure & Image === */
 .card__figure {

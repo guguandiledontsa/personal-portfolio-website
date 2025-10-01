@@ -337,15 +337,24 @@
     
     .card__inline-link {
         /* Replaces: text-blue-500 hover:underline */
-        color: rgb(59, 130, 246) !important; /* FIX!!  body.color is inheret€d to here  */
+        color: rgb(59, 130, 246) !important;
+        /* FIX!!  body.color is inheret€d to here  */
         /* Same as Tailwind's text-blue-500 */
         text-decoration: none;
         
         &:hover {
             & {
-                text-decoration: underline solid blue !important /* FIX!!*/;
+                text-decoration: underline solid blue !important
+                    /* FIX!!*/
+                ;
             }
         }
+    }
+    
+    .card__code-block {
+        /* Replaces: bg-slate-800 text-slate-50 rounded-md p-3 text-xs overflow-x-auto mt-2 */
+        color: rgb(248, 250, 252);
+        /* slate-50 */
     }
     
     /* ───────────────────────────────────────────── */
@@ -407,6 +416,13 @@
         /* 0.875rem /* text-sm */
         font-weight: 500;
         /* font-medium */
+    }
+    
+    
+    .card__code-block {
+        /* Replaces: bg-slate-800 text-slate-50 rounded-md p-3 text-xs overflow-x-auto mt-2 */
+        font-size: 12px;
+        /* 0.75rem /* text-xs */
     }
     
     /* ───────────────────────────────────────────── */
