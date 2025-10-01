@@ -15,272 +15,247 @@
     <script type="module" src="./tests/test-styles.js"></script>
     
     <header class="supblock supblock--header shadow-xl">
-        <h2>Header Supblock: All the Fixin's</h2>
+        <h2>Header Supblock: Typography & Structure Tests</h2>
         <div class="grid-container grid-container--header">
-            <!-- Parent: Div -->
-            <div class="supblock__container supblock__container--header">
-                <h3>Parent: Div</h3>
-                <div class="supblock__card supblock__card--header shadow-sm">
-                    <p class="card__title">Div > Div Card: Typography</p>
-                    <p class="card__subtitle card__subtitle--mt2">This card shows off different text tags.</p>
-                    <p><cite>This is a <<em>cite</em>> tag.</cite> The <q>
-                            <<em>q</em>> tag is for inline quotes.
-                        </q></p>
-                    <p>You can use <strong>strong</strong> or <em>em</em> for emphasis. An abbreviation is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
-                    <p>Here's a sub-scripted number: H<sub>2</sub>O and a super-scripted one: 2<sup>3</sup>.</p>
+            
+            <section class="supblock__container supblock__container--header">
+                <h3>Block Text & Code</h3>
+                
+                <div class="supblock__card shadow-sm">
+                    <p class="card__title">Article: Typography Stress Test</p>
+                    <p class="card__subtitle card__subtitle--mt2">
+                        This card tests **inline vs block styles**. Here's a
+                        <a href="#" class="card__inline-link">standard `&lt;a&gt;` link</a>,
+                        a deleted text `<del>and a delete tag</del>`,
+                        and an inserted one `<ins>plus an insert tag</ins>`.
+                        The `<abbr title="Cascading Style Sheets">CSS</abbr>`
+                        is <strong>strong</strong>, but <em>emphasis</em> is important.
+                    </p>
+                    <p><cite>This is a &lt;cite&gt; tag.</cite> The &lt;q&gt; "inline quote" is great.</p>
                 </div>
-                <section class="supblock__card supblock__card--header shadow-sm">
-                    <p class="card__title">Div > Section Card: Code</p>
-                    <h4>Example of `pre` and `code`</h4>
-                    <!-- potentially a 2d element -->
-                    <pre class="bg-slate-800 text-slate-50 rounded-md p-3 text-xs overflow-x-auto mt-2">
-<code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-  ...
-&lt;/html&gt;</code></pre>
-                </section>
-                <article class="supblock__card supblock__card--header shadow-sm">
-                    <p class="card__title">Div > Article Card: Figure & Picture</p>
-                    <!-- potentially a 2d element -->
-                    <figure class="mt-2">
-                        <figcaption class="text-sm text-slate-500 italic mb-2">A `<<em>picture</em>>` element for responsive images.</figcaption>
+                
+                <article class="supblock__card shadow-sm">
+                    <p class="card__title">Article: Blockquote & Code</p>
+                    <blockquote class="italic text-slate-600 mt-2 border-l-4 border-slate-400 pl-4">
+                        "Creativity is just connecting things."
+                    </blockquote>
+                    <cite class="text-right text-sm text-slate-500 mt-1 block">— Steve Jobs</cite>
+                    
+                    <h4>&lt;pre&gt; and &lt;code&gt;</h4>
+                    <pre class="card__code-block bg-slate-800 text-slate-50 rounded-md p-3 text-xs overflow-x-auto mt-2"><code>console.log('Hello World');
+// This is a comment
+const x = 5;</code>
+                    </pre>
+                </article>
+                
+                <div class="supblock__card shadow-sm">
+                    <p class="card__title">Div: Details & Progress</p>
+                    <details class="mt-2">
+                        <summary class="font-medium cursor-pointer">Click to reveal status</summary>
+                        <p class="card__subtitle card__subtitle--mt2">Task Completion:</p>
+                        <progress class="w-full mt-1" value="80" max="100"></progress>
+                        <meter class="w-full mt-2" value="0.75" min="0" max="1"></meter>
+                    </details>
+                </div>
+                
+            </section>
+            
+            <section class="supblock__container supblock__container--header">
+                <h3>Lists & Tables</h3>
+                
+                <div class="supblock__card shadow-sm">
+                    <p class="card__title">Div: List Style Overrides</p>
+                    <h4 class="card__body-text">Unordered List Stress (ul > li > a/p/span):</h4>
+                    <ul class="list-disc ml-6 card__subtitle space-y-2">
+                        <li>
+                            <a href="#" class="card__inline-link block">Link Item (Should inherit link style)</a>
+                            <p class="text-xs text-slate-500 italic">Small text below the link</p>
+                        </li>
+                        <li class="font-bold">
+                            List Item with <span class="text-red-500">Custom Span</span>
+                        </li>
+                        <li>
+                            Step Three
+                            <p>This is a paragraph inside the `&lt;li&gt;`.</p>
+                        </li>
+                    </ul>
+                    <h4 class="card__body-text mt-4">Description List Stress (dl > dt/dd):</h4>
+                    <dl class="card__subtitle">
+                        <dt class="font-medium mt-2">Term One</dt>
+                        <dd class="ml-4 italic text-sm">Definition One (Testing DD style)</dd>
+                        <dt class="font-medium mt-2"><a href="#" class="card__inline-link">Term Two Link</a></dt>
+                        <dd class="ml-4 italic text-sm">Definition Two</dd>
+                    </dl>
+                </div>
+                
+                <article class="supblock__card shadow-sm">
+                    <p class="card__title">Article: Table Structure Test</p>
+                    <table class="w-full mt-2 border-collapse">
+                        <caption>Monthly Sales Summary</caption>
+                        <thead>
+                            <tr class="bg-slate-200">
+                                <th class="p-2 border border-slate-300 text-left">Product</th>
+                                <th class="p-2 border border-slate-300 text-left">Quantity</th>
+                                <th class="p-2 border border-slate-300 text-left">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white">
+                                <td class="p-2 border border-slate-300 font-medium">Laptops</td>
+                                <td class="p-2 border border-slate-300">150</td>
+                                <td class="p-2 border border-slate-300">$150,000</td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                                <td class="p-2 border border-slate-300">Monitors</td>
+                                <td class="p-2 border border-slate-300">300</td>
+                                <td class="p-2 border border-slate-300 text-blue-500 font-bold">$75,000</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="p-2 border border-slate-300 bg-slate-300 font-bold" colspan="2">Grand Total</td>
+                                <td class="p-2 border border-slate-300 bg-slate-300 font-bold">$225,000</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </article>
+                
+            </section>
+        </div>
+    </header>
+    
+    <main class="supblock supblock--main shadow-xl">
+        <h2>Main Supblock: Forms & Media Tests</h2>
+        <div class="grid-container grid-container--main">
+            
+            <section class="supblock__container supblock__container--main">
+                <h3>Complex Forms</h3>
+                
+                <article class="supblock__card shadow-sm">
+                    <p class="card__title">Article: Form & Fieldset with Inputs</p>
+                    <form class="mt-2 space-y-3 card__form">
+                        <fieldset class="border border-slate-300 rounded-md p-3 card__fieldset">
+                            <legend class="text-sm font-semibold">User Preferences</legend>
+                            
+                            <div class="flex flex-col space-y-1 mb-3">
+                                <p class="text-xs font-medium text-slate-500">Choose Options:</p>
+                                <div class="flex items-center space-x-2">
+                                    <input type="checkbox" id="pref1" name="pref1" checked>
+                                    <label for="pref1" class="card__label inline">Receive Alerts</label>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <input type="checkbox" id="pref2" name="pref2">
+                                    <label for="pref2" class="card__label inline">Save Progress</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-3">
+                                <label for="range" class="card__label">Volume Level (<output for="range">50</output>)</label>
+                                <input type="range" id="range" min="0" max="100" value="50" oninput="this.nextElementSibling.value=this.value" class="w-full">
+                            </div>
+                            
+                            <div class="flex justify-between space-x-4 mt-3">
+                                <div>
+                                    <label for="color" class="card__label">Color:</label>
+                                    <input type="color" id="color" value="#3b82f6" class="mt-1">
+                                </div>
+                                <div>
+                                    <label for="time" class="card__label">Time:</label>
+                                    <input type="time" id="time" class="mt-1 p-1 border border-slate-300 rounded-md">
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 transition-colors text-white p-2 rounded-md">Save Settings</button>
+                    </form>
+                </article>
+                
+                <div class="supblock__card shadow-sm">
+                    <p class="card__title">Div: Dropdown & Datalist</p>
+                    <label for="dropdown" class="card__label block mt-2">Select an Option:</label>
+                    <select id="dropdown" class="mt-1 p-2 border border-slate-300 rounded-md w-full">
+                        <optgroup label="Primary">
+                            <option value="a">Option A</option>
+                            <option value="b">Option B</option>
+                        </optgroup>
+                        <optgroup label="Secondary">
+                            <option value="c">Option C</option>
+                        </optgroup>
+                    </select>
+                    
+                    <label for="data-list" class="card__label block mt-4">Search/Suggest (datalist):</label>
+                    <input list="options-list" id="data-list" class="mt-1 p-2 border border-slate-300 rounded-md w-full">
+                    <datalist id="options-list">
+                        <option value="Suggestion One"></option>
+                        <option value="Suggestion Two"></option>
+                        <option value="Another Suggestion"></option>
+                    </datalist>
+                </div>
+                
+            </section>
+            
+            <section class="supblock__container supblock__container--main">
+                <h3>Media & Embeds</h3>
+                
+                <article class="supblock__card shadow-sm">
+                    <p class="card__title">Article: Image & Figure</p>
+                    <figure class="card__media">
+                        <figcaption class="card__figcaption">A responsive &lt;picture&gt; element.</figcaption>
                         <picture>
                             <source media="(max-width: 768px)" srcset="https://placehold.co/300x200/475569/94A3B8?text=Mobile">
-                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Desktop" alt="A responsive placeholder image." class="w-full rounded-md">
+                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Desktop" alt="A responsive placeholder image." class="card__image">
                         </picture>
                     </figure>
                 </article>
-            </div>
-            <!-- Parent: Section -->
-            <section class="supblock__container supblock__container--header">
-                <h3>Parent: Section</h3>
-                <div class="supblock__card supblock__card--header shadow-sm">
-                    <p class="card__title">Section > Div Card: Video & Audio</p>
+                
+                <div class="supblock__card shadow-sm">
+                    <p class="card__title">Div: Video & Audio</p>
                     <p class="card__subtitle card__subtitle--mt2">An audio and video element with controls.</p>
-                    <!-- potentially a 2d element -->
-                    <video width="100%" height="auto" controls class="mt-2 rounded-md bg-slate-200">
-                        <!-- Use placeholder video or a static video from a CDN if needed -->
+                    
+                    <video width="100%" height="auto" controls class="card__media">
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <audio controls class="w-full mt-4">
-                        <!-- Use a placeholder audio or a static audio from a CDN if needed -->
+                    
+                    <audio controls class="card__audio">
                         <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
-                <section class="supblock__card supblock__card--header shadow-sm">
-                    <p class="card__title">Section > Section Card: Forms</p>
-                    <!-- potentially a 2d element -->
-                    
-                    <form class="mt-2 space-y-3">
-                        <fieldset class="border border-slate-300 rounded-md p-3">
-                            <legend class="bym">Contact Information</legend>
-                            <div>
-                                <label for="name1" class="card__label">Full Name</label>
-                                <input type="text" id="name1" class="w-full p-2 border border-slate-300 rounded-md mt-1">
-                            </div>
-                            <div>
-                                <label for="email1" class="card__label">Email</label>
-                                <input type="email" id="email1" class="w-full p-2 border border-slate-300 rounded-md mt-1">
-                            </div>
-                            <div>
-                                <label for="message1" class="card__label">Message</label>
-                                <textarea id="message1" rows="3" class="w-full p-2 border border-slate-300 rounded-md mt-1"></textarea>
-                            </div>
-                            <div>
-                                <label for="file" class="card__label">File</label>
-                                <input type="file" id="file">
-                            </div>
-                        </fieldset>
-                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 transition-colors text-white p-2 rounded-md">Submit Form</button>
-                    </form>
-                </section>
-                <article class="supblock__card supblock__card--header shadow-sm">
-                    <p class="card__title">Section > Article Card: Interactive</p>
-                    <!-- potentially a 2d element -->
-                    <details class="mt-2">
-                        <summary class="font-medium cursor-pointer">Click to reveal details</summary>
-                        <p class="card__subtitle card__subtitle--mt2">Here is a paragraph of detailed information that was hidden by default.</p>
-                    </details>
-                </article>
-            </section>
-        </div>
-        <!-- Parent: Article -->
-        <article class="supblock__container supblock__container--header">
-            <h3>Parent: Article</h3>
-            <div class="supblock__card supblock__card--header shadow-sm">
-                <p class="card__title">Article > Div Card: Blockquotes</p>
-                <!-- potentially a 2d element -->
-                <blockquote class="italic text-slate-600 mt-2 border-l-4 border-slate-400 pl-4">
-                    "The best time to plant a tree was 20 years ago. The second best time is now."
-                </blockquote>
-                <cite class="text-right text-sm text-slate-500 mt-1">— Chinese Proverb</cite>
-            </div>
-            <section class="supblock__card supblock__card--header shadow-sm">
-                <p class="card__title">Article > Section Card: Tables</p>
-                <!-- potentially a 2d element -->
-                <table class="w-full mt-2 border-collapse">
-                    <thead>
-                        <tr class="bg-slate-200">
-                            <th class="p-2 border border-slate-300 text-left">Item</th>
-                            <th class="p-2 border border-slate-300 text-left">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="bg-white">
-                            <td class="p-2 border border-slate-300">Apple</td>
-                            <td class="p-2 border border-slate-300">$1.00</td>
-                        </tr>
-                        <tr class="bg-slate-50">
-                            <td class="p-2 border border-slate-300">Orange</td>
-                            <td class="p-2 border border-slate-300">$1.50</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <article class="supblock__card supblock__card--header shadow-sm">
-                <p class="card__title">Article > Article Card: Lists</p>
-                <h4 class="card__body-text">Ordered List:</h4>
-                <ol class="list-decimal ml-6 card__subtitle">
-                    <li>Step One</li>
-                    <li>Step Two</li>
-                    <li>Step Three</li>
-                </ol>
-                <h4 class="card__body-text">Unordered List:</h4>
-                <ul class="list-disc ml-6 card__subtitle">
-                    <li>Item A</li>
-                    <li>Item B</li>
-                    <li>Item C</li>
-                </ul>
-                <h4 class="card__body-text">Description List:</h4>
-                <dl class="card__subtitle">
-                    <dt class="font-medium">Coffee</dt>
-                    <dd class="ml-4 italic">A dark, bitter beverage.</dd>
-                    <dt class="font-medium mt-2">Milk</dt>
-                    <dd class="ml-4 italic">A white liquid.</dd>
-                </dl>
                 
-                <label for="dropdown" class="card__body-text">Dropdown:</label>
-                <select id="dropdown">
-                    <optgroup label="Group 1">
-                        <option value="a">Option A</option>
-                    </optgroup>
-                </select>
-                <br>
-                <label for="data-list" class="card__body-text">Data List:</label>
-                <input list="options-list" id="data-list">
-                <datalist id="options-list">
-                    <option value="Suggestion"></option>
-                </datalist>
-            </article>
-        </article>
-    </header>
-    
-    <main class="supblock supblock--main shadow-xl">
-        <h2>Main Supblock: More Savory Dishes</h2>
-        <div class="grid-container grid-container--main">
-            <!-- Parent: Div -->
-            <div class="supblock__container supblock__container--main">
-                <h3>Parent: Div</h3>
-                <div class="supblock__card supblock__card--main shadow-sm">
-                    <p class="card__title">Div > Div Card: Inline Content</p>
-                    <p class="mt-2 text-sm">
-                        <small>This is a <<code>small</code>> tag</small> and a <mark class="bg-yellow-200 p-1 rounded-sm">marked tag</mark> within a paragraph. We can also add an <a href="#" class="card__inline-link">inline link</a>.
-                    </p>
-                </div>
-                <section class="supblock__card supblock__card--main shadow-sm">
-                    <p class="card__title">Div > Section Card: Semantic Tags</p>
-                    <h4>A Section of Content</h4>
-                    <p class="card__subtitle">This section contains a heading and a short paragraph to demonstrate a basic content block, using a `section` element.</p>
-                </section>
-                <article class="supblock__card supblock__card--main shadow-sm">
-                    <p class="card__title">Div > Article Card: A Form with Radio Buttons</p>
-                    <!-- potentially a 2d element -->
-                    <form class="mt-2 space-y-2">
-                        <h4>Favorite Color</h4>
-                        <div class="flex items-center space-x-2">
-                            <input type="radio" id="red" name="color" value="red" class="text-red-500">
-                            <label for="red">Red</label>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <input type="radio" id="blue" name="color" value="blue" class="text-blue-500">
-                            <label for="blue">Blue</label>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <input type="radio" id="green" name="color" value="green" class="text-green-500">
-                            <label for="green">Green</label>
-                        </div>
-                    </form>
-                    <!-- potentially a 2d element -->
-                    <form class="mt-2 space-y-2">
-                        <h4>Second Favorites</h4>
-                        <div class="flex items-center spyace-x-2">
-                            <input type="checkbox" id="red" name="color" value="red" class="text-red-500">
-                            <label for="red">Red</label>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <input type="checkbox" id="blue" name="color" value="blue" class="text-blue-500">
-                            <label for="blue">Blue</label>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <input type="checkbox" id="green" name="color" value="green" class="text-green-500">
-                            <label for="green">Green</label>
-                        </div>
-                    </form>
-                </article>
-            </div>
-            <!-- Parent: Section -->
-            <section class="supblock__container supblock__container--main">
-                <h3>Parent: Section</h3>
-                <div class="supblock__card supblock__card--main shadow-sm">
-                    <p class="card__title">Section > Div Card: Progress, Meter and Inputs</p>
-                    <p class="card__subtitle card__subtitle--mt2">This shows a `<<em>progress</em>>` element.</p>
-                    <progress class="w-full mt-1" value="80" max="100"></progress>
-                    <p class="card__subtitle card__subtitle--mt4">This shows a `<<em>meter</em>>` element.</p>
-                    <meter class="w-full" value="0.75" min="0" max="1"></meter>
-                    <p class="card__subtitle card__subtitle--mt4">Below is an `<<em>input</em>>` tag of `<code>type='time'</code>`.</p>
-                    <input type="time" id="time">
-                    <p class="card__subtitle card__subtitle--mt4">Below is an `<<em>input</em>>` tag of `<code>type='color'</code>`.</p>
-                    <input type="color" id="color">
-                    <p class="card__subtitle card__subtitle--mt4">Below is an `<<em>input</em>>` tag of `<code>type='range'</code>`.</p>
-                    <input type="range" id="range" min="0" max="100">
-                </div>
-            </section>
-            <!-- Parent: Article -->
-            <article class="supblock__container supblock__container--main">
-                <h3>Parent: Article</h3>
-                <div class="supblock__card supblock__card--main shadow-sm">
-                    <p class="card__title">Article > Div Card: Iframe</p>
-                    <p class="card__subtitle card__subtitle--mt2">
-                        This is an `iframe` embedding a small piece of content.
-                    </p>
-                    <!-- potentially a 2d element -->
+                <div class="supblock__card shadow-sm">
+                    <p class="card__title">Div: Iframe/Embed</p>
+                    <p class="card__subtitle card__subtitle--mt2">An embedded &lt;iframe&gt; (56.25% aspect ratio).</p>
                     <div class="relative w-full mt-2 h-0 pb-[56.25%]">
                         <iframe class="absolute top-0 left-0 w-full h-full rounded-md" src="https://www.wikipedia.org/" title="Wikipedia" frameborder="0"></iframe>
                     </div>
                 </div>
-            </article>
+                
+            </section>
         </div>
     </main>
     
     <footer class="supblock supblock--footer shadow-xl">
-        <h2>Footer Supblock: Sweet Desserts</h2>
+        <h2>Footer Supblock: Navigation & Meta</h2>
         <div class="grid-container grid-container--footer">
             <article class="supblock__container supblock__container--footer">
                 <h3>Parent: Article</h3>
-                <div class="supblock__card supblock__card--footer shadow-sm">
-                    <p class="card__title">Article > Div Card: Print & Contact</p>
-                    <p class="card__subtitle card__subtitle--mt2">This footer content includes a `<<em>nav</em>>` element with a list of links and some `small` text for copyright information.</p>
-                    <!-- potentially a 2d element -->
+                <div class="supblock__card shadow-sm">
+                    <p class="card__title">Article > Div Card: Navigation & Copyright</p>
+                    
                     <nav class="mt-4">
                         <ul class="flex justify-center space-x-4">
-                            <li><a href="#" class="card__inline-link">Privacy Policy</a></li>
-                            <li><a href="#" class="card__inline-link">Terms of Service</a></li>
-                            <li><a href="#" class="card__inline-link">Contact Us</a></li>
+                            <li><a href="#" class="card__inline-link">Privacy</a></li>
+                            <li><a href="#" class="card__inline-link">Terms</a></li>
+                            <li><a href="#" class="card__inline-link">Contact</a></li>
                         </ul>
                     </nav>
-                    <small class="text-center text-xs text-slate-500 mt-4">
+                    
+                    <address class="text-center text-sm italic mt-4">
+                        123 Web Dev Lane, HTML City, 90210
+                    </address>
+                    
+                    <small class="text-center text-xs text-slate-500 mt-4 block">
                         &copy; 2024 Your Company. All Rights Reserved.
                     </small>
                 </div>
