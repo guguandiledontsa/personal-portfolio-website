@@ -19,68 +19,86 @@
     border-radius: 8px;
 }
 
-/* === Code Block === */
-
 /* === Figure & Image === */
 .card__figure {
     /* Replaces: mt-2 */
-    margin-top: 0.5rem;
+    margin-top: 8px;
+    /* 0.5rem /* mt-2 */
 }
 
 .card__image {
     /* Replaces: w-full rounded-md */
     width: 100%;
-    border-radius: 0.375rem;
+    /* w-full */
+    border-radius: 6px;
+    /* 0.375rem /* rounded-md */
 }
 
 /* === Media Elements (Video/Audio) === */
 .card__media {
     /* Replaces: mt-2 rounded-md bg-slate-200 */
-    margin-top: 0.5rem;
-    border-radius: 0.375rem;
-    background-color: #e2e8f0;
-    /* slate-200 */
+    margin-top: 8px;
+    /* 0.5rem /* mt-2 */
+    border-radius: 6px;
+    /* 0.375rem /* rounded-md */
+    background-color: rgb(226, 232, 240);
+    /* bg-slate-200 */
 }
 
 .card__audio {
     /* Replaces: w-full mt-4 */
     width: 100%;
+    /* w-full */
     margin-top: 1rem;
+    /* mt-4 */
 }
 
 /* === Form Elements === */
 
 .card__form-group {
-    /* Replaces: div space-y separation */
-    margin-top: 0.75rem;
+    /* Replaces: div space-y separation ??? */
+    margin-top: 12px;
+    /* 0.75rem; /* mt-3 */
 }
 
 .card__fieldset {
     /* Replaces: border border-slate-300 p-3 rounded-md */
-    border: 1px solid #cbd5e1;
-    /* slate-300 */
-    padding: 0.75rem;
-    border-radius: 0.375rem;
-    margin-bottom: 0.75rem;
+    border: 1px solid rgb(203, 213, 225);
+    /* border border-slate-300 */
+    padding: 12px;
+    /* 0.75rem; /* p-3 */
+    border-radius: 6px;
+    /* 0.375rem /* rounded-md */
+    margin-bottom: 12px;
+    /* 0.75rem; /* mb-3 */
     /* Add spacing below fieldset */
 }
 
 .card__legend {
     /* Replaces: text-sm font-medium */
-    font-size: 0.875rem;
+    font-size: 14px;
+    /* 0.875rem; /* text-sm */
+    line-height: 20px;
+    /* text-sm*/
     font-weight: 500;
-    padding: 0 0.25rem;
+    /* font-medium */
+    padding: 0 4px;
+    /* 0 0.25rem */
     /* give it some space to cut the border */
 }
 
 .card__input {
     /* Replaces: w-full p-2 border border-slate-300 rounded-md mt-1 */
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #cbd5e1;
+    padding: 8px;
+    /* 0.5rem /* p-2 */
+    border: 1px solid rgb(203, 213, 225);
     /* slate-300 */
-    border-radius: 0.375rem;
-    margin-top: 0.25rem;
+    border-radius: 6px;
+    /* 0.375rem /* rounded-md */
+    margin-top: 4px;
+    /* 0.25rem; /* mt-1 */
+    width: 100%;
+    /* w-full */
     box-sizing: border-box;
     /* Crucial for w-full padding */
 }
@@ -93,9 +111,13 @@
 .card__button {
     /* Replaces: w-full p-2 rounded-md transition-colors */
     width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.375rem;
+    /* w-full */
+    padding: 8px;
+    /* 0.5rem /* p-2 */
+    border-radius: 6px;
+    /* 0.375rem /* rounded-md */
     transition: background-color 0.15s ease-in-out;
+    /* transition-colors*/
     border: none;
     cursor: pointer;
 }
@@ -103,13 +125,14 @@
 .card__button--primary {
     /* Replaces: bg-blue-500 text-white hover:bg-blue-600 */
     background-color: #3b82f6;
-    /* blue-500 */
+    /* bg-blue-500 */
     color: white;
-}
-
-.card__button--primary:hover {
-    background-color: #2563eb;
-    /* blue-600 */
+    /* text-white */
+    
+    &:hover {
+        background-color: rgb(37, 99, 235);
+        /* bg-blue-600 */
+    }
 }
 
 /* === Blockquote/Cite === */
@@ -118,56 +141,68 @@
     font-style: italic;
     color: #475569;
     /* slate-600 */
-    margin-top: 0.5rem;
-    border-left: 4px solid #94a3b8;
+    margin-top: 8px;
+    /* 0.5rem; /* mt-2 */
+    border-left: 4px solid rgb(148, 163, 184);
     /* slate-400 */
-    padding-left: 1rem;
+    padding-left: 16px;
+    /* 1rem; /* pl-4 */
 }
 
 .card__cite {
     /* Replaces: text-right text-sm text-slate-500 mt-1 */
     display: block;
+    /* text-right */
     text-align: right;
-    font-size: 0.875rem;
-    color: #64748b;
-    /* slate-500 */
-    margin-top: 0.25rem;
+    /* text-right */
+    font-size: 14px;
+    /* 0.875rem; /* text-sm */
+    line-height: 20px;
+    /* text-sm*/
+    color: rgb(100, 116, 139);
+    /* text-slate-500 */
+    margin-top: 4px;
+    /* 0.25rem; /* mt-1 */
 }
 
 /* === Table Elements (Nested Block: 'card__table') === */
 .card__table {
     /* Replaces: w-full mt-2 border-collapse */
     width: 100%;
-    margin-top: 0.5rem;
+    /* w-full */
+    margin-top: 8px;
+    /* 0.5rem /* mt-2 */
     border-collapse: collapse;
+    /* border-collapse */
     table-layout: fixed;
     /* Optional, but helps with full width */
 }
 
 .card__table-row--header {
     /* Replaces: bg-slate-200 */
-    background-color: #e2e8f0;
+    background-color: rgb(226, 232, 240);
     /* slate-200 */
 }
 
 .card__table-row--alt {
     /* Replaces: bg-slate-50 */
-    background-color: #f8fafc;
+    background-color: rgb(248, 250, 252);
     /* slate-50 */
 }
 
 .card__table-cell {
     /* Replaces: p-2 border border-slate-300 */
-    padding: 0.5rem;
-    border: 1px solid #cbd5e1;
-    /* slate-300 */
+    padding: 8px;
+    /* 0.5rem /* p-2 */
+    border: 1px solid rgb(203, 213, 225);
+    /* border border-slate-300 */
 }
 
 .card__table-cell--header {
     /* Replaces: text-left (on <th>) */
     text-align: left;
+    /* text-left */
 }
-
 
 /* === List Elements === */
 .card__list {
@@ -178,49 +213,61 @@
 .card__list--ordered {
     /* Replaces: list-decimal ml-6 */
     list-style-type: decimal;
-    margin-left: 1.5rem;
-    /* ml-6 */
+    /* list-decimal */
+    margin-left: 24px;
+    /* 1.5rem; /* ml-6 */
 }
 
 .card__list--unordered {
     /* Replaces: list-disc ml-6 */
     list-style-type: disc;
-    margin-left: 1.5rem;
-    /* ml-6 */
+    /* list-disc */
+    margin-left: 24px;
+    /* 1.5rem; /* ml-6 */
 }
 
 .card__list-term {
     /* Replaces: font-medium (on <dt>) */
     font-weight: 500;
+    /* font-medium */
 }
 
 .card__list-term--mt {
     /* Replaces: mt-2 */
-    margin-top: 0.5rem;
+    margin-top: 8px;
+    /* 0.5rem /* mt-2 */
 }
 
 .card__list-definition {
     /* Replaces: ml-4 italic (on <dd>) */
-    margin-left: 1rem;
-    /* ml-4 */
+    margin-left: 16px;
+    /* 1rem; /* ml-4 */
     font-style: italic;
+    /* italic */
 }
 
 /* === Other Inline/Misc Content (Main Supblock) === */
 .card__mark {
     /* Replaces: bg-yellow-200 p-1 rounded-sm */
-    background-color: #fde68a;
+    background-color: rgb(253, 230, 138);
     /* yellow-200 */
-    padding: 0.25rem;
-    border-radius: 0.125rem;
+    padding: 4px;
+    /* 0.25rem; /* p-1 */
+    border-radius: 2px;
+    /* 0.125rem; /* rounded-sm */
 }
 
 .card__small {
     /* Replaces: text-xs text-slate-500 mt-4 */
-    font-size: 0.75rem;
-    color: #64748b;
+    font-size: 12px;
+    /* 0.75rem; /* text-xs */
+    line-height: 16px;
+    /* 1rem /* text-xs*/
+    /* 1rem /* text-xs */
+    color: rgb(100, 116, 139);
     /* slate-500 */
-    margin-top: 1rem;
+    margin-top: 16px;
+    /* 1rem; /* mt-4 */
     display: block;
     /* to apply the text-center and margin-top */
     text-align: center;
@@ -231,9 +278,11 @@
 .card__radio-group {
     /* Replaces: flex items-center space-x-2 */
     display: flex;
+    /* flex */
     align-items: center;
-    gap: 0.5rem;
-    /* space-x-2 */
+    /* items-center */
+    gap: 8px;
+    /* 0.5rem /* space-x-2 */
 }
 
 /* You'd have to style the radio/checkboxes directly in CSS or with a framework/reset, 

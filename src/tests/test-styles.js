@@ -187,12 +187,12 @@ const styleData = {
       ['display', 'block'],
     ]
   },
-   '.card__inline-link': {
-   'Typography': [
-     ['color', 'rgb(59, 130, 246)'], // text-blue-500
-     ['textDecoration', 'none'], // underline on hover
-   ],
- },
+  '.card__inline-link': {
+    'Typography': [
+      ['color', 'rgb(59, 130, 246)'], // text-blue-500
+      ['textDecoration', 'none'], // underline on hover
+    ],
+  },
   '.card__code-block': {
     'Appearance': [
       ['backgroundColor', 'rgb(30, 41, 59)'], // slate-800
@@ -218,8 +218,24 @@ const styleData = {
       ['marginBottom', '8px'], // mb-2
     ]
   },
+  '.card__form': {
+    'Layout': [
+      ['marginTop', '8px'], // mt-2
+      // space-y-3 (12px gap) is tricky to test on the form element itself
+    ]
+  },
   // new elements ↓ working on adding to html n propor tests
-  
+  '.card__fieldset': {
+    'Layout': [
+      ['padding', '12px'], // p-3
+      ['borderRadius', '6px'], // rounded-md
+      ['borderWidth', '1px'] // border
+    ],
+    'Appearance': [
+      ['borderColor', 'rgb(203, 213, 225)'], // border-slate-300
+      ['borderStyle', 'solid'] // border
+    ]
+  },
   '.card__image': {
     'Layout': [
       ['width', '100%'], // w-full
@@ -239,23 +255,6 @@ const styleData = {
     'Layout': [
       ['width', '100%'], // w-full
       ['marginTop', '16px'], // mt-4
-    ]
-  },
-  '.card__form': {
-    'Layout': [
-      ['marginTop', '8px'], // mt-2
-      // space-y-3 (12px gap) is tricky to test on the form element itself
-    ]
-  },
-  '.card__fieldset': {
-    'Layout': [
-      ['padding', '12px'], // p-3
-      ['borderRadius', '6px'], // rounded-md
-      ['borderWidth', '1px'] // border
-    ],
-    'Appearance': [
-      ['borderColor', 'rgb(203, 213, 225)'], // border-slate-300
-      ['borderStyle', 'solid']
     ]
   },
 }
@@ -293,12 +292,14 @@ describe('Block and Container Tests', () => {
     testElementStyles('body', styleData['body']);
   });
   
-  describe('Label Of Form Elements In Header', () => {
+  describe('tests for elements of supblock modifiers', () => {
     testElementStyles(`.supblock--header .card__code-block`, styleData['.card__code-block']);
     testElementStyles(`.supblock--header .card__subtitle`, styleData['.card__subtitle']);
     testElementStyles(`.supblock--main .card__figcaption`, styleData['.card__figcaption']);
     testElementStyles(`.supblock--main .card__label`, styleData['.card__label']);
     testElementStyles(`.supblock--main .card__form`, styleData['.card__form']);
+    testElementStyles(`.supblock--main .card__fieldset`, styleData['.card__fieldset']);
+
   });
   
   // --- Global Supblock Assertions Setup ---
