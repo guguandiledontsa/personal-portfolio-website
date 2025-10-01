@@ -400,7 +400,7 @@
 /* layout.css */
 
 @layer layouts {
-
+    
     /* .container-layout */
     .supblock {
         max-width: 1280px;
@@ -479,9 +479,16 @@
     
     .card__form {
         /* Replaces: mt-2 TODO:space-y-3  */
-        margin-top: 8px; /* 0.5rem; /* mt-2 */
+        margin-top: 8px;
+        /* 0.5rem; /* mt-2 */
     }
     
+    .card__fieldset {
+        /* Replaces: border border-slate-300 p-3 rounded-md */
+        margin-bottom: 12px;
+        /* 0.75rem; /* mb-3 */
+        /* Add spacing below fieldset */
+    }
     /* ------------------------------------------------------------ */
     /* .container-spacing */
     body {
@@ -514,5 +521,10 @@
         /* p-4 */
     }
     
+    .card__fieldset {
+        /* Replaces: border border-slate-300 p-3 rounded-md */
+        padding: 12px;
+        /* 0.75rem; /* p-3 */
+    }
     /* ------------------------------------------------------------ */
 }
