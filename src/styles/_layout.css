@@ -402,10 +402,6 @@
 @layer layouts {
     
     /* .container-layout */
-    .supblock {
-        max-width: 1280px;
-    }
-    
     .supblock__container {
         margin: 5px;
     }
@@ -460,6 +456,7 @@
     .supblock {
         --mb: 2rem;
         
+        max-width: 1280px;
         margin-block-end: var(--mb);
         margin-inline: 0;
         
@@ -489,6 +486,21 @@
         /* 0.75rem; /* mb-3 */
         /* Add spacing below fieldset */
     }
+    
+    .card__audio {
+        /* Replaces: w-full mt-4 */
+        width: 100%;
+        /* w-full */
+        margin-top: 16px;
+        /* 1rem; /* mt-4 */
+    }
+    
+    .card__image {
+        /* Replaces: w-full rounded-md */
+        width: 100%;
+        /* w-full */
+    }
+    
     /* ------------------------------------------------------------ */
     /* .container-spacing */
     body {
@@ -526,5 +538,6 @@
         padding: 12px;
         /* 0.75rem; /* p-3 */
     }
+    
     /* ------------------------------------------------------------ */
 }

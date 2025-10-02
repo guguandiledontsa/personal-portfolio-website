@@ -230,7 +230,23 @@ const styleData = {
       ['backgroundColor', 'rgb(226, 232, 240)'], // bg-slate-200
     ]
   },
-  // new elements ↓ working on adding to html n propor tests
+  '.card__audio': {
+    'Layout': [
+      //['width', '100%'], // w-full
+      ['marginTop', '16px'], // mt-4
+    ]
+  },
+  '.card__image': {
+    'Layout': [
+      // ['width', '100%'], // w-full
+      ['borderRadius', '6px'], // rounded-md
+    ]
+  },
+  '.card__input': {
+    // w-full p-2 mt-1 border border-slate-300 rounded-md
+    'Typography': [],
+    'Layout': [],
+  },
   '.card__fieldset': {
     'Layout': [
       ['padding', '12px'], // p-3
@@ -240,18 +256,6 @@ const styleData = {
     'Appearance': [
       ['borderColor', 'rgb(203, 213, 225)'], // border-slate-300
       ['borderStyle', 'solid'] // border
-    ]
-  },
-  '.card__image': {
-    'Layout': [
-      ['width', '100%'], // w-full
-      ['borderRadius', '6px'], // rounded-md
-    ]
-  },
-  '.card__audio': {
-    'Layout': [
-      ['width', '100%'], // w-full
-      ['marginTop', '16px'], // mt-4
     ]
   },
 }
@@ -280,7 +284,7 @@ const supblockConfigs = [
       const parentWidth = el.getBoundingClientRect().width;
       const elWidth = containerEl.getBoundingClientRect().width;
       expect(Math.abs(elWidth - parentWidth)).to.be.lessThan(2);
-    }
+    },
   }
 }];
 
@@ -295,10 +299,8 @@ describe('Block and Container Tests', () => {
     testElementStyles(`.supblock--main .card__figcaption`, styleData['.card__figcaption']);
     testElementStyles(`.supblock--main .card__label`, styleData['.card__label']);
     testElementStyles(`.supblock--main .card__form`, styleData['.card__form']);
-    // testElementStyles(`.supblock--main .card__fieldset`, styleData['.card__fieldset']);
     testElementStyles(`.supblock--main .card__media`, styleData['.card__media']);
-    
-    
+    // testElementStyles(`.supblock--main .card__fieldset`, styleData['.card__fieldset']);
   });
   
   // --- Global Supblock Assertions Setup ---
@@ -352,6 +354,11 @@ describe('Block and Container Tests', () => {
       testElementStyles(`${selector} .card__title`, styleData['.card__title'], {}, selector);
       if (config.modifier !== 'main') {
         testElementStyles(`${selector} .card__inline-link`, styleData['.card__inline-link'], {}, selector);
+      }
+      
+      if (config.modifier === 'footer') {
+        testElementStyles(`.supblock--main .card__audio`, styleData['.card__audio'], config.assertions, '.supblock--main');
+        testElementStyles(`.supblock--main .card__image`, styleData['.card__image'], config.assertions, '.supblock--main');
       }
     });
   });

@@ -1,8 +1,6 @@
 /*  main.css */
 @layer variables, bases, topographies, layouts, appearances, animations, interactions;
 
-/* ───────────────────────────────────────────── */
-
 @import url("./_variables.css") layer(variables);
 @import url("./_base.css") layer(bases);
 @import url("./_typography.css") layer(topographies);
@@ -26,33 +24,7 @@
     /* 0.5rem /* mt-2 */
 }
 
-.card__image {
-    /* Replaces: w-full rounded-md */
-    width: 100%;
-    /* w-full */
-    border-radius: 6px;
-    /* 0.375rem /* rounded-md */
-}
-
-/* === Media Elements (Video/Audio) === */
-
-.card__media {
-    /* Replaces: rounded-md bg-slate-200 /* mt-* tests a bit messy so not yet */
-    border-radius: 6px;
-    /* 0.375rem /* rounded-md */
-    background-color: rgb(226, 232, 240);
-    /* bg-slate-200 */
-}
-.card__audio {
-    /* Replaces: w-full mt-4 */
-    width: 100%;
-    /* w-full */
-    margin-top: 1rem;
-    /* mt-4 */
-}
-
 /* === Form Elements === */
-
 .card__form-group {
     /* Replaces: div space-y separation ??? */
     margin-top: 12px;
@@ -70,27 +42,6 @@
     padding: 0 4px;
     /* 0 0.25rem */
     /* give it some space to cut the border */
-}
-
-.card__input {
-    /* Replaces: w-full p-2 border border-slate-300 rounded-md mt-1 */
-    padding: 8px;
-    /* 0.5rem /* p-2 */
-    border: 1px solid rgb(203, 213, 225);
-    /* slate-300 */
-    border-radius: 6px;
-    /* 0.375rem /* rounded-md */
-    margin-top: 4px;
-    /* 0.25rem; /* mt-1 */
-    width: 100%;
-    /* w-full */
-    box-sizing: border-box;
-    /* Crucial for w-full padding */
-}
-
-.card__input--textarea {
-    /* For <textarea> */
-    resize: vertical;
 }
 
 .card__button {
@@ -259,7 +210,6 @@
 }
 
 /* === Form Radio/Checkbox Group (Main Supblock) === */
-
 .card__radio-group {
     /* Replaces: flex items-center space-x-2 */
     display: flex;
@@ -270,5 +220,7 @@
     /* 0.5rem /* space-x-2 */
 }
 
-/* You'd have to style the radio/checkboxes directly in CSS or with a framework/reset, 
-   as the color class (`text-red-500`) often sets the accent color. */
+.card__input--textarea {
+    /* For <textarea> */
+    resize: vertical;
+}
