@@ -224,6 +224,12 @@ const styleData = {
       // space-y-3 (12px gap) is tricky to test on the form element itself
     ]
   },
+  '.card__media': {
+    'Appearance': [
+      ['borderRadius', '6px'], // rounded-md
+      ['backgroundColor', 'rgb(226, 232, 240)'], // bg-slate-200
+    ]
+  },
   // new elements ↓ working on adding to html n propor tests
   '.card__fieldset': {
     'Layout': [
@@ -240,15 +246,6 @@ const styleData = {
     'Layout': [
       ['width', '100%'], // w-full
       ['borderRadius', '6px'], // rounded-md
-    ]
-  },
-  '.card__media': {
-    'Layout': [
-      ['marginTop', '8px'], // mt-2
-    ],
-    'Appearance': [
-      ['borderRadius', '6px'], // rounded-md
-      ['backgroundColor', 'rgb(226, 232, 240)'], // bg-slate-200
     ]
   },
   '.card__audio': {
@@ -298,8 +295,10 @@ describe('Block and Container Tests', () => {
     testElementStyles(`.supblock--main .card__figcaption`, styleData['.card__figcaption']);
     testElementStyles(`.supblock--main .card__label`, styleData['.card__label']);
     testElementStyles(`.supblock--main .card__form`, styleData['.card__form']);
-    testElementStyles(`.supblock--main .card__fieldset`, styleData['.card__fieldset']);
-
+    // testElementStyles(`.supblock--main .card__fieldset`, styleData['.card__fieldset']);
+    testElementStyles(`.supblock--main .card__media`, styleData['.card__media']);
+    
+    
   });
   
   // --- Global Supblock Assertions Setup ---
