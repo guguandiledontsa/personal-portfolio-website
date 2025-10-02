@@ -26,13 +26,13 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
     });
     return;
   }
-  
+
   elements.forEach((el, index) => {
     const mainClass = el.className ? '.' + el.className.split(' ')[0] : el.tagName.toLowerCase();
     const count = elements.length > 1 ? ` (${index + 1} of ${elements.length})` : '';
     
     let elementTextSnippet = '';
-    const textContent = el.textContent.trim().replace(/\s+/g, ' '); // Normalize whitespace
+    const textContent = el.textContent.trim().replace(/\s+/g, ' ');
     
     if (textContent.length > 0) {
       elementTextSnippet = ` [Text: "${textContent.substring(0, 30)}${textContent.length > 30 ? '...' : ''}"]`;
@@ -43,18 +43,24 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
     
     describe(desc, () => {
       it('should exist', () => expect(el).to.exist);
-      
+
       for (const [label, props] of Object.entries(styles)) {
         describe(`Category: ${label}`, () => {
+          // 🚨 Defensive check to prevent crashing
+          if (!Array.isArray(props)) {
+            it(`should have a valid array of styles for "${label}"`, () => {
+              throw new Error(`Expected an array of [prop, val] tuples for "${label}", but got: ${typeof props}`);
+            });
+            return;
+          }
+
           props.forEach(([prop, smallVal, mediumVal]) => {
             const isResponsiveTest = mediumVal !== undefined && isWMedium;
             const expected = isResponsiveTest ? mediumVal : smallVal;
             const viewportContext = isResponsiveTest ? ' (on medium screen)' : '';
             
             it(`should have ${prop}: "${expected}"${viewportContext}`, () => {
-              
               const verboseMessage = `\n${JSON.stringify($filteredStyles(el), null, 2)}\n`;
-              
               const computed = getComputedStyle(el)[prop];
               
               expect(computed, `The property "${prop}" did not return a value. ${verboseMessage}`).to.not.be.empty;
@@ -64,7 +70,6 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
               } else {
                 const actual = parseFloat(computed);
                 const expectedPx = parseFloat(expected);
-                
                 expect(actual).to.be.closeTo(expectedPx, 0.6,
                   `Expected ${prop} to be ~${expected}, but got ${computed}. ${verboseMessage}`);
               }
@@ -72,7 +77,7 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
           });
         });
       }
-      
+
       for (const [assertLabel, assertFunc] of Object.entries(uniqueAssertions)) {
         it(assertLabel, () => assertFunc(el));
       }
@@ -232,20 +237,25 @@ const styleData = {
   },
   '.card__audio': {
     'Layout': [
-      //['width', '100%'], // w-full
       ['marginTop', '16px'], // mt-4
     ]
   },
   '.card__image': {
     'Layout': [
-      // ['width', '100%'], // w-full
       ['borderRadius', '6px'], // rounded-md
     ]
   },
   '.card__input': {
-    // w-full p-2 mt-1 border border-slate-300 rounded-md
-    'Typography': [],
-    'Layout': [],
+    'Layout': [
+      //['width', '100%'], // w-full
+      ['padding', '8px'], // p-2 (8px)
+      ['marginTop', '4px'], // mt-1
+    ],
+    'Appearance': [
+      ['borderColor', 'rgb(203, 213, 225)'], // border-slate-300
+      ['borderStyle', 'solid'], // border
+      ['borderRadius', '6px'], // rounded-md
+    ]
   },
   '.card__fieldset': {
     'Layout': [
@@ -284,7 +294,7 @@ const supblockConfigs = [
       const parentWidth = el.getBoundingClientRect().width;
       const elWidth = containerEl.getBoundingClientRect().width;
       expect(Math.abs(elWidth - parentWidth)).to.be.lessThan(2);
-    },
+    }
   }
 }];
 
@@ -300,6 +310,8 @@ describe('Block and Container Tests', () => {
     testElementStyles(`.supblock--main .card__label`, styleData['.card__label']);
     testElementStyles(`.supblock--main .card__form`, styleData['.card__form']);
     testElementStyles(`.supblock--main .card__media`, styleData['.card__media']);
+    testElementStyles(`.supblock--main .card__input`, styleData['.card__input']);
+    
     // testElementStyles(`.supblock--main .card__fieldset`, styleData['.card__fieldset']);
   });
   
