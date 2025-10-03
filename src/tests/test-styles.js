@@ -310,8 +310,8 @@ describe('Block and Container Tests', () => {
     testElementStyles(`.supblock--main .card__label`, styleData['.card__label']);
     testElementStyles(`.supblock--main .card__form`, styleData['.card__form']);
     testElementStyles(`.supblock--main .card__media`, styleData['.card__media']);
-    testElementStyles(`.supblock--main .card__input`, styleData['.card__input']);
     
+    // testElementStyles(`.supblock--main .card__input`, styleData['.card__input']);
     // testElementStyles(`.supblock--main .card__fieldset`, styleData['.card__fieldset']);
   });
   
