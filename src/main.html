@@ -211,24 +211,21 @@
                     <figure class="card__media mt-2">
                         <figcaption class="card__figcaption">A responsive &lt;picture&gt; element.</figcaption>
                         <picture>
-                            <!-- placeholder to remove -->
-                            <source media="(max-width: 768px)" srcset="https://placehold.co/300x200/475569/94A3B8?text=Mobile">
-                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Desktop" alt="A responsive placeholder image." class="card__image" usemap="#imagemap">
+                            <!-- Updated to use local mobile and desktop SVGs -->
+                            <source media="(max-width: 768px)" srcset="./assets/images/mobile.svg">
+                            <img src="./assets/images/desktop.svg" alt="Responsive image switching between mobile and desktop views." class="card__image" usemap="#imagemap">
                         </picture>
                         <map name="imagemap">
                             <area shape="rect" coords="0,0,150,200" href="#" alt="Top Left Area">
                             <area shape="circle" coords="300,200,50" href="#" alt="Center Area">
                         </map>
                     </figure>
+                    
                     <video width="100%" height="auto" controls class="card__media mt-4">
-                        <!-- placeholder to remove -->
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        <source src="./assets/vidoes/mov_bbb.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <audio controls class="card__audio">
-                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
+                    
                 </div>
             </article>
         </div>
