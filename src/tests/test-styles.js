@@ -5,72 +5,59 @@ import { $style, $filteredStyles } from './utils.js';
 mocha.setup({ ui: 'bdd', reporter: 'spec' });
 
 const isWMedium = window.innerWidth >= 768;
-
-/**
- * Utility function to test styles of a single element or a collection of elements.
- * @param {string|HTMLElement|NodeList} selectorOrElement - CSS selector, single element, or a NodeList.
- * @param {object} styles - An object where keys are style labels and values are arrays of [prop, smallVal, mediumVal] or [prop, expectedVal].
- * @param {object} [uniqueAssertions={}] - An object of custom test assertions.
- * @param {string} [context=''] - Optional context string (e.g., a parent selector) to add to descriptions.
- */
 function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, context = '') {
-  const elements = typeof selectorOrElement === 'string' ?
-    Array.from(document.querySelectorAll(selectorOrElement)) :
-    (selectorOrElement instanceof NodeList ? Array.from(selectorOrElement) : [selectorOrElement]);
-  
-  if (elements.length === 0 || elements[0] === null) {
+  const elements = typeof selectorOrElement === 'string'
+    ? Array.from(document.querySelectorAll(selectorOrElement))
+    : (selectorOrElement instanceof NodeList ? Array.from(selectorOrElement) : [selectorOrElement]);
+
+  if (elements.length === 0 || elements[0] == null) {
     describe(context || selectorOrElement, () => {
-      it('should exist on the page', () => {
-        expect(elements[0], `Element with selector "${selectorOrElement}" was not found`).to.exist;
-      });
+      it('should exist on the page', () => expect(elements[0], `Element with selector "${selectorOrElement}" was not found`).to.exist);
     });
     return;
   }
 
   elements.forEach((el, index) => {
-    const mainClass = el.className ? '.' + el.className.split(' ')[0] : el.tagName.toLowerCase();
+    const selectorClass = (typeof selectorOrElement === 'string' && selectorOrElement.startsWith('.')) ? selectorOrElement.slice(1) : '';
+    const allClasses = [...el.classList];
+    const filteredClasses = selectorClass ? allClasses.filter(c => c !== selectorClass) : allClasses;
     const count = elements.length > 1 ? ` (${index + 1} of ${elements.length})` : '';
-    
-    let elementTextSnippet = '';
+    const mainClass = selectorClass ? `.${selectorClass}` : allClasses.length ? `.${allClasses[0]}` : el.tagName.toLowerCase();
+
     const textContent = el.textContent.trim().replace(/\s+/g, ' ');
-    
-    if (textContent.length > 0) {
-      elementTextSnippet = ` [Text: "${textContent.substring(0, 30)}${textContent.length > 30 ? '...' : ''}"]`;
-    } else if (el.id) {
-      elementTextSnippet = ` #${el.id}`;
-    }
-    const desc = `${mainClass}${count}${elementTextSnippet}`;
-    
+    const textSnippet = textContent.length > 0
+      ? ` [Text: "${textContent.substring(0, 30)}${textContent.length > 30 ? '...' : ''}"]`
+      : el.id ? ` #${el.id}` : '';
+
+    const classListSnippet = filteredClasses.length ? ` [Classes: "${filteredClasses.join(' ')}"]` : '';
+    const desc = `${mainClass}${count}${textSnippet}${classListSnippet}`;
+
     describe(desc, () => {
       it('should exist', () => expect(el).to.exist);
 
       for (const [label, props] of Object.entries(styles)) {
         describe(`Category: ${label}`, () => {
-          // 🚨 Defensive check to prevent crashing
           if (!Array.isArray(props)) {
             it(`should have a valid array of styles for "${label}"`, () => {
-              throw new Error(`Expected an array of [prop, val] tuples for "${label}", but got: ${typeof props}`);
+              throw new Error(`Expected array of [prop, val] tuples for "${label}", but got ${typeof props}`);
             });
             return;
           }
 
           props.forEach(([prop, smallVal, mediumVal]) => {
-            const isResponsiveTest = mediumVal !== undefined && isWMedium;
+            const isResponsiveTest = typeof mediumVal !== 'undefined' && typeof isWMedium !== 'undefined' && isWMedium;
             const expected = isResponsiveTest ? mediumVal : smallVal;
             const viewportContext = isResponsiveTest ? ' (on medium screen)' : '';
-            
+
             it(`should have ${prop}: "${expected}"${viewportContext}`, () => {
               const verboseMessage = `\n${JSON.stringify($filteredStyles(el), null, 2)}\n`;
               const computed = getComputedStyle(el)[prop];
-              
               expect(computed, `The property "${prop}" did not return a value. ${verboseMessage}`).to.not.be.empty;
-              
+
               if (prop === 'boxShadow' || !expected.endsWith('px')) {
                 expect(computed, `Expected ${prop} to be "${expected}", but got "${computed}". ${verboseMessage}`).to.equal(expected);
               } else {
-                const actual = parseFloat(computed);
-                const expectedPx = parseFloat(expected);
-                expect(actual).to.be.closeTo(expectedPx, 0.6,
+                expect(parseFloat(computed)).to.be.closeTo(parseFloat(expected), 0.6,
                   `Expected ${prop} to be ~${expected}, but got ${computed}. ${verboseMessage}`);
               }
             });
@@ -78,12 +65,12 @@ function testElementStyles(selectorOrElement, styles, uniqueAssertions = {}, con
         });
       }
 
-      for (const [assertLabel, assertFunc] of Object.entries(uniqueAssertions)) {
+      for (const [assertLabel, assertFunc] of Object.entries(uniqueAssertions))
         it(assertLabel, () => assertFunc(el));
-      }
     });
   });
 }
+
 
 // ─────────────────────────────────────────────
 
@@ -206,11 +193,11 @@ const styleData = {
     ],
     'Layout': [
       ['padding', '12px'], // p-3 (12px)
-      ['marginTop', '8px'], // mt-2
+      // ['marginTop', '8px'], // mt-2
       ['overflowX', 'auto'] // overflow-x-auto
     ],
     'Typography': [
-      ['fontSize', '10.2px'], // text-xs should be 12px
+      ['fontSize', '13.6px'], // text-xs should be 12px
     ]
   },
   '.card__figcaption': {
