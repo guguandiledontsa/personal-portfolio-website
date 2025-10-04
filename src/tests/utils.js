@@ -27,33 +27,41 @@ export function $allStyles(el) {
   return JSON.stringify(styles, null, 2);
 }
 
-
 export function $filteredStyles(el, {
   include = [],
   exclude = []
 } = {}) {
   if (!el) return null;
-  
+
   const computed = getComputedStyle(el);
-  const defaultEl = document.createElement(el.tagName);
-  document.body.appendChild(defaultEl);
+  const tag = el.tagName;
+
+  // Insert default element into same parent (or body fallback)
+  const defaultEl = document.createElement(tag);
+  const parent = el.parentNode || document.body;
+
+  // Try to match display context
+  defaultEl.style.display = computed.display;
+
+  parent.appendChild(defaultEl);
+
   const defaultStyles = getComputedStyle(defaultEl);
-  
   const diff = {};
-  
+
   for (const prop of computed) {
     const value = computed.getPropertyValue(prop);
     const defaultValue = defaultStyles.getPropertyValue(prop);
-    
+
     const isIncluded = include.length === 0 || include.includes(prop);
     const isExcluded = exclude.includes(prop);
-    
+
     if (!isExcluded && isIncluded && value !== defaultValue) {
       diff[prop] = value;
     }
   }
-  
-  document.body.removeChild(defaultEl);
+
+  parent.removeChild(defaultEl);
+
   return diff;
 }
 
