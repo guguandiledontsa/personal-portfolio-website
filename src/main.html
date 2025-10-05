@@ -4,272 +4,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Tag Showcase</title>
+    <title>Reorganized HTML5 Tag Showcase - Blue Theme</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/main.css"> <style></style>
 </head>
 
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/mocha@10.5.2/mocha.js"></script>
-    <script type="module" src="./tests/test-styles.js"></script>
-    
-    <header class="supblock supblock--header shadow-xl">
-        <h2>Header Supblock: Typography & Structural Tests</h2>
-        <div class="grid-container grid-container--header">
-            
-            <section class="supblock__container supblock__container--header">
-                <h3>Block Text & Code</h3>
-                
-                <div class="supblock__card shadow-sm">
-                    <p class="card__title">Div: Typography Stress Test</p>
-                    <p class="card__subtitle card__subtitle--mt2">
-                        This card tests **inline vs block styles**. Here's a
-                        <a href="#" class="card__inline-link">standard &lt;a&gt; link</a>,
-                        a deleted text &lt;del&gt;and a delete tag&lt;/del&gt;,
-                        an inserted one &lt;ins&gt;plus an insert tag&lt;/ins&gt;.
-                        The &lt;abbr title="Cascading Style Sheets"&gt;CSS&lt;/abbr&gt;
-                        is <strong>strong</strong>, but <em>emphasis</em> is important.
-                    </p>
-                    <p><cite>This is a &lt;cite&gt; tag.</cite> The &lt;q&gt; "inline quote" is great.</p>
-                </div>
-                
-                <article class="supblock__card shadow-sm">
-                    <p class="card__title">Article: Blockquote & Code</p>
-                    <blockquote class="italic text-slate-600 mt-2 border-l-4 border-slate-400 pl-4">
-                        "The world is a magnificent book, and those who do not travel read only a page."
-                    </blockquote>
-                    <cite class="text-right text-sm text-slate-500 mt-1 block">— Saint Augustine</cite>
-                    
-                    <h4>&lt;pre&gt; and &lt;code&gt;</h4>
-                    <pre class="card__code-block"><code>// HTML entities prevent tag parsing:
-&lt;div class="example"&gt;
-  &lt;span&gt;Hello&lt;/span&gt;
-&lt;/div&gt;</code>
-                    </pre>
-                </article>
-                
-                <div class="supblock__card shadow-sm">
-                    <p class="card__title">Div: Progress & Details</p>
-                    <details class="mt-2">
-                        <summary class="font-medium cursor-pointer">Click to reveal status</summary>
-                        <p class="card__subtitle card__subtitle--mt2">Task Completion:</p>
-                        <progress class="w-full mt-1" value="80" max="100"></progress>
-                        <p class="card__subtitle card__subtitle--mt2">Resource Usage:</p>
-                        <meter class="w-full mt-1" value="0.75" min="0" max="1"></meter>
-                    </details>
-                </div>
-                
-            </section>
-            
-            <article class="supblock__container supblock__container--header">
-                <h3>Lists & Tables</h3>
-                
-                <section class="supblock__card shadow-sm">
-                    <p class="card__title">Section: List Style Overrides</p>
-                    <h4 class="card__body-text">Unordered List Stress (ul > li > a/p/span):</h4>
-                    <ul class="card__subtitle list-disc ml-6 space-y-2">
-                        <li>
-                            <a href="#" class="card__inline-link block">Link Item (Should inherit link style)</a>
-                            <p class="text-xs text-slate-500 italic">Small text below the link</p>
-                        </li>
-                        <li class="font-bold">
-                            List Item with <span class="text-red-500">Custom Span</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <input type="checkbox" id="temp-check">
-                            <label for="temp-check">Item with Checkbox</label>
-                        </li>
-                    </ul>
-                    <h4 class="card__body-text mt-4">Description List Stress (dl > dt/dd):</h4>
-                    <dl class="card__subtitle">
-                        <dt class="font-medium mt-2">Term One</dt>
-                        <dd class="ml-4 italic text-sm">Definition One (Testing DD style)</dd>
-                        <dt class="font-medium mt-2"><a href="#" class="card__inline-link">Term Two Link</a></dt>
-                        <dd class="ml-4 italic text-sm">Definition Two</dd>
-                    </dl>
-                </section>
-                
-                <div class="supblock__card shadow-sm">
-                    <p class="card__title">Div: Table Structure Test</p>
-                    <table class="w-full mt-2 border-collapse">
-                        <caption>Monthly Sales Summary</caption>
-                        <thead>
-                            <tr class="bg-slate-200">
-                                <th class="p-2 border border-slate-300 text-left">Product</th>
-                                <th class="p-2 border border-slate-300 text-left">Quantity</th>
-                                <th class="p-2 border border-slate-300 text-left">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-white">
-                                <td class="p-2 border border-slate-300 font-medium">Laptops</td>
-                                <td class="p-2 border border-slate-300">150</td>
-                                <td class="p-2 border border-slate-300">$150,000</td>
-                            </tr>
-                            <tr class="bg-slate-50">
-                                <td class="p-2 border border-slate-300">Monitors</td>
-                                <td class="p-2 border border-slate-300">300</td>
-                                <td class="p-2 border border-slate-300 text-blue-500 font-bold">$75,000</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td class="p-2 border border-slate-300 bg-slate-300 font-bold" colspan="2">Grand Total</td>
-                                <td class="p-2 border border-slate-300 bg-slate-300 font-bold">$225,000</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                
-            </article>
+<body class="bg-slate-100 text-slate-700">
+
+    <noscript>
+        <div class="bg-red-600 text-white p-3 text-center font-bold">
+            Warning: JavaScript is disabled. Some interactive features of this page will not be available.
         </div>
+    </noscript>
+
+    <header class="shadow-lg p-8 bg-white mb-10">
+        <h1 class="text-5xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">The Ultimate HTML5 Tag Showcase</h1>
+        <p class="text-center text-slate-500 mt-2">A comprehensive showcase of HTML5 elements with a spiced-up Tailwind theme.</p>
     </header>
-    
-    <main class="supblock supblock--main shadow-xl">
-        <h2>Main Supblock: Forms, Media, and Semantic Grouping</h2>
-        <div class="grid-container grid-container--main">
-            <section class="supblock__container supblock__container--main">
-                <h3>Comprehensive Form Inputs</h3>
-                <article class="supblock__card shadow-sm">
-                    <p class="card__title">Article: All Text, Password, Area, Select Inputs</p>
-                    <form class="space-y-3 card__form">
-                        <fieldset class="card__fieldset">
-                            <legend class="text-sm font-semibold">Standard Text/Control Inputs</legend>
-                            
-                            <div><label for="text-in" class="card__label">Text</label><input type="text" id="text-in" placeholder="Standard text" class="card__input"></div>
-                            <div><label for="email-in" class="card__label">Email</label><input type="email" id="email-in" placeholder="user@example.com" class="card__input"></div>
-                            <div><label for="password-in" class="card__label">Password</label><input type="password" id="password-in" placeholder="••••••••" class="card__input"></div>
-                            <div><label for="search-in" class="card__label">Search</label><input type="search" id="search-in" placeholder="Search..." class="card__input"></div>
-                            <div><label for="url-in" class="card__label">URL</label><input type="url" id="url-in" placeholder="https://..." class="card__input"></div>
-                            <div><label for="tel-in" class="card__label">Telephone</label><input type="tel" id="tel-in" placeholder="555-555-5555" class="card__input"></div>
-                            
-                            <label for="textarea-in" class="card__label block mt-3">Textarea</label>
-                            <textarea id="textarea-in" rows="3" placeholder="Multiline text area" class="card__input"></textarea>
-                            
-                            <label for="dropdown" class="card__label block mt-3">Select</label>
-                            <select id="dropdown" class="mt-1 p-2 border border-slate-300 rounded-md w-full">
-                                <optgroup label="Primary">
-                                    <option value="a">Option A</option>
-                                </optgroup>
-                                <optgroup label="Secondary">
-                                    <option value="c">Option C</option>
-                                </optgroup>
-                            </select>
-                        </fieldset>
-                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 transition-colors text-white p-2 rounded-md">Submit</button>
-                    </form>
+
+    <main class="supblock supblock--main px-8">
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">Text Content & Typography</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Headings (h1-h6)</h3>
+                    <div class="space-y-2">
+                        <h1 class="text-4xl font-bold">H1 Heading</h1>
+                        <h2 class="text-3xl font-semibold">H2 Heading</h2>
+                        <h3 class="text-2xl font-semibold">H3 Heading</h3>
+                        <h4 class="text-xl font-medium">H4 Heading</h4>
+                        <h5 class="text-lg font-medium">H5 Heading</h5>
+                        <h6 class="text-base font-medium">H6 Heading</h6>
+                    </div>
                 </article>
-                <div class="supblock__card shadow-sm">
-                    <p class="card__title">Div: Numeric/Date/Complex Inputs</p>
-                    <form class="space-y-3 card__form">
-                        <fieldset class="card__fieldset">
-                            <legend class="text-sm font-semibold">Numeric & Date Inputs</legend>
-                            
-                            <div><label for="number-in" class="card__label">Number</label><input type="number" id="number-in" min="0" max="100" class="card__input"></div>
-                            <div><label for="date-in" class="card__label">Date</label><input type="date" id="date-in" class="card__input"></div>
-                            <div><label for="time-in" class="card__label">Time</label><input type="time" id="time-in" class="card__input"></div>
-                            <div><label for="range-in" class="card__label">Range</label><input type="range" id="range-in" min="0" max="100" class="w-full mt-1"></div>
-                            <div><label for="color-in" class="card__label">Color</label><input type="color" id="color-in" value="#3b82f6" class="mt-1"></div>
-                            <div><label for="file-in" class="card__label">File Upload</label><input type="file" id="file-in" class="mt-1"></div>
-                            <div><label for="month-in" class="card__label">Month</label><input type="month" id="month-in" class="card__input"></div>
-                        </fieldset>
-                        <input type="reset" value="Reset Form" class="p-2 border border-slate-300 rounded-md bg-slate-100 cursor-pointer w-full">
-                    </form>
-                </div>
-            </section>
-            <article class="supblock__container supblock__container--main">
-                <h3>Media, Grouping & Interactive Tags</h3>
-                
-                <section class="supblock__card shadow-sm">
-                    <p class="card__title">Section: Radio, Checkbox, Buttons</p>
-                    <form class="mt-2 space-y-3 card__form">
-                        <fieldset class="card__fieldset">
-                            <legend class="text-sm font-semibold">User Choices</legend>
-                            
-                            <h4 class="text-xs font-medium text-slate-500 mt-2">Radio Group:</h4>
-                            <div class="flex flex-col space-y-1">
-                                <div class="flex items-center space-x-2"><input type="radio" id="radio1" name="choice" value="1"><label for="radio1" class="card__label inline">Choice One</label></div>
-                                <div class="flex items-center space-x-2"><input type="radio" id="radio2" name="choice" value="2" checked><label for="radio2" class="card__label inline">Choice Two</label></div>
-                            </div>
-                            
-                            <h4 class="text-xs font-medium text-slate-500 mt-4">Checkboxes:</h4>
-                            <div class="flex flex-col space-y-1">
-                                <div class="flex items-center space-x-2"><input type="checkbox" id="check1" checked><label for="check1" class="card__label inline">Option A</label></div>
-                                <div class="flex items-center space-x-2"><input type="checkbox" id="check2"><label for="check2" class="card__label inline">Option B</label></div>
-                            </div>
-                        </fieldset>
-                        <div class="flex space-x-2">
-                            <button type="button" class="flex-1 p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">Submit Button</button>
-                            <input type="button" value="Input Button" class="p-2 border border-slate-300 rounded-md bg-slate-100 cursor-pointer">
-                        </div>
-                    </form>
-                </section>
-                
-                <div class="supblock__card shadow-sm">
-                    <p class="card__title">Div: Media, Map, and Embeds</p>
-                    <figure class="card__media mt-2">
-                        <figcaption class="card__figcaption">A responsive &lt;picture&gt; element.</figcaption>
-                        <picture>
-                            <!-- Updated to use local mobile and desktop SVGs -->
-                            <source media="(max-width: 768px)" srcset="./assets/images/mobile.svg">
-                            <img src="./assets/images/desktop.svg" alt="Responsive image switching between mobile and desktop views." class="card__image" usemap="#imagemap">
-                        </picture>
-                        <map name="imagemap">
-                            <area shape="rect" coords="0,0,150,200" href="#" alt="Top Left Area">
-                            <area shape="circle" coords="300,200,50" href="#" alt="Center Area">
-                        </map>
-                    </figure>
-                    
-                    <video width="100%" height="auto" controls class="card__media mt-4">
-                        <source src="./assets/vidoes/mov_bbb.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    
-                </div>
-            </article>
-        </div>
-    </main>
-    
-    <footer class="supblock supblock--footer shadow-xl">
-        <h2>Footer Supblock: Off-Page Content & Navigation</h2>
-        <div class="grid-container grid-container--footer">
-            <div class="supblock__container supblock__container--footer">
-                <h3>Parent: Div</h3>
-                
-                <article class="supblock__card shadow-sm">
-                    <p class="card__title">Article: Navigation & Copyright</p>
-                    
-                    <dialog id="modal-dialog" class="p-4 border shadow-lg rounded-md hidden">
-                        <p>This is a &lt;dialog&gt; element.</p>
-                        <button onclick="document.getElementById('modal-dialog').close()">Close</button>
-                    </dialog>
-                    
-                    <nav class="mt-4">
-                        <ul class="flex justify-center space-x-4">
-                            <li><a href="#" class="card__inline-link">Privacy</a></li>
-                            <li><a href="#" class="card__inline-link">Terms</a></li>
-                            <li><a href="#" class="card__inline-link">Contact</a></li>
-                        </ul>
-                    </nav>
-                    
-                    <address class="text-center text-sm italic mt-4">
-                        Contact Info: <a href="mailto:dev@example.com">dev@example.com</a>
-                    </address>
-                    
-                    <aside class="text-center text-xs text-slate-500 mt-4 border-t pt-2">
-                        &lt;aside&gt; Note: This content is supplementary.
-                    </aside>
-                    
-                    <small class="text-center text-xs text-slate-500 mt-4 block">
-                        &copy; 2024 Your Company. All Rights Reserved.
-                    </small>
-                    
-                    <button type="button" onclick="document.getElementById('modal-dialog').showModal()" class="mt-2 p-1 border rounded-md">Show Dialog</button>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Phrasing & Inline Text</h3>
+                    <div class="space-y-4">
+                        <p>This paragraph contains a standard <a href="#" class="text-blue-600 hover:underline font-medium">link</a>.</p>
+                        <p>Use <strong>strong</strong> for importance, <b>b</b> for stylistically offset text, <em>em</em> for emphasis, and <i>i</i> for an alternate voice.</p>
+                        <p>Text can be <mark class="bg-sky-200 text-sky-800 px-1 rounded">highlighted</mark>, <del>deleted</del>, or <ins>inserted</ins>.</p>
+                        <p>Subscript & Superscript: H<sub>2</sub>O and E=mc<sup>2</sup>.</p>
+                        <p><abbr title="HyperText Markup Language" class="cursor-help">HTML</abbr> is an abbreviation, and this is a <q>short, inline quote</q>.</p>
+                    </div>
+                </article>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Block-Level Text</h3>
+                    <div>
+                        <blockquote class="text-slate-600 mt-2 border-l-4 border-slate-300 pl-4 italic">
+                            "The world is a magnificent book, and those who do not travel read only a page."
+                            <cite class="text-right text-sm text-slate-500 mt-1 block not-italic">— Saint Augustine</cite>
+                        </blockquote>
+                        <p class="mt-4">The `<pre>` tag is great for code:</p>
+                        <pre class="bg-slate-800 text-white p-3 rounded-md overflow-x-auto text-sm mt-2"><code>&lt;div class="example"&gt;
+  &lt;span&gt;Hello, World!&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
                 </article>
             </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">Lists & Tables</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Lists (ul, ol, dl)</h3>
+                    <div>
+                        <h4 class="font-semibold">Unordered List</h4>
+                        <ul class="list-disc ml-6 space-y-1 mt-2">
+                            <li>First item with <strong class="font-semibold">strong text</strong></li>
+                            <li>Second item with a <a href="#" class="text-blue-600 hover:underline">nested link</a></li>
+                            <li>Nested List
+                                <ul class="list-circle ml-6 mt-1">
+                                    <li>Sub-item A</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h4 class="font-semibold mt-4">Description List</h4>
+                        <dl class="mt-2">
+                            <dt class="font-medium">Term One</dt>
+                            <dd class="ml-4 italic text-sm text-slate-600">The definition for the first term.</dd>
+                            <dt class="font-medium mt-2">Term Two</dt>
+                            <dd class="ml-4 italic text-sm text-slate-600">The definition for the second term.</dd>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Table</h3>
+                    <div class="overflow-x-auto">
+                         <table class="w-full mt-2 border-collapse text-sm">
+                            <caption class="caption-bottom text-xs text-slate-500 mt-2">Monthly Sales Summary</caption>
+                            <thead class="bg-slate-200 text-slate-700">
+                                <tr>
+                                    <th class="p-3 border border-slate-300 text-left font-semibold">Product</th>
+                                    <th class="p-3 border border-slate-300 text-left font-semibold">Quantity</th>
+                                    <th class="p-3 border border-slate-300 text-left font-semibold">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white">
+                                <tr>
+                                    <td class="p-3 border border-slate-300 font-medium text-slate-800">Laptops</td>
+                                    <td class="p-3 border border-slate-300">150</td>
+                                    <td class="p-3 border border-slate-300">$150,000</td>
+                                </tr>
+                                <tr class="bg-slate-50">
+                                    <td class="p-3 border border-slate-300 font-medium text-slate-800">Monitors</td>
+                                    <td class="p-3 border border-slate-300">300</td>
+                                    <td class="p-3 border border-slate-300">$75,000</td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="bg-slate-700 text-white font-bold">
+                                <tr>
+                                    <td class="p-3 border border-slate-600" colspan="2">Grand Total</td>
+                                    <td class="p-3 border border-slate-600">$225,000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">Forms & User Input</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Text-Based Inputs</h3>
+                    <form class="space-y-4">
+                        <style>.form-input { @apply w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition; }</style>
+                        <div><label for="text-in" class="block text-sm font-medium mb-1">Text</label><input type="text" id="text-in" class="form-input"></div>
+                        <div><label for="email-in" class="block text-sm font-medium mb-1">Email</label><input type="email" id="email-in" class="form-input"></div>
+                        <div><label for="password-in" class="block text-sm font-medium mb-1">Password</label><input type="password" id="password-in" class="form-input"></div>
+                        <div><label for="textarea-in" class="block text-sm font-medium mb-1">Textarea</label><textarea id="textarea-in" rows="3" class="form-input"></textarea></div>
+                    </form>
+                </article>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Choices & Selections</h3>
+                    <form class="space-y-4">
+                        <fieldset>
+                            <legend class="font-semibold text-sm">Radio Group</legend>
+                            <div class="mt-2 space-y-1">
+                                <div class="flex items-center space-x-2"><input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500"><label for="radio1">Choice One</label></div>
+                                <div class="flex items-center space-x-2"><input type="radio" id="radio2" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked><label for="radio2">Choice Two</label></div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend class="font-semibold text-sm">Checkbox Group</legend>
+                             <div class="mt-2 space-y-1">
+                                <div class="flex items-center space-x-2"><input type="checkbox" id="check1" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500" checked><label for="check1">Option A</label></div>
+                                <div class="flex items-center space-x-2"><input type="checkbox" id="check2" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500"><label for="check2">Option B</label></div>
+                            </div>
+                        </fieldset>
+                         <div>
+                            <label for="dropdown" class="block text-sm font-medium mb-1">Select Dropdown</label>
+                            <select id="dropdown" class="form-input">
+                                <optgroup label="Primary"><option value="a">Option A</option></optgroup>
+                                <optgroup label="Secondary"><option value="c">Option C</option></optgroup>
+                            </select>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Other Controls</h3>
+                    <form class="space-y-4">
+                        <div><label for="range-in" class="block text-sm font-medium">Range</label><input type="range" id="range-in" class="w-full accent-blue-600"></div>
+                        <div><label for="date-in" class="block text-sm font-medium mb-1">Date</label><input type="date" id="date-in" class="form-input"></div>
+                        <div><label for="color-in" class="block text-sm font-medium mb-1">Color</label><input type="color" id="color-in" value="#2563eb" class="h-10 w-full rounded-md"></div>
+                        <div class="flex space-x-2 pt-4">
+                           <button type="submit" class="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
+                           <input type="reset" value="Reset" class="w-full p-2 bg-slate-200 text-slate-800 rounded-md cursor-pointer hover:bg-slate-300 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </section>
+        
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">Embedded & Interactive Content</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Images & Media</h3>
+                    <figure>
+                        <figcaption class="text-sm text-slate-500 mb-2">A responsive `<picture>` element.</figcaption>
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="https://via.placeholder.com/400x200/60a5fa/ffffff?text=Mobile">
+                            <img src="https://via.placeholder.com/800x200/2563eb/ffffff?text=Desktop" alt="Responsive image" class="w-full rounded-md shadow-inner">
+                        </picture>
+                    </figure>
+                    <h4 class="font-semibold mt-4">Audio Player</h4>
+                    <audio controls class="w-full mt-2">
+                        <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
+                    </audio>
+                </article>
+                
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">External Content</h3>
+                     <label class="text-sm font-medium">iFrame</label>
+                     <iframe src="https://example.com" title="Sample Iframe" class="w-full h-24 border rounded-md mt-1"></iframe>
+                     <label class="text-sm font-medium mt-4">Object (e.g., PDF)</label>
+                     <object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="w-full h-24 border rounded-md mt-1">
+                         <p class="text-xs p-2 text-center">PDF preview not available.</p>
+                     </object>
+                </article>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Interactive Elements</h3>
+                     <details class="p-3 border rounded-md">
+                        <summary class="font-medium cursor-pointer">Details & Summary</summary>
+                        <p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked. It's great for expandable sections.</p>
+                     </details>
+                     <hr class="my-4">
+                     <div>
+                         <h4 class="font-medium">Dialog</h4>
+                         <p class="text-sm text-slate-600">Click to open a modal dialog.</p>
+                         <button onclick="document.getElementById('modal-dialog').showModal()" class="mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
+                         <dialog id="modal-dialog" class="p-6 border-0 shadow-2xl rounded-lg backdrop:bg-black/50">
+                             <h3 class="text-lg font-bold">Modal Dialog</h3>
+                             <p class="mt-2">This is a modal `<dialog>` element.</p>
+                             <button onclick="document.getElementById('modal-dialog').close()" class="mt-4 px-4 py-2 border rounded-md hover:bg-slate-100 transition-colors">Close</button>
+                         </dialog>
+                     </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="shadow-inner p-8 bg-slate-800 text-slate-300 mt-10">
+        <h2 class="text-2xl font-semibold text-center text-white">Footer Content</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 text-center max-w-6xl mx-auto">
+            <div>
+                <h3 class="font-bold text-white">Navigation</h3>
+                <nav class="mt-2">
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:underline text-sky-400">Privacy</a></li>
+                        <li><a href="#" class="hover:underline text-sky-400">Terms</a></li>
+                        <li><a href="#" class="hover:underline text-sky-400">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <h3 class="font-bold text-white">Contact Information</h3>
+                <address class="text-sm not-italic mt-2">
+                    Contact us at: <a href="mailto:dev@example.com" class="hover:underline text-sky-400">dev@example.com</a>
+                </address>
+            </div>
+             <div>
+                <h3 class="font-bold text-white">About This Page</h3>
+                <aside class="text-sm mt-2">
+                    This is supplementary content in an aside tag.
+                </aside>
+            </div>
+        </div>
+        <div class="text-center mt-8 pt-6 border-t border-slate-700">
+             <small>&copy; <time datetime="2025">2025</time> Your Company. All Rights Reserved.</small>
         </div>
     </footer>
-</body>
-
+    
+    </body>
 </html>
