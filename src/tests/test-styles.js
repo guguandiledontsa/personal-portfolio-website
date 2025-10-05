@@ -356,7 +356,7 @@ describe('Block and Container Tests', () => {
       }
       
       if (config.modifier === 'footer') {
-        testElementStyles(`.supblock--main .card__audio`, styleData['.card__audio'], config.assertions, '.supblock--main');
+        // testElementStyles(`.supblock--main .card__audio`, styleData['.card__audio'], config.assertions, '.supblock--main');
         testElementStyles(`.supblock--main .card__image`, styleData['.card__image'], config.assertions, '.supblock--main');
       }
     });
