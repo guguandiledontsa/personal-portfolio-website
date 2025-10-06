@@ -336,7 +336,9 @@
    * - `aspect-ratio`: A modern property that maintains a specific width-to-height ratio, regardless of the element's size.
    */
     width: auto;
+    /* inline-size: ; */
     height: auto;
+    /* block-size: ; */
     min-width: auto;
     max-width: none;
     min-height: auto;
