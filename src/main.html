@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reorganized HTML5 Tag Showcase - Blue Theme</title>
+    <base href="/">
+    <title>The Ultimate HTML5 Tag Showcase - Blue Theme</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./styles/main.css"> <style></style>
+    <link rel="stylesheet" href="./styles/main.css">
+    <style>
+        /* Reusable form input style */
+        .form-input { 
+            @apply w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition; 
+        }
+    </style>
 </head>
 
 <body class="bg-slate-100 text-slate-700">
@@ -20,7 +27,7 @@
 
     <header class="shadow-lg p-8 bg-white mb-10">
         <h1 class="text-5xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">The Ultimate HTML5 Tag Showcase</h1>
-        <p class="text-center text-slate-500 mt-2">A comprehensive showcase of HTML5 elements with a spiced-up Tailwind theme.</p>
+        <p class="text-center text-slate-500 mt-2">A comprehensive showcase of all modern HTML5 elements.</p>
     </header>
 
     <main class="supblock supblock--main px-8">
@@ -46,9 +53,10 @@
                     <div class="space-y-4">
                         <p>This paragraph contains a standard <a href="#" class="text-blue-600 hover:underline font-medium">link</a>.</p>
                         <p>Use <strong>strong</strong> for importance, <b>b</b> for stylistically offset text, <em>em</em> for emphasis, and <i>i</i> for an alternate voice.</p>
-                        <p>Text can be <mark class="bg-sky-200 text-sky-800 px-1 rounded">highlighted</mark>, <del>deleted</del>, or <ins>inserted</ins>.</p>
+                        <p>Text can be <mark class="bg-sky-200 text-sky-800 px-1 rounded">highlighted</mark>, <del>deleted</del>, <ins>inserted</ins>, or <s>no longer accurate</s>.</p>
                         <p>Subscript & Superscript: H<sub>2</sub>O and E=mc<sup>2</sup>.</p>
                         <p><abbr title="HyperText Markup Language" class="cursor-help">HTML</abbr> is an abbreviation, and this is a <q>short, inline quote</q>.</p>
+                        <p>Use <u>u</u> for unarticulated annotations, like <u class="decoration-wavy decoration-red-500">spellling</u> mistakes.</p>
                     </div>
                 </article>
 
@@ -65,6 +73,33 @@
 &lt;/div&gt;</code></pre>
                     </div>
                 </article>
+                
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Semantic & Technical Text</h3>
+                    <p>The <dfn>dfn</dfn> element represents the defining instance of a term.</p>
+                    <p class="mt-2">Use <code>&lt;data&gt;</code> to link content with a machine-readable translation: <data value="2025-10-06">October 6th</data>.</p>
+                    <p class="mt-2">Use `<time>` for human-readable dates: <time datetime="2025-12-25">Christmas Day</time>.</p>
+                    <p class="mt-2">The `<kbd>` element represents keyboard input: <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
+                    <p class="mt-2">This is sample output from a program: <samp>File not found.</samp></p>
+                    <p class="mt-2">A variable in a math expression: <var>x</var> = <var>y</var> + 2.</p>
+                </article>
+                
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Line & Word Breaks</h3>
+                    <p>This is the first line.<br>This is the second line after a `br` tag.</p>
+                    <hr class="my-4">
+                    <p>The `wbr` tag suggests a word-break<wbr>opportunity. It's useful for long URLs or words inside narrow containers.</p>
+                </article>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Ruby Annotations</h3>
+                    <p class="text-lg">For East Asian typography, use `ruby`:</p>
+                    <ruby class="text-2xl mt-2">
+                      漢 <rp>(</rp><rt>かん</rt><rp>)</rp>
+                      字 <rp>(</rp><rt>じ</rt><rp>)</rp>
+                    </ruby>
+                    <p class="text-sm text-slate-600 mt-2">The `rt` tag shows pronunciation, and `rp` is fallback for browsers that don't support ruby.</p>
+                </article>
             </div>
         </section>
 
@@ -75,17 +110,17 @@
                 <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Lists (ul, ol, dl)</h3>
                     <div>
-                        <h4 class="font-semibold">Unordered List</h4>
+                        <h4 class="font-semibold">Unordered List (`ul`)</h4>
                         <ul class="list-disc ml-6 space-y-1 mt-2">
-                            <li>First item with <strong class="font-semibold">strong text</strong></li>
+                            <li>First item</li>
                             <li>Second item with a <a href="#" class="text-blue-600 hover:underline">nested link</a></li>
-                            <li>Nested List
-                                <ul class="list-circle ml-6 mt-1">
-                                    <li>Sub-item A</li>
-                                </ul>
-                            </li>
                         </ul>
-                        <h4 class="font-semibold mt-4">Description List</h4>
+                        <h4 class="font-semibold mt-4">Ordered List (`ol`)</h4>
+                        <ol class="list-decimal ml-6 space-y-1 mt-2">
+                            <li>First step</li>
+                            <li>Second step</li>
+                        </ol>
+                        <h4 class="font-semibold mt-4">Description List (`dl`)</h4>
                         <dl class="mt-2">
                             <dt class="font-medium">Term One</dt>
                             <dd class="ml-4 italic text-sm text-slate-600">The definition for the first term.</dd>
@@ -100,6 +135,10 @@
                     <div class="overflow-x-auto">
                          <table class="w-full mt-2 border-collapse text-sm">
                             <caption class="caption-bottom text-xs text-slate-500 mt-2">Monthly Sales Summary</caption>
+                            <colgroup>
+                                <col span="1" class="bg-blue-50">
+                                <col span="2">
+                            </colgroup>
                             <thead class="bg-slate-200 text-slate-700">
                                 <tr>
                                     <th class="p-3 border border-slate-300 text-left font-semibold">Product</th>
@@ -138,11 +177,13 @@
                 <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Text-Based Inputs</h3>
                     <form class="space-y-4">
-                        <style>.form-input { @apply w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition; }</style>
-                        <div><label for="text-in" class="block text-sm font-medium mb-1">Text</label><input type="text" id="text-in" class="form-input"></div>
-                        <div><label for="email-in" class="block text-sm font-medium mb-1">Email</label><input type="email" id="email-in" class="form-input"></div>
+                        <div><label for="text-in" class="block text-sm font-medium mb-1">Text</label><input type="text" id="text-in" class="form-input" placeholder="Standard text"></div>
+                        <div><label for="email-in" class="block text-sm font-medium mb-1">Email</label><input type="email" id="email-in" class="form-input" placeholder="name@example.com"></div>
                         <div><label for="password-in" class="block text-sm font-medium mb-1">Password</label><input type="password" id="password-in" class="form-input"></div>
-                        <div><label for="textarea-in" class="block text-sm font-medium mb-1">Textarea</label><textarea id="textarea-in" rows="3" class="form-input"></textarea></div>
+                        <div><label for="tel-in" class="block text-sm font-medium mb-1">Telephone</label><input type="tel" id="tel-in" class="form-input" placeholder="123-456-7890"></div>
+                        <div><label for="url-in" class="block text-sm font-medium mb-1">URL</label><input type="url" id="url-in" class="form-input" placeholder="https://example.com"></div>
+                        <div><label for="search-in" class="block text-sm font-medium mb-1">Search</label><input type="search" id="search-in" class="form-input" placeholder="Search..."></div>
+                        <div><label for="textarea-in" class="block text-sm font-medium mb-1">Textarea</label><textarea id="textarea-in" rows="2" class="form-input"></textarea></div>
                     </form>
                 </article>
 
@@ -151,35 +192,63 @@
                     <form class="space-y-4">
                         <fieldset>
                             <legend class="font-semibold text-sm">Radio Group</legend>
-                            <div class="mt-2 space-y-1">
-                                <div class="flex items-center space-x-2"><input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500"><label for="radio1">Choice One</label></div>
-                                <div class="flex items-center space-x-2"><input type="radio" id="radio2" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked><label for="radio2">Choice Two</label></div>
-                            </div>
+                            <div class="mt-2 space-y-1"><div class="flex items-center space-x-2"><input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500"><label for="radio1">Choice One</label></div><div class="flex items-center space-x-2"><input type="radio" id="radio2" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked><label for="radio2">Choice Two</label></div></div>
                         </fieldset>
                         <fieldset>
                             <legend class="font-semibold text-sm">Checkbox Group</legend>
-                             <div class="mt-2 space-y-1">
-                                <div class="flex items-center space-x-2"><input type="checkbox" id="check1" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500" checked><label for="check1">Option A</label></div>
-                                <div class="flex items-center space-x-2"><input type="checkbox" id="check2" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500"><label for="check2">Option B</label></div>
-                            </div>
+                             <div class="mt-2 space-y-1"><div class="flex items-center space-x-2"><input type="checkbox" id="check1" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500" checked><label for="check1">Option A</label></div><div class="flex items-center space-x-2"><input type="checkbox" id="check2" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500"><label for="check2">Option B</label></div></div>
                         </fieldset>
                          <div>
                             <label for="dropdown" class="block text-sm font-medium mb-1">Select Dropdown</label>
                             <select id="dropdown" class="form-input">
-                                <optgroup label="Primary"><option value="a">Option A</option></optgroup>
-                                <optgroup label="Secondary"><option value="c">Option C</option></optgroup>
+                                <optgroup label="Primary"><option>Option A</option></optgroup>
+                                <optgroup label="Secondary"><option>Option C</option></optgroup>
                             </select>
+                        </div>
+                        <div>
+                            <label for="ice-cream-choice" class="block text-sm font-medium mb-1">Datalist (Autocomplete)</label>
+                            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" class="form-input" />
+                            <datalist id="ice-cream-flavors">
+                                <option value="Chocolate"></option><option value="Vanilla"></option><option value="Strawberry"></option>
+                            </datalist>
                         </div>
                     </form>
                 </article>
 
                 <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <h3 class="font-bold text-xl mb-4 text-slate-900">Other Controls</h3>
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Pickers, Ranges & Files</h3>
                     <form class="space-y-4">
                         <div><label for="range-in" class="block text-sm font-medium">Range</label><input type="range" id="range-in" class="w-full accent-blue-600"></div>
                         <div><label for="date-in" class="block text-sm font-medium mb-1">Date</label><input type="date" id="date-in" class="form-input"></div>
+                        <div><label for="month-in" class="block text-sm font-medium mb-1">Month</label><input type="month" id="month-in" class="form-input"></div>
+                        <div><label for="week-in" class="block text-sm font-medium mb-1">Week</label><input type="week" id="week-in" class="form-input"></div>
                         <div><label for="color-in" class="block text-sm font-medium mb-1">Color</label><input type="color" id="color-in" value="#2563eb" class="h-10 w-full rounded-md"></div>
-                        <div class="flex space-x-2 pt-4">
+                        <div><label for="file-in" class="block text-sm font-medium mb-1">File Upload</label><input type="file" id="file-in" class="form-input"></div>
+                    </form>
+                </article>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Buttons & Outputs</h3>
+                    <form class="space-y-4" oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Output Element</label>
+                            <div class="flex items-center space-x-2">
+                                <input type="number" id="a" value="10" class="form-input w-20">
+                                <span>+</span>
+                                <input type="number" id="b" value="20" class="form-input w-20">
+                                <span>=</span>
+                                <output name="result" for="a b" class="font-bold">30</output>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Progress Bar</label>
+                            <progress value="70" max="100" class="w-full">70%</progress>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Meter</label>
+                            <meter value="0.6" class="w-full">60%</meter>
+                        </div>
+                        <div class="flex space-x-2 pt-2">
                            <button type="submit" class="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
                            <input type="reset" value="Reset" class="w-full p-2 bg-slate-200 text-slate-800 rounded-md cursor-pointer hover:bg-slate-300 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
                         </div>
@@ -198,30 +267,39 @@
                         <figcaption class="text-sm text-slate-500 mb-2">A responsive `<picture>` element.</figcaption>
                         <picture>
                             <source media="(max-width: 768px)" srcset="https://via.placeholder.com/400x200/60a5fa/ffffff?text=Mobile">
-                            <img src="https://via.placeholder.com/800x200/2563eb/ffffff?text=Desktop" alt="Responsive image" class="w-full rounded-md shadow-inner">
+                            <img src="https://via.placeholder.com/800x200/2563eb/ffffff?text=Desktop" alt="Responsive image" class="w-full rounded-md shadow-inner" usemap="#image-map">
                         </picture>
+                        <map name="image-map">
+                            <area shape="rect" coords="0,0,100,200" href="#" alt="Left Side">
+                        </map>
                     </figure>
-                    <h4 class="font-semibold mt-4">Audio Player</h4>
+                    <h4 class="font-semibold mt-4">Audio & Video</h4>
                     <audio controls class="w-full mt-2">
                         <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
                     </audio>
+                    <video controls class="w-full mt-2 rounded">
+                        <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+                        <track kind="captions" srclang="en" src="captions_en.vtt" label="English">
+                    </video>
                 </article>
                 
                 <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">External Content</h3>
                      <label class="text-sm font-medium">iFrame</label>
                      <iframe src="https://example.com" title="Sample Iframe" class="w-full h-24 border rounded-md mt-1"></iframe>
-                     <label class="text-sm font-medium mt-4">Object (e.g., PDF)</label>
+                     <label class="text-sm font-medium mt-4">Object</label>
                      <object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="w-full h-24 border rounded-md mt-1">
                          <p class="text-xs p-2 text-center">PDF preview not available.</p>
                      </object>
+                     <label class="text-sm font-medium mt-4">Embed</label>
+                     <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="w-full h-24 border rounded-md mt-1">
                 </article>
 
                 <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Interactive Elements</h3>
                      <details class="p-3 border rounded-md">
-                        <summary class="font-medium cursor-pointer">Details & Summary</summary>
-                        <p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked. It's great for expandable sections.</p>
+                         <summary class="font-medium cursor-pointer">Details & Summary</summary>
+                         <p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked.</p>
                      </details>
                      <hr class="my-4">
                      <div>
@@ -236,6 +314,60 @@
                      </div>
                 </article>
             </div>
+        </section>
+        
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">Advanced & Miscellaneous</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Scripting & Graphics</h3>
+                    <label class="text-sm font-medium">SVG (Scalable Vector Graphic)</label>
+                    <svg viewBox="0 0 100 100" class="w-24 h-24 mt-1">
+                        <circle cx="50" cy="50" r="45" stroke="royalblue" stroke-width="4" fill="skyblue" />
+                    </svg>
+                    <label class="text-sm font-medium mt-4">Canvas</label>
+                    <canvas id="myCanvas" class="w-full h-24 border rounded-md mt-1 bg-white">
+                        Your browser does not support the canvas tag.
+                    </canvas>
+                    <script>
+                        const c = document.getElementById("myCanvas");
+                        const ctx = c.getContext("2d");
+                        ctx.fillStyle = "#2563eb";
+                        ctx.fillRect(20, 20, 100, 60);
+                    </script>
+                </article>
+
+                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Templates & Slots</h3>
+                    <p>The `&lt;template&gt;` content below is not rendered until activated by JavaScript.</p>
+                    <button id="showTemplate" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show Template</button>
+                    <div id="template-host" class="mt-2 text-sm"></div>
+                    <template id="my-template">
+                        <div class="p-2 bg-green-100 border border-green-400 rounded">Template content is now visible!</div>
+                    </template>
+                    <script>
+                        document.getElementById('showTemplate').addEventListener('click', () => {
+                            const template = document.getElementById('my-template');
+                            const clone = template.content.cloneNode(true);
+                            document.getElementById('template-host').appendChild(clone);
+                        });
+                    </script>
+                </article>
+            </div>
+        </section>
+
+        <section class="mb-12">
+             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">A Note on Deprecated Elements</h2>
+             <div class="p-6 bg-white rounded-lg shadow-md">
+                <p>Many older HTML tags have been **deprecated** in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
+                <p class="mt-4">You should **avoid** using tags like:</p>
+                <ul class="list-disc ml-6 mt-2 text-sm space-y-1">
+                    <li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code></li>
+                    <li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code></li>
+                    <li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;strike&gt;</code></li>
+                </ul>
+                <p class="mt-4">Always use CSS for visual styling and modern HTML5 tags for semantic structure.</p>
+             </div>
         </section>
 
     </main>
