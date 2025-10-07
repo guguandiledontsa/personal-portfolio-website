@@ -354,8 +354,10 @@
                     <figure>
                         <figcaption class="text-sm text-slate-500 mb-2">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
                         <picture>
-                            <source media="(max-width: 768px)" srcset="https://placehold.co/400x200/60a5fa/ffffff?text=Mobile">
-                            <img src="https://placehold.co/800x200/2563eb/ffffff?text=Desktop" alt="Responsive image" class="w-full rounded-md shadow-inner" usemap="#image-map">
+                            <!-- https://placehold.co/400x200/60a5fa/ffffff?text=Mobile -->
+                            <source media="(max-width: 768px)" srcset="./src/assets/images/mobile-400x200.svg">
+                            <!-- src="https://placehold.co/800x200/2563eb/ffffff?text=Desktop -->
+                            <img src="./src/assets/images/desktop-800x200.svg" alt="Responsive image" class="w-full rounded-md shadow-inner" usemap="#image-map">
                         </picture>
                         <map name="image-map">
                             <area shape="rect" coords="0,0,100,200" href="#" alt="Left Side">
@@ -363,10 +365,12 @@
                     </figure>
                     <h4 class="font-semibold mt-4">Audio & Video</h4>
                     <audio controls class="w-full mt-2">
-                        <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
+                        <!-- src="https://www.w3schools.com/tags/horse.mp3" -->
+                        <source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
                     </audio>
                     <video controls class="w-full mt-2 rounded">
-                        <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+                        <!-- src="https://www.w3schools.com/tags/movie.mp4" -->
+                        <source src="./src/assets/vidoes/movie.mp4" type="video/mp4">
                         <track kind="captions" srclang="en" src="captions_en.vtt" label="English">
                     </video>
                 </article>
