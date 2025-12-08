@@ -155,7 +155,7 @@
     line-clamp: none;
 }
 
-.container-typography-font {
+.container-font {
     /*
    * Purpose: A shorthand for setting all font properties in a single declaration.
    * Syntax: font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size] / [line-height] [font-family];

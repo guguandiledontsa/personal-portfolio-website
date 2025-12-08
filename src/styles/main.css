@@ -16,9 +16,138 @@
 
 
 @layer typographies {
-  .supblock h1 {
-    color: red;
-  }
+  /* ------------------------------------------------------------ */
+  /* .container-typography */
+  /*
+  * Syntax: color: <color>;
+  * Syntax: text-align: <value>;
+  * Syntax: line-height: <value>;
+  * Syntax: word-spacing: <value>;
+  * Syntax: letter-spacing: <value>;
+  * Syntax: white-space: <value>;
+  * Syntax: text-decoration: <line> <style> <color> <thickness>;
+  * Syntax: text-transform: <value>;
+  * Syntax: hyphens: <value>;
+  * Syntax: text-indent: <length>;
+  * Syntax: vertical-align: <value>;
+  * Syntax: direction: <value>;
+  * Syntax: unicode-bidi: <value>;
+  * Syntax: text-emphasis: <style> <symbol> <color>;
+  * Syntax: text-align-last: <value>;
+  * Syntax: text-underline-position: <value>;
+  * Syntax: line-clamp: <number>;
+  */
+  /* ------------------------------------------------------------ */
+  /* .container-columns */
+  /*
+  * Syntax: column-count: <integer>;
+  * Syntax: column-width: <length>;
+  * Syntax: columns: <column-width> <column-count>;
+  * Syntax: column-gap: <length>;
+  * Syntax: column-rule: <width> <style> <color>;
+  */
+  /* ------------------------------------------------------------ */
+  /* .container-fonts */
+  /*
+  * Syntax: font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size] / [line-height] [font-family];
+  * Syntax: font-size: <value>;
+  * Syntax: font-family: <font-name-1>, <font-name-2>, ... | <generic-family>;
+  * Syntax: font-weight: <value>;
+  * Syntax: font-style: <value>;
+  * Syntax: font-variant: <value>;
+  * Syntax: font-stretch: <value>;
+  */
 }
-@layer appearances {}
-@layer layouts {}
+
+@layer appearances {
+  /* ------------------------------------------------------------ */
+  /* .container-style */
+  /*
+  * Syntax: background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [background-size] [background-origin] [background-clip];
+  * Syntax: background-color: <color>;
+  * Syntax: background-image: <image-1> | <image-2> | ... ;
+  * Syntax: background-repeat: <x-value> <y-value>;
+  * Syntax: background-attachment: <value>;
+  * Syntax: background-position: <x-value> <y-value>;
+  * Syntax: background-size: <value>;
+  * Syntax: background-origin: <value>;
+  * Syntax: background-clip: <value>;
+  * Syntax: border: [border-width] [border-style] [border-color];
+  * Syntax: border-block-start: <value>; border-inline-start: <value>; etc.
+  * Syntax: border-[side]: <value>;
+  * Syntax: border-radius: <value>;
+  * Syntax: box-shadow: <h-offset> <v-offset> <blur> <spread> <color> [inset];
+  * Syntax: opacity: <number>;
+  * Syntax: outline: <width> <style> <color>;
+  * Syntax: mix-blend-mode: <value>;
+  * Syntax: filter: <function>;
+  * Syntax: clip-path: <value>;
+  * Syntax: object-fit: <value>;
+  * Syntax: object-position: <x> <y>;
+  */
+}
+
+@layer layouts {
+  /* ------------------------------------------------------------ */
+  /* .container-layout */
+  /*
+  * Syntax: display: <value>;
+  * Syntax: position: <value>;
+  * Syntax: top: <value>; left: <value>; etc.
+  * Syntax: z-index: <integer>;
+  * Syntax: float: <value>;
+  * Syntax: clear: <value>;
+  */
+  /* ------------------------------------------------------------ */
+  /* .container-contain */
+  /*
+  * Syntax: contain: <value>;
+  * Syntax: content-visibility: auto | visible | hidden;
+  * Syntax: overflow-anchor: auto | none;
+  * Syntax: will-change: <property>;
+  */
+  /* ------------------------------------------------------------ */
+  /* .container-flex */
+  /*
+  * Syntax: display: flex | inline-flex;
+  * Syntax: flex-direction: <value>;
+  * Syntax: flex-wrap: <value>;
+  * Syntax: flex-flow: <flex-direction> <flex-wrap>;
+  * Syntax: justify-content: <value>;
+  * Syntax: align-items: <value>;
+  * Syntax: align-content: <value>;
+  * Syntax: align-self: <value>; (usually used on children, but container can set default)
+  */
+  /* ------------------------------------------------------------ */
+  /* .container-grid */
+  /*
+  * Syntax: display: grid | inline-grid;
+  * Syntax: grid-template-columns: <sizes>; grid-template-rows: <sizes>;
+  * Syntax: grid-template: <grid-template-rows> / <grid-template-columns>;
+  * Syntax: grid-auto-flow: <value>;
+  * Syntax: grid-auto-columns: <size>; grid-auto-rows: <size>;
+  * Syntax: grid-auto: <grid-auto-flow> <grid-auto-rows> / <grid-auto-columns>;
+  * Syntax: gap: <value>;
+  * Syntax: align-items: <value>;
+  * Syntax: justify-items: <value>;
+  * Syntax: align-content: <value>; justify-content: <value>;
+  * Syntax: grid: <template>; (shorthand)
+  * Syntax: place-items: <align-items> <justify-items>;
+  * Syntax: place-content: <align-content> <justify-content>;
+  */
+  /* ------------------------------------------------------------ */
+  /* .container-spacing */
+  /*
+  * Syntax: margin: <value>;
+  * Syntax: padding: <value>;
+  */
+  /* ------------------------------------------------------------ */
+  /* .container-sizing */
+  /*
+  * Syntax: box-sizing: <value>;
+  * Syntax: width: <value>; min-width: <value>; etc.
+  * Syntax: min-aspect-ratio, max-aspect-ratio: <ratio>;
+  * Syntax: contain-intrinsic-size: <length>;
+  
+  */
+}
