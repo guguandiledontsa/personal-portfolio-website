@@ -14,7 +14,7 @@
 
 /* ───────────────────────────────────────────── */
 
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
 @layer typographies {
   /* ------------------------------------------------------------ */
   /* .container-typography */
@@ -37,6 +37,9 @@
   * Syntax: text-underline-position: <value>;
   * Syntax: line-clamp: <number>;
   */
+  .supblock {
+    color: rebeccapurple;
+  }
   /* ------------------------------------------------------------ */
   /* .container-columns */
   /*
@@ -57,6 +60,9 @@
   * Syntax: font-variant: <value>;
   * Syntax: font-stretch: <value>;
   */
+  body {
+  font-family: 'Inter', sans-serif;
+}
 }
 
 @layer appearances {
@@ -85,6 +91,14 @@
   * Syntax: object-fit: <value>;
   * Syntax: object-position: <x> <y>;
   */
+  body {
+  background-color: rgb(241, 245, 249);
+}
+  .supblock--header {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);  /* shadow-lg */
+    background-color: rgba(255, 255, 255, 1); /* bg-white */
+}
+
 }
 
 @layer layouts {
@@ -98,6 +112,9 @@
   * Syntax: float: <value>;
   * Syntax: clear: <value>;
   */
+  .supblock {
+    
+  }
   /* ------------------------------------------------------------ */
   /* .container-contain */
   /*
@@ -141,6 +158,10 @@
   * Syntax: margin: <value>;
   * Syntax: padding: <value>;
   */
+  .supblock--header {
+    padding: 2rem;  /* p-8 */
+    margin-block-end: -2.5rem; /* 40px /* mb-10 */
+  }
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   /*
