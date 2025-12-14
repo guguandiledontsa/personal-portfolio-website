@@ -15,7 +15,9 @@
 /* ───────────────────────────────────────────── */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
 @layer typographies {
+  
   /* ------------------------------------------------------------ */
   /* .container-typography */
   /*
@@ -37,15 +39,52 @@
   * Syntax: text-underline-position: <value>;
   * Syntax: line-clamp: <number>;
   */
-  .supblock h1 {
-    line-height: 1; /* text-lg*/
-    text-align: center; /* text-center */
-    color: rebeccapurple;
+  body {
+    color: rgba(51, 65, 85, 1);
+    /* text-slate-700 */
+  }
+  
+  .supblock--footer {
+    color: hsla(213, 27%, 84%, 1);
+    /* text-slate-300 */
+  }
+  
+  .supblock--header h1 {
+    line-height: 1;
+    /* text-lg*/
+    text-align: center;
+    /* text-center */
+    color: hsla(217, 91%, 60%, 1);
+    /* text-blue-500 */
+  }
+  
+  .supblock--header p {
+    color: hsla(215, 16%, 47%, 1);
+    /* text-slate-500 */
+  }
+  
+  .supblock--main h2 {
+    line-height: 2.25rem;
+    /* text-3xl */
+    color: hsla(217, 33%, 17%, 1);
+    /* text-slate-800 */
+  }
+  
+  .supblock--footer h2 {
+    line-height: 2rem;
+    /* text-2xl */
+    text-align: center;
+    /* text-center */
+    color: rgba(255, 255, 255, 1);
+    /* text-white */
   }
   
   .supblock p {
-    text-align: center; /* text-center */
-}
+    text-align: center;
+    /* text-center */
+  }
+  
+  
   /* ------------------------------------------------------------ */
   /* .container-columns */
   /*
@@ -66,17 +105,34 @@
   * Syntax: font-variant: <value>;
   * Syntax: font-stretch: <value>;
   */
-  .supblock h1 {
-    font-size: 3rem; /* 48px /* text-lg*/
-    font-weight: 800; /* font-extrabold */
+  .supblock--header h1 {
+    font-size: 3rem;
+    /* 48px /* text-lg*/
+    font-weight: 800;
+    /* font-extrabold */
+  }
+  
+  .supblock--main h2 {
+    font-size: 1.875rem;
+    /* 30px /* text-3xl */
+    font-weight: 700;
+    /* font-bold */
+  }
+  
+  .supblock--footer h2 {
+    font-size: 1.5rem;
+    /*24px /* text-2xl */
+    font-weight: 600;
+    /* font-semibold */
   }
   
   body {
-  font-family: 'Inter', sans-serif;
-}
+    font-family: 'Inter', sans-serif;
+  }
 }
 
 @layer appearances {
+  
   /* ------------------------------------------------------------ */
   /* .container-style */
   /*
@@ -103,19 +159,39 @@
   * Syntax: object-position: <x> <y>;
   */
   body {
-  background-color: rgb(241, 245, 249);
-}
-  .supblock--header {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);  /* shadow-lg */
-    background-color: rgba(255, 255, 255, 1); /* bg-white */
-}
-  .supblock--footer {
-    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);  /* shadow-inner*/
+    background-color: rgba(241, 245, 249, 1)
+      /* bg-slate-100 */
   }
-
+  
+  .supblock--header {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* shadow-lg */
+    background-color: rgba(255, 255, 255, 1);
+    /* bg-white */
+  }
+  
+  .supblock--main {
+    background-color: hsla(210, 40%, 98%, 1);
+    /* bg-slate-50*/
+  }
+  
+  .supblock--footer {
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    /* shadow-inner*/
+    background-color: hsla(217, 33%, 17%, 1);
+    /* bg-slate-800 */
+  }
+  
+  .supblock--main h2 {
+    border: 0 solid hsla(217, 91%, 60%, 1);
+    /* border-blue-500 */
+    border-block-end-width: 2px;
+    /* border-b-2 */
+  }
 }
 
 @layer layouts {
+  
   /* ------------------------------------------------------------ */
   /* .container-layout */
   /*
@@ -170,12 +246,36 @@
   * Syntax: padding: <value>;
   */
   .supblock--header {
-    padding: 2rem;  /* p-8 */
-    margin-block-end: 2.5rem; /* 40px /* mb-10 */
+    padding: 2rem;
+    /* p-8 */
+    margin-block-end: 2.5rem;
+    /* 40px /* mb-10 */
   }
+  
+  .supblock--main {
+    padding-inline: 2rem;
+    /* 32px /* px-8*/
+  }
+  
+  .supblock--footer {
+    padding: 2rem;
+    /* 32px /* p-8 */
+    margin-block-start: 2.5rem;
+    /* mt-10 /* 40px */
+  }
+  
+  .supblock--main h2 {
+    margin-block-end: 1.5rem;
+    /* 24px /* mb-6 */
+    padding-bottom: 0.5rem;
+    /* 8px /* pb-2 */
+  }
+  
   .supblock p {
-    margin-block-start: 0.5rem; /* 8px /* mt-2 */
+    margin-block-start: 0.5rem;
+    /* 8px /* mt-2 */
   }
+  
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   /*
