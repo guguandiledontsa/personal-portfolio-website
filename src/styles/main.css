@@ -53,8 +53,12 @@
     
     /* ------------------ */
     /* tailwind layout */
-    --px-8: 0 2rem;
-
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
   }
 }
 
@@ -260,33 +264,26 @@
   * Syntax: padding: <value>;
   */
   .supblock--header {
-    padding: 2rem;
-    /* p-8 */
-    margin-block-end: 2.5rem;
-    /* 40px /* mb-10 */
+    padding: var(--spacing-8);
+    margin-block-end: var(--spacing-10);
   }
   
   .supblock--main {
-    padding: var(--px-8);
+    padding-inline: var(--spacing-8);
   }
   
   .supblock--footer {
-    padding: 2rem;
-    /* 32px /* p-8 */
-    margin-block-start: 2.5rem;
-    /* mt-10 /* 40px */
+    padding: var(--spacing-8);
+    margin-block-start: var(--spacing-10);
   }
   
   .supblock--main h2 {
-    margin-block-end: 1.5rem;
-    /* 24px /* mb-6 */
-    padding-bottom: 0.5rem;
-    /* 8px /* pb-2 */
+    margin-block-end: var(--spacing-6);
+    padding-bottom: var(--spacing-2);
   }
   
   .supblock p {
-    margin-block-start: 0.5rem;
-    /* 8px /* mt-2 */
+    margin-block-start: var(--spacing-2);
   }
   
   /* ------------------------------------------------------------ */
