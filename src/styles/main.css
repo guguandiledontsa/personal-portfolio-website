@@ -27,6 +27,22 @@
     
     --blue-500: hsla(217, 91%, 60%, 1);
     
+    /* ------------------ */
+    /* tailwind typography */
+    --text-center: center;
+    
+    --text-lg: 1.125rem/1.75rem;
+    /* font-size / line-height*/
+    --text-2xl: 1.5rem/2rem;
+    --text-3xl: 1.875rem/2.25rem;
+    --text-5xl: 3rem/1;
+    --text-6xl: 3.75rem/1;
+    
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    
+    --font-family: 'Inter', sans-serif;
   }
 }
 
@@ -39,7 +55,7 @@
   /*
   * Syntax: color: <color>;
   * Syntax: text-align: <value>;
-  * Syntax: line-height: <value>;
+  * Syntax: line-height: <value>; /* rather use font shrthand 
   * Syntax: word-spacing: <value>;
   * Syntax: letter-spacing: <value>;
   * Syntax: white-space: <value>;
@@ -60,8 +76,7 @@
   }
   
   .supblock p {
-    text-align: center;
-    /* text-center */
+    text-align: var(--text-center);
   }
   
   .supblock--footer {
@@ -69,10 +84,7 @@
   }
   
   .supblock--header h1 {
-    line-height: 1;
-    /* text-lg*/
-    text-align: center;
-    /* text-center */
+    text-align: var(--text-center);
     color: var(--blue-500);
   }
   
@@ -81,16 +93,11 @@
   }
   
   .supblock--main h2 {
-    line-height: 2.25rem;
-    /* text-3xl */
     color: var(--slate-800);
   }
   
   .supblock--footer h2 {
-    line-height: 2rem;
-    /* text-2xl */
-    text-align: center;
-    /* text-center */
+    text-align: var(--text-center);
     color: white;
   }
   
@@ -115,28 +122,22 @@
   * Syntax: font-stretch: <value>;
   */
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-family)
   }
   
   .supblock--header h1 {
-    font-size: 3rem;
-    /* 48px /* text-lg*/
-    font-weight: 800;
-    /* font-extrabold */
+    font: var(--text-5xl) var(--font-family);
+    font-weight: var(--font-extrabold);
   }
   
   .supblock--main h2 {
-    font-size: 1.875rem;
-    /* 30px /* text-3xl */
-    font-weight: 700;
-    /* font-bold */
+    font: var(--text-3xl) var(--font-family);
+    font-weight: var(--font-bold);
   }
   
   .supblock--footer h2 {
-    font-size: 1.5rem;
-    /*24px /* text-2xl */
-    font-weight: 600;
-    /* font-semibold */
+    font: var(--text-2xl) var(--font-family);
+    font-weight: var(--font-semibold);
   }
 }
 
