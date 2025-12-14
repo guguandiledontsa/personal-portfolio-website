@@ -50,6 +50,10 @@
     --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     
     --border-2: 2px;
+    
+    /* ------------------ */
+    /* tailwind layout */
+    --px-8: 0 2rem;
 
   }
 }
@@ -263,8 +267,7 @@
   }
   
   .supblock--main {
-    padding-inline: 2rem;
-    /* 32px /* px-8*/
+    padding: var(--px-8);
   }
   
   .supblock--footer {
