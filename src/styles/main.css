@@ -14,6 +14,22 @@
 
 /* ───────────────────────────────────────────── */
 
+@layer variables {
+  :root {
+    /* ------------------ */
+    /* tailwind colours */
+    --slate-50: hsla(210, 40%, 98%, 1);
+    --slate-100: hsla(210, 40%, 96%, 1);
+    --slate-300: hsla(213, 27%, 84%, 1);
+    --slate-500: hsla(215, 16%, 47%, 1);
+    --slate-700: hsla(215, 25%, 27%, 1);
+    --slate-800: hsla(217, 33%, 17%, 1);
+    
+    --blue-500: hsla(217, 91%, 60%, 1);
+    
+  }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
 
 @layer typographies {
@@ -40,43 +56,7 @@
   * Syntax: line-clamp: <number>;
   */
   body {
-    color: rgba(51, 65, 85, 1);
-    /* text-slate-700 */
-  }
-  
-  .supblock--footer {
-    color: hsla(213, 27%, 84%, 1);
-    /* text-slate-300 */
-  }
-  
-  .supblock--header h1 {
-    line-height: 1;
-    /* text-lg*/
-    text-align: center;
-    /* text-center */
-    color: hsla(217, 91%, 60%, 1);
-    /* text-blue-500 */
-  }
-  
-  .supblock--header p {
-    color: hsla(215, 16%, 47%, 1);
-    /* text-slate-500 */
-  }
-  
-  .supblock--main h2 {
-    line-height: 2.25rem;
-    /* text-3xl */
-    color: hsla(217, 33%, 17%, 1);
-    /* text-slate-800 */
-  }
-  
-  .supblock--footer h2 {
-    line-height: 2rem;
-    /* text-2xl */
-    text-align: center;
-    /* text-center */
-    color: rgba(255, 255, 255, 1);
-    /* text-white */
+    color: var(--slate-700);
   }
   
   .supblock p {
@@ -84,6 +64,35 @@
     /* text-center */
   }
   
+  .supblock--footer {
+    color: var(--slate-300);
+  }
+  
+  .supblock--header h1 {
+    line-height: 1;
+    /* text-lg*/
+    text-align: center;
+    /* text-center */
+    color: var(--blue-500);
+  }
+  
+  .supblock--header p {
+    color: var(--slate-500);
+  }
+  
+  .supblock--main h2 {
+    line-height: 2.25rem;
+    /* text-3xl */
+    color: var(--slate-800);
+  }
+  
+  .supblock--footer h2 {
+    line-height: 2rem;
+    /* text-2xl */
+    text-align: center;
+    /* text-center */
+    color: white;
+  }
   
   /* ------------------------------------------------------------ */
   /* .container-columns */
@@ -105,6 +114,10 @@
   * Syntax: font-variant: <value>;
   * Syntax: font-stretch: <value>;
   */
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  
   .supblock--header h1 {
     font-size: 3rem;
     /* 48px /* text-lg*/
@@ -124,10 +137,6 @@
     /*24px /* text-2xl */
     font-weight: 600;
     /* font-semibold */
-  }
-  
-  body {
-    font-family: 'Inter', sans-serif;
   }
 }
 
@@ -159,32 +168,27 @@
   * Syntax: object-position: <x> <y>;
   */
   body {
-    background-color: rgba(241, 245, 249, 1)
-      /* bg-slate-100 */
+    background-color: var(--slate-100);
   }
   
   .supblock--header {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     /* shadow-lg */
-    background-color: rgba(255, 255, 255, 1);
-    /* bg-white */
+    background-color: white;
   }
   
   .supblock--main {
-    background-color: hsla(210, 40%, 98%, 1);
-    /* bg-slate-50*/
+    background-color: var(--slate-50);
   }
   
   .supblock--footer {
     box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     /* shadow-inner*/
-    background-color: hsla(217, 33%, 17%, 1);
-    /* bg-slate-800 */
+    background-color: var(--slate-800);
   }
   
   .supblock--main h2 {
-    border: 0 solid hsla(217, 91%, 60%, 1);
-    /* border-blue-500 */
+    border: 0 solid var(--blue-500);
     border-block-end-width: 2px;
     /* border-b-2 */
   }
