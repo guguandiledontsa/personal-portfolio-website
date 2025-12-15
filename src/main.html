@@ -36,6 +36,23 @@
             h2 of main text
         </h2>
         <p>main p text</p>
+                <!-- Deprecated Elements Warning -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
+                A Note on Deprecated / Obsolete Elements
+            </h2>
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
+                <p class="mt-4">Avoid using tags such as:</p>
+                <ul class="list-disc ml-6 mt-2 text-sm space-y-1">
+                    <li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code></li>
+                    <li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code></li>
+                    <li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;tt&gt;</code>, <code>&lt;strike&gt;</code></li>
+                    <li><code>&lt;menuitem&gt;</code> (limited support), <code>&lt;keygen&gt;</code> (deprecated)</li>
+                </ul>
+                <p class="mt-4">Use modern, semantic HTML5 elements and CSS for styling instead.</p>
+            </div>
+        </section>
     </main>
     <!-- shadow-inner p-8 mt-10 bg-slate-800 text-slate-300 -->
     <footer class="supblock supblock--footer">
@@ -48,4 +65,5 @@
         </div>
     </footer>
 </body>
+
 </html>
