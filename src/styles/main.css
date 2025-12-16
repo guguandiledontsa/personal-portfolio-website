@@ -226,10 +226,10 @@
     box-shadow: var(--shadow-inner);
   }
   
-  .block--deprecated {}
-  
   .supblock--main__section__card {
+    background-color: white;
     border-radius: var(--space-2);
+    box-shadow: var(--shadow-md);
   }
   
   .card__ulist {
