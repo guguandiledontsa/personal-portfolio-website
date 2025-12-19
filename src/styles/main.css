@@ -30,7 +30,10 @@
     /* ------------------ */
     /* tailwind layout */
     --space-1: 0.25rem;
+    --space-md: 0.375rem;
+    /* rounded-md /* 6px*/
     --space-2: 0.5rem;
+    --space-3: 0.75rem;
     --space-4: 1rem;
     --space-6: 1.5rem;
     --space-8: 2rem;
@@ -56,6 +59,7 @@
     --text-5xl: 3rem/1;
     --text-6xl: 3.75rem/1;
     
+    --font-medium: 500;
     --font-semibold: 600;
     --font-bold: 700;
     --font-extrabold: 800;
@@ -157,6 +161,24 @@
     font-weight: var(--font-bold);
   }
   
+  .subblock__card h3 {
+    font: var(--text-xl) var(--font-body);
+    font-weight: var(--font-bold);
+  }
+  
+  .subblock__card h4 {
+    font-weight: var(--font-semibold);
+  }
+  
+  .subblock__card--interactive-elements h4 {
+    font-weight: var(--font-medium);
+  }
+  
+  .subblock__card label {
+    font: var(--text-sm) var(--font-body);
+    font-weight: var(--font-medium);
+  }
+  
   .supblock--footer h2 {
     font: var(--text-2xl) var(--font-body);
     font-weight: var(--font-semibold);
@@ -174,6 +196,7 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     
     --border-1: 1px;
@@ -232,6 +255,21 @@
     box-shadow: var(--shadow-md);
   }
   
+  .subblock__card {
+    background-color: white;
+    border-radius: var(--space-2);
+    box-shadow: var(--shadow-md);
+    
+    &:hover {
+      box-shadow: var(--shadow-xl);
+    }
+  }
+  
+  .subblock__card--interactive-elements details {
+    border-radius: var(--space-md);
+    border: 1px solid currentColor;
+  }
+  
   .card__ulist {
     margin-inline-start: var(--space-6);
     margin-block-start: var(--space-2);
@@ -253,6 +291,14 @@
 }
 
 @layer layouts {
+  :root {
+    --gap-6: var(--space-6);
+    
+    --grid-cols-1: repeat(1, minmax(0, 1fr));
+    --grid-cols-2: repeat(2, minmax(0, 1fr));
+    --grid-cols-3: repeat(3, minmax(0, 1fr));
+    
+  }
   
   /* ------------------------------------------------------------ */
   /* .container-layout */
@@ -301,6 +347,20 @@
   * Syntax: place-items: <align-items> <justify-items>;
   * Syntax: place-content: <align-content> <justify-content>;
   */
+  .block--embedded-content__subblock {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: var(--grid-cols-1);
+    
+    @media (min-width: 768px) {
+      grid-template-columns: var(--grid-cols-2);
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: var(--grid-cols-2);
+    }
+  }
+  
   /* ------------------------------------------------------------ */
   /* .container-spacing */
   /*
@@ -316,12 +376,36 @@
     padding-inline: var(--space-8);
   }
   
-  .block--deprecated {
-    margin-block-end: var(--space-12);
+  .supblock--main section~section {
+    margin-block-start: var(--space-12);
   }
   
   .supblock--main__section__card {
     padding: var(--space-6);
+  }
+  
+  .subblock__card {
+    padding: var(--space-6);
+  }
+  
+  .subblock__card--extnal-content h3 {
+    margin-block-end: var(--space-4);
+  }
+  
+  .subblock__card--interactive-elements h3 {
+    margin-block-end: var(--space-4);
+  }
+  
+  .subblock__card--interactive-elements details {
+    padding: var(--space-3);
+  }
+  
+  .subblock__card h4 {
+    margin-block-start: var(--space-4);
+  }
+  
+  .subblock__card label~label {
+    margin-block-start: var(--space-4);
   }
   
   .card__ulist-title {
