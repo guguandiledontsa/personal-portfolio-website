@@ -545,6 +545,10 @@
     margin-block-start: var(--space-2);
   }
   
+    
+  hr {
+    margin-block: var(--space-4);
+  }
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   /*
