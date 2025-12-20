@@ -45,6 +45,7 @@
     --text-left: left;
     
     /* font-size / line-height*/
+    --text-xs: 0.75rem/1rem;
     --text-sm: 0.875rem/1.25rem;
     --text-lg: 1.125rem/1.75rem;
     --text-2xl: 1.5rem/2rem;
@@ -119,6 +120,10 @@
     color: var(--slate-500);
   }
   
+  .card__extnal-content--iframe__not-available {
+    text-align: var(--text-center);
+  }
+  
   .card__details__content {
     color: var(--slate-600);
   }
@@ -181,6 +186,10 @@
   
   .card__figcaption {
     font: var(--text-sm) var(--font-body);
+  }
+  
+  .card__extnal-content--iframe__not-available {
+    font: var(--text-xs) var(--font-body);
   }
   
   .subblock__card label {
@@ -472,6 +481,10 @@
   .card__figcaption {
     margin-block-end: var(--space-2);
   }
+  
+  .card__extnal-content--iframe__not-available {
+    padding: var(--space-2);
+}
   
   .card__media {
     margin-block-start: var(--space-2);
