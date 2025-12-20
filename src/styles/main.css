@@ -1,17 +1,4 @@
 /*  main.css */
-
-/*
-@layer variables, bases, topographies, layouts, appearances, animations, interactions;
-
-@import url("./_variables.css") layer(variables);
-@import url("./_base.css") layer(bases);
-@import url("./_typography.css") layer(typographies);
-@import url("./_layout.css") layer(layouts);
-@import url("./_appearance.css") layer(appearances);
-@import url("./_animation.css") layer(animations);
-@import url("./_interaction.css") layer(interactions);
-*/
-
 /* ───────────────────────────────────────────── */
 
 @layer variables {
@@ -22,16 +9,21 @@
     --slate-100: hsla(210, 40%, 96%, 1);
     --slate-300: hsla(213, 27%, 84%, 1);
     --slate-500: hsla(215, 16%, 47%, 1);
+    --slate-600: hsla(215, 19%, 35%, 1);
     --slate-700: hsla(215, 25%, 27%, 1);
     --slate-800: hsla(217, 33%, 17%, 1);
+    --slate-900: hsla(222, 47%, 11%, 1);
     
     --blue-500: hsla(217, 91%, 60%, 1);
     --blue-700: hsla(224, 76%, 48%, 1);
+    
+    --green-100: hsla(149, 80%, 90%, 1);
+    --green-400: hsla(158, 64%, 52%, 1);
+    
     /* ------------------ */
     /* tailwind layout */
-    --space-1: 0.25rem;/* rounded /* 4px*/
+    --space-1: 0.25rem;
     --space-md: 0.375rem;
-    /* rounded-md /* 6px*/
     --space-2: 0.5rem;
     --space-3: 0.75rem;
     --space-4: 1rem;
@@ -39,6 +31,7 @@
     --space-8: 2rem;
     --space-10: 2.5rem;
     --space-12: 3rem;
+    --space-24: 6rem;
   }
 }
 
@@ -118,9 +111,16 @@
     color: var(--slate-800);
   }
   
+  .subblock__card h3 {
+    color: var(--slate-900);
+  }
   
   .card__figcaption {
     color: var(--slate-500);
+  }
+  
+  .card__details__content {
+    color: var(--slate-600);
   }
   
   .supblock--footer h2 {
@@ -153,7 +153,7 @@
   * Syntax: font-stretch: <value>;
   */
   body {
-    font-family: var(--font-body)
+    font-family: var(--font-body);
   }
   
   .supblock--header h1 {
@@ -183,10 +183,30 @@
     font: var(--text-sm) var(--font-body);
   }
   
-  
   .subblock__card label {
     font: var(--text-sm) var(--font-body);
     font-weight: var(--font-medium);
+  }
+  
+  .card__subcard__content {
+    font: var(--text-sm) var(--font-body);
+  }
+  
+  .card__details__summary {
+    font-weight: var(--font-medium);
+  }
+  
+  .card__details__content {
+    font: var(--text-sm) var(--font-body);
+  }
+  
+  .subcard__modal-dialog__heading {
+    font: var(--text-lg) var(--font-body);
+    font-weight: var(--font-bold);
+  }
+  
+  .subcard__template-host {
+    font: var(--text-sm) var(--font-body);
   }
   
   .supblock--footer h2 {
@@ -203,16 +223,23 @@
   :root {
     /* ------------------ */
     /* tailwind appearance */
+    /* effects */
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     
-    --border-1: 1px;
+    --border: 1px;
+    --border-0: 0;
+    --border-1: var(--border);
     --border-2: 2px;
     --border-4: 4px;
     --border-8: 8px;
+    
+    --rounded: var(--space-1);
+    --rounded-md: var(--space-md);
+    --rounded-lg: var(--space-2);
     
     --list-nono: none;
     --list-disc: disc;
@@ -280,7 +307,7 @@
     border: 1px solid currentColor;
   }
   
-  .card__img {
+  .card__media--img {
     border-radius: var(--space-md);
     box-shadow: var(--shadow-inner);
   }
@@ -288,6 +315,26 @@
   .card__ulist {
     margin-inline-start: var(--space-6);
     margin-block-start: var(--space-2);
+  }
+  
+  .card__subcard__content {
+    color: var(--slate-600);
+  }
+  
+  .subcard__template__slot-area {
+    background-color: var(--green-100);
+    border: 1px solid var(--green-400);
+    border-radius: var(--rounded);
+  }
+  
+  .subcard__modal-dialog {
+    box-shadow: var(--shadow-2xl);
+    border-width: var(--border-0);
+    border-radius: var(--rounded-lg);
+  }
+  
+  .card__extnal-content {
+    border-radius: var(--rounded-md);
   }
   
   .supblock--footer {
@@ -309,12 +356,13 @@
   :root {
     --gap-6: var(--space-6);
     
+    --h-24: var(--space-24);
+    
     --grid-cols-1: repeat(1, minmax(0, 1fr));
     --grid-cols-2: repeat(2, minmax(0, 1fr));
     --grid-cols-3: repeat(3, minmax(0, 1fr));
     
     --w-full: 100%;
-    
   }
   
   /* ------------------------------------------------------------ */
@@ -421,20 +469,26 @@
     margin-block-start: var(--space-4);
   }
   
-  
   .card__figcaption {
     margin-block-end: var(--space-2);
   }
-
-    
-  .card__audio {
+  
+  .card__media {
     margin-block-start: var(--space-2);
   }
-
-  .card__video {
+  
+  .card__details__content {
     margin-block-start: var(--space-2);
   }
-
+  
+  .subcard__template-host {
+    margin-block-start: var(--space-2);
+  }
+  
+  .subcard__template__slot-area {
+    padding: var(--space-2);
+  }
+  
   .subblock__card label~label {
     margin-block-start: var(--space-4);
   }
@@ -457,6 +511,18 @@
     padding-bottom: var(--space-2);
   }
   
+  .subcard__modal-dialog__content {
+    margin-block-start: var(--spacing-2);
+  }
+  
+  .subcard__modal-dialog {
+    padding: var(--space-6);
+  }
+  
+  .card__extnal-content {
+    margin-block-start: var(--space-1);
+  }
+  
   .supblock--footer__card {
     margin-block-start: var(--space-8);
     padding-block-start: var(--space-6);
@@ -474,16 +540,25 @@
   * Syntax: min-aspect-ratio, max-aspect-ratio: <ratio>;
   * Syntax: contain-intrinsic-size: <length>;
   */
+  
+  .card__media {
+    width: var(--w-full);
     
-  .card__img {
-    width: var(--w-full);
+    @supports (inline-size: var(--w-full)) {
+      inline-size: var(--w-full);
+    }
   }
   
-  .card__audio {
+  .card__extnal-content {
+    height: var(--h-24);
     width: var(--w-full);
-  }
-  
-  .card__video {
-    width: var(--w-full);
+    
+    @supports (block-size: var(--h-24)) {
+      block-size: var(--h-24);
+    }
+    
+    @supports (inline-size: var(--w-full)) {
+      inline-size: var(--w-full);
+    }
   }
 }

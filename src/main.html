@@ -72,7 +72,7 @@
                 <!-- p-6 bg-white rounded-lg mb-4 shadow-md hover:shadow-xl -->
                 <article class="subblock__card subblock__card--media hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl -->
-                    <h3 class="text-slate-900">Images & Media</h3>
+                    <h3>Images & Media</h3>
                     <figure>
                         <!-- text-sm mb-2 text-slate-500 -->
                         <figcaption class="card--media__figcaption card__figcaption">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
@@ -81,7 +81,7 @@
                             <source media="(max-width: 768px)" srcset="./src/assets/images/mobile-400x200.svg">
                             <!-- src="https://placehold.co/800x200/2563eb/ffffff?text=Desktop -->
                             <!-- w-full rounded-md shadow-inner -->
-                            <img src="./src/assets/images/desktop-800x200.svg" alt="Responsive image" class="card__img card--media__img" usemap="#image-map">
+                            <img src="./src/assets/images/desktop-800x200.svg" alt="Responsive image" class="card__media card__media--img" usemap="#image-map">
                         </picture>
                         <map name="image-map">
                             <area shape="rect" coords="0,0,100,200" href="#" alt="Left Side">
@@ -90,12 +90,12 @@
                     <!-- mt-4 font-semibold -->
                     <h4>Audio & Video</h4>
                     <!-- w-full mt-2 -->
-                    <audio controls class="card__audio">
+                    <audio controls class="card__media card__media--audio">
                         <!-- src="https://www.w3schools.com/tags/horse.mp3" -->
                         <source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
                     </audio>
                     <!-- w-full mt-2 rounded -->
-                    <video controls class="card__video">
+                    <video controls class="card__media card__media--video">
                         <!-- src="https://www.w3schools.com/tags/movie.mp4" -->
                         <source src="./src/assets/vidoes/movie.mp4" type="video/mp4">
                         <track kind="captions" srclang="en" src="captions_en.vtt" label="English">
@@ -104,44 +104,53 @@
                 <!-- p-6 bg-white rounded-lg shadow-md hover:shadow-xl -->
                 <article class="subblock__card subblock__card--extnal-content hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl  -->
-                    <!-- mb-4 -->
-                    <h3 class="text-slate-900">External Content</h3>
+                    <!-- mb-4 text-slate-900 -->
+                    <h3>External Content</h3>
                     <!-- text-sm font-medium -->
                     <label><code>&lt;iframe&gt;</code></label>
-                    <iframe src="https://example.com" title="Sample Iframe" class="w-full h-24 border rounded-md mt-1">
+                    <!-- w-full h-24 mt-1 rounded-md -->
+                    <iframe src="https://example.com" title="Sample Iframe" class="card__iframe card--extnal-content__iframe card__extnal-content border">
                         <p class="text-xs p-2 text-center">Iframe not available.</p>
                     </iframe>
                     <!-- text-sm font-medium -->
                     <!-- mt-4 -->
                     <label><code>&lt;object&gt;</code></label>
-                    <object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="w-full h-24 border rounded-md mt-1">
+                    <!-- w-full h-24 mt-1 rounded-md -->
+                    <object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="card__object card--extnal-content__object card__extnal-content h-24 border mt-1">
                         <p class="text-xs p-2 text-center">PDF preview not available.</p>
                     </object>
                     <!-- text-sm font-medium -->
                     <!-- mt-4 -->
                     <label><code>&lt;embed&gt;</code></label>
-                    <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="w-full h-24 border rounded-md mt-1">
+                    <!-- w-full h-24 mt-1 rounded-md -->
+                    <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="card__embed card--extnal-content__embed card__extnal-content w-full h-24 border rounded-md mt-1">
                 </article>
                 <!-- p-6 bg-white rounded-lg shadow-md hover:shadow-xl -->
                 <article class="subblock__card subblock__card--interactive-elements hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl -->
-                    <!-- mt-4 -->
-                    <h3 class="text-slate-900">Interactive Elements & Slots</h3>
+                    <!-- mt-4 text-slate-900 -->
+                    <h3>Interactive Elements & Slots</h3>
                     <!-- p-3 border -->
-                    <details>
-                        <summary class="font-medium cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
-                        <p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked.</p>
+                    <details class="card--interactive-elements__details card__details">
+                        <!-- font-medium -->
+                        <summary class="card__details__summary cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
+                        <!-- text-sm text-slate-600 mt-2 -->
+                        <p class="card__details__content">This content is hidden until the summary is clicked.</p>
                     </details>
                     <hr class="my-4">
-                    <div>
+                    <div class="card--interactive-elements__subcard card__subcard">
                         <!-- inherited (subblock__card): mt-4 font-semibold -->
                         <!-- font-medium -->
                         <h4>Dialog</h4>
-                        <p class="text-sm text-slate-600">Click to open a modal dialog.</p>
-                        <button onclick="document.getElementById('modal-dialog').showModal()" class="mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
-                        <dialog id="modal-dialog" class="p-6 border-0 shadow-2xl rounded-lg backdrop:bg-black/50">
-                            <h3 class="text-lg font-bold">Modal Dialog</h3>
-                            <p class="mt-2">This is a modal <code>&lt;dialog&gt;</code> element.</p>
+                        <!-- text-sm text-slate-600 -->
+                        <p class="card__subcard__content">Click to open a modal dialog.</p>
+                        <button onclick="document.getElementById('modal-dialog').showModal()" class="card__subcard__button mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
+                        <!-- p-6 shadow-2xl border-0 rounded-lg -->
+                        <dialog id="modal-dialog" class="subcard__modal-dialog backdrop:bg-black/50">
+                            <!-- font-bold text-lg -->
+                            <h3 class="subcard__modal-dialog__heading">Modal Dialog</h3>
+                            <!-- mt-2 -->
+                            <p class="subcard__modal-dialog__content">This is a modal <code>&lt;dialog&gt;</code> element.</p>
                             <button onclick="document.getElementById('modal-dialog').close()" class="mt-4 px-4 py-2 border rounded-md hover:bg-slate-100 transition-colors">Close</button>
                         </dialog>
                     </div>
@@ -155,9 +164,11 @@
                         <p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
                         <p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
                         <button id="showTpl" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show Template</button>
-                        <div id="tpl-host" class="mt-2 text-sm"></div>
+                        <!-- mt-2 -->
+                        <div id="tpl-host" class="subcard__template-host"></div>
                         <template id="my-tpl">
-                            <div class="p-2 bg-green-100 border border-green-400 rounded">
+                            <!-- p-2 rounded bg-green-100 border border-green-400 -->
+                            <div class="subcard__template__slot-area">
                                 This is template content. Slotted area:
                                 <slot name="injected-slot">[default slot content]</slot>
                             </div>
@@ -177,7 +188,6 @@
                             });
                         </script>
                     </div>
-                    
                 </article>
             </div>
         </section>
