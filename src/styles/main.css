@@ -15,6 +15,7 @@
     --slate-900: hsla(222, 47%, 11%, 1);
     
     --blue-500: hsla(217, 91%, 60%, 1);
+    --blue-600: hsla(221, 83%, 53%, 1);
     --blue-700: hsla(224, 76%, 48%, 1);
     
     --green-100: hsla(149, 80%, 90%, 1);
@@ -128,6 +129,14 @@
     color: var(--slate-600);
   }
   
+  .subcard--template-slot-example__button {
+    color: white;
+  }
+  
+  .subblock__card__button--show-dialog {
+    color: white;
+  }
+  
   .supblock--footer h2 {
     text-align: var(--text-center);
     color: white;
@@ -214,6 +223,10 @@
     font-weight: var(--font-bold);
   }
   
+  .subblock__card__button--show-dialog {
+    font-weight: var(--font-bold);
+}
+  
   .subcard__template-host {
     font: var(--text-sm) var(--font-body);
   }
@@ -299,6 +312,32 @@
     background-color: white;
     border-radius: var(--space-2);
     box-shadow: var(--shadow-md);
+  }
+  
+  .subblock__card__button {
+    border-radius: var(--space-md);
+  }
+  
+  .subblock__card__button--show-dialog {
+    background-color: var(--slate-700);
+    
+    &:hover {
+      background-color: var(--slate-800);
+    }
+  }
+  
+  .subblock__card__button--modal-dialog {
+    &:hover {
+      background-color: var(--slate-100);
+    }
+  }
+  
+  .subcard--template-slot-example__button {
+    background-color: var(--blue-600);
+    
+    &:hover {
+      background-color: var(--blue-700);
+    }
   }
   
   .subblock__card {
@@ -474,6 +513,16 @@
     padding: var(--space-3);
   }
   
+  .subblock__card__button {
+    padding-block: var(--space-2);
+    padding-inline: var(--space-4);
+    margin-block-start: var(--space-2);
+  }
+  
+  .subblock__card__button--modal-dialog {
+    margin-block-start: var(--space-4);
+  }
+  
   .subblock__card h4 {
     margin-block-start: var(--space-4);
   }
@@ -484,7 +533,7 @@
   
   .card__extnal-content--iframe__not-available {
     padding: var(--space-2);
-}
+  }
   
   .card__media {
     margin-block-start: var(--space-2);
@@ -545,10 +594,11 @@
     margin-block-start: var(--space-2);
   }
   
-    
+  
   hr {
     margin-block: var(--space-4);
   }
+  
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   /*

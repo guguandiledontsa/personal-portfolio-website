@@ -146,25 +146,29 @@
                         <h4>Dialog</h4>
                         <!-- text-sm text-slate-600 -->
                         <p class="card__subcard__content">Click to open a modal dialog.</p>
-                        <button onclick="document.getElementById('modal-dialog').showModal()" class="card__subcard__button mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
+                        <!-- mt-2 px-4 py-2 rounded-md transition-colors text-white bg-slate-700 hover:bg-slate-800 font-semibold -->
+                        <button onclick="document.getElementById('modal-dialog').showModal()" class="subblock__card__button subblock__card__button--show-dialog focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
                         <!-- p-6 shadow-2xl border-0 rounded-lg -->
                         <dialog id="modal-dialog" class="subcard__modal-dialog backdrop:bg-black/50">
                             <!-- font-bold text-lg -->
                             <h3 class="subcard__modal-dialog__heading">Modal Dialog</h3>
                             <!-- mt-2 -->
                             <p class="subcard__modal-dialog__content">This is a modal <code>&lt;dialog&gt;</code> element.</p>
-                            <button onclick="document.getElementById('modal-dialog').close()" class="mt-4 px-4 py-2 border rounded-md hover:bg-slate-100 transition-colors">Close</button>
+                            <!-- mt-2 -->
+                            <!-- mt-4 px-4 py-2 rounded-md transition-colors hover:bg-slate-100 -->
+                            <button onclick="document.getElementById('modal-dialog').close()" class="subblock__card__button subblock__card__button--modal-dialog border">Close</button>
                         </dialog>
                     </div>
                     <!-- my-4 -->
                     <hr>
-                    <div>
+                    <div class="subcard--template-slot-example">
                         <!-- inherited (subblock__card): mt-4 font-semibold -->
                         <!-- font-medium -->
                         <h4>Template & Slot Example</h4>
                         <p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
                         <p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
-                        <button id="showTpl" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show Template</button>
+                        <!-- mt-2 px-4 py-2 rounded-md transition-colors text-white bg-blue-600 hover:bg-blue-700 -->
+                        <button id="showTpl" class="subblock__card__button subcard--template-slot-example__button">Show Template</button>
                         <!-- mt-2 -->
                         <div id="tpl-host" class="subcard__template-host"></div>
                         <template id="my-tpl">
