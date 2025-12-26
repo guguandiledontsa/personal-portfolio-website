@@ -33,7 +33,10 @@
     --space-10: 2.5rem;
     --space-12: 3rem;
     --space-24: 6rem;
+    
   }
+  
+  
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
@@ -61,6 +64,7 @@
     
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
+    
   }
   
   /* ------------------------------------------------------------ */
@@ -84,67 +88,6 @@
   * Syntax: text-underline-position: <value>;
   * Syntax: line-clamp: <number>;
   */
-  body {
-    color: var(--slate-700);
-  }
-  
-  .supblock p {
-    text-align: var(--text-center);
-  }
-  
-  .supblock--footer {
-    color: var(--slate-300);
-  }
-  
-  .supblock--footer__card {
-    text-align: var(--text-center);
-  }
-  
-  .supblock--header h1 {
-    text-align: var(--text-center);
-    color: var(--blue-500);
-  }
-  
-  .supblock--header p {
-    color: var(--slate-500);
-  }
-  
-  .supblock--main h2 {
-    color: var(--slate-800);
-  }
-  
-  .subblock__card h3 {
-    color: var(--slate-900);
-  }
-  
-  .card__figcaption {
-    color: var(--slate-500);
-  }
-  
-  .card__extnal-content--iframe__not-available {
-    text-align: var(--text-center);
-  }
-  
-  .card__details__content {
-    color: var(--slate-600);
-  }
-  
-  .subcard--template-slot-example__button {
-    color: white;
-  }
-  
-  .subblock__card__button--show-dialog {
-    color: white;
-  }
-  
-  .supblock--footer h2 {
-    text-align: var(--text-center);
-    color: white;
-  }
-  
-  .card__ulist {
-    list-style: var(--list-disc);
-  }
   
   /* ------------------------------------------------------------ */
   /* .container-columns */
@@ -155,6 +98,7 @@
   * Syntax: column-gap: <length>;
   * Syntax: column-rule: <width> <style> <color>;
   */
+  
   /* ------------------------------------------------------------ */
   /* .container-fonts */
   /*
@@ -166,79 +110,8 @@
   * Syntax: font-variant: <value>;
   * Syntax: font-stretch: <value>;
   */
-  body {
-    font-family: var(--font-body);
-  }
   
-  .supblock--header h1 {
-    font: var(--text-5xl) var(--font-heading);
-    font-weight: var(--font-extrabold);
-  }
   
-  .supblock--main h2 {
-    font: var(--text-3xl) var(--font-body);
-    font-weight: var(--font-bold);
-  }
-  
-  .subblock__card h3 {
-    font: var(--text-xl) var(--font-body);
-    font-weight: var(--font-bold);
-  }
-  
-  .subblock__card h4 {
-    font-weight: var(--font-semibold);
-  }
-  
-  .subblock__card--interactive-elements h4 {
-    font-weight: var(--font-medium);
-  }
-  
-  .card__figcaption {
-    font: var(--text-sm) var(--font-body);
-  }
-  
-  .card__extnal-content--iframe__not-available {
-    font: var(--text-xs) var(--font-body);
-  }
-  
-  .subblock__card label {
-    font: var(--text-sm) var(--font-body);
-    font-weight: var(--font-medium);
-  }
-  
-  .card__subcard__content {
-    font: var(--text-sm) var(--font-body);
-  }
-  
-  .card__details__summary {
-    font-weight: var(--font-medium);
-  }
-  
-  .card__details__content {
-    font: var(--text-sm) var(--font-body);
-  }
-  
-  .subcard__modal-dialog__heading {
-    font: var(--text-lg) var(--font-body);
-    font-weight: var(--font-bold);
-  }
-  
-  .subblock__card__button--show-dialog {
-    font-weight: var(--font-bold);
-}
-  
-  .subcard__template-host {
-    font: var(--text-sm) var(--font-body);
-  }
-  
-  .supblock--footer h2 {
-    font: var(--text-2xl) var(--font-body);
-    font-weight: var(--font-semibold);
-  }
-  
-  .card__ulist {
-    font: var(--text-sm) var(--font-body);
-  }
 }
 
 @layer appearances {
@@ -266,6 +139,7 @@
     --list-nono: none;
     --list-disc: disc;
     --list-decimal: decimal;
+    
   }
   
   /* ------------------------------------------------------------ */
@@ -294,110 +168,8 @@
   * Syntax: object-position: <x> <y>;
   * Syntax: list-style: <value>;
   */
-  body {
-    background-color: var(--slate-100);
-  }
   
-  .supblock--header {
-    box-shadow: var(--shadow-lg);
-    background-color: white;
-  }
   
-  .supblock--main {
-    background-color: var(--slate-50);
-    box-shadow: var(--shadow-inner);
-  }
-  
-  .supblock--main__section__card {
-    background-color: white;
-    border-radius: var(--space-2);
-    box-shadow: var(--shadow-md);
-  }
-  
-  .subblock__card__button {
-    border-radius: var(--space-md);
-  }
-  
-  .subblock__card__button--show-dialog {
-    background-color: var(--slate-700);
-    
-    &:hover {
-      background-color: var(--slate-800);
-    }
-  }
-  
-  .subblock__card__button--modal-dialog {
-    &:hover {
-      background-color: var(--slate-100);
-    }
-  }
-  
-  .subcard--template-slot-example__button {
-    background-color: var(--blue-600);
-    
-    &:hover {
-      background-color: var(--blue-700);
-    }
-  }
-  
-  .subblock__card {
-    background-color: white;
-    border-radius: var(--space-2);
-    box-shadow: var(--shadow-md);
-    
-    &:hover {
-      box-shadow: var(--shadow-xl);
-    }
-  }
-  
-  .subblock__card--interactive-elements details {
-    border-radius: var(--space-md);
-    border: 1px solid currentColor;
-  }
-  
-  .card__media--img {
-    border-radius: var(--space-md);
-    box-shadow: var(--shadow-inner);
-  }
-  
-  .card__ulist {
-    margin-inline-start: var(--space-6);
-    margin-block-start: var(--space-2);
-  }
-  
-  .card__subcard__content {
-    color: var(--slate-600);
-  }
-  
-  .subcard__template__slot-area {
-    background-color: var(--green-100);
-    border: 1px solid var(--green-400);
-    border-radius: var(--rounded);
-  }
-  
-  .subcard__modal-dialog {
-    box-shadow: var(--shadow-2xl);
-    border-width: var(--border-0);
-    border-radius: var(--rounded-lg);
-  }
-  
-  .card__extnal-content {
-    border-radius: var(--rounded-md);
-  }
-  
-  .supblock--footer {
-    background-color: var(--slate-800);
-  }
-  
-  .supblock--footer__card {
-    border: 0 solid var(--slate-700);
-    border-block-start-width: var(--border-1);
-  }
-  
-  .supblock--main h2 {
-    border: 0 solid var(--blue-500);
-    border-block-end-width: var(--border-2);
-  }
 }
 
 @layer layouts {
@@ -411,6 +183,7 @@
     --grid-cols-3: repeat(3, minmax(0, 1fr));
     
     --w-full: 100%;
+    
   }
   
   /* ------------------------------------------------------------ */
@@ -423,6 +196,7 @@
   * Syntax: float: <value>;
   * Syntax: clear: <value>;
   */
+  
   /* ------------------------------------------------------------ */
   /* .container-contain */
   /*
@@ -431,6 +205,7 @@
   * Syntax: overflow-anchor: auto | none;
   * Syntax: will-change: <property>;
   */
+  
   /* ------------------------------------------------------------ */
   /* .container-flex */
   /*
@@ -443,6 +218,7 @@
   * Syntax: align-content: <value>;
   * Syntax: align-self: <value>; (usually used on children, but container can set default)
   */
+  
   /* ------------------------------------------------------------ */
   /* .container-grid */
   /*
@@ -460,19 +236,6 @@
   * Syntax: place-items: <align-items> <justify-items>;
   * Syntax: place-content: <align-content> <justify-content>;
   */
-  .block--embedded-content__subblock {
-    display: grid;
-    gap: var(--space-6);
-    grid-template-columns: var(--grid-cols-1);
-    
-    @media (min-width: 768px) {
-      grid-template-columns: var(--grid-cols-2);
-    }
-    
-    @media (min-width: 1024px) {
-      grid-template-columns: var(--grid-cols-2);
-    }
-  }
   
   /* ------------------------------------------------------------ */
   /* .container-spacing */
@@ -480,124 +243,6 @@
   * Syntax: margin: <value>;
   * Syntax: padding: <value>;
   */
-  .supblock--header {
-    padding: var(--space-8);
-    margin-block-end: var(--space-10);
-  }
-  
-  .supblock--main {
-    padding-inline: var(--space-8);
-  }
-  
-  .supblock--main section~section {
-    margin-block-start: var(--space-12);
-  }
-  
-  .supblock--main__section__card {
-    padding: var(--space-6);
-  }
-  
-  .subblock__card {
-    padding: var(--space-6);
-  }
-  
-  .subblock__card--extnal-content h3 {
-    margin-block-end: var(--space-4);
-  }
-  
-  .subblock__card--interactive-elements h3 {
-    margin-block-end: var(--space-4);
-  }
-  
-  .subblock__card--interactive-elements details {
-    padding: var(--space-3);
-  }
-  
-  .subblock__card__button {
-    padding-block: var(--space-2);
-    padding-inline: var(--space-4);
-    margin-block-start: var(--space-2);
-  }
-  
-  .subblock__card__button--modal-dialog {
-    margin-block-start: var(--space-4);
-  }
-  
-  .subblock__card h4 {
-    margin-block-start: var(--space-4);
-  }
-  
-  .card__figcaption {
-    margin-block-end: var(--space-2);
-  }
-  
-  .card__extnal-content--iframe__not-available {
-    padding: var(--space-2);
-  }
-  
-  .card__media {
-    margin-block-start: var(--space-2);
-  }
-  
-  .card__details__content {
-    margin-block-start: var(--space-2);
-  }
-  
-  .subcard__template-host {
-    margin-block-start: var(--space-2);
-  }
-  
-  .subcard__template__slot-area {
-    padding: var(--space-2);
-  }
-  
-  .subblock__card label~label {
-    margin-block-start: var(--space-4);
-  }
-  
-  .card__ulist-title {
-    margin-block-start: var(--space-4);
-  }
-  
-  .card__ulist li~li {
-    margin-block-start: var(--space-1);
-  }
-  
-  .supblock--footer {
-    padding: var(--space-8);
-    margin-block-start: var(--space-10);
-  }
-  
-  .supblock--main h2 {
-    margin-block-end: var(--space-6);
-    padding-bottom: var(--space-2);
-  }
-  
-  .subcard__modal-dialog__content {
-    margin-block-start: var(--spacing-2);
-  }
-  
-  .subcard__modal-dialog {
-    padding: var(--space-6);
-  }
-  
-  .card__extnal-content {
-    margin-block-start: var(--space-1);
-  }
-  
-  .supblock--footer__card {
-    margin-block-start: var(--space-8);
-    padding-block-start: var(--space-6);
-  }
-  
-  .supblock p {
-    margin-block-start: var(--space-2);
-  }
-  
-  
-  hr {
-    margin-block: var(--space-4);
-  }
   
   /* ------------------------------------------------------------ */
   /* .container-sizing */
@@ -608,24 +253,5 @@
   * Syntax: contain-intrinsic-size: <length>;
   */
   
-  .card__media {
-    width: var(--w-full);
-    
-    @supports (inline-size: var(--w-full)) {
-      inline-size: var(--w-full);
-    }
-  }
   
-  .card__extnal-content {
-    height: var(--h-24);
-    width: var(--w-full);
-    
-    @supports (block-size: var(--h-24)) {
-      block-size: var(--h-24);
-    }
-    
-    @supports (inline-size: var(--w-full)) {
-      inline-size: var(--w-full);
-    }
-  }
 }

@@ -10,17 +10,29 @@
     <link rel="stylesheet" href="src/styles/main.css">
 </head>
 
-<!-- bg-slate-100 text-slate-700 -->
 
+
+<!-- bg-slate-100 text-slate-700 -->
 <body>
-    
+
+
+
     <noscript>
         <div>
             Warning: JavaScript is disabled. Some interactive features of this page will not be available.
         </div>
     </noscript>
+
+
+
+
+
+
+
+
+
     <!-- shadow-lg p-8 bg-white mb-10 -->
-    <header class="supblock supblock--header">
+    <header>
         <!-- text-5xl text-center font-extrabold -->
         <h1 class="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
             The Ultimate HTML5 Tag Showcase — Complete
@@ -30,8 +42,14 @@
             A comprehensive showcase of HTML5 elements, including newer and less common ones.
         </p>
     </header>
+
+
+
+
+
+
     <!-- px-8 space-y-12[sections] -->
-    <main class="supblock supblock--main">
+    <main>
         <!-- border-b-2 border-blue-500 text-3xl font-bold mb-6 pb-2 text-slate-800-->
         <h2>
             h2 of main text
@@ -39,49 +57,49 @@
         <p>main p text</p>
         
         <!-- Deprecated Elements Warning -->
-        <section class="supblock__section supblock--main__section block block--deprecated">
+        <section>
             <!-- inherited (supblock--main): border-b-2 border-blue-500 text-3xl font-bold mb-6 pb-2 text-slate-800 -->
             <h2>
                 A Note on Deprecated / Obsolete Elements
             </h2>
             <!-- shadow-md p-6 rounded-lg bg-white -->
-            <div class="supblock--main__section__card supblock__section__card section__card">
+            <div>
                 <p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
                 <!-- mt-4 -->
-                <p class="card__ulist-title">Avoid using tags such as:</p>
+                <p>Avoid using tags such as:</p>
                 <!-- ml-6 mt-2 text-sm list-disc space-y-1 -->
-                <ul class="card__ulist">
+                <ul>
                     <li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code></li>
                     <li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code></li>
                     <li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;tt&gt;</code>, <code>&lt;strike&gt;</code></li>
                     <li><code>&lt;menuitem&gt;</code> (limited support), <code>&lt;keygen&gt;</code> (deprecated)</li>
                 </ul>
                 <!-- mt-4 -->
-                <p class="card__ulist-title card__ulist-subtitle">Use modern, semantic HTML5 elements and CSS for styling instead.</p>
+                <p>Use modern, semantic HTML5 elements and CSS for styling instead.</p>
             </div>
         </section>
         
         <!-- Embedded & Interactive Content -->
-        <section class="supblock--main__section block block--embedded-content">
+        <section>
             <!-- inherited (supblock--main): border-b-2 border-blue-500 text-3xl font-bold mb-6 pb-2 text-slate-800 -->
             <h2>
                 Embedded & Interactive Content (Extended)
             </h2>
             <!-- grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -->
-            <div class="block--embedded-content__subblock subblock">
+            <div>
                 <!-- p-6 bg-white rounded-lg mb-4 shadow-md hover:shadow-xl -->
-                <article class="subblock__card subblock__card--media hover:-translate-y-1 transition-all duration-300">
+                <article class="  hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl -->
                     <h3>Images & Media</h3>
                     <figure>
                         <!-- text-sm mb-2 text-slate-500 -->
-                        <figcaption class="card--media__figcaption card__figcaption">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
+                        <figcaption>A responsive <code>&lt;picture&gt;</code> element.</figcaption>
                         <picture>
                             <!-- https://placehold.co/400x200/60a5fa/ffffff?text=Mobile -->
                             <source media="(max-width: 768px)" srcset="./src/assets/images/mobile-400x200.svg">
                             <!-- src="https://placehold.co/800x200/2563eb/ffffff?text=Desktop -->
                             <!-- w-full rounded-md shadow-inner -->
-                            <img src="./src/assets/images/desktop-800x200.svg" alt="Responsive image" class="card__media card__media--img" usemap="#image-map">
+                            <img src="./src/assets/images/desktop-800x200.svg" alt="Responsive image" usemap="#image-map">
                         </picture>
                         <map name="image-map">
                             <area shape="rect" coords="0,0,100,200" href="#" alt="Left Side">
@@ -90,90 +108,90 @@
                     <!-- mt-4 font-semibold -->
                     <h4>Audio & Video</h4>
                     <!-- w-full mt-2 -->
-                    <audio controls class="card__media card__media--audio">
+                    <audio controls>
                         <!-- src="https://www.w3schools.com/tags/horse.mp3" -->
                         <source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
                     </audio>
                     <!-- w-full mt-2 rounded -->
-                    <video controls class="card__media card__media--video">
+                    <video controls>
                         <!-- src="https://www.w3schools.com/tags/movie.mp4" -->
                         <source src="./src/assets/vidoes/movie.mp4" type="video/mp4">
                         <track kind="captions" srclang="en" src="captions_en.vtt" label="English">
                     </video>
                 </article>
                 <!-- p-6 bg-white rounded-lg shadow-md hover:shadow-xl -->
-                <article class="subblock__card subblock__card--extnal-content hover:-translate-y-1 transition-all duration-300">
+                <article class="  hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl  -->
                     <!-- mb-4 text-slate-900 -->
                     <h3>External Content</h3>
                     <!-- text-sm font-medium -->
                     <label><code>&lt;iframe&gt;</code></label>
                     <!-- w-full h-24 mt-1 rounded-md -->
-                    <iframe src="https://example.com" title="Sample Iframe" class="card--extnal-content__iframe card__extnal-content--iframe border">
+                    <iframe src="https://example.com" title="Sample Iframe" class="  border">
                         <!-- text-center text-xs p-2 -->
-                        <p class="card__extnal-content--iframe__not-available">Iframe not available.</p>
+                        <p>Iframe not available.</p>
                     </iframe>
                     <!-- text-sm font-medium -->
                     <!-- mt-4 -->
                     <label><code>&lt;object&gt;</code></label>
                     <!-- w-full h-24 mt-1 rounded-md -->
-                    <object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="card__object card--extnal-content__object card__extnal-content border">
+                    <object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="   border">
                         <p class="text-xs p-2 text-center">PDF preview not available.</p>
                     </object>
                     <!-- text-sm font-medium -->
                     <!-- mt-4 -->
                     <label><code>&lt;embed&gt;</code></label>
                     <!-- w-full h-24 mt-1 rounded-md -->
-                    <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="card__embed card--extnal-content__embed card__extnal-content border">
+                    <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="   border">
                 </article>
                 <!-- p-6 bg-white rounded-lg shadow-md hover:shadow-xl -->
-                <article class="subblock__card subblock__card--interactive-elements hover:-translate-y-1 transition-all duration-300">
+                <article class="  hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl -->
                     <!-- mt-4 text-slate-900 -->
                     <h3>Interactive Elements & Slots</h3>
                     <!-- p-3 border -->
-                    <details class="card--interactive-elements__details card__details">
+                    <details>
                         <!-- font-medium -->
-                        <summary class="card__details__summary cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
+                        <summary class=" cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
                         <!-- text-sm text-slate-600 mt-2 -->
-                        <p class="card__details__content">This content is hidden until the summary is clicked.</p>
+                        <p>This content is hidden until the summary is clicked.</p>
                     </details>
                     <!-- my-4 -->
                     <hr>
-                    <div class="card--interactive-elements__subcard card__subcard">
+                    <div>
                         <!-- inherited (subblock__card): mt-4 font-semibold -->
                         <!-- font-medium -->
                         <h4>Dialog</h4>
                         <!-- text-sm text-slate-600 -->
-                        <p class="card__subcard__content">Click to open a modal dialog.</p>
+                        <p>Click to open a modal dialog.</p>
                         <!-- mt-2 px-4 py-2 rounded-md transition-colors text-white bg-slate-700 hover:bg-slate-800 font-semibold -->
-                        <button onclick="document.getElementById('modal-dialog').showModal()" class="subblock__card__button subblock__card__button--show-dialog focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
+                        <button onclick="document.getElementById('modal-dialog').showModal()" class="  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
                         <!-- p-6 shadow-2xl border-0 rounded-lg -->
-                        <dialog id="modal-dialog" class="subcard__modal-dialog backdrop:bg-black/50">
+                        <dialog id="modal-dialog" class=" backdrop:bg-black/50">
                             <!-- font-bold text-lg -->
-                            <h3 class="subcard__modal-dialog__heading">Modal Dialog</h3>
+                            <h3>Modal Dialog</h3>
                             <!-- mt-2 -->
-                            <p class="subcard__modal-dialog__content">This is a modal <code>&lt;dialog&gt;</code> element.</p>
+                            <p>This is a modal <code>&lt;dialog&gt;</code> element.</p>
                             <!-- mt-2 -->
                             <!-- mt-4 px-4 py-2 rounded-md transition-colors hover:bg-slate-100 -->
-                            <button onclick="document.getElementById('modal-dialog').close()" class="subblock__card__button subblock__card__button--modal-dialog border">Close</button>
+                            <button onclick="document.getElementById('modal-dialog').close()" class="  border">Close</button>
                         </dialog>
                     </div>
                     <!-- my-4 -->
                     <hr>
-                    <div class="subcard--template-slot-example">
+                    <div>
                         <!-- inherited (subblock__card): mt-4 font-semibold -->
                         <!-- font-medium -->
                         <h4>Template & Slot Example</h4>
                         <p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
                         <p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
                         <!-- mt-2 px-4 py-2 rounded-md transition-colors text-white bg-blue-600 hover:bg-blue-700 -->
-                        <button id="showTpl" class="subblock__card__button subcard--template-slot-example__button">Show Template</button>
+                        <button id="showTpl">Show Template</button>
                         <!-- mt-2 -->
-                        <div id="tpl-host" class="subcard__template-host"></div>
+                        <div id="tpl-host"></div>
                         <template id="my-tpl">
                             <!-- p-2 rounded bg-green-100 border border-green-400 -->
-                            <div class="subcard__template__slot-area">
+                            <div>
                                 This is template content. Slotted area:
                                 <slot name="injected-slot">[default slot content]</slot>
                             </div>
@@ -197,16 +215,38 @@
             </div>
         </section>
     </main>
+
+
+
+
+
+
     <!-- shadow-inner p-8 mt-10 bg-slate-800 text-slate-300 -->
-    <footer class="supblock supblock--footer">
+    <footer>
         <!-- text-2xl font-semibold text-center text-white -->
         <h2>Footer Content</h2>
         <p>p text on footer</p>
+        
         <!-- text-center mt-8 pt-6 border-t border-slate-700-->
-        <div class="supblock__card supblock--footer__card footer__card card">
+        <div>
             <small>&copy; <time datetime="2025">2025</time> Your Company. All Rights Reserved.</small>
         </div>
+        
     </footer>
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
+
 
 </html>
