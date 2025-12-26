@@ -197,6 +197,10 @@
   * Syntax: clear: <value>;
   */
   
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
   .main__item {}
   
   /* ------------------------------------------------------------ */
@@ -208,8 +212,12 @@
   * Syntax: will-change: <property>;
   */
   
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
   .main__item {}
-
+  
   /* ------------------------------------------------------------ */
   /* .container-flex */
   /*
@@ -223,8 +231,12 @@
   * Syntax: align-self: <value>; (usually used on children, but container can set default)
   */
   
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
   .main__item {}
-
+  
   /* ------------------------------------------------------------ */
   /* .container-grid */
   /*
@@ -243,7 +255,33 @@
   * Syntax: place-content: <align-content> <justify-content>;
   */
   
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
   .main__item {}
+  
+  .grid-container {
+    display: grid;
+    gap: var(--gap-6);
+    grid-template-columns: var(--grid-cols-1);
+  }
+  
+  .grid-container--lists-tables {
+    @media (min-width: 768px) {
+      grid-template-columns: var(--grid-cols-2);
+    }
+  }
+  
+  .grid-container--embedded-interactive-content {
+    @media (min-width: 768px) {
+      grid-template-columns: var(--grid-cols-2);
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: var(--grid-cols-3);
+    }
+  }
   
   /* ------------------------------------------------------------ */
   /* .container-spacing */
@@ -252,9 +290,17 @@
   * Syntax: padding: <value>;
   */
   
-  .main__item {
+  /* px-8 */
+  .main {
+    padding-inline: var(--space-8);
+  }
+  
+  /* space-y-12 */
+  .main .main__item~.main__item {
     margin-block-end: var(--space-12);
   }
+  
+  .main__item {}
   
   /* ------------------------------------------------------------ */
   /* .container-sizing */
@@ -265,6 +311,10 @@
   * Syntax: contain-intrinsic-size: <length>;
   */
   
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
   .main__item {}
-
+  
 }
