@@ -197,6 +197,8 @@
   * Syntax: clear: <value>;
   */
   
+  .main__item {}
+  
   /* ------------------------------------------------------------ */
   /* .container-contain */
   /*
@@ -206,6 +208,8 @@
   * Syntax: will-change: <property>;
   */
   
+  .main__item {}
+
   /* ------------------------------------------------------------ */
   /* .container-flex */
   /*
@@ -219,6 +223,8 @@
   * Syntax: align-self: <value>; (usually used on children, but container can set default)
   */
   
+  .main__item {}
+
   /* ------------------------------------------------------------ */
   /* .container-grid */
   /*
@@ -237,12 +243,18 @@
   * Syntax: place-content: <align-content> <justify-content>;
   */
   
+  .main__item {}
+  
   /* ------------------------------------------------------------ */
   /* .container-spacing */
   /*
   * Syntax: margin: <value>;
   * Syntax: padding: <value>;
   */
+  
+  .main__item {
+    margin-block-end: var(--space-12);
+  }
   
   /* ------------------------------------------------------------ */
   /* .container-sizing */
@@ -253,5 +265,6 @@
   * Syntax: contain-intrinsic-size: <length>;
   */
   
-  
+  .main__item {}
+
 }
