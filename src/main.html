@@ -15,23 +15,23 @@
 <!-- bg-slate-100 text-slate-700 -->
 
 <body>
-
-
-
+    
+    
+    
     <noscript>
         <div>
             Warning: JavaScript is disabled. Some interactive features of this page will not be available.
         </div>
     </noscript>
-
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <!-- shadow-lg p-8 bg-white mb-10 -->
     <header>
         <!-- text-5xl text-center font-extrabold -->
@@ -43,26 +43,27 @@
             A comprehensive showcase of HTML5 elements, including newer and less common ones.
         </p>
     </header>
-
-
-
-
-
-
-    <main class="main">
-
-
-
+    
+    
+    
+    
+    
+    
+    <main class="BLOCK-A">
+        
+        
+        
         <!-- Lists & Tables -->
-        <section class="main__item item--lists-tables">
-            <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
+        <section class="BLOCK-B main__item section--lists-tables">
+            <h2 class="section__heading text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Lists & Tables
             </h2>
             
-            <div class="grid-container grid-container--lists-tables md:grid-cols-2">
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="WRAPPER-B BLOCK-D grid-container grid-container--lists-tables">
+                <article class="BLOCK-C section__item hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Lists (ul, ol, dl)</h3>
-                    <div>
+                    
+                    <div class="BLOCK-J">
                         <h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
                         <ul class="list-disc ml-6 space-y-1 mt-2">
                             <li>First item. <code>&lt;li&gt;</code></li>
@@ -80,9 +81,13 @@
                         </dl>
                     </div>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                
+                
+                
+                <article class="BLOCK-C section__item hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Table</h3>
-                    <div class="overflow-x-auto">
+                    
+                    <div class="BLOCK-I overflow-x-auto">
                         <table class="w-full mt-2 border-collapse text-sm">
                             <caption class="caption-bottom text-xs text-slate-500 mt-2">Monthly Sales Summary</caption>
                             <colgroup>
@@ -119,18 +124,18 @@
                 </article>
             </div>
         </section>
-
-
-
+        
+        
+        
         <!-- Deprecated Elements Warning -->
-        <section class="main__item item--deprecated-elements">
+        <section class="BLOCK-B main__item section--deprecated-elements">
             <!-- text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800 -->
-            <h2>
+            <h2 class="section__heading">
                 A Note on Deprecated / Obsolete Elements
             </h2>
-
-            <!-- shadow-md p-6 rounded-lg bg-white -->
-            <div>
+            
+            <!-- bg-white rounded-lg shadow-md -->
+            <div class="BLOCK-C section__item">
                 <p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
                 <!-- mt-4 -->
                 <p>Avoid using tags such as:</p>
@@ -145,19 +150,20 @@
                 <p>Use modern, semantic HTML5 elements and CSS for styling instead.</p>
             </div>
         </section>
-
-
-
+        
+        
+        
         <!-- Embedded & Interactive Content -->
-        <section class="main__item item--embedded-interactive-content">
+        <section class="BLOCK-B main__item section--embedded-interactive-content">
             <!-- text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800 -->
-            <h2>
+            <h2 class="section__heading">
                 Embedded & Interactive Content (Extended)
             </h2>
-
-            <div class="grid-container grid-container--embedded-interactive-content">
-                <!-- p-6 bg-white rounded-lg mb-4 shadow-md hover:shadow-xl -->
-                <article class="hover:-translate-y-1 transition-all duration-300">
+            
+            <div class="WRAPPER-A BLOCK-D grid-container grid-container--embedded-interactive-content">
+                
+                <!-- bg-white rounded-lg shadow-md hover:shadow-xl mb-4 -->
+                <article class="BLOCK-C section__item hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl -->
                     <h3>Images & Media</h3>
                     <figure>
@@ -188,8 +194,11 @@
                         <track kind="captions" srclang="en" src="captions_en.vtt" label="English">
                     </video>
                 </article>
-                <!-- p-6 bg-white rounded-lg shadow-md hover:shadow-xl -->
-                <article class="hover:-translate-y-1 transition-all duration-300">
+                
+                
+                
+                <!-- bg-white rounded-lg shadow-md hover:shadow-xl -->
+                <article class="BLOCK-C section__item hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl  -->
                     <!-- mb-4 text-slate-900 -->
                     <h3>External Content</h3>
@@ -213,13 +222,16 @@
                     <!-- w-full h-24 mt-1 rounded-md -->
                     <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="   border">
                 </article>
-                <!-- p-6 bg-white rounded-lg shadow-md hover:shadow-xl -->
-                <article class="hover:-translate-y-1 transition-all duration-300">
+                
+                
+                
+                <!-- bg-white rounded-lg shadow-md hover:shadow-xl -->
+                <article class="BLOCK-C section__item hover:-translate-y-1 transition-all duration-300">
                     <!-- font-bold text-xl -->
                     <!-- mt-4 text-slate-900 -->
                     <h3>Interactive Elements & Slots</h3>
                     <!-- p-3 border -->
-                    <details>
+                    <details class="BLOCK-K">
                         <!-- font-medium -->
                         <summary class=" cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
                         <!-- text-sm text-slate-600 mt-2 -->
@@ -227,7 +239,8 @@
                     </details>
                     <!-- my-4 -->
                     <hr>
-                    <div>
+                    
+                    <div class="BLOCK-G">
                         <!-- inherited (subblock__card): mt-4 font-semibold -->
                         <!-- font-medium -->
                         <h4>Dialog</h4>
@@ -248,7 +261,8 @@
                     </div>
                     <!-- my-4 -->
                     <hr>
-                    <div>
+                    
+                    <div class="BLOCK-F">
                         <!-- inherited (subblock__card): mt-4 font-semibold -->
                         <!-- font-medium -->
                         <h4>Template & Slot Example</h4>
@@ -257,7 +271,7 @@
                         <!-- mt-2 px-4 py-2 rounded-md transition-colors text-white bg-blue-600 hover:bg-blue-700 -->
                         <button id="showTpl">Show Template</button>
                         <!-- mt-2 -->
-                        <div id="tpl-host"></div>
+                        <div id="tpl-host" class="BLOCK-H"></div>
                         <template id="my-tpl">
                             <!-- p-2 rounded bg-green-100 border border-green-400 -->
                             <div>
@@ -283,16 +297,16 @@
                 </article>
             </div>
         </section>
-
-
-
+        
+        
+        
     </main>
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
     <!-- shadow-inner p-8 mt-10 bg-slate-800 text-slate-300 -->
     <footer>
         <!-- text-2xl font-semibold text-center text-white -->
@@ -305,18 +319,18 @@
         </div>
         
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </body>
 
 
