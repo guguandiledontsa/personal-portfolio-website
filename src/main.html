@@ -15,23 +15,23 @@
 <!-- bg-slate-100 text-slate-700 -->
 
 <body>
-    
-    
-    
+
+
+
     <noscript>
         <div>
             Warning: JavaScript is disabled. Some interactive features of this page will not be available.
         </div>
     </noscript>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     <!-- shadow-lg p-8 bg-white mb-10 -->
     <header>
         <!-- text-5xl text-center font-extrabold -->
@@ -43,22 +43,182 @@
             A comprehensive showcase of HTML5 elements, including newer and less common ones.
         </p>
     </header>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     <main class="BLOCK-A">
-        
-        
-        
+
+
+
+        <!-- Forms & User Input -->
+        <section class="BLOCK-B main__item ">
+            <h2 class="section__heading text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
+                Forms & User Input (Extended)
+            </h2>
+            <div class="WRAPPER-C BLOCK-E grid-container md:grid-cols-2 lg:grid-cols-3">
+                <article class="section__item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Text-Based <code>&lt;input&gt;</code> of various <code>type</code> attributes and a <code>&lt;textarea&gt;</code></h3>
+                    <form class="FORM-BLOCK space-y-4">
+                        <div class="form-item">
+                            <label for="text-in" class="block text-sm font-medium mb-1">Text</label>
+                            <input type="text" id="text-in" class="form-input" placeholder="Standard text">
+                        </div>
+                        <div class="form-item">
+                            <label for="email-in" class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" id="email-in" class="form-input" placeholder="name@example.com">
+                        </div>
+                        <div class="form-item">
+                            <label for="password-in" class="block text-sm font-medium mb-1">Password</label>
+                            <input type="password" id="password-in" class="form-input">
+                        </div>
+                        <div class="form-item">
+                            <label for="tel-in" class="block text-sm font-medium mb-1">Telephone</label>
+                            <input type="tel" id="tel-in" class="form-input" placeholder="123-456-7890">
+                        </div>
+                        <div class="form-item">
+                            <label for="url-in" class="block text-sm font-medium mb-1">URL</label>
+                            <input type="url" id="url-in" class="form-input" placeholder="https://example.com">
+                        </div>
+                        <div class="form-item">
+                            <label for="search-in" class="block text-sm font-medium mb-1">Search</label>
+                            <input type="search" id="search-in" class="form-input" placeholder="Search...">
+                        </div>
+                        <div class="form-item">
+                            <label for="textarea-in" class="block text-sm font-medium mb-1">Textarea</label>
+                            <textarea id="textarea-in" rows="2" class="form-input"></textarea>
+                        </div>
+                    </form>
+                </article>
+                <article class="section__item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Choices & Selections</h3>
+                    <form class="space-y-4">
+                        <fieldset>
+                            <legend class="font-semibold text-sm">Radio Group</legend>
+                            <div class="mt-2 space-y-1">
+                                <div class="flex items-center space-x-2">
+                                    <input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="radio1">Choice One</label>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <input type="radio" id="radio2" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked>
+                                    <label for="radio2">Choice Two</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend class="font-semibold text-sm">Checkbox Group</legend>
+                            <div class="mt-2 space-y-1">
+                                <div class="flex items-center space-x-2">
+                                    <input type="checkbox" id="check1" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500" checked>
+                                    <label for="check1">Option A</label>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <input type="checkbox" id="check2" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500">
+                                    <label for="check2">Option B</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div>
+                            <label for="dropdown" class="block text-sm font-medium mb-1">Select Dropdown</label>
+                            <select id="dropdown" class="form-input">
+                                <optgroup label="Primary">
+                                    <option>Option A</option>
+                                </optgroup>
+                                <optgroup label="Secondary">
+                                    <option>Option C</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="ice-cream-choice" class="block text-sm font-medium mb-1">Datalist (Autocomplete)</label>
+                            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" class="form-input">
+                            <datalist id="ice-cream-flavors">
+                                <option value="Chocolate"></option>
+                                <option value="Vanilla"></option>
+                                <option value="Strawberry"></option>
+                            </datalist>
+                        </div>
+                    </form>
+                </article>
+                <article class="section__item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Pickers, Ranges & Files</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="range-in" class="block text-sm font-medium">Range</label>
+                            <input type="range" id="range-in" class="w-full accent-blue-600">
+                        </div>
+                        <div>
+                            <label for="date-in" class="block text-sm font-medium mb-1">Date</label>
+                            <input type="date" id="date-in" class="form-input">
+                        </div>
+                        <div>
+                            <label for="month-in" class="block text-sm font-medium mb-1">Month</label>
+                            <input type="month" id="month-in" class="form-input">
+                        </div>
+                        <div>
+                            <label for="week-in" class="block text-sm font-medium mb-1">Week</label>
+                            <input type="week" id="week-in" class="form-input">
+                        </div>
+                        <div>
+                            <label for="color-in" class="block text-sm font medium mb-1">Color</label>
+                            <input type="color" id="color-in" value="#2563eb" class="h-10 w-full rounded-md">
+                        </div>
+                        <div>
+                            <label for="file-in" class="block text-sm font-medium mb-1">File Upload</label>
+                            <input type="file" id="file-in" class="form-input">
+                        </div>
+                    </form>
+                </article>
+                <article class="section__item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="font-bold text-xl mb-4 text-slate-900">Buttons, Outputs & Hidden / Datetime Inputs</h3>
+                    <form class="space-y-4" oninput="result.value = (a.valueAsNumber || 0) + (b.valueAsNumber || 0)">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Hidden Input</label>
+                            <input type="hidden" id="hidden-in" name="hidden-field" value="secret-value">
+                            <p class="text-xs text-slate-500">This hidden field is submitted but not shown.</p>
+                        </div>
+                        <div>
+                            <label for="dtlocal-in" class="block text-sm font-medium mb-1">Date & Time (local)</label>
+                            <input type="datetime-local" id="dtlocal-in" class="form-input">
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium mb-1">Output Element</label>
+                            <div class="flex items-center space-x-2">
+                                <input type="number" id="a" value="10" class="form-input w-20">
+                                <span>+</span>
+                                <input type="number" id="b" value="20" class="form-input w-20">
+                                <span>=</span>
+                                <output name="result" for="a b" class="font-bold">30</output>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium mb-1">Progress Bar</label>
+                            <progress value="70" max="100" class="w-full">70%</progress>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium mb-1">Meter</label>
+                            <meter value="0.6" class="w-full">60%</meter>
+                        </div>
+                        <div class="flex space-x-2 pt-2">
+                            <button type="submit" class="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
+                            <input type="reset" value="Reset" class="w-full p-2 bg-slate-200 text-slate-800 rounded-md cursor-pointer hover:bg-slate-300 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </section>
+
+
+
         <!-- Lists & Tables -->
         <section class="BLOCK-B main__item section--lists-tables">
             <h2 class="section__heading text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Lists & Tables
             </h2>
-            
+
             <div class="WRAPPER-B BLOCK-D grid-container grid-container--lists-tables">
                 <article class="BLOCK-C section__item hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Lists (ul, ol, dl)</h3>
@@ -124,9 +284,9 @@
                 </article>
             </div>
         </section>
-        
-        
-        
+
+
+
         <!-- Deprecated Elements Warning -->
         <section class="BLOCK-B main__item section--deprecated-elements">
             <!-- text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800 -->
@@ -150,9 +310,9 @@
                 <p>Use modern, semantic HTML5 elements and CSS for styling instead.</p>
             </div>
         </section>
-        
-        
-        
+
+
+
         <!-- Embedded & Interactive Content -->
         <section class="BLOCK-B main__item section--embedded-interactive-content">
             <!-- text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800 -->
@@ -227,9 +387,11 @@
                 
                 <!-- bg-white rounded-lg shadow-md hover:shadow-xl -->
                 <article class="BLOCK-C section__item hover:-translate-y-1 transition-all duration-300">
+                    
                     <!-- font-bold text-xl -->
                     <!-- mt-4 text-slate-900 -->
                     <h3>Interactive Elements & Slots</h3>
+                    
                     <!-- p-3 border -->
                     <details class="BLOCK-K">
                         <!-- font-medium -->
@@ -237,6 +399,7 @@
                         <!-- text-sm text-slate-600 mt-2 -->
                         <p>This content is hidden until the summary is clicked.</p>
                     </details>
+                    
                     <!-- my-4 -->
                     <hr>
                     
@@ -297,9 +460,9 @@
                 </article>
             </div>
         </section>
-        
-        
-        
+    
+    
+    
     </main>
     
     
