@@ -1,226 +1,337 @@
 /*  main.css */
-@layer variables, bases, topographies, layouts, appearances, animations, interactions;
-
-@import url("./_variables.css") layer(variables);
-@import url("./_base.css") layer(bases);
-@import url("./_typography.css") layer(topographies);
-@import url("./_layout.css") layer(layouts);
-@import url("./_appearance.css") layer(appearances);
-@import url("./_animation.css") layer(animations);
-@import url("./_interaction.css") layer(interactions);
-
 /* ───────────────────────────────────────────── */
-.supblock__container {
-    border-width: 1px;
-    border-color: rgb(226, 232, 240);
-    border-style: solid;
-    border-radius: 8px;
-}
 
-/* === Figure & Image === */
-.card__figure {
-    /* Replaces: mt-2 */
-    margin-top: 8px;
-    /* 0.5rem /* mt-2 */
-}
-
-/* === Form Elements === */
-.card__form-group {
-    /* Replaces: div space-y separation ??? */
-    margin-top: 12px;
-    /* 0.75rem; /* mt-3 */
-}
-
-.card__legend {
-    /* Replaces: text-sm font-medium */
-    font-size: 14px;
-    /* 0.875rem; /* text-sm */
-    line-height: 20px;
-    /* text-sm*/
-    font-weight: 500;
-    /* font-medium */
-    padding: 0 4px;
-    /* 0 0.25rem */
-    /* give it some space to cut the border */
-}
-
-.card__button {
-    /* Replaces: w-full p-2 rounded-md transition-colors */
-    width: 100%;
-    /* w-full */
-    padding: 8px;
-    /* 0.5rem /* p-2 */
-    border-radius: 6px;
-    /* 0.375rem /* rounded-md */
-    transition: background-color 0.15s ease-in-out;
-    /* transition-colors*/
-    border: none;
-    cursor: pointer;
-}
-
-.card__button--primary {
-    /* Replaces: bg-blue-500 text-white hover:bg-blue-600 */
-    background-color: #3b82f6;
-    /* bg-blue-500 */
-    color: white;
-    /* text-white */
+@layer variables {
+  :root {
+    /* ------------------ */
+    /* tailwind colours */
+    --slate-50: hsla(210, 40%, 98%, 1);
+    --slate-100: hsla(210, 40%, 96%, 1);
+    --slate-300: hsla(213, 27%, 84%, 1);
+    --slate-500: hsla(215, 16%, 47%, 1);
+    --slate-600: hsla(215, 19%, 35%, 1);
+    --slate-700: hsla(215, 25%, 27%, 1);
+    --slate-800: hsla(217, 33%, 17%, 1);
+    --slate-900: hsla(222, 47%, 11%, 1);
     
-    &:hover {
-        background-color: rgb(37, 99, 235);
-        /* bg-blue-600 */
+    --blue-500: hsla(217, 91%, 60%, 1);
+    --blue-600: hsla(221, 83%, 53%, 1);
+    --blue-700: hsla(224, 76%, 48%, 1);
+    
+    --green-100: hsla(149, 80%, 90%, 1);
+    --green-400: hsla(158, 64%, 52%, 1);
+    
+    /* ------------------ */
+    /* tailwind layout */
+    --space-1: 0.25rem;
+    --space-md: 0.375rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-24: 6rem;
+    
+  }
+  
+  
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+@layer typographies {
+  :root {
+    /* ------------------ */
+    /* tailwind typography */
+    --text-center: center;
+    --text-left: left;
+    
+    /* font-size / line-height*/
+    --text-xs: 0.75rem/1rem;
+    --text-sm: 0.875rem/1.25rem;
+    --text-lg: 1.125rem/1.75rem;
+    --text-2xl: 1.5rem/2rem;
+    --text-3xl: 1.875rem/2.25rem;
+    --text-5xl: 3rem/1;
+    --text-6xl: 3.75rem/1;
+    
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+  }
+  
+  /* ------------------------------------------------------------ */
+  /* .container-typography */
+  /*
+  * Syntax: color: <color>;
+  * Syntax: text-align: <value>;
+  * Syntax: line-height: <value>; /* rather use font shrthand 
+  * Syntax: word-spacing: <value>;
+  * Syntax: letter-spacing: <value>;
+  * Syntax: white-space: <value>;
+  * Syntax: text-decoration: <line> <style> <color> <thickness>;
+  * Syntax: text-transform: <value>;
+  * Syntax: hyphens: <value>;
+  * Syntax: text-indent: <length>;
+  * Syntax: vertical-align: <value>;
+  * Syntax: direction: <value>;
+  * Syntax: unicode-bidi: <value>;
+  * Syntax: text-emphasis: <style> <symbol> <color>;
+  * Syntax: text-align-last: <value>;
+  * Syntax: text-underline-position: <value>;
+  * Syntax: line-clamp: <number>;
+  */
+  
+  /* ------------------------------------------------------------ */
+  /* .container-columns */
+  /*
+  * Syntax: column-count: <integer>;
+  * Syntax: column-width: <length>;
+  * Syntax: columns: <column-width> <column-count>;
+  * Syntax: column-gap: <length>;
+  * Syntax: column-rule: <width> <style> <color>;
+  */
+  
+  /* ------------------------------------------------------------ */
+  /* .container-fonts */
+  /*
+  * Syntax: font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size] / [line-height] [font-family];
+  * Syntax: font-size: <value>;
+  * Syntax: font-family: <font-name-1>, <font-name-2>, ... | <generic-family>;
+  * Syntax: font-weight: <value>;
+  * Syntax: font-style: <value>;
+  * Syntax: font-variant: <value>;
+  * Syntax: font-stretch: <value>;
+  */
+  
+  .section__heading {}
+  
+  
+}
+
+@layer appearances {
+  :root {
+    /* ------------------ */
+    /* tailwind appearance */
+    /* effects */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    
+    --border: 1px;
+    --border-0: 0;
+    --border-1: var(--border);
+    --border-2: 2px;
+    --border-4: 4px;
+    --border-8: 8px;
+    
+    --rounded: var(--space-1);
+    --rounded-md: var(--space-md);
+    --rounded-lg: var(--space-2);
+    
+    --list-nono: none;
+    --list-disc: disc;
+    --list-decimal: decimal;
+    
+  }
+  
+  /* ------------------------------------------------------------ */
+  /* .container-style */
+  /*
+  * Syntax: background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [background-size] [background-origin] [background-clip];
+  * Syntax: background-color: <color>;
+  * Syntax: background-image: <image-1> | <image-2> | ... ;
+  * Syntax: background-repeat: <x-value> <y-value>;
+  * Syntax: background-attachment: <value>;
+  * Syntax: background-position: <x-value> <y-value>;
+  * Syntax: background-size: <value>;
+  * Syntax: background-origin: <value>;
+  * Syntax: background-clip: <value>;
+  * Syntax: border: [border-width] [border-style] [border-color];
+  * Syntax: border-block-start: <value>; border-inline-start: <value>; etc.
+  * Syntax: border-[side]: <value>;
+  * Syntax: border-radius: <value>;
+  * Syntax: box-shadow: <h-offset> <v-offset> <blur> <spread> <color> [inset];
+  * Syntax: opacity: <number>;
+  * Syntax: outline: <width> <style> <color>;
+  * Syntax: mix-blend-mode: <value>;
+  * Syntax: filter: <function>;
+  * Syntax: clip-path: <value>;
+  * Syntax: object-fit: <value>;
+  * Syntax: object-position: <x> <y>;
+  * Syntax: list-style: <value>;
+  */
+  
+  
+}
+
+@layer layouts {
+  :root {
+    --gap-6: var(--space-6);
+    
+    --h-24: var(--space-24);
+    
+    --grid-cols-1: repeat(1, minmax(0, 1fr));
+    --grid-cols-2: repeat(2, minmax(0, 1fr));
+    --grid-cols-3: repeat(3, minmax(0, 1fr));
+    
+    --w-full: 100%;
+    
+  }
+  
+  /* ------------------------------------------------------------ */
+  /* .container-layout */
+  /*
+  * Syntax: display: <value>;
+  * Syntax: position: <value>;
+  * Syntax: top: <value>; left: <value>; etc.
+  * Syntax: z-index: <integer>;
+  * Syntax: float: <value>;
+  * Syntax: clear: <value>;
+  */
+  
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
+  .main__item {}
+  
+  .section__item {}
+
+  /* ------------------------------------------------------------ */
+  /* .container-contain */
+  /*
+  * Syntax: contain: <value>;
+  * Syntax: content-visibility: auto | visible | hidden;
+  * Syntax: overflow-anchor: auto | none;
+  * Syntax: will-change: <property>;
+  */
+  
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
+  .main__item {}
+  
+  .section__item {}
+  
+  /* ------------------------------------------------------------ */
+  /* .container-flex */
+  /*
+  * Syntax: display: flex | inline-flex;
+  * Syntax: flex-direction: <value>;
+  * Syntax: flex-wrap: <value>;
+  * Syntax: flex-flow: <flex-direction> <flex-wrap>;
+  * Syntax: justify-content: <value>;
+  * Syntax: align-items: <value>;
+  * Syntax: align-content: <value>;
+  * Syntax: align-self: <value>; (usually used on children, but container can set default)
+  */
+  
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
+  .main__item {}
+  
+  .section__item {}
+  
+  /* ------------------------------------------------------------ */
+  /* .container-grid */
+  /*
+  * Syntax: display: grid | inline-grid;
+  * Syntax: grid-template-columns: <sizes>; grid-template-rows: <sizes>;
+  * Syntax: grid-template: <grid-template-rows> / <grid-template-columns>;
+  * Syntax: grid-auto-flow: <value>;
+  * Syntax: grid-auto-columns: <size>; grid-auto-rows: <size>;
+  * Syntax: grid-auto: <grid-auto-flow> <grid-auto-rows> / <grid-auto-columns>;
+  * Syntax: gap: <value>;
+  * Syntax: align-items: <value>;
+  * Syntax: justify-items: <value>;
+  * Syntax: align-content: <value>; justify-content: <value>;
+  * Syntax: grid: <template>; (shorthand)
+  * Syntax: place-items: <align-items> <justify-items>;
+  * Syntax: place-content: <align-content> <justify-content>;
+  */
+  
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
+  .main__item {}
+  
+  .grid-container {
+    display: grid;
+    gap: var(--gap-6);
+    grid-template-columns: var(--grid-cols-1);
+  }
+  
+  .grid-container--lists-tables {
+    @media (min-width: 768px) {
+      grid-template-columns: var(--grid-cols-2);
     }
-}
+  }
+  
+  .grid-container--embedded-interactive-content {
+    @media (min-width: 768px) {
+      grid-template-columns: var(--grid-cols-2);
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: var(--grid-cols-3);
+    }
+  }
+  
+  .section__item {}
+  
+  /* ------------------------------------------------------------ */
+  /* .container-spacing */
+  /*
+  * Syntax: margin: <value>;
+  * Syntax: padding: <value>;
+  */
+  
+  /* px-8 */
+  .main {
+    padding-inline: var(--space-8);
+  }
+  
+  /* space-y-12 */
+  .main .main__item~.main__item {
+    margin-block-end: var(--space-12);
+  }
+  
+  .main__item {}
+  
+  /* p-6 */
+  .section__item {
+    padding: var(--space-6);
+  }
+  
+  /* ------------------------------------------------------------ */
+  /* .container-sizing */
+  /*
+  * Syntax: box-sizing: <value>;
+  * Syntax: width: <value>; min-width: <value>; etc.
+  * Syntax: min-aspect-ratio, max-aspect-ratio: <ratio>;
+  * Syntax: contain-intrinsic-size: <length>;
+  */
+  
+  .main {}
+  
+  .main .main__item~.main__item {}
+  
+  .main__item {}
+  
+  .section__item {}
 
-/* === Blockquote/Cite === */
-.card__blockquote {
-    /* Replaces: italic text-slate-600 mt-2 border-l-4 border-slate-400 pl-4 */
-    font-style: italic;
-    color: #475569;
-    /* slate-600 */
-    margin-top: 8px;
-    /* 0.5rem; /* mt-2 */
-    border-left: 4px solid rgb(148, 163, 184);
-    /* slate-400 */
-    padding-left: 16px;
-    /* 1rem; /* pl-4 */
-}
-
-.card__cite {
-    /* Replaces: text-right text-sm text-slate-500 mt-1 */
-    display: block;
-    /* text-right */
-    text-align: right;
-    /* text-right */
-    font-size: 14px;
-    /* 0.875rem; /* text-sm */
-    line-height: 20px;
-    /* text-sm*/
-    color: rgb(100, 116, 139);
-    /* text-slate-500 */
-    margin-top: 4px;
-    /* 0.25rem; /* mt-1 */
-}
-
-/* === Table Elements (Nested Block: 'card__table') === */
-.card__table {
-    /* Replaces: w-full mt-2 border-collapse */
-    width: 100%;
-    /* w-full */
-    margin-top: 8px;
-    /* 0.5rem /* mt-2 */
-    border-collapse: collapse;
-    /* border-collapse */
-    table-layout: fixed;
-    /* Optional, but helps with full width */
-}
-
-.card__table-row--header {
-    /* Replaces: bg-slate-200 */
-    background-color: rgb(226, 232, 240);
-    /* slate-200 */
-}
-
-.card__table-row--alt {
-    /* Replaces: bg-slate-50 */
-    background-color: rgb(248, 250, 252);
-    /* slate-50 */
-}
-
-.card__table-cell {
-    /* Replaces: p-2 border border-slate-300 */
-    padding: 8px;
-    /* 0.5rem /* p-2 */
-    border: 1px solid rgb(203, 213, 225);
-    /* border border-slate-300 */
-}
-
-.card__table-cell--header {
-    /* Replaces: text-left (on <th>) */
-    text-align: left;
-    /* text-left */
-}
-
-/* === List Elements === */
-.card__list {
-    /* Applies to <ol>, <ul>, <dl> */
-    /* Shared styles like margin/padding if needed */
-}
-
-.card__list--ordered {
-    /* Replaces: list-decimal ml-6 */
-    list-style-type: decimal;
-    /* list-decimal */
-    margin-left: 24px;
-    /* 1.5rem; /* ml-6 */
-}
-
-.card__list--unordered {
-    /* Replaces: list-disc ml-6 */
-    list-style-type: disc;
-    /* list-disc */
-    margin-left: 24px;
-    /* 1.5rem; /* ml-6 */
-}
-
-.card__list-term {
-    /* Replaces: font-medium (on <dt>) */
-    font-weight: 500;
-    /* font-medium */
-}
-
-.card__list-term--mt {
-    /* Replaces: mt-2 */
-    margin-top: 8px;
-    /* 0.5rem /* mt-2 */
-}
-
-.card__list-definition {
-    /* Replaces: ml-4 italic (on <dd>) */
-    margin-left: 16px;
-    /* 1rem; /* ml-4 */
-    font-style: italic;
-    /* italic */
-}
-
-/* === Other Inline/Misc Content (Main Supblock) === */
-.card__mark {
-    /* Replaces: bg-yellow-200 p-1 rounded-sm */
-    background-color: rgb(253, 230, 138);
-    /* yellow-200 */
-    padding: 4px;
-    /* 0.25rem; /* p-1 */
-    border-radius: 2px;
-    /* 0.125rem; /* rounded-sm */
-}
-
-.card__small {
-    /* Replaces: text-xs text-slate-500 mt-4 */
-    font-size: 12px;
-    /* 0.75rem; /* text-xs */
-    line-height: 16px;
-    /* 1rem /* text-xs*/
-    /* 1rem /* text-xs */
-    color: rgb(100, 116, 139);
-    /* slate-500 */
-    margin-top: 16px;
-    /* 1rem; /* mt-4 */
-    display: block;
-    /* to apply the text-center and margin-top */
-    text-align: center;
-}
-
-/* === Form Radio/Checkbox Group (Main Supblock) === */
-.card__radio-group {
-    /* Replaces: flex items-center space-x-2 */
-    display: flex;
-    /* flex */
-    align-items: center;
-    /* items-center */
-    gap: 8px;
-    /* 0.5rem /* space-x-2 */
-}
-
-.card__input--textarea {
-    /* For <textarea> */
-    resize: vertical;
 }
