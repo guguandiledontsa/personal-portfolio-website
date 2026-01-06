@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="src/styles/main.css">
 </head>
 
-<body class="bg-slate-100 text-slate-700">
+<body class="page bg-slate-100 text-slate-700">
     
     <noscript>
         <div class="bg-red-600 text-white p-3 text-center font-bold">
@@ -24,7 +24,7 @@
         </div>
     </noscript>
     
-    <header class="shadow-lg p-8 bg-white mb-10">
+    <header class="page-content page-content--header shadow-lg bg-white">
         <h1 class="text-5xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
             The Ultimate HTML5 Tag Showcase — Complete
         </h1>
@@ -33,14 +33,14 @@
         </p>
     </header>
     
-    <main class="px-8">
+    <main class="page-content page-content--main">
         <!-- Text Content & Typography -->
-        <section class="mb-12">
+        <section class="content-container">
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Text Content & Typography
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="content-wrapper md:grid-cols-2 lg:grid-cols-3">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Headings (h1–h6)</h3>
                     <div class="space-y-2">
                         <h1 class="text-4xl font-bold"><code>&lt;h1&gt;</code> Heading</h1>
@@ -51,7 +51,7 @@
                         <h6 class="text-base font-medium"><code>&lt;h6&gt;</code> Heading</h6>
                     </div>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Phrasing & Text</h3>
                     <div class="space-y-4">
                         <p>This paragraph contains a standard <code>&lt;a&gt;</code> <a href="#" class="text-blue-600 hover:underline font-medium">for links</a>.</p>
@@ -62,7 +62,7 @@
                         <p>Use <code>&lt;u&gt;</code> for unarticulated annotations, like <u class="decoration-wavy decoration-red-500">spellling</u> mistakes.</p>
                     </div>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Block-Level & Semantic Text</h3>
                     <blockquote class="text-slate-600 mt-2 border-l-4 border-slate-300 pl-4 italic">
                         <q>The world is a magnificent book, and those who do not travel read only a page.</q>
@@ -79,7 +79,7 @@
                     <p class="mt-2">Program output <code>&lt;samp&gt;</code>: <samp>File not found.</samp></p>
                     <p class="mt-2">Variables <code>&lt;var&gt;</code>: <var>x</var> = <var>y</var> + 2.</p>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Line & Directional Text</h3>
                     <p>This is the first line.<br>This is the second line after a <code>&lt;br&gt;</code> tag.</p>
                     <hr class="my-4">
@@ -87,7 +87,7 @@
                     <p><bdi>Left-to-right embedded text</bdi> stays isolated in directionality context.</p>
                     <p><bdo dir="rtl">This entire phrase is forced right-to-left with <code>&lt;bdo&gt;</code>.</bdo></p>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Ruby / East Asian Text</h3>
                     <p class="text-lg">For East Asian typography, use <code>&lt;ruby&gt;</code>:</p>
                     <ruby class="text-2xl mt-2">
@@ -101,7 +101,7 @@
                     <p class="text-sm text-slate-600 mt-2"><code>&lt;rt&gt;</code> shows pronunciation; <code>&lt;rp&gt;</code> is fallback.</p>
                 </article>
             </div>
-            <article class="p-6 bg-white rounded-lg shadow-md mt-6">
+            <article class="content-item bg-white rounded-lg shadow-md mt-6">
                 <h3 class="font-bold text-xl mb-4 text-slate-900">Heading Group</h3>
                 <p class="mb-2 text-sm text-slate-600">Using <code>&lt;hgroup&gt;</code> to bind a title and subtitle.</p>
                 
@@ -113,12 +113,12 @@
         </section>
         
         <!-- Lists & Tables -->
-        <section class="mb-12">
+        <section class="content-container">
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Lists & Tables
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="content-wrapper md:grid-cols-2 lg:grid-cols-2">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Lists (ul, ol, dl)</h3>
                     <div>
                         <h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
@@ -138,7 +138,7 @@
                         </dl>
                     </div>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Table</h3>
                     <div class="overflow-x-auto">
                         <table class="w-full mt-2 border-collapse text-sm">
@@ -179,12 +179,12 @@
         </section>
         
         <!-- Forms & User Input -->
-        <section class="mb-12">
+        <section class="content-container">
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Forms & User Input (Extended)
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="content-wrapper md:grid-cols-2 lg:grid-cols-3">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Text-Based <code>&lt;input&gt;</code> of various <code>type</code> attributes and a <code>&lt;textarea&gt;</code></h3>
                     <form class="space-y-4">
                         <div>
@@ -217,7 +217,7 @@
                         </div>
                     </form>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Choices & Selections</h3>
                     <form class="space-y-4">
                         <fieldset>
@@ -268,7 +268,7 @@
                         </div>
                     </form>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Pickers, Ranges & Files</h3>
                     <form class="space-y-4">
                         <div>
@@ -297,7 +297,7 @@
                         </div>
                     </form>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Buttons, Outputs & Hidden / Datetime Inputs</h3>
                     <form class="space-y-4" oninput="result.value = (a.valueAsNumber || 0) + (b.valueAsNumber || 0)">
                         <div>
@@ -337,12 +337,12 @@
         </section>
         
         <!-- Embedded & Interactive Content -->
-        <section class="mb-12">
+        <section class="content-container">
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Embedded & Interactive Content (Extended)
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="content-wrapper md:grid-cols-2 lg:grid-cols-3">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Images & Media</h3>
                     <figure>
                         <figcaption class="text-sm text-slate-500 mb-2">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
@@ -367,7 +367,7 @@
                         <track kind="captions" srclang="en" src="captions_en.vtt" label="English">
                     </video>
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">External Content</h3>
                     <label class="text-sm font-medium"><code>&lt;iframe&gt;</code></label>
                     <iframe src="https://example.com" title="Sample Iframe" class="w-full h-24 border rounded-md mt-1">
@@ -380,7 +380,7 @@
                     <label class="text-sm font-medium mt-4"><code>&lt;embed&gt;</code></label>
                     <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="w-full h-24 border rounded-md mt-1">
                 </article>
-                <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Interactive Elements & Slots</h3>
                     <details class="p-3 border rounded-md">
                         <summary class="font-medium cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
@@ -433,11 +433,11 @@
         </section>
         
         <!-- Advanced & Miscellaneous -->
-        <section class="mb-12">
+        <section class="content-container">
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Advanced & Miscellaneous
             </h2>
-            <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <h3 class="font-bold text-xl mb-4 text-slate-900">SVG & Canvas</h3>
                 <label class="text-sm font-medium mb-1">SVG (Scalable Vector Graphics)</label>
                 <svg viewBox="0 0 100 100" class="w-24 h-24 mt-1">
@@ -456,7 +456,7 @@
                     }
                 </script>
             </article>
-            <article class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <h3 class="font-bold text-xl mb-4 text-slate-900">MathML</h3>
                 <p class="mb-2 text-sm text-slate-600">Native math rendering using <code>&lt;math&gt;</code>.</p>
                 
@@ -495,11 +495,11 @@
         </section>
         
         <!-- Deprecated Elements Warning -->
-        <section class="mb-12">
+        <section class="content-container">
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 A Note on Deprecated / Obsolete Elements
             </h2>
-            <div class="p-6 bg-white rounded-lg shadow-md">
+            <div class="content-item bg-white rounded-lg shadow-md">
                 <p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
                 <p class="mt-4">Avoid using tags such as:</p>
                 <ul class="list-disc ml-6 mt-2 text-sm space-y-1">
@@ -514,9 +514,9 @@
         
     </main>
     
-    <footer class="shadow-inner p-8 bg-slate-800 text-slate-300 mt-10">
+    <footer class="page-content page-content--footer shadow-inner bg-slate-800 text-slate-30">
         <h2 class="text-2xl font-semibold text-center text-white">Footer Content</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 text-center max-w-6xl mx-auto">
+        <div class="content-wrapper md:grid-cols-3 mt-6 text-center max-w-6xl mx-auto">
             <div>
                 <h3 class="font-bold text-white">Navigation</h3>
                 <nav class="mt-2">
@@ -547,4 +547,4 @@
     
 </body>
 
-</html>
+ </html>
