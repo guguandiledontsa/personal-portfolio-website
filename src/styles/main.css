@@ -231,7 +231,7 @@
   
   .page {}
   
-  .page-content {}
+  .page-item {}
   
   .content-container {}
   
@@ -250,7 +250,7 @@
   
   .page {}
   
-  .page-content {}
+  .page-item {}
   
   .content-container {}
   
@@ -273,7 +273,7 @@
   
   .page {}
   
-  .page-content {}
+  .page-item {}
   
   .content-container {}
   
@@ -301,7 +301,7 @@
   
   .page {}
   
-  .page-content {}
+  .page-item {}
   
   .content-container {}
   
@@ -324,17 +324,17 @@
   .page {}
   
   /* p-8 */
-  .page-content {
+  .page-item {
     padding: var(--space-8);
   }
   
   /* mb-10 */
-  .page-content--header {
+  .page-item--header {
     margin-block-end: var(--space-10);
   }
   
   /* mt-10 */
-  .page-content--footer {
+  .page-item--footer {
     margin-block-start: var(--space-10);
   }
   
@@ -361,7 +361,7 @@
   
   .page {}
   
-  .page-content {}
+  .page-item {}
   
   .content-container {}
   
