@@ -91,6 +91,7 @@
     --text-xs: 0.75rem/1rem;
     --text-sm: 0.875rem/1.25rem;
     --text-lg: 1.125rem/1.75rem;
+    --text-xl: 1.25rem/1.75rem;
     --text-2xl: 1.5rem/2rem;
     --text-3xl: 1.875rem/2.25rem;
     --text-5xl: 3rem/1;
@@ -150,9 +151,25 @@
   * Syntax: font-stretch: <value>;
   */
   
-  .section__heading {}
+  .page {}
   
+  .page__item {}
   
+  .content-container {}
+  
+  .grid-wrapper {}
+  
+  .showcase-card {}
+  
+  .showcase-card__body {}
+  
+  /* text-slate-900 font-bold text-xl*/
+  .showcase-card__heading {
+    color: var(--slate-900);
+    font: normal var(--text-xl) var(--font-body);
+    font-weight: var(--font-bold);
+  }
+
 }
 
 @layer appearances {
@@ -198,6 +215,28 @@
   * Syntax: object-position: <x> <y>;
   * Syntax: list-style: <value>;
   */
+  
+  /* bg-slate-100 */
+  .page {
+    background-color: var(--slate-100);
+  }
+  
+  .page__item {}
+  
+  .content-container {}
+  
+  .grid-wrapper {}
+  
+  /* bg-white rounded-lg shadow-md */
+  .showcase-card {
+    background-color: white;
+    border-radius: var(--space-rnd-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .showcase-card__body {}
+  
+  .showcase-card__heading {}
 
 }
 
@@ -240,6 +279,8 @@
   
   .showcase-card__body {}
   
+  .showcase-card__heading {}
+
   /* ------------------------------------------------------------ */
   /* .container-contain */
   /*
@@ -261,6 +302,8 @@
   
   .showcase-card__body {}
   
+  .showcase-card__heading {}
+
   /* ------------------------------------------------------------ */
   /* .container-flex */
   /*
@@ -285,6 +328,8 @@
   .showcase-card {}
   
   .showcase-card__body {}
+  
+  .showcase-card__heading {}
 
   /* ------------------------------------------------------------ */
   /* .container-grid */
@@ -320,6 +365,8 @@
   .showcase-card {}
   
   .showcase-card__body {}
+  
+  .showcase-card__heading {}
 
   /* ------------------------------------------------------------ */
   /* .container-spacing */
@@ -358,6 +405,11 @@
   }
   
   .showcase-card__body {}
+  
+  /* mb-4 */
+  .showcase-card__heading {
+    margin-block-end: var(--space-4);
+  }
 
   /* ------------------------------------------------------------ */
   /* .container-sizing */
@@ -379,5 +431,7 @@
   .showcase-card {}
   
   .showcase-card__body {}
+  
+  .showcase-card__heading {}
 
 }
