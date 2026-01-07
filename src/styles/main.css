@@ -169,6 +169,13 @@
     font: normal var(--text-xl) var(--font-body);
     font-weight: var(--font-bold);
   }
+  
+  /* text-slate-800 font-bold text-3xl */
+  .content-container__heading {
+    color: var(--slate-800);
+    font: normal var(--text-3xl) var(--font-body);
+    font-weight: var(--font-bold);
+  }
 
 }
 
@@ -237,6 +244,12 @@
   .showcase-card__body {}
   
   .showcase-card__heading {}
+  
+  /* border-b-2 border-blue-500 */
+  .content-container__heading {
+    border: 0 solid var(--blue-500);
+    border-block-end-width: var(--space-sm-2);
+  }
 
 }
 
@@ -280,6 +293,8 @@
   .showcase-card__body {}
   
   .showcase-card__heading {}
+  
+  .content-container__heading {}
 
   /* ------------------------------------------------------------ */
   /* .container-contain */
@@ -303,6 +318,8 @@
   .showcase-card__body {}
   
   .showcase-card__heading {}
+  
+  .content-container__heading {}
 
   /* ------------------------------------------------------------ */
   /* .container-flex */
@@ -330,6 +347,8 @@
   .showcase-card__body {}
   
   .showcase-card__heading {}
+  
+  .content-container__heading {}
 
   /* ------------------------------------------------------------ */
   /* .container-grid */
@@ -367,6 +386,8 @@
   .showcase-card__body {}
   
   .showcase-card__heading {}
+  
+  .content-container__heading {}
 
   /* ------------------------------------------------------------ */
   /* .container-spacing */
@@ -410,6 +431,12 @@
   .showcase-card__heading {
     margin-block-end: var(--space-4);
   }
+  
+  /* pb-2 mb-6 */
+  .content-container__heading {
+    padding-block-end: var(--space-2);
+    margin-block-end: var(--space-6);
+  }
 
   /* ------------------------------------------------------------ */
   /* .container-sizing */
@@ -433,5 +460,7 @@
   .showcase-card__body {}
   
   .showcase-card__heading {}
+  
+  .content-container__heading {}
 
 }
