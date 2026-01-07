@@ -24,7 +24,7 @@
         </div>
     </noscript>
     
-    <header class="page-item page-item--header shadow-lg bg-white">
+    <header class="page__item page__header shadow-lg bg-white">
         <h1 class="text-5xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
             The Ultimate HTML5 Tag Showcase — Complete
         </h1>
@@ -33,16 +33,16 @@
         </p>
     </header>
     
-    <main class="page-item page-item--main">
+    <main class="page__item page__main">
         <!-- Text Content & Typography -->
         <section class="content-container">
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Text Content & Typography
             </h2>
-            <div class="content-wrapper md:grid-cols-2 lg:grid-cols-3">
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="grid-wrapper md:grid-cols-2 lg:grid-cols-3">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Headings (h1–h6)</h3>
-                    <div class="content-inner space-y-2">
+                    <div class="showcase-card__body space-y-2">
                         <h1 class="text-4xl font-bold"><code>&lt;h1&gt;</code> Heading</h1>
                         <h2 class="text-3xl font-semibold"><code>&lt;h2&gt;</code> Heading</h2>
                         <h3 class="text-2xl font-semibold"><code>&lt;h3&gt;</code> Heading</h3>
@@ -51,9 +51,9 @@
                         <h6 class="text-base font-medium"><code>&lt;h6&gt;</code> Heading</h6>
                     </div>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Phrasing & Text</h3>
-                    <div class="content-inner space-y-4">
+                    <div class="showcase-card__body space-y-4">
                         <p>This paragraph contains a standard <code>&lt;a&gt;</code> <a href="#" class="text-blue-600 hover:underline font-medium">for links</a>.</p>
                         <p>Use <code>&lt;strong&gt;</code> <strong>for importance</strong>, <code>&lt;b&gt;</code> <b>for stylistic offset</b>, <code>&lt;em&gt;</code> <em>for emphasis</em>, and <code>&lt;i&gt;</code> <i>for an alternate voice</i>.</p>
                         <p>Text can be <mark class="bg-sky-200 text-sky-800 px-1 rounded">highlighted</mark> with <code>&lt;mark&gt;</code>, <del>deleted</del> <code>&lt;del&gt;</code>, <ins>inserted</ins> <code>&lt;ins&gt;</code>, or <s>no longer accurate</s> <code>&lt;s&gt;</code>.</p>
@@ -62,7 +62,7 @@
                         <p>Use <code>&lt;u&gt;</code> for unarticulated annotations, like <u class="decoration-wavy decoration-red-500">spellling</u> mistakes.</p>
                     </div>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Block-Level & Semantic Text</h3>
                     <blockquote class="text-slate-600 mt-2 border-l-4 border-slate-300 pl-4 italic">
                         <q>The world is a magnificent book, and those who do not travel read only a page.</q>
@@ -79,7 +79,7 @@
                     <p class="mt-2">Program output <code>&lt;samp&gt;</code>: <samp>File not found.</samp></p>
                     <p class="mt-2">Variables <code>&lt;var&gt;</code>: <var>x</var> = <var>y</var> + 2.</p>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Line & Directional Text</h3>
                     <p>This is the first line.<br>This is the second line after a <code>&lt;br&gt;</code> tag.</p>
                     <hr class="my-4">
@@ -87,7 +87,7 @@
                     <p><bdi>Left-to-right embedded text</bdi> stays isolated in directionality context.</p>
                     <p><bdo dir="rtl">This entire phrase is forced right-to-left with <code>&lt;bdo&gt;</code>.</bdo></p>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Ruby / East Asian Text</h3>
                     <p class="text-lg">For East Asian typography, use <code>&lt;ruby&gt;</code>:</p>
                     <ruby class="text-2xl mt-2">
@@ -101,7 +101,7 @@
                     <p class="text-sm text-slate-600 mt-2"><code>&lt;rt&gt;</code> shows pronunciation; <code>&lt;rp&gt;</code> is fallback.</p>
                 </article>
             </div>
-            <article class="content-item bg-white rounded-lg shadow-md mt-6">
+            <article class="showcase-card bg-white rounded-lg shadow-md mt-6">
                 <h3 class="font-bold text-xl mb-4 text-slate-900">Heading Group</h3>
                 <p class="mb-2 text-sm text-slate-600">Using <code>&lt;hgroup&gt;</code> to bind a title and subtitle.</p>
                 
@@ -117,10 +117,10 @@
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Lists & Tables
             </h2>
-            <div class="content-wrapper md:grid-cols-2 lg:grid-cols-2">
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="grid-wrapper md:grid-cols-2 lg:grid-cols-2">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Lists (ul, ol, dl)</h3>
-                    <div class="content-inner">
+                    <div class="showcase-card__body">
                         <h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
                         <ul class="list-disc ml-6 space-y-1 mt-2">
                             <li>First item. <code>&lt;li&gt;</code></li>
@@ -138,9 +138,9 @@
                         </dl>
                     </div>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Table</h3>
-                    <div class="content-inner overflow-x-auto">
+                    <div class="showcase-card__body overflow-x-auto">
                         <table class="w-full mt-2 border-collapse text-sm">
                             <caption class="caption-bottom text-xs text-slate-500 mt-2">Monthly Sales Summary</caption>
                             <colgroup>
@@ -183,8 +183,8 @@
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Forms & User Input (Extended)
             </h2>
-            <div class="content-wrapper md:grid-cols-2 lg:grid-cols-3">
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="grid-wrapper md:grid-cols-2 lg:grid-cols-3">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Text-Based <code>&lt;input&gt;</code> of various <code>type</code> attributes and a <code>&lt;textarea&gt;</code></h3>
                     <form class="space-y-4">
                         <div>
@@ -217,7 +217,7 @@
                         </div>
                     </form>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Choices & Selections</h3>
                     <form class="space-y-4">
                         <fieldset>
@@ -268,7 +268,7 @@
                         </div>
                     </form>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Pickers, Ranges & Files</h3>
                     <form class="space-y-4">
                         <div>
@@ -297,7 +297,7 @@
                         </div>
                     </form>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Buttons, Outputs & Hidden / Datetime Inputs</h3>
                     <form class="space-y-4" oninput="result.value = (a.valueAsNumber || 0) + (b.valueAsNumber || 0)">
                         <div>
@@ -341,8 +341,8 @@
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Embedded & Interactive Content (Extended)
             </h2>
-            <div class="content-wrapper md:grid-cols-2 lg:grid-cols-3">
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="grid-wrapper md:grid-cols-2 lg:grid-cols-3">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Images & Media</h3>
                     <figure>
                         <figcaption class="text-sm text-slate-500 mb-2">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
@@ -367,7 +367,7 @@
                         <track kind="captions" srclang="en" src="captions_en.vtt" label="English">
                     </video>
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">External Content</h3>
                     <label class="text-sm font-medium"><code>&lt;iframe&gt;</code></label>
                     <iframe src="https://example.com" title="Sample Iframe" class="w-full h-24 border rounded-md mt-1">
@@ -380,7 +380,7 @@
                     <label class="text-sm font-medium mt-4"><code>&lt;embed&gt;</code></label>
                     <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="w-full h-24 border rounded-md mt-1">
                 </article>
-                <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     <h3 class="font-bold text-xl mb-4 text-slate-900">Interactive Elements & Slots</h3>
                     <details class="p-3 border rounded-md">
                         <summary class="font-medium cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
@@ -388,7 +388,7 @@
                     </details>
                     <hr class="my-4">
                     
-                    <div class="content-inner">
+                    <div class="showcase-card__body">
                         <h4 class="font-medium">Dialog</h4>
                         <p class="text-sm text-slate-600">Click to open a modal dialog.</p>
                         <button onclick="document.getElementById('modal-dialog').showModal()" class="mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
@@ -401,7 +401,7 @@
                     
                     <hr class="my-4">
                     
-                    <div class="content-inner">
+                    <div class="showcase-card__body">
                         <h4 class="font-medium">Template & Slot Example</h4>
                         <p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
                         <p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
@@ -438,7 +438,7 @@
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 Advanced & Miscellaneous
             </h2>
-            <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <h3 class="font-bold text-xl mb-4 text-slate-900">SVG & Canvas</h3>
                 <label class="text-sm font-medium mb-1">SVG (Scalable Vector Graphics)</label>
                 <svg viewBox="0 0 100 100" class="w-24 h-24 mt-1">
@@ -457,11 +457,11 @@
                     }
                 </script>
             </article>
-            <article class="content-item bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <article class="showcase-card bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <h3 class="font-bold text-xl mb-4 text-slate-900">MathML</h3>
                 <p class="mb-2 text-sm text-slate-600">Native math rendering using <code>&lt;math&gt;</code>.</p>
                 
-                <div class="content-inner text-2xl p-4 bg-slate-50 rounded border text-center">
+                <div class="showcase-card__body text-2xl p-4 bg-slate-50 rounded border text-center">
                     <math display="block">
                         <mrow>
                             <mi>x</mi>
@@ -500,7 +500,7 @@
             <h2 class="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-800">
                 A Note on Deprecated / Obsolete Elements
             </h2>
-            <div class="content-item bg-white rounded-lg shadow-md">
+            <div class="showcase-card bg-white rounded-lg shadow-md">
                 <p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
                 <p class="mt-4">Avoid using tags such as:</p>
                 <ul class="list-disc ml-6 mt-2 text-sm space-y-1">
@@ -515,9 +515,9 @@
         
     </main>
     
-    <footer class="page-item page-item--footer shadow-inner bg-slate-800 text-slate-30">
+    <footer class="page__item page__footer shadow-inner bg-slate-800 text-slate-30">
         <h2 class="text-2xl font-semibold text-center text-white">Footer Content</h2>
-        <div class="content-wrapper md:grid-cols-3 mt-6 text-center max-w-6xl mx-auto">
+        <div class="grid-wrapper md:grid-cols-3 mt-6 text-center max-w-6xl mx-auto">
             <div>
                 <h3 class="font-bold text-white">Navigation</h3>
                 <nav class="mt-2">
@@ -548,4 +548,4 @@
     
 </body>
 
- </html>
+</html>

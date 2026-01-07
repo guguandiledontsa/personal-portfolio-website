@@ -198,8 +198,7 @@
   * Syntax: object-position: <x> <y>;
   * Syntax: list-style: <value>;
   */
-  
-  
+
 }
 
 @layer layouts {
@@ -231,15 +230,15 @@
   
   .page {}
   
-  .page-item {}
+  .page__item {}
   
   .content-container {}
   
-  .content-wrapper {}
+  .grid-wrapper {}
   
-  .content-item {}
+  .showcase-card {}
   
-  .content-inner {}
+  .showcase-card__body {}
   
   /* ------------------------------------------------------------ */
   /* .container-contain */
@@ -252,15 +251,15 @@
   
   .page {}
   
-  .page-item {}
+  .page__item {}
   
   .content-container {}
   
-  .content-wrapper {}
+  .grid-wrapper {}
   
-  .content-item {}
+  .showcase-card {}
   
-  .content-inner {}
+  .showcase-card__body {}
   
   /* ------------------------------------------------------------ */
   /* .container-flex */
@@ -277,15 +276,15 @@
   
   .page {}
   
-  .page-item {}
+  .page__item {}
   
   .content-container {}
   
-  .content-wrapper {}
+  .grid-wrapper {}
   
-  .content-item {}
+  .showcase-card {}
   
-  .content-inner {}
+  .showcase-card__body {}
 
   /* ------------------------------------------------------------ */
   /* .container-grid */
@@ -307,20 +306,20 @@
   
   .page {}
   
-  .page-item {}
+  .page__item {}
   
   .content-container {}
   
   /* grid grid-col-1 gap-6 */
-  .content-wrapper {
+  .grid-wrapper {
     display: grid;
     grid-template-columns: var(--grid-cols-1);
     gap: var(--space-6);
   }
   
-  .content-item {}
+  .showcase-card {}
   
-  .content-inner {}
+  .showcase-card__body {}
 
   /* ------------------------------------------------------------ */
   /* .container-spacing */
@@ -332,17 +331,17 @@
   .page {}
   
   /* p-8 */
-  .page-item {
+  .page__item {
     padding: var(--space-8);
   }
   
   /* mb-10 */
-  .page-item--header {
+  .page__header {
     margin-block-end: var(--space-10);
   }
   
   /* mt-10 */
-  .page-item--footer {
+  .page__footer {
     margin-block-start: var(--space-10);
   }
   
@@ -351,14 +350,14 @@
     margin-block-end: var(--space-12);
   }
   
-  .content-wrapper {}
+  .grid-wrapper {}
   
   /* p-6 */
-  .content-item {
+  .showcase-card {
     padding: var(--space-6);
   }
   
-  .content-inner {}
+  .showcase-card__body {}
 
   /* ------------------------------------------------------------ */
   /* .container-sizing */
@@ -371,14 +370,14 @@
   
   .page {}
   
-  .page-item {}
+  .page__item {}
   
   .content-container {}
   
-  .content-wrapper {}
+  .grid-wrapper {}
   
-  .content-item {}
+  .showcase-card {}
   
-  .content-inner {}
+  .showcase-card__body {}
 
 }
