@@ -239,6 +239,8 @@
   
   .content-item {}
   
+  .content-inner {}
+  
   /* ------------------------------------------------------------ */
   /* .container-contain */
   /*
@@ -257,6 +259,8 @@
   .content-wrapper {}
   
   .content-item {}
+  
+  .content-inner {}
   
   /* ------------------------------------------------------------ */
   /* .container-flex */
@@ -281,6 +285,8 @@
   
   .content-item {}
   
+  .content-inner {}
+
   /* ------------------------------------------------------------ */
   /* .container-grid */
   /*
@@ -314,6 +320,8 @@
   
   .content-item {}
   
+  .content-inner {}
+
   /* ------------------------------------------------------------ */
   /* .container-spacing */
   /*
@@ -350,6 +358,8 @@
     padding: var(--space-6);
   }
   
+  .content-inner {}
+
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   /*
@@ -369,4 +379,6 @@
   
   .content-item {}
   
+  .content-inner {}
+
 }
