@@ -176,7 +176,12 @@
     font: normal var(--text-3xl) var(--font-body);
     font-weight: var(--font-bold);
   }
-
+  
+  /* text-sm font-medium */
+  .user-form__label {
+    font: normal var(--text-sm) var(--font-body);
+    font-weight: var(--font-medium);
+  }
 }
 
 @layer appearances {
@@ -295,6 +300,13 @@
   .showcase-card__heading {}
   
   .content-container__heading {}
+  
+  .user-form__label {}
+  
+  /* block */
+  .user-form__label--block {
+    display: block;
+  }
 
   /* ------------------------------------------------------------ */
   /* .container-contain */
@@ -320,6 +332,8 @@
   .showcase-card__heading {}
   
   .content-container__heading {}
+  
+  .user-form__label {}
 
   /* ------------------------------------------------------------ */
   /* .container-flex */
@@ -349,6 +363,8 @@
   .showcase-card__heading {}
   
   .content-container__heading {}
+  
+  .user-form__label {}
 
   /* ------------------------------------------------------------ */
   /* .container-grid */
@@ -388,6 +404,8 @@
   .showcase-card__heading {}
   
   .content-container__heading {}
+  
+  .user-form__label {}
 
   /* ------------------------------------------------------------ */
   /* .container-spacing */
@@ -437,6 +455,11 @@
     padding-block-end: var(--space-2);
     margin-block-end: var(--space-6);
   }
+  
+  /* mb-1 */
+  .user-form__label {
+    margin-block-end: var(--space-1);
+  }
 
   /* ------------------------------------------------------------ */
   /* .container-sizing */
@@ -462,5 +485,7 @@
   .showcase-card__heading {}
   
   .content-container__heading {}
+  
+  .user-form__label {}
 
 }
