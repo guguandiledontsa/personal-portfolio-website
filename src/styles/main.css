@@ -61,6 +61,7 @@
     --space-56: 14rem;
     --space-64: 16rem;
     
+    --space-sm-1: 1px;
     --space-sm-2: 2px;
     --space-sm-4: 4px;
     --space-sm-8: 8px;
@@ -168,13 +169,22 @@
   .grid__footer {
     text-align: center;
   }
-
   
   .showcase-card {}
   
   .showcase-card__body {}
   
-  /* text-slate-900 font-bold text-xl*/
+  .showcase-card__table {
+    font: normal var(--text-sm) var(--font-body);
+  }
+  
+  /* text-left font-semibold*/
+  .table__header {
+    text-align: left;
+    font-weight: var(--font-semibold);
+  }
+
+  /* text-slate-900 font-bold text-xl */
   .showcase-card__heading {
     color: var(--slate-900);
     font: normal var(--text-xl) var(--font-body);
@@ -270,6 +280,17 @@
     box-shadow: var(--shadow-md);
   }
   
+  .showcase-card__table {}
+  
+  .table__data {
+    border: var(--space-sm-1) solid var(--slate-300);
+  }
+
+  /* border border-slate-300 */
+  .table__header {
+    border: var(--space-sm-1) solid var(--slate-300);
+  }
+
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -336,6 +357,10 @@
   
   .showcase-card__list {}
   
+  .showcase-card__table {}
+  
+  .table__data {}
+
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -376,6 +401,8 @@
   
   .showcase-card__list {}
   
+  .showcase-card__table {}
+
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -415,6 +442,10 @@
   
   .showcase-card__list {}
   
+  .showcase-card__table {}
+  
+  .table__data {}
+
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -462,6 +493,10 @@
   
   .showcase-card__list {}
   
+  .showcase-card__table {}
+  
+  .table__data {}
+
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -520,6 +555,18 @@
     margin-block-start: var(--space-2);
   }
   
+  /* mt-2 */
+  .showcase-card__table {
+    margin-block-start: var(--space-2);
+  }
+  
+  /* p-3 */
+  .table__header {
+    padding: var(--space-3);
+  }
+  
+  .table__data {}
+
   .showcase-card__body {}
   
   /* mb-4 */
@@ -572,6 +619,13 @@
   .showcase-card {}
   
   .showcase-card__list {}
+  
+  /* w-full */
+  .showcase-card__table {
+    inline-size: var(--w-full);
+  }
+  
+  .table__data {}
   
   .showcase-card__body {}
   
