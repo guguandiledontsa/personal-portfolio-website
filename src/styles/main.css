@@ -18,6 +18,7 @@
     
     --slate-50: hsla(210, 40%, 98%, 1);
     --slate-100: hsla(210, 40%, 96%, 1);
+    --slate-200: ;
     --slate-300: hsla(213, 27%, 84%, 1);
     --slate-500: hsla(215, 16%, 47%, 1);
     --slate-600: hsla(215, 19%, 35%, 1);
@@ -178,12 +179,29 @@
     font: normal var(--text-sm) var(--font-body);
   }
   
+  /* text-slate-500 text-xs */
+  .table__caption {
+    color: var(--slate-500);
+    font: normal var(--text-xs) var(--font-body);
+  }
+  
+  /* text-slate-700 */
+  .table__head {
+    color: var(--slate-700);
+  }
+  
+  /* font-bold text-slate-700 */
+  .table__foot {
+    color: var(--slate-700);
+    font-weight: var(--font-bold);
+  }
+  
   /* text-left font-semibold*/
-  .table__header {
+  .table__header-data {
     text-align: left;
     font-weight: var(--font-semibold);
   }
-
+  
   /* text-slate-900 font-bold text-xl */
   .showcase-card__heading {
     color: var(--slate-900);
@@ -282,15 +300,40 @@
   
   .showcase-card__table {}
   
-  .table__data {
-    border: var(--space-sm-1) solid var(--slate-300);
+  /* bg-slate-200 */
+  .table__head {
+    background-color: var(--slate-300); /* correct with --slate-200 */
   }
-
-  /* border border-slate-300 */
-  .table__header {
-    border: var(--space-sm-1) solid var(--slate-300);
+  
+  .table__body {
+    background-color: white;
   }
-
+  
+  /* bg-slate-500 */
+  .table__foot {
+    background-color: var(--slate-500);
+  }
+  
+  /* border */
+  .table__content {
+    border: var(--space-sm-1) solid;
+  }
+  
+  /* border-slate-500 */
+  .table__header-data {
+    border-color: var(--slate-500);
+  }
+  
+  /* border-slate-300 */
+  .table__body-data {
+    border-color: var(--slate-300);
+  }
+  
+  /* border-slate-600 */
+  .table__footer-data {
+    border-color: var(--slate-600);
+  }
+  
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -300,7 +343,7 @@
     border: 0 solid var(--blue-500);
     border-block-end-width: var(--space-sm-2);
   }
-
+  
 }
 
 @layer layouts {
@@ -346,7 +389,7 @@
   .page__item {}
   
   .page__footer {}
-
+  
   .content-container {}
   
   .grid-wrapper {}
@@ -360,13 +403,13 @@
   .showcase-card__table {}
   
   .table__data {}
-
+  
   .showcase-card__body {}
   
   .showcase-card__heading {}
   
   .showcase-card__content-heading {}
-
+  
   .content-container__heading {}
   
   .user-form__label {}
@@ -375,7 +418,7 @@
   .user-form__label--block {
     display: block;
   }
-
+  
   /* ------------------------------------------------------------ */
   /* .container-contain */
   /*
@@ -402,7 +445,7 @@
   .showcase-card__list {}
   
   .showcase-card__table {}
-
+  
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -412,7 +455,7 @@
   .content-container__heading {}
   
   .user-form__label {}
-
+  
   /* ------------------------------------------------------------ */
   /* .container-flex */
   /*
@@ -445,7 +488,7 @@
   .showcase-card__table {}
   
   .table__data {}
-
+  
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -455,7 +498,7 @@
   .content-container__heading {}
   
   .user-form__label {}
-
+  
   /* ------------------------------------------------------------ */
   /* .container-grid */
   /*
@@ -496,7 +539,7 @@
   .showcase-card__table {}
   
   .table__data {}
-
+  
   .showcase-card__body {}
   
   .showcase-card__heading {}
@@ -506,7 +549,7 @@
   .content-container__heading {}
   
   .user-form__label {}
-
+  
   /* ------------------------------------------------------------ */
   /* .container-spacing */
   /*
@@ -549,10 +592,7 @@
     padding: var(--space-6);
   }
   
-  /* ml-6 mt-2 */
   .showcase-card__list {
-    margin-inline-start: var(--space-6);
-    margin-block-start: var(--space-2);
   }
   
   /* mt-2 */
@@ -560,13 +600,18 @@
     margin-block-start: var(--space-2);
   }
   
+  /* mt-2 */
+  .table__caption {
+    margin-block-start: var(--space-2);
+  }
+
   /* p-3 */
-  .table__header {
+  .table__content {
     padding: var(--space-3);
   }
   
   .table__data {}
-
+  
   .showcase-card__body {}
   
   /* mb-4 */
@@ -578,7 +623,7 @@
   .showcase-card__content-heading {
     margin-block-end: var(--space-2);
   }
-
+  
   /* pb-2 mb-6 */
   .content-container__heading {
     padding-block-end: var(--space-2);
@@ -591,7 +636,7 @@
   .user-form__label {
     margin-block-end: var(--space-1);
   }
-
+  
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   /*
@@ -636,5 +681,5 @@
   .content-container__heading {}
   
   .user-form__label {}
-
+  
 }

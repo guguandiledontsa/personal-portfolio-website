@@ -122,11 +122,13 @@
                     <h3 class="showcase-card__heading">Lists (ul, ol, dl)</h3>
                     <div class="showcase-card__body">
                         <h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
+                        <!-- ml-6 mt-2 -->
                         <ul class="showcase-card__list list-disc space-y-1">
                             <li>First item. <code>&lt;li&gt;</code></li>
                             <li>Second item with a <a href="#" class="text-blue-600 hover:underline">nested link</a></li>
                         </ul>
                         <h4 class="font-semibold mt-4">Ordered List <code>&lt;ol&gt;</code></h4>
+                        <!-- ml-6 mt-2 -->
                         <ol class="showcase-card__list list-decimal space-y-1">
                             <li>First step. <code>&lt;li&gt;</code></li>
                             <li>Second step</li>
@@ -142,34 +144,34 @@
                     <h3 class="showcase-card__heading">Table</h3>
                     <div class="showcase-card__body overflow-x-auto">
                         <table class="showcase-card__table border-collapse">
-                            <caption class="caption-bottom text-xs text-slate-500 mt-2">Monthly Sales Summary</caption>
+                            <caption class="table__caption caption-bottom">Monthly Sales Summary</caption>
                             <colgroup>
                                 <col span="1" class="bg-blue-50">
                                 <col span="2">
                             </colgroup>
-                            <thead class="bg-slate-200 text-slate-700">
+                            <thead class="table__head">
                                 <tr>
-                                    <th class="table__header">Product</th>
-                                    <th class="table__header">Quantity</th>
-                                    <th class="table__header">Total</th>
+                                    <th class="table__content table__header-data">Product</th>
+                                    <th class="table__content table__header-data">Quantity</th>
+                                    <th class="table__content table__header-data">Total</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white">
+                            <tbody class="table__body">
                                 <tr>
-                                    <td class="table__data p-3 border border-slate-300 font-medium text-slate-800">Laptops</td>
-                                    <td class="table__data p-3 border border-slate-300">150</td>
-                                    <td class="table__data p-3 border border-slate-300">$150,000</td>
+                                    <td class="table__content table__body-data font-medium text-slate-800">Laptops</td>
+                                    <td class="table__content table__body-data">150</td>
+                                    <td class="table__content table__body-data">$150,000</td>
                                 </tr>
                                 <tr class="bg-slate-50">
-                                    <td class="table__data p-3 border border-slate-300 font-medium text-slate-800">Monitors</td>
-                                    <td class="table__data p-3 border border-slate-300">300</td>
-                                    <td class="table__data p-3 border border-slate-300">$75,000</td>
+                                    <td class="table__content table__body-data font-medium text-slate-800">Monitors</td>
+                                    <td class="table__content table__body-data">300</td>
+                                    <td class="table__content table__body-data">$75,000</td>
                                 </tr>
                             </tbody>
-                            <tfoot class="bg-slate-700 text-white font-bold">
+                            <tfoot class="table__foot text-white">
                                 <tr>
-                                    <td class="p-3 border border-slate-600" colspan="2">Grand Total</td>
-                                    <td class="p-3 border border-slate-600">$225,000</td>
+                                    <td class="table__content table__footer-data" colspan="2">Grand Total</td>
+                                    <td class="table__content table__footer-data">$225,000</td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -503,7 +505,7 @@
             <div class="showcase-card">
                 <p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
                 <p class="mt-4">Avoid using tags such as:</p>
-                <ul class="list-disc text-sm space-y-1">
+                <ul class="showcase-card__list list-disc text-sm space-y-1">
                     <li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code></li>
                     <li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code></li>
                     <li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;tt&gt;</code>, <code>&lt;strike&gt;</code></li>
@@ -521,7 +523,7 @@
             <div>
                 <h3 class="font-bold text-white">Navigation</h3>
                 <nav class="mt-2">
-                    <ul class="space-y-1">
+                    <ul class="showcase-card__list space-y-1">
                         <li><a href="#" class="hover:underline text-sky-400">Privacy</a></li>
                         <li><a href="#" class="hover:underline text-sky-400">Terms</a></li>
                         <li><a href="#" class="hover:underline text-sky-400">Contact</a></li>
