@@ -89,6 +89,7 @@
     --text-center: center;
     --text-left: left;
     --text-right: right;
+    --text-justify: justify;
     
     
     /* font-size / line-height*/
@@ -101,14 +102,19 @@
     --text-5xl: 3rem/1;
     --text-6xl: 3.75rem/1;
     
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
     --font-medium: 500;
     --font-semibold: 600;
     --font-bold: 700;
     --font-extrabold: 800;
+    --font-black: 900;
     
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
     
+    --not-italic: normal;
   }
   
   /* ------------------------------------------------------------ */
@@ -195,12 +201,20 @@
     
   }
   
+  /* text-slate-800 font-bold text-2xl */
   .hgroup__heading {
     color: var(--slate-800);
     font-weight: var(--font-bold);
     font: normal var(--text-2xl) var(--font-body);
   }
   
+  /* text-lg text-slate-500 font-light */
+  .hgroup__body-text {
+    font: normal var(--text-lg) var(--font-body);
+    color: var(--slate-500);
+    font-weight: var(--font-light);
+  }
+
   .showcase-card__body {}
   
   .showcase-card__table {
@@ -340,6 +354,8 @@
   
   .hgroup__heading {}
   
+  .hgroup__body-text {}
+
   /* border-l-4 border-slate-300 */
   .showcase-card__blockquote {
     border: 0 solid var(--slate-300);
@@ -453,6 +469,8 @@
   
   .hgroup__heading {}
   
+  .hgroup__body-text {}
+
   .showcase-card__pre {}
   
   .showcase-card__blockquote {}
@@ -512,6 +530,8 @@
   
   .hgroup__heading {}
   
+  .hgroup__body-text {}
+
   .showcase-card__blockquote {}
   
   .blockquote__cite {}
@@ -563,6 +583,8 @@
   
   .hgroup__heading {}
   
+  .hgroup__body-text {}
+
   .showcase-card__blockquote {}
   
   .blockquote__cite {}
@@ -622,6 +644,8 @@
   
   .showcase-card__hgroup {}
   
+  .hgroup__body-text {}
+
   .hgroup__heading {}
   
   .showcase-card__blockquote {}
@@ -698,6 +722,8 @@
     padding-inline-start: var(--space-4);
   }
   
+  .hgroup__body-text {}
+
   .hgroup__heading {}
   
   /* mt-2 pl-4 */
@@ -792,6 +818,8 @@
   .showcase-card__list {}
   
   .hgroup__heading {}
+  
+  .hgroup__body-text {}
   
   /* w-full */
   .showcase-card__table {
