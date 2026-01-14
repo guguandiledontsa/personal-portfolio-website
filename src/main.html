@@ -39,9 +39,11 @@
 			<h2 class="content-container__heading">
 				Text Content & Typography
 			</h2>
+			
 			<div class="grid-wrapper md:grid-cols-2 lg:grid-cols-3">
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Headings (h1–h6)</h3>
+					
 					<div class="showcase-card__body space-y-2">
 						<h1 class="text-4xl font-bold"><code>&lt;h1&gt;</code> Heading</h1>
 						<h2 class="text-3xl font-semibold"><code>&lt;h2&gt;</code> Heading</h2>
@@ -49,10 +51,14 @@
 						<h4 class="text-xl font-medium"><code>&lt;h4&gt;</code> Heading</h4>
 						<h5 class="text-lg font-medium"><code>&lt;h5&gt;</code> Heading</h5>
 						<h6 class="text-base font-medium"><code>&lt;h6&gt;</code> Heading</h6>
+						
 					</div>
+					
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Phrasing & Text</h3>
+					
 					<div class="showcase-card__body space-y-4">
 						<p>This paragraph contains a standard <code>&lt;a&gt;</code> <a href="#" class="text-blue-600 hover:underline font-medium">for links</a>.</p>
 						<p>Use <code>&lt;strong&gt;</code> <strong>for importance</strong>, <code>&lt;b&gt;</code> <b>for stylistic offset</b>, <code>&lt;em&gt;</code> <em>for emphasis</em>, and <code>&lt;i&gt;</code> <i>for an alternate voice</i>.</p>
@@ -60,35 +66,48 @@
 						<p>Subscript <code>&lt;sub&gt;</code> & Superscript <code>&lt;sup&gt;</code>: H<sub>2</sub>O and E = mc<sup>2</sup>.</p>
 						<p>Use <code>&lt;abbr&gt;</code> for abbreviations, like <abbr title="HyperText Markup Language" class="cursor-help">HTML</abbr>, and <code>&lt;q&gt;</code> <q>for short inline quotes</q>.</p>
 						<p>Use <code>&lt;u&gt;</code> for unarticulated annotations, like <u class="decoration-wavy decoration-red-500">spellling</u> mistakes.</p>
+						
 					</div>
+					
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Block-Level & Semantic Text</h3>
+					
 					<blockquote class="showcase-card__blockquote">
 						<q>The world is a magnificent book, and those who do not travel read only a page.</q>
 						<cite class="blockquote__cite not-italic">— Saint Augustine</cite>
 					</blockquote>
-					<p class="mt-4"><code>&lt;pre&gt;</code> is great for code:</p>
+					
+					<p class="pre__heading mt-4"><code>&lt;pre&gt;</code> is great for code:</p>
 					<pre class="showcase-card__pre overflow-x-auto"><code>&lt;div class="example"&gt;
   &lt;span&gt;Hello, World!&lt;/span&gt;
 &lt;/div&gt;</code></pre>
+					
+					<!-- these below should probably get their own box -->
 					<p class="mt-4">The <code>&lt;dfn&gt;</code> tag: <dfn>dfn</dfn> defines a term.</p>
 					<p class="mt-2"><code>&lt;data&gt;</code> links human and machine value: <data value="2025-10-06">October 6th</data>.</p>
 					<p class="mt-2">similarly <code>&lt;time&gt;</code>: <time datetime="2025-12-25">Christmas Day</time>, has a <code>datetime</code> attribute</p>
 					<p class="mt-2">Keyboard input <code>&lt;kbd&gt;</code>: <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
 					<p class="mt-2">Program output <code>&lt;samp&gt;</code>: <samp>File not found.</samp></p>
 					<p class="mt-2">Variables <code>&lt;var&gt;</code>: <var>x</var> = <var>y</var> + 2.</p>
+					
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Line & Directional Text</h3>
+					
 					<p>This is the first line.<br>This is the second line after a <code>&lt;br&gt;</code> tag.</p>
 					<hr class="my-4">
 					<p>The <code>&lt;wbr&gt;</code> tag suggests a word-break<wbr>opportunity (useful in tight containers).</p>
 					<p><bdi>Left-to-right embedded text</bdi> stays isolated in directionality context.</p>
 					<p><bdo dir="rtl">This entire phrase is forced right-to-left with <code>&lt;bdo&gt;</code>.</bdo></p>
+					
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Ruby / East Asian Text</h3>
+					
 					<p class="text-lg">For East Asian typography, use <code>&lt;ruby&gt;</code>:</p>
 					<ruby class="text-2xl mt-2">
 						漢 <rp>(</rp>
@@ -99,8 +118,11 @@
 						<rp>)</rp>
 					</ruby>
 					<p class="text-sm text-slate-600 mt-2"><code>&lt;rt&gt;</code> shows pronunciation; <code>&lt;rp&gt;</code> is fallback.</p>
+					
 				</article>
+				
 			</div>
+			
 			<article class="showcase-card mt-6">
 				<h3 class="showcase-card__heading">Heading Group</h3>
 				<p class="showcase-card__content-heading">Using <code>&lt;hgroup&gt;</code> to bind a title and subtitle.</p>
@@ -109,7 +131,9 @@
 					<h2 class="hgroup__heading">The Martian Chronicles</h2>
 					<p class="hgroup__body-text">Ray Bradbury's finest work</p>
 				</hgroup>
+				
 			</article>
+			
 		</section>
 		
 		<!-- Lists & Tables -->
@@ -117,9 +141,11 @@
 			<h2 class="content-container__heading">
 				Lists & Tables
 			</h2>
+			
 			<div class="grid-wrapper md:grid-cols-2 lg:grid-cols-2">
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Lists (ul, ol, dl)</h3>
+					
 					<div class="showcase-card__body">
 						<h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
 						<!-- ml-6 mt-2 -->
@@ -127,21 +153,27 @@
 							<li>First item. <code>&lt;li&gt;</code></li>
 							<li>Second item with a <a href="#" class="text-blue-600 hover:underline">nested link</a></li>
 						</ul>
+						
 						<h4 class="font-semibold mt-4">Ordered List <code>&lt;ol&gt;</code></h4>
 						<!-- ml-6 mt-2 -->
 						<ol class="showcase-card__list list-decimal space-y-1">
 							<li>First step. <code>&lt;li&gt;</code></li>
 							<li>Second step</li>
 						</ol>
+						
 						<h4 class="font-semibold mt-4">Description List <code>&lt;dl&gt;</code></h4>
 						<dl class="mt-2">
 							<dt class="font-medium">Term One <code>&lt;dt&gt;</code></dt>
 							<dd class="ml-4 italic text-sm text-slate-600">Definition of the first term. <code>&lt;dd&gt;</code></dd>
 						</dl>
+						
 					</div>
+					
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Table</h3>
+					
 					<div class="showcase-card__body overflow-x-auto">
 						<table class="showcase-card__table border-collapse">
 							<caption class="table__caption caption-bottom">Monthly Sales Summary</caption>
@@ -175,8 +207,11 @@
 								</tr>
 							</tfoot>
 						</table>
+						
 					</div>
+					
 				</article>
+				
 			</div>
 		</section>
 		
@@ -185,6 +220,7 @@
 			<h2 class="content-container__heading">
 				Forms & User Input (Extended)
 			</h2>
+			
 			<div class="grid-wrapper md:grid-cols-2 lg:grid-cols-3">
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Text-Based <code>&lt;input&gt;</code> of various <code>type</code> attributes and a <code>&lt;textarea&gt;</code></h3>
@@ -218,7 +254,9 @@
 							<textarea id="textarea-in" rows="2" class="form-input"></textarea>
 						</div>
 					</form>
+					
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Choices & Selections</h3>
 					<form class="user-form space-y-4">
@@ -269,7 +307,9 @@
 							</datalist>
 						</div>
 					</form>
+					
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Pickers, Ranges & Files</h3>
 					<form class="user-form space-y-4">
@@ -298,7 +338,9 @@
 							<input type="file" id="file-in" class="form-input">
 						</div>
 					</form>
+					
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Buttons, Outputs & Hidden / Datetime Inputs</h3>
 					<form class="user-form space-y-4" oninput="result.value = (a.valueAsNumber || 0) + (b.valueAsNumber || 0)">
@@ -334,8 +376,11 @@
 							<input type="reset" value="Reset" class="w-full p-2 bg-slate-200 text-slate-800 rounded-md cursor-pointer hover:bg-slate-300 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
 						</div>
 					</form>
+					
 				</article>
+				
 			</div>
+			
 		</section>
 		
 		<!-- Embedded & Interactive Content -->
@@ -343,6 +388,7 @@
 			<h2 class="content-container__heading">
 				Embedded & Interactive Content (Extended)
 			</h2>
+			
 			<div class="grid-wrapper md:grid-cols-2 lg:grid-cols-3">
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Images & Media</h3>
@@ -369,6 +415,7 @@
 						<track kind="captions" srclang="en" src="captions_en.vtt" label="English">
 					</video>
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">External Content</h3>
 					<label class="text-sm font-medium"><code>&lt;iframe&gt;</code></label>
@@ -382,6 +429,7 @@
 					<label class="text-sm font-medium mt-4"><code>&lt;embed&gt;</code></label>
 					<embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="w-full h-24 border rounded-md mt-1">
 				</article>
+				
 				<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 					<h3 class="showcase-card__heading">Interactive Elements & Slots</h3>
 					<details class="p-3 border rounded-md">
@@ -432,6 +480,7 @@
 					</div>
 					
 				</article>
+				
 			</div>
 		</section>
 		
@@ -440,12 +489,15 @@
 			<h2 class="content-container__heading">
 				Advanced & Miscellaneous
 			</h2>
+			
 			<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 				<h3 class="showcase-card__heading">SVG & Canvas</h3>
+				
 				<label class="user-form__label">SVG (Scalable Vector Graphics)</label>
 				<svg viewBox="0 0 100 100" class="w-24 h-24 mt-1">
 					<circle cx="50" cy="50" r="45" stroke="royalblue" stroke-width="4" fill="skyblue" />
 				</svg>
+				
 				<label class="canvas__heading">Canvas</label>
 				<canvas id="myCanvas" class="showcase-card__canvas">
 					Your browser does not support the canvas element.
@@ -458,11 +510,12 @@
 						}
 					</script>
 				</canvas>
+				
 			</article>
+			
 			<article class="showcase-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 				<h3 class="showcase-card__heading">MathML</h3>
 				<p class="showcase-card__content-heading mb-2 text-sm text-slate-600">Native math rendering using <code>&lt;math&gt;</code>.</p>
-				
 				<div class="showcase-card__body text-2xl p-4 bg-slate-50 rounded border text-center">
 					<math display="block">
 						<mrow>
@@ -494,7 +547,9 @@
 						</mrow>
 					</math>
 				</div>
+				
 			</article>
+			
 		</section>
 		
 		<!-- Deprecated Elements Warning -->
@@ -502,8 +557,10 @@
 			<h2 class="content-container__heading">
 				A Note on Deprecated / Obsolete Elements
 			</h2>
+			
 			<div class="showcase-card">
 				<p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
+				
 				<p class="mt-4">Avoid using tags such as:</p>
 				<ul class="showcase-card__list list-disc text-sm space-y-1">
 					<li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code></li>
@@ -511,14 +568,17 @@
 					<li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;tt&gt;</code>, <code>&lt;strike&gt;</code></li>
 					<li><code>&lt;menuitem&gt;</code> (limited support), <code>&lt;keygen&gt;</code> (deprecated)</li>
 				</ul>
+				
 				<p class="mt-4">Use modern, semantic HTML5 elements and CSS for styling instead.</p>
 			</div>
+			
 		</section>
 		
 	</main>
 	
 	<footer class="page__item page__footer">
 		<h2 class="text-2xl font-semibold text-center text-white">Footer Content</h2>
+		
 		<div class="grid-wrapper grid__footer md:grid-cols-3">
 			<div>
 				<h3 class="font-bold text-white">Navigation</h3>
@@ -530,22 +590,27 @@
 					</ul>
 				</nav>
 			</div>
+			
 			<div>
 				<h3 class="font-bold text-white">Contact Information</h3>
 				<address class="text-sm not-italic mt-2">
 					Contact us at: <a href="mailto:dev@example.com" class="hover:underline text-sky-400">dev@example.com</a>
 				</address>
 			</div>
+			
 			<div>
 				<h3 class="font-bold text-white">About This Page</h3>
 				<aside class="text-sm mt-2">
 					This is supplementary content in an <code>&lt;aside&gt;</code>.
 				</aside>
 			</div>
+			
 		</div>
+		
 		<div class="text-center mt-8 pt-6 border-t border-slate-700">
 			<small>&copy; <time datetime="2025">2025</time> Your Company. All Rights Reserved.</small>
 		</div>
+		
 	</footer>
 	
 </body>
