@@ -89,7 +89,7 @@
     --text-center: center;
     --text-left: left;
     --text-right: right;
-
+    
     
     /* font-size / line-height*/
     --text-xs: 0.75rem/1rem;
@@ -180,7 +180,7 @@
     color: white;
     font: normal var(--text-sm) var(--font-body);
   }
-
+  
   /* italic text-slate-600 */
   .showcase-card__blockquote {
     color: var(--slate-600);
@@ -194,7 +194,7 @@
     font: normal var(--text-sm) var(--font-body);
     
   }
-
+  
   .showcase-card__body {}
   
   .showcase-card__table {
@@ -249,6 +249,7 @@
     font: normal var(--text-sm) var(--font-body);
     font-weight: var(--font-medium);
   }
+  
 }
 
 @layer appearances {
@@ -324,7 +325,13 @@
     background-color: var(--slate-800);
     border-radius: var(--space-rnd-md);
   }
-
+  
+  /* bg-blue-500 border-l-4 */
+  .showcase-card__hgroup {
+    border: 0 solid var(--blue-500);
+    border-inline-start-width: var(--space-sm-4);
+  }
+  
   /* border-l-4 border-slate-300 */
   .showcase-card__blockquote {
     border: 0 solid var(--slate-300);
@@ -432,15 +439,19 @@
   
   .showcase-card {}
   
+  .showcase-card__hgroup {
+    background-color: var(--slate-50);
+  }
+  
   .showcase-card__pre {}
-
+  
   .showcase-card__blockquote {}
   
   /* block */
   .blockquote__cite {
     display: block;
   }
-
+  
   .showcase-card__list {}
   
   .showcase-card__table {}
@@ -486,11 +497,13 @@
   .showcase-card {}
   
   .showcase-card__pre {}
-
+  
+  .showcase-card__hgroup {}
+  
   .showcase-card__blockquote {}
   
   .blockquote__cite {}
-
+  
   .showcase-card__list {}
   
   .showcase-card__table {}
@@ -533,11 +546,13 @@
   .showcase-card {}
   
   .showcase-card__pre {}
-
+  
+  .showcase-card__hgroup {}
+  
   .showcase-card__blockquote {}
   
   .blockquote__cite {}
-
+  
   .showcase-card__list {}
   
   .showcase-card__table {}
@@ -590,11 +605,13 @@
   .showcase-card {}
   
   .showcase-card__pre {}
-
+  
+  .showcase-card__hgroup {}
+  
   .showcase-card__blockquote {}
   
   .blockquote__cite {}
-
+  
   .showcase-card__list {}
   
   .showcase-card__table {}
@@ -658,7 +675,13 @@
     margin-block-start: var(--space-2);
     padding: var(--space-3);
   }
-
+  
+  /* py-1 pl-4 */
+  .showcase-card__hgroup {
+    padding-block: var(--space-1);
+    padding-inline-start: var(--space-4);
+  }
+  
   /* mt-2 pl-4 */
   .showcase-card__blockquote {
     margin-block-start: var(--space-2);
@@ -743,6 +766,8 @@
   .showcase-card__pre {}
   
   .showcase-card__blockquote {}
+  
+  .showcase-card__hgroup {}
   
   .blockquote__cite {}
   
