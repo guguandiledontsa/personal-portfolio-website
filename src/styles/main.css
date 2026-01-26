@@ -942,6 +942,11 @@
   .showcase-card__aside {
     margin-block-start: var(--space-2);
   }
+  
+  /* mb-1 */
+  .showcese-card__svg {
+    margin-block-end: var(--space-1);
+  }
 
 
   /* ------------------------------------------------------------ */
@@ -1016,6 +1021,12 @@
   .showcase-card__external-content {
     inline-size: var(--w-full);
     block-size: var(--space-24);
+  }
+  
+  /* w-24 h-24 */
+  .showcese-card__svg {
+    /* block-size: var(--space-24); */
+    /* inline-size: var(--space-24); */
   }
   
   .table__data {}
