@@ -161,25 +161,15 @@
   * Syntax: font-stretch: <value>;
   */
   
-  .page {}
-  
-  .page__item {}
-  
   /* text-slate-300 */
   .page__footer {
     color: var(--slate-300);
   }
   
-  .content-container {}
-  
-  .grid-wrapper {}
-  
   /* text-center */
   .grid__footer {
     text-align: center;
   }
-  
-  .showcase-card {}
   
   /* text-white text-sm */
   .showcase-card__pre {
@@ -193,13 +183,11 @@
     font-style: italic;
   }
   
-  .showcase-card__canvas {}
-  
   .canvas__heading {
     font-weight: var(--font-medium);
     font: normal var(--text-sm) var(--font-body);
   }
-
+  
   /* text-right text-slate-500 text-sm */
   .blockquote__cite {
     text-align: var(--text-right);
@@ -221,8 +209,6 @@
     color: var(--slate-500);
     font-weight: var(--font-light);
   }
-  
-  .showcase-card__body {}
   
   /* text-sm */
   .showcase-card__aside {
@@ -362,17 +348,11 @@
     background-color: var(--slate-100);
   }
   
-  .page__item {}
-  
   /* shadow-inner bg-slate-800 */
   .page__footer {
     background-color: var(--slate-800);
     box-shadow: var(--shadow-inner);
   }
-  
-  .content-container {}
-  
-  .grid-wrapper {}
   
   /* bg-white rounded-lg shadow-md */
   .showcase-card {
@@ -387,8 +367,6 @@
     border-radius: var(--space-rnd-md);
   }
   
-  .canvas__heading {}
-
   /* bg-slate-800 rounded-md */
   .showcase-card__pre {
     background-color: var(--slate-800);
@@ -401,17 +379,11 @@
     border-inline-start-width: var(--space-sm-4);
   }
   
-  .hgroup__heading {}
-  
-  .hgroup__body-text {}
-  
   /* border-l-4 border-slate-300 */
   .showcase-card__blockquote {
     border: 0 solid var(--slate-300);
     border-inline-start-width: var(--space-sm-4);
   }
-  
-  .showcase-card__table {}
   
   /* rounded */
   .showcase-card__video {
@@ -457,7 +429,7 @@
     border: var(--space-sm-1) solid;
     border-radius: var(--space-rnd-md);
   }
-
+  
   /* border-slate-500 */
   .table__header-data {
     border-color: var(--slate-500);
@@ -472,10 +444,6 @@
   .table__footer-data {
     border-color: var(--slate-600);
   }
-  
-  .showcase-card__body {}
-  
-  .showcase-card__heading {}
   
   /* border-t border-slate-700 */
   .showcase-card__legal {
@@ -528,57 +496,14 @@
   * Syntax: float: <value>;
   * Syntax: clear: <value>;
   */
-  
-  .page {}
-  
-  .page__item {}
-  
-  .page__footer {}
-  
-  .content-container {}
-  
-  .grid-wrapper {}
-  
-  .grid__footer {}
-  
-  .showcase-card {}
-  
-  .showcase-card__canvas {}
-  
-  .canvas__heading {}
-
   .showcase-card__hgroup {
     background-color: var(--slate-50);
   }
-  
-  .hgroup__heading {}
-  
-  .hgroup__body-text {}
-  
-  .showcase-card__pre {}
-  
-  .showcase-card__blockquote {}
   
   /* block */
   .blockquote__cite {
     display: block;
   }
-  
-  .showcase-card__list {}
-  
-  .showcase-card__table {}
-  
-  .table__data {}
-  
-  .showcase-card__body {}
-  
-  .showcase-card__heading {}
-  
-  .showcase-card__content-heading {}
-  
-  .content-container__heading {}
-  
-  .user-form__label {}
   
   /* block */
   .user-form__label--block {
@@ -593,51 +518,6 @@
   * Syntax: overflow-anchor: auto | none;
   * Syntax: will-change: <property>;
   */
-  
-  .page {}
-  
-  .page__item {}
-  
-  .page__footer {}
-  
-  .content-container {}
-  
-  .grid-wrapper {}
-  
-  .grid__footer {}
-  
-  .showcase-card {}
-  
-  .showcase-card__canvas {}
-  
-  .canvas__heading {}
-
-  .showcase-card__pre {}
-  
-  .showcase-card__hgroup {}
-  
-  .hgroup__heading {}
-  
-  .hgroup__body-text {}
-  
-  .showcase-card__blockquote {}
-  
-  .blockquote__cite {}
-  
-  .showcase-card__list {}
-  
-  .showcase-card__table {}
-  
-  .showcase-card__body {}
-  
-  .showcase-card__heading {}
-  
-  .showcase-card__content-heading {}
-  
-  .content-container__heading {}
-  
-  .user-form__label {}
-  
   /* ------------------------------------------------------------ */
   /* .container-flex */
   /*
@@ -650,53 +530,6 @@
   * Syntax: align-content: <value>;
   * Syntax: align-self: <value>; (usually used on children, but container can set default)
   */
-  
-  .page {}
-  
-  .page__item {}
-  
-  .page__footer {}
-  
-  .content-container {}
-  
-  .grid-wrapper {}
-  
-  .grid__footer {}
-  
-  .showcase-card {}
-  
-  .showcase-card__canvas {}
-  
-  .canvas__heading {}
-
-  .showcase-card__pre {}
-  
-  .showcase-card__hgroup {}
-  
-  .hgroup__heading {}
-  
-  .hgroup__body-text {}
-  
-  .showcase-card__blockquote {}
-  
-  .blockquote__cite {}
-  
-  .showcase-card__list {}
-  
-  .showcase-card__table {}
-  
-  .table__data {}
-  
-  .showcase-card__body {}
-  
-  .showcase-card__heading {}
-  
-  .showcase-card__content-heading {}
-  
-  .content-container__heading {}
-  
-  .user-form__label {}
-  
   /* ------------------------------------------------------------ */
   /* .container-grid */
   /*
@@ -715,12 +548,6 @@
   * Syntax: place-content: <align-content> <justify-content>;
   */
   
-  .page {}
-  
-  .page__item {}
-  
-  .content-container {}
-  
   /* grid grid-col-1 gap-6 */
   .grid-wrapper {
     display: grid;
@@ -728,50 +555,12 @@
     gap: var(--space-6);
   }
   
-  .grid__footer {}
-  
-  .showcase-card {}
-  
-  .showcase-card__canvas {}
-  
-  .canvas__heading {}
-
-  .showcase-card__pre {}
-  
-  .showcase-card__hgroup {}
-  
-  .hgroup__body-text {}
-  
-  .hgroup__heading {}
-  
-  .showcase-card__blockquote {}
-  
-  .blockquote__cite {}
-  
-  .showcase-card__list {}
-  
-  .showcase-card__table {}
-  
-  .table__data {}
-  
-  .showcase-card__body {}
-  
-  .showcase-card__heading {}
-  
-  .showcase-card__content-heading {}
-  
-  .content-container__heading {}
-  
-  .user-form__label {}
-  
   /* ------------------------------------------------------------ */
   /* .container-spacing */
   /*
   * Syntax: margin: <value>;
   * Syntax: padding: <value>;
   */
-  
-  .page {}
   
   /* p-8 */
   .page__item {
@@ -793,8 +582,6 @@
     margin-block-end: var(--space-12);
   }
   
-  .grid-wrapper {}
-  
   /* mx-auto mt-6 */
   .grid__footer {
     margin-inline: auto;
@@ -814,7 +601,7 @@
   .canvas__heading {
     margin-block-end: var(--space-4);
   }
-
+  
   /* mt-2 p-3 */
   .showcase-card__pre {
     margin-block-start: var(--space-2);
@@ -825,7 +612,6 @@
   .showcase-card__video {
     margin-block-start: var(--space-2);
   }
-
   
   /* mt-2 */
   .showcase-card__audio {
@@ -835,17 +621,13 @@
   /* mt-1 */
   .showcase-card__external-content {
     margin-block-start: var(--space-1);
-}
-
+  }
+  
   /* py-1 pl-4 */
   .showcase-card__hgroup {
     padding-block: var(--space-1);
     padding-inline-start: var(--space-4);
   }
-  
-  .hgroup__body-text {}
-  
-  .hgroup__heading {}
   
   /* mt-2 pl-4 */
   .showcase-card__blockquote {
@@ -862,8 +644,6 @@
   .blockquote__cite {
     margin-block-start: var(--space-1);
   }
-  
-  .showcase-card__list {}
   
   /* mt-2 */
   .showcase-card__table {
@@ -885,10 +665,6 @@
     padding: var(--space-3);
   }
   
-  .table__data {}
-  
-  .showcase-card__body {}
-  
   /* mb-4 */
   .showcase-card__heading {
     margin-block-end: var(--space-4);
@@ -904,8 +680,6 @@
     padding-block-end: var(--space-2);
     margin-block-end: var(--space-6);
   }
-  
-  .showcase-card__content-heading {}
   
   /* mb-1 */
   .user-form__label {
@@ -947,8 +721,8 @@
   .showcese-card__svg {
     margin-block-end: var(--space-1);
   }
-
-
+  
+  
   /* ------------------------------------------------------------ */
   /* .container-sizing */
   /*
@@ -958,36 +732,16 @@
   * Syntax: contain-intrinsic-size: <length>;
   */
   
-  .page {}
-  
-  .page__item {}
-  
-  .page__footer {}
-  
-  .content-container {}
-  
-  .grid-wrapper {}
-  
   /* max-w-6xl */
   .grid__footer {
     max-inline-size: var(--max-w-6xl);
   }
-  
-  .showcase-card {}
-  
-  .showcase-card__pre {}
-  
-  .canvas__heading {}
   
   /* w-full h-24 */
   .showcase-card__canvas {
     inline-size: var(--w-full);
     block-size: var(--space-24);
   }
-
-  .showcase-card__blockquote {}
-  
-  .showcase-card__hgroup {}
   
   /* w-full */
   .showcase-card__video {
@@ -996,16 +750,8 @@
   
   /* w-full */
   .figure__picture {
-  inline-size: var(--w-full);
+    inline-size: var(--w-full);
   }
-  
-  .blockquote__cite {}
-  
-  .showcase-card__list {}
-  
-  .hgroup__heading {}
-  
-  .hgroup__body-text {}
   
   /* w-full */
   .showcase-card__audio {
@@ -1028,17 +774,5 @@
     /* block-size: var(--space-24); */
     /* inline-size: var(--space-24); */
   }
-  
-  .table__data {}
-  
-  .showcase-card__body {}
-  
-  .showcase-card__heading {}
-  
-  .showcase-card__content-heading {}
-  
-  .content-container__heading {}
-  
-  .user-form__label {}
   
 }
