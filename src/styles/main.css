@@ -1,7 +1,6 @@
 /*  main.css */
 /* ───────────────────────────────────────────── */
 
-
 .container-typography {
   /*
    * Purpose: Sets the color of the text.
@@ -822,9 +821,260 @@
   padding-inline-end: 0;
 }
 
+/**/
 
+.container-transitions {
+  /*
+   * Purpose: A shorthand to set all transition properties.
+   * Syntax: transition: <property> <duration> <timing-function> <delay>;
+   * When to Use: For a single, concise declaration.
+   * Example: `transition: background-color 0.3s ease-in-out;`
+   */
+  transition: none;
+  
+  /*
+   * Purpose: Specifies the CSS property to be animated.
+   * Syntax: transition-property: <property-name> | all | none;
+   * When to Use: To control which properties will be animated on state change. Using `all` can be less performant.
+   */
+  transition-property: all;
+  
+  /*
+   * Purpose: Sets the duration of the transition.
+   * Syntax: transition-duration: <time>;
+   * When to Use: To control how long the animation takes.
+   */
+  transition-duration: 0s;
+  
+  /*
+   * Purpose: Defines the acceleration curve of the transition.
+   * Syntax: transition-timing-function: <value>;
+   * Key Values & Usage:
+   * - `ease`: A slow start, then fast, then slow end.
+   * - `linear`: The same speed from start to end.
+   * - `ease-in`: A slow start.
+   * - `ease-out`: A slow end.
+   * - `cubic-bezier()`: A custom curve for fine-grained control.
+   */
+  transition-timing-function: ease;
+  
+  /*
+   * Purpose: Sets a delay before the transition begins.
+   * Syntax: transition-delay: <time>;
+   */
+  transition-delay: 0s;
+}
 
+.container-transforms {
+  /*
+   * Purpose: Applies a 2D or 3D transform.
+   * Syntax: transform: <function> | <function-2> ...;
+   * When to Use: For visual effects on hover, on a button click, or as part of an animation.
+   * Key Functions & Usage:
+   * - `translate(x, y)`: Moves the element from its current position.
+   * - `rotate(deg)`: Rotates the element around its center.
+   * - `scale(x, y)`: Resizes the element.
+   * - `skew(deg)`: Skews the element along the x and y axes.
+   * - `perspective(px)`: Gives a 3D-transformed element a sense of depth.
+   */
+  transform: none;
+  
+  /*
+   * Purpose: Sets the point around which a transform is applied.
+   * Syntax: transform-origin: <x-value> <y-value>;
+   * When to Use: When you want an element to rotate or scale from a point other than its default center.
+   * Example: A spinning compass needle would have `transform-origin: center;`.
+   */
+  transform-origin: 50% 50%;
+  /* Possible values: top, left, right, bottom, percentages, px, etc. */
+  
+  /*
+   * Purpose: Specifies whether children of a 3D-transformed element are rendered in 3D space or flattened.
+   * Syntax: transform-style: <value>;
+   * When to Use: On the parent container to create a 3D scene.
+   */
+  transform-style: flat;
+  /* Possible values: flat, preserve-3d. */
+  
+  /*
+   * Purpose: Defines a perspective for 3D-transformed child elements.
+   * Syntax: perspective: <value>;
+   * When to Use: On the parent container to give child elements a 3D effect. The `px` value determines the depth of the scene.
+   */
+  perspective: none;
+  
+  /*
+   * Purpose: Specifies the vanishing point for 3D-transformed elements.
+   * Syntax: perspective-origin: <x-value> <y-value>;
+   * When to Use: To change the viewer's point of view in a 3D scene.
+   */
+  perspective-origin: 50% 50%;
+  
+  /*
+   * Purpose: Determines whether the back face of a 3D-transformed element is visible.
+   * Syntax: backface-visibility: <value>;
+   * When to Use: When creating a 3D card flip effect to hide the back of the card before it's flipped.
+   */
+  backface-visibility: visible;
+  /* Possible values: visible, hidden. */
+}
 
+.container-animations {
+  /*
+   * Purpose: A shorthand for all animation properties.
+   * Syntax: animation: <name> <duration> <timing-function> <delay> <iteration-count> <direction> <fill-mode> <play-state>;
+   * When to Use: For creating complex, repeatable, or triggered animations using `@keyframes`.
+   */
+  animation: none;
+  
+  /*
+   * Purpose: Specifies the `@keyframes` rule to be used.
+   * Syntax: animation-name: <name>;
+   */
+  animation-name: none;
+  
+  /*
+   * Purpose: Sets the duration of one animation cycle.
+   */
+  animation-duration: 0s;
+  
+  /*
+   * Purpose: Sets the timing function for the animation.
+   * Key Values & Usage: Same as `transition-timing-function`.
+   */
+  animation-timing-function: ease;
+  
+  /*
+   * Purpose: Sets a delay before the animation starts.
+   */
+  animation-delay: 0s;
+  
+  /*
+   * Purpose: Specifies how many times the animation should run.
+   * Key Values & Usage: A number, or `infinite` to loop forever.
+   */
+  animation-iteration-count: 1;
+  
+  /*
+   * Purpose: Determines whether the animation should alternate directions.
+   * Key Values & Usage: `normal`, `reverse`, `alternate`, `alternate-reverse`.
+   */
+  animation-direction: normal;
+  
+  /*
+   * Purpose: Specifies how the element should be styled before and after the animation runs.
+   * Key Values & Usage: `none`, `forwards` (retains the final state), `backwards` (applies the starting state), `both`.
+   */
+  animation-fill-mode: none;
+  
+  /*
+   * Purpose: Specifies whether the animation is running or paused.
+   * Key Values & Usage: `running`, `paused`.
+   */
+  animation-play-state: running;
+}
+
+/**/
+
+.container-interaction {
+  /*
+ * Purpose: Controls how the cursor appears over the element.
+ * Syntax: cursor: <value>;
+ * When to use: To provide clear visual feedback. For example, use `pointer` for clickable elements, `wait` for loading states, or `grab` for draggable items.
+ */
+  cursor: auto;
+  
+  /*
+ * Purpose: Prevents the user from selecting text or other content within an element.
+ * Syntax: user-select: <value>;
+ * When to use: On non-textual or interactive elements like buttons and images to prevent accidental text selection.
+ * Key values: `auto`, `none`, `text`, `all`.
+ */
+  user-select: auto;
+  
+  /*
+ * Purpose: Controls whether an element responds to mouse and touch events.
+ * Syntax: pointer-events: <value>;
+ * When to use: To make an element "unclickable" and allow events to pass through to elements behind it.
+ * Key values: `auto`, `none`.
+ */
+  pointer-events: auto;
+  
+  /*
+ * Purpose: Controls whether an element can be resized by the user.
+ * Syntax: resize: <value>;
+ * When to use: On elements like textareas where user resizing is desired.
+ * Key values: `none`, `both`, `horizontal`, `vertical`.
+ */
+  resize: none;
+  
+  /*
+ * Purpose: Specifies whether an element is rendered. Unlike `display: none`, a hidden element still occupies space.
+ * Syntax: visibility: <value>;
+ * When to use: To hide an element while maintaining its layout space.
+ * Key values: `visible`, `hidden`, `collapse`.
+ */
+  visibility: visible;
+  
+  
+  /*
+ * Purpose: Specifies the color of the text input cursor (caret).
+ * Syntax: caret-color: <color>;
+ * When to use: To customize the caret color to match your website's color scheme.
+ */
+  caret-color: auto;
+  
+  /*
+ * Purpose: Determines whether an element can be focused by a user via keyboard navigation.
+ * Syntax: tabindex: <value>;
+ * When to use: To make non-form elements focusable, or to control the focus order. A value of `0` makes it focusable, and `-1` removes it from the natural focus order.
+ */
+  tabindex: -1;
+  
+  /*
+ * Purpose: Provides a hint to the browser on whether to enable spellchecking for an element's content.
+ * Syntax: spellcheck: <value>;
+ * When to use: On editable content (e.g., `<textarea>`) to explicitly enable or disable the browser's spellchecker.
+ * Key values: `true`, `false`.
+ */
+  spellcheck: false;
+  
+  /*
+ * Purpose: Controls the appearance of form controls, such as buttons and checkboxes.
+ * Syntax: appearance: <value>;
+ * When to use: To remove the default platform-specific styling of form elements, allowing for custom styling.
+ * Key values: `none`, `auto`.
+ */
+  appearance: none;
+  
+  
+  /*
+ * Purpose: Specifies how the content breaks before and after a box.
+ * Syntax: break-before: <value>; break-after: <value>;
+ * When to use: In print stylesheets, to prevent an important section (like a heading) from being at the end of a page with its content on the next one.
+ * Key values: `auto`, `always`, `avoid`, `page`, `column`, `region`.
+ */
+  break-before: auto;
+  break-after: auto;
+  
+  /*
+ * Purpose: Specifies how content breaks inside an element.
+ * Syntax: break-inside: <value>;
+ * When to use: To keep a block of content (like a figure or code block) together on one page or in one column.
+ * Key values: `auto`, `avoid`, `avoid-page`, `avoid-column`.
+ */
+  break-inside: auto;
+}
+
+/* ---------------------------------------------------------------------- */
+
+@layer interactions {}
+@layer animations {
+  
+  /* .container-transitions */
+}
+
+/* ---------------------------------------------------------------------- */
 
 @layer variables {
   :root {
@@ -997,7 +1247,7 @@
   }
   
   /* text-white text-sm */
-  .card__pre {
+  .pre {
     color: white;
     font: normal var(--text-sm) var(--font-body);
   }
@@ -1057,7 +1307,7 @@
   }
   
   /* font-medium */
-  .details__summary {
+  .accordion__summary {
     font-weight: var(--font-medium);
   }
   
@@ -1099,7 +1349,7 @@
   }
   
   /* text-2xl */
-  .card__ruby {
+  .ruby {
     font: normal var(--text-2xl) var(--font-body);
   }
   
@@ -1191,14 +1441,14 @@
     }
   }
   
-  .card__canvas {
+  .canvas {
     background-color: white;
     border: var(--space-sm-1) solid;
     border-radius: var(--space-rnd-md);
   }
   
   /* bg-slate-800 rounded-md */
-  .card__pre {
+  .pre {
     background-color: var(--slate-800);
     border-radius: var(--space-rnd-md);
   }
@@ -1226,6 +1476,11 @@
     box-shadow: var(--shadow-inner);
   }
   
+  /* border-collapse */
+  .data-tableb {
+    border-collapse: collapse;
+  }
+  
   /* bg-slate-200 */
   .data-table__head {
     background-color: var(--slate-300);
@@ -1248,7 +1503,7 @@
   }
   
   /* border rounded-md */
-  .card__details {
+  .accordion {
     border: var(--space-sm-1) solid;
     border-radius: var(--space-rnd-md);
   }
@@ -1387,19 +1642,22 @@
   
   /* grid grid-col-1 gap-6 md:grid-cols-2 lg:grid-cols-3 */
   .card-wrapper-grid {
+    --grid-cols: var(--grid-cols-1);
+    
+    grid-template-columns: var(--grid-cols);
+
     display: grid;
-    grid-template-columns: var(--grid-cols-1);
     gap: var(--space-6);
     
     @media (min-width: 768px) {
       & {
-        grid-template-columns: var(--grid-cols-2);
+        --grid-cols: var(--grid-cols-2);
       }
     }
     
     @media (min-width: 1024px) {
       & {
-        grid-template-columns: var(--grid-cols-3);
+        --grid-cols: var(--grid-cols-3);
       }
     }
   }
@@ -1408,7 +1666,7 @@
   .card-wrapper-grid__footer {
     @media (min-width: 768px) {
       & {
-        grid-template-columns: var(--grid-cols-3);
+        --grid-cols: var(--grid-cols-3);
       }
     }
   }
@@ -1417,7 +1675,7 @@
   .card-wrapper-grid--lists-tables {
     @media (min-width: 1024px) {
       & {
-        grid-template-columns: var(--grid-cols-2);
+        --grid-cols: var(--grid-cols-3);
       }
     }
   }
@@ -1461,7 +1719,7 @@
   }
   
   /* mt-1 */
-  .card__canvas {
+  .canvas {
     margin-block-start: var(--space-1);
   }
   
@@ -1470,7 +1728,7 @@
   }
   
   /* mt-2 p-3 */
-  .card__pre {
+  .pre {
     margin-block-start: var(--space-2);
     padding: var(--space-3);
   }
@@ -1503,7 +1761,7 @@
   }
   
   /* p-3 */
-  .card__details {
+  .accordion {
     padding: var(--space-3);
   }
   
@@ -1564,7 +1822,7 @@
   }
   
   /* mb-2 */
-  .card__ruby {
+  .ruby {
     margin-block-start: var(--space-2);
   }
   
@@ -1585,7 +1843,7 @@
   }
   
   /* mb-1 */
-  .card__svg {
+  .svg {
     margin-block-end: var(--space-1);
   }
   
@@ -1604,7 +1862,7 @@
   }
   
   /* w-full h-24 */
-  .card__canvas {
+  .canvas {
     inline-size: var(--w-full);
     block-size: var(--space-24);
   }
@@ -1636,7 +1894,7 @@
   }
   
   /* w-24 h-24 */
-  .card__svg {
+  .svg {
     /* block-size: var(--space-24); */
     /* inline-size: var(--space-24); */
   }

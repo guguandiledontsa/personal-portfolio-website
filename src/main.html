@@ -79,7 +79,7 @@
 					</blockquote>
 					
 					<p class="pre__heading mt-4"><code>&lt;pre&gt;</code> is great for code:</p>
-					<pre class="card__pre overflow-x-auto"><code>&lt;div class="example"&gt;
+					<pre class="pre overflow-x-auto"><code>&lt;div class="example"&gt;
   &lt;span&gt;Hello, World!&lt;/span&gt;
 &lt;/div&gt;</code></pre>
 					
@@ -108,7 +108,7 @@
 					<h3 class="card__heading">Ruby / East Asian Text</h3>
 					
 					<p class="text-lg">For East Asian typography, use <code>&lt;ruby&gt;</code>:</p>
-					<ruby class="card__ruby">
+					<ruby class="ruby">
 						漢 <rp>(</rp>
 						<rt>かん</rt>
 						<rp>)</rp>
@@ -126,7 +126,7 @@
 				<h3 class="card__heading">Heading Group</h3>
 				<p class="card__content-heading">Using <code>&lt;hgroup&gt;</code> to bind a title and subtitle.</p>
 				
-				<hgroup class="card__hgroup">
+				<hgroup class="card__hgroup hgroup">
 					<h2 class="hgroup__heading">The Martian Chronicles</h2>
 					<p class="hgroup__body-text">Ray Bradbury's finest work</p>
 				</hgroup>
@@ -147,14 +147,14 @@
 					
 					<div class="card__body">
 						<h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
-						<!-- -->
+						
 						<ul class="card__list list-disc space-y-1 ml-6 mt-2">
 							<li>First item. <code>&lt;li&gt;</code></li>
 							<li>Second item with a <a href="#" class="text-blue-600 hover:underline">nested link</a></li>
 						</ul>
 						
 						<h4 class="font-semibold mt-4">Ordered List <code>&lt;ol&gt;</code></h4>
-						<!-- -->
+						
 						<ol class="card__list list-decimal space-y-1 ml-6 mt-2">
 							<li>First step. <code>&lt;li&gt;</code></li>
 							<li>Second step</li>
@@ -174,7 +174,7 @@
 					<h3 class="card__heading">Table</h3>
 					
 					<div class="card__body overflow-x-auto">
-						<table class="data-table border-collapse">
+						<table class="data-table">
 							<caption class="data-table__caption caption-bottom">Monthly Sales Summary</caption>
 							
 							<colgroup>
@@ -462,8 +462,8 @@
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Interactive Elements & Slots</h3>
 					
-					<details class="card__details">
-						<summary class="details__summary cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
+					<details class="accordion">
+						<summary class="accordion__summary cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
 						<p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked.</p>
 					</details>
 					
@@ -539,7 +539,7 @@
 				</svg>
 				
 				<label class="canvas__heading">Canvas</label>
-				<canvas id="myCanvas" class="card__canvas">
+				<canvas id="myCanvas" class="canvas">
 					Your browser does not support the canvas element.
 					<script>
 						const c = document.getElementById("myCanvas");
