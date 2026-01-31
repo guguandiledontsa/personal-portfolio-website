@@ -1069,6 +1069,7 @@
 /* ---------------------------------------------------------------------- */
 
 @layer interactions {}
+
 @layer animations {
   
   /* .container-transitions */
@@ -1166,7 +1167,6 @@
     --text-right: right;
     --text-justify: justify;
     
-    
     /* font-size / line-height*/
     --text-xs: 0.75rem/1rem;
     --text-sm: 0.875rem/1.25rem;
@@ -1190,51 +1190,17 @@
     --font-body: 'Inter', sans-serif;
     
     --not-italic: normal;
+    
   }
   
   /* ------------------------------------------------------------ */
   /* .container-typography */
-  /*
-  * Syntax: color: <color>;
-  * Syntax: text-align: <value>;
-  * Syntax: line-height: <value>; /* rather use font shrthand 
-  * Syntax: word-spacing: <value>;
-  * Syntax: letter-spacing: <value>;
-  * Syntax: white-space: <value>;
-  * Syntax: text-decoration: <line> <style> <color> <thickness>;
-  * Syntax: text-transform: <value>;
-  * Syntax: hyphens: <value>;
-  * Syntax: text-indent: <length>;
-  * Syntax: vertical-align: <value>;
-  * Syntax: direction: <value>;
-  * Syntax: unicode-bidi: <value>;
-  * Syntax: text-emphasis: <style> <symbol> <color>;
-  * Syntax: text-align-last: <value>;
-  * Syntax: text-underline-position: <value>;
-  * Syntax: line-clamp: <number>;
-  */
   
   /* ------------------------------------------------------------ */
   /* .container-columns */
-  /*
-  * Syntax: column-count: <integer>;
-  * Syntax: column-width: <length>;
-  * Syntax: columns: <column-width> <column-count>;
-  * Syntax: column-gap: <length>;
-  * Syntax: column-rule: <width> <style> <color>;
-  */
   
   /* ------------------------------------------------------------ */
   /* .container-fonts */
-  /*
-  * Syntax: font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size] / [line-height] [font-family];
-  * Syntax: font-size: <value>;
-  * Syntax: font-family: <font-name-1>, <font-name-2>, ... | <generic-family>;
-  * Syntax: font-weight: <value>;
-  * Syntax: font-style: <value>;
-  * Syntax: font-variant: <value>;
-  * Syntax: font-stretch: <value>;
-  */
   
   /* text-slate-300 */
   .page__footer {
@@ -1257,11 +1223,11 @@
     font: normal var(--text-sm) var(--font-body);
   }
   
-  /* text-right text-slate-500 text-sm */
+  /* text-right text-slate-500 text-sm not-italic */
   .pull-quote__cite {
     text-align: var(--text-right);
     color: var(--slate-500);
-    font: normal var(--text-sm) var(--font-body);
+    font: var(--not-italic) var(--text-sm) var(--font-body);
   }
   
   /* italic text-slate-600 */
@@ -1285,7 +1251,7 @@
   }
   
   /* text-sm */
-  .card__aside {
+  .aside {
     font: normal var(--text-sm) var(--font-body);
   }
   
@@ -1354,7 +1320,7 @@
   }
   
   /* text-sm not-italic */
-  .card__address {
+  .address {
     font: normal var(--text-sm) var(--font-body);
     font-style: var(--not-italic);
   }
@@ -1392,30 +1358,6 @@
   
   /* ------------------------------------------------------------ */
   /* .container-style */
-  /*
-  * Syntax: background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [background-size] [background-origin] [background-clip];
-  * Syntax: background-color: <color>;
-  * Syntax: background-image: <image-1> | <image-2> | ... ;
-  * Syntax: background-repeat: <x-value> <y-value>;
-  * Syntax: background-attachment: <value>;
-  * Syntax: background-position: <x-value> <y-value>;
-  * Syntax: background-size: <value>;
-  * Syntax: background-origin: <value>;
-  * Syntax: background-clip: <value>;
-  * Syntax: border: [border-width] [border-style] [border-color];
-  * Syntax: border-block-start: <value>; border-inline-start: <value>; etc.
-  * Syntax: border-[side]: <value>;
-  * Syntax: border-radius: <value>;
-  * Syntax: box-shadow: <h-offset> <v-offset> <blur> <spread> <color> [inset];
-  * Syntax: opacity: <number>;
-  * Syntax: outline: <width> <style> <color>;
-  * Syntax: mix-blend-mode: <value>;
-  * Syntax: filter: <function>;
-  * Syntax: clip-path: <value>;
-  * Syntax: object-fit: <value>;
-  * Syntax: object-position: <x> <y>;
-  * Syntax: list-style: <value>;
-  */
   
   /* bg-slate-100 */
   .page {
@@ -1465,6 +1407,13 @@
     border-inline-start-width: var(--space-sm-4);
   }
   
+  /* rounded-lg shadow-2xl border-0 */
+  .modal-dialog {
+    border-radius: var(--space-rnd-lg);
+    box-shadow: var(--shadow-2xl);
+    border-width: 0;
+  }
+  
   /* rounded */
   .video-media {
     border-radius: var(--space-rnd);
@@ -1477,7 +1426,7 @@
   }
   
   /* border-collapse */
-  .data-tableb {
+  .data-table {
     border-collapse: collapse;
   }
   
@@ -1575,14 +1524,7 @@
   
   /* ------------------------------------------------------------ */
   /* .container-layout */
-  /*
-  * Syntax: display: <value>;
-  * Syntax: position: <value>;
-  * Syntax: top: <value>; left: <value>; etc.
-  * Syntax: z-index: <integer>;
-  * Syntax: float: <value>;
-  * Syntax: clear: <value>;
-  */
+  
   .card__hgroup {
     background-color: var(--slate-50);
   }
@@ -1597,55 +1539,21 @@
     display: block;
   }
   
-  
   /* ------------------------------------------------------------ */
   /* .container-contain */
-  /*
-  * Syntax: contain: <value>;
-  * Syntax: content-visibility: auto | visible | hidden;
-  * Syntax: overflow-anchor: auto | none;
-  * Syntax: will-change: <property>;
-  */
-  
   
   /* ------------------------------------------------------------ */
   /* .container-flex */
-  /*
-  * Syntax: display: flex | inline-flex;
-  * Syntax: flex-direction: <value>;
-  * Syntax: flex-wrap: <value>;
-  * Syntax: flex-flow: <flex-direction> <flex-wrap>;
-  * Syntax: justify-content: <value>;
-  * Syntax: align-items: <value>;
-  * Syntax: align-content: <value>;
-  * Syntax: align-self: <value>; (usually used on children, but container can set default)
-  */
-  
   
   /* ------------------------------------------------------------ */
   /* .container-grid */
-  /*
-  * Syntax: display: grid | inline-grid;
-  * Syntax: grid-template-columns: <sizes>; grid-template-rows: <sizes>;
-  * Syntax: grid-template: <grid-template-rows> / <grid-template-columns>;
-  * Syntax: grid-auto-flow: <value>;
-  * Syntax: grid-auto-columns: <size>; grid-auto-rows: <size>;
-  * Syntax: grid-auto: <grid-auto-flow> <grid-auto-rows> / <grid-auto-columns>;
-  * Syntax: gap: <value>;
-  * Syntax: align-items: <value>;
-  * Syntax: justify-items: <value>;
-  * Syntax: align-content: <value>; justify-content: <value>;
-  * Syntax: grid: <template>; (shorthand)
-  * Syntax: place-items: <align-items> <justify-items>;
-  * Syntax: place-content: <align-content> <justify-content>;
-  */
-  
+
   /* grid grid-col-1 gap-6 md:grid-cols-2 lg:grid-cols-3 */
   .card-wrapper-grid {
     --grid-cols: var(--grid-cols-1);
     
     grid-template-columns: var(--grid-cols);
-
+    
     display: grid;
     gap: var(--space-6);
     
@@ -1682,11 +1590,7 @@
   
   /* ------------------------------------------------------------ */
   /* .container-spacing */
-  /*
-  * Syntax: margin: <value>;
-  * Syntax: padding: <value>;
-  */
-  
+
   /* p-8 */
   .page__item {
     padding: var(--space-8);
@@ -1760,6 +1664,11 @@
     padding-inline-start: var(--space-4);
   }
   
+  /* p-6 */
+  .modal-dialog {
+    padding: var(--space-6);
+  }
+  
   /* p-3 */
   .accordion {
     padding: var(--space-3);
@@ -1827,7 +1736,7 @@
   }
   
   /* mt-2 */
-  .card__address {
+  .address {
     margin-block-start: var(--space-2);
   }
   
@@ -1838,7 +1747,7 @@
   }
   
   /* mt-2 */
-  .card__aside {
+  .aside {
     margin-block-start: var(--space-2);
   }
   
@@ -1849,13 +1758,7 @@
   
   /* ------------------------------------------------------------ */
   /* .container-sizing */
-  /*
-  * Syntax: box-sizing: <value>;
-  * Syntax: width: <value>; min-width: <value>; etc.
-  * Syntax: min-aspect-ratio, max-aspect-ratio: <ratio>;
-  * Syntax: contain-intrinsic-size: <length>;
-  */
-  
+
   /* max-w-6xl */
   .card-wrapper-grid__footer {
     max-inline-size: var(--max-w-6xl);
@@ -1895,8 +1798,8 @@
   
   /* w-24 h-24 */
   .svg {
-    /* block-size: var(--space-24); */
-    /* inline-size: var(--space-24); */
+    block-size: var(--space-24);
+    inline-size: var(--space-24);
   }
   
   

@@ -75,7 +75,7 @@
 					
 					<blockquote class="pull-quote">
 						<q>The world is a magnificent book, and those who do not travel read only a page.</q>
-						<cite class="pull-quote__cite not-italic">— Saint Augustine</cite>
+						<cite class="pull-quote__cite">— Saint Augustine</cite>
 					</blockquote>
 					
 					<p class="pre__heading mt-4"><code>&lt;pre&gt;</code> is great for code:</p>
@@ -161,9 +161,9 @@
 						</ol>
 						
 						<h4 class="font-semibold mt-4">Description List <code>&lt;dl&gt;</code></h4>
-						<dl class="mt-2">
-							<dt class="font-medium">Term One <code>&lt;dt&gt;</code></dt>
-							<dd class="ml-4 italic text-sm text-slate-600">Definition of the first term. <code>&lt;dd&gt;</code></dd>
+						<dl class="description-list mt-2">
+							<dt class="description-list__term font-medium">Term One <code>&lt;dt&gt;</code></dt>
+								<dd class="description-list__definition ml-4 italic text-sm text-slate-600">Definition of the first term. <code>&lt;dd&gt;</code></dd>
 						</dl>
 						
 					</div>
@@ -475,7 +475,7 @@
 						<p class="text-sm text-slate-600">Click to open a modal dialog.</p>
 						<button onclick="document.getElementById('modal-dialog').showModal()" class="mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
 						
-						<dialog id="modal-dialog" class="p-6 border-0 shadow-2xl rounded-lg backdrop:bg-black/50">
+						<dialog id="modal-dialog" class="modal-dialog backdrop:bg-black/50">
 							<h3 class="text-lg font-bold">Modal Dialog</h3>
 							<p class="mt-2">This is a modal <code>&lt;dialog&gt;</code> element.</p>
 							<button onclick="document.getElementById('modal-dialog').close()" class="mt-4 px-4 py-2 border rounded-md hover:bg-slate-100 transition-colors">Close</button>
@@ -534,7 +534,7 @@
 				<h3 class="card__heading">SVG & Canvas</h3>
 				
 				<label class="user-form__label">SVG (Scalable Vector Graphics)</label>
-				<svg viewBox="0 0 100 100" class="card__svg w-24 h-24">
+				<svg viewBox="0 0 100 100" class="svg">
 					<circle cx="50" cy="50" r="30" stroke="royalblue" stroke-width="4" fill="skyblue" />
 				</svg>
 				
@@ -636,7 +636,7 @@
 			<div>
 				<h3 class="font-bold text-white">Contact Information</h3>
 				
-				<address class="card__address">
+				<address class="address">
 					Contact us at: <a href="mailto:dev@example.com" class="hover:underline text-sky-400">dev@example.com</a>
 				</address>
 			</div>
