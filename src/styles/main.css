@@ -1383,7 +1383,7 @@
     }
   }
   
-  .canvas {
+  .render-surface {
     background-color: white;
     border: var(--space-sm-1) solid;
     border-radius: var(--space-rnd-md);
@@ -1623,7 +1623,7 @@
   }
   
   /* mt-1 */
-  .canvas {
+  .render-surface {
     margin-block-start: var(--space-1);
   }
   
@@ -1765,7 +1765,7 @@
   }
   
   /* w-full h-24 */
-  .canvas {
+  .render-surface {
     inline-size: var(--w-full);
     block-size: var(--space-24);
   }
