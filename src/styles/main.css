@@ -1474,7 +1474,7 @@
   }
   
   /* border-slate-600 */
-  .data-table__footer-data {
+  .data-table__cell--footer {
     border-color: var(--slate-600);
   }
   
@@ -1547,7 +1547,7 @@
   
   /* ------------------------------------------------------------ */
   /* .container-grid */
-
+  
   /* grid grid-col-1 gap-6 md:grid-cols-2 lg:grid-cols-3 */
   .card-wrapper-grid {
     --grid-cols: var(--grid-cols-1);
@@ -1590,7 +1590,7 @@
   
   /* ------------------------------------------------------------ */
   /* .container-spacing */
-
+  
   /* p-8 */
   .page__item {
     padding: var(--space-8);
@@ -1758,7 +1758,7 @@
   
   /* ------------------------------------------------------------ */
   /* .container-sizing */
-
+  
   /* max-w-6xl */
   .card-wrapper-grid__footer {
     max-inline-size: var(--max-w-6xl);

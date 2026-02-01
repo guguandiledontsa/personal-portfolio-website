@@ -44,7 +44,7 @@
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Headings (h1–h6)</h3>
 					
-					<div class="card__body space-y-2">
+					<div class="card__content space-y-2">
 						<h1 class="text-4xl font-bold"><code>&lt;h1&gt;</code> Primary Heading</h1>
 						<h2 class="text-3xl font-semibold"><code>&lt;h2&gt;</code> Secondary Heading</h2>
 						<h3 class="text-2xl font-semibold"><code>&lt;h3&gt;</code> Tertiary Heading</h3>
@@ -58,7 +58,7 @@
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Phrasing & Text</h3>
 					
-					<div class="card__body space-y-4">
+					<div class="card__content space-y-4">
 						<p>This paragraph contains a standard <code>&lt;a&gt;</code> <a href="#" class="text-blue-600 hover:underline font-medium">for links</a>.</p>
 						<p>Use <code>&lt;strong&gt;</code> <strong>for importance</strong>, <code>&lt;b&gt;</code> <b>for stylistic offset</b>, <code>&lt;em&gt;</code> <em>for emphasis</em>, and <code>&lt;i&gt;</code> <i>for an alternate voice</i>.</p>
 						<p>Text can be <mark class="bg-sky-200 text-sky-800 px-1 rounded">highlighted</mark> with <code>&lt;mark&gt;</code>, <del>deleted</del> <code>&lt;del&gt;</code>, <ins>inserted</ins> <code>&lt;ins&gt;</code>, or <s>no longer accurate</s> <code>&lt;s&gt;</code>.</p>
@@ -73,51 +73,57 @@
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Block-Level & Semantic Text</h3>
 					
-					<blockquote class="pull-quote">
-						<q>The world is a magnificent book, and those who do not travel read only a page.</q>
-						<cite class="pull-quote__cite">— Saint Augustine</cite>
-					</blockquote>
-					
-					<p class="pre__heading mt-4"><code>&lt;pre&gt;</code> is great for code:</p>
-					<pre class="pre overflow-x-auto"><code>&lt;div class="example"&gt;
+					<div class="card__content">
+						
+						<blockquote class="pull-quote">
+							<q>The world is a magnificent book, and those who do not travel read only a page.</q>
+							<cite class="pull-quote__cite">— Saint Augustine</cite>
+						</blockquote>
+						
+						<p class="pre__heading mt-4"><code>&lt;pre&gt;</code> is great for code:</p>
+						<pre class="pre overflow-x-auto"><code>&lt;div class="example"&gt;
   &lt;span&gt;Hello, World!&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-					
-					<!-- these below should probably get their own box -->
-					<p class="mt-4">The <code>&lt;dfn&gt;</code> tag: <dfn>dfn</dfn> defines a term.</p>
-					<p class="mt-2"><code>&lt;data&gt;</code> links human and machine value: <data value="2025-10-06">October 6th</data>.</p>
-					<p class="mt-2">similarly <code>&lt;time&gt;</code>: <time datetime="2025-12-25">Christmas Day</time>, has a <code>datetime</code> attribute</p>
-					<p class="mt-2">Keyboard input <code>&lt;kbd&gt;</code>: <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
-					<p class="mt-2">Program output <code>&lt;samp&gt;</code>: <samp>File not found.</samp></p>
-					<p class="mt-2">Variables <code>&lt;var&gt;</code>: <var>x</var> = <var>y</var> + 2.</p>
-					
+						
+						<!-- these below should probably get their own box -->
+						<p class="mt-4">The <code>&lt;dfn&gt;</code> tag: <dfn>dfn</dfn> defines a term.</p>
+						<p class="mt-2"><code>&lt;data&gt;</code> links human and machine value: <data value="2025-10-06">October 6th</data>.</p>
+						<p class="mt-2">similarly <code>&lt;time&gt;</code>: <time datetime="2025-12-25">Christmas Day</time>, has a <code>datetime</code> attribute</p>
+						<p class="mt-2">Keyboard input <code>&lt;kbd&gt;</code>: <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
+						<p class="mt-2">Program output <code>&lt;samp&gt;</code>: <samp>File not found.</samp></p>
+						<p class="mt-2">Variables <code>&lt;var&gt;</code>: <var>x</var> = <var>y</var> + 2.</p>
+					</div>
 				</article>
 				
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Line & Directional Text</h3>
 					
-					<p>This is the first line.<br>This is the second line after a <code>&lt;br&gt;</code> tag.</p>
-					<hr class="my-4">
-					<p>The <code>&lt;wbr&gt;</code> tag suggests a word-break<wbr>opportunity (useful in tight containers).</p>
-					<p><bdi>Left-to-right embedded text</bdi> stays isolated in directionality context.</p>
-					<p><bdo dir="rtl">This entire phrase is forced right-to-left with <code>&lt;bdo&gt;</code>.</bdo></p>
-					
+					<div class="card__content">
+						
+						<p>This is the first line.<br>This is the second line after a <code>&lt;br&gt;</code> tag.</p>
+						<hr class="my-4">
+						<p>The <code>&lt;wbr&gt;</code> tag suggests a word-break<wbr>opportunity (useful in tight containers).</p>
+						<p><bdi>Left-to-right embedded text</bdi> stays isolated in directionality context.</p>
+						<p><bdo dir="rtl">This entire phrase is forced right-to-left with <code>&lt;bdo&gt;</code>.</bdo></p>
+					</div>
 				</article>
 				
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Ruby / East Asian Text</h3>
 					
-					<p class="text-lg">For East Asian typography, use <code>&lt;ruby&gt;</code>:</p>
-					<ruby class="ruby">
-						漢 <rp>(</rp>
-						<rt>かん</rt>
-						<rp>)</rp>
-						字 <rp>(</rp>
-						<rt>じ</rt>
-						<rp>)</rp>
-					</ruby>
-					<p class="text-sm text-slate-600 mt-2"><code>&lt;rt&gt;</code> shows pronunciation; <code>&lt;rp&gt;</code> is fallback.</p>
-					
+					<div class="card__content">
+						
+						<p class="text-lg">For East Asian typography, use <code>&lt;ruby&gt;</code>:</p>
+						<ruby class="ruby">
+							漢 <rp>(</rp>
+							<rt>かん</rt>
+							<rp>)</rp>
+							字 <rp>(</rp>
+							<rt>じ</rt>
+							<rp>)</rp>
+						</ruby>
+						<p class="text-sm text-slate-600 mt-2"><code>&lt;rt&gt;</code> shows pronunciation; <code>&lt;rp&gt;</code> is fallback.</p>
+					</div>
 				</article>
 				
 			</div>
@@ -126,11 +132,13 @@
 				<h3 class="card__heading">Heading Group</h3>
 				<p class="card__content-heading">Using <code>&lt;hgroup&gt;</code> to bind a title and subtitle.</p>
 				
-				<hgroup class="card__hgroup hgroup">
-					<h2 class="hgroup__heading">The Martian Chronicles</h2>
-					<p class="hgroup__body-text">Ray Bradbury's finest work</p>
-				</hgroup>
-				
+				<div class="card__content">
+					
+					<hgroup class="card__hgroup hgroup">
+						<h2 class="hgroup__heading">The Martian Chronicles</h2>
+						<p class="hgroup__body-text">Ray Bradbury's finest work</p>
+					</hgroup>
+				</div>
 			</article>
 			
 		</section>
@@ -145,7 +153,7 @@
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Lists (ul, ol, dl)</h3>
 					
-					<div class="card__body">
+					<div class="card__content">
 						<h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
 						
 						<ul class="card__list list-disc space-y-1 ml-6 mt-2">
@@ -163,7 +171,7 @@
 						<h4 class="font-semibold mt-4">Description List <code>&lt;dl&gt;</code></h4>
 						<dl class="description-list mt-2">
 							<dt class="description-list__term font-medium">Term One <code>&lt;dt&gt;</code></dt>
-								<dd class="description-list__definition ml-4 italic text-sm text-slate-600">Definition of the first term. <code>&lt;dd&gt;</code></dd>
+							<dd class="description-list__definition ml-4 italic text-sm text-slate-600">Definition of the first term. <code>&lt;dd&gt;</code></dd>
 						</dl>
 						
 					</div>
@@ -173,7 +181,7 @@
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Table</h3>
 					
-					<div class="card__body overflow-x-auto">
+					<div class="card__content overflow-x-auto">
 						<table class="data-table">
 							<caption class="data-table__caption caption-bottom">Monthly Sales Summary</caption>
 							
@@ -184,27 +192,27 @@
 							
 							<thead class="data-table__head">
 								<tr>
-									<th class="data-table__content data-table__header-data">Product</th>
-									<th class="data-table__content data-table__header-data">Quantity</th>
-									<th class="data-table__content data-table__header-data">Total</th>
+									<th class="data-table__content data-table__cell--header">Product</th>
+									<th class="data-table__content data-table__cell--header">Quantity</th>
+									<th class="data-table__content data-table__cell--header">Total</th>
 								</tr>
 							</thead>
 							<tbody class="data-table__body">
 								<tr>
-									<td class="data-table__content data-table__body-data font-medium text-slate-800">Laptops</td>
-									<td class="data-table__content data-table__body-data">150</td>
-									<td class="data-table__content data-table__body-data">$150,000</td>
+									<td class="data-table__content data-table__cell--body font-medium text-slate-800">Laptops</td>
+									<td class="data-table__content data-table__cell--body">150</td>
+									<td class="data-table__content data-table__cell--body">$150,000</td>
 								</tr>
 								<tr class="bg-slate-50">
-									<td class="data-table__content data-table__body-data font-medium text-slate-800">Monitors</td>
-									<td class="data-table__content data-table__body-data">300</td>
-									<td class="data-table__content data-table__body-data">$75,000</td>
+									<td class="data-table__content data-table__cell--body font-medium text-slate-800">Monitors</td>
+									<td class="data-table__content data-table__cell--body">300</td>
+									<td class="data-table__content data-table__cell--body">$75,000</td>
 								</tr>
 							</tbody>
 							<tfoot class="data-table__foot text-white">
 								<tr>
-									<td class="data-table__content data-table__footer-data" colspan="2">Grand Total</td>
-									<td class="data-table__content data-table__footer-data">$225,000</td>
+									<td class="data-table__content data-table__cell--footer" colspan="2">Grand Total</td>
+									<td class="data-table__content data-table__cell--footer">$225,000</td>
 								</tr>
 							</tfoot>
 						</table>
@@ -227,173 +235,182 @@
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Text-Based <code>&lt;input&gt;</code> of various <code>type</code> attributes and a <code>&lt;textarea&gt;</code></h3>
 					
-					<form class="user-form space-y-4">
-						<div>
-							<label for="text-in" class="user-form__label user-form__label--block">Text</label>
-							<input type="text" id="text-in" class="form-input" placeholder="Standard text">
-						</div>
-						<div>
-							<label for="email-in" class="user-form__label user-form__label--block">Email</label>
-							<input type="email" id="email-in" class="form-input" placeholder="name@example.com">
-						</div>
-						<div>
-							<label for="password-in" class="user-form__label user-form__label--block">Password</label>
-							<input type="password" id="password-in" class="form-input">
-						</div>
-						<div>
-							<label for="tel-in" class="user-form__label user-form__label--block">Telephone</label>
-							<input type="tel" id="tel-in" class="form-input" placeholder="123-456-7890">
-						</div>
-						<div>
-							<label for="url-in" class="user-form__label user-form__label--block">URL</label>
-							<input type="url" id="url-in" class="form-input" placeholder="https://example.com">
-						</div>
-						<div>
-							<label for="search-in" class="user-form__label user-form__label--block">Search</label>
-							<input type="search" id="search-in" class="form-input" placeholder="Search...">
-						</div>
-						<div>
-							<label for="textarea-in" class="user-form__label user-form__label--block">Textarea</label>
-							<textarea id="textarea-in" rows="2" class="form-input"></textarea>
-						</div>
-					</form>
+					<div class="card__content">
+						<form class="user-form space-y-4">
+							<div>
+								<label for="text-in" class="user-form__label user-form__label--block">Text</label>
+								<input type="text" id="text-in" class="form-input" placeholder="Standard text">
+							</div>
+							<div>
+								<label for="email-in" class="user-form__label user-form__label--block">Email</label>
+								<input type="email" id="email-in" class="form-input" placeholder="name@example.com">
+							</div>
+							<div>
+								<label for="password-in" class="user-form__label user-form__label--block">Password</label>
+								<input type="password" id="password-in" class="form-input">
+							</div>
+							<div>
+								<label for="tel-in" class="user-form__label user-form__label--block">Telephone</label>
+								<input type="tel" id="tel-in" class="form-input" placeholder="123-456-7890">
+							</div>
+							<div>
+								<label for="url-in" class="user-form__label user-form__label--block">URL</label>
+								<input type="url" id="url-in" class="form-input" placeholder="https://example.com">
+							</div>
+							<div>
+								<label for="search-in" class="user-form__label user-form__label--block">Search</label>
+								<input type="search" id="search-in" class="form-input" placeholder="Search...">
+							</div>
+							<div>
+								<label for="textarea-in" class="user-form__label user-form__label--block">Textarea</label>
+								<textarea id="textarea-in" rows="2" class="form-input"></textarea>
+							</div>
+						</form>
+					</div>
 					
 				</article>
 				
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Choices & Selections</h3>
 					
-					<form class="user-form space-y-4">
-						<fieldset>
-							<legend class="font-semibold text-sm">Radio Group</legend>
-							<div class="mt-2 space-y-1">
-								<div class="flex items-center space-x-2">
-									<input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
-									<label for="radio1">Choice One</label>
+					<div class="card__content">
+						<form class="user-form space-y-4">
+							<fieldset>
+								<legend class="font-semibold text-sm">Radio Group</legend>
+								<div class="mt-2 space-y-1">
+									<div class="flex items-center space-x-2">
+										<input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+										<label for="radio1">Choice One</label>
+									</div>
+									<div class="flex items-center space-x-2">
+										<input type="radio" id="radio2" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked>
+										<label for="radio2">Choice Two</label>
+									</div>
 								</div>
-								<div class="flex items-center space-x-2">
-									<input type="radio" id="radio2" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked>
-									<label for="radio2">Choice Two</label>
+							</fieldset>
+							<fieldset>
+								<legend class="font-semibold text-sm">Checkbox Group</legend>
+								<div class="mt-2 space-y-1">
+									<div class="flex items-center space-x-2">
+										<input type="checkbox" id="check1" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500" checked>
+										<label for="check1">Option A</label>
+									</div>
+									<div class="flex items-center space-x-2">
+										<input type="checkbox" id="check2" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500">
+										<label for="check2">Option B</label>
+									</div>
 								</div>
+							</fieldset>
+							<div>
+								<label for="dropdown" class="user-form__label user-form__label--block">Select Dropdown</label>
+								<select id="dropdown" class="form-input">
+									<optgroup label="Primary">
+										<option>Option A</option>
+									</optgroup>
+									<optgroup label="Secondary">
+										<option>Option C</option>
+									</optgroup>
+								</select>
 							</div>
-						</fieldset>
-						<fieldset>
-							<legend class="font-semibold text-sm">Checkbox Group</legend>
-							<div class="mt-2 space-y-1">
-								<div class="flex items-center space-x-2">
-									<input type="checkbox" id="check1" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500" checked>
-									<label for="check1">Option A</label>
-								</div>
-								<div class="flex items-center space-x-2">
-									<input type="checkbox" id="check2" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500">
-									<label for="check2">Option B</label>
-								</div>
+							<div>
+								<label for="ice-cream-choice" class="user-form__label user-form__label--block">Datalist (Autocomplete)</label>
+								<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" class="form-input">
+								<datalist id="ice-cream-flavors">
+									<option value="Chocolate"></option>
+									<option value="Vanilla"></option>
+									<option value="Strawberry"></option>
+								</datalist>
 							</div>
-						</fieldset>
-						<div>
-							<label for="dropdown" class="user-form__label user-form__label--block">Select Dropdown</label>
-							<select id="dropdown" class="form-input">
-								<optgroup label="Primary">
-									<option>Option A</option>
-								</optgroup>
-								<optgroup label="Secondary">
-									<option>Option C</option>
-								</optgroup>
-							</select>
-						</div>
-						<div>
-							<label for="ice-cream-choice" class="user-form__label user-form__label--block">Datalist (Autocomplete)</label>
-							<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" class="form-input">
-							<datalist id="ice-cream-flavors">
-								<option value="Chocolate"></option>
-								<option value="Vanilla"></option>
-								<option value="Strawberry"></option>
-							</datalist>
-						</div>
-					</form>
+						</form>
+					</div>
 					
 				</article>
 				
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Pickers, Ranges & Files</h3>
 					
-					<form class="user-form space-y-4">
-						<div>
-							<label for="range-in" class="block text-sm font-medium">Range</label>
-							<input type="range" id="range-in" class="w-full accent-blue-600">
-						</div>
-						
-						<div>
-							<label for="date-in" class="user-form__label user-form__label--block">Date</label>
-							<input type="date" id="date-in" class="form-input">
-						</div>
-						
-						<div>
-							<label for="month-in" class="user-form__label user-form__label--block">Month</label>
-							<input type="month" id="month-in" class="form-input">
-						</div>
-						
-						<div>
-							<label for="week-in" class="user-form__label user-form__label--block">Week</label>
-							<input type="week" id="week-in" class="form-input">
-						</div>
-						
-						<div>
-							<label for="color-in" class="block text-sm font medium mb-1">Color</label>
-							<input type="color" id="color-in" value="#2563eb" class="h-10 w-full rounded-md">
-						</div>
-						
-						<div>
-							<label for="file-in" class="user-form__label user-form__label--block">File Upload</label>
-							<input type="file" id="file-in" class="form-input">
-						</div>
-						
-					</form>
+					<div class="card__content">
+						<form class="user-form space-y-4">
+							<div>
+								<label for="range-in" class="block text-sm font-medium">Range</label>
+								<input type="range" id="range-in" class="w-full accent-blue-600">
+							</div>
+							
+							<div>
+								<label for="date-in" class="user-form__label user-form__label--block">Date</label>
+								<input type="date" id="date-in" class="form-input">
+							</div>
+							
+							<div>
+								<label for="month-in" class="user-form__label user-form__label--block">Month</label>
+								<input type="month" id="month-in" class="form-input">
+							</div>
+							
+							<div>
+								<label for="week-in" class="user-form__label user-form__label--block">Week</label>
+								<input type="week" id="week-in" class="form-input">
+							</div>
+							
+							<div>
+								<label for="color-in" class="block text-sm font medium mb-1">Color</label>
+								<input type="color" id="color-in" value="#2563eb" class="h-10 w-full rounded-md">
+							</div>
+							
+							<div>
+								<label for="file-in" class="user-form__label user-form__label--block">File Upload</label>
+								<input type="file" id="file-in" class="form-input">
+							</div>
+							
+						</form>
+					</div>
 					
 				</article>
 				
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Buttons, Outputs & Hidden / Datetime Inputs</h3>
 					
-					<form class="user-form space-y-4" oninput="result.value = (a.valueAsNumber || 0) + (b.valueAsNumber || 0)">
-						<div>
-							<label class="user-form__label user-form__label--block">Hidden Input</label>
-							<input type="hidden" id="hidden-in" name="hidden-field" value="secret-value">
-							<p class="text-xs text-slate-500">This hidden field is submitted but not shown.</p>
-						</div>
+					<div class="card__content">
 						
-						<div>
-							<label for="dtlocal-in" class="user-form__label user-form__label--block">Date & Time (local)</label>
-							<input type="datetime-local" id="dtlocal-in" class="form-input">
-						</div>
-						
-						<div>
-							<label class="user-form__label">Output Element</label>
-							<div class="flex items-center space-x-2">
-								<input type="number" id="a" value="10" class="form-input w-20">
-								<span>+</span>
-								<input type="number" id="b" value="20" class="form-input w-20">
-								<span>=</span>
-								<output name="result" for="a b" class="font-bold">30</output>
+						<form class="user-form space-y-4" oninput="result.value = (a.valueAsNumber || 0) + (b.valueAsNumber || 0)">
+							<div>
+								<label class="user-form__label user-form__label--block">Hidden Input</label>
+								<input type="hidden" id="hidden-in" name="hidden-field" value="secret-value">
+								<p class="text-xs text-slate-500">This hidden field is submitted but not shown.</p>
 							</div>
 							
-						</div>
-						<div>
-							<label class="user-form__label">Progress Bar</label>
-							<progress value="70" max="100" class="w-full">70%</progress>
-						</div>
-						
-						<div>
-							<label class="user-form__label">Meter</label>
-							<meter value="0.6" class="w-full">60%</meter>
-						</div>
-						
-						<div class="flex space-x-2 pt-2">
-							<button type="submit" class="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
-							<input type="reset" value="Reset" class="w-full p-2 bg-slate-200 text-slate-800 rounded-md cursor-pointer hover:bg-slate-300 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
-						</div>
-						
-					</form>
+							<div>
+								<label for="dtlocal-in" class="user-form__label user-form__label--block">Date & Time (local)</label>
+								<input type="datetime-local" id="dtlocal-in" class="form-input">
+							</div>
+							
+							<div>
+								<label class="user-form__label">Output Element</label>
+								<div class="flex items-center space-x-2">
+									<input type="number" id="a" value="10" class="form-input w-20">
+									<span>+</span>
+									<input type="number" id="b" value="20" class="form-input w-20">
+									<span>=</span>
+									<output name="result" for="a b" class="font-bold">30</output>
+								</div>
+								
+							</div>
+							<div>
+								<label class="user-form__label">Progress Bar</label>
+								<progress value="70" max="100" class="w-full">70%</progress>
+							</div>
+							
+							<div>
+								<label class="user-form__label">Meter</label>
+								<meter value="0.6" class="w-full">60%</meter>
+							</div>
+							
+							<div class="flex space-x-2 pt-2">
+								<button type="submit" class="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
+								<input type="reset" value="Reset" class="w-full p-2 bg-slate-200 text-slate-800 rounded-md cursor-pointer hover:bg-slate-300 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
+							</div>
+							
+						</form>
+					</div>
 					
 				</article>
 				
@@ -411,69 +428,71 @@
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">Images & Media</h3>
 					
-					<figure class="card__figure figure">
-						<figcaption class="figure__figcaption">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
+					<div class="card__content">
+						<figure class="card__figure figure">
+							<figcaption class="figure__figcaption">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
+							
+							<picture>
+								<!-- https://placehold.co/400x200/60a5fa/ffffff?text=Mobile -->
+								<source media="(max-width: 768px)" srcset="./src/assets/images/mobile-400x200.svg">
+								<!-- src="https://placehold.co/800x200/2563eb/ffffff?text=Desktop -->
+								<img src="./src/assets/images/desktop-800x200.svg" alt="Responsive image" class="figure__picture" usemap="#image-map">
+							</picture>
+							
+							<map name="image-map">
+								<area shape="rect" coords="0,0,100,200" href="#" alt="Left Side">
+							</map>
+						</figure>
 						
-						<picture>
-							<!-- https://placehold.co/400x200/60a5fa/ffffff?text=Mobile -->
-							<source media="(max-width: 768px)" srcset="./src/assets/images/mobile-400x200.svg">
-							<!-- src="https://placehold.co/800x200/2563eb/ffffff?text=Desktop -->
-							<img src="./src/assets/images/desktop-800x200.svg" alt="Responsive image" class="figure__picture" usemap="#image-map">
-						</picture>
+						<h4 class="font-semibold mt-4">Audio & Video</h4>
 						
-						<map name="image-map">
-							<area shape="rect" coords="0,0,100,200" href="#" alt="Left Side">
-						</map>
-					</figure>
-					
-					<h4 class="font-semibold mt-4">Audio & Video</h4>
-					
-					<audio controls class="card__media">
-						<!-- src="https://www.w3schools.com/tags/horse.mp3" -->
-						<source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
-					</audio>
-					
-					<video controls class="card__media video-media">
-						<!-- src="https://www.w3schools.com/tags/movie.mp4" -->
-						<source src="./src/assets/vidoes/movie.mp4" type="video/mp4">
-						<track kind="captions" srclang="en" src="captions_en.vtt" label="English">
-					</video>
+						<audio controls class="card__media">
+							<!-- src="https://www.w3schools.com/tags/horse.mp3" -->
+							<source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
+						</audio>
+						
+						<video controls class="card__media video-media">
+							<!-- src="https://www.w3schools.com/tags/movie.mp4" -->
+							<source src="./src/assets/vidoes/movie.mp4" type="video/mp4">
+							<track kind="captions" srclang="en" src="captions_en.vtt" label="English">
+						</video>
+					</div>
 					
 				</article>
 				
 				<article class="card hover:-translate-y-1 transition-all duration-300">
 					<h3 class="card__heading">External Content</h3>
 					
-					<label class="iframe__label user-form__label"><code>&lt;iframe&gt;</code></label><!-- might be better off calling it a heading/something as it is, to be less teg relient, idk -->
-					<iframe src="https://example.com" title="Sample Iframe" class="card__external-content">
-						<p class="text-xs p-2 text-center">Iframe not available.</p>
-					</iframe>
-					
-					<label class="object_label user-form__label"><code>&lt;object&gt;</code></label>
-					<object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="card__external-content">
-						<p class="text-xs p-2 text-center">PDF preview not available.</p>
-					</object>
-					
-					<label class="embed__label user-form__label"><code>&lt;embed&gt;</code></label>
-					<embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="card__external-content">
+					<div class="card__content">
+						<label class="iframe__label user-form__label"><code>&lt;iframe&gt;</code></label><!-- might be better off calling it a heading/something as it is, to be less teg relient, idk -->
+						<iframe src="https://example.com" title="Sample Iframe" class="card__external-content">
+							<p class="text-xs p-2 text-center">Iframe not available.</p>
+						</iframe>
+						
+						<label class="object_label user-form__label"><code>&lt;object&gt;</code></label>
+						<object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="card__external-content">
+							<p class="text-xs p-2 text-center">PDF preview not available.</p>
+						</object>
+						
+						<label class="embed__label user-form__label"><code>&lt;embed&gt;</code></label>
+						<embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="card__external-content">
+					</div>
 					
 				</article>
 				
 				<article class="card hover:-translate-y-1 transition-all duration-300">
-					<h3 class="card__heading">Interactive Elements & Slots</h3>
+					<h3 class="card__heading">Interactive Elements</h3>
 					
-					<details class="accordion">
-						<summary class="accordion__summary cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
-						<p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked.</p>
-					</details>
-					
-					<hr class="my-4">
-					
-					<div class="card__body">
-						<h4 class="font-medium">Dialog</h4>
+					<div class="card__content">
+						<details class="accordion">
+							<summary class="accordion__summary cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
+							<p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked.</p>
+						</details>
 						
-						<p class="text-sm text-slate-600">Click to open a modal dialog.</p>
-						<button onclick="document.getElementById('modal-dialog').showModal()" class="mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Show Dialog</button>
+						<hr class="my-4">
+						
+						<h4 class="font-medium">Dialog</h4>
+						<button onclick="document.getElementById('modal-dialog').showModal()" class="mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Click to open a modal dialog</button>
 						
 						<dialog id="modal-dialog" class="modal-dialog backdrop:bg-black/50">
 							<h3 class="text-lg font-bold">Modal Dialog</h3>
@@ -482,44 +501,48 @@
 						</dialog>
 						
 					</div>
-					
-					<hr class="my-4">
-					
-					<div class="card__body">
-						<h4 class="font-medium">Template & Slot Example</h4>
-						
-						<p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
-						<p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
-						
-						<button id="showTpl" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show Template</button>
-						
-						<div id="tpl-host" class="mt-2 text-sm"></div>
-						<template id="my-tpl">
-							<div class="p-2 bg-green-100 border border-green-400 rounded">
-								This is template content. Slotted area:
-								<slot name="injected-slot">[default slot content]</slot>
-							</div>
-						</template>
-						
-						<script>
-							document.getElementById('showTpl').addEventListener('click', () => {
-								const tpl = document.getElementById('my-tpl');
-								const clone = tpl.content.cloneNode(true);
-								// Example of replacing a <slot> with actual slotted node
-								const slotElement = clone.querySelector('slot');
-								if (slotElement) {
-									const span = document.createElement('span');
-									span.textContent = "This content came via slot.";
-									slotElement.replaceWith(span);
-								}
-								document.getElementById('tpl-host').appendChild(clone);
-							});
-						</script>
-						
-					</div>
-					
-				</article>
+			</div>
+			
+			</article>
+			
+			<article class="card hover:-translate-y-1 transition-all duration-300">
+				<h3 class="card__heading">Slots</h3>
+				<h4 class="font-medium">Template & Slot Example</h4>
 				
+				<div class="card__content">
+					
+					<p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
+					<p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
+					
+					<button id="showTpl" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show Template</button>
+					
+					<div id="tpl-host" class="mt-2 text-sm"></div>
+					<template id="my-tpl">
+						<div class="p-2 bg-green-100 border border-green-400 rounded">
+							This is template content. Slotted area:
+							<slot name="injected-slot">[default slot content]</slot>
+						</div>
+					</template>
+					
+					<script>
+						document.getElementById('showTpl').addEventListener('click', () => {
+							const tpl = document.getElementById('my-tpl');
+							const clone = tpl.content.cloneNode(true);
+							// Example of replacing a <slot> with actual slotted node
+							const slotElement = clone.querySelector('slot');
+							if (slotElement) {
+								const span = document.createElement('span');
+								span.textContent = "This content came via slot.";
+								slotElement.replaceWith(span);
+							}
+							document.getElementById('tpl-host').appendChild(clone);
+						});
+					</script>
+					
+				</div>
+				
+			</article>
+			
 			</div>
 			
 		</section>
@@ -533,23 +556,26 @@
 			<article class="card hover:-translate-y-1 transition-all duration-300">
 				<h3 class="card__heading">SVG & Canvas</h3>
 				
-				<label class="user-form__label">SVG (Scalable Vector Graphics)</label>
-				<svg viewBox="0 0 100 100" class="svg">
-					<circle cx="50" cy="50" r="30" stroke="royalblue" stroke-width="4" fill="skyblue" />
-				</svg>
-				
-				<label class="canvas__heading">Canvas</label>
-				<canvas id="myCanvas" class="canvas">
-					Your browser does not support the canvas element.
-					<script>
-						const c = document.getElementById("myCanvas");
-						if (c && c.getContext) {
-							const ctx = c.getContext("2d");
-							ctx.fillStyle = "#2563eb";
-							ctx.fillRect(20, 20, 100, 60);
-						}
-					</script>
-				</canvas>
+				<div class="card__content">
+					
+					<label class="user-form__label">SVG (Scalable Vector Graphics)</label>
+					<svg viewBox="0 0 100 100" class="svg">
+						<circle cx="50" cy="50" r="30" stroke="royalblue" stroke-width="4" fill="skyblue" />
+					</svg>
+					
+					<label class="canvas__heading">Canvas</label>
+					<canvas id="myCanvas" class="canvas">
+						Your browser does not support the canvas element.
+						<script>
+							const c = document.getElementById("myCanvas");
+							if (c && c.getContext) {
+								const ctx = c.getContext("2d");
+								ctx.fillStyle = "#2563eb";
+								ctx.fillRect(20, 20, 100, 60);
+							}
+						</script>
+					</canvas>
+				</div>
 				
 			</article>
 			
@@ -557,7 +583,8 @@
 				<h3 class="card__heading">MathML</h3>
 				<p class="card__content-heading mb-2 text-sm text-slate-600">Native math rendering using <code>&lt;math&gt;</code>.</p>
 				
-				<div class="card__body text-2xl p-4 bg-slate-50 rounded border text-center">
+				
+				<div class="card__content text-2xl p-4 bg-slate-50 rounded border text-center">
 					<math display="block">
 						<mrow>
 							<mi>x</mi>
@@ -600,17 +627,22 @@
 			</h2>
 			
 			<div class="card">
-				<p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
 				
-				<p class="mt-4">Avoid using tags such as:</p>
-				<ul class="card__list list-disc text-sm space-y-1">
-					<li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code></li>
-					<li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code></li>
-					<li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;tt&gt;</code>, <code>&lt;strike&gt;</code></li>
-					<li><code>&lt;menuitem&gt;</code> (limited support), <code>&lt;keygen&gt;</code> (deprecated)</li>
-				</ul>
+				<div class="card__content">
+					
+					<p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
+					
+					<p class="mt-4">Avoid using tags such as:</p>
+					<ul class="card__list list-disc text-sm space-y-1">
+						<li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code></li>
+						<li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code></li>
+						<li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;tt&gt;</code>, <code>&lt;strike&gt;</code></li>
+						<li><code>&lt;menuitem&gt;</code> (limited support), <code>&lt;keygen&gt;</code> (deprecated)</li>
+					</ul>
+					
+					<p class="mt-4">Use modern, semantic HTML5 elements and CSS for styling instead.</p>
+				</div>
 				
-				<p class="mt-4">Use modern, semantic HTML5 elements and CSS for styling instead.</p>
 			</div>
 			
 		</section>
