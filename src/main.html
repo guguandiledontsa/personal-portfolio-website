@@ -504,48 +504,47 @@
 						</dialog>
 						
 					</div>
-			</div>
-			
-			</article>
-			
-			<article class="card hover:-translate-y-1 transition-all duration-300">
-				<h3 class="card__heading">Slots</h3>
-				<h4 class="font-medium">Template & Slot Example</h4>
+					
+				</article>
 				
-				<div class="card__content">
+				<article class="card hover:-translate-y-1 transition-all duration-300">
+					<h3 class="card__heading">Slots</h3>
+					<h4 class="font-medium">Template & Slot Example</h4>
 					
-					<p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
-					<p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
+					<div class="card__content">
+						
+						<p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
+						<p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
+						
+						<button id="showTpl" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show Template</button>
+						
+						<div id="tpl-host" class="mt-2 text-sm"></div>
+						<template id="my-tpl">
+							<div class="p-2 bg-green-100 border border-green-400 rounded">
+								This is template content. Slotted area:
+								<slot name="injected-slot">[default slot content]</slot>
+							</div>
+						</template>
+						
+						<script>
+							document.getElementById('showTpl').addEventListener('click', () => {
+								const tpl = document.getElementById('my-tpl');
+								const clone = tpl.content.cloneNode(true);
+								// Example of replacing a <slot> with actual slotted node
+								const slotElement = clone.querySelector('slot');
+								if (slotElement) {
+									const span = document.createElement('span');
+									span.textContent = "This content came via slot.";
+									slotElement.replaceWith(span);
+								}
+								document.getElementById('tpl-host').appendChild(clone);
+							});
+						</script>
+						
+					</div>
 					
-					<button id="showTpl" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show Template</button>
-					
-					<div id="tpl-host" class="mt-2 text-sm"></div>
-					<template id="my-tpl">
-						<div class="p-2 bg-green-100 border border-green-400 rounded">
-							This is template content. Slotted area:
-							<slot name="injected-slot">[default slot content]</slot>
-						</div>
-					</template>
-					
-					<script>
-						document.getElementById('showTpl').addEventListener('click', () => {
-							const tpl = document.getElementById('my-tpl');
-							const clone = tpl.content.cloneNode(true);
-							// Example of replacing a <slot> with actual slotted node
-							const slotElement = clone.querySelector('slot');
-							if (slotElement) {
-								const span = document.createElement('span');
-								span.textContent = "This content came via slot.";
-								slotElement.replaceWith(span);
-							}
-							document.getElementById('tpl-host').appendChild(clone);
-						});
-					</script>
-					
-				</div>
+				</article>
 				
-			</article>
-			
 			</div>
 			
 		</section>
@@ -691,7 +690,7 @@
 		</div>
 		
 	</footer>
-	j
+	
 </body>
 
 </html>
