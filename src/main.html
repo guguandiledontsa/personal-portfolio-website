@@ -240,34 +240,50 @@
 					
 					<div class="card__content">
 						<form class="user-form space-y-4">
-							<div>
+							<div class="user-form__field">
 								<label for="text-in" class="user-form__label user-form__label--block">Text</label>
-								<input type="text" id="text-in" class="form-input" placeholder="Standard text">
+								<div class="user-form__control">
+									<p class="user-form__hint">hint</p>
+									<input type="text" id="text-in" class="form-input" placeholder="Standard text">
+								</div>
 							</div>
-							<div>
+							
+							<div class="user-form__field">
+								
 								<label for="email-in" class="user-form__label user-form__label--block">Email</label>
 								<input type="email" id="email-in" class="form-input" placeholder="name@example.com">
 							</div>
-							<div>
+							
+							<div class="user-form__field">
+								
 								<label for="password-in" class="user-form__label user-form__label--block">Password</label>
 								<input type="password" id="password-in" class="form-input">
 							</div>
-							<div>
+							
+							<div class="user-form__field">
+								
 								<label for="tel-in" class="user-form__label user-form__label--block">Telephone</label>
 								<input type="tel" id="tel-in" class="form-input" placeholder="123-456-7890">
 							</div>
-							<div>
+							
+							<div class="user-form__field">
+								
 								<label for="url-in" class="user-form__label user-form__label--block">URL</label>
 								<input type="url" id="url-in" class="form-input" placeholder="https://example.com">
 							</div>
-							<div>
+							
+							<div class="user-form__field">
+								
 								<label for="search-in" class="user-form__label user-form__label--block">Search</label>
 								<input type="search" id="search-in" class="form-input" placeholder="Search...">
 							</div>
-							<div>
+							
+							<div class="user-form__field">
+								
 								<label for="textarea-in" class="user-form__label user-form__label--block">Textarea</label>
 								<textarea id="textarea-in" rows="2" class="form-input"></textarea>
 							</div>
+							
 						</form>
 					</div>
 					
@@ -280,6 +296,7 @@
 						<form class="user-form space-y-4">
 							<fieldset>
 								<legend class="font-semibold text-sm">Radio Group</legend>
+								
 								<div class="mt-2 space-y-1">
 									<div class="flex items-center space-x-2">
 										<input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
@@ -291,6 +308,7 @@
 									</div>
 								</div>
 							</fieldset>
+							
 							<fieldset>
 								<legend class="font-semibold text-sm">Checkbox Group</legend>
 								<div class="mt-2 space-y-1">
@@ -467,17 +485,17 @@
 					<h3 class="card__heading">External Content</h3>
 					
 					<div class="card__content">
-						<label class="iframe__label user-form__label"><code>&lt;iframe&gt;</code></label><!-- might be better off calling it a heading/something as it is, to be less teg relient, idk -->
+						<h4 class="iframe__label user-form__label"><code>&lt;iframe&gt;</code></h4><!-- might be better off calling it a heading/something as it is, to be less teg relient, idk -->
 						<iframe src="https://example.com" title="Sample Iframe" class="card__external-content">
 							<p class="text-xs p-2 text-center">Iframe not available.</p>
 						</iframe>
 						
-						<label class="object_label user-form__label"><code>&lt;object&gt;</code></label>
+						<h4 class="object_label user-form__label"><code>&lt;object&gt;</code></h4>
 						<object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="card__external-content">
 							<p class="text-xs p-2 text-center">PDF preview not available.</p>
 						</object>
 						
-						<label class="embed__label user-form__label"><code>&lt;embed&gt;</code></label>
+						<h4 class="embed__label user-form__label"><code>&lt;embed&gt;</code></h4>
 						<embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="card__external-content">
 					</div>
 					
