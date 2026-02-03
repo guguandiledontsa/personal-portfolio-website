@@ -294,15 +294,15 @@
 					
 					<div class="card__content">
 						<form class="user-form space-y-4">
-							<fieldset>
-								<legend class="font-semibold text-sm">Radio Group</legend>
+							<fieldset class="choice-group">
+								<legend class="choice-group__lebel font-semibold text-sm">Radio Group</legend>
 								
 								<div class="mt-2 space-y-1">
-									<div class="flex items-center space-x-2">
+									<div class="choice-group__option flex items-center space-x-2">
 										<input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
 										<label for="radio1">Choice One</label>
 									</div>
-									<div class="flex items-center space-x-2">
+									<div class="choice-group__option flex items-center space-x-2">
 										<input type="radio" id="radio2" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked>
 										<label for="radio2">Choice Two</label>
 									</div>
@@ -505,9 +505,11 @@
 					<h3 class="card__heading">Interactive Elements</h3>
 					
 					<div class="card__content">
-						<details class="accordion">
-							<summary class="accordion__summary cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
-							<p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked.</p>
+						<details class="disclosure">
+							<summary class="disclosure__trigger cursor-pointer">Details & Summary with <code>&lt;summary&gt;</code></summary>
+							<div class="disclosure__content">
+								<p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is clicked.</p>
+							</div>
 						</details>
 						
 						<hr class="my-4">
@@ -516,9 +518,13 @@
 						<button onclick="document.getElementById('modal-dialog').showModal()" class="mt-2 px-4 py-2 bg-slate-700 text-white rounded-md hover:bg-slate-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Click to open a modal dialog</button>
 						
 						<dialog id="modal-dialog" class="modal-dialog backdrop:bg-black/50">
-							<h3 class="text-lg font-bold">Modal Dialog</h3>
-							<p class="mt-2">This is a modal <code>&lt;dialog&gt;</code> element.</p>
-							<button onclick="document.getElementById('modal-dialog').close()" class="mt-4 px-4 py-2 border rounded-md hover:bg-slate-100 transition-colors">Close</button>
+							<h3 class="modal-dialog__title text-lg font-bold">Modal Dialog</h3>
+							
+							<div class="modal-dialog__content">
+								<p class="mt-2">This is a modal <code>&lt;dialog&gt;</code> element.</p>
+								<button onclick="document.getElementById('modal-dialog').close()" class="mt-4 px-4 py-2 border rounded-md hover:bg-slate-100 transition-colors">Close</button>
+							</div>
+							
 						</dialog>
 						
 					</div>
@@ -676,11 +682,11 @@
 			<div>
 				<h3 class="font-bold text-white">Navigation</h3>
 				
-				<nav class="mt-2">
-					<ul class="card__list space-y-1">
-						<li><a href="#" class="hover:underline text-sky-400">Privacy</a></li>
-						<li><a href="#" class="hover:underline text-sky-400">Terms</a></li>
-						<li><a href="#" class="hover:underline text-sky-400">Contact</a></li>
+				<nav class="navigation mt-2">
+					<ul class="navigation__list card__list space-y-1">
+						<li><a href="#" class="navigation__item hover:underline text-sky-400">Privacy</a></li>
+						<li><a href="#" class="navigation__item hover:underline text-sky-400">Terms</a></li>
+						<li><a href="#" class="navigation__item hover:underline text-sky-400">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
