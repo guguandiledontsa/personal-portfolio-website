@@ -85,7 +85,6 @@
   &lt;span&gt;Hello, World!&lt;/span&gt;
 &lt;/div&gt;</code></pre>
 						
-						<!-- these below should probably get their own box -->
 						<p class="mt-4">The <code>&lt;dfn&gt;</code> tag: <dfn>dfn</dfn> defines a term.</p>
 						<p class="mt-2"><code>&lt;data&gt;</code> links human and machine value: <data value="2025-10-06">October 6th</data>.</p>
 						<p class="mt-2">similarly <code>&lt;time&gt;</code>: <time datetime="2025-12-25">Christmas Day</time>, has a <code>datetime</code> attribute</p>
@@ -136,8 +135,7 @@
 				<p class="card__content-heading">Using <code>&lt;hgroup&gt;</code> to bind a title and subtitle.</p>
 				
 				<div class="card__content">
-					
-					<hgroup class="card__hgroup hgroup">
+					<hgroup class="hgroup">
 						<h2 class="hgroup__heading">The Martian Chronicles</h2>
 						<p class="hgroup__body-text">Ray Bradbury's finest work</p>
 					</hgroup>
@@ -158,23 +156,21 @@
 					
 					<div class="card__content">
 						<h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
-						
-						<ul class="card__list list-disc space-y-1 ml-6 mt-2">
+						<ul class="list list-disc space-y-1 ml-6 mt-2">
 							<li>First item. <code>&lt;li&gt;</code></li>
 							<li>Second item with a <a href="#" class="text-blue-600 hover:underline">nested link</a></li>
 						</ul>
 						
 						<h4 class="font-semibold mt-4">Ordered List <code>&lt;ol&gt;</code></h4>
-						
-						<ol class="card__list list-decimal space-y-1 ml-6 mt-2">
+						<ol class="list list-decimal space-y-1 ml-6 mt-2">
 							<li>First step. <code>&lt;li&gt;</code></li>
 							<li>Second step</li>
 						</ol>
 						
 						<h4 class="font-semibold mt-4">Description List <code>&lt;dl&gt;</code></h4>
-						<dl class="description-list mt-2">
-							<dt class="description-list__term font-medium">Term One <code>&lt;dt&gt;</code></dt>
-							<dd class="description-list__definition ml-4 italic text-sm text-slate-600">Definition of the first term. <code>&lt;dd&gt;</code></dd>
+						<dl class="list mt-2">
+							<dt class="list__term font-medium">Term One <code>&lt;dt&gt;</code></dt>
+							<dd class="list__definition ml-4 italic text-sm text-slate-600">Definition of the first term. <code>&lt;dd&gt;</code></dd>
 						</dl>
 						
 					</div>
@@ -302,27 +298,31 @@
 										<input type="radio" id="radio1" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
 										<label for="radio1">Choice One</label>
 									</div>
+									
 									<div class="choice-group__option flex items-center space-x-2">
 										<input type="radio" id="radio2" name="choice" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked>
 										<label for="radio2">Choice Two</label>
 									</div>
+									
 								</div>
 							</fieldset>
 							
-							<fieldset>
-								<legend class="font-semibold text-sm">Checkbox Group</legend>
+							<fieldset class="choice-group">
+								<legend class="choice-group__lebel font-semibold text-sm">Checkbox Group</legend>
+								
 								<div class="mt-2 space-y-1">
-									<div class="flex items-center space-x-2">
+									<div class="choice-group__option flex items-center space-x-2">
 										<input type="checkbox" id="check1" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500" checked>
 										<label for="check1">Option A</label>
 									</div>
-									<div class="flex items-center space-x-2">
+									<div class="choice-group__option flex items-center space-x-2">
 										<input type="checkbox" id="check2" class="h-4 w-4 rounded text-blue-600 focus:ring-blue-500">
 										<label for="check2">Option B</label>
 									</div>
 								</div>
 							</fieldset>
-							<div>
+							
+							<div class="user-form__field">
 								<label for="dropdown" class="user-form__label user-form__label--block">Select Dropdown</label>
 								<select id="dropdown" class="form-input">
 									<optgroup label="Primary">
@@ -333,7 +333,8 @@
 									</optgroup>
 								</select>
 							</div>
-							<div>
+							
+							<div class="user-form__field">
 								<label for="ice-cream-choice" class="user-form__label user-form__label--block">Datalist (Autocomplete)</label>
 								<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" class="form-input">
 								<datalist id="ice-cream-flavors">
@@ -342,6 +343,7 @@
 									<option value="Strawberry"></option>
 								</datalist>
 							</div>
+							
 						</form>
 					</div>
 					
@@ -393,18 +395,18 @@
 					<div class="card__content">
 						
 						<form class="user-form space-y-4" oninput="result.value = (a.valueAsNumber || 0) + (b.valueAsNumber || 0)">
-							<div>
+							<div class="user-form__field">
 								<label class="user-form__label user-form__label--block">Hidden Input</label>
 								<input type="hidden" id="hidden-in" name="hidden-field" value="secret-value">
 								<p class="text-xs text-slate-500">This hidden field is submitted but not shown.</p>
 							</div>
 							
-							<div>
+							<div class="user-form__field">
 								<label for="dtlocal-in" class="user-form__label user-form__label--block">Date & Time (local)</label>
 								<input type="datetime-local" id="dtlocal-in" class="form-input">
 							</div>
 							
-							<div>
+							<div class="user-form__field">
 								<label class="user-form__label">Output Element</label>
 								<div class="flex items-center space-x-2">
 									<input type="number" id="a" value="10" class="form-input w-20">
@@ -415,17 +417,18 @@
 								</div>
 								
 							</div>
-							<div>
+							
+							<div class="user-form__field">
 								<label class="user-form__label">Progress Bar</label>
 								<progress value="70" max="100" class="w-full">70%</progress>
 							</div>
 							
-							<div>
+							<div class="user-form__field">
 								<label class="user-form__label">Meter</label>
 								<meter value="0.6" class="w-full">60%</meter>
 							</div>
 							
-							<div class="flex space-x-2 pt-2">
+							<div class="user-form__control flex space-x-2 pt-2">
 								<button type="submit" class="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
 								<input type="reset" value="Reset" class="w-full p-2 bg-slate-200 text-slate-800 rounded-md cursor-pointer hover:bg-slate-300 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
 							</div>
@@ -450,7 +453,8 @@
 					<h3 class="card__heading">Images & Media</h3>
 					
 					<div class="card__content">
-						<figure class="card__figure figure">
+						
+						<figure class="figure">
 							<figcaption class="figure__figcaption">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
 							
 							<picture>
@@ -467,16 +471,17 @@
 						
 						<h4 class="font-semibold mt-4">Audio & Video</h4>
 						
-						<audio controls class="card__media">
+						<audio controls class="media">
 							<!-- src="https://www.w3schools.com/tags/horse.mp3" -->
 							<source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
 						</audio>
 						
-						<video controls class="card__media video-media">
+						<video controls class="media media--video">
 							<!-- src="https://www.w3schools.com/tags/movie.mp4" -->
 							<source src="./src/assets/vidoes/movie.mp4" type="video/mp4">
 							<track kind="captions" srclang="en" src="captions_en.vtt" label="English">
 						</video>
+						
 					</div>
 					
 				</article>
@@ -485,18 +490,20 @@
 					<h3 class="card__heading">External Content</h3>
 					
 					<div class="card__content">
-						<h4 class="iframe__label user-form__label"><code>&lt;iframe&gt;</code></h4><!-- might be better off calling it a heading/something as it is, to be less teg relient, idk -->
-						<iframe src="https://example.com" title="Sample Iframe" class="card__external-content">
+						
+						<h4 class="iframe__label user-form__label"><code>&lt;iframe&gt;</code></h4>
+						<iframe src="https://example.com" title="Sample Iframe" class="external-content">
 							<p class="text-xs p-2 text-center">Iframe not available.</p>
 						</iframe>
 						
 						<h4 class="object_label user-form__label"><code>&lt;object&gt;</code></h4>
-						<object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="card__external-content">
+						<object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="external-content">
 							<p class="text-xs p-2 text-center">PDF preview not available.</p>
 						</object>
 						
 						<h4 class="embed__label user-form__label"><code>&lt;embed&gt;</code></h4>
-						<embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="card__external-content">
+						<embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="external-content">
+						
 					</div>
 					
 				</article>
@@ -584,12 +591,12 @@
 				
 				<div class="card__content">
 					
-					<label class="user-form__label">SVG (Scalable Vector Graphics)</label>
+					<h4 class="user-form__label">SVG (Scalable Vector Graphics)</h4>
 					<svg viewBox="0 0 100 100" class="svg">
 						<circle cx="50" cy="50" r="30" stroke="royalblue" stroke-width="4" fill="skyblue" />
 					</svg>
 					
-					<label class="canvas__heading">Canvas</label>
+					<h4 class="canvas__heading">Canvas</h4>
 					<canvas id="myCanvas" class="render-surface">
 						Your browser does not support the canvas element.
 						<script>
@@ -659,7 +666,7 @@
 					<p>Many older HTML tags have been <strong>deprecated</strong> in HTML5 because their function was purely presentational. Styling should now be handled by CSS.</p>
 					
 					<p class="mt-4">Avoid using tags such as:</p>
-					<ul class="card__list list-disc text-sm space-y-1">
+					<ul class="list list-disc text-sm space-y-1">
 						<li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code></li>
 						<li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code></li>
 						<li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;tt&gt;</code>, <code>&lt;strike&gt;</code></li>
@@ -683,7 +690,7 @@
 				<h3 class="font-bold text-white">Navigation</h3>
 				
 				<nav class="navigation mt-2">
-					<ul class="navigation__list card__list space-y-1">
+					<ul class="navigation__list list space-y-1">
 						<li><a href="#" class="navigation__item hover:underline text-sky-400">Privacy</a></li>
 						<li><a href="#" class="navigation__item hover:underline text-sky-400">Terms</a></li>
 						<li><a href="#" class="navigation__item hover:underline text-sky-400">Contact</a></li>
@@ -702,14 +709,13 @@
 			<div>
 				<h3 class="font-bold text-white">About This Page</h3>
 				
-				<aside class="card__aside">
+				<aside class="panel panel--supplement">
 					This is supplementary content in an <code>&lt;aside&gt;</code>.
 				</aside>
 			</div>
 			
 		</div>
-		
-		<div class="card__legal">
+		<div class="legal">
 			<small>&copy; <time datetime="2025">2025</time> Your Company. All Rights Reserved.</small>
 		</div>
 		
