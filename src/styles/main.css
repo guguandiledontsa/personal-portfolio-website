@@ -1332,7 +1332,7 @@
   }
   
   /* text-sm font-medium */
-  .user-form__label {
+  .user-form__annotation {
     font: normal var(--text-sm) var(--font-body);
     font-weight: var(--font-medium);
   }
@@ -1535,7 +1535,7 @@
   }
   
   /* block */
-  .user-form__label--block {
+  .user-form__annotation--block {
     display: block;
   }
   
@@ -1716,17 +1716,17 @@
   }
   
   /* mb-1 */
-  .user-form__label {
+  .user-form__annotation {
     margin-block-end: var(--space-1);
   }
   
   /* mb-4 */
-  .embed__label {
+  .embed__annotation {
     margin-block-end: var(--space-4);
   }
   
   /* mb-4 */
-  .object__label {
+  .object__annotation {
     margin-block-end: var(--space-4);
   }
   
