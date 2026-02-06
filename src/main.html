@@ -40,7 +40,7 @@
 				Text Content & Typography
 			</h2>
 			
-			<div class="panel-wrapper-grid">
+			<div class="panel-group">
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
 					<h3 class="panel__title">Headings (h1–h6)</h3>
 					
@@ -80,10 +80,12 @@
 							<cite class="pull-quote__cite">— Saint Augustine</cite>
 						</blockquote>
 						
-						<p class="pre__title mt-4"><code>&lt;pre&gt;</code> is great for code:</p>   <!-- this might be ownership over a foreign entity ...its just next to/near x -->
-						<pre class="pre overflow-x-auto"><code>&lt;div class="example"&gt;
+						<div class="code-sample">
+							<p class="code-sample__title mt-4"><code>&lt;pre&gt;</code> is great for code:</p> <!-- this might be ownership over a foreign entity ...its just next to/near x -->
+							<pre class="code-sample__content overflow-x-auto"><code>&lt;div class="example"&gt;
   &lt;span&gt;Hello, World!&lt;/span&gt;
 &lt;/div&gt;</code></pre>
+						</div>
 						
 						<p class="mt-4">The <code>&lt;dfn&gt;</code> tag: <dfn>dfn</dfn> defines a term.</p>
 						<p class="mt-2"><code>&lt;data&gt;</code> links human and machine value: <data value="2025-10-06">October 6th</data>.</p>
@@ -150,7 +152,7 @@
 				Lists & Tables
 			</h2>
 			
-			<div class="panel-wrapper-grid panel-wrapper-grid--lists-tables">
+			<div class="panel-group panel-group--lists-tables">
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
 					<h3 class="panel__title">Lists (ul, ol, dl)</h3>
 					
@@ -191,27 +193,27 @@
 							
 							<thead class="data-table__head">
 								<tr>
-									<th class="data-table__content data-table__cell--header">Product</th>
-									<th class="data-table__content data-table__cell--header">Quantity</th>
-									<th class="data-table__content data-table__cell--header">Total</th>
+									<th class="data-table__cell data-table__cell--header">Product</th>
+									<th class="data-table__cell data-table__cell--header">Quantity</th>
+									<th class="data-table__cell data-table__cell--header">Total</th>
 								</tr>
 							</thead>
 							<tbody class="data-table__body">
 								<tr>
-									<td class="data-table__content data-table__cell--body font-medium text-slate-800">Laptops</td>
-									<td class="data-table__content data-table__cell--body">150</td>
-									<td class="data-table__content data-table__cell--body">$150,000</td>
+									<td class="data-table__cell data-table__cell--body font-medium text-slate-800">Laptops</td>
+									<td class="data-table__cell data-table__cell--body">150</td>
+									<td class="data-table__cell data-table__cell--body">$150,000</td>
 								</tr>
 								<tr class="bg-slate-50">
-									<td class="data-table__content data-table__cell--body font-medium text-slate-800">Monitors</td>
-									<td class="data-table__content data-table__cell--body">300</td>
-									<td class="data-table__content data-table__cell--body">$75,000</td>
+									<td class="data-table__cell data-table__cell--body font-medium text-slate-800">Monitors</td>
+									<td class="data-table__cell data-table__cell--body">300</td>
+									<td class="data-table__cell data-table__cell--body">$75,000</td>
 								</tr>
 							</tbody>
 							<tfoot class="data-table__foot text-white">
 								<tr>
-									<td class="data-table__content data-table__cell--footer" colspan="2">Grand Total</td>
-									<td class="data-table__content data-table__cell--footer">$225,000</td>
+									<td class="data-table__cell data-table__cell--footer" colspan="2">Grand Total</td>
+									<td class="data-table__cell data-table__cell--footer">$225,000</td>
 								</tr>
 							</tfoot>
 						</table>
@@ -230,14 +232,14 @@
 				Forms & User Input (Extended)
 			</h2>
 			
-			<div class="panel-wrapper-grid">
+			<div class="panel-group">
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
 					<h3 class="panel__title">Text-Based <code>&lt;input&gt;</code> of various <code>type</code> attributes and a <code>&lt;textarea&gt;</code></h3>
 					
 					<div class="panel__content">
 						<form class="user-form space-y-4">
 							<div class="user-form__field">
-								<label for="text-in" class="user-form__annotation user-form__annotation--block">Text</label>
+								<label for="text-in" class="annotation annotation--block">Text</label>
 								<div class="user-form__control">
 									<p class="user-form__hint">hint</p>
 									<input type="text" id="text-in" class="form-input" placeholder="Standard text">
@@ -246,37 +248,37 @@
 							
 							<div class="user-form__field">
 								
-								<label for="email-in" class="user-form__annotation user-form__annotation--block">Email</label>
+								<label for="email-in" class="annotation annotation--block">Email</label>
 								<input type="email" id="email-in" class="form-input" placeholder="name@example.com">
 							</div>
 							
 							<div class="user-form__field">
 								
-								<label for="password-in" class="user-form__annotation user-form__annotation--block">Password</label>
+								<label for="password-in" class="annotation annotation--block">Password</label>
 								<input type="password" id="password-in" class="form-input">
 							</div>
 							
 							<div class="user-form__field">
 								
-								<label for="tel-in" class="user-form__annotation user-form__annotation--block">Telephone</label>
+								<label for="tel-in" class="annotation annotation--block">Telephone</label>
 								<input type="tel" id="tel-in" class="form-input" placeholder="123-456-7890">
 							</div>
 							
 							<div class="user-form__field">
 								
-								<label for="url-in" class="user-form__annotation user-form__annotation--block">URL</label>
+								<label for="url-in" class="annotation annotation--block">URL</label>
 								<input type="url" id="url-in" class="form-input" placeholder="https://example.com">
 							</div>
 							
 							<div class="user-form__field">
 								
-								<label for="search-in" class="user-form__annotation user-form__annotation--block">Search</label>
+								<label for="search-in" class="annotation annotation--block">Search</label>
 								<input type="search" id="search-in" class="form-input" placeholder="Search...">
 							</div>
 							
 							<div class="user-form__field">
 								
-								<label for="textarea-in" class="user-form__annotation user-form__annotation--block">Textarea</label>
+								<label for="textarea-in" class="annotation annotation--block">Textarea</label>
 								<textarea id="textarea-in" rows="2" class="form-input"></textarea>
 							</div>
 							
@@ -323,7 +325,7 @@
 							</fieldset>
 							
 							<div class="user-form__field">
-								<label for="dropdown" class="user-form__annotation user-form__annotation--block">Select Dropdown</label>
+								<label for="dropdown" class="annotation annotation--block">Select Dropdown</label>
 								<select id="dropdown" class="form-input">
 									<optgroup label="Primary">
 										<option>Option A</option>
@@ -335,7 +337,7 @@
 							</div>
 							
 							<div class="user-form__field">
-								<label for="ice-cream-choice" class="user-form__annotation user-form__annotation--block">Datalist (Autocomplete)</label>
+								<label for="ice-cream-choice" class="annotation annotation--block">Datalist (Autocomplete)</label>
 								<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" class="form-input">
 								<datalist id="ice-cream-flavors">
 									<option value="Chocolate"></option>
@@ -360,17 +362,17 @@
 							</div>
 							
 							<div>
-								<label for="date-in" class="user-form__annotation user-form__annotation--block">Date</label>
+								<label for="date-in" class="annotation annotation--block">Date</label>
 								<input type="date" id="date-in" class="form-input">
 							</div>
 							
 							<div>
-								<label for="month-in" class="user-form__annotation user-form__annotation--block">Month</label>
+								<label for="month-in" class="annotation annotation--block">Month</label>
 								<input type="month" id="month-in" class="form-input">
 							</div>
 							
 							<div>
-								<label for="week-in" class="user-form__annotation user-form__annotation--block">Week</label>
+								<label for="week-in" class="annotation annotation--block">Week</label>
 								<input type="week" id="week-in" class="form-input">
 							</div>
 							
@@ -380,7 +382,7 @@
 							</div>
 							
 							<div>
-								<label for="file-in" class="user-form__annotation user-form__annotation--block">File Upload</label>
+								<label for="file-in" class="annotation annotation--block">File Upload</label>
 								<input type="file" id="file-in" class="form-input">
 							</div>
 							
@@ -396,18 +398,18 @@
 						
 						<form class="user-form space-y-4" oninput="result.value = (a.valueAsNumber || 0) + (b.valueAsNumber || 0)">
 							<div class="user-form__field">
-								<label class="user-form__annotation user-form__annotation--block">Hidden Input</label>
+								<label class="annotation annotation--block">Hidden Input</label>
 								<input type="hidden" id="hidden-in" name="hidden-field" value="secret-value">
 								<p class="text-xs text-slate-500">This hidden field is submitted but not shown.</p>
 							</div>
 							
 							<div class="user-form__field">
-								<label for="dtlocal-in" class="user-form__annotation user-form__annotation--block">Date & Time (local)</label>
+								<label for="dtlocal-in" class="annotation annotation--block">Date & Time (local)</label>
 								<input type="datetime-local" id="dtlocal-in" class="form-input">
 							</div>
 							
 							<div class="user-form__field">
-								<label class="user-form__annotation">Output Element</label>
+								<label class="annotation">Output Element</label>
 								<div class="flex items-center space-x-2">
 									<input type="number" id="a" value="10" class="form-input w-20">
 									<span>+</span>
@@ -419,12 +421,12 @@
 							</div>
 							
 							<div class="user-form__field">
-								<label class="user-form__annotation">Progress Bar</label>
+								<label class="annotation">Progress Bar</label>
 								<progress value="70" max="100" class="w-full">70%</progress>
 							</div>
 							
 							<div class="user-form__field">
-								<label class="user-form__annotation">Meter</label>
+								<label class="annotation">Meter</label>
 								<meter value="0.6" class="w-full">60%</meter>
 							</div>
 							
@@ -448,14 +450,14 @@
 				Embedded & Interactive Content (Extended)
 			</h2>
 			
-			<div class="panel-wrapper-grid">
+			<div class="panel-group">
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
 					<h3 class="panel__title">Images & Media</h3>
 					
 					<div class="panel__content">
 						
 						<figure class="figure">
-							<figcaption class="figure__figcaption">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
+							<figcaption class="figure__caption">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
 							
 							<picture>
 								<!-- https://placehold.co/400x200/60a5fa/ffffff?text=Mobile -->
@@ -471,14 +473,14 @@
 						
 						<h4 class="font-semibold mt-4">Audio & Video</h4>
 						
-						<audio controls class="media">
+						<audio controls class="media-audio">
 							<!-- src="https://www.w3schools.com/tags/horse.mp3" -->
 							<source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
 						</audio>
 						
-						<video controls class="media media--video">
+						<video controls class="media--video">
 							<!-- src="https://www.w3schools.com/tags/movie.mp4" -->
-							<source src="./src/assets/vidoes/movie.mp4" type="video/mp4">
+							<source src="./src/assets/video/movie.mp4" type="video/mp4">
 							<track kind="captions" srclang="en" src="captions_en.vtt" label="English">
 						</video>
 						
@@ -491,17 +493,17 @@
 					
 					<div class="panel__content">
 						
-						<h4 class="iframe__annotation user-form__annotation"><code>&lt;iframe&gt;</code></h4>
+						<h4 class="annotation--iframe annotation"><code>&lt;iframe&gt;</code></h4>
 						<iframe src="https://example.com" title="Sample Iframe" class="external-content">
 							<p class="text-xs p-2 text-center">Iframe not available.</p>
 						</iframe>
 						
-						<h4 class="object__annotation user-form__annotation"><code>&lt;object&gt;</code></h4>
+						<h4 class="annotation--object annotation"><code>&lt;object&gt;</code></h4>
 						<object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" class="external-content">
 							<p class="text-xs p-2 text-center">PDF preview not available.</p>
 						</object>
 						
-						<h4 class="embed__annotation user-form__annotation"><code>&lt;embed&gt;</code></h4>
+						<h4 class="annotation--embed annotation"><code>&lt;embed&gt;</code></h4>
 						<embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png" class="external-content">
 						
 					</div>
@@ -591,7 +593,7 @@
 				
 				<div class="panel__content">
 					
-					<h4 class="user-form__annotation">SVG (Scalable Vector Graphics)</h4>
+					<h4 class="annotation">SVG (Scalable Vector Graphics)</h4>
 					<svg viewBox="0 0 100 100" class="graphic">
 						<circle cx="50" cy="50" r="30" stroke="royalblue" stroke-width="4" fill="skyblue" />
 					</svg>
@@ -684,7 +686,7 @@
 	<footer class="page__item page__footer">
 		<h2 class="text-2xl font-semibold text-center text-white">Footer Content</h2>
 		
-		<div class="panel-wrapper-grid panel-wrapper-grid__footer">
+		<div class="panel-group panel-group__footer">
 			<div>
 				<h3 class="font-bold text-white">Navigation</h3>
 				
@@ -708,7 +710,7 @@
 			<div>
 				<h3 class="font-bold text-white">About This Page</h3>
 				
-				<aside class="">
+				<aside class="supplement">
 					This is supplementary content in an <code>&lt;aside&gt;</code>.
 				</aside>
 			</div>
