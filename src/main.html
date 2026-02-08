@@ -7,7 +7,7 @@
 	<base href="/">
 	<title>The Ultimate HTML5 Tag Showcase — Complete</title>
 	
-	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 	<style>
 		.form-input {
 			@apply w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition;
@@ -75,9 +75,9 @@
 					
 					<div class="panel__content">
 						
-						<blockquote class="pull-quote">
-							<q>The world is a magnificent book, and those who do not travel read only a page.</q>
-							<cite class="pull-quote__cite">— Saint Augustine</cite>
+						<blockquote class="quote pull-quote">
+							<q class="quote__content">The world is a magnificent book, and those who do not travel read only a page.</q>
+							<cite class="quote__source">— Saint Augustine</cite>
 						</blockquote>
 						
 						<div class="code-sample">
@@ -134,7 +134,7 @@
 			
 			<article class="panel mt-6">
 				<h3 class="panel__title">Heading Group</h3>
-				<p class="panel__title">Using <code>&lt;hgroup&gt;</code> to bind a title and subtitle.</p>
+				<p class="panel__description">Using <code>&lt;hgroup&gt;</code> to bind a title and subtitle.</p>
 				
 				<div class="panel__content">
 					<hgroup class="hgroup">
@@ -295,7 +295,7 @@
 						
 						<form class="user-form space-y-4">
 							<fieldset class="choice-group">
-								<legend class="choice-group__lebel font-semibold text-sm">Radio Group</legend>
+								<legend class="choice-group__label font-semibold text-sm">Radio Group</legend>
 								
 								<div class="mt-2 space-y-1">
 									<div class="choice-group__option flex items-center space-x-2">
@@ -312,7 +312,7 @@
 							</fieldset>
 							
 							<fieldset class="choice-group">
-								<legend class="choice-group__lebel font-semibold text-sm">Checkbox Group</legend>
+								<legend class="choice-group__label font-semibold text-sm">Checkbox Group</legend>
 								
 								<div class="mt-2 space-y-1">
 									<div class="choice-group__option flex items-center space-x-2">
@@ -467,7 +467,7 @@
 					<div class="panel__content">
 						
 						<figure class="figure">
-							<figcaption class="figure__caption">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
+							<figcaption class="figure__meta">A responsive <code>&lt;picture&gt;</code> element.</figcaption>
 							
 							<picture>
 								<!-- https://placehold.co/400x200/60a5fa/ffffff?text=Mobile -->
@@ -483,12 +483,12 @@
 						
 						<h4 class="font-semibold mt-4">Audio & Video</h4>
 						
-						<audio controls class="media-audio">
+						<audio controls class="audio-media">
 							<!-- src="https://www.w3schools.com/tags/horse.mp3" -->
 							<source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
 						</audio>
 						
-						<video controls class="media--video">
+						<video controls class="video-media">
 							<!-- src="https://www.w3schools.com/tags/movie.mp4" -->
 							<source src="./src/assets/video/movie.mp4" type="video/mp4">
 							<track kind="captions" srclang="en" src="captions_en.vtt" label="English">
@@ -551,13 +551,20 @@
 				</article>
 				
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Slots</h3>
-					<h4 class="font-medium">Template & Slot Example</h4>
+					<header>
+						<h3 class="panel__title">Slots</h3>
+						<h4 class="font-medium">Template & Slot Example</h4>
+					</header>
+					
 					
 					<div class="panel__content">
-						
 						<p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
 						<p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web Components to mark insertion points.</p>
+						
+					</div>
+					
+					
+					<footer class="panel__actions">
 						
 						<button id="showTpl" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show Template</button>
 						
@@ -584,7 +591,7 @@
 							});
 						</script>
 						
-					</div>
+					</footer>
 					
 				</article>
 				
@@ -705,9 +712,9 @@
 				
 				<nav class="navigation mt-2">
 					<ul class="navigation__list list space-y-1">
-						<li><a href="#" class="navigation__item hover:underline text-sky-400">Privacy</a></li>
-						<li><a href="#" class="navigation__item hover:underline text-sky-400">Terms</a></li>
-						<li><a href="#" class="navigation__item hover:underline text-sky-400">Contact</a></li>
+						<li class="navigation__item"><a href="#" class="navigation__link hover:underline text-sky-400">Privacy</a></li>
+						<li class="navigation__item"><a href="#" class="navigation__link hover:underline text-sky-400">Terms</a></li>
+						<li class="navigation__item"><a href="#" class="navigation__link hover:underline text-sky-400">Contact</a></li>
 					</ul>
 				</nav>
 			</div>

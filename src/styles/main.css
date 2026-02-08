@@ -1224,7 +1224,7 @@
   }
   
   /* text-right text-slate-500 text-sm not-italic */
-  .pull-quote__cite {
+  .quote__source {
     text-align: var(--text-right);
     color: var(--slate-500);
     font: var(--not-italic) var(--text-sm) var(--font-body);
@@ -1267,7 +1267,7 @@
   }
   
   /* text-slate-500 text-sm */
-  .figure__caption {
+  .figure__meta {
     color: var(--slate-500);
     font: normal var(--text-sm) var(--font-body);
   }
@@ -1535,7 +1535,7 @@
   }
   
   /* block */
-  .pull-quote__cite {
+  .quote__source {
     display: block;
   }
   
@@ -1653,7 +1653,7 @@
   }
   
   /* mt-2 */
-  .panel__audio {
+  .audio-media {
     margin-block-start: var(--space-2);
   }
   
@@ -1691,7 +1691,7 @@
   }
   
   /* mt-1 */
-  .pull-quote__cite {
+  .quote__source {
     margin-block-start: var(--space-1);
   }
   
@@ -1706,7 +1706,7 @@
   }
   
   /* mb-2 */
-  .figure__caption {
+  .figure__meta {
     margin-block-end: var(--space-2);
   }
   
@@ -1802,7 +1802,7 @@
   }
   
   /* w-full */
-  .panel__audio {
+  .audio-media {
     inline-size: var(--w-full);
   }
   
