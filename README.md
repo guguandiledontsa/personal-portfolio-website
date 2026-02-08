@@ -78,6 +78,8 @@ Select the semantic skeleton from the `main.html` scaffold. Ensure you use the c
 </section>
 ```
 
+### 2. Style Implementation
+Apply decorative or layout overrides within the appropriate @layer. Always reference the global design tokens.
 ```css
 @layer appearances {
   .custom-block {
