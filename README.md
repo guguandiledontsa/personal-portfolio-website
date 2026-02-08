@@ -39,3 +39,40 @@ The project implements the **CSS Properties and Values API** to enable smooth in
 To support global internationalization (LTR, RTL, Vertical), the layout engine uses **Logical Properties**:
 * `inline-size` and `block-size` instead of fixed `width` and `height`.
 * `margin-block` and `padding-inline` instead of top/bottom/left/right.
+
+---
+
+## 層 CSS Cascade Layers (`@layer`)
+The styling is organized into discrete layers to maintain a clean specificity hierarchy and prevent "CSS wars."
+
+| Layer | Responsibility | Technical Implementation |
+| :--- | :--- | :--- |
+| **Variables** | Design Tokens | HSLA scales, tailwind-mirroring spacing, and `@property` definitions. |
+| **Typographies** | Text Treatment | Fluid sizing via `clamp()` and font-family abstraction. |
+| **Appearances** | Decorative Logic | Shadows, borders, backgrounds, and hover-state transitions. |
+| **Layouts** | Structural Distribution | CSS Grid (2D) and Flexbox (1D) using logical properties. |
+
+---
+
+## 🚀 Performance & Rendering Optimization
+This scaffold provides hints to the browser's rendering engine to minimize layout shifts and maximize frame rates.
+
+* **Layout Isolation:** Uses the `contain` property to prevent internal component changes from triggering a full-page re-render.
+* **GPU Acceleration:** Strategic use of `will-change` on animated elements to inform the browser of upcoming paint cycles.
+* **Cumulative Layout Shift (CLS) Prevention:** Explicit use of `aspect-ratio` and `contain-intrinsic-size` to reserve space for media content before it loads.
+
+---
+
+## 🛠 Usage & Implementation
+This is a **structural base**. To build upon this architecture, follow the standardized BEM and Layering workflow:
+
+### 1. Structure
+Select the semantic skeleton from the `main.html` scaffold. Ensure you use the correct ARIA landmarks.
+```html
+<section class="region">
+  <header class="region__header">
+    <h2 class="region__title">Documentation</h2>
+  </header>
+  <div class="panel-group">
+    </div>
+</section>
