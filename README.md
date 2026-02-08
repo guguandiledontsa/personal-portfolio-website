@@ -89,7 +89,8 @@ Apply decorative or layout overrides within the appropriate @layer. Always refer
 }
 ```
 
-
+### 3. Responsive Scaling
+Avoid hard-coded pixel widths. Use the internal grid variables to adjust layouts across breakpoints.
 ```css
 .panel-group {
   --grid-cols: var(--grid-cols-1); /* Default */
