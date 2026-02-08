@@ -99,3 +99,14 @@ Avoid hard-coded pixel widths. Use the internal grid variables to adjust layouts
   }
 }
 ```
+
+---
+
+## 📋 Technical Specs Summary
+Methodology: Strict BEM (Block, Element, Modifier).
+
+Logical Flow: Writing-mode agnostic (LTR/RTL/Vertical).
+
+Dependencies: Zero (Native CSS/HTML).
+
+Standard: CSS Living Standard (2025/2026 Features).
