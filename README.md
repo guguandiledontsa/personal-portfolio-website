@@ -79,8 +79,20 @@ Select the semantic skeleton from the `main.html` scaffold. Ensure you use the c
 ```
 
 ```css
+@layer appearances {
+  .custom-block {
+    background-color: var(--slate-800);
+    border-radius: var(--space-rnd-lg);
+  }
+}
 ```
 
 
 ```css
+.panel-group {
+  --grid-cols: var(--grid-cols-1); /* Default */
+  @media (min-width: 1024px) {
+    --grid-cols: var(--grid-cols-3); /* Responsive Shift */
+  }
+}
 ```
