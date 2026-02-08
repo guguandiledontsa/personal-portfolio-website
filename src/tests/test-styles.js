@@ -1,35 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { expect } from 'https://cdn.jsdelivr.net/npm/chai@5.1.1/chai.js';
-import { $style, $filteredStyles, styleData } from './utils.js';
+import { $style, $filteredStyles, styleData, supblockConfigs } from './utils.js';
 
 const isWMedium = window.innerWidth >= 768;
-
-// Configuration for the Supblock loop
-const supblockConfigs = [
-{
-  modifier: 'header',
-  marginBottom: '32px',
-  assertions: {}
-},
-{
-  modifier: 'main',
-  marginBottom: '32px',
-  assertions: {}
-},
-{
-  modifier: 'footer',
-  marginBottom: '0px',
-  assertions: {
-    'container should span full width': (el) => {
-      const containerEl = el.querySelector('.supblock__container');
-      if (!containerEl) return;
-      const parentWidth = el.getBoundingClientRect().width;
-      const elWidth = containerEl.getBoundingClientRect().width;
-      expect(Math.abs(elWidth - parentWidth)).to.be.lessThan(2);
-    }
-  }
-}];
-
 
 mocha.setup({ ui: 'bdd', reporter: 'spec' });
 

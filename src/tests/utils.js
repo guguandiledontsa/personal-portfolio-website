@@ -183,6 +183,32 @@ export const styleData = {
   },
 }
 
+// Configuration for the Supblock loop
+export const supblockConfigs = [
+{
+  modifier: 'header',
+  marginBottom: '32px',
+  assertions: {}
+},
+{
+  modifier: 'main',
+  marginBottom: '32px',
+  assertions: {}
+},
+{
+  modifier: 'footer',
+  marginBottom: '0px',
+  assertions: {
+    'container should span full width': (el) => {
+      const containerEl = el.querySelector('.supblock__container');
+      if (!containerEl) return;
+      const parentWidth = el.getBoundingClientRect().width;
+      const elWidth = containerEl.getBoundingClientRect().width;
+      expect(Math.abs(elWidth - parentWidth)).to.be.lessThan(2);
+    }
+  }
+}];
+
 export function $style(selector, prop) {
   const el = document.querySelector(selector);
   if (!el) {
@@ -214,36 +240,36 @@ export function $filteredStyles(el, {
   exclude = []
 } = {}) {
   if (!el) return null;
-
+  
   const computed = getComputedStyle(el);
   const tag = el.tagName;
-
+  
   // Insert default element into same parent (or body fallback)
   const defaultEl = document.createElement(tag);
   const parent = el.parentNode || document.body;
-
+  
   // Try to match display context
   defaultEl.style.display = computed.display;
-
+  
   parent.appendChild(defaultEl);
-
+  
   const defaultStyles = getComputedStyle(defaultEl);
   const diff = {};
-
+  
   for (const prop of computed) {
     const value = computed.getPropertyValue(prop);
     const defaultValue = defaultStyles.getPropertyValue(prop);
-
+    
     const isIncluded = include.length === 0 || include.includes(prop);
     const isExcluded = exclude.includes(prop);
-
+    
     if (!isExcluded && isIncluded && value !== defaultValue) {
       diff[prop] = value;
     }
   }
-
+  
   parent.removeChild(defaultEl);
-
+  
   return diff;
 }
 
