@@ -1593,6 +1593,12 @@
     }
   }
   
+  .card-group {
+    display: grid;
+    grid-template-columns: var(--grid-cols-3);
+    
+  }
+  
   /* ------------------------------------------------------------ */
   /* .container-spacing */
   
