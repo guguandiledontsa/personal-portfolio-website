@@ -1,59 +1,249 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<base href="/">
-	<title>The Ultimate HTML5 Tag Showcase — Complete</title>
-	
-	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
-	<style>
-		.form-input {
-			@apply w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition;
-		}
-	</style>
-	<link rel="stylesheet" href="src/styles/main.css">
+
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0"
+	>
+
+	<title>The Ultimate HTML5 Tag Showcase</title>
+
+	<link
+		rel="stylesheet"
+		href="styles/main.css"
+	>
+
 </head>
 
-<body class="page bg-slate-100 text-slate-700">
-	
+<body class="page">
+
 	<noscript>
-		<div class="bg-red-600 text-white p-3 text-center font-bold">
-			Warning: JavaScript is disabled. Some interactive features of this page will not be available.
-		</div>
+
+		<section class="notice notice--warning">
+
+			<div class="notice__content">
+
+				<p class="notice__message">
+					JavaScript is disabled. Interactive demonstrations will not be available.
+				</p>
+
+			</div>
+
+		</section>
+
 	</noscript>
-	
-	<header class="cluster page__header shadow-lg bg-white">
-		<h1 class="text-5xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-			The Ultimate HTML5 Tag Showcase — Complete
-		</h1>
-		<p class="text-center text-slate-500 mt-2">
-			A comprehensive showcase of HTML5 elements, including newer and less common ones.
-		</p>
+
+
+	<header class="page__header">
+
+		<section class="hero">
+
+			<div class="hero__content">
+
+				<div class="prose">
+
+					<h1
+						class="prose__title"
+						id="document-title"
+					>
+						The Ultimate HTML5 Tag Showcase
+					</h1>
+
+					<p class="prose__lead">
+
+						A comprehensive reference demonstrating modern HTML5
+						elements, semantic structure, embedded media,
+						interactive controls, and lesser-used HTML features.
+
+					</p>
+
+				</div>
+
+			</div>
+
+		</section>
+
 	</header>
-	
-	<main class="cluster cluster--content">
-		<!-- Text Content & Typography -->
-		<section class="region">
-			<h2 class="region__title">
-				Text Content & Typography
-			</h2>
-			
+
+
+	<main
+		class="page__content"
+		id="main-content"
+	>
+
+
+		<!-- ========================================================= -->
+		<!-- Text Content & Typography                                 -->
+		<!-- ========================================================= -->
+
+		<section
+			class="region"
+			aria-labelledby="typography-region-title"
+		>
+
+			<header class="region__header">
+
+				<div class="prose">
+
+					<h2
+						class="prose__title"
+						id="typography-region-title"
+					>
+						Text Content &amp; Typography
+					</h2>
+
+					<p class="prose__lead">
+
+						Textual elements provide the semantic structure that
+						organizes written information. This section explores
+						document headings, inline semantics, quotations,
+						annotations and related content models.
+
+					</p>
+
+				</div>
+
+			</header>
+
+
 			<div class="panel-group">
-				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Headings (h1–h6)</h3>
-					
-					<div class="panel__content space-y-2">
-						<h1 class="text-4xl font-bold"><code>&lt;h1&gt;</code> Primary Heading</h1>
-						<h2 class="text-3xl font-semibold"><code>&lt;h2&gt;</code> Secondary Heading</h2>
-						<h3 class="text-2xl font-semibold"><code>&lt;h3&gt;</code> Tertiary Heading</h3>
-						<h4 class="text-xl font-medium"><code>&lt;h4&gt;</code> Sub-heading Level 4</h4>
-						<h5 class="text-lg font-medium"><code>&lt;h5&gt;</code> Sub-heading Level 5</h5>
-						<h6 class="text-base font-medium"><code>&lt;h6&gt;</code> Sub-heading Level 6</h6>
+
+				<article
+					class="panel"
+					aria-labelledby="heading-panel-title"
+				>
+
+					<header class="panel__header">
+
+						<div class="prose">
+
+							<h3
+								class="prose__title"
+								id="heading-panel-title"
+							>
+								Headings
+							</h3>
+
+							<p class="prose__lead">
+								Heading elements establish document structure,
+								communicate section relationships and create
+								the outline used by readers and assistive
+								technologies.
+							</p>
+						</div>
+					</header>
+
+					<div class="panel__content">
+
+						<div class="prose">
+
+							<p class="prose__example">
+
+								<span class="prose__annotation">
+									<code>&lt;h1&gt;</code>
+								</span>
+
+								<span class="prose__content">
+									<span class="heading heading--level-1">
+										Primary Heading
+									</span>
+								</span>
+							</p>
+
+							<p class="prose__example">
+
+								<span class="prose__annotation">
+									<code>&lt;h2&gt;</code>
+								</span>
+
+								<span class="prose__content">
+									<span class="heading heading--level-2">
+										Section Heading
+									</span>
+								</span>
+							</p>
+
+							<p class="prose__example">
+
+								<span class="prose__annotation">
+									<code>&lt;h3&gt;</code>
+								</span>
+
+								<span class="prose__content">
+									<span class="heading heading--level-3">
+										Subsection Heading
+									</span>
+								</span>
+							</p>
+
+							<p class="prose__example">
+
+								<span class="prose__annotation">
+									<code>&lt;h4&gt;</code>
+								</span>
+								
+								<span class="prose__content">
+									<span class="heading heading--level-4">
+										Supporting Heading
+									</span>
+								</span>
+							</p>
+
+							<p class="prose__example">
+
+								<span class="prose__annotation">
+									<code>&lt;h5&gt;</code>
+								</span>
+
+								<span class="prose__content">
+									<span class="heading heading--level-5">
+										Minor Heading
+									</span>
+								</span>
+							</p>
+
+							<p class="prose__example">
+
+								<span class="prose__annotation">
+									<code>&lt;h6&gt;</code>
+								</span>
+
+								<span class="prose__content">
+									<span class="heading heading--level-6">
+										Lowest Heading
+									</span>
+								</span>
+							</p>
+
+						</div>
 					</div>
-					
 				</article>
+				
+				
+				
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
 				
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
 					<h3 class="panel__title">Phrasing & Text</h3>
@@ -146,6 +336,26 @@
 			
 		</section>
 		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<!-- Lists & Tables -->
 		<section class="region">
 			<h2 class="region__title">
