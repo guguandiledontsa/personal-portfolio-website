@@ -201,14 +201,8 @@
 				</article>
 
 
-
-
-
-
-
-
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Phrasing & Text</h3>
+					<h3 class="panel__title">Phrasing &amp; Text</h3>
 					<div class="panel__content space-y-4">
 						<p>This paragraph contains a standard <code>&lt;a&gt;</code> <a href="#"
 								class="text-blue-600 hover:underline font-medium">for links</a>.</p>
@@ -218,7 +212,7 @@
 						<p>Text can be <mark class="bg-sky-200 text-sky-800 px-1 rounded">highlighted</mark> with
 							<code>&lt;mark&gt;</code>, <del>deleted</del> <code>&lt;del&gt;</code>, <ins>inserted</ins>
 							<code>&lt;ins&gt;</code>, or <s>no longer accurate</s> <code>&lt;s&gt;</code>.</p>
-						<p>Subscript <code>&lt;sub&gt;</code> & Superscript <code>&lt;sup&gt;</code>: H<sub>2</sub>O and
+						<p>Subscript <code>&lt;sub&gt;</code> &amp; Superscript <code>&lt;sup&gt;</code>: H<sub>2</sub>O and
 							E = mc<sup>2</sup>.</p>
 						<p>Use <code>&lt;abbr&gt;</code> for abbreviations, like <abbr title="HyperText Markup Language"
 								class="cursor-help">HTML</abbr>, and <code>&lt;q&gt;</code> <q>for short inline
@@ -228,7 +222,7 @@
 					</div>
 				</article>
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Block-Level & Semantic Text</h3>
+					<h3 class="panel__title">Block-Level &amp; Semantic Text</h3>
 					<div class="panel__content">
 						<blockquote class="quote pull-quote">
 							<q class="quote__content">The world is a magnificent book, and those who do not travel read
@@ -253,7 +247,7 @@
 					</div>
 				</article>
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Line & Directional Text</h3>
+					<h3 class="panel__title">Line &amp; Directional Text</h3>
 					<div class="panel__content">
 
 						<p>This is the first line.<br>This is the second line after a <code>&lt;br&gt;</code> tag.</p>
@@ -294,28 +288,10 @@
 			</article>
 		</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		<!-- Lists & Tables -->
 		<section class="region">
 			<h2 class="region__title">
-				Lists & Tables
+				Lists &amp; Tables
 			</h2>
 			<div class="panel-group panel-group--lists-tables">
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
@@ -406,7 +382,7 @@
 		<!-- Forms & User Input -->
 		<section class="region">
 			<h2 class="region__title">
-				Forms & User Input (Extended)
+				Forms &amp; User Input (Extended)
 			</h2>
 
 			<div class="panel-group">
@@ -434,7 +410,7 @@
 							<div class="user-form__field">
 
 								<label for="password-in" class="annotation annotation--block">Password</label>
-								<input type="password" id="password-in" class="form-input">
+								<input type="password" id="password-in" class="form-input" autocomplete="new-password">
 							</div>
 
 							<div class="user-form__field">
@@ -467,7 +443,7 @@
 				</article>
 
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Choices & Selections</h3>
+					<h3 class="panel__title">Choices &amp; Selections</h3>
 
 					<div class="panel__content">
 
@@ -523,7 +499,7 @@
 							<div class="user-form__field">
 								<label for="ice-cream-choice" class="annotation annotation--block">Datalist
 									(Autocomplete)</label>
-								<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice"
+								<input type="search" list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice"
 									class="form-input">
 								<datalist id="ice-cream-flavors">
 									<option value="Chocolate"></option>
@@ -538,7 +514,7 @@
 				</article>
 
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Pickers, Ranges & Files</h3>
+					<h3 class="panel__title">Pickers, Ranges &amp; Files</h3>
 
 					<div class="panel__content">
 
@@ -585,7 +561,7 @@
 				</article>
 
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Buttons, Outputs & Hidden / Datetime Inputs</h3>
+					<h3 class="panel__title">Buttons, Outputs &amp; Hidden / Datetime Inputs</h3>
 
 					<div class="panel__content">
 
@@ -598,7 +574,7 @@
 							</div>
 
 							<div class="user-form__field">
-								<label for="dtlocal-in" class="annotation annotation--block">Date & Time (local)</label>
+								<label for="dtlocal-in" class="annotation annotation--block">Date &amp; Time (local)</label>
 								<input type="datetime-local" id="dtlocal-in" class="form-input">
 							</div>
 
@@ -628,8 +604,6 @@
 							<div class="user-form__control flex space-x-2 pt-2">
 								<button type="submit"
 									class="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
-								<input type="reset" value="Reset"
-									class="w-full p-2 bg-slate-200 text-slate-800 rounded-md cursor-pointer hover:bg-slate-300 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
 							</div>
 
 						</form>
@@ -644,12 +618,12 @@
 		<!-- Embedded & Interactive Content -->
 		<section class="region">
 			<h2 class="region__title">
-				Embedded & Interactive Content (Extended)
+				Embedded &amp; Interactive Content (Extended)
 			</h2>
 
 			<div class="panel-group">
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
-					<h3 class="panel__title">Images & Media</h3>
+					<h3 class="panel__title">Images &amp; Media</h3>
 
 					<div class="panel__content">
 
@@ -670,7 +644,7 @@
 							</map>
 						</figure>
 
-						<h4 class="font-semibold mt-4">Audio & Video</h4>
+						<h4 class="font-semibold mt-4">Audio &amp; Video</h4>
 
 						<audio controls class="audio-media">
 							<!-- src="https://www.w3schools.com/tags/horse.mp3" -->
@@ -694,7 +668,7 @@
 
 						<h4 class="annotation--iframe annotation"><code>&lt;iframe&gt;</code></h4>
 						<iframe src="https://example.com" title="Sample Iframe" class="external-content">
-							<p class="text-xs p-2 text-center">Iframe not available.</p>
+							Iframe not available.
 						</iframe>
 
 						<h4 class="annotation--object annotation"><code>&lt;object&gt;</code></h4>
@@ -705,7 +679,7 @@
 
 						<h4 class="annotation--embed annotation"><code>&lt;embed&gt;</code></h4>
 						<embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png"
-							class="external-content">
+							class="external-content" title="embed-content">
 
 					</div>
 
@@ -716,7 +690,7 @@
 
 					<div class="panel__content">
 						<details class="disclosure">
-							<summary class="disclosure__trigger cursor-pointer">Details & Summary with
+							<summary class="disclosure__trigger cursor-pointer">Details &amp; Summary with
 								<code>&lt;summary&gt;</code></summary>
 							<div class="disclosure__content">
 								<p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is
@@ -727,7 +701,7 @@
 						<hr class="my-4">
 
 						<h4 class="font-medium">Dialog</h4>
-						<button onclick="document.getElementById('modal-dialog').showModal()"
+						<button type="button" onclick="document.getElementById('modal-dialog').showModal()"
 							class="modal-dialog__trigger transition-colors mt-2 bg-slate-700 text-white hover:bg-slate-800 font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Click
 							to open a modal dialog</button>
 
@@ -736,7 +710,7 @@
 
 							<div class="modal-dialog__content">
 								<p class="mt-2">This is a modal <code>&lt;dialog&gt;</code> element.</p>
-								<button onclick="document.getElementById('modal-dialog').close()"
+								<button type="button" onclick="document.getElementById('modal-dialog').close()"
 									class="modal-dialog__trigger transition-colors mt-4 border hover:bg-slate-100">Close</button>
 							</div>
 
@@ -749,7 +723,7 @@
 				<article class="panel hover:-translate-y-1 transition-all duration-300">
 					<header>
 						<h3 class="panel__title">Slots</h3>
-						<h4 class="font-medium">Template & Slot Example</h4>
+						<h4 class="font-medium">Template &amp; Slot Example</h4>
 					</header>
 
 
@@ -763,7 +737,7 @@
 
 					<footer class="panel__actions">
 
-						<button id="showTpl"
+						<button type="button" id="showTpl"
 							class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show
 							Template</button>
 
@@ -801,11 +775,11 @@
 		<!-- Advanced & Miscellaneous -->
 		<section class="region">
 			<h2 class="region__title">
-				Advanced & Miscellaneous
+				Advanced &amp; Miscellaneous
 			</h2>
 
 			<article class="panel hover:-translate-y-1 transition-all duration-300">
-				<h3 class="panel__title">SVG & Canvas</h3>
+				<h3 class="panel__title">SVG &amp; Canvas</h3>
 
 				<div class="panel__content">
 
