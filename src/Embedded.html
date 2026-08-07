@@ -1,0 +1,193 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>typography</title>
+
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body class="page">
+    <header class="page__header">
+
+        <nav class="navigation" aria-label="navigation">
+            <div class="navigation__content">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="main.html" class="navigation__link">link to home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="page__content" id="main-content">
+        <!-- Embedded & Interactive Content -->
+        <section class="region">
+            <h2 class="region__title">
+                Embedded &amp; Interactive Content (Extended)
+            </h2>
+
+            <div class="panel-group">
+                <article class="panel hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="panel__title">Images &amp; Media</h3>
+
+                    <div class="panel__content">
+
+                        <figure class="figure">
+                            <figcaption class="figure__meta">A responsive <code>&lt;picture&gt;</code> element.
+                            </figcaption>
+
+                            <picture>
+                                <!-- https://placehold.co/400x200/60a5fa/ffffff?text=Mobile -->
+                                <source media="(max-width: 768px)" srcset="./src/assets/images/mobile-400x200.svg">
+                                <!-- src="https://placehold.co/800x200/2563eb/ffffff?text=Desktop -->
+                                <img src="./src/assets/images/desktop-800x200.svg" alt="Responsive image"
+                                    class="figure__picture" usemap="#image-map">
+                            </picture>
+
+                            <map name="image-map">
+                                <area shape="rect" coords="0,0,100,200" href="#" alt="Left Side">
+                            </map>
+                        </figure>
+
+                        <h4 class="font-semibold mt-4">Audio &amp; Video</h4>
+
+                        <audio controls class="audio-media">
+                            <!-- src="https://www.w3schools.com/tags/horse.mp3" -->
+                            <source src="./src/assets/audio/horse.mp3" type="audio/mpeg">
+                        </audio>
+
+                        <video controls class="video-media">
+                            <!-- src="https://www.w3schools.com/tags/movie.mp4" -->
+                            <source src="./src/assets/video/movie.mp4" type="video/mp4">
+                            <track kind="captions" srclang="en" src="captions_en.vtt" label="English">
+                        </video>
+
+                    </div>
+
+                </article>
+
+                <article class="panel hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="panel__title">External Content</h3>
+
+                    <div class="panel__content">
+
+                        <h4 class="annotation--iframe annotation"><code>&lt;iframe&gt;</code></h4>
+                        <iframe src="https://example.com" title="Sample Iframe" class="external-content">
+                            Iframe not available.
+                        </iframe>
+
+                        <h4 class="annotation--object annotation"><code>&lt;object&gt;</code></h4>
+                        <object data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            type="application/pdf" class="external-content">
+                            <p class="text-xs p-2 text-center">PDF preview not available.</p>
+                        </object>
+
+                        <h4 class="annotation--embed annotation"><code>&lt;embed&gt;</code></h4>
+                        <embed src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" type="image/png"
+                            class="external-content" title="embed-content">
+
+                    </div>
+
+                </article>
+
+                <article class="panel hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="panel__title">Interactive Elements</h3>
+
+                    <div class="panel__content">
+                        <details class="disclosure">
+                            <summary class="disclosure__trigger cursor-pointer">Details &amp; Summary with
+                                <code>&lt;summary&gt;</code>
+                            </summary>
+                            <div class="disclosure__content">
+                                <p class="mt-2 text-sm text-slate-600">This content is hidden until the summary is
+                                    clicked.</p>
+                            </div>
+                        </details>
+
+                        <hr class="my-4">
+
+                        <h4 class="font-medium">Dialog</h4>
+                        <button type="button" onclick="document.getElementById('modal-dialog').showModal()"
+                            class="modal-dialog__trigger transition-colors mt-2 bg-slate-700 text-white hover:bg-slate-800 font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Click
+                            to open a modal dialog</button>
+
+                        <dialog id="modal-dialog" class="modal-dialog backdrop:bg-black/50">
+                            <h3 class="modal-dialog__title text-lg font-bold">Modal Dialog</h3>
+
+                            <div class="modal-dialog__content">
+                                <p class="mt-2">This is a modal <code>&lt;dialog&gt;</code> element.</p>
+                                <button type="button" onclick="document.getElementById('modal-dialog').close()"
+                                    class="modal-dialog__trigger transition-colors mt-4 border hover:bg-slate-100">Close</button>
+                            </div>
+
+                        </dialog>
+
+                    </div>
+
+                </article>
+
+                <article class="panel hover:-translate-y-1 transition-all duration-300">
+                    <header>
+                        <h3 class="panel__title">Slots</h3>
+                        <h4 class="font-medium">Template &amp; Slot Example</h4>
+                    </header>
+
+
+                    <div class="panel__content">
+                        <p>The <code>&lt;template&gt;</code> content below is inert until activated.</p>
+                        <p>The <code>&lt;slot&gt;</code> element inside <code>&lt;template&gt;</code> is used in Web
+                            Components to mark insertion points.</p>
+
+                    </div>
+
+
+                    <footer class="panel__actions">
+
+                        <button type="button" id="showTpl"
+                            class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Show
+                            Template</button>
+
+                        <div id="tpl-host" class="mt-2 text-sm"></div>
+                        <template id="my-tpl" class="content-template">
+                            <div class="p-2 bg-green-100 border border-green-400 rounded">
+                                This is template content. Slotted area:
+                                <slot name="injected-slot">[default slot content]</slot>
+                            </div>
+                        </template>
+
+                        <script>
+                            document.getElementById('showTpl').addEventListener('click', () => {
+                                const tpl = document.getElementById('my-tpl');
+                                const clone = tpl.content.cloneNode(true);
+                                // Example of replacing a <slot> with actual slotted node
+                                const slotElement = clone.querySelector('slot');
+                                if (slotElement) {
+                                    const span = document.createElement('span');
+                                    span.textContent = "This content came via slot.";
+                                    slotElement.replaceWith(span);
+                                }
+                                document.getElementById('tpl-host').appendChild(clone);
+                            });
+                        </script>
+
+                    </footer>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+    </main>
+</body>
+
+</html>

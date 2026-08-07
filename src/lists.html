@@ -1,0 +1,124 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>typography</title>
+
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body class="page">
+    <header class="page__header">
+
+        <nav class="navigation" aria-label="navigation">
+            <div class="navigation__content">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="main.html" class="navigation__link">link to home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="page__content" id="main-content">
+        <!-- Lists & Tables -->
+        <section class="region">
+            <h2 class="region__title">
+                Lists &amp; Tables
+            </h2>
+            <div class="panel-group panel-group--lists-tables">
+                <article class="panel hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="panel__title">Lists (ul, ol, dl)</h3>
+
+                    <div class="panel__content card-group">
+                        <div class="card">
+                            <h4 class="font-semibold">Unordered List <code>&lt;ul&gt;</code></h4>
+                            <ul class="list list-disc space-y-1 ml-6 mt-2">
+                                <li>First item. <code>&lt;li&gt;</code></li>
+                                <li>Second item with a <a href="#" class="text-blue-600 hover:underline">nested link</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h4 class="font-semibold mt-4">Ordered List <code>&lt;ol&gt;</code></h4>
+                            <ol class="list list-decimal space-y-1 ml-6 mt-2">
+                                <li>First step. <code>&lt;li&gt;</code></li>
+                                <li>Second step</li>
+                            </ol>
+                        </div>
+
+                        <div class="card">
+
+                            <h4 class="font-semibold mt-4">Description List <code>&lt;dl&gt;</code></h4>
+                            <dl class="list mt-2">
+                                <dt class="list__term font-medium">Term One <code>&lt;dt&gt;</code></dt>
+                                <dd class="list__definition ml-4 italic text-sm text-slate-600">Definition of the first
+                                    term. <code>&lt;dd&gt;</code></dd>
+                            </dl>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="panel hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="panel__title">Table</h3>
+
+                    <div class="panel__content overflow-x-auto">
+                        <table class="data-table">
+                            <caption class="data-table__caption caption-bottom">Monthly Sales Summary</caption>
+
+                            <colgroup>
+                                <col span="1" class="bg-blue-50">
+                                <col span="2">
+                            </colgroup>
+
+                            <thead class="data-table__head">
+                                <tr>
+                                    <th class="data-table__cell data-table__cell--header">Product</th>
+                                    <th class="data-table__cell data-table__cell--header">Quantity</th>
+                                    <th class="data-table__cell data-table__cell--header">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="data-table__body">
+                                <tr>
+                                    <td class="data-table__cell data-table__cell--body font-medium text-slate-800">
+                                        Laptops</td>
+                                    <td class="data-table__cell data-table__cell--body">150</td>
+                                    <td class="data-table__cell data-table__cell--body">$150,000</td>
+                                </tr>
+                                <tr class="bg-slate-50">
+                                    <td class="data-table__cell data-table__cell--body font-medium text-slate-800">
+                                        Monitors</td>
+                                    <td class="data-table__cell data-table__cell--body">300</td>
+                                    <td class="data-table__cell data-table__cell--body">$75,000</td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="data-table__foot text-white">
+                                <tr>
+                                    <td class="data-table__cell data-table__cell--footer" colspan="2">Grand Total</td>
+                                    <td class="data-table__cell data-table__cell--footer">$225,000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>
