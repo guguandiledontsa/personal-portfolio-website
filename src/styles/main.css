@@ -46,27 +46,25 @@
     /* ------------------ */
     /* tailwind layout */
     --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --space-20: 5rem;
-    --space-24: 6rem;
-    --space-32: 8rem;
-    --space-40: 10rem;
-    --space-48: 12rem;
-    --space-56: 14rem;
-    --space-64: 16rem;
-    
+    --space-2: calc(var(--space-1) * 2);
+      --space-3: calc(var(--space-1) * 3);
+      --space-4: calc(var(--space-1) * 4);
+      --space-6: calc(var(--space-1) * 6);
+      --space-8: calc(var(--space-1) * 8);
+      --space-10: calc(var(--space-1) * 10);
+      --space-12: calc(var(--space-1) * 12);
+      --space-16: calc(var(--space-1) * 16);
+      --space-20: calc(var(--space-1) * 20);
+      --space-24: calc(var(--space-1) * 24);
+      --space-32: calc(var(--space-1) * 32);
+      --space-40: calc(var(--space-1) * 40);
+      --space-48: calc(var(--space-1) * 48);
+      --space-56: calc(var(--space-1) * 56);
+      --space-64: calc(var(--space-1) * 64);
     --space-sm-1: 1px;
-    --space-sm-2: 2px;
-    --space-sm-4: 4px;
-    --space-sm-8: 8px;
-    
+    --space-sm-2: var(--space-sm-1) * 2;
+      --space-sm-4: var(--space-sm-1) * 4;
+      --space-sm-8: var(--space-sm-1) * 8;
     --space-rnd-sm: 0.125rem;
     --space-rnd: var(--space-1);
     --space-rnd-md: 0.375rem;
@@ -268,15 +266,12 @@
     /* ------------------ */
     /* tailwind appearance */
     /* effects */
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-    
-    --list-nono: none;
-    --list-disc: disc;
-    --list-decimal: decimal;
+    --black: 0, 0, 0;
+      --shadow-md: 0 4px 6px -1px hsla(var(--black), 0.1), 0 2px 4px -1px hsla(var(--black), 0.06);
+      --shadow-lg: 0 10px 15px -3px hsla(var(--black), 0.1), 0 4px 6px -2px hsla(var(--black), 0.05);
+      --shadow-xl: 0 20px 25px -5px hsla(var(--black), 0.1), 0 10px 10px -5px hsla(var(--black), 0.04);
+      --shadow-2xl: 0 25px 50px -12px hsla(var(--black), 0.25);
+      --shadow-inner: inset 0 2px 4px 0 hsla(var(--black), 0.06);
     
   }
   
@@ -664,13 +659,11 @@
   /* mb-1 */
   .annotation {
     margin-block-end: var(--space-1);
-  }
   
-  /* mb-4 */
-  .annotation--embed {
-    margin-block-end: var(--space-4);
-  }
-  
+    /* mb-4 */
+      .annotation--embed {
+        margin-block-end: var(--space-4);
+    
   /* mb-4 */
   .annotation--object {
     margin-block-end: var(--space-4);
