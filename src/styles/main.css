@@ -165,6 +165,18 @@
   /* ------------------------------------------------------------ */
   /* .container-typography */
 
+  /* .page — promise: the reading voice of the whole document */
+  .page {
+    font: var(--font-normal) var(--text-base-val) var(--font-body);
+  }
+
+  /* .notice — promise: an out-of-band interruption, spoken once, quietly */
+  .notice {
+    & .notice__message {
+      font: var(--font-medium) var(--text-sm) var(--font-body);
+    }
+  }
+
   /* ------------------------------------------------------------ */
   /* .container-columns */
 
@@ -190,6 +202,32 @@
 
   /* ------------------------------------------------------------ */
   /* .container-style */
+
+  /* .page — promise: the paper the document is set on */
+  .page {
+    background-color: var(--gray-50);
+    color: var(--slate-800);
+  }
+
+  /* .notice — promise: a calm surface that still gets noticed */
+  .notice {
+    background-color: var(--slate-100);
+    border: var(--space-px-1) solid var(--slate-300);
+    border-radius: var(--radius-lg);
+
+    & .notice__message {
+      color: var(--slate-700);
+    }
+  }
+
+  /* .notice--warning — promise: the severity of what couldn't load */
+  .notice--warning {
+    border-color: var(--orange-500);
+
+    & .notice__message {
+      color: var(--slate-800);
+    }
+  }
 }
 
 @layer layouts {
@@ -209,6 +247,12 @@
   /* ------------------------------------------------------------ */
   /* .container-layout */
 
+  /* .notice — promise: its message reads as one centered unit */
+  .notice {
+    display: flex;
+    justify-content: center;
+  }
+
   /* ------------------------------------------------------------ */
   /* .container-contain */
 
@@ -221,6 +265,30 @@
   /* ------------------------------------------------------------ */
   /* .container-spacing */
 
+  /* .page — promise: the page decides where its regions breathe,
+     blocks never carry their own margins */
+  .page {
+    & .page__notice {
+      margin: var(--space-4);
+    }
+  }
+
+  /* .notice — promise: comfortable on every edge */
+  .notice {
+    padding-block: var(--space-3);
+
+    & .notice__content {
+      padding-inline: var(--space-4);
+    }
+  }
+
   /* ------------------------------------------------------------ */
   /* .container-sizing */
+
+  /* .notice — promise: a note, not a billboard */
+  .notice {
+    & .notice__content {
+      max-inline-size: var(--max-w-md);
+    }
+  }
 }
