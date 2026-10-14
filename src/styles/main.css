@@ -1,5 +1,7 @@
 /*  main.css */
 /* ---------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap");
+
 
 @layer variables {
   :root {
@@ -129,8 +131,6 @@
     --pink-500: hsla(330, 60%, 50%, 1);
   }
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap");
 
 @layer typographies {
   :root {
