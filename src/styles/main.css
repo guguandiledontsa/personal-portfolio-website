@@ -146,8 +146,25 @@
   /* ------------------------------------------------------------ */
   /* .container-typography */
 
-  /* .page — promise: the reading voice of the whole document */
-  .page {
+  /* .banner — promise: a quiet nameplate voice; the name carries the weight */
+  .banner {
+    font: var(--font-normal) var(--text-sm) var(--font-body);
+
+    & .banner__wordmark {
+      font: var(--font-bold) var(--text-lg) var(--font-body);
+      letter-spacing: -0.02em;
+    }
+  }
+
+  /* .colophon — promise: the closing voice, quieter than the name */
+  .colophon {
+    & .colophon__wordmark {
+      font: var(--font-semibold) var(--text-lg) var(--font-body);
+    }
+  }
+
+  /* .site — promise: the reading voice of the whole work */
+  .site {
     font: var(--font-normal) var(--text-base-val) var(--font-body);
   }
 
@@ -184,8 +201,31 @@
   /* ------------------------------------------------------------ */
   /* .container-style */
 
-  /* .page — promise: the paper the document is set on */
-  .page {
+  /* .banner — promise: blends with the paper; ink carried by the name */
+  .banner {
+    background-color: var(--gray-50);
+
+    & .banner__wordmark {
+      color: var(--slate-900);
+    }
+
+    & .banner__tagline {
+      color: var(--slate-500);
+    }
+  }
+
+  /* .colophon — promise: a ruled-off closing strip */
+  .colophon {
+    background-color: var(--gray-50);
+    border-block-start: var(--space-px-1) solid var(--slate-300);
+
+    & .colophon__wordmark {
+      color: var(--slate-900);
+    }
+  }
+
+  /* .site — promise: the paper the work is set on */
+  .site {
     background-color: var(--gray-50);
     color: var(--slate-800);
   }
@@ -224,6 +264,27 @@
   /* ------------------------------------------------------------ */
   /* .container-layout */
 
+  /* .banner — promise: nameplate centered (title-page habit); stays put on scroll */
+  .banner {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+
+    & .banner__identity {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  /* .colophon — promise: a closing strip, contents centered */
+  .colophon {
+    display: flex;
+    justify-content: center;
+  }
+
   /* .notice — promise: its message reads as one centered unit */
   .notice {
     display: flex;
@@ -242,10 +303,23 @@
   /* ------------------------------------------------------------ */
   /* .container-spacing */
 
-  /* .page — promise: the page decides where its regions breathe,
-     blocks never carry their own margins */
-  .page {
-    & .page__notice {
+  /* .banner — promise: one calm strip */
+  .banner {
+    padding-block: calc(var(--space-base) * 4);
+
+    & .banner__identity {
+      gap: var(--space-1);
+    }
+  }
+
+  /* .colophon — promise: room to end on */
+  .colophon {
+    padding-block: calc(var(--space-base) * 12);
+  }
+
+  /* .site — promise: the site places its regions; blocks never carry their own margins */
+  .site {
+    & .site__notice {
       margin: calc(var(--space-base) * 4);
     }
   }

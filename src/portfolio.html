@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
 
 	<meta charset="UTF-8">
@@ -13,11 +14,14 @@
 
 </head>
 
-<body class="page">
+<!-- .site — the shared ground every page of this work stands on: paper, ink, reading voice.
+     Scope-named, not medium-named: survives multi-page and endless scroll. -->
+
+<body class="site">
 
 	<noscript>
 
-		<section class="notice notice--warning page__notice">
+		<section class="notice notice--warning site__notice">
 
 			<div class="notice__content">
 
@@ -31,7 +35,150 @@
 
 	</noscript>
 
-
+	<!-- banner: ARIA's name for the top landmark (print cousins: running head, masthead) · promise: identity + orientation
+			     anatomy note: banner IS the document's header, so its parts sit flat — no __header inside it -->
+	<header class="banner">
+	
+		<!-- identity zone: name + tagline (a newspaper nameplate carries both) · aria-label names the zone for assistive tech -->
+		<section class="banner__identity" aria-label="Site identity">
+	
+			<!-- wordmark: the name set as type (a logo is drawn; this is type) -->
+			<a href="#" class="banner__wordmark">superpower</a>
+	
+			<p class="banner__tagline">A BEM portfolio project</p>
+	
+		</section>
+	
+		<!-- navigation: tier-1 proper name (the ARIA role is literally "navigation") ·
+				     mixed into the banner — navigation owns its parts, banner owns its placement -->
+		<nav class="navigation banner__nav" aria-label="Primary">
+	
+			<ul class="navigation__menu">
+	
+				<li class="navigation__item">
+	
+					<a href="#" class="navigation__link">what we test</a>
+	
+				</li>
+	
+				<li class="navigation__item">
+	
+					<a href="#" class="navigation__link">FAQs</a>
+	
+				</li>
+	
+				<li class="navigation__item">
+	
+					<a href="#" class="navigation__link">for employers</a>
+	
+				</li>
+	
+				<li class="navigation__item">
+	
+					<a href="#" class="navigation__link">reviews</a>
+	
+				</li>
+			</ul>
+	
+		</nav>
+	
+	
+	
+		<nav class="navigation banner__nav actions__signing-in">
+	
+			<ul class="navigation__menu">
+	
+				<li class="navigation__item">
+	
+					<a href="#" class="navigation__link">log in </a>
+					
+					</li>
+					
+					<li class="navigation__item">
+					
+						<a href="#" class="navigation__link">become a member</a>
+					
+					</li>
+					</ul>
+					</nav>
+					</header>
+					
+					<!-- main: ARIA landmark · book term: body matter -->
+					<main class="site__main">
+					
+						<!-- hero — the opening statement (book cousin: frontispiece)
+								     anatomy: __header speaks (status · headline · deck) · __content acts (buttons · vitals) -->
+						<section class="hero site__hero">
+					
+							<header class="hero__header">
+					
+								<div class="prose">
+					
+									<!-- status: the vouching line above the headline -->
+									<p class="prose__status">HSA/ FSA eligible</p>
+					
+									<!-- headline: the big line (newspaper term) -->
+									<h1 class="prose__headline">Your new health membership</h1>
+					
+									<!-- deck: the small line under a headline (print term, aka standfirst) -->
+									<p class="prose__deck">Members get 150+ lab tests across 2 blood draws. $199 per year.</p>
+					
+								</div>
+					
+							</header>
+					
+							<div class="hero__content">
+					
+								<!-- actions: owns the gap between buttons; each button owns itself -->
+								<div class="actions">
+					
+									<button type="button" class="button button--primary">become a member</button>
+					
+									<button type="button" class="button button--ghost">see what we test</button>
+					
+								</div>
+					
+								<!-- vitals: the floor strip of quantified claims · each pair is a stat on a dl
+										     (description list: term + description — the HTML made for name/value pairs) -->
+								<div class="hero__vitals">
+					
+									<dl class="stat">
+					
+										<dt class="stat__label">Whole body check</dt>
+					
+										<dd class="stat__value">Detect 1,000+ conditions</dd>
+					
+									</dl>
+					
+									<dl class="stat">
+					
+										<dt class="stat__label">Accessible</dt>
+					
+										<dd class="stat__value">Starts at $199/year</dd>
+					
+									</dl>
+					
+									<dl class="stat">
+					
+										<dt class="stat__label">Trusted</dt>
+					
+										<dd class="stat__value">6M+ biomarkers analyzed</dd>
+					
+									</dl>
+					
+								</div>
+					
+							</div>
+					
+						</section>
+					
+					</main>
+					
+					<!-- colophon: book term for the end-of-work block (credits, legal) · also carries the index duty -->
+					<footer class="colophon">
+					
+					</footer>
 
 </body>
+
 </html>
