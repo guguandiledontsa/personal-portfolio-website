@@ -153,9 +153,26 @@
     & .banner__wordmark {
       font: var(--font-bold) var(--text-lg) var(--font-body);
       letter-spacing: -0.02em;
+      text-decoration: none;
     }
+    
+    & .banner__login {
+      text-decoration: none;
+      color: black;
+    }
+    
+      & .button--primary {
+        background-color: black;
+        color: white;
+      }
   }
   
+  .navigation {
+    & .navigation__link {
+      text-decoration: none;
+      color: black;
+    }
+  }
   /* .site — promise: the reading voice of the whole work */
   .site {
     font: var(--font-normal) var(--text-base-val) var(--font-body);
@@ -167,6 +184,8 @@
       font: var(--font-medium) var(--text-sm) var(--font-body);
     }
   }
+  
+  
   
   /* ------------------------------------------------------------ */
   /* .container-columns */
@@ -220,6 +239,13 @@
     border-radius: calc(var(--radius-base) * 6);
   }
   
+  .banner__actions {
+    & .button--primary {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+    }
+  }
   
   .checkmark {
     &::before {
@@ -233,7 +259,6 @@
     
     border-radius: var(--radius-full);
   }
-  
   
   .button--primary {
     background-color: white;
@@ -333,7 +358,9 @@
   }
   
   .navigation__menu {
+    display: flex;
     
+    gap: calc(var(--space-base) * 4)
   }
   
   .hero__vitals {
