@@ -231,7 +231,7 @@
   
   .hero {
     color: var(--gray-50);
-    background-image: url("/src/assets/videoframe_2234.png");
+    background: #000 url("/src/assets/videoframe_2234.png") no-repeat center/cover;
     
     border-radius: calc(var(--radius-base) * 6);
   }
@@ -437,7 +437,6 @@
   }
   
   .hero {
-    block-size: calc(var(--container-base) + var(--space-base) * 16 * 5);
-    max-inline-size: calc(var(--container-base) + var(--space-base) * 16 * 10);
+    background-size: auto;
   }
 }
