@@ -1,171 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-	
-	<meta charset="UTF-8">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<title>My BEM portfolio project</title>
-	
-	<link rel="stylesheet" href="styles/main.css">
-	
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- .site — the shared ground every page of this work stands on: paper, ink, reading voice.
+    <title>My BEM portfolio project</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+
+  <!-- .site — the shared ground every page of this work stands on: paper, ink, reading voice.
      Scope-named, not medium-named: survives multi-page and endless scroll. -->
 
-<body class="site">
-	<noscript>
-	
-		<section class="notice notice--warning site__notice">
-			
-			<div class="notice__content">
-				
-				<p class="notice__message">
-					JavaScript is disabled. Interactive demonstrations will not be available.
-				</p>
-				
-			</div>
-			
-		</section>
-		
-	</noscript>
-	
-	<!-- banner: ARIA's name for the top landmark (print cousins: running head, masthead) · promise: identity + orientation
-	     anatomy note: banner IS the document's header, so its parts sit flat — no __header inside it -->
-	<header class="banner">
-		
-		<!-- navigation: tier-1 proper name (the ARIA role is literally "navigation") ·
-		     mixed into the banner — navigation owns its parts, banner owns its placement -->
-		<nav class="navigation banner__nav" aria-label="Primary">
-			
-			<ul class="navigation__menu">
-				<li class="navigation__item">
-					<a href="#" class="navigation__link">What we test</a>
-				</li>
-				
-				<li class="navigation__item">
-					<a href="#" class="navigation__link">Reviews</a>
-				</li>
-				
-				<li class="navigation__item">
-					<a href="#" class="navigation__link">FAQs</a>
-				</li>
-				
-				<li class="navigation__item">
-					<a href="#" class="navigation__link">For Employers</a>
-				</li>
-			</ul>
-		</nav>
-		
-		<!-- identity zone: name + tagline (a newspaper nameplate carries both) · aria-label names the zone for assistive tech -->
-		<section class="banner__identity" aria-label="Site identity">
-			<!-- wordmark: the name set as type (a logo is drawn; this is type) -->
-			<a href="#" class="banner__wordmark">superpower</a>
-		</section>
-		
-		<!-- account zone: the reader's doorway + the conversion door -->
-		<div class="banner__account">
-			<div class="banner__actions">
-				<a href="#" class="banner__login">Log in</a>
-				<a href="#" class="button button--primary">Become a member</a>
-			</div>
-			
-			<!-- App launcher icon button -->
-			<button type="button" class="button button--icon" aria-label="More options">
-				<svg class="icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-					<!-- Grid dots paths or circles -->
-					<circle cx="2" cy="2" r="1.5" fill="currentColor" />
-					<circle cx="8" cy="2" r="1.5" fill="currentColor" />
-					<circle cx="14" cy="2" r="1.5" fill="currentColor" />
-					
-					<circle cx="14" cy="8" r="1.5" fill="currentColor" />
-					<circle cx="8" cy="8" r="1.5" fill="currentColor" />
-					<circle cx="2" cy="8" r="1.5" fill="currentColor" />
-					
-					<circle cx="2" cy="14" r="1.5" fill="currentColor" />
-					<circle cx="8" cy="14" r="1.5" fill="currentColor" />
-					<circle cx="14" cy="14" r="1.5" fill="currentColor" />
-					<!-- (remaining rows) -->
-				</svg>
-			</button>
-		</div>
-	</header>
-	
-	<!-- main: ARIA landmark · book term: body matter -->
-	<main class="site__main">
-		
-		<!-- hero — the opening statement (book cousin: frontispiece)
-								     anatomy: __header speaks (status · headline · deck) · __content acts (buttons · vitals) -->
-		<section class="hero site__hero">
-			
-			<header class="hero__header">
-				
-				<div class="prose">
-					
-					<!-- status: the vouching line above the headline -->
-					<p class="prose__status checkmark">HSA/ FSA eligible</p>
-					
-					<!-- headline: the big line (newspaper term) -->
-					<h1 class="prose__headline">Your new health membership</h1>
-					
-					<!-- deck: the small line under a headline (print term, aka standfirst) -->
-					<p class="prose__deck">Members get 150+ lab tests across 2 blood draws. $199 per year.</p>
-					
-				</div>
-				
-				<!-- actions: owns the gap between buttons; each button owns itself -->
-				<div class="actions">
-					
-					<button type="button" class="button button--primary">Become a member</button>
-					
-					<button type="button" class="button button--ghost">See what we test</button>
-					
-				</div>
-				
-			</header>
-			
-			<div class="hero__content">
-				
-				<!-- vitals: the floor strip of quantified claims · each pair is a stat on a dl
-										     (description list: term + description — the HTML made for name/value pairs) -->
-				<div class="hero__vitals">
-					
-					<dl class="stat">
-						
-						<dt class="stat__label">Whole body check</dt>
-						
-						<dd class="stat__value">Detect 1,000+ conditions</dd>
-						
-					</dl>
-					
-					<dl class="stat">
-						
-						<dt class="stat__label">Accessible</dt>
-						
-						<dd class="stat__value">Starts at $199/year</dd>
-						
-					</dl>
-					
-					<dl class="stat">
-						
-						<dt class="stat__label">Trusted</dt>
-						
-						<dd class="stat__value">6M+ biomarkers analyzed</dd>
-						
-					</dl>
-					
-				</div>
-				
-			</div>
-			
-		</section>
-		
-	</main>
-	
-</body>
+  <body class="site">
+    <noscript>
+      <section class="notice notice--warning site__notice">
+        <div class="notice__content">
+          <p class="notice__message">
+            JavaScript is disabled. Interactive demonstrations will not be
+            available.
+          </p>
+        </div>
+      </section>
+    </noscript>
 
+    <!-- banner: ARIA's name for the top landmark (print cousins: running head, masthead) · promise: identity + orientation
+	     anatomy note: banner IS the document's header, so its parts sit flat — no __header inside it -->
+    <header class="banner">
+      <!-- navigation: tier-1 proper name (the ARIA role is literally "navigation") ·
+		     mixed into the banner — navigation owns its parts, banner owns its placement -->
+      <nav class="navigation banner__nav" aria-label="Primary">
+        <ul class="navigation__menu">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">What we test</a>
+          </li>
+
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Reviews</a>
+          </li>
+
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">FAQs</a>
+          </li>
+
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">For Employers</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- identity zone: name + tagline (a newspaper nameplate carries both) · aria-label names the zone for assistive tech -->
+      <section class="banner__identity" aria-label="Site identity">
+        <!-- wordmark: the name set as type (a logo is drawn; this is type) -->
+        <a href="#" class="banner__wordmark">superpower</a>
+      </section>
+
+      <!-- account zone: the reader's doorway + the conversion door -->
+      <div class="banner__account">
+        <div class="banner__actions">
+          <a href="#" class="banner__login">Log in</a>
+          <a href="#" class="button button--primary">Become a member</a>
+        </div>
+
+        <!-- App launcher icon button -->
+        <button
+          type="button"
+          class="button button--icon"
+          aria-label="More options"
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+            aria-hidden="true"
+          >
+            <!-- Grid dots paths or circles -->
+            <circle cx="2" cy="2" r="1.5" fill="currentColor" />
+            <circle cx="8" cy="2" r="1.5" fill="currentColor" />
+            <circle cx="14" cy="2" r="1.5" fill="currentColor" />
+
+            <circle cx="14" cy="8" r="1.5" fill="currentColor" />
+            <circle cx="8" cy="8" r="1.5" fill="currentColor" />
+            <circle cx="2" cy="8" r="1.5" fill="currentColor" />
+
+            <circle cx="2" cy="14" r="1.5" fill="currentColor" />
+            <circle cx="8" cy="14" r="1.5" fill="currentColor" />
+            <circle cx="14" cy="14" r="1.5" fill="currentColor" />
+            <!-- (remaining rows) -->
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- main: ARIA landmark · book term: body matter -->
+    <main class="site__main">
+      <!-- hero — the opening statement (book cousin: frontispiece)
+								     anatomy: __header speaks (status · headline · deck) · __content acts (buttons · vitals) -->
+      <section class="hero site__hero">
+        <header class="hero__header">
+          <div class="prose">
+            <!-- status: the vouching line above the headline -->
+            <p class="prose__status checkmark">HSA/ FSA eligible</p>
+
+            <!-- headline: the big line (newspaper term) -->
+            <h1 class="prose__headline">Your new health membership</h1>
+
+            <!-- deck: the small line under a headline (print term, aka standfirst) -->
+            <p class="prose__deck">
+              Members get 150+ lab tests across 2 blood draws. $199 per year.
+            </p>
+          </div>
+
+          <!-- actions: owns the gap between buttons; each button owns itself -->
+          <div class="actions">
+            <button type="button" class="button button--primary">
+              Become a member
+            </button>
+
+            <button type="button" class="button button--ghost">
+              See what we test
+            </button>
+          </div>
+        </header>
+
+        <div class="hero__content">
+          <!-- vitals: the floor strip of quantified claims · each pair is a stat on a dl
+										     (description list: term + description — the HTML made for name/value pairs) -->
+          <div class="hero__vitals">
+            <dl class="stat">
+              <dt class="stat__label">Whole body check</dt>
+
+              <dd class="stat__value">Detect 1,000+ conditions</dd>
+            </dl>
+
+            <dl class="stat">
+              <dt class="stat__label">Accessible</dt>
+
+              <dd class="stat__value">Starts at $199/year</dd>
+            </dl>
+
+            <dl class="stat">
+              <dt class="stat__label">Trusted</dt>
+
+              <dd class="stat__value">6M+ biomarkers analyzed</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
