@@ -238,7 +238,7 @@
 
   .hero {
     color: var(--gray-50);
-    background: #000 url("/src/assets/videoframe_2234.png") no-repeat
+    background: #000 url("../assets/videoframe_2234.png") no-repeat
       center/cover;
 
     border-radius: calc(var(--radius-base) * 6);
