@@ -1,5 +1,4 @@
 /*  main.css */
-/* ---------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap");
 
 @layer variables {
@@ -267,7 +266,7 @@
 }
 
 @layer typographies {
-  /* --------------------.container-typography----------------------- */
+  /* ---------------.container-typography--------------- */
   .prose {
     & .prose__headline {
       font: calc(var(--font-thin) * 8) var(--text-3xl) var(--font-heading);
@@ -314,9 +313,8 @@
     }
   }
 
-  /* -----------------------------.container-columns------------------------------- */
-
-  /* --------------------------.container-fonts---------------------------------- */
+  /* ---------------.container-columns--------------- */
+  /* ----------------.container-fonts---------------- */
 }
 
 @layer appearances {
@@ -334,10 +332,7 @@
     --shadow-2xl: 0 25px 50px -12px hsla(var(--black-channel), 0.25);
     --shadow-inner: inset 0 2px 4px 0 hsla(var(--black-channel), 0.06);
   }
-
-  /* ------------------------------------------------------------ */
-  /* .container-style */
-
+  /* ---------.container-style------------- */
   /* .site-header — promise: blends with the paper; ink carried by the name */
   .site-header {
     background-color: var(--gray-50);
@@ -440,10 +435,7 @@
     --grid-cols-1: repeat(1, minmax(0, 1fr));
     --grid-cols-2: repeat(2, minmax(0, 1fr));
   }
-
-  /* ------------------------------------------------------------ */
-  /* .container-layout */
-
+  /* ------------.container-layout------------ */
   /* .site-header — promise: nameplate centered (title-page habit); stays put on scroll */
   .site-header {
     position: sticky;
@@ -464,13 +456,8 @@
     display: flex;
     justify-content: center;
   }
-
-  /* ------------------------------------------------------------ */
-  /* .container-contain */
-
-  /* ------------------------------------------------------------ */
-  /* .container-flex */
-
+  /* -------------.container-contain----------- */
+  /* -------------.container-flex------------- */
   .site-header {
     /* 4. Direct child 3: Account zone lives in Column 3 */
     & .site-header__account {
@@ -491,10 +478,7 @@
   .hero__vitals {
     display: flex;
   }
-
-  /* ------------------------------------------------------------ */
-  /* .container-grid */
-
+  /* ---------------.container-grid-------------- */
   .site-header {
     /* 1. Establish the 3-column grid container */
     display: grid;
@@ -512,10 +496,7 @@
       justify-self: center;
     }
   }
-
-  /* ------------------------------------------- */
-  /* .container-spacing */
-
+  /* -------------.container-spacing----------------- */
   /* .site-header — promise: one calm strip */
   .site-header {
     padding-block: calc(var(--space-base) * 4);
@@ -556,10 +537,7 @@
       padding-inline: calc(var(--space-base) * 4);
     }
   }
-
-  /* ------------------------------------------- */
-  /* .container-sizing */
-
+  /* ---------------.container-sizing------------------ */
   /* .notice — promise: a note, not a billboard */
   .notice {
     & .notice__content {
