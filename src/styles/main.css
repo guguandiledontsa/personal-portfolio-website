@@ -274,17 +274,17 @@
     }
   }
 
-  /* .banner — promise: a quiet nameplate voice; the name carries the weight */
-  .banner {
+  /* .site-header — promise: a quiet nameplate voice; the name carries the weight */
+  .site-header {
     font: calc(var(--font-thin) * 4) var(--text-sm) var(--font-body);
 
-    & .banner__wordmark {
+    & .site-header__wordmark {
       font: calc(var(--font-thin) * 7) var(--text-lg) var(--font-body);
       letter-spacing: -0.02em;
       text-decoration: none;
     }
 
-    & .banner__login {
+    & .site-header__login {
       text-decoration: none;
       color: black;
     }
@@ -338,15 +338,15 @@
   /* ------------------------------------------------------------ */
   /* .container-style */
 
-  /* .banner — promise: blends with the paper; ink carried by the name */
-  .banner {
+  /* .site-header — promise: blends with the paper; ink carried by the name */
+  .site-header {
     background-color: var(--gray-50);
 
-    & .banner__wordmark {
+    & .site-header__wordmark {
       color: var(--slate-900);
     }
 
-    & .banner__tagline {
+    & .site-header__tagline {
       color: var(--slate-500);
     }
   }
@@ -368,7 +368,7 @@
     border-radius: calc(var(--radius-base) * 6);
   }
 
-  .banner__actions {
+  .site-header__actions {
     & .button--primary {
       background-color: black;
       color: white;
@@ -444,15 +444,15 @@
   /* ------------------------------------------------------------ */
   /* .container-layout */
 
-  /* .banner — promise: nameplate centered (title-page habit); stays put on scroll */
-  .banner {
+  /* .site-header — promise: nameplate centered (title-page habit); stays put on scroll */
+  .site-header {
     position: sticky;
     inset-block-start: 0;
     z-index: 10;
     display: flex;
     justify-content: center;
 
-    & .banner__identity {
+    & .site-header__identity {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -471,9 +471,9 @@
   /* ------------------------------------------------------------ */
   /* .container-flex */
 
-  .banner {
+  .site-header {
     /* 4. Direct child 3: Account zone lives in Column 3 */
-    & .banner__account {
+    & .site-header__account {
       justify-self: end;
       display: flex;
       align-items: center;
@@ -495,7 +495,7 @@
   /* ------------------------------------------------------------ */
   /* .container-grid */
 
-  .banner {
+  .site-header {
     /* 1. Establish the 3-column grid container */
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -503,12 +503,12 @@
     /* Vertical alignment across all tracks */
 
     /* 2. Direct child 1: Navigation lives in Column 1 */
-    & .banner__nav {
+    & .site-header__navigation {
       justify-self: start;
     }
 
     /* 3. Direct child 2: Identity lives in Column 2 (Center) */
-    & .banner__identity {
+    & .site-header__identity {
       justify-self: center;
     }
   }
@@ -516,11 +516,11 @@
   /* ------------------------------------------- */
   /* .container-spacing */
 
-  /* .banner — promise: one calm strip */
-  .banner {
+  /* .site-header — promise: one calm strip */
+  .site-header {
     padding-block: calc(var(--space-base) * 4);
 
-    & .banner__identity {
+    & .site-header__identity {
       gap: var(--space-1);
     }
   }

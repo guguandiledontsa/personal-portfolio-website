@@ -27,41 +27,66 @@
     </section>
   </noscript>
 
-  <!-- banner: ARIA's name for the top landmark (print cousins: running head, masthead) · promise: identity + orientation
-	     anatomy note: banner IS the document's header, so its parts sit flat — no __header inside it -->
-  <header class="banner">
-    <!-- navigation: tier-1 proper name (the ARIA role is literally "navigation") ·
-		     mixed into the banner — navigation owns its parts, banner owns its placement -->
-    <nav class="navigation banner__nav" aria-label="Primary">
+  <!--
+    SITE HEADER
+    Semantic element: <header>
+    Landmark: site-header (when used as the page-level header)
+  
+    Purpose:
+    Establishes site identity and provides primary orientation.
+  -->
+
+  <header class="site-header">
+
+    <!--
+      PRIMARY NAVIGATION
+      Independent block: navigation
+      Site-header relationship: site-header__navigation
+  
+      The navigation owns its internal structure.
+      The site header owns its placement within the page header.
+    -->
+
+    <nav class="navigation site-header__navigation" aria-label="Primary">
       <ul class="navigation__menu">
+
         <li class="navigation__item">
-          <a href="#" class="navigation__link">What we test</a>
+          <a href="#" class="navigation__link">
+            What we test
+          </a>
         </li>
 
         <li class="navigation__item">
-          <a href="#" class="navigation__link">Reviews</a>
+          <a href="#" class="navigation__link">
+            Reviews
+          </a>
         </li>
 
         <li class="navigation__item">
-          <a href="#" class="navigation__link">FAQs</a>
+          <a href="#" class="navigation__link">
+            FAQs
+          </a>
         </li>
 
         <li class="navigation__item">
-          <a href="#" class="navigation__link">For Employers</a>
+          <a href="#" class="navigation__link">
+            For Employers
+          </a>
         </li>
+
       </ul>
     </nav>
 
     <!-- identity zone: name + tagline (a newspaper nameplate carries both) · aria-label names the zone for assistive tech -->
-    <section class="banner__identity" aria-label="Site identity">
+    <section class="site-header__identity" aria-label="Site identity">
       <!-- wordmark: the name set as type (a logo is drawn; this is type) -->
-      <a href="#" class="banner__wordmark">superpower</a>
+      <a href="#" class="site-header__wordmark">superpower</a>
     </section>
 
     <!-- account zone: the reader's doorway + the conversion door -->
-    <div class="banner__account">
-      <div class="banner__actions">
-        <a href="#" class="banner__login">Log in</a>
+    <div class="site-header__account">
+      <div class="site-header__actions">
+        <a href="#" class="site-header__login">Log in</a>
         <a href="#" class="button button--primary">Become a member</a>
       </div>
 
