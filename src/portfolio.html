@@ -77,11 +77,47 @@
       </ul>
     </nav>
 
-    <!-- identity zone: name + tagline (a newspaper nameplate carries both) · aria-label names the zone for assistive tech -->
-    <section class="site-header__identity" aria-label="Site identity">
-      <!-- wordmark: the name set as type (a logo is drawn; this is type) -->
-      <a href="#" class="site-header__wordmark">superpower</a>
-    </section>
+<!--
+  SITE IDENTITY
+  Header relationship: site-header__identity
+  Independent block: site-identity
+
+  Responsibility:
+  Identifies the website or organization.
+  The header controls where this region sits;
+  site-identity owns the identity content.
+
+  FUTURE STRUCTURE — conceptual only:
+
+  site-identity
+  └── site-identity__link
+      ├── site-identity__symbol
+      └── site-identity__wordmark
+
+  site-identity__tagline
+
+  Possible future additions:
+  - logo / symbol
+  - wordmark
+  - tagline
+  - home-link behavior
+  - alternate compact identity for responsive layouts
+-->
+
+<section class="site-header__identity">
+  <div class="site-identity">
+    <a class="site-identity__link" href="/" aria-label="Superpower home">
+      <span class="site-identity__wordmark">Superpower</span>
+    </a>
+
+    <!-- Optional brand descriptor; not currently shown in the reference. -->
+    <!--
+    <p class="site-identity__tagline">
+      Your health, understood.
+    </p>
+    -->
+  </div>
+</section>
 
     <!-- account zone: the reader's doorway + the conversion door -->
     <div class="site-header__account">
