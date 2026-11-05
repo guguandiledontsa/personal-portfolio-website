@@ -4,11 +4,11 @@
 
 <head>
   <meta charset="UTF-8">
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <title>My BEM portfolio project</title>
-
+  
   <link rel="stylesheet" href="styles/main.css">
 </head>
 
@@ -26,7 +26,7 @@
       </div>
     </section>
   </noscript>
-
+  
   <!--
     SITE HEADER
     Semantic element: <header>
@@ -35,9 +35,9 @@
     Purpose:
     Establishes site identity and provides primary orientation.
   -->
-
+  
   <header class="site-header">
-
+    
     <!--
       PRIMARY NAVIGATION
       Independent block: navigation
@@ -46,50 +46,86 @@
       The navigation owns its internal structure.
       The site header owns its placement within the page header.
     -->
-
+    
     <nav class="navigation site-header__navigation" aria-label="Primary">
       <ul class="navigation__menu">
-
+        
         <li class="navigation__item">
           <a href="#" class="navigation__link">
             What we test
           </a>
         </li>
-
+        
         <li class="navigation__item">
           <a href="#" class="navigation__link">
             Reviews
           </a>
         </li>
-
+        
         <li class="navigation__item">
           <a href="#" class="navigation__link">
             FAQs
           </a>
         </li>
-
+        
         <li class="navigation__item">
           <a href="#" class="navigation__link">
             For Employers
           </a>
         </li>
-
+        
       </ul>
     </nav>
+    
+    <!--
+  SITE IDENTITY
+  Header relationship: site-header__identity
+  Independent block: site-identity
 
-    <!-- identity zone: name + tagline (a newspaper nameplate carries both) · aria-label names the zone for assistive tech -->
-    <section class="site-header__identity" aria-label="Site identity">
-      <!-- wordmark: the name set as type (a logo is drawn; this is type) -->
-      <a href="#" class="site-header__wordmark">superpower</a>
-    </section>
+  Responsibility:
+  Identifies the website or organization.
+  The header controls where this region sits;
+  site-identity owns the identity content.
 
+  FUTURE STRUCTURE — conceptual only:
+
+  site-identity
+  └── site-identity__link
+      ├── site-identity__symbol
+      └── site-identity__wordmark
+
+  site-identity__tagline
+
+  Possible future additions:
+  - logo / symbol
+  - wordmark
+  - tagline
+  - home-link behavior
+  - alternate compact identity for responsive layouts
+-->
+    
+    <div class="site-header__identity">
+      <div class="site-identity">
+        <a class="site-identity__link" href="/" aria-label="Superpower home">
+          <span class="site-identity__wordmark">Superpower</span>
+        </a>
+        
+        <!-- Optional brand descriptor; not currently shown in the reference. -->
+        <!--
+    <p class="site-identity__tagline">
+      Your health, understood.
+    </p>
+    -->
+      </div>
+    </div>
+    
     <!-- account zone: the reader's doorway + the conversion door -->
     <div class="site-header__account">
       <div class="site-header__actions">
         <a href="#" class="site-header__login">Log in</a>
         <a href="#" class="button button--primary">Become a member</a>
       </div>
-
+      
       <!-- App launcher icon button -->
       <button type="button" class="button button--icon" aria-label="More options">
         <svg class="icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
@@ -97,11 +133,11 @@
           <circle cx="2" cy="2" r="1.5" fill="currentColor" />
           <circle cx="8" cy="2" r="1.5" fill="currentColor" />
           <circle cx="14" cy="2" r="1.5" fill="currentColor" />
-
+          
           <circle cx="14" cy="8" r="1.5" fill="currentColor" />
           <circle cx="8" cy="8" r="1.5" fill="currentColor" />
           <circle cx="2" cy="8" r="1.5" fill="currentColor" />
-
+          
           <circle cx="2" cy="14" r="1.5" fill="currentColor" />
           <circle cx="8" cy="14" r="1.5" fill="currentColor" />
           <circle cx="14" cy="14" r="1.5" fill="currentColor" />
@@ -110,7 +146,7 @@
       </button>
     </div>
   </header>
-
+  
   <!-- main: ARIA landmark · book term: body matter -->
   <main class="site__main">
     <!-- hero — the opening statement (book cousin: frontispiece)
@@ -120,47 +156,47 @@
         <div class="prose">
           <!-- status: the vouching line above the headline -->
           <p class="prose__status checkmark">HSA/ FSA eligible</p>
-
+          
           <!-- headline: the big line (newspaper term) -->
           <h1 class="prose__headline">Your new health membership</h1>
-
+          
           <!-- deck: the small line under a headline (print term, aka standfirst) -->
           <p class="prose__deck">
             Members get 150+ lab tests across 2 blood draws. $199 per year.
           </p>
         </div>
-
+        
         <!-- actions: owns the gap between buttons; each button owns itself -->
         <div class="actions">
           <button type="button" class="hero__button button button--primary">
             Become a member
           </button>
-
+          
           <button type="button" class="hero__button button button--ghost">
             See what we test
           </button>
         </div>
       </header>
-
+      
       <div class="hero__content">
         <!-- vitals: the floor strip of quantified claims · each pair is a stat on a dl
 										     (description list: term + description — the HTML made for name/value pairs) -->
         <div class="hero__vitals">
           <dl class="stat">
             <dt class="stat__label">Whole body check</dt>
-
+            
             <dd class="stat__value">Detect 1,000+ conditions</dd>
           </dl>
-
+          
           <dl class="stat">
             <dt class="stat__label">Accessible</dt>
-
+            
             <dd class="stat__value">Starts at $199/year</dd>
           </dl>
-
+          
           <dl class="stat">
             <dt class="stat__label">Trusted</dt>
-
+            
             <dd class="stat__value">6M+ biomarkers analyzed</dd>
           </dl>
         </div>

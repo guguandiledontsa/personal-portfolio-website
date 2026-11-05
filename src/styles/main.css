@@ -2,33 +2,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap");
 
 @layer variables {
+
   /* Form controls often use a browser-specific font instead of the page's font. */
   :where(button, input, select, textarea) {
     font: inherit;
     letter-spacing: inherit;
   }
-
+  
   /* Headings otherwise get browser-default sizes and bold weights. */
   :where(h1, h2, h3, h4, h5, h6) {
     font-size: inherit;
     font-weight: inherit;
   }
-
+  
   /* Table headings should follow the same weight and alignment as surrounding text. */
   :where(th) {
     font-weight: inherit;
     text-align: start;
   }
-
+  
   /* ------------------------------------------- */
-
+  
   /* Start with neutral colors and surfaces; component styles below opt back in. */
   :where(*) {
     color: inherit;
     background: transparent;
     text-decoration: none;
   }
-
+  
   /* Keep borders available for components, but make them invisible by default. */
   :where(*) {
     border-color: currentColor;
@@ -36,80 +37,81 @@
     border-width: 0;
     border-radius: 0;
   }
-
+  
   /* Shadows are decorative, so add them only where a component needs them. */
   :where(*) {
     box-shadow: none;
     text-shadow: none;
   }
-
+  
   /* SVG icons can follow the text color of the element that contains them. */
   :where(svg) {
     fill: currentColor;
   }
-
+  
   /* ------------------------------------------- */
-
+  
   /* Use predictable sizing: padding and borders are included in declared sizes. */
   :where(*, *::before, *::after) {
     box-sizing: border-box;
   }
-
+  
   /* Remove the browser's default body inset; page spacing belongs to components. */
   :where(body) {
     margin: 0;
   }
-
+  
   /* Let the page fill the viewport without forcing content to stay within it. */
   :where(html, body) {
     min-block-size: 100%;
   }
-
+  
   /* Remove default list indentation while preserving list markers. */
   :where(ul, ol) {
     margin: 0;
     padding-inline-start: 0;
   }
+  
   /* Remove browser spacing so text blocks only get spacing from our layout rules. */
   :where(h1, h2, h3, h4, h5, h6, p, dl, dd) {
     margin: 0;
   }
-
+  
   /* Remove built-in spacing that otherwise surprises figure and form layouts. */
   :where(figure, fieldset) {
     margin: 0;
   }
-
+  
   :where(fieldset) {
     min-inline-size: 0;
     padding: 0;
   }
-
+  
   :where(legend) {
     padding: 0;
   }
-
+  
   /* Normalize native table gaps and default control margins. */
   :where(table) {
     border-collapse: collapse;
     border-spacing: 0;
   }
-
+  
   :where(button, input, select, textarea) {
     margin: 0;
   }
-
+  
   /* Keep textarea resizing useful without allowing it to break the layout width. */
   :where(textarea) {
     resize: vertical;
   }
-
+  
   /* Keep media from overflowing its containing layout. */
   :where(img, picture, video, canvas, svg) {
     display: block;
     max-inline-size: 100%;
   }
-
+  
   :root {
     /* Shadows */
     --shadow-md:
@@ -124,48 +126,41 @@
     --shadow-2xl: 0 25px 50px -12px hsla(var(--black-channel), 0.25);
     --shadow-inner: inset 0 2px 4px 0 hsla(var(--black-channel), 0.06);
   }
-
+  
   :root {
     --w-half: 50%;
     --w-full: 100%;
     --w-screen: 100vw;
-
+    
     /* grid layout */
     --grid-cols-1: repeat(1, minmax(0, 1fr));
     --grid-cols-2: repeat(2, minmax(0, 1fr));
   }
-
+  
   :root {
     /* Font Families */
     /* promise: the display voice — NB International stand-in (see workspace notes §3) */
     --font-heading: "Inter Tight", "Inter", sans-serif;
     --font-body: "Inter", sans-serif;
-
+    
     /* Font Weights */
     --font-thin: 100;
     /* increment by 100 for next weight,  thin   extralight   light  normal   medium  semibold   bold  extrabold   black, up to 900 */
-
+    
     /* Fully Scaled Typography Tokens (Size / Line-Height Shorthand Ready) */
     --text-xs: calc(var(--text-base) * 0.75) / calc(var(--text-base) * 1);
-    --text-sm: calc(var(--text-base) * 0.875) /
-      calc(var(--text-base) * calc(1 + calc(0.25 * 1)));
-    --text-base-val: calc(var(--text-base) * 1) /
-      calc(var(--text-base) * calc(1 + calc(0.25 * 2)));
-    --text-lg: calc(var(--text-base) * calc(1 + (0.125 * 1))) /
-      calc(var(--text-base) * calc(1 + (0.25 * 3)));
-    --text-xl: calc(var(--text-base) * calc(1 + (0.125 * 2))) /
-      calc(var(--text-base) * calc(1 + (0.25 * 3)));
-    --text-2xl: calc(var(--text-base) * calc(1 + (0.125 * 4))) /
-      calc(var(--text-base) * calc(1 + (0.25 * 4)));
-    --text-3xl: calc(var(--text-base) * calc(1 + (0.125 * 7))) /
-      calc(var(--text-base) * calc(1 + (0.25 * 5)));
-    --text-5xl: calc(var(--text-base) * calc(1 + (0.125 * 8))) /
-      calc(var(--text-base) * 1);
+    --text-sm: calc(var(--text-base) * 0.875) / calc(var(--text-base) * calc(1 + calc(0.25 * 1)));
+    --text-base-val: calc(var(--text-base) * 1) / calc(var(--text-base) * calc(1 + calc(0.25 * 2)));
+    --text-lg: calc(var(--text-base) * calc(1 + (0.125 * 1))) / calc(var(--text-base) * calc(1 + (0.25 * 3)));
+    --text-xl: calc(var(--text-base) * calc(1 + (0.125 * 2))) / calc(var(--text-base) * calc(1 + (0.25 * 3)));
+    --text-2xl: calc(var(--text-base) * calc(1 + (0.125 * 4))) / calc(var(--text-base) * calc(1 + (0.25 * 4)));
+    --text-3xl: calc(var(--text-base) * calc(1 + (0.125 * 7))) / calc(var(--text-base) * calc(1 + (0.25 * 5)));
+    --text-5xl: calc(var(--text-base) * calc(1 + (0.125 * 8))) / calc(var(--text-base) * 1);
     --text-6xl: calc(var(--text-base) * 3.75) / calc(var(--text-base) * 1);
-
+    
     --not-italic: normal;
   }
-
+  
   :root {
     /* ===================1. BASE PRIMITIVES====================== */
     /*                                                            */
@@ -200,30 +195,30 @@
     --text-base: 1rem;
     /* 16px base font size */
     --black-channel: 0, 0, 0;
-
+    
     /* ====================2. SPACING SCALE===================== */
     --space-1: var(--space-base);
     /* 0.25rem (4px) */
     --space-2: calc(var(--space-base) * 2);
     /* 0.5rem (8px) */
-
+    
     /* Micro Spacing (Pixels) */
     --space-px-1: 1px;
     --space-px-2: calc(var(--space-px-1) * 2);
-
+    
     /* ==================3. BORDER RADIUS SCALE======================= */
     --radius-sm: calc(var(--radius-base) * 1);
     /* 2px */
     --radius-md: calc(var(--radius-base) * 2);
     /* 4px */
     --radius-full: 9999px;
-
+    
     /* =================4. CONTAINER / MAX-WIDTH SCALE======================== */
     /*    calc(var(--container-base) + var(--space-base) * 16 * M)*/
     /*    M = 0→20rem  1→24rem  2→28rem  3→32rem  4→36rem         */
     /*    M = 5→40rem  6→44rem  7→48rem  8→52rem  9→56rem         */
     /* ========================================= */
-
+    
     /* =====================5. COLOR PALETTES==================== */
     --gray-50: hsla(210, 10%, 98%, 1);
     --gray-100: hsla(210, 10%, 90%, 1);
@@ -235,7 +230,7 @@
     --gray-700: hsla(210, 10%, 30%, 1);
     --gray-800: hsla(210, 10%, 20%, 1);
     --gray-900: hsla(210, 10%, 10%, 1);
-
+    
     --slate-50: hsla(210, 40%, 98%, 1);
     --slate-100: hsla(210, 40%, 96%, 1);
     --slate-200: hsla(210, 40%, 88%, 1);
@@ -245,16 +240,16 @@
     --slate-700: hsla(215, 25%, 27%, 1);
     --slate-800: hsla(217, 33%, 17%, 1);
     --slate-900: hsla(222, 47%, 11%, 1);
-
+    
     --blue-400: hsla(217, 90%, 60%, 1);
     --blue-500: hsla(217, 91%, 60%, 1);
     --blue-600: hsla(221, 83%, 53%, 1);
     --blue-700: hsla(224, 76%, 48%, 1);
-
+    
     --green-100: hsla(149, 80%, 90%, 1);
     --green-400: hsla(158, 64%, 52%, 1);
     --green-500: hsla(160, 100%, 40%, 1);
-
+    
     --red-500: hsla(0, 74%, 60%, 1);
     --orange-500: hsla(30, 100%, 50%, 1);
     --yellow-500: hsla(60, 100%, 50%, 1);
@@ -266,103 +261,90 @@
 }
 
 @layer typographies {
+
   /* ---------------.container-typography--------------- */
   .prose {
     & .prose__headline {
       font: calc(var(--font-thin) * 8) var(--text-3xl) var(--font-heading);
     }
   }
-
+  
   /* .site-header — promise: a quiet nameplate voice; the name carries the weight */
   .site-header {
     font: calc(var(--font-thin) * 4) var(--text-sm) var(--font-body);
-
-    & .site-header__wordmark {
+    
+    & .site-identity__wordmark {
       font: calc(var(--font-thin) * 7) var(--text-lg) var(--font-body);
       letter-spacing: -0.02em;
       text-decoration: none;
     }
-
+    
     & .site-header__login {
       text-decoration: none;
       color: black;
     }
-
+    
     & .button--primary {
       background-color: black;
       color: white;
     }
   }
-
+  
   .navigation {
     & .navigation__link {
       text-decoration: none;
       color: black;
     }
   }
-
+  
   /* .site — promise: the reading voice of the whole work */
   .site {
     font: calc(var(--font-thin) * 4) var(--text-base-val) var(--font-body);
   }
-
+  
   /* .notice — promise: an out-of-band interruption, spoken once, quietly */
   .notice {
     & .notice__message {
       font: calc(var(--font-thin) * 5) var(--text-sm) var(--font-body);
     }
   }
-
+  
   /* ---------------.container-columns--------------- */
   /* ----------------.container-fonts---------------- */
 }
 
 @layer appearances {
-  :root {
-    /* Shadows */
-    --shadow-md:
-      0 4px 6px -1px hsla(var(--black-channel), 0.1),
-      0 2px 4px -1px hsla(var(--black-channel), 0.06);
-    --shadow-lg:
-      0 10px 15px -3px hsla(var(--black-channel), 0.1),
-      0 4px 6px -2px hsla(var(--black-channel), 0.05);
-    --shadow-xl:
-      0 20px 25px -5px hsla(var(--black-channel), 0.1),
-      0 10px 10px -5px hsla(var(--black-channel), 0.04);
-    --shadow-2xl: 0 25px 50px -12px hsla(var(--black-channel), 0.25);
-    --shadow-inner: inset 0 2px 4px 0 hsla(var(--black-channel), 0.06);
-  }
   /* ---------.container-style------------- */
   /* .site-header — promise: blends with the paper; ink carried by the name */
   .site-header {
     background-color: var(--gray-50);
-
-    & .site-header__wordmark {
+    
+    & .site-identity__wordmark {
       color: var(--slate-900);
     }
-
+    
     & .site-header__tagline {
       color: var(--slate-500);
     }
   }
-
+  
   .navigation {
     & .navigation__item {
       list-style: none;
     }
-
+    
     & :has(.navigation__item:hover) .navigation__item:not(:hover) {
       opacity: 0.3;
     }
   }
-
+  
   .hero {
     color: var(--gray-50);
     background: #000 url("../assets/videoframe_2234.png") no-repeat center/cover;
-
+    
     border-radius: calc(var(--radius-base) * 6);
   }
-
+  
   .site-header__actions {
     & .button--primary {
       background-color: black;
@@ -370,55 +352,55 @@
       text-decoration: none;
     }
   }
-
+  
   .checkmark {
     &::before {
       content: "✓ ";
     }
   }
-
+  
   .button {
     border: none;
     background: none;
-
+    
     border-radius: var(--radius-full);
   }
-
+  
   .button--primary {
     background-color: white;
     color: black;
   }
-
+  
   .button--ghost {
     color: white;
     background-color: hsla(0, 100%, 100%, 0.2);
   }
-
-  .stat + .stat {
+  
+  .stat+.stat {
     border-inline-start: var(--space-px-1) solid var(--gray-700);
   }
-
+  
   /* .site — promise: the paper the work is set on */
   .site {
     background-color: var(--gray-50);
     color: var(--slate-800);
   }
-
+  
   /* .notice — promise: a calm surface that still gets noticed */
   .notice {
     background-color: var(--slate-100);
     border: var(--space-px-1) solid var(--slate-300);
     border-radius: calc(var(--radius-base) * 4);
-
+    
     /* .notice--warning — promise: the severity of what couldn't load */
     & .notice--warning {
       border-color: var(--orange-500);
-
+      
       & .notice__message {
         color: var(--slate-800);
       }
     }
-
+    
     & .notice__message {
       color: var(--slate-700);
     }
@@ -426,15 +408,7 @@
 }
 
 @layer layouts {
-  :root {
-    --w-half: 50%;
-    --w-full: 100%;
-    --w-screen: 100vw;
-
-    /* grid layout */
-    --grid-cols-1: repeat(1, minmax(0, 1fr));
-    --grid-cols-2: repeat(2, minmax(0, 1fr));
-  }
+  
   /* ------------.container-layout------------ */
   /* .site-header — promise: nameplate centered (title-page habit); stays put on scroll */
   .site-header {
@@ -443,22 +417,24 @@
     z-index: 10;
     display: flex;
     justify-content: center;
-
+    
     & .site-header__identity {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
   }
-
+  
   /* .notice — promise: its message reads as one centered unit */
   .notice {
     display: flex;
     justify-content: center;
   }
+  
   /* -------------.container-contain----------- */
   /* -------------.container-flex------------- */
   .site-header {
+
     /* 4. Direct child 3: Account zone lives in Column 3 */
     & .site-header__account {
       justify-self: end;
@@ -468,16 +444,17 @@
       gap: calc(var(--space-base) * 4);
     }
   }
-
+  
   .navigation__menu {
     display: flex;
-
+    
     gap: calc(var(--space-base) * 4);
   }
-
+  
   .hero__vitals {
     display: flex;
   }
+  
   /* ---------------.container-grid-------------- */
   .site-header {
     /* 1. Establish the 3-column grid container */
@@ -485,58 +462,60 @@
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
     /* Vertical alignment across all tracks */
-
+    
     /* 2. Direct child 1: Navigation lives in Column 1 */
     & .site-header__navigation {
       justify-self: start;
     }
-
+    
     /* 3. Direct child 2: Identity lives in Column 2 (Center) */
     & .site-header__identity {
       justify-self: center;
     }
   }
+  
   /* -------------.container-spacing----------------- */
   /* .site-header — promise: one calm strip */
   .site-header {
     padding-block: calc(var(--space-base) * 4);
-
+    
     & .site-header__identity {
       gap: var(--space-1);
     }
   }
-
+  
   .hero {
     padding: calc(var(--space-base) * 8);
-
+    
     & .hero__header {
       padding-block: calc(var(--space-base) * 50);
     }
   }
-
+  
   .button {
     padding: calc(var(--space-base) * 2);
   }
-
+  
   .stat {
     padding-inline: calc(var(--space-base) * 4);
   }
-
+  
   /* .site — promise: the site places its regions; blocks never carry their own margins */
   .site {
     & .site__notice {
       margin: calc(var(--space-base) * 4);
     }
   }
-
+  
   /* .notice — promise: comfortable on every edge */
   .notice {
     padding-block: calc(var(--space-base) * 3);
-
+    
     & .notice__content {
       padding-inline: calc(var(--space-base) * 4);
     }
   }
+  
   /* ---------------.container-sizing------------------ */
   /* .notice — promise: a note, not a billboard */
   .notice {
@@ -545,7 +524,7 @@
       max-inline-size: calc(var(--container-base) + var(--space-base) * 16 * 2);
     }
   }
-
+  
   .hero {
     background-size: auto;
   }
