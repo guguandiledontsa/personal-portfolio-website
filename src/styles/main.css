@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap");
 
 @layer variables {
-
+  
   /* Form controls often use a browser-specific font instead of the page's font. */
   :where(button, input, select, textarea) {
     font: inherit;
@@ -261,8 +261,13 @@
 }
 
 @layer typographies {
-
+  
   /* ---------------.container-typography--------------- */
+    /* .site — promise: the reading voice of the whole work */
+  .site {
+    font: calc(var(--font-thin) * 4) var(--text-base-val) var(--font-body);
+  }
+  
   .prose {
     & .prose__headline {
       font: calc(var(--font-thin) * 8) var(--text-3xl) var(--font-heading);
@@ -297,25 +302,22 @@
     }
   }
   
-  /* .site — promise: the reading voice of the whole work */
-  .site {
-    font: calc(var(--font-thin) * 4) var(--text-base-val) var(--font-body);
-  }
-  
-  /* .notice — promise: an out-of-band interruption, spoken once, quietly */
-  .notice {
-    & .notice__message {
-      font: calc(var(--font-thin) * 5) var(--text-sm) var(--font-body);
-    }
-  }
+
   
   /* ---------------.container-columns--------------- */
   /* ----------------.container-fonts---------------- */
 }
 
 @layer appearances {
+
   /* ---------.container-style------------- */
   /* .site-header — promise: blends with the paper; ink carried by the name */
+    /* .site — promise: the paper the work is set on */
+  .site {
+    background-color: var(--gray-50);
+    color: var(--slate-800);
+  }
+  
   .site-header {
     background-color: var(--gray-50);
     
@@ -345,6 +347,12 @@
     border-radius: calc(var(--radius-base) * 6);
   }
   
+  .checkmark {
+    &::before {
+      content: "✓ ";
+    }
+  }
+  
   .site-header__actions {
     & .button--primary {
       background-color: black;
@@ -352,13 +360,7 @@
       text-decoration: none;
     }
   }
-  
-  .checkmark {
-    &::before {
-      content: "✓ ";
-    }
-  }
-  
+
   .button {
     border: none;
     background: none;
@@ -380,31 +382,6 @@
     border-inline-start: var(--space-px-1) solid var(--gray-700);
   }
   
-  /* .site — promise: the paper the work is set on */
-  .site {
-    background-color: var(--gray-50);
-    color: var(--slate-800);
-  }
-  
-  /* .notice — promise: a calm surface that still gets noticed */
-  .notice {
-    background-color: var(--slate-100);
-    border: var(--space-px-1) solid var(--slate-300);
-    border-radius: calc(var(--radius-base) * 4);
-    
-    /* .notice--warning — promise: the severity of what couldn't load */
-    & .notice--warning {
-      border-color: var(--orange-500);
-      
-      & .notice__message {
-        color: var(--slate-800);
-      }
-    }
-    
-    & .notice__message {
-      color: var(--slate-700);
-    }
-  }
 }
 
 @layer layouts {
@@ -424,17 +401,11 @@
       align-items: center;
     }
   }
-  
-  /* .notice — promise: its message reads as one centered unit */
-  .notice {
-    display: flex;
-    justify-content: center;
-  }
-  
+
   /* -------------.container-contain----------- */
   /* -------------.container-flex------------- */
   .site-header {
-
+    
     /* 4. Direct child 3: Account zone lives in Column 3 */
     & .site-header__account {
       justify-self: end;
@@ -498,34 +469,5 @@
   
   .stat {
     padding-inline: calc(var(--space-base) * 4);
-  }
-  
-  /* .site — promise: the site places its regions; blocks never carry their own margins */
-  .site {
-    & .site__notice {
-      margin: calc(var(--space-base) * 4);
-    }
-  }
-  
-  /* .notice — promise: comfortable on every edge */
-  .notice {
-    padding-block: calc(var(--space-base) * 3);
-    
-    & .notice__content {
-      padding-inline: calc(var(--space-base) * 4);
-    }
-  }
-  
-  /* ---------------.container-sizing------------------ */
-  /* .notice — promise: a note, not a billboard */
-  .notice {
-    & .notice__content {
-      /* measure: M = 2 → 28rem */
-      max-inline-size: calc(var(--container-base) + var(--space-base) * 16 * 2);
-    }
-  }
-  
-  .hero {
-    background-size: auto;
   }
 }
