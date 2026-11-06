@@ -263,7 +263,7 @@
 @layer typographies {
   
   /* ---------------.container-typography--------------- */
-    /* .site — promise: the reading voice of the whole work */
+  /* .site — promise: the reading voice of the whole work */
   .site {
     font: calc(var(--font-thin) * 4) var(--text-base-val) var(--font-body);
   }
@@ -302,17 +302,17 @@
     }
   }
   
-
+  
   
   /* ---------------.container-columns--------------- */
   /* ----------------.container-fonts---------------- */
 }
 
 @layer appearances {
-
+  
   /* ---------.container-style------------- */
   /* .site-header — promise: blends with the paper; ink carried by the name */
-    /* .site — promise: the paper the work is set on */
+  /* .site — promise: the paper the work is set on */
   .site {
     background-color: var(--gray-50);
     color: var(--slate-800);
@@ -321,14 +321,18 @@
   .site-header {
     background-color: var(--gray-50);
     
+  }
+  
+  .site-identity {
     & .site-identity__wordmark {
       color: var(--slate-900);
     }
     
-    & .site-header__tagline {
+    & .site-identity__tagline {
       color: var(--slate-500);
     }
   }
+  
   
   .navigation {
     & .navigation__item {
@@ -360,7 +364,7 @@
       text-decoration: none;
     }
   }
-
+  
   .button {
     border: none;
     background: none;
@@ -401,7 +405,7 @@
       align-items: center;
     }
   }
-
+  
   /* -------------.container-contain----------- */
   /* -------------.container-flex------------- */
   .site-header {
