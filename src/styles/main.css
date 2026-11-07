@@ -278,6 +278,7 @@
   .site-header {
     font: calc(var(--font-thin) * 4) var(--text-sm) var(--font-body);
     
+    
     & .site-identity__wordmark {
       font: calc(var(--font-thin) * 7) var(--text-lg) var(--font-body);
       letter-spacing: -0.02em;
@@ -453,6 +454,7 @@
   /* .site-header — promise: one calm strip */
   .site-header {
     padding-block: calc(var(--space-base) * 4);
+    padding-inline: calc(var(--space-base) * 10);
     
     & .site-header__identity {
       gap: var(--space-1);
