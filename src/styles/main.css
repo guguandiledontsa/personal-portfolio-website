@@ -456,9 +456,17 @@
     padding-block: calc(var(--space-base) * 4);
     padding-inline: calc(var(--space-base) * 10);
     
+    
     & .site-header__identity {
       gap: var(--space-1);
     }
+    
+    & .site-header__account {
+      display: flex-wrap;
+      align-items: center;
+      gap: 0;  
+    }
+    
   }
   
   .hero {
@@ -466,6 +474,16 @@
     
     & .hero__header {
       padding-block: calc(var(--space-base) * 50);
+    }
+    
+    & .hero__actions {
+      margin-block: calc(var(--space-base) * 6);
+    }
+    
+    .prose {
+      .prose__headline {
+        margin-block: calc(var(--space-base) * 2);
+      }
     }
   }
   
