@@ -417,7 +417,7 @@
       display: flex;
       align-items: center;
       /* Ensure internal items center vertically, not flex-end */
-      gap: calc(var(--space-base) * 4);
+      gap: 0;
     }
   }
   
@@ -461,13 +461,10 @@
       gap: var(--space-1);
     }
     
-    & .site-header__account {
-      display: flex-wrap;
-      align-items: center;
-      gap: 0;  
-    }
+
     
   }
+  
   
   .hero {
     padding: calc(var(--space-base) * 8);
@@ -486,6 +483,7 @@
       }
     }
   }
+  
   
   .button {
     padding: calc(var(--space-base) * 2);
